@@ -25,7 +25,7 @@
 </head>
 <body>
 	<!--================ Start Header Menu Area =================-->
-	<header class="header_area">
+<header class="header_area">
     <div class="main_menu">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
@@ -50,14 +50,14 @@
                   <li class="nav-item"><a class="nav-link" href="cart">Shopping Cart</a></li>
                 </ul>
 							</li>
-              <li class="nav-item submenu dropdown">
+<!--               <li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Blog</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a class="nav-link" href="blog">Blog</a></li>
                   <li class="nav-item"><a class="nav-link" href="singleblog">Blog Details</a></li>
                 </ul>
-							</li>
+							</li> -->
 							<li class="nav-item active submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Pages</a>
