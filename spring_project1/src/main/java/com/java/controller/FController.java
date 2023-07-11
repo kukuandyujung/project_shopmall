@@ -22,10 +22,7 @@ public class FController {
 	public String login() {
 		return "member/login";
 	}
-	@RequestMapping("/member/register")
-	public String register() {
-		return "member/register";
-	}
+
 	@RequestMapping("/mypage/cart")
 	public String cart() {
 		return "mypage/cart";
