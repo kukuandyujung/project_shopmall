@@ -1,11 +1,47 @@
 package com.java.controller;
 
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.java.dto.AdminDto;
+import com.java.service.AdminService;
 
 @Controller
 public class AdminController {
 
+	
+	@Autowired AdminService adminService;
+	@Autowired HttpSession session;
+	
+	
+	
+	@RequestMapping("/admin/login")
+	public String login() {
+		
+		return "admin/login";
+	}
+	
+	
+	@PostMapping("/admin/login")
+	public String  login2(AdminDto adminDto, Model model) {
+		System.out.println("AdminDto 1 : "+ adminDto.getId());
+		System.out.println("AdminDto 2 : "+ adminDto.getPw());
+		AdminDto adto = adminService.selectLogin(adminDto);
+		if(adto!=null) {
+			session.setAttribute("sessionId", adto.getId());
+		}else {
+			model.addAttribute("loginCheck", "fail");
+			return "/admin/login";
+		}
+		
+		return "redirect:/index?loginCheck=success";
+	}
+	
 	
 	
 	@RequestMapping("/admin/chartjs")
@@ -95,12 +131,7 @@ public class AdminController {
 		return "admin/index3";
 	}
 	
-	
-	@RequestMapping("/admin/login")
-	public String login() {
-		
-		return "admin/login";
-	}
+
 	
 	@RequestMapping("/admin/map")
 	public String map() {

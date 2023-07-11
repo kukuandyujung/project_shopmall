@@ -32,11 +32,17 @@ function logoutBtn(){
                           <span class="badge bg-red pull-right">50%</span>
                           <span>Settings</span>
                         </a>
-                    <a class="dropdown-item"  href="javascript:;">Help</a>
-                      <a class="dropdown-item"  href="login"><i class="fa fa-sign-out pull-right"></i>로그인</a>
+                      <a class="dropdown-item"  href="javascript:;">Help</a>
+                      
+                      <c:if test="${sessionId==null}">
+                      <a class="dropdown-item"  href="/login"><i class="fa fa-sign-out pull-right"></i>로그인</a>                      
+                      </c:if>
+                      <c:if test="${sessionId!=null}">
+					  	<li><a href="#">${sessionName}님</a></li>
+					  	<li><a onclick="logoutBtn()" style="cursor: pointer;">로그아웃</a></li>
+					  </c:if>
                     </div>
                   </li>
-                  <!-- 오른쪽 상단에 프로필 끝-->
   
                   <li role="presentation" class="nav-item dropdown open">
                     <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">

@@ -23,6 +23,29 @@
 
     <!-- Custom Theme Style -->
     <link href="/build/css/custom.min.css" rel="stylesheet">
+    
+    <!-- 김유정이 넣은 로그인 기능 -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript">
+		if("${loginCheck}"=="fail"){
+			alert("아이디 또는 패스워드가 일치하지 않습니다.");
+			$("#loginId").focus();
+		}
+    </script>
+	<script>
+	if("${loginCheck}"== "success" ){
+		   alert("${sessionName}님! 로그인 되었습니다.");
+	}
+	
+	function logoutBtn(){
+		alert("로그아웃이 되었습니다.");
+		location.href="index";
+	}
+	
+	</script>   
+    
+
+    
   </head>
 
   <body class="login">
@@ -35,16 +58,23 @@
           <section class="login_content">
             <form>
               <h1>Login Form</h1>
+             <form action="/login" method="post" name="loginFrm">
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                <input type="text" name="id" class="form-control" placeholder="Username" required="" />
               </div>
+              </form>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <input type="password" name="pw" class="form-control" placeholder="Password" required="" />
               </div>
+              
               <div>
-                <a class="btn btn-default submit" href="index">Log in</a>
-                <a class="reset_pass" href="#">Lost your password?</a>
+                <a class="btn btn-default submit" onclick="loginBtn()" href="index">로그인</a>
+                <a class="reset_pass" href="#">비밀번호를 잊으셨나요?</a>
               </div>
+              
+			  <!-- 여기까지가 로그인 구현 기능  -->
+			  
+
 
               <div class="clearfix"></div>
 
