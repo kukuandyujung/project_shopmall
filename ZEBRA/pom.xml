@@ -97,6 +97,11 @@
 		-->
 
 
+		<dependency>
+			<groupId>com.java</groupId>
+			<artifactId>spring0706</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>

@@ -76,7 +76,10 @@
 							</div>
 							<div class="col-md-12 form-group">
 								<button type="submit" value="submit" class="button button-login w-100">Log In</button>
-								<a href="#">Forgot Password?</a>
+								 <ul class="nav-shop">
+             						<li class="nav-item"><a href="#">Forgot Password?</a></li>
+            					    <li class="nav-item"><a href="/admin/login">Login to Admin</a></li>
+           						 </ul>
 							</div>
 						</form>
 					</div>
