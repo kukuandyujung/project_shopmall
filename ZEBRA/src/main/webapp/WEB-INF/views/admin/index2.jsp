@@ -107,46 +107,52 @@
                     <div class="col-md-9 col-sm-12 ">
                       <div class="demo-container" style="height:280px">
                       	
-					<div> <!-- Chart.js 그래프 시작 -->
-					  <canvas width="0" height="287" id="myChart"></canvas>
-					</div>					
-					<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>					
-					<script>
-					  const ctx = document.getElementById('myChart');					
-					  new Chart(ctx, {
-					    type: 'line',
-					    data: {
-					      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-					      datasets: [{
-					        label: '월별 매출액',
-					        data: [12, 19, 3, 5, 2, 3],
-					        borderWidth: 1,
-					        fill: {
-					            target: 'origin',
-					            above: 'rgba(0, 123, 255, 0.1)' // 흐릿한 배경 컬러 설정
-					              },
-					      }]
-					    },
-					    options: {
-					    	maintainAspectRatio: false,
-					      scales: {
-					        x: { // x축 스케일에 대한 설정 추가
-					              grid: {
-					                drawOnChartArea: false // 그래프 영역 아래에 그리드 라인이 표시되지 않도록 설정
-					              }
-					           },
-					        y: {
-					          beginAtZero: true
-					           }
-					        },
-					        plugins: {
-					            filler: { // 그래프 아래에 흐릿한 배경 컬러 적용
-					              propagate: true
-					        }
-					      }
-					    }
-					  });
-					</script> <!-- Chart.js 그래프 끝 -->
+			<div> <!-- Chart.js 그래프 시작 -->
+			  <canvas width="0" height="287" id="myChart"></canvas>
+			</div>					
+			<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>					
+			<script>
+			  const ctx = document.getElementById('myChart');					
+			  new Chart(ctx, {
+			    type: 'line',
+			    data: {
+			      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+			      datasets: [{
+			        label: '월별 매출액',
+		            backgroundColor: 'rgba(26, 187, 156)', // legend 색상 채우기
+			        data: [12, 19, 3, 5, 2, 3],
+			        borderWidth: 1,
+			        borderColor: 'rgba(26, 187, 156)',
+			        pointBackgroundColor: 'transparent', // 점의 색상을 투명으로 설정
+			        fill: {
+			            target: 'origin',
+			            above: 'rgba(26, 187, 150, 0.1)' // 흐릿한 배경 컬러 설정
+			        }
+			      }]
+			    },
+			    options: {
+			    	maintainAspectRatio: false,
+			      scales: {
+			        x: { // x축 스케일에 대한 설정 추가
+			              grid: {
+			                drawOnChartArea: false // 그래프 영역 아래에 그리드 라인이 표시되지 않도록 설정
+			              }
+			           },
+			        y: {
+			          beginAtZero: true
+			           }
+			        },
+			        plugins: {
+			            filler: { // 그래프 아래에 흐릿한 배경 컬러 적용
+			              propagate: true
+			        	},
+		        	    legend: {
+		                    onClick: null
+		                }
+			      }
+			    }
+			  });
+			</script> <!-- Chart.js 그래프 끝 -->
                         
                       </div>
                       <div class="tiles">
