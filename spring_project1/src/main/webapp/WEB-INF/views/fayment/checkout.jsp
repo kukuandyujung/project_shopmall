@@ -39,23 +39,23 @@
           </button>
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-              <li class="nav-item"><a class="nav-link" href="/layout/index">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
               <li class="nav-item active submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Shop</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="/product/category">Shop Category</a></li>
-                  <li class="nav-item"><a class="nav-link" href="product/singleproduct">Product Details</a></li>
-                  <li class="nav-item"><a class="nav-link" href="fayment/checkout">Product Checkout</a></li>
-                  <li class="nav-item"><a class="nav-link" href="fayment/confirmation">Confirmation</a></li>
-                  <li class="nav-item"><a class="nav-link" href="mypage/cart">Shopping Cart</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Shop Category</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Product Details</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Product Checkout</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Confirmation</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Shopping Cart</a></li>
                 </ul>
 							</li>
 							<li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Pages</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="/member/login">Login</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
                 </ul>
               </li>
             </ul>

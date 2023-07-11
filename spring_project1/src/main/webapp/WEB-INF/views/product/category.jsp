@@ -13,26 +13,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Aroma Shop - Category</title>
-<link rel="icon" href="../img/Fevicon.png" type="image/png">
-<link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
-<link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
-<link rel="stylesheet" href="../vendors/linericon/style.css">
+<link rel="icon" href="img/Fevicon.png" type="image/png">
+<link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">
+<link rel="stylesheet" href="vendors/linericon/style.css">
 <link rel="stylesheet"
-	href="../vendors/owl-carousel/owl.theme.default.min.css">
-<link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css">
-<link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
-<link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
+	href="vendors/owl-carousel/owl.theme.default.min.css">
+<link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+<link rel="stylesheet" href="vendors/nice-select/nice-select.css">
+<link rel="stylesheet" href="vendors/nouislider/nouislider.min.css">
 
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
 	<!--================ Start Header Menu Area =================-->
 	<header class="header_area">
     <div class="main_menu">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-          <a class="navbar-brand logo_h" href="layout/index"><img src="../img/logo.png" alt=""></a>
+          <a class="navbar-brand logo_h" href="index"><img src="img/logo.png" alt=""></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="icon-bar"></span>
@@ -41,35 +42,35 @@
           </button>
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-              <li class="nav-item"><a class="nav-link" href="layout/index">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="index">Home</a></li>
               <li class="nav-item active submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Women</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="product/category">New Arrivals</a></li>
-                  <li class="nav-item"><a class="nav-link" href="product/category">Best Sellers</a></li>
-                  <li class="nav-item"><a class="nav-link" href="product/category">All Clothing</a></li>
-                  <li class="nav-item"><a class="nav-link" href="product/category">Dresses</a></li>
-                  <li class="nav-item"><a class="nav-link" href="product/category">Shirts</a></li>
-                  <li class="nav-item"><a class="nav-link" href="product/category">Pants</a></li>
-                  <li class="nav-item"><a class="nav-link" href="product/category">Shorts</a></li>
-                  <li class="nav-item"><a class="nav-link" href="product/category">Coats</a></li>
+                  <li class="nav-item"><a class="nav-link" href="category">New Arrivals</a></li>
+                  <li class="nav-item"><a class="nav-link" href="category">Best Sellers</a></li>
+                  <li class="nav-item"><a class="nav-link" href="category">All Clothing</a></li>
+                  <li class="nav-item"><a class="nav-link" href="category">Dresses</a></li>
+                  <li class="nav-item"><a class="nav-link" href="category">Shirts</a></li>
+                  <li class="nav-item"><a class="nav-link" href="category">Pants</a></li>
+                  <li class="nav-item"><a class="nav-link" href="category">Shorts</a></li>
+                  <li class="nav-item"><a class="nav-link" href="category">Coats</a></li>
                 </ul>
 			  </li>
-			  <li class="nav-item"><a class="nav-link" href="product/category">Man</a></li>
+			  <li class="nav-item"><a class="nav-link" href="category">Man</a></li>
 			  <li class="nav-item active submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Shop Home</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="product/category">Shop All</a></li>
-                  <li class="nav-item"><a class="nav-link" href="product/category">Dining</a></li>
-                  <li class="nav-item"><a class="nav-link" href="product/category">Bedding</a></li>
+                  <li class="nav-item"><a class="nav-link" href="category">Shop All</a></li>
+                  <li class="nav-item"><a class="nav-link" href="category">Dining</a></li>
+                  <li class="nav-item"><a class="nav-link" href="category">Bedding</a></li>
                 </ul>
 			  </li>
             </ul>
             <ul class="nav-shop">
               <li class="nav-item"><button><i class="ti-search"></i></button></li>
-              <li class="nav-item"><a href="mypage/"><button><i class="ti-shopping-cart"></i></button></li></a>
+              <li class="nav-item"><a href="cart"><button><i class="ti-shopping-cart"></i></button></li></a>
               <li class="nav-item"><a class="" href="login">Sign in</a></li>
             </ul>
           </div>
@@ -184,7 +185,7 @@
 							<div class="col-md-6 col-lg-4">
 								<div class="card text-center card-product">
 									<div class="card-product__img">
-										<a href="singleproduct"><img class="card-img" src="../img/product/product1.png" alt=""></a>
+										<a href="singleproduct"><img class="card-img" src="img/product/product1.png" alt=""></a>
 										<ul class="card-product__imgOverlay">
 											<li><button>
 													<i class="ti-shopping-cart"></i>
@@ -206,7 +207,7 @@
 							<div class="col-md-6 col-lg-4">
 								<div class="card text-center card-product">
 									<div class="card-product__img">
-										<img class="card-img" src="../img/product/product2.png" alt="">
+										<img class="card-img" src="img/product/product2.png" alt="">
 										<ul class="card-product__imgOverlay">
 											<li><button>
 													<i class="ti-shopping-cart"></i>
@@ -228,7 +229,7 @@
 							<div class="col-md-6 col-lg-4">
 								<div class="card text-center card-product">
 									<div class="card-product__img">
-										<img class="card-img" src="../img/product/product3.png" alt="">
+										<img class="card-img" src="img/product/product3.png" alt="">
 										<ul class="card-product__imgOverlay">
 											<li><button>
 													<i class="ti-shopping-cart"></i>
@@ -250,7 +251,7 @@
 							<div class="col-md-6 col-lg-4">
 								<div class="card text-center card-product">
 									<div class="card-product__img">
-										<img class="card-img" src="../img/product/product4.png" alt="">
+										<img class="card-img" src="img/product/product4.png" alt="">
 										<ul class="card-product__imgOverlay">
 											<li><button>
 													<i class="ti-shopping-cart"></i>
@@ -272,7 +273,7 @@
 							<div class="col-md-6 col-lg-4">
 								<div class="card text-center card-product">
 									<div class="card-product__img">
-										<img class="card-img" src="../img/product/product5.png" alt="">
+										<img class="card-img" src="img/product/product5.png" alt="">
 										<ul class="card-product__imgOverlay">
 											<li><button>
 													<i class="ti-shopping-cart"></i>
@@ -294,7 +295,7 @@
 							<div class="col-md-6 col-lg-4">
 								<div class="card text-center card-product">
 									<div class="card-product__img">
-										<img class="card-img" src="../img/product/product6.png" alt="">
+										<img class="card-img" src="img/product/product6.png" alt="">
 										<ul class="card-product__imgOverlay">
 											<li><button>
 													<i class="ti-shopping-cart"></i>
@@ -316,7 +317,7 @@
 							<div class="col-md-6 col-lg-4">
 								<div class="card text-center card-product">
 									<div class="card-product__img">
-										<img class="card-img" src="../img/product/product7.png" alt="">
+										<img class="card-img" src="img/product/product7.png" alt="">
 										<ul class="card-product__imgOverlay">
 											<li><button>
 													<i class="ti-shopping-cart"></i>
@@ -338,7 +339,7 @@
 							<div class="col-md-6 col-lg-4">
 								<div class="card text-center card-product">
 									<div class="card-product__img">
-										<img class="card-img" src="../img/product/product8.png" alt="">
+										<img class="card-img" src="img/product/product8.png" alt="">
 										<ul class="card-product__imgOverlay">
 											<li><button>
 													<i class="ti-shopping-cart"></i>
@@ -360,7 +361,7 @@
 							<div class="col-md-6 col-lg-4">
 								<div class="card text-center card-product">
 									<div class="card-product__img">
-										<img class="card-img" src="../img/product/product1.png" alt="">
+										<img class="card-img" src="img/product/product1.png" alt="">
 										<ul class="card-product__imgOverlay">
 											<li><button>
 													<i class="ti-shopping-cart"></i>
@@ -401,47 +402,21 @@
 				<div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
 					<div class="single-search-product-wrapper">
 						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-1.png" alt=""></a>
+							<a href="#"><img src="img/product/product-sm-1.png" alt=""></a>
 							<div class="desc">
 								<a href="#" class="title">Gray Coffee Cup</a>
 								<div class="price">$170.00</div>
 							</div>
 						</div>
 						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-2.png" alt=""></a>
+							<a href="#"><img src="img/product/product-sm-2.png" alt=""></a>
 							<div class="desc">
 								<a href="#" class="title">Gray Coffee Cup</a>
 								<div class="price">$170.00</div>
 							</div>
 						</div>
 						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-3.png" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Gray Coffee Cup</a>
-								<div class="price">$170.00</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
-					<div class="single-search-product-wrapper">
-						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-4.png" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Gray Coffee Cup</a>
-								<div class="price">$170.00</div>
-							</div>
-						</div>
-						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-5.png" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Gray Coffee Cup</a>
-								<div class="price">$170.00</div>
-							</div>
-						</div>
-						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-6.png" alt=""></a>
+							<a href="#"><img src="img/product/product-sm-3.png" alt=""></a>
 							<div class="desc">
 								<a href="#" class="title">Gray Coffee Cup</a>
 								<div class="price">$170.00</div>
@@ -453,21 +428,21 @@
 				<div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
 					<div class="single-search-product-wrapper">
 						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-7.png" alt=""></a>
+							<a href="#"><img src="img/product/product-sm-4.png" alt=""></a>
 							<div class="desc">
 								<a href="#" class="title">Gray Coffee Cup</a>
 								<div class="price">$170.00</div>
 							</div>
 						</div>
 						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-8.png" alt=""></a>
+							<a href="#"><img src="img/product/product-sm-5.png" alt=""></a>
 							<div class="desc">
 								<a href="#" class="title">Gray Coffee Cup</a>
 								<div class="price">$170.00</div>
 							</div>
 						</div>
 						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-9.png" alt=""></a>
+							<a href="#"><img src="img/product/product-sm-6.png" alt=""></a>
 							<div class="desc">
 								<a href="#" class="title">Gray Coffee Cup</a>
 								<div class="price">$170.00</div>
@@ -479,21 +454,47 @@
 				<div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
 					<div class="single-search-product-wrapper">
 						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-1.png" alt=""></a>
+							<a href="#"><img src="img/product/product-sm-7.png" alt=""></a>
 							<div class="desc">
 								<a href="#" class="title">Gray Coffee Cup</a>
 								<div class="price">$170.00</div>
 							</div>
 						</div>
 						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-2.png" alt=""></a>
+							<a href="#"><img src="img/product/product-sm-8.png" alt=""></a>
 							<div class="desc">
 								<a href="#" class="title">Gray Coffee Cup</a>
 								<div class="price">$170.00</div>
 							</div>
 						</div>
 						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-3.png" alt=""></a>
+							<a href="#"><img src="img/product/product-sm-9.png" alt=""></a>
+							<div class="desc">
+								<a href="#" class="title">Gray Coffee Cup</a>
+								<div class="price">$170.00</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
+					<div class="single-search-product-wrapper">
+						<div class="single-search-product d-flex">
+							<a href="#"><img src="img/product/product-sm-1.png" alt=""></a>
+							<div class="desc">
+								<a href="#" class="title">Gray Coffee Cup</a>
+								<div class="price">$170.00</div>
+							</div>
+						</div>
+						<div class="single-search-product d-flex">
+							<a href="#"><img src="img/product/product-sm-2.png" alt=""></a>
+							<div class="desc">
+								<a href="#" class="title">Gray Coffee Cup</a>
+								<div class="price">$170.00</div>
+							</div>
+						</div>
+						<div class="single-search-product d-flex">
+							<a href="#"><img src="img/product/product-sm-3.png" alt=""></a>
 							<div class="desc">
 								<a href="#" class="title">Gray Coffee Cup</a>
 								<div class="price">$170.00</div>
@@ -505,76 +506,18 @@
 		</div>
 	</section>
 	<!-- ================ top product area end ================= -->
+<%@ include file="../footer.jsp" %>
 
-
-	<!--================ Start footer Area  =================-->
-	<footer>
-		<div class="footer-area">
-			<div class="container">
-				<div class="row section_gap">
-					<div class="col-lg-3 col-md-6 col-sm-6">
-						<div class="single-footer-widget tp_widgets">
-							<h4 class="footer_title large_title">Our Purpose</h4>
-							<p>An intuitive and convenient shopping mall</p>
-							<p>For consumers, we have strengthened their product choices and introduced convenient functions.</p>
-							<p>For administrator, intuitive indicators are available.</p>
-						</div>
-					</div>
-					<div class="offset-lg-1 col-lg-2 col-md-6 col-sm-6">
-						<div class="single-footer-widget tp_widgets">
-							<h4 class="footer_title">Quick Links</h4>
-							<ul class="list">
-								<li><a href="#">My Page</a></li>
-								<li><a href="#">Wish List</a></li>
-								<li><a href="#">Cart</a></li>
-								<li><a href="#">Search</a></li>
-								<li><a href="#">Top</a></li>
-								<li><a href="#">Bottom</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="offset-lg-1 col-lg-3 col-md-6 col-sm-6">
-						<div class="single-footer-widget tp_widgets">
-							<h4 class="footer_title">Contact Us</h4>
-							<div class="ml-40">
-								<p class="sm-head">
-									<span class="fa fa-location-arrow"></span> Head Office
-								</p>
-								<p>27, Digital-ro 34-gil, Guro-gu, Seoul, Republic of Korea</p>
-
-								<p class="sm-head">
-									<span class="fa fa-phone"></span> Phone Number
-								</p>
-								<p>
-									010 1234 5678 <br> 010 1234 5678 
-								</p>
-
-								<p class="sm-head">
-									<span class="fa fa-envelope"></span> Email
-								</p>
-								<p>
-									1234@gmail.com <br> 1234@gmail.com
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!--================ End footer Area  =================-->
-
-
-
-	<script src="../vendors/jquery/jquery-3.2.1.min.js"></script>
-	<script src="../vendors/bootstrap/bootstrap.bundle.min.js"></script>
-	<script src="../vendors/skrollr.min.js"></script>
-	<script src="../vendors/owl-carousel/owl.carousel.min.js"></script>
-	<script src="../vendors/nice-select/jquery.nice-select.min.js"></script>
-	<script src="../vendors/nouislider/nouislider.min.js"></script>
-	<script src="../vendors/jquery.ajaxchimp.min.js"></script>
-	<script src="../vendors/mail-script.js"></script>
-	<script src="../js/main.js"></script>
+	
+	<script src="vendors/jquery/jquery-3.2.1.min.js"></script>
+	<script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
+	<script src="vendors/skrollr.min.js"></script>
+	<script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+	<script src="vendors/nice-select/jquery.nice-select.min.js"></script>
+	<script src="vendors/nouislider/nouislider.min.js"></script>
+	<script src="vendors/jquery.ajaxchimp.min.js"></script>
+	<script src="vendors/mail-script.js"></script>
+	<script src="js/main.js"></script>
 </body>
 
 <!-- Mirrored from themewagon.github.io/aroma/category.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 30 Jun 2023 06:56:13 GMT -->

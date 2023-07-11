@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class FController {
 
-	@RequestMapping("/index")
+	@RequestMapping("/layout/index")
 	public String index() {
-		return "index";
+		return "layout/index";
 	}
 	@RequestMapping("/mens")
 	public String mens() {
@@ -38,13 +38,13 @@ public class FController {
 	public String cart() {
 		return "cart";
 	}
-	@RequestMapping("/checkout")
+	@RequestMapping("/fayment/checkout")
 	public String checkout() {
-		return "checkout";
+		return "fayment/checkout";
 	}
-	@RequestMapping("/confirmation")
+	@RequestMapping("/fayment/confirmation")
 	public String confirmation() {
-		return "confirmation";
+		return "fayment/confirmation";
 	}
 	@RequestMapping("/login")
 	public String login() {
