@@ -48,14 +48,14 @@
                   <li class="nav-item"><a class="nav-link" href="cart">Shopping Cart</a></li>
                 </ul>
 							</li>
-              <li class="nav-item submenu dropdown">
+<!--               <li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Blog</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a class="nav-link" href="blog">Blog</a></li>
                   <li class="nav-item"><a class="nav-link" href="singleblog">Blog Details</a></li>
                 </ul>
-							</li>
+							</li> -->
 							<li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Pages</a>
@@ -145,7 +145,6 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/product1.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
                   <li><button><i class="ti-shopping-cart"></i></button></li>
                   <li><button><i class="ti-heart"></i></button></li>
                 </ul>
@@ -162,7 +161,6 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/product2.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
                   <li><button><i class="ti-shopping-cart"></i></button></li>
                   <li><button><i class="ti-heart"></i></button></li>
                 </ul>
@@ -179,7 +177,6 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/product3.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
                   <li><button><i class="ti-shopping-cart"></i></button></li>
                   <li><button><i class="ti-heart"></i></button></li>
                 </ul>
@@ -196,7 +193,6 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/product4.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
                   <li><button><i class="ti-shopping-cart"></i></button></li>
                   <li><button><i class="ti-heart"></i></button></li>
                 </ul>
@@ -213,7 +209,6 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/product5.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
                   <li><button><i class="ti-shopping-cart"></i></button></li>
                   <li><button><i class="ti-heart"></i></button></li>
                 </ul>
@@ -230,7 +225,6 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/product6.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
                   <li><button><i class="ti-shopping-cart"></i></button></li>
                   <li><button><i class="ti-heart"></i></button></li>
                 </ul>
@@ -247,7 +241,6 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/product7.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
                   <li><button><i class="ti-shopping-cart"></i></button></li>
                   <li><button><i class="ti-heart"></i></button></li>
                 </ul>
@@ -264,7 +257,6 @@
               <div class="card-product__img">
                 <img class="card-img" src="img/product/product8.png" alt="">
                 <ul class="card-product__imgOverlay">
-                  <li><button><i class="ti-search"></i></button></li>
                   <li><button><i class="ti-shopping-cart"></i></button></li>
                   <li><button><i class="ti-heart"></i></button></li>
                 </ul>
@@ -311,7 +303,6 @@
             <div class="card-product__img">
               <img class="img-fluid" src="img/product/product1.png" alt="">
               <ul class="card-product__imgOverlay">
-                <li><button><i class="ti-search"></i></button></li>
                 <li><button><i class="ti-shopping-cart"></i></button></li>
                 <li><button><i class="ti-heart"></i></button></li>
               </ul>
@@ -327,7 +318,6 @@
             <div class="card-product__img">
               <img class="img-fluid" src="img/product/product2.png" alt="">
               <ul class="card-product__imgOverlay">
-                <li><button><i class="ti-search"></i></button></li>
                 <li><button><i class="ti-shopping-cart"></i></button></li>
                 <li><button><i class="ti-heart"></i></button></li>
               </ul>
@@ -343,7 +333,6 @@
             <div class="card-product__img">
               <img class="img-fluid" src="img/product/product3.png" alt="">
               <ul class="card-product__imgOverlay">
-                <li><button><i class="ti-search"></i></button></li>
                 <li><button><i class="ti-shopping-cart"></i></button></li>
                 <li><button><i class="ti-heart"></i></button></li>
               </ul>
@@ -359,7 +348,6 @@
             <div class="card-product__img">
               <img class="img-fluid" src="img/product/product4.png" alt="">
               <ul class="card-product__imgOverlay">
-                <li><button><i class="ti-search"></i></button></li>
                 <li><button><i class="ti-shopping-cart"></i></button></li>
                 <li><button><i class="ti-heart"></i></button></li>
               </ul>
@@ -375,7 +363,6 @@
             <div class="card-product__img">
               <img class="img-fluid" src="img/product/product1.png" alt="">
               <ul class="card-product__imgOverlay">
-                <li><button><i class="ti-search"></i></button></li>
                 <li><button><i class="ti-shopping-cart"></i></button></li>
                 <li><button><i class="ti-heart"></i></button></li>
               </ul>
@@ -391,7 +378,6 @@
             <div class="card-product__img">
               <img class="img-fluid" src="img/product/product2.png" alt="">
               <ul class="card-product__imgOverlay">
-                <li><button><i class="ti-search"></i></button></li>
                 <li><button><i class="ti-shopping-cart"></i></button></li>
                 <li><button><i class="ti-heart"></i></button></li>
               </ul>
@@ -407,7 +393,6 @@
             <div class="card-product__img">
               <img class="img-fluid" src="img/product/product3.png" alt="">
               <ul class="card-product__imgOverlay">
-                <li><button><i class="ti-search"></i></button></li>
                 <li><button><i class="ti-shopping-cart"></i></button></li>
                 <li><button><i class="ti-heart"></i></button></li>
               </ul>
@@ -423,7 +408,6 @@
             <div class="card-product__img">
               <img class="img-fluid" src="img/product/product4.png" alt="">
               <ul class="card-product__imgOverlay">
-                <li><button><i class="ti-search"></i></button></li>
                 <li><button><i class="ti-shopping-cart"></i></button></li>
                 <li><button><i class="ti-heart"></i></button></li>
               </ul>
