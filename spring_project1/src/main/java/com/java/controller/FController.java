@@ -6,38 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class FController {
 
-	@RequestMapping("/layout/index")
-	public String index() {
-		return "layout/index";
-	}
-	@RequestMapping("/mens")
-	public String mens() {
-		return "mens";
-	}
-	@RequestMapping("/test")
-	public String test() {
-		return "test";
-	}
-	@RequestMapping("/project")
-	public String project() {
-		return "project";
-	}
-	@RequestMapping("/category")
-	public String category() {
-		return "category";
-	}
-	@RequestMapping("/blog")
-	public String blog() {
-		return "blog";
-	}
-	@RequestMapping("/blogdetails")
-	public String blogdetails() {
-		return "blogdetails";
-	}
-	@RequestMapping("/cart")
-	public String cart() {
-		return "cart";
-	}
 	@RequestMapping("/fayment/checkout")
 	public String checkout() {
 		return "fayment/checkout";
@@ -46,32 +14,28 @@ public class FController {
 	public String confirmation() {
 		return "fayment/confirmation";
 	}
-	@RequestMapping("/login")
+	@RequestMapping("/layout/index")
+	public String index() {
+		return "layout/index";
+	}
+	@RequestMapping("/member/login")
 	public String login() {
-		return "login";
+		return "member/login";
 	}
-	@RequestMapping("/contact")
-	public String contact() {
-		return "contact";
-	}
-	@RequestMapping("/main")
-	public String main() {
-		return "main";
-	}
-	@RequestMapping("/register")
+	@RequestMapping("/member/register")
 	public String register() {
-		return "register";
+		return "member/register";
 	}
-	@RequestMapping("/singleblog")
-	public String singleblog() {
-		return "singleblog";
+	@RequestMapping("/mypage/cart")
+	public String cart() {
+		return "mypage/cart";
 	}
-	@RequestMapping("/singleproduct")
+	@RequestMapping("/product/category")
+	public String category() {
+		return "/product/category";
+	}
+	@RequestMapping("/product/singleproduct")
 	public String singleproduct() {
-		return "singleproduct";
-	}
-	@RequestMapping("/trackingorder")
-	public String trackingorder() {
-		return "trackingorder";
+		return "product/singleproduct";
 	}
 }
