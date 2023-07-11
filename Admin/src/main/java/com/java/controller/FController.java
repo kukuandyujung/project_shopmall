@@ -8,248 +8,183 @@ public class FController {
 
 	
 	
-	@RequestMapping("/calender")
-	public String calender() {
-		
-		return "calender";
-	}
-	
-	@RequestMapping("/chartjs")
+	@RequestMapping("/admin/chartjs")
 	public String chartjs() {
 		
-		return "chartjs";
+		return "admin/chartjs";
 	}
-	@RequestMapping("/chartjs2")
+	@RequestMapping("/admin/chartjs2")
 	public String chartjs2() {
 		
-		return "chartjs2";
+		return "admin/chartjs2";
 	}
 	
-	@RequestMapping("/contacts")
-	public String contacts() {
-		
-		return "contacts";
-	}
 	
-	@RequestMapping("/e_commerce")
-	public String e_commerce() {
-		
-		return "e_commerce";
-	}
-	
-	@RequestMapping("/echarts")
+	@RequestMapping("/admin/echarts")
 	public String echarts() {
 		
-		return "echarts";
+		return "admin/echarts";
 	}
 	
-	@RequestMapping("/fixed_footer")
-	public String fixed_footer() {
-		
-		return "fixed_footer";
-	}
 	
-	@RequestMapping("/fixed_sidebar")
-	public String fixed_sidebar() {
-		
-		return "fixed_sidebar";
-	}
-	
-	@RequestMapping("/form_advanced")
-	public String form_advanced() {
-		
-		return "form_advanced";
-	}
-	
-	@RequestMapping("/form_buttons")
+	@RequestMapping("/admin/form_buttons")
 	public String form_buttons() {
 		
-		return "form_buttons";
+		return "admin/form_buttons";
 	}
 	
 	
-	@RequestMapping("/form_upload")
+	@RequestMapping("/admin/form_upload")
 	public String form_upload() {
 		
-		return "form_upload";
+		return "admin/form_upload";
 	}
 	
-	@RequestMapping("/form_validation")
+	@RequestMapping("/admin/form_validation")
 	public String form_validation() {
 		
-		return "form_validation";
+		return "admin/form_validation";
 	}
 	
-	@RequestMapping("/form_wizards")
+	@RequestMapping("/admin/form_wizards")
 	public String form_wizards() {
 		
-		return "form_wizards";
+		return "admin/form_wizards";
 	}
 	
-	@RequestMapping("/form")
+	@RequestMapping("/admin/form")
 	public String form() {
 		
-		return "form";
+		return "admin/form";
 	}
 	
-	@RequestMapping("/general_elements")
+	@RequestMapping("/admin/general_elements")
 	public String general_elements() {
 		
-		return "general_elements";
+		return "admin/general_elements";
 	}
 	
-	@RequestMapping("/glyphicons")
+	@RequestMapping("/admin/glyphicons")
 	public String glyphicons() {
 		
-		return "glyphicons";
+		return "admin/glyphicons";
 	}
 	
-	@RequestMapping("/icons")
+	@RequestMapping("/admin/icons")
 	public String icons() {
 		
-		return "icons";
+		return "admin/icons";
 	}
 	
-	@RequestMapping("/inbox")
-	public String inbox() {
-		
-		return "inbox";
-	}
 	
-	@RequestMapping("/index")
+	@RequestMapping("/admin/index")
 	public String index() {
 		
-		return "index";
+		return "admin/index";
 	}
 	
-	@RequestMapping("/index2")
+	@RequestMapping("/admin/index2")
 	public String index2() {
 		
-		return "index2";
+		return "admin/index2";
 	}
 	
-	@RequestMapping("/index3")
+	@RequestMapping("/admin/index3")
 	public String index3() {
 		
-		return "index3";
+		return "admin/index3";
 	}
 	
-	@RequestMapping("/invoice")
-	public String invoice() {
-		
-		return "invoice";
-	}
 	
-	@RequestMapping("/level2")
-	public String level2() {
-		
-		return "level2";
-	}
-	
-	@RequestMapping("/login")
+	@RequestMapping("/admin/login")
 	public String login() {
 		
-		return "login";
+		return "admin/login";
 	}
 	
-	@RequestMapping("/map")
+	@RequestMapping("/admin/map")
 	public String map() {
 		
-		return "map";
+		return "admin/map";
 	}
 	
-	@RequestMapping("/media_gallery")
+	@RequestMapping("/admin/media_gallery")
 	public String media_gallery() {
 		
-		return "media_gallery";
+		return "admin/media_gallery";
 	}
 	
-	@RequestMapping("/morisjs")
+	@RequestMapping("/admin/morisjs")
 	public String morisjs() {
 		
-		return "morisjs";
+		return "admin/morisjs";
 	}
 	
-	@RequestMapping("/other_charts")
-	public String other_charts() {
-		
-		return "other_charts";
-	}
-	
-	@RequestMapping("/page_403")
+	@RequestMapping("/admin/page_403")
 	public String page_403() {
 		
-		return "page_403";
+		return "admin/page_403";
 	}
 	
-	@RequestMapping("/page_404")
+	@RequestMapping("/admin/page_404")
 	public String page_404() {
 		
-		return "page_404";
+		return "admin/page_404";
 	}
 	
-	@RequestMapping("/page_500")
+	@RequestMapping("/admin/page_500")
 	public String page_500() {
 		
-		return "page_500";
+		return "admin/page_500";
 	}
 	
-	@RequestMapping("/plain_page")
-	public String plain_page() {
-		
-		return "plain_page";
-	}
-	@RequestMapping("/pricing_tables")
+	@RequestMapping("/admin/pricing_tables")
 	public String pricing_tables() {
 		
-		return "pricing_tables";
+		return "admin/pricing_tables";
 	}
 	
-	@RequestMapping("/profile")
+	@RequestMapping("/admin/profile")
 	public String profile() {
 		
-		return "profile";
+		return "admin/profile";
 	}
 	
-	@RequestMapping("/project_detail")
+	@RequestMapping("/admin/project_detail")
 	public String project_detail() {
 		
-		return "project_detail";
+		return "admin/project_detail";
 	}
 	
-	@RequestMapping("/projects")
+	@RequestMapping("/admin/projects")
 	public String projects() {
 		
-		return "projects";
+		return "admin/projects";
 	}
 	
-	@RequestMapping("/tables_dynamic")
+	@RequestMapping("/admin/tables_dynamic")
 	public String tables_dynamic() {
 		
-		return "tables_dynamic";
+		return "admin/tables_dynamic";
 	}
 	
-	@RequestMapping("/tables")
+	@RequestMapping("/admin/tables")
 	public String tables() {
 		
-		return "tables";
+		return "admin/tables";
 	}
-	@RequestMapping("/typography")
-	public String typography() {
-		
-		return "typography";
-	}
+
 	
-	@RequestMapping("/widgets")
+	@RequestMapping("/admin/widgets")
 	public String widgets() {
 		
-		return "widgets";
+		return "admin/widgets";
 	}
 	
-	@RequestMapping("/xx")
+	@RequestMapping("/admin/xx")
 	public String xx() {
 		
-		return "xx";
+		return "admin/xx";
 	}
 	
 	
