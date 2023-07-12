@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class FController {
 
-	@RequestMapping("/fayment/checkout")
+	@RequestMapping("/payment/checkout")
 	public String checkout() {
-		return "fayment/checkout";
+		return "payment/checkout";
 	}
-	@RequestMapping("/fayment/confirmation")
+	@RequestMapping("/payment/confirmation")
 	public String confirmation() {
-		return "fayment/confirmation";
+		return "payment/confirmation";
 	}
 	@RequestMapping("/layout/index")
 	public String index() {
