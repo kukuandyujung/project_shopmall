@@ -38,4 +38,8 @@ public class FController {
 	public String singleproduct() {
 		return "product/singleproduct";
 	}
+	@RequestMapping("/mypage/wishlist")
+	public String wishlist() {
+		return "mypage/wishlist";
+	}
 }
