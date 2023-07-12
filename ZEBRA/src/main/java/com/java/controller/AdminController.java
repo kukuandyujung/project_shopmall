@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -19,28 +20,42 @@ public class AdminController {
 	@Autowired HttpSession session;
 	
 	
-	
-	@RequestMapping("/admin/login")
-	public String login() {
-		
-		return "admin/login";
+	@RequestMapping("/admin/index")
+	public String index(String loginCheck, Model model) {
+		model.addAttribute("loginCheck", loginCheck); //로그인 성공 여부 
+		return "admin/index";
 	}
 	
+	@GetMapping("/admin/login")
+	public String login() {
+		
+		return "admim/login";
+	}
 	
 	@PostMapping("/admin/login")
-	public String  login2(AdminDto adminDto, Model model) {
+	public String login(AdminDto adminDto, Model model) {
+
 		System.out.println("AdminDto 1 : "+ adminDto.getId());
 		System.out.println("AdminDto 2 : "+ adminDto.getPw());
 		AdminDto adto = adminService.selectLogin(adminDto);
 		if(adto!=null) {
 			session.setAttribute("sessionId", adto.getId());
+			session.setAttribute("sessionName", adto.getName());
+			model.addAttribute("loginCheck", "success");
 		}else {
 			model.addAttribute("loginCheck", "fail");
-			return "/admin/login";
+			return "admin/login";
 		}
 		
-		return "redirect:/index?loginCheck=success";
+		return "redirect:/admin/index?loginCheck=success";
 	}
+	
+	@RequestMapping("/logout")
+	public String  logout() {	
+		session.invalidate(); //session 모두 삭제 
+		return "redirect:/admin/index";
+	}
+
 	
 	
 	
@@ -112,13 +127,7 @@ public class AdminController {
 		return "admin/icons";
 	}
 	
-	
-	@RequestMapping("/admin/index")
-	public String index() {
-		
-		return "admin/index";
-	}
-	
+
 	@RequestMapping("/admin/index2")
 	public String index2() {
 		
