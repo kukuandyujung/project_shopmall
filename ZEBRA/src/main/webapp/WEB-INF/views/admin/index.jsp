@@ -69,43 +69,45 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-          <!-- top tiles -->
+          <div class="">
+            <!-- top tiles -->
           <div class="row" style="display: inline-block;" >
           <div class="tile_count">
             <div class="col-md-2 col-sm-4  tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> Total Users</span>
+              <span class="count_top"><i class="fa fa-user"></i> 총 회원수</span>
               <div class="count">2500</div>
-              <span class="count_bottom"><i class="green">4% </i> From last Week</span>
+              <span class="count_bottom"><i class="green">4% </i> 지난 달 대비</span>
             </div>
             <div class="col-md-2 col-sm-4  tile_stats_count">
-              <span class="count_top"><i class="fa fa-clock-o"></i> Average Time</span>
-              <div class="count">123.50</div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
-            </div>
-            <div class="col-md-2 col-sm-4  tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> Total Males</span>
+              <span class="count_top"><i class="fa fa-user"></i> 총 남자 회원수</span>
               <div class="count green">2,500</div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> 지난 달 대비</span>
             </div>
             <div class="col-md-2 col-sm-4  tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> Total Females</span>
+              <span class="count_top"><i class="fa fa-user"></i> 총 여자 회원수</span>
               <div class="count">4,567</div>
-              <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> From last Week</span>
+              <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> 지난 달 대비</span>
             </div>
             <div class="col-md-2 col-sm-4  tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> Total Collections</span>
+              <span class="count_top"><i class="fa fa-user"></i> 총 상품수</span>
               <div class="count">2,315</div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> 지난 달 대비</span>
             </div>
             <div class="col-md-2 col-sm-4  tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> Total Connections</span>
+              <span class="count_top"><i class="fa fa-user"></i> 총 매출액</span>
               <div class="count">7,325</div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> 지난 달 대비</span>
             </div>
+            <div class="col-md-2 col-sm-4  tile_stats_count">
+              <span class="count_top"><i class="fa fa-clock-o"></i> 총 구매수</span>
+              <div class="count">123.50</div>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> 지난 달 대비</span>
+            </div>
+           
           </div>
         </div>
+        
           <!-- /top tiles -->
-
           <div class="row">
             <div class="col-md-12 col-sm-12 ">
               <div class="dashboard_graph">
@@ -123,52 +125,151 @@
                 </div>
 
                 <div class="col-md-9 col-sm-9 ">
-                  <div id="chart_plot_01" class="demo-placeholder"></div>
+                  
+            <div> <!-- Chart.js 그래프 시작 -->
+			  <canvas width="300" height="400" id="myChart"></canvas>	
+			</div>						
+			<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>			
+			<script>
+			  const ctx = document.getElementById('myChart');					
+			  new Chart(ctx, {
+			    data: {
+			      labels: ['3월', '4월', '5월', '6월', '7월', '8월'],
+			      datasets: [{
+			    	type: 'bar',
+			        label: '바 데이터',
+			        backgroundColor: [
+			        	'rgba(255, 0, 0, 0.1)',     // Red, 컬러 세기 0.1
+			            'rgba(0, 0, 255, 0.1)',     // Blue, 컬러 세기 0.1
+			            'rgba(255, 255, 0, 0.1)',   // Yellow, 컬러 세기 0.1
+			            'rgba(0, 128, 0, 0.1)',     // Green, 컬러 세기 0.1
+			            'rgba(128, 0, 128, 0.1)',   // Purple, 컬러 세기 0.1
+			            'rgba(255, 165, 0, 0.1)'    // Orange, 컬러 세기 0.1			        	
+			        ], 
+			        data: [12, 19, 3, 5, 2, 3],
+			        borderWidth: 1,
+			        pointBackgroundColor: 'transparent', // 점의 색상을 투명으로 설정
+			        fill: {
+			            target: 'origin',
+			            above: 'rgba(26, 187, 150, 0.1)' // 흐릿한 배경 컬러 설정
+			        }
+			      },
+			      {
+			          type: 'line', // 라인 그래프 데이터셋
+			          label: '라인 데이터',
+			          backgroundColor: "rgba(26, 187, 156, 0.5)",
+			          data: [12, 19, 3, 5, 2, 3], // 라인 그래프 데이터
+			          borderColor: 'rgba(26, 187, 156, 0.5)', // 라인 색상 설정
+			          borderWidth: 2,
+			          fill: false, // 라인 그래프 내부를 채우지 않음
+			          tension: 0.3,
+			          pointRadius: 5, // 점의 반지름 설정
+			          pointStyle: 'rectRot' // 점 모양을 별로 설정
+			      } // 라인 그래프
+			      ] // datasets
+			    },
+			    options: {
+			    	maintainAspectRatio: false,
+			      scales: {
+			        x: { // x축 스케일에 대한 설정 추가
+			              grid: {
+			                drawOnChartArea: false // 그래프 영역 아래에 그리드 라인이 표시되지 않도록 설정
+			              },
+			           },
+			        y: {
+			        	 display: false,
+			             beginAtZero: true
+			           }
+			        },
+			        plugins: {
+			            filler: { // 그래프 아래에 흐릿한 배경 컬러 적용
+			              propagate: true
+			        	}
+			      }
+			    }
+			  });
+			</script> <!-- Chart.js 그래프 끝 -->
+                  
                 </div>
-                <div class="col-md-3 col-sm-3  bg-white">
-                  <div class="x_title">
-                    <h2>Top Campaign Performance</h2>
-                    <div class="clearfix"></div>
-                  </div>
-
-                  <div class="col-md-12 col-sm-12 ">
-                    <div>
-                      <p>Facebook Campaign</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 76%;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="80"></div>
+                
+                <div class="col-md-3 col-sm-3 ">
+                      <div>
+                        <div class="x_title">
+                          <h2>Top Profiles</h2>
+                          <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                  <a class="dropdown-item" href="#">Settings 1</a>
+                                  <a class="dropdown-item" href="#">Settings 2</a>
+                                </div>
+                            </li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                          </ul>
+                          <div class="clearfix"></div>
                         </div>
+                        <ul class="list-unstyled top_profiles scroll-view">
+                          <li class="media event">
+                            <a class="pull-left border-aero profile_thumb">
+                              <i class="fa fa-user aero"></i>
+                            </a>
+                            <div class="media-body">
+                              <a class="title" href="#">Ms. Mary Jane</a>
+                              <p><strong>$2300. </strong> Agent Avarage Sales </p>
+                              <p> <small>12 Sales Today</small>
+                              </p>
+                            </div>
+                          </li>
+                          <li class="media event">
+                            <a class="pull-left border-green profile_thumb">
+                              <i class="fa fa-user green"></i>
+                            </a>
+                            <div class="media-body">
+                              <a class="title" href="#">Ms. Mary Jane</a>
+                              <p><strong>$2300. </strong> Agent Avarage Sales </p>
+                              <p> <small>12 Sales Today</small>
+                              </p>
+                            </div>
+                          </li>
+                          <li class="media event">
+                            <a class="pull-left border-blue profile_thumb">
+                              <i class="fa fa-user blue"></i>
+                            </a>
+                            <div class="media-body">
+                              <a class="title" href="#">Ms. Mary Jane</a>
+                              <p><strong>$2300. </strong> Agent Avarage Sales </p>
+                              <p> <small>12 Sales Today</small>
+                              </p>
+                            </div>
+                          </li>
+                          <li class="media event">
+                            <a class="pull-left border-aero profile_thumb">
+                              <i class="fa fa-user aero"></i>
+                            </a>
+                            <div class="media-body">
+                              <a class="title" href="#">Ms. Mary Jane</a>
+                              <p><strong>$2300. </strong> Agent Avarage Sales </p>
+                              <p> <small>12 Sales Today</small>
+                              </p>
+                            </div>
+                          </li>
+                          <li class="media event">
+                            <a class="pull-left border-green profile_thumb">
+                              <i class="fa fa-user green"></i>
+                            </a>
+                            <div class="media-body">
+                              <a class="title" href="#">Ms. Mary Jane</a>
+                              <p><strong>$2300. </strong> Agent Avarage Sales </p>
+                              <p> <small>12 Sales Today</small>
+                              </p>
+                            </div>
+                          </li>
+                        </ul>
                       </div>
                     </div>
-                    <div>
-                      <p>Twitter Campaign</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 76%;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-12 col-sm-12 ">
-                    <div>
-                      <p>Conventional Media</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 76%;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <p>Bill boards</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 76%;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
 
                 <div class="clearfix"></div>
               </div>

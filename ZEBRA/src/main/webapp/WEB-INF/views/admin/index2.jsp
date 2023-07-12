@@ -51,8 +51,11 @@
             <br />
 
            <%@ include file="common_code.jsp" %>
+
+          
           </div>
         </div>
+
       <%@ include file="top_common.jsp" %>
       
         <!-- page content -->
@@ -97,32 +100,38 @@
           <!-- /top tiles -->
 
             <div class="row">
-              <div class="col-md-12">
+              <div class="col-md-9">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>매출 현황 <small>Monthly progress</small></h2>                    
+                    <h2>매출 현황 <small>Monthly progress</small></h2>  
                     <div class="clearfix"></div>
                   </div>
-                  <div class="x_content">
-                    <div class="col-md-9 col-sm-12 ">
+                  <div class="x_content" >
+                    <div class="col-md-12 col-sm-12" >
                       <div class="demo-container" style="height:280px">
                       	
 			<div> <!-- Chart.js 그래프 시작 -->
-			  <canvas width="0" height="287" id="myChart"></canvas>
-			</div>					
-			<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>					
+			  <canvas width="300" height="290px" id="myChart"></canvas>	
+			</div>						
+			<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>			
 			<script>
 			  const ctx = document.getElementById('myChart');					
 			  new Chart(ctx, {
-			    type: 'line',
+			    type: 'bar',
 			    data: {
-			      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+			      labels: ['3월', '4월', '5월', '6월', '7월', '8월'],
 			      datasets: [{
 			        label: '월별 매출액',
-		            backgroundColor: 'rgba(26, 187, 156)', // legend 색상 채우기
+			        backgroundColor: [
+			        	'rgba(255, 0, 0, 0.1)',     // Red, 컬러 세기 0.1
+			            'rgba(0, 0, 255, 0.1)',     // Blue, 컬러 세기 0.1
+			            'rgba(255, 255, 0, 0.1)',   // Yellow, 컬러 세기 0.1
+			            'rgba(0, 128, 0, 0.1)',     // Green, 컬러 세기 0.1
+			            'rgba(128, 0, 128, 0.1)',   // Purple, 컬러 세기 0.1
+			            'rgba(255, 165, 0, 0.1)'    // Orange, 컬러 세기 0.1			        	
+			        ], 
 			        data: [12, 19, 3, 5, 2, 3],
 			        borderWidth: 1,
-			        borderColor: 'rgba(26, 187, 156)',
 			        pointBackgroundColor: 'transparent', // 점의 색상을 투명으로 설정
 			        fill: {
 			            target: 'origin',
@@ -147,46 +156,35 @@
 			              propagate: true
 			        	},
 		        	    legend: {
-		                    onClick: null
+		        	    	display: false // legend를 숨기는 설정
 		                }
 			      }
 			    }
 			  });
 			</script> <!-- Chart.js 그래프 끝 -->
-                        
                       </div>
-                      <div class="tiles">
-                        <div class="col-md-4 tile">
-                          <span>이번 달 고객의 총 구매액</span>
-                          <h2>231,809</h2>
-                          <span class="sparkline11 graph" style="height: 160px;">
-                               <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
-                          </span>
-                        </div>
-                        <div class="col-md-4 tile">
-                          <span>이번 달 고객의 평균 구매액</span>
-                          <h2>$231,809</h2>
-                          <span class="sparkline22 graph" style="height: 160px;">
-                                <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
-                          </span>
-                        </div>
-                        <div class="col-md-4 tile">
-                          <span>이번 달 고객의 구매 횟수</span>
-                          <h2>231,809</h2>
-                          <span class="sparkline11 graph" style="height: 160px;">
-                                 <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
-                          </span>
-                        </div>
-                      </div>
+                  </div>
+              </div>
+            </div>
 
                     </div>
 
-                    <div class="col-md-3 col-sm-12 ">
+                    <div class="col-md-3 col-sm-3 ">
                       <div>
                         <div class="x_title">
-                          <h2>이번 달 최고 구매 고객</h2>
+                          <h2>Top Profiles</h2>
                           <ul class="nav navbar-right panel_toolbox">
-                            
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                  <a class="dropdown-item" href="#">Settings 1</a>
+                                  <a class="dropdown-item" href="#">Settings 2</a>
+                                </div>
+                            </li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
                           </ul>
                           <div class="clearfix"></div>
                         </div>
@@ -249,7 +247,57 @@
                         </ul>
                       </div>
                     </div>
+                  </div>
 
+
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Weekly Summary <small>Activity shares</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Settings 1</a>
+                            <a class="dropdown-item" href="#">Settings 2</a>
+                          </div>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+                    <div class="row" style="border-bottom: 1px solid #E0E0E0; padding-bottom: 5px; margin-bottom: 5px;">
+                      <div class="col-md-7" style="overflow:hidden;">
+                        <span class="sparkline_one" style="height: 160px; padding: 10px 25px;">
+                                      <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                                  </span>
+                        <h4 style="margin:18px">Weekly sales progress</h4>
+                      </div>
+
+                      <div class="col-md-5">
+                        <div class="row" style="text-align: center;">
+                          <div class="col-md-4">
+                            <canvas class="canvasDoughnut" height="110" width="110" style="margin: 5px 10px 10px 0"></canvas>
+                            <h4 style="margin:0">Bounce Rates</h4>
+                          </div>
+                          <div class="col-md-4">
+                            <canvas class="canvasDoughnut" height="110" width="110" style="margin: 5px 10px 10px 0"></canvas>
+                            <h4 style="margin:0">New Traffic</h4>
+                          </div>
+                          <div class="col-md-4">
+                            <canvas class="canvasDoughnut" height="110" width="110" style="margin: 5px 10px 10px 0"></canvas>
+                            <h4 style="margin:0">Device Share</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -257,16 +305,24 @@
 
 
 
-           
-
-
-
             <div class="row">
               <div class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>최고 구매 고객<small>5월</small></h2>
-                    
+                    <h2>Top Profiles <small>Sessions</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Settings 1</a>
+                            <a class="dropdown-item" href="#">Settings 2</a>
+                          </div>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
@@ -327,8 +383,20 @@
               <div class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>최고 구매 고객<small>6월</small></h2>
-                    
+                    <h2>Top Profiles <small>Sessions</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Settings 1</a>
+                            <a class="dropdown-item" href="#">Settings 2</a>
+                          </div>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
@@ -389,8 +457,20 @@
               <div class="col-md-4">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>최고 구매 고객<small>7월</small></h2>
-                    
+                    <h2>Top Profiles <small>Sessions</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Settings 1</a>
+                            <a class="dropdown-item" href="#">Settings 2</a>
+                          </div>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
