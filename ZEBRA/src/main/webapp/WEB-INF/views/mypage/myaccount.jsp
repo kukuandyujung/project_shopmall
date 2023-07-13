@@ -51,9 +51,10 @@
 		<div id="outbox">		
 			<div id="left">
 				<div id="title">MY PAGE<span>마이페이지</span></div>
-				<ul>	
+				<ul>
+					<li><a href="#" id="leftNavi2">주문 내역</a></li>	
 					<li><a href="#" id="leftNavi1">위시리스트</a></li>
-					<li><a href="#" id="leftNavi2">주문 내역</a></li>
+					<li><a href="#" id="leftNavi1">장바구니</a></li>
 					<li><a href="#" id="leftNavi3">내정보수정</a></li>
 				</ul>			
 			</div><script type="text/javascript">initSubmenu(4,0);</script>
