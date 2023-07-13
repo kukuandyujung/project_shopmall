@@ -46,8 +46,12 @@ public class FController {
 	public String payment() {
 		return "payment/payment";
 	}
-	@RequestMapping("/mypage/change_info")
-	public String change_info() {
-		return "mypage/change_info";
+	@RequestMapping("/mypage/myaccount")
+	public String myaccount() {
+		return "mypage/myaccount";
+	}
+	@RequestMapping("/payment/order_confirmation")
+	public String order_confirmation() {
+		return "payment/order_confirmation";
 	}
 }
