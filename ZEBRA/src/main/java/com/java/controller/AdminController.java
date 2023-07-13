@@ -1,5 +1,7 @@
 package com.java.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,13 +11,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.java.dto.AdminDto;
+import com.java.dto.MemberDto;
 import com.java.service.AdminService;
+import com.java.service.MemberService;
 
 @Controller
 public class AdminController {
 
 	
 	@Autowired AdminService adminService;
+	@Autowired MemberService memberService;
 	@Autowired HttpSession session;
 	
 	
@@ -145,9 +150,11 @@ public class AdminController {
 		return "admin/media_gallery";
 	}	
 	
+	// 회원 테이블 전체 가져오기
 	@RequestMapping("/admin/member_table") 
-	public String member_table() {
-		
+	public String member_table(Model model) {
+		ArrayList<MemberDto> list = memberService.selectAll();
+		model.addAttribute("list", list);
 		return "admin/member_table";
 	}
 	
