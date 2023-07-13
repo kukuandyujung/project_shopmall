@@ -5,6 +5,7 @@
 <html>
 <head>
 <title> ZEBRA </title>
+<link rel="icon" href="../img/logo2.png" type="image/png">
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <link rel="stylesheet" type="text/css" href="../css/reset.css?v=Y" />
@@ -30,6 +31,17 @@
 </head>
 <body>
 <%@ include file="../top.jsp"%>
+	<!-- ================ start banner area ================= -->	
+	<section class="blog-banner-area" id="category">
+		<div class="container h-100">
+			<div class="blog-banner">
+				<div class="text-center">
+					<h1>Wish List</h1>
+				</div>
+			</div>
+    </div>
+	</section>
+	<!-- ================ end banner area ================= -->
 <div id="allwrap">
 <div id="wrap">
 
@@ -42,7 +54,7 @@
 				<ul>	
 					<li><a href="#" id="leftNavi1">위시리스트</a></li>
 					<li><a href="#" id="leftNavi2">주문 내역</a></li>
-					<li><a href="#" id="leftNavi3">ACCOUNT</a></li>
+					<li><a href="#" id="leftNavi3">내정보수정</a></li>
 				</ul>			
 			</div><script type="text/javascript">initSubmenu(4,0);</script>
 
@@ -50,9 +62,6 @@
 			<!-- contents -->
 			<div id="contents">
 				<div id="mypage">
-					<h2><strong>위시리스트</strong><span>위시리스트에 담긴 상품을 확인해보세요.</span></h2>
-					
-						<br>
 				<!-- 장바구니에 상품이 있을경우 -->
 					<!-- 장바구니 상품 -->
 					<h3>위시리스트에 담긴 상품</h3>
