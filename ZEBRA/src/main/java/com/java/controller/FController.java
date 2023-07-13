@@ -30,14 +30,6 @@ public class FController {
 	public String cart() {
 		return "mypage/cart";
 	}
-	@RequestMapping("/product/category")
-	public String category() {
-		return "/product/category";
-	}
-	@RequestMapping("/product/singleproduct")
-	public String singleproduct() {
-		return "product/singleproduct";
-	}
 	@RequestMapping("/mypage/wishlist")
 	public String wishlist() {
 		return "mypage/wishlist";
@@ -53,5 +45,13 @@ public class FController {
 	@RequestMapping("/mypage/ordercheck")
 	public String ordercheck() {
 		return "mypage/ordercheck";
+	}
+	@RequestMapping("/product/category")
+	public String category() {
+		return "product/category";
+	}
+	@RequestMapping("/product/singleproduct")
+	public String singleproduct() {
+		return "product/singleproduct";
 	}
 }
