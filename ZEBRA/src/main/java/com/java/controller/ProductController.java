@@ -26,8 +26,18 @@ public class ProductController {
 		return "admin/product_list";
 	}
 	
+	//상품 1개 가져오기 
+	@RequestMapping("/admin/product_view")
+	public String product_view(int pno, Model model) {
+		//상품 1개 가져오기 
+		ProductDto pdto = productService.selectOne(pno);
+		model.addAttribute("pdto", pdto);
+		return "admin/product_view";
+	}
+	
+	//상품 등록하기 
 	@RequestMapping("/admin/product_write")
-	public String write() {
+	public String product_write() {
 		
 		return "admin/product_write";
 	}

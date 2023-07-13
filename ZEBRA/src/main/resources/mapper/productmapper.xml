@@ -8,4 +8,8 @@
 <select id="selectAll" resultType="com.java.dto.ProductDto">
 	select * from product order by pno asc
 </select>
+<!-- 상품 1개 가져오기 -->
+<select id="selectOne" resultType="com.java.dto.ProductDto">
+	select * from product where pno=#{pno}
+</select>
 </mapper>

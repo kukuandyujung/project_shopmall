@@ -49,45 +49,45 @@
                             <h3>상품 등록 페이지</h3>
                         </div>
 				    <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3  label-align">상품 번호<span class="required">*</span></label>
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">상품 번호<span class="required">${pdto.pno}</span></label>
                         <div class="col-md-6 col-sm-6">
                             <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="pno" placeholder="ex) 12" required="required" />
                         </div>
                     </div>
 
                     <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3  label-align">상품 코드<span class="required">*</span></label>
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">상품 코드<span class="required">${pdto.pcode}</span></label>
                         <div class="col-md-6 col-sm-6">
                             <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="pcode" placeholder="ex) 0" required="required" />
                         </div>
                     </div>
                     <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3  label-align">상품명<span class="required">*</span></label>
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">상품명<span class="required">${pdto.pname}</span></label>
                         <div class="col-md-6 col-sm-6">
                             <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "text" name="pname" placeholder="ex) pants " required="required" />
                         </div>
                     </div>
                     <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3  label-align">판매 가격<span class="required">*</span></label>
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">판매 가격<span class="required">${pdto.pprice}</span></label>
                         <div class="col-md-6 col-sm-6">
                             <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="pprice" placeholder="ex) 100,000 " required="required" />
                         </div>
                     </div>
                     <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3  label-align">재고 수량<span class="required">*</span></label>
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">재고 수량<span class="required">${pdto.pstock}</span></label>
                         <div class="col-md-6 col-sm-6">
                             <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="pstock" placeholder="ex) pants " required="required" />
                         </div>
                     </div>         
                     <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3  label-align">판매 개수<span class="required">*</span></label>
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">판매 개수<span class="required">${pdto.psoldcount}</span></label>
                         <div class="col-md-6 col-sm-6">
                             <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="psoldcount" placeholder="ex) 1 " required="required" />
                         </div>
                     </div>
                                         
                     <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3  label-align">상품 등록일<span class="required">*</span></label>
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">상품 등록일<span class="required">${pdto.psoldcount}</span></label>
                         <div class="col-md-6 col-sm-6">
                             <input class="form-control" class='date' type="date" name="pdate" required='required'>
                         </div>

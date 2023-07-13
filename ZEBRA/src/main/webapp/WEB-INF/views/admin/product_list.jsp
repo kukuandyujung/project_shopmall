@@ -23,7 +23,6 @@
 <script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="../js/idangerous.swiper-2.1.min.js"></script>
 <script type="text/javascript" src="../js/jquery.anchor.js"></script>
-
 <script type="text/javascript">
 $(document).ready(function() {
 	
@@ -32,12 +31,12 @@ $(document).ready(function() {
 });
 </script>
 <style type="text/css">
-
+	*{margin: 0; padding: 0;}
+	h2,div{width:1000px; margin: 0px auto; } 
 </style>
 </head>
+
 <body>
-
-
 <div id="allwrap">
 <div id="wrap">
 
@@ -76,14 +75,17 @@ $(document).ready(function() {
 							
 							<tbody>
 								
-
 							<!--오라클 product에 있는 데이터를 list로 모아서 뿌려준다.--> 
+							<button type='button' class="btn btn-primary" onclick="javascript:location.href='product_write'">상품 등록하기</button>
+							
 							<c:forEach var ="product" items="${list}"> 
 							
 								<tr>
 									<td class="tnone">${product.pno}</td>
 									<td class="left">
-										<a href="#" class="lightgray">${product.pname}</a>
+										<a href="/admin/product_view?pno=${product.pno}" class="lightgray">
+										${product.pname}
+										</a>
 									</td>
 									<td>
 										<fmt:formatDate value="${product.pdate}" pattern="yyyy-MM-dd"/>

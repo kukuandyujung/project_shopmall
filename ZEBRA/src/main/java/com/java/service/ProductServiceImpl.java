@@ -21,4 +21,11 @@ public class ProductServiceImpl implements ProductService{
 		list = productMapper.selectAll();
 		return list;
 	}
+
+	@Override//상품 1개 가져오기
+	public ProductDto selectOne(int pno) {
+		// 게시물 1개 가져오기
+		ProductDto pdto = productMapper.selectOne(pno);
+		return pdto;
+	}
 }
