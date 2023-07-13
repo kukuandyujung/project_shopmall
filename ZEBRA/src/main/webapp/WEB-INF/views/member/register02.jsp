@@ -368,7 +368,7 @@
 						<div class="bCenter">
 							<ul>
 								<li><a href="/member/login" class="nbtnbig">취소하기</a></li>
-								<li><a href="/member/register" class="sbtnMini">가입하기</a></li>
+								<li><a href="/member/register03" class="sbtnMini">가입하기</a></li>
 							</ul>
 						</div>
 					</div>
