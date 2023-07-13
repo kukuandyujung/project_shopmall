@@ -1,19 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title> JARDIN SHOP </title>
+<title> ZEBRA </title>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="description" content="JARDIN SHOP" />
-<meta name="keywords" content="JARDIN SHOP" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scaleable=no" />
 <link rel="stylesheet" type="text/css" href="../css/reset.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="../css/layout.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="../css/content.css?v=Y" />
-<script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/top_navi.js"></script>
 <script type="text/javascript" src="../js/left_navi.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
@@ -21,11 +17,32 @@
 <script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="../js/idangerous.swiper-2.1.min.js"></script>
 <script type="text/javascript" src="../js/jquery.anchor.js"></script>
+<script type="text/javascript"></script>
+<link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
+<link rel="stylesheet" href="../vendors/linericon/style.css">
+<link rel="stylesheet" href="../vendors/owl-carousel/owl.theme.default.min.css">
+<link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css">
+<link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
+<link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<div id="allwrap">
-<div id="wrap">
+<%@ include file="../top.jsp"%>
+<div id="header">
+	<!-- GNB -->
+	<div id="gnb">
+		<div id="top">
+		</div>
+		<script type="text/javascript">initTopMenu();</script>
+	</div>
+	<!-- //GNB -->
+
+	<!-- container -->
+	<div id="container">
 		<div id="outbox">		
+			
 			<!-- maxcontents -->
 			<div id="maxcontents">
 				<div id="mypage">
@@ -546,5 +563,7 @@ $(function(){
 
 </div>
 </div>
+<%@ include file="../footer.jsp"%>
 </body>
+<!-- Mirrored from themewagon.github.io/aroma/category.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 30 Jun 2023 06:56:13 GMT -->
 </html>

@@ -42,4 +42,8 @@ public class FController {
 	public String wishlist() {
 		return "mypage/wishlist";
 	}
+	@RequestMapping("/payment/payment")
+	public String payment() {
+		return "payment/payment";
+	}
 }
