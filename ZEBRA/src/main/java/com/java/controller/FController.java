@@ -50,8 +50,8 @@ public class FController {
 	public String myaccount() {
 		return "mypage/myaccount";
 	}
-	@RequestMapping("/payment/order_confirmation")
-	public String order_confirmation() {
-		return "payment/order_confirmation";
+	@RequestMapping("/mypage/ordercheck")
+	public String ordercheck() {
+		return "mypage/ordercheck";
 	}
 }
