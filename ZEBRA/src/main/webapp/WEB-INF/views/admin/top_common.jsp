@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <script>
 if("${loginCheck}"== "success" ){
-	   alert("${sessionName}님! 로그인 되었습니다.");
+	   alert(${sessionName}+ "님! 로그인 되었습니다.");
 }
 
 function logoutBtn(){

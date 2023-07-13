@@ -5,94 +5,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title> JARDIN SHOP </title>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="description" content="JARDIN SHOP" />
-<meta name="keywords" content="JARDIN SHOP" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scaleable=no" />
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<!-- 날짜 포맷함수 -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/reset.css?v=Y" />
-<link rel="stylesheet" type="text/css" href="../css/layout.css?v=Y" />
-<link rel="stylesheet" type="text/css" href="../css/content.css?v=Y" />
-<script type="text/javascript" src="../js/jquery.min.js"></script>
-<script type="text/javascript" src="../js/top_navi.js"></script>
-<script type="text/javascript" src="../js/left_navi.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
-<script type="text/javascript" src="../js/common.js"></script>
-<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="../js/idangerous.swiper-2.1.min.js"></script>
-<script type="text/javascript" src="../js/jquery.anchor.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  	
+  	<title>상품 정보 </title>
+	<link href=*"https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean"* rel=*"stylesheet"*>
+	
+	<link rel=*"stylesheet"* href=*"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"*>
+	
+	<link rel=*"stylesheet"* href=*"css/style.css"*>
+	
+	<link rel=*"stylesheet"* href=*"css/read.css"*>
+	<table border="0" width="600">
+	</table>
+	<style type=*"text/css"*>
 
+		*.list*{cursor: *pointer*;}
+		table-layout: fixed;
+	</style>
 </head>
+<!-- body 시작 -->
 <body>
 
-<div id="allwrap">
-<div id="wrap">
+	<h1>상품 등록 페이지</h1>
+	
+	<table>
+		
 
-<section>
-    <h1>상품 페이지</h1>
+	<tr>	
+		<td colspan=*"3"*><strong>상품명 : <span>${pdto.pname}</span></strong></td>
+	</tr>
 
-<div class="viewDivMt">
-						<div class="viewHead">
-							<div class="subject">
-								<ul>
-									<li>${pdto.pname}</li>
-								</ul>
-							</div>
-							<div class="day">
-								<p class="txt">상품명<span>${pdto.pname}</span></p>
-								<p class="txt">상품 등록일<span>
-								 <fmt:formatDate value="${pdto.pdate}" pattern="yyyy-MM-dd"  /> 
-								</span></p>
-								<p class="txt">조회수<span>${pdto.phit}</span></p>
-							</div>
-						</div>
+	<tr>
+		<td>상품 번호 : <span>${pdto.pno}</span></td><br>
+	</tr>	
+	<tr>
+		<td>상품 코드<span>${pdto.pcode}</span></td><br>
+	</tr>
+	<tr>	
+		<td>상품 가격<span>${pdto.pprice}</span></td><br>
+	</tr>	
+		<td>재고 수량<span>${pdto.pstock}</span></td><br>
+		<td>판매 개수<span>${pdto.psoldcount}</span></td><br>
+		<td>리뷰 평점<span>${pdto.pscore}</span></td><br>
+		<td>리뷰 개수<span>${pdto.previewcount}</span></td><br>
+		<td>상품 등록일<span>${pdto.pdate}</span></td><br>
+		<td>상품 색상<span>${pdto.pcolor}</span></td><br>
+		<td>상품 사이즈<span>${pdto.psize}</span></td><br>
+		<td>상품 기본 설명<span>${pdto.pdescript}</span></td><br>
+		<td>메인 이미지1<span><img src="/upload/${pdto.pmainimg1}" style="width: 100px;" alt="" /></span></td><br>
+		<td>메인 이미지2<span><img src="/upload/${pdto.pmainimg1}" style="width: 100px;" alt="" /></span></td><br>
+		<td>메인 이미지3<span><img src="/upload/${pdto.pmainimg3}" style="width: 100px;" alt="" /></span></td><br>
+		<td>상세 이미지1<span><img src="/upload/${pdto.pdetailimg1}" style="width: 100px;" alt="" /></span></td><br>
+		<td>상세 이미지2<span><img src="/upload/${pdto.pdetailimg2}" style="width: 100px;" alt="" /></span></td><br>
+		<td>상세 이미지3<span><img src="/upload/${pdto.pdetailimg3}" style="width: 100px;" alt="" /></span></td><br>
+		<td>상세 이미지4<span><img src="/upload/${pdto.pdetailimg4}" style="width: 100px;" alt="" /></span></td><br>
+		<td>상세 이미지5<span><img src="/upload/${pdto.pdetailimg5}" style="width: 100px;" alt="" /></span></td><br>
+		<td>상세 이미지6<span><img src="/upload/${pdto.pdetailimg6}" style="width: 100px;" alt="" /></span></td><br>
+	</tr>
 
-						<div class="viewContents">
-						    <div>
-						    ${bdto.bcontent }
-						    </div>
-						    <br>
-							<img src="./images/${pdto.pmainimg1}" style="width:100%;" alt="" />
-						</div>
-					</div>
 
-    <table>
-     
-      <tr>
-        <th colspan="3">상품명</th>
-      </tr>
-      <tr>
-        <td colspan="3"><strong>${pdto.pname}</strong></td>
-      </tr>
-      <tr>
-        <td>${pdto.pno}</td>
-        <td>상품 조회수</td>
-        <td>${pdto.phit}</td>
-      </tr>
-      <tr>
-        <td colspan="3" class="article">${pdto.pstock}</td>
-      </tr>
+
+<tr>
+
+<td colspan=*"3"*><strong>다음글</strong> <span class=*"separator"*>|</span> </td>
+
+</tr>
+
+<tr>
+
+<td colspan=*"3"*><strong>이전글</strong> <span class=*"separator"*>|</span> </td>
+
+</tr>
+
+</table>
+
+	<script type="text/javascript">
+		function deleteBtn() {
+		if(confirm("게시글을 삭제하시겠습니까?")) location.href="delete.do?pno=${pdto.pno}";
+			
+		}
+	</script>
+
+<a href=*"list.do"*><div class=*"list"*>목록</div></a>
+
+<a onclick="deleteBtn()"><div class=*"list"*>삭제</div></a>
+
+<a href=*"edit.do?bno=*${board.bno}*"*><div class=*"list"*>수정</div></a>
+
+<a href=*""*><div class=*"list"*>답변달기</div></a>
+
+</section>
+
+</body>
+
+</html>
+
       
-      <div class="viewContents">
-						    <div>
-						    ${pdto.pdescript}
-						    </div>
-						    <br>
-							<img src="/upload/${pdto.pmainimg1}" style="width: 100px;" alt="" />
-							<img src="/upload/${pdto.pmainimg2}" style="width: 100px;" alt="" />
-							<img src="/upload/${pdto.pmainimg3}" style="width: 100px;" alt="" />
-							<img src="/upload/${pdto.pdetailimg1}" style="width: 100px;" alt="" />
-							<img src="/upload/${pdto.pdetailimg2}" style="width: 100px;" alt="" />
-							<img src="/upload/${pdto.pdetailimg3}" style="width: 100px;" alt="" />
-							<img src="/upload/${pdto.pdetailimg4}" style="width: 100px;" alt="" />
-							<img src="/upload/${pdto.pdetailimg5}" style="width: 100px;" alt="" />
-							<img src="/upload/${pdto.pdetailimg6}" style="width: 100px;" alt="" />
-						</div>
-					</div>
   
     </table>
 	<script type="text/javascript">
