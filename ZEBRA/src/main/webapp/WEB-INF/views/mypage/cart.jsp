@@ -28,206 +28,197 @@
 <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
 <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/content.css">
+<link rel="stylesheet" href="../css/jquery.fancybox-1.3.4.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/reset.css">
 </head>
 <body>
 <%@ include file="../top.jsp"%>
-	<!-- ================ start banner area ================= -->	
+
+  <!-- ================ start banner area ================= -->	
 	<section class="blog-banner-area" id="category">
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
-					<h1>Shopping Cart</h1>					         
+					<h1>Shopping Cart</h1>
 				</div>
 			</div>
-    	</div>
+    </div>
 	</section>
-	
 	<!-- ================ end banner area ================= -->
-  
- 
+ 	<!--================Cart Area =================-->
+ 	<div id="allwrap">
+	<div id="wrap">
 
-  <!--================Cart Area =================-->
-  <section class="cart_area">
-      <div class="container">
-          <div class="cart_inner">
-              <div class="table-responsive">
-                  <table class="table">
-                      <thead>
-                          <tr>
-                              <th scope="col">Product</th>
-                              <th scope="col">Price</th>
-                              <th scope="col">Quantity</th>
-                              <th scope="col">Total</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr>
-                              <td>
-                                  <div class="media">
-                                      <div class="d-flex">
-                                          <img src="../img/cart/cart1.png" alt="">
-                                      </div>
-                                      <div class="media-body">
-                                          <p>Minimalistic shop for multipurpose use</p>
-                                      </div>
-                                  </div>
-                              </td>
-                              <td>
-                                  <h5>$360.00</h5>
-                              </td>
-                              <td>
-                                  <div class="product_count">
-                                      <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:"
-                                          class="input-text qty">
-                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                                          class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
-                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                                          class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
-                                  </div>
-                              </td>
-                              
-                                                           
-                              <td>
-                                  <h5>$720.00</h5>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td>
-                                  <div class="media">
-                                      <div class="d-flex">
-                                          <img src="../img/cart/cart2.png" alt="">
-                                      </div>
-                                      <div class="media-body">
-                                          <p>Minimalistic shop for multipurpose use</p>
-                                      </div>
-                                  </div>
-                              </td>
-                              <td>
-                                  <h5>$360.00</h5>
-                              </td>
-                              <td>
-                                  <div class="product_count">
-                                      <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:"
-                                          class="input-text qty">
-                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                                          class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
-<!--                                       <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp; &amp; sst > 0 ) result.value--;return false;" -->
-<!--                                           class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button> -->
-                                  </div>
-                              </td>
-                              <td>
-                                  <h5>$720.00</h5>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td>
-                                  <div class="media">
-                                      <div class="d-flex">
-                                          <img src="../img/cart/cart3.png" alt="">
-                                      </div>
-                                      <div class="media-body">
-                                          <p>Minimalistic shop for multipurpose use</p>
-                                      </div>
-                                  </div>
-                              </td>
-                              <td>
-                                  <h5>$360.00</h5>
-                              </td>
-                              <td>
-                                  <div class="product_count">
-                                      <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:"
-                                          class="input-text qty">
-                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                                          class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
-                                      <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                                          class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
-                                  </div>
-                              </td>
-                              <td>
-                                  <h5>$720.00</h5>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td>
+	<div id="header">
+	<!-- container -->
+	<div id="container">
+		<div id="outbox">		
+			<div id="left">
+				<div id="title">MY PAGE<span>마이페이지</span></div>				
+				<ul>
+					<li><a href="/mypage/orderhistory" id="leftNavi1">주문 내역</a></li>	
+					<li><a href="/mypage/wishlist" id="leftNavi2">위시리스트</a></li>
+					<li><a href="/mypage/cart" id="leftNavi3">장바구니</a></li>
+					<li><a href="/mypage/myaccount" id="leftNavi4">내정보수정</a></li>
+				</ul>			
+			</div><script type="text/javascript">initSubmenu(4,0);</script>
 
-                              </td>
-                              <td>
+			<!-- contents -->
+			<div id="contents">
+				<div id="mypage"></div>			
+				
 
-                              </td>
-                         <!-- sub total line box line start -->
-                              <td>
-                                  <h5>Subtotal</h5>
- </td>
-                              <td>
-                                  <h5>$2160.00</h5>
-                              </td>
-                          </tr>
-                          
-                         <!-- sub total line box line end -->
-                         
-                         <!-- shipping_area  start -->
-                          
-                          <tr class="shipping_area">
-                              <td class="d-none d-md-block">
+				<!-- 장바구니에 상품이 있을경우 -->
+					<!-- 장바구니 상품 -->
+					
+					<div class="orderDivNm">
+						<table summary="장바구니에 담긴 상품들을 전체선택, 상품명, 가격/포인트, 수량, 합계, 주문 순으로 조회 및 주문을 하실수 있습니다." class="orderTable" border="1" cellspacing="0">
+							<caption>장바구니 상품목록</caption>
+							<colgroup>
+							<col width="7%"/>
+							<col width="*" />
+							<col width="14%" class="tnone" />
+							<col width="10%" class="tw14"/>
+							<col width="14%" class="tw28"/>
+							<col width="14%" class="tnone" />
+							</colgroup>
+							<thead>
+								<th scope="col"><input type="checkbox" /></th>
+								<th scope="col">상품명</th>
+								<th scope="col" class="tnone">가격</th>
+								<th scope="col">수량</th>
+								<th scope="col">합계</th>
+								<th scope="col" class="tnone">주문</th>
+							</thead>
+							<tbody>
+								<tr>
+									<td><input type="checkbox" /></td>
+									<td class="left">
+										<p class="img"><img src="../images/img/sample_product.jpg" alt="상품" width="66" height="66" /></p>
 
-                              </td>
-                              <td>
+										<ul class="goods">
+											<li>
+												<a href="#">쟈뎅 오리지널 콜롬비아 페레이라 원두커피백 15p</a>
+											</li>
+										</ul>
+									</td>
+									<td class="tnone">1,123,400 원<br/>
+									<td><input type="number" min="1" max="999" value="1" /></td>
+									<td>1,123,400 원</td>
+									<td class="tnone">
+										<ul class="order">	
+											<li><a href="#" class="obtnMini iw70">바로구매</a></li>
+											<li><a href="#" class="nbtnMini iw70">상품삭제</a></li>
+										</ul>
+									</td>
+								</tr>
+								
+								<tr>
+									<td><input type="checkbox" /></td>
+									<td class="left">
+										<p class="img"><img src="../images/img/sample_product.jpg" alt="상품" width="66" height="66" /></p>
 
-                              </td>
-                              <td>
-                                  <h5>Shipping</h5>
-                              </td>
-                              <td>
-                                  <div class="shipping_box">                                                                           
-                                          <li><a href="#">Free Shipping</a></li> 
-                                                                                 
-							                      
-                                  </div>
-                              </td>
-                          </tr>
-                     <!-- shipping_area  start -->
-                     
-                     <!-- out_button_area  start -->                          
-                          <tr class="out_button_area">
-                              <td class="d-none-l">
+										<ul class="goods">
+											<li>
+												<a href="#">쟈뎅 오리지널 콜롬비아 페레이라 원두커피백 15p</a>
+											</li>
+										</ul>
+									</td>
+									<td class="tnone">1,123,400 원</td>
+									<td><input type="number" min="1" max="999" value="1" /></td>
+									<td>1,123,400 원</td>
+									<td class="tnone">
+										<ul class="order">	
+											<li><a href="#" class="obtnMini iw70">바로구매</a></li>
+											<li><a href="#" class="nbtnMini iw70">상품삭제</a></li>
+										</ul>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 
-                              </td>
-                              <td class="">
+					<div class="btnArea">
+						<div class="bRight">
+							<ul>
+								<li><a href="#" class="selectbtn">전체선택</a></li>
+								<li><a href="#" class="selectbtn2">선택수정</a></li>
+								<li><a href="#" class="selectbtn2">선택삭제</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //장바구니 상품 -->
+					
 
-                              </td>
-                              <td>
+					<!-- 총 주문금액 -->
+					<div class="amount">
+						<h4>총 주문금액</h4>
+						<ul class="info">
+							<li>
+								<span class="title">상품 합계금액</span>
+								<span class="won"><strong>1,132,310</strong> 원</span>
+							</li>
+							
+						</ul>
+						<ul class="total">
+							
+							<li class="txt"><strong>결제 예정 금액</strong></li>
+							<li class="money"><span>1,134,810</span> 원</li>
+						</ul>
+					</div>
+					<!-- //총 주문금액 -->
 
-                              </td>
-                              <td>
-                                  <div class="checkout_btn_inner d-flex align-items-center">
-                                      <a class="gray_btn" href="/layout/index">Continue Shopping</a>
-                                      <a class="primary-btn ml-2" href="/payment/checkout">Proceed to checkout</a>
-                                  </div>
-                              </td>
-                          </tr>
-                       <!-- out_button_area  end -->          
-                      </tbody>
-                  </table>
-              </div>
-          </div>
-      </div>
-  </section>
-  <!--================End Cart Area =================-->
+					<div class="cartarea">
+						<ul>
+							<li><a href="#" class="ty1">선택상품 <span>주문하기</span></a></li>
+							<li><a href="#" class="ty2">전체상품 <span>주문하기</span></a></li>
+							<li class="last"><a href="/layout/index" class="ty3">쇼핑 <span>계속하기</span></a></li>
+						</ul>
+					</div>
 
- <%@ include file="../footer.jsp" %>
+				<!-- //장바구니에 상품이 있을경우 -->
+
+
+				<!-- 장바구니에 상품이 없을경우
+					<div class="noting">
+						<div class="point"><span class="orange">장바구니</span>에 담긴 상품이 없습니다.</div>
+
+						<p>장바구니에 담긴 상품은 30일간만 보관됩니다.<br/>더 오래 보관하고 싶은 상품은 <u>위시리스트</u>에 담아주세요.</p>
+
+						<a href="#">쇼핑 계속하기</a>
+					</div>
+				 //장바구니에 상품이 없을경우 -->
+
+				</div>
+			</div>
+			<!-- //contents -->
+
+
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<style type="text/css">
+.ui-corner-all{border-bottom-right-radius:0 !important; border-bottom-left-radius:0 !important; border-top-left-radius:0 !important; border-top-right-radius:0 !important;}
+.ui-widget-content{border:0;}
+.ui-spinner-input{width:44px; margin:0; border:1px #ddd solid; padding:2px 0 2px 5px; font-family:'Nanum Gothic' !important; font-size:12px !important;}
+</style>
+
+<script type="text/javascript">
+$(function() {
+	var spinner = $( ".spinner" ).spinner({ min: 1, max: 999 });
+});
+</script>
 
 
 
+		</div>
+	</div>
+	<!-- //container -->
 
-  <script src="../vendors/jquery/jquery-3.2.1.min.js"></script>
-  <script src="../vendors/bootstrap/bootstrap.bundle.min.js"></script>
-  <script src="../vendors/skrollr.min.js"></script>
-  <script src="../vendors/owl-carousel/owl.carousel.min.js"></script>
-  <script src="../vendors/nice-select/jquery.nice-select.min.js"></script>
-  <script src="../vendors/jquery.ajaxchimp.min.js"></script>
-  <script src="../vendors/mail-script.js"></script>
-  <script src="../js/main.js"></script>
+ 	 <!--================End Cart Area =================-->
+
+<%@ include file="../footer.jsp"%>
 </body>
-
-<!-- Mirrored from themewagon.github.io/aroma/cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 30 Jun 2023 06:56:15 GMT -->
+<!-- Mirrored from themewagon.github.io/aroma/category.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 30 Jun 2023 06:56:13 GMT -->
 </html>

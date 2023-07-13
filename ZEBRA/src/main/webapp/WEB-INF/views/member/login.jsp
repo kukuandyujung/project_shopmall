@@ -1,30 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from themewagon.github.io/aroma/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 30 Jun 2023 06:56:25 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title> ZEBRA </title>
 <link rel="icon" href="../img/logo2.png" type="image/png">
-  <link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
-	<link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
-	<link rel="stylesheet" href="../vendors/linericon/style.css">
-  <link rel="stylesheet" href="../vendors/owl-carousel/owl.theme.default.min.css">
-  <link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css">
-  <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
-  <link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
-
-  <link rel="stylesheet" href="../css/style.css">
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" type="text/css" href="../css/reset.css?v=Y" />
+<link rel="stylesheet" type="text/css" href="../css/layout.css?v=Y" />
+<link rel="stylesheet" type="text/css" href="../css/content.css?v=Y" />
+<script type="text/javascript" src="../js/top_navi.js"></script>
+<script type="text/javascript" src="../js/left_navi.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/idangerous.swiper-2.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery.anchor.js"></script>
+<script type="text/javascript"></script>
+<link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
+<link rel="stylesheet" href="../vendors/linericon/style.css">
+<link rel="stylesheet" href="../vendors/owl-carousel/owl.theme.default.min.css">
+<link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css">
+<link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
+<link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/content.css">
+<link rel="stylesheet" href="../css/jquery.fancybox-1.3.4.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/reset.css">
 </head>
 <body>
-<%@ include file="../top.jsp" %>
+<%@ include file="../top.jsp"%>
 	
   
   <!-- ================ start banner area ================= -->	
@@ -32,13 +42,7 @@
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
-					<h1>Login / Register</h1>
-					<nav aria-label="breadcrumb" class="banner-breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Login/Register</li>
-            </ol>
-          </nav>
+					<h1> Login </h1>
 				</div>
 			</div>
     </div>
@@ -46,52 +50,62 @@
 	<!-- ================ end banner area ================= -->
   
   <!--================Login Box Area =================-->
-	<section class="login_box_area section-margin">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="login_box_img">
-						<div class="hover">
-							<h4>New to our website?</h4>
-							<p>There are advances being made in science and technology everyday, and a good example of this is the</p>
-							<a class="button button-account" href="register">Create an Account</a>
+	<!-- container -->
+	<div id="container">
+	
+		<div id="location">
+			<ol>
+				
+			</ol>
+		</div>
+		
+		<div id="outbox">		
+			<div id="left">
+				<div id="title2">MEMBERSHIP<span>멤버쉽</span></div>
+				<ul>
+					
+					<li><a href="/member/login" id="leftNavi1">로그인</a></li>
+					<li><a href="/member/register" id="leftNavi2">회원가입</a></li>				
+					
+				</ul>			
+			</div><script type="text/javascript">initSubmenu(1,0);</script>
+
+
+			<!-- contents -->
+			<div id="contents">
+				<div id="member">
+					
+					<h3>회원 로그인</h3>
+					<div class="informbox">
+						<div class="inform">
+							<ul>
+								<li><input type="text" class="loginType" onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='loginType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" /></li>
+								<li><input type="password" class="passType" onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='passType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" /></li>
+							</ul>
+
+							<div class="btn"><a href="#" class="sbtn">로그인</a></div>
+							<div class="chk"><input type="checkbox" id="idsave"/><label for="idsave">아이디 저장</label></div>							
+
+							<div class="point">
+								<p>아이디와 비밀번호를 잊으셨나요?</p>
+								<a href="#" class="nbtn">아이디/비밀번호 찾기</a>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="login_form_inner">
-						<h3>Log in to enter</h3>
-						<form class="row login_form" action="#/" id="contactForm" >
-							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="name" name="name" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
-							</div>
-							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="name" name="name" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
-							</div>
-							<div class="col-md-12 form-group">
-								<div class="creat_account">
-									<input type="checkbox" id="f-option2" name="selector">
-									<label for="f-option2">Keep me logged in</label>
-								</div>
-							</div>
-							<div class="col-md-12 form-group">
-								<button type="submit" value="submit" class="button button-login w-100">Log In</button>
-								 <ul class="nav-shop">
-             						<li class="nav-item"><a href="#">Forgot Password?</a></li>
-            					    <li class="nav-item"><a href="/admin/login">Login to Admin</a></li>
-           						 </ul>
-							</div>
-						</form>
-					</div>
+
+
 				</div>
 			</div>
+			<!-- //contents -->
+
+
 		</div>
-	</section>
+	</div>
+	<!-- //container -->
+
 	<!--================End Login Box Area =================-->
 
-
  <%@ include file="../footer.jsp" %>
-
 
   <script src="../img/jquery/jquery-3.2.1.min.js"></script>
   <script src="../img/bootstrap/bootstrap.bundle.min.js"></script>
