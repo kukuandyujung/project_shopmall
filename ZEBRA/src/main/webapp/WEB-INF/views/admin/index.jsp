@@ -12,6 +12,7 @@
 	<link rel="icon" href="images/favicon.ico" type="image/ico" />
 
     <title>ZEBRA</title>
+    <link rel="icon" href="../img/logo2.png" type="image/png">
 
     <!-- Bootstrap -->
     <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +40,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+              <a href="index" class="site_title"><i class="fa fa-paw"></i> <span>ZEBRA</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -48,11 +49,11 @@
             <div class="profile clearfix">
               <div class="profile_pic">
                 <img src="production/images/img.jpg" alt="..." class="img-circle profile_img">
-<!--                 이미지 오류 -->
+			  <!--이미지 오류 -->
               </div>
               <div class="profile_info">
                 <span>환영합니다,</span>
-                <h2>John Doe</h2>
+                <h2>멋쟁이 얼룩말님</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
