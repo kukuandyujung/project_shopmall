@@ -114,7 +114,7 @@
 
                 <div class="row x_title">
                   <div class="col-md-6">
-                    <h3>Network Activities <small>Graph title sub-title</small></h3>
+                    <h3>수익 현황 <small><small>월별 총 매출</small></small></h3>
                   </div>
                   <div class="col-md-6">
                     <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
@@ -195,7 +195,7 @@
                 <div class="col-md-3 col-sm-3 ">
                       <div>
                         <div class="x_title">
-                          <h2>Top Profiles</h2>
+                          <h2>최고 구매 고객</h2>
                           <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
@@ -284,7 +284,7 @@
             <div class="col-md-4 col-sm-4 ">
               <div class="x_panel tile fixed_height_320">
                 <div class="x_title">
-                  <h2>App Versions</h2>
+                  <h2>주문 수</h2>
                   <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -301,10 +301,9 @@
                   <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                  <h4>App Usage across versions</h4>
                   <div class="widget_summary">
                     <div class="w_left w_25">
-                      <span>0.1.5.2</span>
+                      <span>8월</span>
                     </div>
                     <div class="w_center w_55">
                       <div class="progress">
@@ -321,7 +320,7 @@
 
                   <div class="widget_summary">
                     <div class="w_left w_25">
-                      <span>0.1.5.3</span>
+                      <span>7월</span>
                     </div>
                     <div class="w_center w_55">
                       <div class="progress">
@@ -337,7 +336,7 @@
                   </div>
                   <div class="widget_summary">
                     <div class="w_left w_25">
-                      <span>0.1.5.4</span>
+                      <span>6월</span>
                     </div>
                     <div class="w_center w_55">
                       <div class="progress">
@@ -353,7 +352,7 @@
                   </div>
                   <div class="widget_summary">
                     <div class="w_left w_25">
-                      <span>0.1.5.5</span>
+                      <span>5월</span>
                     </div>
                     <div class="w_center w_55">
                       <div class="progress">
@@ -369,7 +368,24 @@
                   </div>
                   <div class="widget_summary">
                     <div class="w_left w_25">
-                      <span>0.1.5.6</span>
+                      <span>4월</span>
+                    </div>
+                    <div class="w_center w_55">
+                      <div class="progress">
+                        <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
+                          <span class="sr-only">60% Complete</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w_right w_20">
+                      <span>1k</span>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  
+                   <div class="widget_summary">
+                    <div class="w_left w_25">
+                      <span>3월</span>
                     </div>
                     <div class="w_center w_55">
                       <div class="progress">
@@ -391,7 +407,7 @@
             <div class="col-md-4 col-sm-4 ">
               <div class="x_panel tile fixed_height_320 overflow_hidden">
                 <div class="x_title">
-                  <h2>Device Usage</h2>
+                  <h2>상품별 주문 수요</h2>
                   <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -470,7 +486,7 @@
             <div class="col-md-4 col-sm-4 ">
               <div class="x_panel tile fixed_height_320">
                 <div class="x_title">
-                  <h2>Quick Settings</h2>
+                  <h2>매출 목표</h2>
                   <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>

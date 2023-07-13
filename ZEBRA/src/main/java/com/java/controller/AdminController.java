@@ -143,7 +143,7 @@ public class AdminController {
 	public String media_gallery() {
 		
 		return "admin/media_gallery";
-	}
+	}	
 	
 	@RequestMapping("/admin/morisjs")
 	public String morisjs() {
