@@ -39,7 +39,7 @@
 						<div class="viewHead">
 							<div class="subject">
 								<ul>
-									<li>${bdto.btitle}</li>
+									<li>${pdto.pname}</li>
 								</ul>
 							</div>
 							<div class="day">
@@ -56,7 +56,7 @@
 						    ${bdto.bcontent }
 						    </div>
 						    <br>
-							<img src="./images/${pdto.pmainimg}" style="width:100%;" alt="" />
+							<img src="./images/${pdto.pmainimg1}" style="width:100%;" alt="" />
 						</div>
 					</div>
 
@@ -82,23 +82,18 @@
 						    ${pdto.pdescript}
 						    </div>
 						    <br>
-							<img src="../images/$${pdto.pmainimg1}" style="width:100%;" alt="" />
+							<img src="/upload/${pdto.pmainimg1}" style="width: 100px;" alt="" />
+							<img src="/upload/${pdto.pmainimg2}" style="width: 100px;" alt="" />
+							<img src="/upload/${pdto.pmainimg3}" style="width: 100px;" alt="" />
+							<img src="/upload/${pdto.pdetailimg1}" style="width: 100px;" alt="" />
+							<img src="/upload/${pdto.pdetailimg2}" style="width: 100px;" alt="" />
+							<img src="/upload/${pdto.pdetailimg3}" style="width: 100px;" alt="" />
+							<img src="/upload/${pdto.pdetailimg4}" style="width: 100px;" alt="" />
+							<img src="/upload/${pdto.pdetailimg5}" style="width: 100px;" alt="" />
+							<img src="/upload/${pdto.pdetailimg6}" style="width: 100px;" alt="" />
 						</div>
 					</div>
-      <tr>
-        <td colspan="3" class="article">
-        <img src="upload/${pdto.pmainimg1}">
-        <img src="upload/${pdto.pmainimg2}">
-        <img src="upload/${pdto.pmainimg3}">
-        <img src="upload/${pdto.pdetailimg1}">
-        <img src="upload/${pdto.pdetailimg2}">
-        <img src="upload/${pdto.pdetailimg3}">
-        <img src="upload/${pdto.pdetailimg4}">
-        <img src="upload/${pdto.pdetailimg5}">
-        <img src="upload/${pdto.pdetailimg6}">
-        </td>
-      </tr>
-     
+  
     </table>
 	<script type="text/javascript">
 		function deleteBtn() {
