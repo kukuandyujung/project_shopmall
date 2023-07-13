@@ -23,14 +23,20 @@
 
   <link rel="stylesheet" href="../css/style.css">
 
- <style>
- /* STEP */
-.stepWrap{width:75%; margin:40px 0 30px 0; overflow:hidden;}
+</head>
+
+<style>
+  .container{margin:10px auto; }
+.p{width:200}
+
+
+/* STEP */
+.stepWrap{width:85%; margin:40px 0 30px 0; overflow:hidden;}
 .step{position:relative; float:left; width:25%; height:200px; background:#ebebeb; border-right:1px #fff solid; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
 .stepWrap .step p.web{color:#888; font-weight:600; padding:16px 0 0 15px;}
 .stepWrap .step p.txt{color:#727272; font-weight:600; padding:5px 0 0 15px; font-size:14px;}
 .step p.ck{position:absolute; right:10px; bottom:10px;}
-.stepon{background:#f7703c;}
+.stepon{background:#3A4CEA;}
 .stepon p.web{color:#fff;}
 .stepon p.txt{color:#fff;}
 .mfocus{width:189px; height:38px; line-height:38px; padding:0 0 0 9px; border:1px #d9d9d9 solid; font-size:14px; font-weight:600; color:#888;}
@@ -39,11 +45,8 @@
 /*  /* btnarea */
 .btnArea {
     position: relative; width: 100%; height: 30px;  padding: 20px 0 0 0;text-align: center;clear: both;}
-
- /* 박스 컬러 */
- 
- /* 
-
+  
+/* 
 .btnArea {position: relative; width: 100%; height: 30px; padding: 20px 0 0 0; text-align: center; clear: both;
 .nbtnbig { displa: block; width: 110px; height: 30px; line-height: 30px; background: #999; color: #fff !important; font-size: 14px;
     font-weight: 600;    text-align: center;}
@@ -53,15 +56,13 @@
     font-size: 14px; font-weight: 600; text-align: center;} 
 .bCenter {   width: 250px;    margin: 0 auto; 
  */
+ 
+</style>
 
- */
-
- </style>
   
-</head>
 <body>
 <%@ include file="../top.jsp" %>
-	
+
   
   <!-- ================ start banner area ================= -->	
 	<section class="blog-banner-area" id="category">
@@ -84,48 +85,65 @@
   <!--================ login Box Area =================-->
 	<section class="login_box_area section-margin">
 		<div class="container">
-			<div class="agreeWrap">
-						<div class="agreeTxt"> <span></span></div>
+<!-- contents -->
+			<div id="contents">
+				<div id="member">
+			
+ <!--================Login Box Area =================-->
+	<section class="login_box_area section-margin">
+		<div class="container">
+		
+		<!-- //Step box Start -->	
 
-											<!-- STEP03 -->
-					<div class="stepWrap">
-						<div class="step stepon">
-							<p class="web">STEP 01</p>
-							<p class="txt">실명확인</p>
-							<p class="ck"><img src="../img/member/bg_step.png" alt="현재위치" /></p>
+		<!-- STEP -->
+
+			<div class="stepWrap">
+				<div class="step ">
+					<p class="web">STEP 01</p>
+					<p class="txt">실명확인</p>
+				</div>
+
+				<div class="step stepon">
+					<p class="web">STEP 02</p>
+					<p class="txt">약관 동의</p>
+					<p class="ck">
+						<img src="../img/member/bg_step.png" alt="현재위치" />
+					</p>
+				</div>
+
+				<div class="step">
+					<p class="web">STEP 03</p>
+					<p class="txt">
+						<span>회원정보</span> <span>입력</span>
+					</p>
+				</div>
+
+				<div class="step">
+					<p class="web">STEP 04</p>
+					<p class="txt">
+						<span>회원가입</span> <span>완료</span>
+					</p>
+				</div>
+			</div>
+
+			<!-- //STEP -->
+
+			<!-- //Step box End -->
+		
+
+						<div class="attention">
+							<ul>
+								<li>* 표시된 항목은 필수 항목이므로 반드시 입력하셔야 회원가입이 진행됩니다.</li>
+							</ul>
 						</div>
 
-						<div class="step">
-							<p class="web">STEP 02</p>
-							<p class="txt">약관 동의</p>
-						</div>
-
-						<div class="step">
-							<p class="web">STEP 03</p>
-							<p class="txt"><span>회원정보</span> <span>입력</span></p>
-						</div>
-
-						<div class="step">
-							<p class="web">STEP 04</p>
-							<p class="txt"><span>회원가입</span> <span>완료</span></p>
-						</div>
-					</div>
-					<!-- //STEP -->
-						
-
-					<div class="attention">
-						<ul>
-							<li>* 표시된 항목은 필수 항목이므로 반드시 입력하셔야 회원가입이 진행됩니다.</li>
-						</ul>
-					</div>
-
-
-					<div class="memberbd">
-						<table summary="이름, 아이디, 비밀번호, 비밀번호 확인, 이메일, 이메일수신여부, 주소, 휴대폰, 유선전화, 생년월일 순으로 회원가입 정보를 등록할수 있습니다." class="memberWrite" border="1" cellspacing="0">
+						<div class="memberbd">
+						<table summary="이름, 아이디, 비밀번호, 비밀번호 확인, 이메일, 이메일수신여부, 주소, 휴대폰, 유선전화, 생년월일 순으로 회원가입 정보를 등록할수 있습니다."
+							class="memberWrite" border="1" cellspacing="0">
 							<caption>회원가입 입력</caption>
 							<colgroup>
-							<col width="30%" class="tw30" />
-							<col width="*" />
+								<col width="22%" class="tw30" />
+								<col width="*" />
 							</colgroup>
 							<tbody>
 								<tr>
@@ -138,7 +156,8 @@
 										<ul class="pta">
 											<li class="r10"><input type="text" class="w134" /></li>
 											<li><a href="#" class="nbtnMini">중복확인</a></li>
-											<li class="pt5"><span class="mvalign">첫 글자는 영문으로 4~16자 까지 가능, 영문, 숫자와 특수기호(_)만 사용 가능</span></li>
+											<li class="pt5"><span class="mvalign">첫 글자는 영문으로
+													4~16자 까지 가능, 영문, 숫자와 특수기호(_)만 사용 가능</span></li>
 										</ul>
 									</td>
 								</tr>
@@ -147,7 +166,8 @@
 									<td>
 										<ul class="pta">
 											<li class="r10"><input type="password" class="w134" /></li>
-											<li><span class="mvalign">※ 영문 / 숫자 혼용으로 4~20자 까지 가능.</span></li>
+											<li><span class="mvalign">※ 영문 / 숫자 혼용으로 4~20자 까지
+													가능.</span></li>
 										</ul>
 									</td>
 								</tr>
@@ -156,10 +176,8 @@
 									<td>
 										<ul class="pta">
 											<li class="r10"><input type="password" class="w134" /></li>
-											<li>
-												<span class="mvalign black">* 비밀번호가 일치입니다.</span>
-												<span class="mvalign orange">* 비밀번호가 일치하지 않습니다.</span>
-											</li>
+											<li><span class="mvalign black">* 비밀번호가 일치입니다.</span> <span
+												class="mvalign orange">* 비밀번호가 일치하지 않습니다.</span></li>
 										</ul>
 									</td>
 								</tr>
@@ -170,26 +188,24 @@
 											<li><input type="text" class="w134" /></li>
 											<li><span class="valign">&nbsp;@&nbsp;</span></li>
 											<li class="r10"><input type="text" class="w134" /></li>
-											<li>
-												<select id="emailList">
+											<li><select id="emailList">
 													<option value="#" selected="selected">직접입력</option>
 													<option value="naver.com">naver.com</option>
 													<option value="daum.net">daum.net</option>
 													<option value="hanmail.net">hanmail.net</option>
-													<option value="nate.com">nate.com</option>    
-													<option value="yahoo.co.kr">yahoo.co.kr</option>    
-													<option value="paran.com">paran.com</option>    
-													<option value="empal.com">empal.com</option>    
-													<option value="hotmail.com">hotmail.com</option>    
-													<option value="korea.com">korea.com</option>    
-													<option value="lycos.co.kr">lycos.co.kr</option>    
-													<option value="dreamwiz.com">dreamwiz.com</option>    
-													<option value="hanafos.com">hanafos.com</option>    
-													<option value="chol.com">chol.com</option>    
-													<option value="gmail.com">gmail.com</option>    
+													<option value="nate.com">nate.com</option>
+													<option value="yahoo.co.kr">yahoo.co.kr</option>
+													<option value="paran.com">paran.com</option>
+													<option value="empal.com">empal.com</option>
+													<option value="hotmail.com">hotmail.com</option>
+													<option value="korea.com">korea.com</option>
+													<option value="lycos.co.kr">lycos.co.kr</option>
+													<option value="dreamwiz.com">dreamwiz.com</option>
+													<option value="hanafos.com">hanafos.com</option>
+													<option value="chol.com">chol.com</option>
+													<option value="gmail.com">gmail.com</option>
 													<option value="empas.com">empas.com</option>
-												</select>&nbsp;&nbsp;&nbsp;
-											</li>
+											</select>&nbsp;&nbsp;&nbsp;</li>
 										</ul>
 									</td>
 								</tr>
@@ -198,28 +214,26 @@
 									<td>
 										<p>쟈뎅에서 진행되는 이벤트와 쇼핑에 대한 정보를 이메일로 받아보시겠습니까?</p>
 										<ul class="question">
-											<li>
-												<input type="radio" name="receive" id="receive_yes" class="radio_t" checked="checked"/><label for="receive_yes">예</label>
-											</li>
-											<li>
-												<input type="radio" name="receive" id="receive_no" class="radio_t"/><label for="receive_no">아니오</label>
-											</li>
+											<li><input type="radio" name="receive" id="receive_yes"
+												class="radio_t" checked="checked" /><label
+												for="receive_yes">예</label></li>
+											<li><input type="radio" name="receive" id="receive_no"
+												class="radio_t" /><label for="receive_no">아니오</label></li>
 										</ul>
-										<p class="gray">* 거래관련 정보는 고객님의 거래안전을 위하여 이메일 수신거부와 관계없이 발송됩니다.</p>
+										<p class="gray">* 거래관련 정보는 고객님의 거래안전을 위하여 이메일 수신거부와 관계없이
+											발송됩니다.</p>
 									</td>
 								</tr>
 								<tr>
 									<th scope="row"><span>주소 *</span></th>
 									<td>
 										<ul class="pta">
-											<li>
-												<input type="text" class="w134" />&nbsp;
-											</li>
-											<li><a href="zip.html" class="addressBtn"><span>우편번호 찾기</span></a></li>
+											<li><input type="text" class="w134" />&nbsp;</li>
+											<li><a href="zip.html" class="addressBtn"><span>우편번호
+														찾기</span></a></li>
 											<li class="pt5"><input type="text" class="addressType" /></li>
-											<li class="cb">
-												<span class="mvalign">※ 상품 배송 시 받으실 주소입니다. 주소를 정확히 적어 주세요.</span>
-											</li>
+											<li class="cb"><span class="mvalign">※ 상품 배송 시
+													받으실 주소입니다. 주소를 정확히 적어 주세요.</span></li>
 										</ul>
 									</td>
 								</tr>
@@ -227,28 +241,29 @@
 									<th scope="row"><span>휴대폰 *</span></th>
 									<td>
 										<ul class="pta">
-											<li>
-												<select>
+											<li><select>
 													<option value="010" selected="selected">010</option>
 													<option value="011">011</option>
 													<option value="016">016</option>
 													<option value="017">017</option>
-													<option value="018">018</option>    
-													<option value="019">019</option>    
-												</select>
+													<option value="018">018</option>
+													<option value="019">019</option>
+											</select></li>
+											<li>&nbsp;<span class="valign">-</span>&nbsp;
 											</li>
-											<li>&nbsp;<span class="valign">-</span>&nbsp;</li>
-											<li><input type="text" class="w74" maxlength="4" /> <span class="valign">-</span>&nbsp;</li>
-											<li class="r10"><input type="text" class="w74" maxlength="4" /></li>
-											<li class="cb pt5"><span class="mvalign">※ SMS 서비스를 받아보시겠습니까?</span></li>
+											<li><input type="text" class="w74" maxlength="4" /> <span
+												class="valign">-</span>&nbsp;</li>
+											<li class="r10"><input type="text" class="w74"
+												maxlength="4" /></li>
+											<li class="cb pt5"><span class="mvalign">※ SMS
+													서비스를 받아보시겠습니까?</span></li>
 											<li class="pt5">
 												<ul class="baseQues">
-													<li>
-														<input type="radio" name="sms" id="sms_yes" class="radio_t" checked="checked"/><label for="sms_yes">예</label>
+													<li><input type="radio" name="sms" id="sms_yes"
+														class="radio_t" checked="checked" /><label for="sms_yes">예</label>
 													</li>
-													<li>
-														<input type="radio" name="sms" id="sms_no" class="radio_t"/><label for="sms_no">아니오</label>
-													</li>
+													<li><input type="radio" name="sms" id="sms_no"
+														class="radio_t" /><label for="sms_no">아니오</label></li>
 												</ul>
 											</li>
 										</ul>
@@ -258,8 +273,7 @@
 									<th scope="row"><span>유선전화</span></th>
 									<td>
 										<ul class="pta">
-											<li>
-												<select>
+											<li><select>
 													<option value="02" selected="selected">02</option>
 													<option value="031">031</option>
 													<option value="032">032</option>
@@ -277,10 +291,11 @@
 													<option value="063">063</option>
 													<option value="064">064</option>
 													<option value="070">070</option>
-												</select>
+											</select></li>
+											<li>&nbsp;<span class="valign">-</span>&nbsp;
 											</li>
-											<li>&nbsp;<span class="valign">-</span>&nbsp;</li>
-											<li><input type="text" class="w74" maxlength="4" /> <span class="valign">-</span>&nbsp;</li>
+											<li><input type="text" class="w74" maxlength="4" /> <span
+												class="valign">-</span>&nbsp;</li>
 											<li><input type="text" class="w74" maxlength="4" /></li>
 										</ul>
 									</td>
@@ -289,8 +304,7 @@
 									<th scope="row"><span>생년월일</span></th>
 									<td>
 										<ul class="pta">
-											<li>
-												<select>
+											<li><select>
 													<option value='' selected="selected">선택하세요</option>
 													<script type="text/javascript">
 													//<![CDATA[
@@ -299,11 +313,10 @@
 														};
 													//]]>
 													</script>
-												</select>
+											</select></li>
+											<li>&nbsp;<span class="valign">년</span>&nbsp;&nbsp;&nbsp;
 											</li>
-											<li>&nbsp;<span class="valign">년</span>&nbsp;&nbsp;&nbsp;</li>
-											<li>
-												<select>
+											<li><select>
 													<option value='' selected="selected">선택하세요</option>
 													<script type="text/javascript">
 													//<![CDATA[
@@ -316,11 +329,10 @@
 														};
 													//]]>
 													</script>
-												</select>
+											</select></li>
+											<li>&nbsp;<span class="valign">월</span>&nbsp;&nbsp;&nbsp;
 											</li>
-											<li>&nbsp;<span class="valign">월</span>&nbsp;&nbsp;&nbsp;</li>
-											<li>
-												<select>
+											<li><select>
 													<option value='' selected="selected">선택하세요</option>
 													<script type="text/javascript">
 													//<![CDATA[
@@ -333,17 +345,15 @@
 														};
 													//]]>
 													</script>
-												</select>
-											</li>
+											</select></li>
 											<li class="r20">&nbsp;<span class="valign">일</span></li>
 											<li class="pt5">
 												<ul class="baseQues">
-													<li>
-														<input type="radio" name="birth" id="solar" class="radio_t" checked="checked"/><label for="solar">양력</label>
+													<li><input type="radio" name="birth" id="solar"
+														class="radio_t" checked="checked" /><label for="solar">양력</label>
 													</li>
-													<li>
-														<input type="radio" name="birth" id="lunar" class="radio_t"/><label for="lunar">음력</label>
-													</li>
+													<li><input type="radio" name="birth" id="lunar"
+														class="radio_t" /><label for="lunar">음력</label></li>
 												</ul>
 											</li>
 										</ul>
@@ -355,46 +365,51 @@
 										<ul class="pta">
 											<li>
 												<ul class="baseQues">
-													<li>
-														<input type="radio" name="business" id="partner" class="radio_t"/><label for="partner">예</label>
-													</li>
-													<li>
-														<input type="radio" name="business" id="general" class="radio_t" checked="checked"/><label for="general">아니오</label>
+													<li><input type="radio" name="business" id="partner"
+														class="radio_t" /><label for="partner">예</label></li>
+													<li><input type="radio" name="business" id="general"
+														class="radio_t" checked="checked" /><label for="general">아니오</label>
 													</li>
 												</ul>
 											</li>
 
 											<li class="cb">
 												<div class="businessTy">
-													<div><label for="">사업자번호</label> <input class="w134" type="text"></div>
-													<div><label for="">사업자등록증</label> <input class="fileType" type="file"></div>
+													<div>
+														<label for="">사업자번호</label> <input class="w134"
+															type="text">
+													</div>
+													<div>
+														<label for="">사업자등록증</label> <input class="fileType"
+															type="file">
+													</div>
 												</div>
 											<li>
 										</ul>
 									</td>
 								</tr>
 							</tbody>
-							</table>
-						</div>
-						
-
+						</table>
 					</div>
 
-					
-					<!-- Btn Area -->
-					<div class="btnArea">
-						<div class="bCenter">
-							<ul>
-								<li><a href="/member/login" class="nbtnbig">취소하기</a></li>
-								<li><a href="/member/registor02" class="sbtnMini">가입하기</a></li>
-							</ul>
-						</div>
+
+				</div>
+
+
+				<!-- Btn Area -->
+				<div class="btnArea">
+					<div class="bCenter">
+						<ul>
+							<li><a href="/member/login" class="nbtnbig">취소하기</a></li>
+							<li><a href="/member/registor02" class="sbtnMini">가입하기</a></li>
+						</ul>
 					</div>
-					<!-- //Btn Area -->
+				</div>
+				<!-- //Btn Area -->
 
 
 
-		<!-- 	</div> -->
+				<!-- 	</div> -->
 			</div>
 			//contents
 

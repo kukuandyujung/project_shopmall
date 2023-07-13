@@ -27,6 +27,24 @@
 <style>
   .container{margin:10px auto; }
 .p{width:200}
+
+
+/* STEP */
+.stepWrap{width:85%; margin:40px 0 30px 0; overflow:hidden;}
+.step{position:relative; float:left; width:25%; height:200px; background:#ebebeb; border-right:1px #fff solid; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
+.stepWrap .step p.web{color:#888; font-weight:600; padding:16px 0 0 15px;}
+.stepWrap .step p.txt{color:#727272; font-weight:600; padding:5px 0 0 15px; font-size:14px;}
+.step p.ck{position:absolute; right:10px; bottom:10px;}
+.stepon{background:#3A4CEA;}
+.stepon p.web{color:#fff;}
+.stepon p.txt{color:#fff;}
+.mfocus{width:189px; height:38px; line-height:38px; padding:0 0 0 9px; border:1px #d9d9d9 solid; font-size:14px; font-weight:600; color:#888;}
+.mfocusnot{width:189px; height:38px; line-height:38px; padding:0 0 0 9px; border:1px #d9d9d9 solid; font-size:14px; font-weight:600; color:#888;}
+
+/*  /* btnarea */
+.btnArea {
+    position: relative; width: 100%; height: 30px;  padding: 20px 0 0 0;text-align: center;clear: both;}
+  
 </style>
 <body>
 <%@ include file="../top.jsp" %>
@@ -50,9 +68,48 @@
 	</section>
 	<!-- ================ end banner area ================= -->
   
-  <!--================Login Box Area =================-->
-	<section class="login_box_area section-margin">
+  <!--================Login Box Area =================-->    
+	<section class="login_box_area section-margin">	
 		<div class="container">
+		
+		<!-- //Step box Start -->	
+
+		<!-- STEP -->
+
+			<div class="stepWrap">
+				<div class="step">
+					<p class="web">STEP 01</p>
+					<p class="txt">실명확인</p>
+				</div>
+
+				<div class="step">
+					<p class="web">STEP 02</p>
+					<p class="txt">약관 동의</p>
+				</div>
+
+				<div class="step">
+					<p class="web">STEP 03</p>
+					<p class="txt">
+						<span>회원정보</span> <span>입력</span>
+					</p>
+				</div>
+
+				<div class="step stepon">
+					<p class="web">STEP 04</p>
+					<p class="txt">
+						<span>회원가입</span> <span>완료</span>
+					</p>
+					<p class="ck">
+						<img src="../img/member/bg_step.png" alt="현재위치" />
+					</p>
+				</div>
+			</div>
+			
+			
+			<!-- //STEP  -->
+
+			<!-- //Step box End -->
+
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="login_box_img">
@@ -68,7 +125,7 @@
 					</div>
 				</div>
 				
-				
+					
 					
 						</section>
 	<!--================End Login Box Area =================-->
