@@ -5,6 +5,7 @@
 <html>
 <head>
 <title> ZEBRA </title>
+<link rel="icon" href="../img/logo2.png" type="image/png">
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <link rel="stylesheet" type="text/css" href="../css/reset.css?v=Y" />
