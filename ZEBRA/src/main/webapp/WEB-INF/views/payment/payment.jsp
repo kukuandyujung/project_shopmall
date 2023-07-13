@@ -1,19 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title> JARDIN SHOP </title>
+<title> ZEBRA </title>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="description" content="JARDIN SHOP" />
-<meta name="keywords" content="JARDIN SHOP" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scaleable=no" />
 <link rel="stylesheet" type="text/css" href="../css/reset.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="../css/layout.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="../css/content.css?v=Y" />
-<script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/top_navi.js"></script>
 <script type="text/javascript" src="../js/left_navi.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
@@ -21,75 +17,35 @@
 <script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="../js/idangerous.swiper-2.1.min.js"></script>
 <script type="text/javascript" src="../js/jquery.anchor.js"></script>
+<script type="text/javascript"></script>
+<link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
+<link rel="stylesheet" href="../vendors/linericon/style.css">
+<link rel="stylesheet" href="../vendors/owl-carousel/owl.theme.default.min.css">
+<link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css">
+<link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
+<link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
- <script type="text/javascript">
-<div id="allwrap">
-<div id="wrap">
-
-	<div id="header">
+<%@ include file="../top.jsp"%>
+	<!-- ================ start banner area ================= -->	
+	<section class="blog-banner-area" id="category">
+		<div class="container h-100">
+			<div class="blog-banner">
+				<div class="text-center">
+					<h1>Order/Payment</h1>
+				</div>
+			</div>
+    </div>
+	</section>
+	<!-- ================ end banner area ================= -->
+<div id="header">
 	<!-- GNB -->
 	<div id="gnb">
-		
 		<div id="top">
-			<ul>
-				<li class="brand t1"><a href="#" id="topNavi1">JARDIN’s BRAND</a>
-					<ul id="topSubm1">
-						<li><a href="#">클래스</a></li>
-						<li><a href="#">홈스타일 카페모리</a></li>
-						<li><a href="#">드립커피백</a></li>
-						<li><a href="#">카페리얼 커피</a></li>
-						<li><a href="#">오리지널커피백</a></li>
-						<li><a href="#">카페리얼 음료</a></li>
-						<li><a href="#">마일드커피백</a></li>
-						<li><a href="#">워터커피</a></li>
-						<li><a href="#">카페포드</a></li>
-						<li><a href="#">모히또파티</a></li>
-						<li><a href="#">테이크아웃 카페모리</a></li>
-						<li><a href="#">포타제</a></li>
-					</ul>
-				</li>
-				<li class="t2"><a href="#" id="topNavi2">원두</a>
-					<ul id="topSubm2">
-						<li><a href="#">클래스</a></li>
-						<li><a href="#">로스터리샵</a></li>
-						<li><a href="#">커피휘엘</a></li>
-						<li><a href="#">산지별 생두</a></li>
-					</ul>
-				</li>
-				<li class="t1"><a href="#" id="topNavi3">원두커피백</a>
-					<ul id="topSubm3">
-						<li><a href="#">드립커피 로스트</a></li>
-						<li><a href="#">오리지널커피백</a></li>
-						<li><a href="#">마일드커피백</a></li>
-					</ul>
-				</li>
-				<li class="t2"><a href="#" id="topNavi4">인스턴트</a>
-					<ul id="topSubm4">
-						<li><a href="#">까페모리</a></li>
-						<li><a href="#">홈스타일카페모리</a></li>
-						<li><a href="#">포타제</a></li>
-					</ul>
-				</li>
-				<li class="t1"><a href="#" id="topNavi5">음료</a>
-					<ul id="topSubm5">
-						<li><a href="#">까페리얼</a></li>
-						<li><a href="#">워터커피</a></li>
-						<li><a href="#">모히또</a></li>
-					</ul>
-				</li>
-				<li class="t2"><a href="#" id="topNavi6">커피용품</a>
-					<ul id="topSubm6">
-						<li><a href="#">종이컵</a></li>
-						<li><a href="#">커피필터</a></li>
-						<li><a href="#">머신 등</a></li>
-					</ul>
-				</li>
-				<li class="t1"><a href="#" id="topNavi7">선물세트</a></li>
-				<li class="t2"><a href="#" id="topNavi8">대량구매</a></li>
-			</ul>
 		</div>
-
 		<script type="text/javascript">initTopMenu();</script>
 	</div>
 	<!-- //GNB -->
@@ -116,7 +72,7 @@
 							</colgroup>
 							<thead>
 								<th scope="col">상품명</th>
-								<th scope="col" class="tnone">가격/포인트</th>
+								<th scope="col" class="tnone">가격</th>
 								<th scope="col">수량</th>
 								<th scope="col">합계</th>
 							</thead>
@@ -133,10 +89,6 @@
 									</td>
 									<td class="tnone">
 										123,400 원
-
-										<!-- 회원일 시 -->
-										<br/><span class="pointscore">1,234 Point</span>
-										<!-- //회원일 시 -->
 									</td>
 									<td>1 개</td>
 									<td>123,400 원</td>
@@ -154,10 +106,6 @@
 									</td>
 									<td class="tnone">
 										123,400 원
-
-										<!-- 회원일 시 -->
-										<br/><span class="pointscore">1,234 Point</span>
-										<!-- //회원일 시 -->
 									</td>
 									<td>1 개</td>
 									<td>123,400 원</td>
@@ -395,8 +343,8 @@
 			<!-- //수취자 주소 입력 -->
 
 
-			<!-- 쿠폰 및 포인트 사용 -->
-					<h3 class="dep">쿠폰 및 포인트 사용</h3>
+			<!-- 주문 금액 및 배송비 -->
+					<h3 class="dep">주문 금액 및 배송비</h3>
 					<div class="checkDiv">
 						<table summary="쿠폰 및 포인트를 입력 또는 확인 할 수 있는 란으로 총 주문금액, 배송비, 쿠폰할인, 포인트 사용, 총 결제금액 순으로 입력 또는 확인 하실수 있습니다." class="checkTable" border="1" cellspacing="0">
 							<caption>쿠폰 및 포인트 사용</caption>
@@ -414,43 +362,10 @@
 									<td>2,500 원 (선불)</td>
 								</tr>
 								<tr>
-									<th scope="row"><span>쿠폰 할인</span></th>
-									<td>
-										<ul class="pta">
-											<li class="r10">
-												<input type="text" class="w134" />&nbsp;&nbsp;
-												<span class="valign"><strong>원</strong></span>
-											</li>
-											<li class="r10"><span class="valign">( 보유 쿠폰 내역 : 7장 )&nbsp;</span></li>
-											<li><a href="coupon_list.html" class="nbtn">쿠폰목록</a></li>
-										</ul>
-									</td>
-								</tr>
-
-								<!-- 회원 일시 -->
-								<tr>
-									<th scope="row"><span>포인트 사용</span></th>
-									<td>
-										<ul class="pta">
-											<li class="r10">
-												<input type="text" class="w134" />&nbsp;&nbsp;
-												<span class="valign"><strong>Point</strong></span>
-											</li>
-											<li>
-												<span class="valign">( 사용 가능 포인트 : </span>
-												<span class="orange">15,000</span>
-												<span class="valign"> Point)</span>
-											</li>
-										</ul>
-									</td>
-								</tr>
-								<!-- //회원 일시 -->
-								
-								<tr>
 									<th scope="row"><span>총 결제금액</span></th>
 									<td>
 										<ul class="pta">
-											<li><span class="valign"><strong>1,133,810 원</strong> (총주문금액 1,132,310원 + 배송비 2500원 - 포인트 1,000 = 1,133,801원)</li>
+											<li><span class="valign"><strong>1,133,810 원</strong></li>
 										</ul>
 									</td>
 								</tr>
@@ -478,24 +393,9 @@
 								<span class="title">배송비</span>
 								<span class="won"><strong>2,500</strong> 원</span>
 							</li>
-
-							<!-- 회원 일때만 -->
-							<li>
-								<span class="title">포인트 할인</span>
-								<span class="won"><strong>- 1,000</strong> P</span>
-							</li>
-							<li>
-								<span class="title">쿠폰 할인</span>
-								<span class="won"><strong>- 1,000</strong> 원</span>
-							</li>
-							<!-- //회원 일떄만 -->
 						</ul>
 
 						<ul class="total">
-							<!-- 회원 일때만 -->
-							<li class="mileage">(적립 포인트 <strong>11,324</strong> Point) </li>
-							<!-- //회원 일때만 -->
-
 							<li class="txt"><strong>결제 예정 금액</strong></li>
 							<li class="money"><span>1,134,810</span> 원</li>
 						</ul>
@@ -522,16 +422,10 @@
 												<input type="radio" id="method01" name="method" checked="checked" /><label for="method01">신용카드 결제</label>
 											</li>
 											<li>
-												<input type="radio" id="method02" name="method" /><label for="method02">실시간 계좌이체</label>
+												<input type="radio" id="method03" name="method" /><label for="method03">무통장 입금</label>
 											</li>
 											<li>
-												<input type="radio" id="method03" name="method" /><label for="method03">가상계좌</label>
-											</li>
-											<li>
-												<input type="radio" id="method04" name="method" /><label for="method04">가상계좌(에스크로)</label>
-											</li>
-											<li>
-												<input type="radio" id="method05" name="method" /><label for="method05">무통장 입금</label>
+												<input type="radio" id="method04" name="method" /><label for="method04">간편 결제</label>
 											</li>
 										</ul>
 									</td>
@@ -544,123 +438,12 @@
 					<div class="disnone method01"><!-- 신용카드 -->
 						<p class="orderalert"><strong>[신용카드]</strong> 온라인상에서 소유하신 신용카드를 통해, 전자결제를 진행합니다.</p>
 					</div>
-					<div class="disnone method02"><!-- 실시간 계좌이체 -->
-						<p class="orderalert"><strong>[실시간 계좌이체]</strong> 주민번호, 계좌 정보, 공인인증서를 통해 실시간 계좌이체를 진행합니다.</p>
-					</div>
-					<div class="disnone method03"><!-- 가상계좌 -->
-						<p class="orderalert"><strong>[가상계좌]</strong> 원하시는 은행으로 가상계좌를 발급해 드리며, 발급된 계좌로 구매대금을 직접 송금합니다.</p>
-					</div>
-					<div class="disnone method04"><!-- 가상계좌 에스크로 -->
-						<p class="orderalert"><strong>[가상계좌 에스크로]</strong> 원하시는 은행으로 가상계좌를 발급해 드리며, 발급된 계좌로 구매대금을 직접 송금합니다.(에스크로 안전결제)</p>
-					</div>
-
 					<div class="disnone method05"><!-- 무통장 입금 -->
 						<p class="orderalert"><strong>[무통장 입금]</strong> 쇼핑몰의 대표 계좌로 구매대금을 직접 송금합니다.</p>
-
-						<div class="checkDiv">
-							<table summary="신용카드 결제, 실시간 계좌이체, 가상계좌, 가상계좌(에스크로), 무통장 입금 순으로 결제수단을 선택하실 수 있습니다." class="checkTable" border="1" cellspacing="0">
-								<caption>결제수단 선택</caption>
-								<colgroup>
-								<col width="22%" class="tw30" />
-								<col width="*" />
-								</colgroup>
-								<tbody>
-									<tr>
-										<th scope="row"><span>입금은행</span></th>
-										<td>
-											<select name="bank">
-												<option value="" >선택하세요.</option>
-											</select>
-										</td>
-									</tr>
-									<tr>
-										<th scope="row"><span>입금자 명</span></th>
-										<td><input type="text" class="w134" /></td>
-									</tr>
-									<tr>
-										<th scope="row"><span>영수증 신청</span></th>
-										<td>
-											<select name="receiptChk">
-												<option value="none">신청안함</option>
-												<option value="individual">개인소득공제</option>
-												<option value="corporate">사업자 지출증빙</option>
-											</select>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						
-						<!-- 개인소득공제 -->
-						<div class="receipt individual">
-							<dl>
-								<dt>발급방식</dt>
-								<dd>
-									<ul>
-										<li><input type="radio" name="individual" id="phone" checked="checked" /><label for="phone">휴대폰</label></li>
-										<li><input type="radio" name="individual" id="securitynumber" /><label for="securitynumber">주민등록번호</label></li>
-										<li><input type="radio" name="individual" id="cashreceipts" /><label class="fn" for="cashreceipts">현금영수증카드</label></li>
-									</ul>
-								</dd>
-							</dl>
-							
-							<ul class="inform phone"><!-- 휴대폰 -->
-								<li class="title">이름</li>
-								<li class="interval"><input type="text" class="w134" /></li>
-								<li class="title cb">휴대폰</li>
-								<li><input type="text" class="w134" /></li>
-							</ul>
-
-							<ul class="inform securitynumber"><!-- 주민등록번호 -->
-								<li class="title">이름</li>
-								<li class="interval"><input type="text" class="w134" /></li>
-								<li class="title cb">주민등록번호</li>
-								<li><input type="text" class="w134" /></li>
-							</ul>
-
-							<ul class="inform cashreceipts"><!-- 현금영수증카드 -->
-								<li class="title">이름</li>
-								<li class="interval"><input type="text" class="w134" /></li>
-								<li class="title2 cb">현금영수증카드 번호</li>
-								<li><input type="text" class="w134" /></li>
-							</ul>
-
-							<p class="txt">* 번호 입력시 하이픈(-)을 제외한 숫자만 입력하세요.</p>
-						</div>
-						<!-- //개인소득공제 -->
-
-						<!-- 사업자 지출증빙 -->
-						<div class="receipt corporate">
-							<dl>
-								<dt>발급방식</dt>
-								<dd>
-									<ul>
-										<li><input type="radio" name="corporate" id="corporatenumber" checked="checked" /><label for="corporatenumber">사업자번호</label></li>
-										<li><input type="radio" name="corporate" id="corporate_cash" /><label class="fn" for="corporate_cash">현금영수증카드</label></li>
-									</ul>
-								</dd>
-							</dl>
-
-							<ul class="inform corporatenumber"><!-- 사업자번호 -->
-								<li class="title">이름</li>
-								<li class="interval"><input type="text" class="w134" /></li>
-								<li class="title2 cb">사업자등록 번호</li>
-								<li><input type="text" class="w134" /></li>
-							</ul>
-
-							<ul class="inform corporate_cash"><!-- 현금영수증카드 -->
-								<li class="title">이름</li>
-								<li class="interval"><input type="text" class="w134" /></li>
-								<li class="title2 cb">현금영수증카드 번호</li>
-								<li><input type="text" class="w134" /></li>
-							</ul>
-
-							<p class="txt">* 번호 입력시 하이픈(-)을 제외한 숫자만 입력하세요.</p>
-						</div>
-						<!-- //사업자 지출증빙 -->
-
+					<div class="disnone method02"><!-- 간편 결제 -->
+						<p class="orderalert"><strong>[간편 결제]</strong> 간편 결제를 진행합니다.</p>
 					</div>
-
+			</div>	
 
 						
 				
@@ -783,38 +566,6 @@ $(function(){
 
 		</div>
 	</div>
-	<!-- //container -->
-
-
-
-
-	<div id="footerWrap">
-		<div id="footer">
-			<div id="fnb">
-				<ul>
-					<li class="left"><a href="#">개인정보취급방침</a></li>
-					<li><a href="#">이용약관</a></li>
-					<li class="left"><a href="#">이메일무단수집거부</a></li>
-					<li><a href="#">고객센터</a></li>
-					<li class="left brand"><a href="#">쟈뎅 브랜드 사이트</a></li>
-				</ul>
-			</div>
-			
-			<div id="finfo">
-				<div id="flogo"><img src="../images/txt/flogo.gif" alt="JARDIN THE COFFEE CREATOR, SINCE 1984" /></div>
-				<address>
-					<ul>
-						<li>㈜쟈뎅</li>
-						<li>대표자 윤영노</li>
-						<li class="tnone">주소 서울시 강남구 논현동 4-21번지 영 빌딩</li>
-						<li class="webnone">소비자상담실 02)546-3881</li>
-						<li>사업자등록번호 211-81-24727</li>
-						<li class="tnone">통신판매신고 제 강남 – 1160호</li>
-						<li class="copy">COPYRIGHT © 2014 JARDIN <span>ALL RIGHTS RESERVED.</span></li>
-					</ul>
-				</address>
-
-				<div id="inicis"><img src="../images/ico/ico_inicis.png" alt="이니시스 결제시스템" /></div>
 			</div>
 		</div>
 	</div>
@@ -823,5 +574,7 @@ $(function(){
 
 </div>
 </div>
+<%@ include file="../footer.jsp"%>
 </body>
+<!-- Mirrored from themewagon.github.io/aroma/category.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 30 Jun 2023 06:56:13 GMT -->
 </html>
