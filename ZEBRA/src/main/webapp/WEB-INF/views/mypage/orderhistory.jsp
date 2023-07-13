@@ -28,9 +28,14 @@
 <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
 <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/content.css">
+<link rel="stylesheet" href="../css/jquery.fancybox-1.3.4.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/reset.css">
 </head>
 <body>
 <%@ include file="../top.jsp"%>
+
 	<!-- ================ start banner area ================= -->	
 	<section class="blog-banner-area" id="category">
 		<div class="container h-100">
@@ -52,7 +57,7 @@
 			<div id="left">
 				<div id="title">MY PAGE<span>마이페이지</span></div>
 				<ul>
-					<li><a href="#" id="leftNavi1">주문 내역</a></li>	
+					<li><a href="/mypage/orderhistory" id="leftNavi1">주문 내역</a></li>	
 					<li><a href="#" id="leftNavi2">위시리스트</a></li>
 					<li><a href="#" id="leftNavi3">장바구니</a></li>
 					<li><a href="#" id="leftNavi4">내정보수정</a></li>

@@ -1,45 +1,45 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from themewagon.github.io/aroma/cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 30 Jun 2023 06:56:15 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Aroma Shop - Cart</title>
-	<link rel="icon" href="../img/Fevicon.png" type="image/png">
-  <link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
-	<link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
-	<link rel="stylesheet" href="../vendors/linericon/style.css">
-  <link rel="stylesheet" href="../vendors/owl-carousel/owl.theme.default.min.css">
-  <link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css">
-  <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
-  <link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
-
-  <link rel="stylesheet" href="../css/style.css">
+<title> ZEBRA </title>
+<link rel="icon" href="../img/logo2.png" type="image/png">
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" type="text/css" href="../css/reset.css?v=Y" />
+<link rel="stylesheet" type="text/css" href="../css/layout.css?v=Y" />
+<link rel="stylesheet" type="text/css" href="../css/content.css?v=Y" />
+<script type="text/javascript" src="../js/top_navi.js"></script>
+<script type="text/javascript" src="../js/left_navi.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/idangerous.swiper-2.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery.anchor.js"></script>
+<script type="text/javascript"></script>
+<link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
+<link rel="stylesheet" href="../vendors/linericon/style.css">
+<link rel="stylesheet" href="../vendors/owl-carousel/owl.theme.default.min.css">
+<link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css">
+<link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
+<link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-	<%@ include file="../top.jsp" %>
+<%@ include file="../top.jsp"%>
 	<!-- ================ start banner area ================= -->	
 	<section class="blog-banner-area" id="category">
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
-					<h1>Shopping Cart</h1>
-					<nav aria-label="breadcrumb" class="banner-breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
-            </ol>
-          </nav>
+					<h1>Shopping Cart</h1>					         
 				</div>
 			</div>
-    </div>
+    	</div>
 	</section>
 	
 	<!-- ================ end banner area ================= -->
