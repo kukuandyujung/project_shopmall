@@ -17,9 +17,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	// 회원 테이블 전체 가져오기
 	public ArrayList<MemberDto> selectAll() {
-		ArrayList<MemberDto> list = new ArrayList<>();
-		//상품 전체 가져오기 
-		list = memberMapper.selectAll();
+		ArrayList<MemberDto> list = memberMapper.selectAll();
 		return list;
 	}
 

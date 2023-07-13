@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-    <title>Gentelella Alela!</title>
+    <title>ZEBRA</title>
 
     <!-- Bootstrap -->
     <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -51,7 +51,7 @@
 <!--                 이미지 오류 -->
               </div>
               <div class="profile_info">
-                <span>Welcome,</span>
+                <span>환영합니다,</span>
                 <h2>John Doe</h2>
               </div>
             </div>

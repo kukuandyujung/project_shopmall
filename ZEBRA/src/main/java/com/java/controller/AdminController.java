@@ -156,7 +156,7 @@ public class AdminController {
 		ArrayList<MemberDto> list = memberService.selectAll();
 		model.addAttribute("list", list);
 		return "admin/member_table";
-	}
+	}	
 	
 	@RequestMapping("/admin/morisjs")
 	public String morisjs() {

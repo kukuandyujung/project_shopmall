@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>DataTables | Gentelella</title>
+    <title>ZEBRA</title>
 
     <!-- Bootstrap -->
     <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
@@ -39,19 +40,20 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+              <a href="index" class="site_title"><i class="fa fa-paw"></i> <span>ZEBRA</span></a>
             </div>
 
             <div class="clearfix"></div>
-
+            
+			
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
                 <img src="production/images/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <span>환영합니다,</span>
+          	      <h2>멋쟁이 얼룩말님</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -88,7 +90,7 @@
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>회원 테이블<small>Users</small></h2>
+                    <h2>회원 목록<small>Users</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -127,7 +129,21 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
+                      <c:forEach var="mdto" items="${list}"> <!-- var는 변수 공간, list를 cdto에 넣어라 -->
+						<tr>
+						  <td>${mdto.ID}</td>
+						  <td>${mdto.NICKNAME}</td>
+						  <td>${mdto.FULL_NAME}</td>	
+						  <td>${mdto.PHONE}</td>
+						  <td>${mdto.ADDRESS}</td> 
+						  <td>${mdto.formattedJoinDay}</td>
+						  <td>${mdto.TOTAL_PAY}</td>	
+						  <td>${mdto.NUM_PAY}</td>
+						  <td>${mdto.EMAIL}</td>
+						</tr>
+					</c:forEach>
+                      
+                        <!-- <tr>
                           <td>Tiger</td>
                           <td>Nixon</td>
                           <td>System Architect</td>
@@ -753,7 +769,7 @@
                           <td>$112,000</td>
                           <td>4226</td>
                           <td>d.snider@datatables.net</td>
-                        </tr>
+                        </tr> -->
                       </tbody>
                     </table>
 					

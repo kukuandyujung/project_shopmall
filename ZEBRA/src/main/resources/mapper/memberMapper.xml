@@ -6,6 +6,6 @@
 <mapper namespace="com.java.mapper.MemberMapper">
 <!-- 회원 정보 전체 가져오기 -->
 <select id="selectAll" resultType="com.java.dto.MemberDto">
-	select * from product zebra by id asc
+	select * from zebra WHERE id != 0 order by id asc
 </select>
 </mapper>

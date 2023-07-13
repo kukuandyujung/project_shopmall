@@ -28,6 +28,7 @@
                       <li><a href="/admin/icons">Icons</a></li>
                       <li><a href="/admin/glyphicons">Glyphicons</a></li>
                       <li><a href="/admin/widgets">Widgets</a></li>  
+                      <li><a href="/admin/member_table">회원 목록</a></li>  
                     </ul>
                   </li>
                   <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>

@@ -1,6 +1,8 @@
 package com.java.dto;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,12 +22,17 @@ public class MemberDto {
 	private String PHONE;
 	private String EMAIL;
 	private String ZIP;
-	private int ADDRESS;
-	private Timestamp JOINDAY;
+	private String ADDRESS;
+	private Date JOINDAY;
 	private int TOTAL_PAY;
 	private int NUM_PAY;
 	private int YESORNO;
 	private int GETOROUT;
+	
+	public String getFormattedJoinDay() {
+	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	    return sdf.format(JOINDAY);
+	}
 	
 	
 }
