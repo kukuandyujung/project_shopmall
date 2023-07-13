@@ -145,7 +145,7 @@ public class AdminController {
 		return "admin/media_gallery";
 	}	
 	
-	@RequestMapping("/admin/member_table")
+	@RequestMapping("/admin/member_table") 
 	public String member_table() {
 		
 		return "admin/member_table";
