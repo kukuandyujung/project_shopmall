@@ -15,16 +15,21 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/write.css">
   
-    <!-- Bootstrap -->
+<!--     Bootstrap -->
     <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
+<!--     Font Awesome -->
     <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- NProgress -->
+<!--     NProgress -->
     <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
 
-    <!-- Custom Theme Style -->
+<!--     Custom Theme Style -->
     <link href="/build/css/custom.min.css" rel="stylesheet">
+<style type="text/css">
+	*{margin: 0; padding: 0;}
+	div{width:1000px; margin: 0px auto; } 
+</style>
 </head>
+<!-- body 시작 -->
 <body class="nav-md">
     <div class="container body">
         <div class="main_container">
@@ -36,185 +41,224 @@
     <hr>
     
     <form action="doWrite.do" name="write" method="post" enctype="multipart/form-data">
+     
           <div class="right_col" role="main">
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
                             <h3>상품 등록 페이지</h3>
                         </div>
-     
-     <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">상품 코드<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" class='optional' name="occupation" data-validate-length-range="5,15" type="text" /></div>
-                                        </div>
+				    <div class="field item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">상품 번호<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6">
+                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="pno" placeholder="ex) 12" required="required" />
+                        </div>
+                    </div>
 
-      <table>
-        <colgroup>
-          <col width="15%">
-          <col width="85%">
-        </colgroup>
-        
-        <tr>
-          <th>상품 번호</th>
-          <td>
-            <input type="text" name="pno">
-          </td>
-        </tr>
-        
-        <tr>
-          <th>상품 코드</th>
-          <td>
-            <input type="text" name="pcode">
-          </td>
-        </tr>
-        <tr>
-          <th>상품명</th>
-          <td>
-            <input type="text" name="pname">
-          </td>
-        </tr>
-        
-        
-        <tr>
-          <th>판매 가격</th>
-          <td>
-            <input type="text" name="pprice">
-          </td>
-        </tr>
-        <tr>
-          <th>재고 수량</th>
-          <td>
-            <input type="text" name="pstock">
-          </td>
-        </tr>
-        <tr>
-          <th>판매 개수</th>
-          <td>
-            <input type="text" name="psoldcount">
-          </td>
-        </tr>
-        <tr>
-          <th>조회수</th>
-          <td>
-            <input type="text" name="phit">
-          </td>
-        </tr>
-        
-        <tr>
-          <th>리뷰 평점</th>
-          <td>
-            <input type="text" name="pscore">
-          </td>
-        </tr>
-        <tr>
-          <th>리뷰 개수</th>
-          <td>
-            <input type="text" name="previewcount">
-          </td>
-        </tr>
-        
-        <tr>
-          <th>상품 등록일</th>
-          <td>
-            <input type="date" name="pdate">
-          </td>
-        </tr>
-        
-        
-        <tr>
-          <th>색상</th>
-          <td>
-            <input type="text" name="pcolor">
-          </td>
-        </tr>
-        
-        <tr>
-          <th>상품 사이즈</th>
-          <td>
-            <input type="text" name="psize">
-          </td>
-        </tr>
-        <tr>
-          <th>기본 설명</th>
-          <td>
-            <textarea name="pdescript" cols="50" rows="10"></textarea>
-          </td>
-        </tr>
-        
-        <tr>
-          <th>메인 이미지 1</th>
-          <td>
-            <input type="file" name="pmainimg1" id="file">
-          </td>
-        </tr>
-        
-        <tr>
-          <th>메인 이미지 2</th>
-          <td>
-            <input type="file" name="pmainimg2" id="file">
-          </td>
-        </tr>
-        
-        <tr>
-          <th>메인 이미지 3</th>
-          <td>
-            <input type="file" name="pmainimg3" id="file">
-          </td>
-        </tr>
-        
-        <tr>
-          <th>상세 이미지1</th>
-          <td>
-            <input type="file" name="pdetailimg1" id="file">
-          </td>
-        </tr>
-        
-        <tr>
-          <th>상세 이미지2</th>
-          <td>
-            <input type="file" name="pdetailimg2" id="file">
-          </td>
-        </tr>
-       
-        <tr>
-          <th>상세 이미지3</th>
-          <td>
-            <input type="file" name="pdetailimg3" id="file">
-          </td>
-        </tr>
-       
-        <tr>
-          <th>상세 이미지4</th>
-          <td>
-            <input type="file" name="pdetailimg4" id="file">
-          </td>
-        </tr>
-       
-        <tr>
-          <th>상세 이미지5</th>
-          <td>
-            <input type="file" name="pdetailimg5" id="file">
-          </td>
-        </tr>
-        
-        <tr>
-          <th>상세 이미지6</th>
-          <td>
-            <input type="file" name="pdetailimg6" id="file">
-          </td>
-        </tr>
-       
-        
-      </table>
-      <hr>
-      <div class="button-wrapper">
-        <button type="submit" class="write">작성완료</button>
-        <button type="button" class="cancel" onclick="javascript:location.href='product_list.do'">취소</button>
-      </div>
+                    <div class="field item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">상품 코드<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6">
+                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="pcode" placeholder="ex) 0" required="required" />
+                        </div>
+                    </div>
+                    <div class="field item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">상품명<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6">
+                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "text" name="pname" placeholder="ex) pants " required="required" />
+                        </div>
+                    </div>
+                    <div class="field item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">판매 가격<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6">
+                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="pprice" placeholder="ex) 100,000 " required="required" />
+                        </div>
+                    </div>
+                    <div class="field item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">재고 수량<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6">
+                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="pstock" placeholder="ex) pants " required="required" />
+                        </div>
+                    </div>         
+                    <div class="field item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">판매 개수<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6">
+                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="psoldcount" placeholder="ex) 1 " required="required" />
+                        </div>
+                    </div>
+                                        
+                    <div class="field item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">상품 등록일<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6">
+                            <input class="form-control" class='date' type="date" name="pdate" required='required'>
+                        </div>
+                    </div>                  
+                    <div class="field item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">색상<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6">
+                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "text" name="pcolor" placeholder="ex) black " required="required" />
+                        </div>
+                    </div>                   
+                    <div class="field item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">상품 사이즈<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6">
+                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "text" name="psize" placeholder="ex) s " required="required" />
+                        </div>
+                    </div>                   
+                    <div class="field item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">기본 설명<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6"> 
+                            <textarea class="form-control" name="pdescript" cols="50" rows="10" placeholder="ex) women t-shirt " required="required"></textarea>
+                        </div>
+                    </div>                   
+                    <div class="field item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">메인 이미지1<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6">
+                            <input class="form-control" type="file"  name="pmainimg1" id="file"  data-validate-minmax="10,100" required='required'></div>
+                    </div>                    
+                    <div class="field item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">메인 이미지2<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6">
+                            <input class="form-control" type="file"  name="pmainimg2" id="file"  data-validate-minmax="10,100" required='required'></div>
+                    </div>                    
+                    <div class="field item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">메인 이미지3<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6">
+                            <input class="form-control" type="file"  name="pmainimg3" id="file"  data-validate-minmax="10,100" required='required'></div>
+                    </div>                    
+                    <div class="field item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지1<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6">
+                            <input class="form-control" type="file"  name="pdetailimg1" id="file"  data-validate-minmax="10,100" required='required'></div>
+                    </div>                    
+                    <div class="field item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지2<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6">
+                            <input class="form-control" type="file"  name="pdetailimg2" id="file"  data-validate-minmax="10,100" required='required'></div>
+                    </div>                    
+                    <div class="field item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지3<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6">
+                            <input class="form-control" type="file"  name="pdetailimg3" id="file"  data-validate-minmax="10,100" required='required'></div>
+                    </div>                    
+                    <div class="field item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지4<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6">
+                            <input class="form-control" type="file"  name="pdetailimg4" id="file"  data-validate-minmax="10,100" required='required'></div>
+                    </div>                    
+                    <div class="field item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지5<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6">
+                            <input class="form-control" type="file"  name="pdetailimg5" id="file"  data-validate-minmax="10,100" required='required'></div>
+                    </div>                    
+                    <div class="field item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지6<span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6">
+                            <input class="form-control" type="file"  name="pdetailimg6" id="file"  data-validate-minmax="10,100" required='required'></div>
+                    </div>                    
+                   
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+<!--       <div class="button-wrapper"> -->
+<!--         <button type="submit" class="write">작성완료</button> -->
+<!--         <button type="button" class="cancel" onclick="javascript:location.href='product_list.do'">취소</button> -->
+<!--       </div> -->
     </form>
 
   </section>
+<!-- 상품 등록하기 끝 -->
+                                        <div class="ln_solid">
+                                            <div class="form-group">
+                                                <div class="col-md-6 offset-md-3">
+                                                    <button type='submit' class="btn btn-primary">작성 완료</button>
+                                                    <button type='button' class="btn btn-primary" onclick="javascript:location.href='product_list.do'">취소</button>
+                                                    <button type='reset' class="btn btn-success">Reset</button>
+                                                </div>
+                                            </div>
+                                        </div>                                      
+                                    </form>
+                                </div>
+                                <!-- 야무지게 상품 등록 ~! 끝 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /page content -->
+
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/vendors/validator/multifield.js"></script>
+    <script src="/vendors/validator/validator.js"></script>
+    
+    <!-- Javascript functions	-->
+    <%-- 
+	<script>
+		function hideshow(){
+			var password = document.getElementById("password1");
+			var slash = document.getElementById("slash");
+			var eye = document.getElementById("eye");
+			
+			if(password.type === 'password'){
+				password.type = "text";
+				slash.style.display = "block";
+				eye.style.display = "none";
+			}
+			else{
+				password.type = "password";
+				slash.style.display = "none";
+				eye.style.display = "block";
+			}
+
+		}
+	</script>
+    --%>
+    
+    <!-- 뭔가 작성란에 다 작성하지 않으면 안 된다는 조건을 가진 코드 -->
+    <script>
+        // initialize a validator instance from the "FormValidator" constructor.
+        // A "<form>" element is optionally passed as an argument, but is not a must
+        var validator = new FormValidator({
+            "events": ['blur', 'input', 'change']
+        }, document.forms[0]);
+        // on form "submit" event
+        document.forms[0].onsubmit = function(e) {
+            var submit = true,
+                validatorResult = validator.checkAll(this);
+            console.log(validatorResult);
+            return !!validatorResult.valid;
+        };
+        // on form "reset" event
+        document.forms[0].onreset = function(e) {
+            validator.reset();
+        };
+        // stuff related ONLY for this demo page:
+        $('.toggleValidationTooltips').change(function() {
+            validator.settings.alerts = !this.checked;
+            if (this.checked)
+                $('form .alert').remove();
+        }).prop('checked', false);
+
+    </script>
+
+    <!-- jQuery -->
+    <script src="/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FastClick -->
+    <script src="/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="/vendors/nprogress/nprogress.js"></script>
+    <!-- validator -->
+    <!-- <script src="/vendors/validator/validator.js"></script> -->
+
+    <!-- Custom Theme Scripts -->
+    <script src="/build/js/custom.min.js"></script>
 
 </body>
 </html>

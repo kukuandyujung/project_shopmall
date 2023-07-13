@@ -18,6 +18,7 @@
                       <li><a href="/admin/form_wizards">Form Wizard</a></li>
                       <li><a href="/admin/form_upload">Form Upload</a></li>
                       <li><a href="/admin/form_buttons">Form Buttons</a></li>
+                      <li><a href="/admin/product_list">상품 목록</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>

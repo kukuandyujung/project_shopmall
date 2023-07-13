@@ -31,6 +31,9 @@ $(document).ready(function() {
 
 });
 </script>
+<style type="text/css">
+
+</style>
 </head>
 <body>
 
@@ -74,22 +77,22 @@ $(document).ready(function() {
 							<tbody>
 								
 
-							<!--오라클 보드에 있는 데이터를 list로 모아서 뿌려준다.--> 
-							<c:forEach var ="cdto" items="${list}"> 
+							<!--오라클 product에 있는 데이터를 list로 모아서 뿌려준다.--> 
+							<c:forEach var ="product" items="${list}"> 
 							
 								<tr>
-									<td class="tnone">${pdto.pno}</td>
+									<td class="tnone">${product.pno}</td>
 									<td class="left">
-										<a href="#" class="lightgray">${pdto.pname}</a>
+										<a href="#" class="lightgray">${product.pname}</a>
 									</td>
 									<td>
-										<fmt:formatDate value="${pdto.pdate}" pattern="yyyy-MM-dd"/>
+										<fmt:formatDate value="${product.pdate}" pattern="yyyy-MM-dd"/>
 									</td>
-									<td class="tnone right">${pdto.pstock}</td>
+									<td class="tnone right">${product.pstock}</td>
 								</tr>
 								
 							</c:forEach>
-							<!--오라클 보드에 있는 데이터를 list로 모아서 뿌려준다.--> 
+							<!--오라클 product에 있는 데이터를 list로 모아서 뿌려준다.--> 
 								
 							</tbody>
 						</table>
@@ -101,13 +104,13 @@ $(document).ready(function() {
 						<!-- 페이징이동1 -->
 						<div class="allPageMoving1">
 
-						<a href="#" class="n"><img src="../images/btn/btn_pre2.gif" alt="처음으로"/></a><a href="#" class="pre"><img src="../images/btn/btn_pre1.gif" alt="앞페이지로"/></a>
+						<a href="#" class="n">◀<a href="#" class="pre">◀</a>
 						<strong>1</strong>
 						<a href="#">2</a>
 						<a href="#">3</a>
 						<a href="#">4</a>
 						<a href="#">5</a>
-						<a href="#" class="next"><img src="../images/btn/btn_next1.gif" alt="뒤페이지로"/></a><a href="#" class="n"><img src="../images/btn/btn_next2.gif" alt="마지막페이지로"/></a>
+						<a href="#" class="next">▶</a><a href="#" class="n">▶</a>
 
 						</div>
 						<!-- //페이징이동1 -->
@@ -116,15 +119,15 @@ $(document).ready(function() {
 					<div class="searchWrap">
 						<div class="search">
 							<ul>
-								<li class="web"><img src="../images/txt/txt_search.gif" alt="search" /></li>
+								<li class="web">◀</li>
 								<li class="se">
 									<select>
 										<option value="" />제목</option>
 									</select>
 								</li>
 								<li><input type="text" class="searchInput" /></li>
-								<li class="web"><a href="#"><img src="../images/btn/btn_search.gif" alt="검색" /></a></li>
-								<li class="mobile"><a href="#"><img src="../images/btn/btn_search_m.gif" alt="검색" /></a></li>
+								<li class="web"><a href="#">▶</a></li>
+								<li class="mobile"><a href="#">▶</a></li>
 							</ul>
 						</div>
 					</div>
