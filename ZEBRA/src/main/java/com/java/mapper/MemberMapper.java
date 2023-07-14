@@ -15,4 +15,7 @@ public interface MemberMapper {
 	// 회원 정보 1개 가져오기
 	MemberDto selectOne(int ID);
 
+	//로그인 확인
+	MemberDto selectLogin(MemberDto memberDto);
+
 }

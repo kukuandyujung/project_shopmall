@@ -27,4 +27,11 @@ public class MemberServiceImpl implements MemberService {
 		return mdto;
 	}
 
+	@Override//로그인 확인
+	public MemberDto selectLogin(MemberDto memberDto) {
+		// 로그인 확인
+		MemberDto mdto = memberMapper.selectLogin(memberDto);
+		return null;
+	}
+
 }

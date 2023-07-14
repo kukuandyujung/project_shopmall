@@ -11,35 +11,40 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.java.dto.AdminDto;
+
 import com.java.dto.MemberDto;
-import com.java.service.AdminService;
 import com.java.service.MemberService;
 
 @Controller
 public class AdminController {
 
-	
-	@Autowired AdminService adminService;
 	@Autowired MemberService memberService;
 	@Autowired HttpSession session;
 	
 	
+	@RequestMapping("/admin/index")
+	public String index(String loginCheck, Model model) {
+		model.addAttribute("loginCheck", loginCheck); //로그인 성공 여부
+		return "admin/index";
+	}
 	
+	//관리자 로그인 RequestMapping
 	@RequestMapping("/admin/login")
 	public String login() {
 		
 		return "admin/login";
 	}
 	
-	
+	//관리자 로그인 PostMapping
 	@PostMapping("/admin/login")
-	public String  login2(AdminDto adminDto, Model model) {
-		System.out.println("AdminDto 1 : "+ adminDto.getId());
-		System.out.println("AdminDto 2 : "+ adminDto.getPw());
-		AdminDto adto = adminService.selectLogin(adminDto);
-		if(adto!=null) {
-			session.setAttribute("sessionId", adto.getId());
+	public String  login2(MemberDto memberDto, Model model) {
+		System.out.println("memberDto 1 : "+ memberDto.getID());
+		System.out.println("memberDto 2 : "+ memberDto.getPASSWORD());
+		MemberDto mdto = memberService.selectLogin(memberDto);
+		if(mdto!=null) {
+			session.setAttribute("sessionId", mdto.getID());
+			session.setAttribute("sessionName", mdto.getNICKNAME());
+			model.addAttribute("loginCheck", "success");
 		}else {
 			model.addAttribute("loginCheck", "fail");
 			return "/admin/login";
@@ -48,6 +53,12 @@ public class AdminController {
 		return "redirect:/index?loginCheck=success";
 	}
 	
+	//관리자 로그아웃
+	@RequestMapping("/admin/logout")
+	public String logout() {	
+		session.invalidate(); //session 모두 삭제 
+		return "redirect:/index";
+	}
 	
 	
 	@RequestMapping("/admin/chartjs")
@@ -119,11 +130,7 @@ public class AdminController {
 	}
 	
 	
-	@RequestMapping("/admin/index")
-	public String index() {
-		
-		return "admin/index";
-	}
+	
 	
 	@RequestMapping("/admin/index2")
 	public String index2() {

@@ -226,7 +226,6 @@ public class ProductController {
 	//상품 삭제하기 
 	@RequestMapping("/admin/product_delete")
 	public String product_delete(int pno) {
-		System.out.println("product_delete" + pno);
 		productService.deleteOne(pno);
 		return "redirect:product_list";
 	}
