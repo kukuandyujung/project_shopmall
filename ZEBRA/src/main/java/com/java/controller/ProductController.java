@@ -236,13 +236,13 @@ public class ProductController {
 	public String product_update(ProductDto pdto,
 			@RequestPart("pmainimg1") MultipartFile pmainimg1,
 			@RequestPart("pmainimg2") MultipartFile pmainimg2,
-//			@RequestPart("pmainimg3") MultipartFile pmainimg3,
-//			@RequestPart("pmainimg3") MultipartFile pdetailimg1,
-//			@RequestPart("pmainimg3") MultipartFile pdetailimg2,
-//			@RequestPart("pmainimg3") MultipartFile pdetailimg3,
-//			@RequestPart("pmainimg3") MultipartFile pdetailimg4,
-//			@RequestPart("pmainimg3") MultipartFile pdetailimg5,
-//			@RequestPart("pmainimg3") MultipartFile pdetailimg6,
+			@RequestPart("pmainimg3") MultipartFile pmainimg3,
+			@RequestPart("pmainimg3") MultipartFile pdetailimg1,
+			@RequestPart("pmainimg3") MultipartFile pdetailimg2,
+			@RequestPart("pmainimg3") MultipartFile pdetailimg3,
+			@RequestPart("pmainimg3") MultipartFile pdetailimg4,
+			@RequestPart("pmainimg3") MultipartFile pdetailimg5,
+			@RequestPart("pmainimg3") MultipartFile pdetailimg6,
 		   int page, String category, String s_word,Model model)throws Exception {
 			//사진 1개 수정
 			System.out.println("product_update pdto" + pdto.getPno());

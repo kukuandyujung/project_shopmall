@@ -38,7 +38,7 @@
         <th><strong>상품명 : <span>${pdto.pname}</span></strong></th>
       </tr>
       <tr>
-        <td>상품 등록일<span>${pdto.pdate}</span></td><br>
+        <td>상품 번호<span>${pdto.pno}</span></td><br>
       </tr>
       <tr>
         <td>메인 이미지1<span><img src="/upload/${pdto.pmainimg1}" style="width: 100px;" alt="" /></span></td>
@@ -64,8 +64,8 @@
     </table>
 	<hr>
 
-  <a href="product_list?page=${page}&category=${category}&s_word=${s_word}"><div class="list">목록</div></a>
-    <a onclick="deleteBtn()"><div class="list">삭제</div></a>
+    <a href="product_list?page=${page}&category=${category}&s_word=${s_word}"><div class="list">목록</div></a>
+    <a onclick="deleteBtn(${pdto.pno})"><div class="rebtn">삭제</div></a>
     <a href="product_update?pno=${pdto.pno}&page=${page}&category=${category}&s_word=${s_word}"><div class="list">수정</div></a>
 </section>
 </body>

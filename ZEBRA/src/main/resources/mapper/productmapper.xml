@@ -77,11 +77,16 @@
 	<!-- 상품 1개 저장 -->
 	<!-- 상품 테이블에 새로운 레코드를 삽입하기. 상품 등록 시 사용되는 변수를 적으면 된다. product_seq.nextval는 시퀀스로 부터 새로운 게시글의 고유 번호를 생성한다.   -->
 	<insert id="insertOne">
-	insert into product values ( #{pcode}, #{pname}, #{pprice},
-		#{pstock},#{psoldcount}, sysdate, #{pcolor}, #{psize},
-		#{pdescript},#{pmainimg1},#{pmainimg2}, #{pmainimg3},
-		#{pdetailimg1},#{pdetailimg2}, #{pdetailimg3},#{pdetailimg4},
-		#{pdetailimg5},#{pdetailimg6})
+	insert into product (PNO, PCODE, PNAME, PPRICE, 
+		PSTOCK, PSOLDCOUNT, PCOLOR,PSIZE, 
+		PDESCRIPT, 
+		PMAINIMG1,PMAINIMG2,PMAINIMG3,PDETAILIMG1,PDETAILIMG2,PDETAILIMG3,PDETAILIMG4,PDETAILIMG5,PDETAILIMG6)
+	VALUES (#{PNO}, #{PCODE}, #{PNAME}, #{PPRICE},
+		#{PSTOCK},#{PSOLDCOUNT}, #{PCOLOR}, #{PSIZE},
+		#{PDESCRIPT},
+        #{PMAINIMG1},#{PMAINIMG2}, #{PMAINIMG3},
+		#{PDETAILIMG1},#{PDETAILIMG2},#{PDETAILIMG3},
+        #{PDETAILIMG4},#{PDETAILIMG5},#{PDETAILIMG6})
 	</insert>
 	
 	<delete id="deleteOne">
@@ -92,8 +97,9 @@
 	<!-- 주어집 값에 대해 업데이트하기 그냥 상품 리스트에 적힌 변수를 적고 업데이트 대상을 pno가 주어진 값과 일치하는 레코드이다. -->
 	<update id="updateOne">
 		update product set pcode =#{pcode}, pname=#{pname}, pprice=#{pprice},
-		pstock=#{pstock},psoldcount=#{psoldcount}, pdate= sysdate, pcolor=#{pcolor}, psize=#{psize},
-		pdescript=#{pdescript},pmainimg1=#{pmainimg1},pmainimg2=#{pmainimg2}, pmainimg3=#{pmainimg3},
+		pstock=#{pstock},psoldcount=#{psoldcount},  pcolor=#{pcolor}, psize=#{psize},
+		pdescript=#{pdescript},
+		pmainimg1=#{pmainimg1},pmainimg2=#{pmainimg2}, pmainimg3=#{pmainimg3},
 		pdetailimg1=#{pdetailimg1},pdetailimg2=#{pdetailimg2}, pdetailimg3=#{pdetailimg3},pdetailimg4=#{pdetailimg4},
 		pdetailimg5=#{pdetailimg5},pdetailimg6=#{pdetailimg6}
 		where pno = #{pno}

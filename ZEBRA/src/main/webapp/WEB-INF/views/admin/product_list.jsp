@@ -88,7 +88,7 @@ function searchBtn(){
 					<thead>
 						<th scope="col" >상품 번호</th>
 						<th scope="col" >상품명 </th>
-						<th scope="col" >상품 등록일</th>
+						<th scope="col" >상품 코드</th>
 						<th scope="col" >상품 재고</th>			
 						<th scope="col" >판매 개수</th>			
 					</thead>
@@ -103,9 +103,7 @@ function searchBtn(){
 							<td >
 								<a href="product_view?pno=${product.pno}&page=${page}&category=${category}&s_word=${s_word}">${product.pname}</a>
 							</td>
-							<td>
-								<fmt:formatDate value="${product.pdate}" pattern="yyyy-MM-dd"/>
-							</td>
+							<td>${product.pcode}</td>
 							<td >${product.pstock}</td>
 							<td >${product.psoldcount}</td>
 							

@@ -1,6 +1,5 @@
 package com.java.dto;
 
-import java.sql.Timestamp;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,7 +22,6 @@ public class ProductDto {
 	private int previewcount;
 	private String pmainimg1,pmainimg2,pmainimg3;
 	private String pdetailimg1,pdetailimg2, pdetailimg3, pdetailimg4,pdetailimg5, pdetailimg6;
-	private Timestamp pdate;
 	private String pcolor;            
 	private String psize;            
 }

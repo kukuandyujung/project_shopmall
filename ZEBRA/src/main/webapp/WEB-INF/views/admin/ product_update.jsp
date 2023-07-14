@@ -67,14 +67,7 @@
                         <div class="col-md-6 col-sm-6">
                             <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="psoldcount" placeholder="ex) 1 " required="required" />
                         </div>
-                    </div>
-                                        
-                    <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3  label-align">상품 등록일<span class="required">${pdto.pdate}</span></label>
-                        <div class="col-md-6 col-sm-6">
-                            <input class="form-control" class='date' type="date" name="pdate" required='required'>
-                        </div>
-                    </div>                  
+                    </div>                                
                     <div class="field item form-group">
                         <label class="col-form-label col-md-3 col-sm-3  label-align">색상<span class="required">${pdto.pcolor}</span></label>
                         <div class="col-md-6 col-sm-6">
