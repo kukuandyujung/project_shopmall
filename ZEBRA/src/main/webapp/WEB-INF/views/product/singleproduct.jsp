@@ -67,22 +67,22 @@
 						<div class="option">
 							<div class="size">
 								<h4>Size</h4>
-								  <label for="s_size">
-								    <button class="btn btn-primary" type="button">S</button>
-								    <input type="radio" id="s_size" name="size" style="display: none;">
-								  </label>
-								  <label for="m_size">
-								    <button class="btn btn-primary" type="button">M</button>
-								    <input type="radio" id="m_size" name="size" style="display: none;">
-								  </label>
-								  <label for="l_size">
-								    <button class="btn btn-primary" type="button">L</button>
-								    <input type="radio" id="l_size" name="size" style="display: none;">
-								  </label>
-								  <label for="xl_size">
-								    <button class="btn btn-primary" type="button">XL</button>
-								    <input type="radio" id="xl_size" name="size" style="display: none;">
-								  </label>
+								    <label for="s_size">
+								        <button class="btn btn-primary" type="button" style="background-color: white; color: black; border: 1px solid gray;">S</button>
+								        <input type="radio" id="s_size" name="size" style="display: none;">
+								    </label>
+								    <label for="m_size">
+								        <button class="btn btn-primary" type="button" style="background-color: white; color: black; border: 1px solid gray;">M</button>
+								        <input type="radio" id="m_size" name="size" style="display: none;">
+								    </label>
+								    <label for="l_size">
+								        <button class="btn btn-primary" type="button" style="background-color: white; color: black; border: 1px solid gray;">L</button>
+								        <input type="radio" id="l_size" name="size" style="display: none;">
+								    </label>
+								    <label for="xl_size">
+								        <button class="btn btn-primary" type="button" style="background-color: white; color: black; border: 1px solid gray;">XL</button>
+								        <input type="radio" id="xl_size" name="size" style="display: none;">
+								    </label>
 							</div>
 							<div class="product_count">
 								<label for="qty">Quantity:</label> <input type="text" name="qty" 
