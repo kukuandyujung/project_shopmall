@@ -116,9 +116,7 @@
 					</div>
 					<div class="poroductTotal">
 						<ul>	
-							<li>상품 합계금액 <strong>1,132,310</strong> 원</li>
-							<li>+ 배송비 <strong>2,500</strong> 원</li>
-							<li>= 총 합계 <strong>1,134,810</strong> 원</li>
+							<li>총 합계 <strong>1,134,810</strong> 원</li>
 						</ul>
 					</div>
 					<!-- //주문 상품 -->
@@ -344,25 +342,14 @@
 			<!-- //수취자 주소 입력 -->
 
 
-			<!-- 주문 금액 및 배송비 -->
-					<h3 class="dep">주문 금액 및 배송비</h3>
+			<!-- 결제 금액 -->
+					<h3 class="dep">결제 금액</h3>
 					<div class="checkDiv">
 						<table summary="쿠폰 및 포인트를 입력 또는 확인 할 수 있는 란으로 총 주문금액, 배송비, 쿠폰할인, 포인트 사용, 총 결제금액 순으로 입력 또는 확인 하실수 있습니다." class="checkTable" border="1" cellspacing="0">
-							<caption>쿠폰 및 포인트 사용</caption>
 							<colgroup>
 							<col width="22%" class="tw30" />
-							<col width="*" />
 							</colgroup>
 							<tbody>
-								<tr>
-									<th scope="row"><span>총 주문금액</span></th>
-									<td>1,132,310 원</td>
-								</tr>
-								<tr>
-									<th scope="row"><span>배송비</span></th>
-									<td>2,500 원 (선불)</td>
-								</tr>
-								<tr>
 									<th scope="row"><span>총 결제금액</span></th>
 									<td>
 										<ul class="pta">
@@ -374,28 +361,12 @@
 							</tbody>
 						</table>
 					</div>
-			<!-- //쿠폰 및 포인트 사용 -->
+			<!-- //결제 금액 -->
 			
 
 			<!-- 총 주문금액 -->
 					<div class="amount">
-
-						<!-- 회원 일때 -->
 						<h4 class="member">총 주문금액</h4>
-						<!-- 회원 일때 -->
-						<!-- 비회원 일때  <h4>총 주문금액</h4> //비회원 일때 -->
-
-						<ul class="info">
-							<li>
-								<span class="title">상품 합계금액</span>
-								<span class="won"><strong>1,132,310</strong> 원</span>
-							</li>
-							<li>
-								<span class="title">배송비</span>
-								<span class="won"><strong>2,500</strong> 원</span>
-							</li>
-						</ul>
-
 						<ul class="total">
 							<li class="txt"><strong>결제 예정 금액</strong></li>
 							<li class="money"><span>1,134,810</span> 원</li>

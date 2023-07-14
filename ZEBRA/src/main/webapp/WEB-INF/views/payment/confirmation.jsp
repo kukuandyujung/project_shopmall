@@ -28,10 +28,6 @@
 <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
 <link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/content.css">
-<link rel="stylesheet" href="../css/jquery.fancybox-1.3.4.css">
-<link rel="stylesheet" href="../css/layout.css">
-<link rel="stylesheet" href="../css/reset.css">
 </head>
 <body>
 <%@ include file="../top.jsp"%>
@@ -57,7 +53,7 @@
 		<div id="outbox">		
 			<!-- maxcontents -->
 			<div id="maxcontents">
-				<div id="mypage" style=" height:1800px;">
+				<div id="mypage" style=" height:1720px;">
 					<h2><strong>주문/결제</strong></h2>
 					
 					<!-- 주문 상품 -->
@@ -226,17 +222,8 @@
 							<caption>결제금액확인</caption>
 							<colgroup>
 							<col width="17%" class="tw20" />
-							<col width="*" />
-							<col width="17%" class="tw20" />
-							<col width="*" class="tw25" />
 							</colgroup>
 							<tbody>
-								<tr>
-									<th scope="row"><span>총 주문<u>금액</u></span></th>
-									<td>1,132,132원</td>
-									
-									<td>2,500 원 (선불)</td>
-								</tr>
 								<tr>
 									<th scope="row"><span>총 결제<u>금액</u></span></th>
 									<td colspan="3"><strong>22,820 원</strong></td>

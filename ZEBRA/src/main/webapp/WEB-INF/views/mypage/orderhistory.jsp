@@ -28,10 +28,6 @@
 <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
 <link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/content.css">
-<link rel="stylesheet" href="../css/jquery.fancybox-1.3.4.css">
-<link rel="stylesheet" href="../css/layout.css">
-<link rel="stylesheet" href="../css/reset.css">
 </head>
 <body>
 <%@ include file="../top.jsp"%>
