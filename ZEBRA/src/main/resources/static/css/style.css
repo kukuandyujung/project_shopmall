@@ -4394,12 +4394,13 @@ a {
 .product_count {
     display: inline-block;
     position: relative;
+    margin-top: 30px;
     margin-bottom: 24px
 }
 
 .product_count label {
     font-size: 14px;
-    color: #777;
+    color: black;
     font-weight: normal;
     padding-right: 10px
 }
