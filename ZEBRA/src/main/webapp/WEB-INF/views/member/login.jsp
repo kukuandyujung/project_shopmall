@@ -100,9 +100,7 @@
 	<!-- //container -->
 
 	<!--================End Login Box Area =================-->
-
  <%@ include file="../footer.jsp" %>
-
   <script src="../img/jquery/jquery-3.2.1.min.js"></script>
   <script src="../img/bootstrap/bootstrap.bundle.min.js"></script>
   <script src="../img/skrollr.min.js"></script>
