@@ -10,8 +10,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>ZEBRA Shop - Home</title>
-	<link rel="icon" href="../img/Fevicon.png" type="image/png">
+  <title> ZEBRA Shop - Home </title>
+	<link rel="icon" href="../img/logo2.png" type="image/png">
   <link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
 	<link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
@@ -23,6 +23,7 @@
 </head>
 <body>
 <%@ include file="../top.jsp" %>
+
 
   <main class="site-main">
     
@@ -224,10 +225,10 @@
         <div class="row">
           <div class="col-xl-5">
             <div class="offer__content text-center">
-              <h3>Up To 50% Off</h3>
-              <h4>Winter Sale</h4>
-              <p>Him she'd let them sixth saw light</p>
-              <a class="button button--active mt-3 mt-xl-4" href="#">Shop Now</a>
+              <h3>THE MOST-WANTED LIST</h3>
+              <h4>Timeless and trending</h4>
+              <p>Shop Category</p>
+              <a class="button button--active mt-3 mt-xl-4" href="product/category">Shop Now</a>
             </div>
           </div>
         </div>
@@ -366,9 +367,10 @@
       </div>
     </section>
     <!-- ================ Best Selling item  carousel end ================= --> 
-
   </main>
+<%@ include file="../sidebar.jsp" %>
     <%@ include file="../footer.jsp" %>
+
   
 
   <script src="../vendors/jquery/jquery-3.2.1.min.js"></script>

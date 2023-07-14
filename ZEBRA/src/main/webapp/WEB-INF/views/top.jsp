@@ -17,7 +17,7 @@
             <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
              <li class="nav-item active submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">New</a>
+                  aria-expanded="false" style="font-weight: bold; font-size: 20px;" >New</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a class="nav-link" href="/product/category">For Women</a></li>
                   <li class="nav-item"><a class="nav-link" href="/product/category">For Men</a></li>
@@ -27,7 +27,7 @@
 			  </li>
               <li class="nav-item active submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Women</a>
+                  aria-expanded="false" style="font-weight : bold; font-size: 20px;">Women</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a class="nav-link" href="/product/category">New Arrivals</a></li>
                   <li class="nav-item"><a class="nav-link" href="/product/category">Best Sellers</a></li>
@@ -41,7 +41,7 @@
 			  </li>
 			  <li class="nav-item active submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Men</a>
+                  aria-expanded="false"  style="font-weight: bold; font-size: 20px;" >Men</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a class="nav-link" href="/product/category">New Arrivals</a></li>
                   <li class="nav-item"><a class="nav-link" href="/product/category">Best Sellers</a></li>
@@ -54,7 +54,7 @@
 			  </li>
 			  <li class="nav-item active submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Home</a>
+                  aria-expanded="false"  style="font-weight: bold; font-size: 20px;" >Home</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a class="nav-link" href="/product/category">Shop All</a></li>
                   <li class="nav-item"><a class="nav-link" href="/product/category">Dining</a></li>
@@ -62,11 +62,12 @@
                 </ul>
 			  </li>
             </ul>
-            <ul class="nav-shop">
+            <ul class="nav-shop"" >
               <li class="nav-item"><input type="text"> </li>
               <li class="nav-item"><button><i class="ti-search"></i></button></li>
               <li class="nav-item"><a href="/mypage/cart"><button><i class="ti-shopping-cart"></i></button></li></a>
-              <li class="nav-item"><a class="" href="/member/login">Sign in</a></li>
+              <li class="nav-item"><a class="" href="/mypage/orderhistory"  style="font-weight: bold; font-size: 15px;">My Page</a></li>
+              <li class="nav-item"  style="margin-left:10px;"><a class="" href="/member/login"  style="font-weight: bold; font-size: 15px;">Sign in</a></li>
             </ul>
           </div>
         </div>
