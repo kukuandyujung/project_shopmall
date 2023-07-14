@@ -23,132 +23,157 @@
 <script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="../js/idangerous.swiper-2.1.min.js"></script>
 <script type="text/javascript" src="../js/jquery.anchor.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-	
-
-
-});
-</script>
 <style type="text/css">
 	*{margin: 0; padding: 0;}
-	h2,div{width:1000px; margin: 0px auto; } 
+	h2,div{width:1000px auto; margin: 0px auto; } 
 </style>
 </head>
 
 <body>
+<script type="text/javascript">
+function searchBtn(){
+	if($("#s_word").val().length<2){
+		alert("2글자 이상 입력하셔야 합니다.");
+		$("#s_word").focus();
+		return false;
+	}
+	
+	search.submit();
+
+}
+</script>
 <div id="allwrap">
 <div id="wrap">
 
-
 	<!-- container -->
 	<div id="container">
-
-		
+	
 		
 		<div id="outbox">		
-		
 
-			<!-- contents -->
-			<div id="contents">
-				<div id="customer">
-					<h2><strong>Product List</strong><span>상품 목록 페이지 입니다.</span></h2>
+	<!-- contents -->
+	<div id="contents">
+		<div id="customer">
+			<h2><strong>Product List</strong><span>상품 목록 페이지 입니다.</span></h2>
+			 <div class="wrapper">
+    <form action="/admin/product_list" name="search" method="post">
+
+      <select name="category" id="category">
+        <option value="all">전체</option>
+        <option value="pname">상품명</option>
+        <option value="pdescript">상품 설명</option>
+      </select>
+
+      <div class="title">          
+        <input type="text" style="display: none">
+        <input type="text" name="s_word" id="s_word"  value="${s_word }" size="16">
+      </div>
+
+      <button type="button" onclick="searchBtn()">검색</button>
+  
+    </form>
+  </div>
+			<div class="orderDivMt">
+				<table  class="orderTable2" border="1" cellspacing="0">
+					<caption>상품 등록 보기</caption>
+					<colgroup>
+					<col width="15%" />
+					<col width="40%"   />
+					<col width="15%"  />
+					<col width="15%"  />
+					<col width="15%"  />
+					</colgroup>
 					
-					<div class="orderDivMt">
-						<table  class="orderTable2" border="1" cellspacing="0">
-							<caption>상품 등록 보기</caption>
-							<colgroup>
-							<col width="10%" class="tnone" />
-							<col width="*" />
-							<col width="14%" class="tw25" />
-							<col width="14%" class="tnone" />
-							</colgroup>
-							
-							<!-- 리스트 상단 부분 시작 -->
-							<thead>
-								<th scope="col" class="tnone">상품 번호</th>
-								<th scope="col">상품명</th>
-								<th scope="col">상품 등록일</th>
-								<th scope="col">상품 재고</th>			
-							</thead>
-							<!-- 리스트 상단 부분 끝 -->
-							
-							<tbody>
-								
-							<!--오라클 product에 있는 데이터를 list로 모아서 뿌려준다.--> 
-							<button type='button' class="btn btn-primary" onclick="javascript:location.href='product_write'">상품 등록하기</button>
-							
-							<c:forEach var ="product" items="${list}"> 
-							
-								<tr>
-									<td class="tnone">${product.pno}</td>
-									<td class="left">
-										<a href="/admin/product_view?pno=${product.pno}" class="lightgray">
-										${product.pname}
-										</a>
-									</td>
-									<td>
-										<fmt:formatDate value="${product.pdate}" pattern="yyyy-MM-dd"/>
-									</td>
-									<td class="tnone right">${product.pstock}</td>
-								</tr>
-								
-							</c:forEach>
-							<!--오라클 product에 있는 데이터를 list로 모아서 뿌려준다.--> 
-								
-							</tbody>
-						</table>
-					</div>
+					<!-- 리스트 상단 부분 시작 -->
+					<thead>
+						<th scope="col" >상품 번호</th>
+						<th scope="col" >상품명 </th>
+						<th scope="col" >상품 등록일</th>
+						<th scope="col" >상품 재고</th>			
+						<th scope="col" >판매 개수</th>			
+					</thead>
+					<!-- 리스트 상단 부분 끝 -->
+
 						
+					<!--오라클 product에 있는 데이터를 list로 모아서 뿌려준다.--> 
 
-
-					<div class="btnAreaList">
-						<!-- 페이징이동1 -->
-						<div class="allPageMoving1">
-
-						<a href="#" class="n">◀<a href="#" class="pre">◀</a>
-						<strong>1</strong>
-						<a href="#">2</a>
-						<a href="#">3</a>
-						<a href="#">4</a>
-						<a href="#">5</a>
-						<a href="#" class="next">▶</a><a href="#" class="n">▶</a>
-
-						</div>
-						<!-- //페이징이동1 -->
-					</div>
-
-					<div class="searchWrap">
-						<div class="search">
-							<ul>
-								<li class="web">◀</li>
-								<li class="se">
-									<select>
-										<option value="" />제목</option>
-									</select>
-								</li>
-								<li><input type="text" class="searchInput" /></li>
-								<li class="web"><a href="#">▶</a></li>
-								<li class="mobile"><a href="#">▶</a></li>
-							</ul>
-						</div>
-					</div>
-					<!-- //포토 구매후기 -->
-
-
-				</div>
+					<c:forEach var ="product" items="${list}"> 
+						<tr>
+							<td><sapn class="table-notice">${product.pno}</sapn></td>
+							<td >
+								<a href="product_view?pno=${product.pno}&page=${page}&category=${category}&s_word=${s_word}">${product.pname}</a>
+							</td>
+							<td>
+								<fmt:formatDate value="${product.pdate}" pattern="yyyy-MM-dd"/>
+							</td>
+							<td >${product.pstock}</td>
+							<td >${product.psoldcount}</td>
+							
+						</tr>
+						
+					</c:forEach>
+					<!--오라클 product에 있는 데이터를 list로 모아서 뿌려준다.--> 
+	
+				</table>
 			</div>
-			<!-- //contents -->
+				
+		<ul class="page-num">
+    	<!-- 첫 페이지 이동 -->
+    	<c:if test="${page!=1 }">
+      <a href= "/admin/product_list?page=1&category=${category}&s_word=${s_word}"><li class="first"></li></a>
+    	</c:if>
+    	<c:if test="${page==1 }">
+  			<li class="first"></li>
+    	</c:if>
+      <!-- 이전 페이지 이동 -->
+      <c:if test="${page>1 }">
+      <a href="/admin/product_list?page=${page-1}&category=${category}&s_word=${s_word}"><li class="prev"></li></a>
+      </c:if>
+      <c:if test="${page==1 }">
+      	<li class="prev"></li>
+      </c:if>
+      <!-- 페이지 리스트 -->
+      <c:forEach begin="${startPage}" end="${endPage}" step="1" var="num">
+      	<c:if test="${num != page }">
+	      <a href="/admin/product_list?page=${num}&category=${category}&s_word=${s_word}">      
+	     	 <li class="num"><div>${num}</div></li>
+	      </a>
+      	</c:if>
+      <c:if test="${num == page }">
+      	<li class="num on"><div>${num}</div></li>
+      </c:if>
+      </c:forEach>
+      <!-- 다음 페이지 이동 -->
+      <c:if test="${page<maxPage }">
+	     <a href="/admin/product_list?page=${page+1}&category=${category}&s_word=${s_word}"><li class="next"></li></a> 
+      </c:if>
+      <c:if test="${page==maxPage }">
+      	<li class="next">
+      </c:if>
+      <!-- 끝 페이지 이동 -->
+      <c:if test="${page !=  maxPage }">
+      <a href="/admin/product_list?page=${maxPage}&category=${category}&s_word=${s_word}">
+      <li class="last"></li>
+      </a>
+      </c:if>
+      <c:if test="${page ==  maxPage }">
+      <li class="last"></li>
+      </a>
+      </c:if>
+      
+    </ul>
+	<button type='button' class="btn btn-primary" onclick="javascript:location.href='product_write'">상품 등록하기</button>
+
+			
+
 
 		</div>
 	</div>
-	<!-- //container -->
+	<!-- //contents -->
 
-
-
-
-
-
+	</div>
+</div>
+<!-- //container -->
 </div>
 </div>
 </body>

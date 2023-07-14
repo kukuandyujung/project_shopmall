@@ -4,12 +4,103 @@
     "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.java.mapper.ProductMapper">
+<!-- 상품 전체 개수 -->
+	<select id="selectListCount" resultType="int">
+		select count(*) from product
+		<if test="category == 'all'">		
+			where pname like '%'||#{s_word}||'%' or pdescript like '%'||#{s_word}||'%'
+		</if>
+		<if test="category == 'btitle'">		
+			where pname like '%'||#{s_word}||'%' 
+		</if>
+		<if test="category == 'bcontent'">		
+			where pname like '%'||#{s_word}||'%' 
+		</if>
+	</select>
+	
+	
 <!-- 상품 전체 가져오기 -->
 <select id="selectAll" resultType="com.java.dto.ProductDto">
-	select * from product order by pno asc
-</select>
-<!-- 상품 1개 가져오기 -->
-<select id="selectOne" resultType="com.java.dto.ProductDto">
-	select * from product where pno=#{pno}
-</select>
+	<!-- 공통 영역 -->
+	   		select * from (select rownum rnum, a.* from
+			(select * from product 
+				
+			<if test="category == 'all'">		
+				where pname like '%'||#{s_word}||'%' or pdescript like '%'||#{s_word}||'%'
+			</if>
+			<if test="category == 'pname'">		
+				where pname like '%'||#{s_word}||'%' 
+			</if>
+			<if test="category == 'pdescript'">		
+				where pdescript like '%'||#{s_word}||'%' 
+			</if>
+			
+		
+			<!-- 공통 영역  -->
+			<![CDATA[
+			order by pno asc) a)
+			where rnum>=#{startRow} and rnum<=#{endRow}
+		  ]]>
+
+		
+	</select>
+
+
+
+	<!-- 상품 1개 가져오기 -->
+	<select id="selectOne" resultType="com.java.dto.ProductDto">
+		select * from product where pno=#{pno}
+	</select>
+	
+
+
+	<!-- 상품 이전글  -->
+	<select id="selectPreOne" resultType="com.java.dto.ProductDto">
+		select * from product where pno=
+	  (select prevDto from
+	  (select pno,lead(pno,1,-1) over(order by pno asc) as prevDto
+	  from product order by pno asc) where pno=#{pno})
+	</select>
+	<!-- 상품 다음글  -->
+	<select id="selectNextOne" resultType="com.java.dto.ProductDto"> 
+		select * from product where pno=
+	  (select nextDto from
+	  (select pno,lag(pno,1,-1) over(order by pno asc) as nextDto
+	  from product order by  pno asc) where pno=#{pno})
+	</select>
+	
+	<!-- 상품 조회수 1 증가 생각해보니 이거는 지금 할 수 없 ... ㅋ-->
+	<update id="updatePhitUp">
+		update product set phit= phit+1 where pno=#{pno}
+	</update>
+	
+	<!-- 상품 1개 저장 -->
+	<!-- 상품 테이블에 새로운 레코드를 삽입하기. 상품 등록 시 사용되는 변수를 적으면 된다. product_seq.nextval는 시퀀스로 부터 새로운 게시글의 고유 번호를 생성한다.   -->
+	<insert id="insertOne">
+	insert into product values ( #{pcode}, #{pname}, #{pprice},
+		#{pstock},#{psoldcount}, sysdate, #{pcolor}, #{psize},
+		#{pdescript},#{pmainimg1},#{pmainimg2}, #{pmainimg3},
+		#{pdetailimg1},#{pdetailimg2}, #{pdetailimg3},#{pdetailimg4},
+		#{pdetailimg5},#{pdetailimg6})
+	</insert>
+	
+	<delete id="deleteOne">
+		delete product where pno=#{pno}
+	</delete>
+	
+	<!-- 게시글 수정  -->
+	<!-- 주어집 값에 대해 업데이트하기 그냥 상품 리스트에 적힌 변수를 적고 업데이트 대상을 pno가 주어진 값과 일치하는 레코드이다. -->
+	<update id="updateOne">
+		update product set pcode =#{pcode}, pname=#{pname}, pprice=#{pprice},
+		pstock=#{pstock},psoldcount=#{psoldcount}, pdate= sysdate, pcolor=#{pcolor}, psize=#{psize},
+		pdescript=#{pdescript},pmainimg1=#{pmainimg1},pmainimg2=#{pmainimg2}, pmainimg3=#{pmainimg3},
+		pdetailimg1=#{pdetailimg1},pdetailimg2=#{pdetailimg2}, pdetailimg3=#{pdetailimg3},pdetailimg4=#{pdetailimg4},
+		pdetailimg5=#{pdetailimg5},pdetailimg6=#{pdetailimg6}
+		where pno = #{pno}
+	</update>
+	
+
+
 </mapper>
+
+

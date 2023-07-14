@@ -6,11 +6,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>상품 정보 페이지</title>
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/read.css">
+
   <script type="text/javascript">
 		function deleteBtn(){
 			if(confirm("상품을 삭제하시겠습니까?")){
@@ -26,11 +27,13 @@
 </head>
 
 <body>
+<section>
 
- 	
-    <h1>상품 등록 페이지</h1>
+    <h1>상품 정보 페이지</h1>
 	<hr>
+	
     <table>
+    	
       <tr>
         <th><strong>상품명 : <span>${pdto.pname}</span></strong></th>
       </tr>
@@ -53,17 +56,17 @@
       </tr>
     <hr>
       <tr>
-        <td><strong>다음 상품</strong> <span class="separator">|</span> [키즈잼] 2월 프로그램 안내</td>
+        <td><strong>다음 상품</strong> <span class="separator">|</span> </span> <a href="/admin/product_view?pno=${nextDto.pno }&page=${page}&category=${category}&s_word=${s_word}">  ${nextDto.pname } </a></td>
       </tr>
       <tr>
-        <td><strong>이전글</strong> <span class="separator">|</span> [키즈잼] 2020년 1분기 정기 휴관일 안내</td>
+        <td><strong>이전글</strong> <span class="separator">|</span> <a href="/admin/product_view?pno=${prevDto.pno }&page=${page}&category=${category}&s_word=${s_word}"> ${prevDto.pname}</a></td>
       </tr>
     </table>
 	<hr>
-    <div class="list"><a href="/product_list">목록</a></div>
-    <a onclick="deleteBtn()"><div class="list">삭제</a></div>
-    <div class="list"><a href="#">수정</a></div>
- 
 
+  <a href="product_list?page=${page}&category=${category}&s_word=${s_word}"><div class="list">목록</div></a>
+    <a onclick="deleteBtn()"><div class="list">삭제</div></a>
+    <a href="product_update?pno=${pdto.pno}&page=${page}&category=${category}&s_word=${s_word}"><div class="list">수정</div></a>
+</section>
 </body>
 </html>
