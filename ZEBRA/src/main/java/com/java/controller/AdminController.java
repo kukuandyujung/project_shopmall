@@ -158,6 +158,13 @@ public class AdminController {
 		return "admin/member_table";
 	}	
 	
+	// 회원 정보 1개 전체 가져오기
+	@RequestMapping("/admin/member_tableView") 
+	public String member_tableView(int ID, Model model) {
+		MemberDto mdto = memberService.selectOne(ID);
+		return "admin/member_tableView";
+	}
+	
 	@RequestMapping("/admin/morisjs")
 	public String morisjs() {
 		
