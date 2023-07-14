@@ -62,12 +62,12 @@
                 </ul>
 			  </li>
             </ul>
-            <ul class="nav-shop"" >
+            <ul class="nav-shop" >
               <li class="nav-item"><input type="text"> </li>
               <li class="nav-item"><button><i class="ti-search"></i></button></li>
               <li class="nav-item"><a href="/mypage/cart"><button><i class="ti-shopping-cart"></i></button></li></a>
               <li class="nav-item"><a class="" href="/mypage/orderhistory"  style="font-weight: bold; font-size: 15px;">My Page</a></li>
-              <li class="nav-item"  style="margin-left:10px;"><a class="" href="/member/login"  style="font-weight: bold; font-size: 15px;">Sign in</a></li>
+              <li class="nav-item"  style="margin-left:10px;"><a class="" href="/member/login"  style="font-weight: bold;  font-size: 15px;">Sign in</a></li>
             </ul>
           </div>
         </div>

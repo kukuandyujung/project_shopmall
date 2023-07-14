@@ -449,8 +449,9 @@
 		</div>
 	</section>
 	<!-- ================ top product area end ================= -->
-<%@ include file="../footer.jsp" %>
-
+	
+  <%@ include file="../sidebar.jsp" %>	
+  <%@ include file="../footer.jsp" %>
 	
 	<script src="../vendors/jquery/jquery-3.2.1.min.js"></script>
 	<script src="../vendors/bootstrap/bootstrap.bundle.min.js"></script>

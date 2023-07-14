@@ -30,8 +30,7 @@
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<%@ include file="../top.jsp"%>
-	
+<%@ include file="../top.jsp"%>	
   
   <!-- ================ start banner area ================= -->	
 	<section class="blog-banner-area" id="category">
