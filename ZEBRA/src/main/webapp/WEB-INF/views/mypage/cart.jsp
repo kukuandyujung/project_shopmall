@@ -156,15 +156,12 @@
 					<div class="amount">
 						<h4>총 주문금액</h4>
 						<ul class="info">
-							<li>
-								<span class="title">상품 합계금액</span>
+							<!-- <li>
 								<span class="won"><strong>1,132,310</strong> 원</span>
-							</li>
+							</li> -->
 							
 						</ul>
-						<ul class="total">
-							
-							<li class="txt"><strong>결제 예정 금액</strong></li>
+						<ul class="total">							
 							<li class="money"><span>1,134,810</span> 원</li>
 						</ul>
 					</div>

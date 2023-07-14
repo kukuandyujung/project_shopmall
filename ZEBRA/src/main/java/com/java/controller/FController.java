@@ -42,9 +42,9 @@ public class FController {
 	public String myaccount() {
 		return "mypage/myaccount";
 	}
-	@RequestMapping("/mypage/ordercheck")
-	public String ordercheck() {
-		return "mypage/ordercheck";
+	@RequestMapping("/mypage/orderhistory")
+	public String orderhistory() {
+		return "mypage/orderhistory";
 	}
 	@RequestMapping("/product/category")
 	public String category() {

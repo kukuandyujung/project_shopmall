@@ -28,29 +28,30 @@
 <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
 <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/content.css">
+<link rel="stylesheet" href="../css/jquery.fancybox-1.3.4.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/reset.css">
 </head>
 <body>
 <%@ include file="../top.jsp"%>
-	<!-- ================ start banner area ================= -->	
+
+  <!-- ================ start banner area ================= -->	
 	<section class="blog-banner-area" id="category">
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
-					<h1>Order</h1>
+					<h1> Order confirmation  </h1>
 				</div>
 			</div>
     </div>
 	</section>
 	<!-- ================ end banner area ================= -->
-<div id="header">
-	<!-- GNB -->
-	<div id="gnb">
-		<div id="top">
-		</div>
-		<script type="text/javascript">initTopMenu();</script>
-	</div>
-	<!-- //GNB -->
-
+	<!-- ================ strat order confirmation area ================= -->
+<div id="allwrap">
+<div id="wrap">
+	
+	<div id="header">	
 	<!-- container -->
 	<div id="container">
 		<div id="outbox">		
@@ -79,7 +80,7 @@
 							<tbody>
 								<tr>
 									<td class="left">
-										<p class="img"><img src="../images/img/sample_product.jpg" alt="상품" width="66" height="66" /></p>
+										<p class="img"><img src="../img/sample_product.jpg" alt="상품" width="66" height="66" /></p>
 
 										<ul class="goods">
 											<li>
@@ -96,7 +97,7 @@
 								
 								<tr>
 									<td class="left">
-										<p class="img"><img src="../images/img/sample_product.jpg" alt="상품" width="66" height="66" /></p>
+										<p class="img"><img src="../img/sample_product.jpg" alt="상품" width="66" height="66" /></p>
 
 										<ul class="goods">
 											<li>
@@ -114,10 +115,8 @@
 						</table>
 					</div>
 					<div class="poroductTotal">
-						<ul>	
-							<li>상품 합계금액 <strong>1,132,310</strong> 원</li>
-							<li>+ 배송비 <strong>2,500</strong> 원</li>
-							<li>= 총 합계 <strong>1,134,810</strong> 원</li>
+						<ul>														
+							<li> 총 합계 <strong>1,134,810</strong> 원</li>
 						</ul>
 					</div>
 					<!-- //주문 상품 -->
@@ -131,15 +130,12 @@
 						<!-- 회원 일때 -->
 						<!-- 비회원 일때  <h4>총 주문금액</h4> //비회원 일때 -->
 
-						<ul class="info">
+						<!-- <ul class="info">
 							<li>
 								<span class="title">상품 합계금액</span>
 								<span class="won"><strong>1,132,310</strong> 원</span>
-							</li>
-							<li>
-								<span class="title">배송비</span>
-								<span class="won"><strong>2,500</strong> 원</span>
-						</ul>
+							</li> -->
+							
 						<ul class="total">
 							<li class="txt"><strong>결제 예정 금액</strong></li>
 							<li class="money"><span>1,134,810</span> 원</li>
@@ -238,7 +234,7 @@
 								<tr>
 									<th scope="row"><span>총 주문<u>금액</u></span></th>
 									<td>1,132,132원</td>
-									<th scope="row"><span>배송비</span></th>
+									
 									<td>2,500 원 (선불)</td>
 								</tr>
 								<tr>
@@ -295,7 +291,7 @@
 
 					<!-- Btn Area -->
 					<div class="btnArea2">
-						<a href="#" class="nbtnbig iw0140">확인</a>
+						<a href="/mypage/orderhistory" class="nbtnbig iw0140">확인</a>
 					</div>
 					<!-- //Btn Area -->
 
@@ -311,6 +307,8 @@
 
 </div>
 </div>
+<!-- ================ end order confirmation area ================= -->
+
 <%@ include file="../footer.jsp"%>
 </body>
 <!-- Mirrored from themewagon.github.io/aroma/category.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 30 Jun 2023 06:56:13 GMT -->

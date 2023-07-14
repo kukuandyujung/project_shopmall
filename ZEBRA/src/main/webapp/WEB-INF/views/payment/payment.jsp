@@ -36,11 +36,11 @@
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
-					<h1>Order/Payment</h1>
+					<h1>Order/Payment</h1>					         
 				</div>
 			</div>
-    </div>
-	</section>
+    	</div>	
+    	</section>
 	<!-- ================ end banner area ================= -->
 <div id="header">
 	<!-- GNB -->
