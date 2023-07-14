@@ -66,6 +66,39 @@
 
     <!-- Custom Theme Style -->
     <link href="/build/css/custom.min.css" rel="stylesheet">
+    
+    <script type="text/javascript">
+ 
+	/* ajax를 통한 비밀번호 수정처리 */
+	function modifyMember() {
+	    
+	    var nick = $("#nick").val();
+	    var full_name = $("#full_name").val();
+	    var phone = $("#phone").val();
+	    var address = $("#address").val();
+	    var email = $("#email").val();
+	    
+	    var param = {"nick":nick, "full_name":full_name, "phone":phone, "address":address, "email":email}
+	    
+	        $.ajax({
+	            anyne:true,
+	            type:'POST',
+	            data: JSON.stringify(param),
+	            url:"admin/member_tableView",
+	            dataType: "text",
+	            contentType: "application/json; charset=UTF-8",
+	            success : function(data) {    
+	                alert("회원 정보가 수정되었습니다.");
+	                location.href="/admin/member_table";
+	            },
+	            error: function(jqXHR, textStatus, errorThrown) {
+	                alert("ERROR : " + textStatus + " : " + errorThrown);
+	            }        
+	        })
+	      }
+	
+	</script>
+    
   </head>
 
   <body class="nav-md">
@@ -112,7 +145,7 @@
 					<table class="memberTable">
 					<tr>
 		                <td class="text">아이디</td>
-		                <td class="textbox"><input type="text" name="id" value="${mdto.NICKNAME}" disabled></td>
+		                <td class="textbox"><input type="text" name="nick" value="${mdto.NICKNAME}" disabled></td>
 		            </tr>		            
 		            
 		            <tr>
@@ -137,7 +170,7 @@
 		            </table>
 		            
 		            <div class="option">
-		            	<input type="submit" value="수정하기" style="font-size: 17px; margin-right: 7px;">
+		            	<input type="submit" value="수정하기" onclick="modifyMember()" style="font-size: 17px; margin-right: 7px;">
 		            	<input type="reset" value="다시입력" style="font-size: 17px; margin-left: 7px;">	
                   </div>
                 </div>

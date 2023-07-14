@@ -33,7 +33,9 @@
 
     <!-- Custom Theme Style -->
     <link href="/build/css/custom.min.css" rel="stylesheet">
+    
   </head>
+  
 
   <body class="nav-md">
     <div class="container body">
@@ -132,7 +134,7 @@
                       <tbody>
                       <c:forEach var="mdto" items="${list}"> <!-- var는 변수 공간, list를 cdto에 넣어라 -->
 						<tr>
-						  <td><a href="/admin/member_tableView/?ID=${mdto.ID}">${mdto.ID}</a></td>
+						  <td><a href="/admin/member_tableView/?ID=${mdto.ID}" style="text-decoration: underline">${mdto.ID}</a></td>
 						  <td>${mdto.NICKNAME}</td>
 						  <td>${mdto.FULL_NAME}</td>	
 						  <td>${mdto.PHONE}</td>
