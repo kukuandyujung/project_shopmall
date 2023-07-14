@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,8 +29,8 @@ public class AdminController {
 		return "admin/index";
 	}
 	
-	//관리자 로그인 RequestMapping
-	@RequestMapping("/admin/login")
+	//관리자 로그인 getMapping
+	@GetMapping("/admin/login")
 	public String login() {
 		
 		return "admin/login";
@@ -37,7 +38,7 @@ public class AdminController {
 	
 	//관리자 로그인 PostMapping
 	@PostMapping("/admin/login")
-	public String  login2(MemberDto memberDto, Model model) {
+	public String  login2(MemberDto memberDto, Model model, HttpSession session) {
 		System.out.println("memberDto 1 : "+ memberDto.getID());
 		System.out.println("memberDto 2 : "+ memberDto.getPASSWORD());
 		MemberDto mdto = memberService.selectLogin(memberDto);
@@ -55,7 +56,7 @@ public class AdminController {
 	
 	//관리자 로그아웃
 	@RequestMapping("/admin/logout")
-	public String logout() {	
+	public String logout(HttpSession session) {	
 		session.invalidate(); //session 모두 삭제 
 		return "redirect:/index";
 	}

@@ -7,7 +7,7 @@ if("${loginCheck}"== "success" ){
 
 function logoutBtn(){
 	alert("로그아웃이 되었습니다.");
-	location.href="logout";
+	location.href="/logout";
 }
 
 </script> 

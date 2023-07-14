@@ -17,7 +17,7 @@
 
 <!--관리자 로그인 확인-->
 <select id="selectLogin" resultType="com.java.dto.MemberDto" >
-	select * from zebra where id=0 
+	select * from zebra where id=0 and password=1234
 </select>
 
 </mapper>
