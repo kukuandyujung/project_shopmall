@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.java.dto.AdminDto;
 import com.java.dto.MemberDto;
@@ -160,8 +161,9 @@ public class AdminController {
 	
 	// 회원 정보 1개 전체 가져오기
 	@RequestMapping("/admin/member_tableView") 
-	public String member_tableView(int ID, Model model) {
+	public String member_tableView(@RequestParam(defaultValue = "1") int ID, Model model) {
 		MemberDto mdto = memberService.selectOne(ID);
+		model.addAttribute("mdto",mdto); // 모델에 속성 추가
 		return "admin/member_tableView";
 	}
 	

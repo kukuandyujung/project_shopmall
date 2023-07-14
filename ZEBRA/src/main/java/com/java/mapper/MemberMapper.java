@@ -13,6 +13,6 @@ public interface MemberMapper {
 	ArrayList<MemberDto> selectAll();
 
 	// 회원 정보 1개 가져오기
-	MemberDto selectOne(int iD);
+	MemberDto selectOne(int ID);
 
 }

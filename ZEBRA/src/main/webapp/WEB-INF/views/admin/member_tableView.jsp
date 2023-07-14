@@ -5,6 +5,39 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  
+  <style>
+  	h1{
+   		 text-align: center;
+	}
+	
+	.memberTable {
+		width: 100%;
+	    margin-top: 25px;
+	    text-align: center;
+	}
+		
+	.text {	
+		text-align: right; 
+		width: 49%; 
+		padding-right: 80px;
+		font-size: 20px;
+		font-weight: bold;
+	}
+	
+	.textbox {
+		width: 51%; 
+		text-align: left; 
+		padding-left: 0px;
+	}
+	
+	.option {
+		text-align: center;
+		margin-top: 25px;
+		margin-bottom: 25px;
+	}
+  </style>
+  
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
@@ -36,8 +69,8 @@
   </head>
 
   <body class="nav-md">
-    <div class="container body">
-      <div class="main_container">
+    <div class="container body ">
+      <div class="main_container ">
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
@@ -68,94 +101,49 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-          <div class="">
             <div class="page-title">
-              <div class="title_left">
-                <h3>Users <small>Some examples to get you started</small></h3>
-              </div>
-
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-secondary" type="button">Go!</button>
-                    </span>
-                  </div>
-                </div>
-              </div>
             </div>
 
-            <div class="clearfix"></div>
-
-              <div class="col-md-12 col-sm-12 ">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>회원 목록<small>Users</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Settings 1</a>
-                            <a class="dropdown-item" href="#">Settings 2</a>
-                          </div>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                      <div class="row">
-                          <div class="col-sm-12">
-                            <div class="card-box table-responsive">
-                            <p class="text-muted font-13 m-b-30">
-                     		회원번호를 누르면 정보 수정이 가능합니다.
-                  			</p>
+                <div class="x_panel">                               
 					
-                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
-                      <thead>
-                        <tr>
-                          <th>회원번호</th>
-                          <th>아이디</th>
-                          <th>이름</th>
-                          <th>핸드폰</th>
-                          <th>주소</th>
-                          <th>가입 날짜</th>
-                          <th>총 결제금액</th>
-                          <th>총 결제횟수</th>
-                          <th>이메일</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                      <c:forEach var="mdto" items="${list}"> <!-- var는 변수 공간, list를 cdto에 넣어라 -->
-						<tr>
-						  <td><a href="/admin/member_tableView/?ID=${mdto.ID}">${mdto.ID}</a></td>
-						  <td>${mdto.NICKNAME}</td>
-						  <td>${mdto.FULL_NAME}</td>	
-						  <td>${mdto.PHONE}</td>
-						  <td>${mdto.ADDRESS}</td> 
-						  <td>${mdto.formattedJoinDay}</td>
-						  <td>${mdto.TOTAL_PAY}</td>	
-						  <td>${mdto.NUM_PAY}</td>
-						  <td>${mdto.EMAIL}</td>
-						</tr>
-					</c:forEach>
-                      
-                     
-                      </tbody>
-                    </table>
+				<h1>회원 정보 수정</h1>
+				<hr></hr>
+                <div>
+					<table class="memberTable">
+					<tr>
+		                <td class="text">아이디</td>
+		                <td class="textbox"><input type="text" name="id" value="${mdto.NICKNAME}" disabled></td>
+		            </tr>		            
+		            
+		            <tr>
+		                <td class="text">이름</td>
+		                <td class="textbox"><input type="text" name="full_name" value="${mdto.FULL_NAME}" value="${mdto.FULL_NAME}"></td>
+		            </tr>
+		            
+		            <tr>
+		                <td class="text">핸드폰</td>
+		                <td class="textbox"><input type="text" name="phone" value="${mdto.PHONE}"></td>
+		            </tr>
+		            
+		            <tr>
+		                <td class="text">주소</td>
+		                <td class="textbox"><input type="text" name="address" value="${mdto.ADDRESS}"></td>
+		            </tr>
+		            
+		            <tr>
+		                <td class="text">이메일</td>
+		                <td class="textbox"><input type="text" name="email" value="${mdto.EMAIL}"></td>
+		            </tr>
+		            </table>
+		            
+		            <div class="option">
+		            	<input type="submit" value="수정하기" style="font-size: 17px; margin-right: 7px;">
+		            	<input type="reset" value="다시입력" style="font-size: 17px; margin-left: 7px;">	
                   </div>
-                </div>
-              </div>
-            </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
         <!-- /page content -->
 
         <!-- footer content -->
