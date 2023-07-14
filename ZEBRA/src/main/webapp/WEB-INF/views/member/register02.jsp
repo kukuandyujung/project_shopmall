@@ -174,7 +174,7 @@
 								<tr>
 									<th scope="row"><span>이메일 수신여부 *</span></th>
 									<td>
-										<p>쟈뎅에서 진행되는 이벤트와 쇼핑에 대한 정보를 이메일로 받아보시겠습니까?</p>
+										<p>지브라에서 진행되는 이벤트와 쇼핑에 대한 정보를 이메일로 받아보시겠습니까?</p>
 										<ul class="question">
 											<li>
 												<input type="radio" name="receive" id="receive_yes" class="radio_t" checked="checked"/><label for="receive_yes">예</label>
