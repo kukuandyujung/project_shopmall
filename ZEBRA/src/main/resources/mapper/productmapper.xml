@@ -4,7 +4,7 @@
     "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.java.mapper.ProductMapper">
-<!-- 상품 전체 개수 -->
+<!-- 상품 전체 개수 검색하기 -->
 	<select id="selectListCount" resultType="int">
 		select count(*) from product
 		<if test="category == 'all'">		
