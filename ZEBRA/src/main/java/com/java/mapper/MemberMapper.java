@@ -10,12 +10,12 @@ import com.java.dto.MemberDto;
 public interface MemberMapper {
 
 	// 회원 테이블 전체 가져오기
-	ArrayList<MemberDto> selectAll();
+	ArrayList<MemberDto> selectAll(String s_word);
 
 	// 회원 정보 1개 가져오기
 	MemberDto selectOne(int ID);
 
 	//로그인 확인
-	MemberDto selectLogin(MemberDto memberDto);
+	MemberDto selectLogin(MemberDto memberDto);	
 
 }

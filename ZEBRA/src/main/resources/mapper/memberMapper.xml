@@ -7,7 +7,22 @@
 
 <!-- 회원 정보 전체 가져오기 -->
 <select id="selectAll" resultType="com.java.dto.MemberDto">
-	select * from zebra WHERE id != 0 order by id asc
+  SELECT * FROM zebra WHERE id != 0
+    <if test="#{s_word} != null">
+      AND (
+        id LIKE '%' || #{s_word} || '%'
+        OR nickname LIKE '%' || #{s_word} || '%'
+        OR full_name LIKE '%' || #{s_word} || '%'
+        OR gender LIKE '%' || #{s_word} || '%'
+        OR phone LIKE '%' || #{s_word} || '%'
+        OR email LIKE '%' || #{s_word} || '%'
+        OR address LIKE '%' || #{s_word} || '%'
+        OR joinday LIKE '%' || #{s_word} || '%'
+        OR total_pay LIKE '%' || #{s_word} || '%'
+        OR num_pay LIKE '%' || #{s_word} || '%'
+      )
+    </if>
+  ORDER BY id ASC
 </select>
 
 <!-- 회원 정보 1개 가져오기 -->

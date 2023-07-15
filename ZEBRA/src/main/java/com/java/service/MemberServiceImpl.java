@@ -1,6 +1,7 @@
 package com.java.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,11 +14,16 @@ public class MemberServiceImpl implements MemberService {
 	
 	@Autowired MemberMapper memberMapper;
 
-	@Override
 	// 회원 테이블 전체 가져오기
-	public ArrayList<MemberDto> selectAll() {
-		ArrayList<MemberDto> list = memberMapper.selectAll();
-		return list;
+	@Override
+	public HashMap<String, Object> selectAll(String s_word) {
+		HashMap<String, Object> map = new HashMap<>();
+		
+		ArrayList<MemberDto> list = memberMapper.selectAll(s_word);
+		map.put("list", list);
+		map.put("s_word", s_word);
+		System.out.println("s_word : "+s_word); // 값 잘 들어오는지 test 필수
+		return map;
 	}
 
 	@Override
@@ -33,5 +39,6 @@ public class MemberServiceImpl implements MemberService {
 		MemberDto mdto = memberMapper.selectLogin(memberDto);
 		return null;
 	}
+
 
 }

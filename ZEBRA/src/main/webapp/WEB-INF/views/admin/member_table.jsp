@@ -38,6 +38,15 @@
   
 
   <body class="nav-md">
+  
+  <script>
+	  /* 서치 기능 */
+      function searchBtn(){		  
+    	  if($("#s_word").val()) {
+   	    search.submit();
+      }
+  </script>
+  
     <div class="container body">
       <div class="main_container">
         <div class="col-md-3 left_col">
@@ -72,23 +81,25 @@
         <div class="right_col" role="main">
           <div class="">
             <div class="page-title">
+            <form name="search" action="/admin/member_table" method="post"> <!-- form 아이디 지정  -->
               <div class="title_left">
-                <h3>Users <small>Some examples to get you started</small></h3>
+                <h3>Users <small>현재 가입자 목록</small></h3>
               </div>
 
               <div class="title_right">
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
+                    <input type="text" class="form-control" name="s_word" id="s_word" value="${s_word}" size="16">
                     <span class="input-group-btn">
-                      <button class="btn btn-secondary" type="button">Go!</button>
+                      <button class="btn btn-secondary" type="submit" onclick="searchBtn()">Go!</button>
                     </span>
                   </div>
                 </div>
               </div>
+              </form>
             </div>
 
-            <div class="clearfix"></div>
+            <div class="clearfix"></div>            
 
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
@@ -117,7 +128,8 @@
                      		회원번호를 누르면 정보 수정이 가능합니다.
                   			</p>
 					
-                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+					<!-- 템플릿 데이터 시작  -->
+                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%"> 
                       <thead>
                         <tr>
                           <th>회원번호</th>
@@ -149,6 +161,7 @@
                      
                       </tbody>
                     </table>
+                  
                   </div>
                 </div>
               </div>

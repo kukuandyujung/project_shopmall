@@ -1,6 +1,6 @@
 package com.java.controller;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
 
@@ -161,11 +161,12 @@ public class AdminController {
 	
 	// 회원 테이블 전체 가져오기
 	@RequestMapping("/admin/member_table") 
-	public String member_table(Model model) {
-		ArrayList<MemberDto> list = memberService.selectAll();
-		model.addAttribute("list", list);
+	public String member_table(@RequestParam(defaultValue = "") String s_word, Model model) {
+		HashMap<String,Object> map = memberService.selectAll(s_word);
+		model.addAttribute("list",map.get("list"));
+		model.addAttribute("s_word",map.get("s_word"));
 		return "admin/member_table";
-	}	
+	}		
 	
 	// 회원 정보 1개 전체 가져오기
 	@RequestMapping("/admin/member_tableView") 
