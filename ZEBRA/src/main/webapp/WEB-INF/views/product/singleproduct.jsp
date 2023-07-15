@@ -83,6 +83,15 @@
 								        <input type="radio" id="xl_size" name="size" style="display: none;">
 								    </label>
 							</div>
+							<div class="size">
+								<img src ="../img/member/image_3_4.jpg">
+								<img class="img-fluid" src="../img/member/image_3_4.jpg" alt="">
+								
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
 							<div class="product_count">
 								<label for="qty">Quantity:</label> <input type="text" name="qty" 
 								id="sst" size="2" maxlength="12" value="1" title="Quantity:" class="input-text qty"> 

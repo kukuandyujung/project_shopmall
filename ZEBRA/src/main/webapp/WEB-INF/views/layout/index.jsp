@@ -150,7 +150,7 @@ style="height:500px;"  -->
 					<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="card text-center card-product">
 							<div class="card-product__img">
-								<img class="card-img" src="../img/index/image_2_6.jpg" alt="">
+								<img class="card-img" src="../img/index/image_1_6.jpg" alt="">
 								<ul class="card-product__imgOverlay">
 									<li><button>
 											<i class="ti-shopping-cart"></i>
@@ -294,9 +294,9 @@ style="height:500px;"  -->
 				<div class="row">
 					<div class="col-xl-5">
 						<div class="offer__content text-center">
-							<h3>THE MOST-WANTED LIST</h3>
-							<h4>BRANDS WE LOVE/h4>
-							<p>Shop Category</p>
+							<h3> THE MOSTWE LOVE </h3>
+							<h4> HOME & DECO </h4>
+							<!-- <p>Shop Category</p> -->
 							<a class="button button--active mt-3 mt-xl-4"
 								href="product/category">Shop home</a>
 						</div>
