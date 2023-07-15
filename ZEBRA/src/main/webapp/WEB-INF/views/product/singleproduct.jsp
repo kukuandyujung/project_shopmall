@@ -64,7 +64,6 @@
 							modern technology. If you are looking for something that can make
 							your interior look awesome, and at the same time give you the
 							pleasant warm feeling during the winter.</p>
-						<div class="option">
 							<div class="size">
 								<h4>Size</h4>
 								    <label for="s_size">
@@ -379,7 +378,7 @@
 	</section>
 	<!--================End Product Description Area =================-->
 
-				<!-- ================ BEST SELELLERS section start ================= -->
+							<!-- ================ BEST SELELLERS section start ================= -->
 		<section class="section-margin calc-60px">
 			<div class="container">
 				<div class="section-intro pb-60px">

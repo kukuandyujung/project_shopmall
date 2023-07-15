@@ -326,13 +326,13 @@
 						</div>
 					</section>
 					<!-- End Best Seller -->
+						<!-- ================ category section end ================= -->
+			<!-- ================ BEST SELELLERS section start ================= -->
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- ================ category section end ================= -->
 
-			<!-- ================ BEST SELELLERS section start ================= -->
 		<section class="section-margin calc-60px">
 			<div class="container">
 				<div class="section-intro pb-60px">
