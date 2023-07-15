@@ -23,6 +23,31 @@
 <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
 <link rel="stylesheet" href="../css/style.css">
+
+<style>
+  .number-box {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 23px;
+    color: #888;
+    text-decoration: none;
+    border: 1px #c0c0c0 solid;
+    background: #fff;
+    font-size: 15px;
+    text-align: center;
+  }
+    .btnAreaList {
+    display: flex;
+    justify-content: center;
+  }
+
+  .allPageMoving1 {
+    display: flex;
+    align-items: center;
+  }
+</style>
+
 </head>
 <body>
 <%@ include file="../top.jsp" %>
@@ -325,8 +350,20 @@
 							</div>
 						</div>
 					</section>
-					<!-- End Best Seller -->
 						<!-- ================ category section end ================= -->
+						<div class="btnAreaList">
+  <div class="allPageMoving1">
+    <a href="#"><img src="../img/btn/btn_pre2.gif" alt="처음으로"/></a>
+    <a href="#"><img src="../img/btn/btn_pre1.gif" alt="앞페이지로"/></a>
+    <div class="number-box"><strong>1</strong></div>
+    <div class="number-box"><a href="#">2</a></div>
+    <div class="number-box"><a href="#">3</a></div>
+    <div class="number-box"><a href="#">4</a></div>
+    <div class="number-box"><a href="#">5</a></div>
+    <a href="#"><img src="../img/btn/btn_next1.gif" alt="뒤페이지로"/></a>
+    <a href="#"><img src="../img/btn/btn_next2.gif" alt="마지막페이지로"/></a>
+  </div>
+</div>
 			<!-- ================ BEST SELELLERS section start ================= -->
 				</div>
 			</div>
@@ -433,6 +470,7 @@
 				</div>
 			</div>
 		</section>
+		
 		<!-- ================ BEST SELELLERS  section end ================= -->
 	
   <%@ include file="../sidebar.jsp" %>	
