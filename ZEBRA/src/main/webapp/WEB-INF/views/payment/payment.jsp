@@ -124,13 +124,6 @@
 
 			<!-- 주문자 주소 입력 -->
 					<h3 class="diviLeft">주문자 주소 입력</h3>
-					<div class="diviRight">
-						<ul>
-							<li>수정 내용을 회원정보에도 반영합니다.&nbsp;&nbsp;</li>
-							<li><a href="#">회원정보반영</a></li>
-						</ul>
-					</div>
-
 					<div class="checkDiv">
 						<table summary="주문자 주소를 입력할 수 있는 란으로 이름, 주소, 이메일, 휴대폰 번호, 전화번호 순으로 입력 하실수 있습니다." class="checkTable" border="1" cellspacing="0">
 							<caption>주문자 주소 입력</caption>
@@ -141,7 +134,7 @@
 							<tbody>
 								<tr>
 									<th scope="row"><span>이름</span></th>
-									<td><input type="text" class="w134" value="홍길동" /></td>
+									<td><input type="text" class="w134" /></td>
 								</tr>
 
 								<tr>
@@ -208,7 +201,7 @@
 									</td>
 								</tr>
 								<tr>
-									<th scope="row"><span>전화번호</span></th>
+									<th scope="row"><span>유선번호</span></th>
 									<td>
 										<ul class="pta">
 											<li>
@@ -238,10 +231,6 @@
 										</ul>
 									</td>
 								</tr>
-								<tr>
-									<th scope="row"><span>비밀번호</span></th>
-									<td><input type="password" class="w134" /></td>
-								</tr>
 							</tbody>
 						</table>
 					</div>
@@ -265,7 +254,7 @@
 							<tbody>
 								<tr>
 									<th scope="row"><span>이름</span></th>
-									<td><input type="text" class="w134" value="홍길동" /></td>
+									<td><input type="text" class="w134" /></td>
 								</tr>
 
 								<tr>
@@ -302,7 +291,7 @@
 									</td>
 								</tr>
 								<tr>
-									<th scope="row"><span>전화번호</span></th>
+									<th scope="row"><span>유선번호</span></th>
 									<td>
 										<ul class="pta">
 											<li>
@@ -362,20 +351,6 @@
 						</table>
 					</div>
 			<!-- //결제 금액 -->
-			
-
-			<!-- 총 주문금액 -->
-					<div class="amount">
-						<h4 class="member">총 주문금액</h4>
-						<ul class="total">
-							<li class="txt"><strong>결제 예정 금액</strong></li>
-							<li class="money"><span>1,134,810</span> 원</li>
-						</ul>
-					</div>
-			<!-- //총 주문금액 -->
-
-
-
 			<!-- 결제수단 선택 -->
 					<h3 class="dep">결제수단 선택</h3>
 					<div class="checkDiv">

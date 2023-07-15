@@ -60,15 +60,6 @@
 			</div><script type="text/javascript">initSubmenu(4,0);</script>
 			<!-- contents -->
 			<div id="contents">
-						
-
-					<div class="attention">
-						<ul>
-							<li>* 표시된 항목은 필수 항목이므로 반드시 입력하셔야 합니다.</li>
-						</ul>
-					</div>
-
-
 					<div class="memberbd">
 						<table summary="이름, 아이디, 비밀번호, 비밀번호 확인, 이메일, 이메일수신여부, 주소, 휴대폰, 유선전화, 생년월일 순으로 회원가입 정보를 수정할수 있습니다." class="memberWrite" border="1" cellspacing="0">
 							<caption>회원가입 수정</caption>
@@ -78,15 +69,28 @@
 							</colgroup>
 							<tbody>
 								<tr>
-									<th scope="row"><span>이름 *</span></th>
+									<th scope="row"><span>이름  </span></th>
 									<td>김슬기</td>
 								</tr>
 								<tr>
-									<th scope="row"><span>아이디 *</span></th>
+								<th scope="row"><span>성별 </span></th>
+								<td>
+								  <ul class="baseQues">
+								    <li>
+								      <input type="radio" name="gender" id="solar" class="radio_t" checked="checked"/><label for="solar">남성</label>
+								    </li>
+								    <li>
+								      <input type="radio" name="gender" id="lunar" class="radio_t"/><label for="lunar">여성</label>
+								    </li>
+								  </ul>
+								</td>
+								</tr>
+								<tr>
+									<th scope="row"><span>아이디  </span></th>
 									<td>sleifhglsle123</td>
 								</tr>
 								<tr>
-									<th scope="row"><span>비밀번호 변경 *</span></th>
+									<th scope="row"><span>비밀번호 변경  </span></th>
 									<td><a href="password_change.html" class="nbtnMini iw86">비밀번호 변경</a></td>
 								</tr>
 								<tr>
@@ -120,9 +124,9 @@
 									</td>
 								</tr>
 								<tr>
-									<th scope="row"><span>이메일 수신여부 *</span></th>
+									<th scope="row"><span>이메일 수신여부  </span></th>
 									<td>
-										<p>쟈뎅에서 진행되는 이벤트와 쇼핑에 대한 정보를 이메일로 받아보시겠습니까?</p>
+										<p>지브라에서 진행되는 이벤트와 쇼핑에 대한 정보를 이메일로 받아보시겠습니까?</p>
 										<ul class="question">
 											<li>
 												<input type="radio" name="receive" id="receive_yes" class="radio_t" checked="checked"/><label for="receive_yes">예</label>
@@ -135,22 +139,7 @@
 									</td>
 								</tr>
 								<tr>
-									<th scope="row"><span>주소 *</span></th>
-									<td>
-										<ul class="pta">
-											<li>
-												<input type="text" class="w134" />&nbsp;
-											</li>
-											<li><a href="../member/zip.html" class="addressBtn"><span>우편번호 찾기</span></a></li>
-											<li class="pt5"><input type="text" class="addressType" /></li>
-											<li>
-												<span class="mvalign">※ 상품 배송 시 받으실 주소입니다. 주소를 정확히 적어 주세요.</span>
-											</li>
-										</ul>
-									</td>
-								</tr>
-								<tr>
-									<th scope="row"><span>휴대폰 *</span></th>
+									<th scope="row"><span>휴대폰  </span></th>
 									<td>
 										<ul class="pta">
 											<li>
@@ -166,48 +155,6 @@
 											<li>&nbsp;<span class="valign">-</span>&nbsp;</li>
 											<li><input type="text" class="w74" maxlength="4" /> <span class="valign">-</span>&nbsp;</li>
 											<li class="r10"><input type="text" class="w74" maxlength="4" /></li>
-											<li class="cb pt5"><span class="mvalign">※ SMS 서비스를 받아보시겠습니까?</span></li>
-											<li class="pt5">
-												<ul class="baseQues">
-													<li>
-														<input type="radio" name="sms" id="sms_yes" class="radio_t" checked="checked"/><label for="sms_yes">예</label>
-													</li>
-													<li>
-														<input type="radio" name="sms" id="sms_no" class="radio_t"/><label for="sms_no">아니오</label>
-													</li>
-												</ul>
-											</li>
-										</ul>
-									</td>
-								</tr>
-								<tr>
-									<th scope="row"><span>유선전화</span></th>
-									<td>
-										<ul class="pta">
-											<li>
-												<select>
-													<option value="02" selected="selected">02</option>
-													<option value="031">031</option>
-													<option value="032">032</option>
-													<option value="033">033</option>
-													<option value="041">041</option>
-													<option value="042">042</option>
-													<option value="043">043</option>
-													<option value="051">051</option>
-													<option value="052">052</option>
-													<option value="053">053</option>
-													<option value="054">054</option>
-													<option value="055">055</option>
-													<option value="061">061</option>
-													<option value="062">062</option>
-													<option value="063">063</option>
-													<option value="064">064</option>
-													<option value="070">070</option>
-												</select>
-											</li>
-											<li>&nbsp;<span class="valign">-</span>&nbsp;</li>
-											<li><input type="text" class="w74" maxlength="4" /> <span class="valign">-</span>&nbsp;</li>
-											<li><input type="text" class="w74" maxlength="4" /></li>
 										</ul>
 									</td>
 								</tr>
@@ -217,7 +164,7 @@
 										<ul class="pta">
 											<li>
 												<select>
-													<option value='' selected="selected">선택하세요</option>
+													<option value='' selected="selected">년</option>
 													<script type="text/javascript">
 													//<![CDATA[
 														for(var i=1940; i<=2014; i++){
@@ -227,10 +174,10 @@
 													</script>
 												</select>
 											</li>
-											<li>&nbsp;<span class="valign">년</span>&nbsp;&nbsp;&nbsp;</li>
+											<li>&nbsp;<span class="valign"></span>&nbsp;&nbsp;&nbsp;</li>
 											<li>
 												<select>
-													<option value='' selected="selected">선택하세요</option>
+													<option value='' selected="selected">월</option>
 													<script type="text/javascript">
 													//<![CDATA[
 														for(var i=1; i<=12; i++){
@@ -244,10 +191,10 @@
 													</script>
 												</select>
 											</li>
-											<li>&nbsp;<span class="valign">월</span>&nbsp;&nbsp;&nbsp;</li>
+											<li>&nbsp;<span class="valign"></span>&nbsp;&nbsp;&nbsp;</li>
 											<li>
 												<select>
-													<option value='' selected="selected">선택하세요</option>
+													<option value='' selected="selected">일</option>
 													<script type="text/javascript">
 													//<![CDATA[
 														for(var i=1; i<=31; i++){
@@ -261,16 +208,8 @@
 													</script>
 												</select>
 											</li>
-											<li class="r20">&nbsp;<span class="valign">일</span></li>
+											<li class="r20">&nbsp;<span class="valign"></span></li>
 											<li class="pt5">
-												<ul class="baseQues">
-													<li>
-														<input type="radio" name="birth" id="solar" class="radio_t" checked="checked"/><label for="solar">양력</label>
-													</li>
-													<li>
-														<input type="radio" name="birth" id="lunar" class="radio_t"/><label for="lunar">음력</label>
-													</li>
-												</ul>
 											</li>
 										</ul>
 									</td>

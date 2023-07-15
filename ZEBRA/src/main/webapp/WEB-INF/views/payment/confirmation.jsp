@@ -53,7 +53,7 @@
 		<div id="outbox">		
 			<!-- maxcontents -->
 			<div id="maxcontents">
-				<div id="mypage" style=" height:1720px;">
+				<div id="mypage" style=" height:1300px;">
 					<h2><strong>주문/결제</strong></h2>
 					
 					<!-- 주문 상품 -->
@@ -116,30 +116,6 @@
 						</ul>
 					</div>
 					<!-- //주문 상품 -->
-
-
-			<!-- 총 주문금액 -->
-					<div class="amount">
-
-						<!-- 회원 일때 -->
-						<h4 class="member">총 주문금액</h4>
-						<!-- 회원 일때 -->
-						<!-- 비회원 일때  <h4>총 주문금액</h4> //비회원 일때 -->
-
-						<!-- <ul class="info">
-							<li>
-								<span class="title">상품 합계금액</span>
-								<span class="won"><strong>1,132,310</strong> 원</span>
-							</li> -->
-							
-						<ul class="total">
-							<li class="txt"><strong>결제 예정 금액</strong></li>
-							<li class="money"><span>1,134,810</span> 원</li>
-						</ul>
-					</div>
-			<!-- //총 주문금액 -->
-					
-
 			<!-- 주문자 정보확인 -->
 					<h3 class="dep">주문자 정보</h3>
 					<div class="checkDiv">
@@ -167,7 +143,7 @@
 								</tr>
 
 								<tr>
-									<th scope="row"><span>전화<u>번호</u></span></th>
+									<th scope="row"><span>유선<u>번호</u></span></th>
 									<td>02-6534-8652</td>
 								</tr>
 							</tbody>
@@ -201,7 +177,7 @@
 								</tr>
 
 								<tr>
-									<th scope="row"><span>전화<u>번호</u></span></th>
+									<th scope="row"><span>유선<u>번호</u></span></th>
 									<td>02-6534-8652</td>
 								</tr>
 
@@ -213,27 +189,6 @@
 						</table>
 					</div>
 			<!-- //주문자 정보확인 -->
-
-
-			<!-- 결제금액 확인 -->
-					<h3 class="dep">결제금액</h3>
-					<div class="checkDiv">
-						<table summary="결제되는 금액를 총 주문금액, 쿠폰할인, 배송비, 포인트사용, 총 결제금액 순으로 확인 하실수 있습니다." class="checkTable" border="1" cellspacing="0">
-							<caption>결제금액확인</caption>
-							<colgroup>
-							<col width="17%" class="tw20" />
-							</colgroup>
-							<tbody>
-								<tr>
-									<th scope="row"><span>총 결제<u>금액</u></span></th>
-									<td colspan="3"><strong>22,820 원</strong></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-			<!-- //결제금액 확인 -->
-
-
 			<!-- 주문 정보 확인 -->
 					<h3 class="dep">주문 정보</h3>
 					<div class="checkDiv">
@@ -249,15 +204,15 @@
 								<tr>
 									<th scope="row"><span>주문번호</span></th>
 									<td>201404253254-1354</td>
-									<th scope="row"><span>결제수단</span></th>
-									<td>무통장 입금</td>
+									<th scope="row"><span>주문일</span></th>
+									<td>2014-04-20</td>
 								</tr>
 
 								<tr>
-									<th scope="row"><span>주문일</span></th>
-									<td>2014-04-20</td>
-									<th scope="row"><span>입금은행</span></th>
-									<td>신한은행 1234-45-786135 (주)쟈뎅</td>
+									<th scope="row"><span>결제수단</span></th>
+									<td>무통장 입금</td>
+									<th scope="row"><span>결제금액</span></th>
+									<td>22,820원</td>
 								</tr>
 
 								<tr>

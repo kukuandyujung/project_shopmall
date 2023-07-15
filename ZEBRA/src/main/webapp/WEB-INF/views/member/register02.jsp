@@ -65,25 +65,19 @@
 					<div class="stepWrap">
 						
 						<div class="step">
-							<a href="">
 								<p class="web">STEP 01</p>
 								<p class="txt">약관 동의</p>
-							</a>
 						</div>
 
 						<div class="step  stepon">
-							<a href="">
 								<p class="web">STEP 02</p>
 								<p class="txt"><span>회원정보</span> <span>입력</span></p>
 								<p class="ck"><img src="../img/member/bg_step.png" alt="현재위치" /></p>
-							</a>
 						</div>
 
 						<div class="step">
-							<a href="">
 								<p class="web">STEP 03</p>
 								<p class="txt"><span>회원가입</span> <span>완료</span></p>
-							</a>
 						</div>
 					</div>
 					<!-- //STEP -->	
@@ -91,7 +85,7 @@
 			<!-- //Step box End -->
 			<div class="attention">
 						<ul>
-							<li>* 표시된 항목은 필수 항목이므로 반드시 입력하셔야 회원가입이 진행됩니다.</li>
+							<li>※ 모든 항목은 필수 항목이므로 반드시 입력하셔야 회원가입이 진행됩니다.</li>
 						</ul>
 					</div>
 
@@ -105,13 +99,26 @@
 							</colgroup>
 							<tbody>
 								<tr>
-									<th scope="row"><span>이름 *</span></th>
+									<th scope="row"><span>이름  </span></th>
 									<td>	
 										<li class="r10"><input type="text" class="w134" /></li>
 									</td>
 								</tr>
 								<tr>
-									<th scope="row"><span>아이디 *</span></th>
+								<th scope="row"><span>성별 </span></th>
+								<td>
+								  <ul class="baseQues">
+								    <li>
+								      <input type="radio" name="gender" id="solar" class="radio_t" checked="checked"/><label for="solar">남성</label>
+								    </li>
+								    <li>
+								      <input type="radio" name="gender" id="lunar" class="radio_t"/><label for="lunar">여성</label>
+								    </li>
+								  </ul>
+								</td>
+								</tr>
+								<tr>
+									<th scope="row"><span>아이디  </span></th>
 									<td>
 										<ul class="pta">
 											<li class="r10"><input type="text" class="w134" /></li>
@@ -121,7 +128,7 @@
 									</td>
 								</tr>
 								<tr>
-									<th scope="row"><span>비밀번호 *</span></th>
+									<th scope="row"><span>비밀번호  </span></th>
 									<td>
 										<ul class="pta">
 											<li class="r10"><input type="password" class="w134" /></li>
@@ -130,7 +137,7 @@
 									</td>
 								</tr>
 								<tr>
-									<th scope="row"><span>비밀번호 확인 *</span></th>
+									<th scope="row"><span>비밀번호 확인  </span></th>
 									<td>
 										<ul class="pta">
 											<li class="r10"><input type="password" class="w134" /></li>
@@ -172,7 +179,7 @@
 									</td>
 								</tr>
 								<tr>
-									<th scope="row"><span>이메일 수신여부 *</span></th>
+									<th scope="row"><span>이메일 수신여부  </span></th>
 									<td>
 										<p>지브라에서 진행되는 이벤트와 쇼핑에 대한 정보를 이메일로 받아보시겠습니까?</p>
 										<ul class="question">
@@ -187,22 +194,7 @@
 									</td>
 								</tr>
 								<tr>
-									<th scope="row"><span>주소 *</span></th>
-									<td>
-										<ul class="pta">
-											<li>
-												<input type="text" class="w134" />&nbsp;
-											</li>
-											<li><a href="zip.html" class="addressBtn"><span>우편번호 찾기</span></a></li>
-											<li class="pt5"><input type="text" class="addressType" /></li>
-											<li class="cb">
-												<span class="mvalign">※ 상품 배송 시 받으실 주소입니다. 주소를 정확히 적어 주세요.</span>
-											</li>
-										</ul>
-									</td>
-								</tr>
-								<tr>
-									<th scope="row"><span>휴대폰 *</span></th>
+									<th scope="row"><span>휴대폰  </span></th>
 									<td>
 										<ul class="pta">
 											<li>
@@ -218,17 +210,6 @@
 											<li>&nbsp;<span class="valign">-</span>&nbsp;</li>
 											<li><input type="text" class="w74" maxlength="4" /> <span class="valign">-</span>&nbsp;</li>
 											<li class="r10"><input type="text" class="w74" maxlength="4" /></li>
-											<li class="cb pt5"><span class="mvalign"></span></li>
-											<li class="pt5">
-												<ul class="baseQues">
-													<li>
-														<input type="radio" name="sms" id="sms_yes" class="radio_t" checked="checked"/><label for="sms_yes">예</label>
-													</li>
-													<li>
-														<input type="radio" name="sms" id="sms_no" class="radio_t"/><label for="sms_no">아니오</label>
-													</li>
-												</ul>
-											</li>
 										</ul>
 									</td>
 								</tr>
@@ -239,7 +220,7 @@
 										<ul class="pta">
 											<li>
 												<select>
-													<option value='' selected="selected">선택하세요</option>
+													<option value='' selected="selected">년</option>
 													<script type="text/javascript">
 													//<![CDATA[
 														for(var i=1940; i<=2014; i++){
@@ -249,10 +230,10 @@
 													</script>
 												</select>
 											</li>
-											<li>&nbsp;<span class="valign">년</span>&nbsp;&nbsp;&nbsp;</li>
+											<li>&nbsp;<span class="valign"></span>&nbsp;&nbsp;&nbsp;</li>
 											<li>
 												<select>
-													<option value='' selected="selected">선택하세요</option>
+													<option value='' selected="selected">월</option>
 													<script type="text/javascript">
 													//<![CDATA[
 														for(var i=1; i<=12; i++){
@@ -266,10 +247,10 @@
 													</script>
 												</select>
 											</li>
-											<li>&nbsp;<span class="valign">월</span>&nbsp;&nbsp;&nbsp;</li>
+											<li>&nbsp;<span class="valign"></span>&nbsp;&nbsp;&nbsp;</li>
 											<li>
 												<select>
-													<option value='' selected="selected">선택하세요</option>
+													<option value='' selected="selected">일</option>
 													<script type="text/javascript">
 													//<![CDATA[
 														for(var i=1; i<=31; i++){
@@ -283,16 +264,7 @@
 													</script>
 												</select>
 											</li>
-											<li class="r20">&nbsp;<span class="valign">일</span></li>
-											<li class="pt5">
-												<ul class="baseQues">													
-													<li>
-														<input type="radio" name="gender" class="radio_t" checked="checked"/><label for="solar">남성</label>
-													</li>
-													<li>
-														<input type="radio" name="gender" class="radio_t"/><label for="lunar">여성</label>
-													</li>
-												</ul>
+											<li class="r20">&nbsp;<span class="valign"></span></li>
 											</li>
 										</ul>
 									</td>
