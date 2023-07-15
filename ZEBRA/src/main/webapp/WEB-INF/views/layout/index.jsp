@@ -43,27 +43,26 @@
 style="height:500px;"  -->
 		
 		<!--================ Hero banner start =================-->
-		<section class="hero-banner" ><img src="../img/index/main1.jpg" >
-			<div class="container"> 
-				<div class="row no-gutters align-items-center pt-60px" >
-					<div class="col-5 d-none d-sm-block">
-						<div class="hero-banner__img"   >
-							<img class="< img-fluid >" src="../img/index/image_1_3.jpg" alt="">
-						</div>
-					</div>
-					<div class="col-sm-7 col-lg-6 offset-lg-1 pl-4 pl-md-5 pl-lg-0">
-						<div class="hero-banner__content">
-							<h4>Shop is fun</h4>
-							<h1>Browse Our Premium Product</h1>
-							<p>Us which over of signs divide dominion deep fill bring
-								they're meat beho upon own earth without morning over third.
-								Their male dry. They are great appear whose land fly grass.</p>
-							<a class="button button-hero" href="#">Browse Now</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+		<section class="hero-banner" ><!-- style= width:1480px height:250.677px; --> >
+      <div class="container"><img src= "../img/index/main1.jpg"> 
+        <div class="row no-gutters align-items-center pt-60px">
+          <div class="col-5 d-none d-sm-block">
+            <div class="hero-banner__img">
+              <!-- <img class="img-fluid" src="../img/index/image_1_0.jpg" alt=""> -->
+            </div>
+          </div>
+          <div class="col-sm-7 col-lg-6 offset-lg-1 pl-4 pl-md-5 pl-lg-0">
+            <div class="hero-banner__content">
+             <h4>THE MOST-WANTED LIST</h4>
+              <h1>Browse Our Premium Product</h1>
+              <p>Us which over of signs divide dominion deep fill bring they're meat beho upon own earth without morning over third. Their male dry. They are great appear whose land fly grass.</p>
+              <a class="button button-hero" href="https://themewagon.github.io/aroma/index.html#">Browse Now</a> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
 		<!--================ Hero banner start =================-->
 
 		<!--================ Hero Carousel start =================-->
@@ -151,7 +150,7 @@ style="height:500px;"  -->
 					<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="card text-center card-product">
 							<div class="card-product__img">
-								<img class="card-img" src="../img/index/image_2_1.jpg" alt="">
+								<img class="card-img" src="../img/index/image_2_6.jpg" alt="">
 								<ul class="card-product__imgOverlay">
 									<li><button>
 											<i class="ti-shopping-cart"></i>
@@ -195,7 +194,7 @@ style="height:500px;"  -->
 					<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="card text-center card-product">
 							<div class="card-product__img">
-								<img class="card-img" src="../img/index/image_3_3.jpg" alt="">
+								<img class="card-img" src="../img/index/image_3_7.jpg" alt="">
 								<ul class="card-product__imgOverlay">
 									<li><button>
 											<i class="ti-shopping-cart"></i>
@@ -239,7 +238,7 @@ style="height:500px;"  -->
 					<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="card text-center card-product">
 							<div class="card-product__img">
-								<img class="card-img" src="../img/index/image_3_7.jpg" alt="">
+								<img class="card-img" src="../img/index/image_3_4.jpg" alt="">
 								<ul class="card-product__imgOverlay">
 									<li><button>
 											<i class="ti-shopping-cart"></i>
@@ -296,10 +295,10 @@ style="height:500px;"  -->
 					<div class="col-xl-5">
 						<div class="offer__content text-center">
 							<h3>THE MOST-WANTED LIST</h3>
-							<h4>Timeless and trending</h4>
+							<h4>BRANDS WE LOVE/h4>
 							<p>Shop Category</p>
 							<a class="button button--active mt-3 mt-xl-4"
-								href="product/category">Shop Now</a>
+								href="product/category">Shop home</a>
 						</div>
 					</div>
 				</div>
@@ -312,137 +311,9 @@ style="height:500px;"  -->
 			<div class="container">
 				<div class="section-intro pb-60px">
 					<p>Popular Item in the market</p>
-					<h2>
-						Best <span class="section-intro__style">Sellers</span>
-					</h2>
+					<h2>Best <span class="section-intro__style">Sellers1</span></h2>
 				</div>
 				<div class="owl-carousel owl-theme" id="bestSellerCarousel">
-					<div class="card text-center card-product">
-						<div class="card-product__img">
-							<img class="img-fluid" src="../img/index/image_1_0.jpg" alt="">
-							<ul class="card-product__imgOverlay">
-								<li><button>
-										<i class="ti-shopping-cart"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-heart"></i>
-									</button></li>
-							</ul>
-						</div>
-						<div class="card-body">
-							<p>Accessories</p>
-							<h4 class="card-product__title">
-								<a href="single-product.jsp">Quartz Belt Watch</a>
-							</h4>
-							<p class="card-product__price">$150.00</p>
-						</div>
-					</div>
-
-					<div class="card text-center card-product">
-						<div class="card-product__img">
-							<img class="img-fluid" src="../img/product/product2.png" alt="">
-							<ul class="card-product__imgOverlay">
-								<li><button>
-										<i class="ti-shopping-cart"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-heart"></i>
-									</button></li>
-							</ul>
-						</div>
-						<div class="card-body">
-							<p>Beauty</p>
-							<h4 class="card-product__title">
-								<a href="single-product.jsp">Women Freshwash</a>
-							</h4>
-							<p class="card-product__price">$150.00</p>
-						</div>
-					</div>
-
-					<div class="card text-center card-product">
-						<div class="card-product__img">
-							<img class="img-fluid" src="../img/product/product3.png" alt="">
-							<ul class="card-product__imgOverlay">
-								<li><button>
-										<i class="ti-shopping-cart"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-heart"></i>
-									</button></li>
-							</ul>
-						</div>
-						<div class="card-body">
-							<p>Decor</p>
-							<h4 class="card-product__title">
-								<a href="single-product.jsp">Room Flash Light</a>
-							</h4>
-							<p class="card-product__price">$150.00</p>
-						</div>
-					</div>
-
-					<div class="card text-center card-product">
-						<div class="card-product__img">
-							<img class="img-fluid" src="../img/product/product4.png" alt="">
-							<ul class="card-product__imgOverlay">
-								<li><button>
-										<i class="ti-shopping-cart"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-heart"></i>
-									</button></li>
-							</ul>
-						</div>
-						<div class="card-body">
-							<p>Decor</p>
-							<h4 class="card-product__title">
-								<a href="single-product.jsp">Room Flash Light</a>
-							</h4>
-							<p class="card-product__price">$150.00</p>
-						</div>
-					</div>
-
-					<div class="card text-center card-product">
-						<div class="card-product__img">
-							<img class="img-fluid" src="../img/product/product1.png" alt="">
-							<ul class="card-product__imgOverlay">
-								<li><button>
-										<i class="ti-shopping-cart"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-heart"></i>
-									</button></li>
-							</ul>
-						</div>
-						<div class="card-body">
-							<p>Accessories</p>
-							<h4 class="card-product__title">
-								<a href="single-product.jsp">Quartz Belt Watch</a>
-							</h4>
-							<p class="card-product__price">$150.00</p>
-						</div>
-					</div>
-
-					<div class="card text-center card-product">
-						<div class="card-product__img">
-							<img class="img-fluid" src="../img/product/product2.png" alt="">
-							<ul class="card-product__imgOverlay">
-								<li><button>
-										<i class="ti-shopping-cart"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-heart"></i>
-									</button></li>
-							</ul>
-						</div>
-						<div class="card-body">
-							<p>Beauty</p>
-							<h4 class="card-product__title">
-								<a href="single-product.jsp">Women Freshwash</a>
-							</h4>
-							<p class="card-product__price">$150.00</p>
-						</div>
-					</div>
-
 					<div class="card text-center card-product">
 						<div class="card-product__img">
 							<img class="img-fluid" src="../img/index/image_1_5.jpg" alt="">
@@ -456,9 +327,9 @@ style="height:500px;"  -->
 							</ul>
 						</div>
 						<div class="card-body">
-							<p>Decor</p>
+							<p>Accessories</p>
 							<h4 class="card-product__title">
-								<a href="single-product.jsp">Room Flash Light</a>
+								<a href="">Quartz Belt Watch2</a>
 							</h4>
 							<p class="card-product__price">$150.00</p>
 						</div>
@@ -477,16 +348,142 @@ style="height:500px;"  -->
 							</ul>
 						</div>
 						<div class="card-body">
-							<p>Decor</p>
+							<p>Beauty</p>
 							<h4 class="card-product__title">
-								<a href="single-product.jsp">Room Flash Light</a>
+								<a href="/img/home/image_1_0.jpg">Women Freshwash3</a>
 							</h4>
 							<p class="card-product__price">$150.00</p>
 						</div>
 					</div>
+
+					<div class="card text-center card-product">
+						<div class="card-product__img">
+							<img class="img-fluid" src="/img/home/image_1_0.jpg" alt="">
+							<ul class="card-product__imgOverlay">
+								<li><button>
+										<i class="ti-shopping-cart"></i>
+									</button></li>
+								<li><button>
+										<i class="ti-heart"></i>
+									</button></li>
+							</ul>
+						</div>
+						<div class="card-body">
+							<p>Decor</p>
+							<h4 class="card-product__title">
+								<a href="/img/home/image1_1_3.jpg">Room Flash Light4</a>
+							</h4>
+							<p class="card-product__price">$150.00</p>
+						</div>
+					</div>
+
+					<div class="card text-center card-product">
+						<div class="card-product__img">
+							<img class="img-fluid" src="/img/home/image1_1_3.jpg" alt="">
+							<ul class="card-product__imgOverlay">
+								<li><button>
+										<i class="ti-shopping-cart"></i>
+									</button></li>
+								<li><button>
+										<i class="ti-heart"></i>
+									</button></li>
+							</ul>
+						</div>
+						<div class="card-body">
+							<p>Decor</p>
+							<h4 class="card-product__title">
+								<a href="/img/home/image1_1_0.jpg">Room Flash Light5</a>
+							</h4>
+							<p class="card-product__price">$150.00</p>
+						</div>
+					</div>
+
+					<div class="card text-center card-product">
+						<div class="card-product__img">
+							<img class="img-fluid" src="/img/home/image1_1_0.jpg" alt="">
+							<ul class="card-product__imgOverlay">
+								<li><button>
+										<i class="ti-shopping-cart"></i>
+									</button></li>
+								<li><button>
+										<i class="ti-heart"></i>
+									</button></li>
+							</ul>
+						</div>
+						<div class="card-body">
+							<p>Accessories</p>
+							<h4 class="card-product__title">
+								<a href="/img/index/image_2_5.jpg">Quartz Belt Watch6</a>
+							</h4>
+							<p class="card-product__price">$150.00</p>
+						</div>
+					</div>
+
+					<div class="card text-center card-product">
+						<div class="card-product__img">
+							<img class="img-fluid" src="/img/index/image_2_5.jpg" alt="">
+							<ul class="card-product__imgOverlay">
+								<li><button>
+										<i class="ti-shopping-cart"></i>
+									</button></li>
+								<li><button>
+										<i class="ti-heart"></i>
+									</button></li>
+							</ul>
+						</div>
+						<div class="card-body">
+							<p>Beauty</p>
+							<h4 class="card-product__title">
+								<a href="/img/index/image_2_8.jpg">Women Freshwash7</a></h4>
+							<p class="card-product__price">$150.00</p>
+						</div>
+					</div>
+
+					<div class="card text-center card-product">
+						<div class="card-product__img">
+							<img class="img-fluid" src="/img/index/image_2_8.jpg" alt="">
+							<ul class="card-product__imgOverlay">
+								<li><button><i class="ti-shopping-cart"></i>
+									</button></li>
+								<li><button><i class="ti-heart"></i></button></li>
+							</ul>
+						</div>
+						<div class="card-body">
+							<div class="card-body">
+								<p>Decor</p>
+								<h4 class="card-product__title">
+								<a href="/img/index/image_3_1.jpg">Room Flash Light8</a></h4>
+								<p class="card-product__price">$150.00</p>
+							</div>
+						</div>
+					</div>
+										
+						<div class="card text-center card-product">
+							<div class="card-product__img">
+								<img class="img-fluid" src="/img/index/image_3_1.jpg" alt="">
+								<ul class="card-product__imgOverlay">
+									<li><button>
+											<i class="ti-search"></i>
+										</button></li>
+									<li><button>
+											<i class="ti-shopping-cart"></i></button></li>
+									<li><button>
+											<i class="ti-heart"></i></button></li>
+								</ul>
+							</div>
+							<div class="card-body">
+								<p>Decor</p>
+								<h4 class="card-product__title">
+									<a href="https://themewagon.github.io/aroma/single-product.html">Room
+										Flash Light 9</a>
+								</h4>
+								<p class="card-product__price">$150.00</p>
+							</div>
+						</div>
+					</div>
 				</div>
-			</div>
-		</section>
+				
+    </section>
 		<!-- ================ Best Selling item  carousel end ================= -->
 	</main>
 	<%@ include file="../sidebar.jsp"%>
