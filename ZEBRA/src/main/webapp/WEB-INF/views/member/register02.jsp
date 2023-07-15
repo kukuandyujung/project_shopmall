@@ -65,14 +65,14 @@
 					<div class="stepWrap">
 						
 						<div class="step">
-							<a href="/member/register">
+							<a href="">
 								<p class="web">STEP 01</p>
 								<p class="txt">약관 동의</p>
 							</a>
 						</div>
 
 						<div class="step  stepon">
-							<a href="/member/register02">
+							<a href="">
 								<p class="web">STEP 02</p>
 								<p class="txt"><span>회원정보</span> <span>입력</span></p>
 								<p class="ck"><img src="../img/member/bg_step.png" alt="현재위치" /></p>
@@ -80,7 +80,7 @@
 						</div>
 
 						<div class="step">
-							<a href="/member/register03">
+							<a href="">
 								<p class="web">STEP 03</p>
 								<p class="txt"><span>회원가입</span> <span>완료</span></p>
 							</a>
@@ -97,7 +97,7 @@
 
 
 					<div class="memberbd">
-						<table summary="이름, 아이디, 비밀번호, 비밀번호 확인, 이메일, 이메일수신여부, 주소, 휴대폰, 유선전화, 생년월일 순으로 회원가입 정보를 등록할수 있습니다." class="memberWrite" border="1" cellspacing="0">
+						<table summary="이름, 아이디, 비밀번호, 비밀번호 확인, 이메일, 이메일수신여부, 주소, 휴대폰, 생년월일 순으로 회원가입 정보를 등록할수 있습니다." class="memberWrite" border="1" cellspacing="0">
 							<caption>회원가입 입력</caption>
 							<colgroup>
 							<col width="22%" class="tw30" />
@@ -218,7 +218,7 @@
 											<li>&nbsp;<span class="valign">-</span>&nbsp;</li>
 											<li><input type="text" class="w74" maxlength="4" /> <span class="valign">-</span>&nbsp;</li>
 											<li class="r10"><input type="text" class="w74" maxlength="4" /></li>
-											<li class="cb pt5"><span class="mvalign">※ SMS 서비스를 받아보시겠습니까?</span></li>
+											<li class="cb pt5"><span class="mvalign"></span></li>
 											<li class="pt5">
 												<ul class="baseQues">
 													<li>
@@ -232,37 +232,7 @@
 										</ul>
 									</td>
 								</tr>
-								<tr>
-									<th scope="row"><span>유선전화</span></th>
-									<td>
-										<ul class="pta">
-											<li>
-												<select>
-													<option value="02" selected="selected">02</option>
-													<option value="031">031</option>
-													<option value="032">032</option>
-													<option value="033">033</option>
-													<option value="041">041</option>
-													<option value="042">042</option>
-													<option value="043">043</option>
-													<option value="051">051</option>
-													<option value="052">052</option>
-													<option value="053">053</option>
-													<option value="054">054</option>
-													<option value="055">055</option>
-													<option value="061">061</option>
-													<option value="062">062</option>
-													<option value="063">063</option>
-													<option value="064">064</option>
-													<option value="070">070</option>
-												</select>
-											</li>
-											<li>&nbsp;<span class="valign">-</span>&nbsp;</li>
-											<li><input type="text" class="w74" maxlength="4" /> <span class="valign">-</span>&nbsp;</li>
-											<li><input type="text" class="w74" maxlength="4" /></li>
-										</ul>
-									</td>
-								</tr>
+								
 								<tr>
 									<th scope="row"><span>생년월일</span></th>
 									<td>
@@ -328,28 +298,7 @@
 									</td>
 								</tr>
 								<tr>
-									<th scope="row"><span>기업회원</span></th>
-									<td>
-										<ul class="pta">
-											<li>
-												<ul class="baseQues">
-													<li>
-														<input type="radio" name="business" id="partner" class="radio_t"/><label for="partner">예</label>
-													</li>
-													<li>
-														<input type="radio" name="business" id="general" class="radio_t" checked="checked"/><label for="general">아니오</label>
-													</li>
-												</ul>
-											</li>
-
-											<li class="cb">
-												<div class="businessTy">
-													<div><label for="">사업자번호</label> <input class="w134" type="text"></div>
-													<div><label for="">사업자등록증</label> <input class="fileType" type="file" ></div>													
-												</div>
-											<li>
-										</ul>
-									</td>
+									
 								</tr>
 							</tbody>
 							</table>

@@ -68,21 +68,21 @@
 					<div class="stepWrap">
 						
 						<div class="step">
-							<a href="/member/register">
+							<a href="">
 								<p class="web">STEP 01</p>
 								<p class="txt">약관 동의</p>
 							</a>
 						</div>
 
 						<div class="step">
-							<a href="/member/register02">
+							<a href="">
 								<p class="web">STEP 02</p>
 								<p class="txt"><span>회원정보</span> <span>입력</span></p>
 							</a>
 						</div>
 
 						<div class="step stepon">
-							<a href="/member/register03">
+							<a href="">
 								<p class="web">STEP 03</p>
 								<p class="txt"><span>회원가입</span> <span>완료</span></p>
 								<p class="ck"><img src="../img/member/bg_step.png" alt="현재위치" /></p>
