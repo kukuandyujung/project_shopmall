@@ -110,16 +110,6 @@
 								<option value="1">Show 12</option>
 							</select>
 						</div>
-						<!-- <div class="nice-select" tabindex="0"> -->
-							<!-- <span class="current">Show 12</span> -->
-						<!-- 	<ul class"list>
-								<li data-value="1" class=option selected>Show 12</li>
-								<li data-value="1" class=option selected>Show 12</li>
-								<li data-value="1" class=option selected>Show 12</li>
-							</ul> -->
-						<!-- 	::after	 -->	
-						<!-- 	</div>	 -->		
-					
 						<div>
 							<div class="input-group filter-bar-search">
 								<input type="text" placeholder="Search">
