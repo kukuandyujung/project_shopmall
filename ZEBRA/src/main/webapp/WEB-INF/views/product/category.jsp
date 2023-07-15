@@ -112,7 +112,7 @@
 						</div>
 						<div>
 							<div class="input-group filter-bar-search">
-								<input type="text" placeholder="Search">
+								<input type="text" style="height:38px;" placeholder="Search">
 								<div class="input-group-append">
 									<button type="button">
 										<i class="ti-search"></i>
