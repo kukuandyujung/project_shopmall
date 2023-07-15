@@ -285,12 +285,12 @@
 											</li>
 											<li class="r20">&nbsp;<span class="valign">일</span></li>
 											<li class="pt5">
-												<ul class="baseQues">
+												<ul class="baseQues">													
 													<li>
-														<input type="radio" name="birth" id="solar" class="radio_t" checked="checked"/><label for="solar">양력</label>
+														<input type="radio" name="gender" class="radio_t" checked="checked"/><label for="solar">남성</label>
 													</li>
 													<li>
-														<input type="radio" name="birth" id="lunar" class="radio_t"/><label for="lunar">음력</label>
+														<input type="radio" name="gender" class="radio_t"/><label for="lunar">여성</label>
 													</li>
 												</ul>
 											</li>
