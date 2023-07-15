@@ -2,12 +2,14 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title> ZEBRA </title>
 <link rel="icon" href="../img/logo2.png" type="image/png">
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <link rel="stylesheet" type="text/css" href="../css/reset.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="../css/layout.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="../css/content.css?v=Y" />
@@ -19,6 +21,7 @@
 <script type="text/javascript" src="../js/idangerous.swiper-2.1.min.js"></script>
 <script type="text/javascript" src="../js/jquery.anchor.js"></script>
 <script type="text/javascript"></script>
+<script src="../js/main.js"></script>
 <link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
 <link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
 <link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
@@ -43,7 +46,7 @@
     </div>
 	</section>
 	<!-- ================ end banner area ================= -->
- 	<!--================Cart Area =================-->
+ 	<!--================ start Cart Area =================-->
  	<div id="allwrap">
 	<div id="wrap">
 

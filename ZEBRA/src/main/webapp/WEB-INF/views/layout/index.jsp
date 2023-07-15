@@ -2,34 +2,31 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from themewagon.github.io/aroma/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 30 Jun 2023 06:55:51 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<html lang="en"> <!-- <html lang="en" class="skrollr skrollr-desktop"> -->
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<title>ZEBRA Shop - Home</title>
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>ZEBRA</title>
 <link rel="icon" href="../img/logo2.png" type="image/png">
 <link rel="stylesheet" type="text/css" href="../css/reset.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="../css/layout.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="../css/content.css?v=Y" />
- <script type="text/javascript" src="../js/top_navi.js"></script>
-<script type="text/javascript" src="../js/left_navi.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
-<script type="text/javascript" src="../js/common.js"></script>
-<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="../js/idangerous.swiper-2.1.min.js"></script>
-<script type="text/javascript" src="../js/jquery.anchor.js"></script>
+<script src="../vendors/jquery/jquery-3.2.1.min.js"></script>
+<script src="../vendors/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../vendors/skrollr.min.js"></script>
+<script src="../vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="../vendors/nice-select/jquery.nice-select.min.js"></script>
+<script src="../vendors/jquery.ajaxchimp.min.js"></script>
+<script src="../vendors/mail-script.js"></script>
+<script src="../js/main.js"></script>
 <link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
 <link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
 <link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
-<link rel="stylesheet" href="../vendors/linericon/style.css">
+<link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="../vendors/owl-carousel/owl.theme.default.min.css">
 <link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css">
-<link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
+<link rel="stylesheet" href="../vendors/linericon/style.css">
 <link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -43,13 +40,15 @@
 
 	<main class="site-main">
 
+
+		
 		<!--================ Hero banner start =================-->
-		<section class="hero-banner">		
-			<div class="container" >
+		<section class="hero-banner">
+			<div class="container">
 				<div class="row no-gutters align-items-center pt-60px">
 					<div class="col-5 d-none d-sm-block">
 						<div class="hero-banner__img">
-							<img class="<!-- img-fluid -->" src="../img/member/main.jpg" alt="">
+							<img class="< img-fluid >" src="../img/member/main.jpg" alt="">
 						</div>
 					</div>
 					<div class="col-sm-7 col-lg-6 offset-lg-1 pl-4 pl-md-5 pl-lg-0">
@@ -492,16 +491,7 @@
 	</main>
 	<%@ include file="../sidebar.jsp"%>
 	<%@ include file="../footer.jsp"%>
-
-	<script src="../vendors/jquery/jquery-3.2.1.min.js"></script>
-	<script src="../vendors/bootstrap/bootstrap.bundle.min.js"></script>
-	<script src="../vendors/skrollr.min.js"></script>
-	<script src="../vendors/owl-carousel/owl.carousel.min.js"></script>
-	<script src="../vendors/nice-select/jquery.nice-select.min.js"></script>
-	<script src="../vendors/jquery.ajaxchimp.min.js"></script>
-	<script src="../vendors/mail-script.js"></script>
-	<script src="../js/main.js"></script>
-
+	
 </body>
 
 <!-- Mirrored from themewagon.github.io/aroma/index.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 30 Jun 2023 06:56:03 GMT -->
