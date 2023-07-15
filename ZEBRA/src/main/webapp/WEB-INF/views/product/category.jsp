@@ -332,123 +332,108 @@
 	</section>
 	<!-- ================ category section end ================= -->
 
-	<!-- ================ top product area start ================= -->
-	<section class="related-product-area">
-		<div class="container">
-			<div class="section-intro pb-60px">
-				<p>Popular Item in the market</p>
-				<h2>
-					Top <span class="section-intro__style">Product</span>
-				</h2>
-			</div>
-			<div class="row mt-30">
-				<div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
-					<div class="single-search-product-wrapper">
-						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-1.png" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Gray Coffee Cup</a>
-								<div class="price">$170.00</div>
+			<!-- ================ BEST SELELLERS section start ================= -->
+		<section class="section-margin calc-60px">
+			<div class="container">
+				<div class="section-intro pb-60px">
+					<p>Popular Item in the market</p>
+					<h2>
+						Best <span class="section-intro__style">Sellers</span>
+					</h2>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-lg-4 col-xl-3">
+						<div class="card text-center card-product">
+							<div class="card-product__img">
+								<img class="card-img" src="../img/index/image_1_5.jpg" alt="">
+								<ul class="card-product__imgOverlay">
+									<li><button>
+											<i class="ti-shopping-cart"></i>
+										</button></li>
+									<li><button>
+											<i class="ti-heart"></i>
+										</button></li>
+								</ul>
 							</div>
-						</div>
-						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-2.png" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Gray Coffee Cup</a>
-								<div class="price">$170.00</div>
-							</div>
-						</div>
-						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-3.png" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Gray Coffee Cup</a>
-								<div class="price">$170.00</div>
+							<div class="card-body">
+								<p>Accessories</p>
+								<h4 class="card-product__title">
+									<a href="singleproduct">Quartz Belt Watch</a>
+								</h4>
+								<p class="card-product__price">$150.00</p>
 							</div>
 						</div>
 					</div>
-				</div>
-
-				<div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
-					<div class="single-search-product-wrapper">
-						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-4.png" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Gray Coffee Cup</a>
-								<div class="price">$170.00</div>
+					<div class="col-md-6 col-lg-4 col-xl-3">
+						<div class="card text-center card-product">
+							<div class="card-product__img">
+								<img class="card-img" src="../img/index/image_1_6.jpg" alt="">
+								<ul class="card-product__imgOverlay">
+									<li><button>
+											<i class="ti-shopping-cart"></i>
+										</button></li>
+									<li><button>
+											<i class="ti-heart"></i>
+										</button></li>
+								</ul>
 							</div>
-						</div>
-						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-5.png" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Gray Coffee Cup</a>
-								<div class="price">$170.00</div>
-							</div>
-						</div>
-						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-6.png" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Gray Coffee Cup</a>
-								<div class="price">$170.00</div>
+							<div class="card-body">
+								<p>Beauty</p>
+								<h4 class="card-product__title">
+									<a href="singleproduct">Women Freshwash</a>
+								</h4>
+								<p class="card-product__price">$150.00</p>
 							</div>
 						</div>
 					</div>
-				</div>
-
-				<div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
-					<div class="single-search-product-wrapper">
-						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-7.png" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Gray Coffee Cup</a>
-								<div class="price">$170.00</div>
+					<div class="col-md-6 col-lg-4 col-xl-3">
+						<div class="card text-center card-product">
+							<div class="card-product__img">
+								<img class="card-img" src="../img/index/image_2_6.jpg" alt="">
+								<ul class="card-product__imgOverlay">
+									<li><button>
+											<i class="ti-shopping-cart"></i>
+										</button></li>
+									<li><button>
+											<i class="ti-heart"></i>
+										</button></li>
+								</ul>
 							</div>
-						</div>
-						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-8.png" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Gray Coffee Cup</a>
-								<div class="price">$170.00</div>
-							</div>
-						</div>
-						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-9.png" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Gray Coffee Cup</a>
-								<div class="price">$170.00</div>
+							<div class="card-body">
+								<p>Decor</p>
+								<h4 class="card-product__title">
+									<a href="singleproduct">Room Flash Light</a>
+								</h4>
+								<p class="card-product__price">$150.00</p>
 							</div>
 						</div>
 					</div>
-				</div>
-
-				<div class="col-sm-6 col-xl-3 mb-4 mb-xl-0">
-					<div class="single-search-product-wrapper">
-						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-1.png" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Gray Coffee Cup</a>
-								<div class="price">$170.00</div>
+					<div class="col-md-6 col-lg-4 col-xl-3">
+						<div class="card text-center card-product">
+							<div class="card-product__img">
+								<img class="card-img" src="../img/index/image_3_7.jpg" alt="">
+								<ul class="card-product__imgOverlay">
+									<li><button>
+											<i class="ti-shopping-cart"></i>
+										</button></li>
+									<li><button>
+											<i class="ti-heart"></i>
+										</button></li>
+								</ul>
 							</div>
-						</div>
-						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-2.png" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Gray Coffee Cup</a>
-								<div class="price">$170.00</div>
-							</div>
-						</div>
-						<div class="single-search-product d-flex">
-							<a href="#"><img src="../img/product/product-sm-3.png" alt=""></a>
-							<div class="desc">
-								<a href="#" class="title">Gray Coffee Cup</a>
-								<div class="price">$170.00</div>
+							<div class="card-body">
+								<p>Decor</p>
+								<h4 class="card-product__title">
+									<a href="singleproduct">Room Flash Light</a>
+								</h4>
+								<p class="card-product__price">$150.00</p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-	<!-- ================ top product area end ================= -->
+		</section>
+		<!-- ================ BEST SELELLERS  section end ================= -->
 	
   <%@ include file="../sidebar.jsp" %>	
   <%@ include file="../footer.jsp" %>
