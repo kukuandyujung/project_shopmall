@@ -39,16 +39,16 @@
 	<%@ include file="../top.jsp"%>
 
 	<main class="site-main">
-
-
+<!-- 
+style="height:500px;"  -->
 		
 		<!--================ Hero banner start =================-->
-		<section class="hero-banner">
-			<div class="container">
-				<div class="row no-gutters align-items-center pt-60px">
+		<section class="hero-banner" ><img src="../img/index/main1.jpg" >
+			<div class="container"> 
+				<div class="row no-gutters align-items-center pt-60px" >
 					<div class="col-5 d-none d-sm-block">
-						<div class="hero-banner__img">
-							<img class="< img-fluid >" src="../img/member/main.jpg" alt="">
+						<div class="hero-banner__img"   >
+							<img class="< img-fluid >" src="../img/index/image_1_3.jpg" alt="">
 						</div>
 					</div>
 					<div class="col-sm-7 col-lg-6 offset-lg-1 pl-4 pl-md-5 pl-lg-0">
@@ -69,22 +69,22 @@
 		<!--================ Hero Carousel start =================-->
 		<section class="section-margin mt-0">
 			<div class="owl-carousel owl-theme hero-carousel">
-				<div class="hero-carousel__slide">
-					<img src="../img/home/hero-slide1.png" alt="" class="img-fluid">
+				<div class="hero-carousel__slide"><img src="">
+					<img src="../img/index/image_1_0.jpg" alt="" class="img-fluid">
 					<a href="#" class="hero-carousel__slideOverlay">
 						<h3>Wireless Headphone</h3>
 						<p>Accessories Item</p>
 					</a>
 				</div>
 				<div class="hero-carousel__slide">
-					<img src="../img/home/hero-slide2.png" alt="" class="img-fluid">
+					<img src="../img/index/image_1_6.jpg" alt="" class="img-fluid">
 					<a href="#" class="hero-carousel__slideOverlay">
 						<h3>Wireless Headphone</h3>
 						<p>Accessories Item</p>
 					</a>
 				</div>
 				<div class="hero-carousel__slide">
-					<img src="../img/home/hero-slide3.png" alt="" class="img-fluid">
+					<img src="../img/index/image_2_8.jpg" alt="" class="img-fluid">
 					<a href="#" class="hero-carousel__slideOverlay">
 						<h3>Wireless Headphone</h3>
 						<p>Accessories Item</p>
@@ -107,7 +107,7 @@
 					<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="card text-center card-product">
 							<div class="card-product__img">
-								<img class="card-img" src="../img/product/product1.png" alt="">
+								<img class="card-img" src="../img/index/image_1_5.jpg" alt="">
 								<ul class="card-product__imgOverlay">
 									<li><button>
 											<i class="ti-shopping-cart"></i>
@@ -129,7 +129,7 @@
 					<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="card text-center card-product">
 							<div class="card-product__img">
-								<img class="card-img" src="../img/product/product2.png" alt="">
+								<img class="card-img" src="../img/index/image_1_6.jpg" alt="">
 								<ul class="card-product__imgOverlay">
 									<li><button>
 											<i class="ti-shopping-cart"></i>
@@ -151,7 +151,7 @@
 					<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="card text-center card-product">
 							<div class="card-product__img">
-								<img class="card-img" src="../img/product/product3.png" alt="">
+								<img class="card-img" src="../img/index/image_2_1.jpg" alt="">
 								<ul class="card-product__imgOverlay">
 									<li><button>
 											<i class="ti-shopping-cart"></i>
@@ -173,7 +173,7 @@
 					<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="card text-center card-product">
 							<div class="card-product__img">
-								<img class="card-img" src="../img/product/product4.png" alt="">
+								<img class="card-img" src="../img/index/image_3_7.jpg" alt="">
 								<ul class="card-product__imgOverlay">
 									<li><button>
 											<i class="ti-shopping-cart"></i>
@@ -195,7 +195,7 @@
 					<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="card text-center card-product">
 							<div class="card-product__img">
-								<img class="card-img" src="../img/product/product5.png" alt="">
+								<img class="card-img" src="../img/index/image_3_3.jpg" alt="">
 								<ul class="card-product__imgOverlay">
 									<li><button>
 											<i class="ti-shopping-cart"></i>
@@ -217,7 +217,7 @@
 					<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="card text-center card-product">
 							<div class="card-product__img">
-								<img class="card-img" src="../img/product/product6.png" alt="">
+								<img class="card-img" src="../img/index/image_3_6.jpg" alt="">
 								<ul class="card-product__imgOverlay">
 									<li><button>
 											<i class="ti-shopping-cart"></i>
@@ -239,7 +239,7 @@
 					<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="card text-center card-product">
 							<div class="card-product__img">
-								<img class="card-img" src="../img/product/product7.png" alt="">
+								<img class="card-img" src="../img/index/image_3_7.jpg" alt="">
 								<ul class="card-product__imgOverlay">
 									<li><button>
 											<i class="ti-shopping-cart"></i>
@@ -261,7 +261,7 @@
 					<div class="col-md-6 col-lg-4 col-xl-3">
 						<div class="card text-center card-product">
 							<div class="card-product__img">
-								<img class="card-img" src="../img/product/product8.png" alt="">
+								<img class="card-img" src="../img/index/image_3_2.jpg" alt="">
 								<ul class="card-product__imgOverlay">
 									<li><button>
 											<i class="ti-shopping-cart"></i>
@@ -319,7 +319,7 @@
 				<div class="owl-carousel owl-theme" id="bestSellerCarousel">
 					<div class="card text-center card-product">
 						<div class="card-product__img">
-							<img class="img-fluid" src="../img/product/product1.png" alt="">
+							<img class="img-fluid" src="../img/index/image_1_0.jpg" alt="">
 							<ul class="card-product__imgOverlay">
 								<li><button>
 										<i class="ti-shopping-cart"></i>
@@ -445,7 +445,7 @@
 
 					<div class="card text-center card-product">
 						<div class="card-product__img">
-							<img class="img-fluid" src="../img/product/product3.png" alt="">
+							<img class="img-fluid" src="../img/index/image_1_5.jpg" alt="">
 							<ul class="card-product__imgOverlay">
 								<li><button>
 										<i class="ti-shopping-cart"></i>
@@ -466,7 +466,7 @@
 
 					<div class="card text-center card-product">
 						<div class="card-product__img">
-							<img class="img-fluid" src="../img/product/product4.png" alt="">
+							<img class="img-fluid" src="../img/index/image_1_6.jpg" alt="">
 							<ul class="card-product__imgOverlay">
 								<li><button>
 										<i class="ti-shopping-cart"></i>

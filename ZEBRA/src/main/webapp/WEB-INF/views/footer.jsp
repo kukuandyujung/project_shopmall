@@ -20,9 +20,9 @@
 								<li><a href="#">My Page</a></li>
 								<li><a href="#">Wish List</a></li>
 								<li><a href="/mypage/cart">Cart</a></li>
-								<li><a href="#">Search</a></li>
-								<li><a href="#">Top</a></li>
-								<li><a href="#">Bottom</a></li>
+								<!-- <li><a href="#">Search</a></li> -->
+								<!-- <li><a href="#">Top</a></li>
+								<li><a href="#">Bottom</a></li> -->
 							</ul>
 						</div>
 					</div>

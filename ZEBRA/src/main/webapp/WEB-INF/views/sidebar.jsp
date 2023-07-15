@@ -17,7 +17,7 @@
 		<li><a href="/mypage/orderhistory"><i class="xi-user"></i></a></li>
 		<li><a href="/mypage/wishlist"><i class="xi-heart"></i></a></li>
 		<li><a href="/mypage/cart"><i class="xi-cart"></i></a></li>
-		<li><a href="/product/category"><i class="xi-search"></i></a></li>
+	<!-- 	<li><a href="/product/category"><i class="xi-search"></i></a></li> -->
 		<li><a id="gototop"><i class="xi-angle-up-min"></i></a></li>
 		<li><a id="gotobtm"><i class="xi-angle-down-min"></i></a></li>
 	</ul>
