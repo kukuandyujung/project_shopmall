@@ -43,12 +43,13 @@
 style="height:500px;"  -->
 		
 		<!--================ Hero banner start =================-->
-		<section class="hero-banner" ><!-- style= width:1480px height:250.677px; --> >
-      <div class="container"><img src= "../img/index/main1.jpg" > 
+		<section class="hero-banner" >
+		<img src= "../img/index/main11.png" ><!-- style= width:1480px height:250.677px; --> 
+      <div class="container"> <!-- background: url("../img/index/main4.png")  -->
         <div class="row no-gutters align-items-center pt-60px">
           <div class="col-5 d-none d-sm-block">
            <!--  <div class="hero-banner__img">
-              <img class="img-fluid" src="../img/index/image_1_0.jpg" alt="">
+              <img class="img-fluid" src="../img/index/main.jpgg" alt="">
             </div> -->
           </div>
           <div class="col-sm-7 col-lg-6 offset-lg-1 pl-4 pl-md-5 pl-lg-0">
@@ -72,22 +73,22 @@ style="height:500px;"  -->
 				<div class="hero-carousel__slide"><img src="">
 					<img src="../img/index/test1.png" alt="" class="img-fluid">
 					<a href="#" class="hero-carousel__slideOverlay">
-						<h3> WOMEN </h3>
+						<h2> WOMEN </h2>
 						<p> Women Item </p>
-					</a>
-				</div>
-				<div class="hero-carousel__slide">
-					<img src="../img/index/test3.png" alt="" class="img-fluid">
-					<a href="#" class="hero-carousel__slideOverlay">
-						<h3> Men </h3>
-						<p>MenItem</p>
 					</a>
 				</div>
 				<div class="hero-carousel__slide">
 					<img src="../img/index/test2.png" alt="" class="img-fluid">
 					<a href="#" class="hero-carousel__slideOverlay">
-						<h3> HOME </h3>
-						<p> Home & Deco </p>
+						<h2> Men </h2>
+						<p>MenItem</p>
+					</a>
+				</div>
+				<div class="hero-carousel__slide">
+					<img src="../img/index/test3.png" alt="" class="img-fluid">
+					<a href="#" class="hero-carousel__slideOverlay">
+						<h2> HOME </h2>
+						<p> Home Item </p>
 					</a>
 				</div>
 			</div>
@@ -100,7 +101,7 @@ style="height:500px;"  -->
 				<div class="section-intro pb-60px">
 					<p>Popular Item in the market</p>
 					<h2>
-						Trending <span class="section-intro__style">Product</span>
+						Top <span class="section-intro__style"> Hits </span>
 					</h2>
 				</div>
 				<div class="row">
