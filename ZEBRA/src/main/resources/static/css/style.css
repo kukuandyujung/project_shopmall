@@ -762,8 +762,8 @@ a {
     padding-bottom: 8px
 }
 
-.hero-banner {
-    /*background: #F1F6F7;*/
+/*.hero-banner {
+    background: #F1F6F7;
     position: relative;
     margin-bottom: 10px
 }
@@ -800,7 +800,7 @@ a {
 .hero-banner__img {
     position: relative;
     top: 1px
-}
+}*/
 
 @media (max-width: 575px) {
     .hero-banner__content {
