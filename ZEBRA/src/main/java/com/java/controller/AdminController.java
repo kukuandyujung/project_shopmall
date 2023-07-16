@@ -39,13 +39,13 @@ public class AdminController {
 	//관리자 로그인 PostMapping
 	@PostMapping("/admin/login")
 	public String  login2(MemberDto memberDto, Model model, HttpSession session) {
-		System.out.println("memberDto 1 : "+ memberDto.getID());
-		System.out.println("memberDto 2 : "+ memberDto.getPASSWORD());
+		System.out.println("memberDto 1 : "+ memberDto.getMid());
+		System.out.println("memberDto 2 : "+ memberDto.getMpassword());
 		MemberDto mdto = memberService.selectLogin(memberDto);
 		if(mdto!=null) {
-			session.setAttribute("sessionId", mdto.getID());
-			session.setAttribute("sessionName", mdto.getNICKNAME());
-			model.addAttribute("loginCheck", "success");
+			session.setAttribute("sessionId", mdto.getMid());
+			session.setAttribute("sessionName", mdto.getMpassword());
+//			model.addAttribute("loginCheck", "success");
 		}else {
 			model.addAttribute("loginCheck", "fail");
 			return "/admin/login";

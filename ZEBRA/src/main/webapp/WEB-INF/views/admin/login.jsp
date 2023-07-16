@@ -48,13 +48,13 @@
             
               <h1>Login Form</h1>
               <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+<!--
 <script>
   function loginBtn() {
     var loginId = $("#loginId").val();
     var loginPw = $("#loginPw").val();
 
-    if (loginId == "0" && loginPw == "1234") {
+    if (loginId == "admin") {
       alert("관리자님 로그인 되었습니다.");
       window.location.href = "index"; // index 페이지로 이동
     } else {
@@ -62,12 +62,12 @@
     }
   }
 </script>
+-->
 
-
-             <!-- 로그인 제출하기 시작-->
-        <!--       <script type="text/javascript">
+               <!-- 로그인 제출하기 시작-->
+   <!--            <script type="text/javascript">
 				function loginBtn(){
-					if($("#loginId").val()=="0" && $("#loginPW").val()=="1234"){
+					if($("#loginId").val()=="admin" ){
 						alert("관리자님 로그인 되었습니다.");
 						 window.location.href = "/index"; // index 페이지로 이동
 						
@@ -87,19 +87,20 @@
 					    alert("아이디 또는 비밀번호가 잘못되었습니다.");
 					    return "/login";
 					  }
-					}
-				
-			  </script> -->
-			  <script>
+					}	
+			  </script>   
+			  -->
+	<!--  		  <script>   
     if("${loginCheck}" == "success"){
         alert(${sessionName}+ "님! 로그인 되었습니다.");
     }
 
     function logoutBtn(){
         alert("로그아웃이 되었습니다.");
-        location.href = "/admin/logout";
-    }
-</script>
+        location.href = "/admin/index";  
+    }  
+</script>  
+-->
 		    <!-- 로그인 제출하기 끝-->
 		    <!-- 로그인 폼 -->
 

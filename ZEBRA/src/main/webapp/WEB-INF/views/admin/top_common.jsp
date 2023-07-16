@@ -7,7 +7,7 @@ if("${loginCheck}"== "success" ){
 
 function logoutBtn(){
 	alert("로그아웃이 되었습니다.");
-	location.href="/logout";
+	location.href="/ammin/logout";
 }
 
 </script> 
@@ -23,7 +23,7 @@ function logoutBtn(){
                   <!-- 오른쪽 상단에 프로필 -->
                   <li class="nav-item dropdown open" style="padding-left: 15px;">
                     <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                      <img src="production/images/img.jpg" alt="">${sessionName}
+                      <img src="production/images/img.jpg" alt="">
                     </a>
                     <!-- 오른쪽 상단에 프로필을 누르면 나오는 프로필, 설정, 헬프, 로그인 로그아웃 시작 -->
                     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
@@ -34,7 +34,7 @@ function logoutBtn(){
                         </a>
                       <a class="dropdown-item"  href="#">도움</a>
                       <!-- 관리자 로그인 기능 -->
-                  <c:if test="${sessionId==null}">
+                		 <c:if test="${sessionId==null}">
                       	<a class="dropdown-item"  href="login"><i class="fa fa-sign-out pull-right"></i>로그인</a>
                       </c:if>
 					  <c:if test="${sessionId!=null}">

@@ -27,12 +27,12 @@
 
 <!-- 회원 정보 1개 가져오기 -->
 <select id="selectOne" resultType="com.java.dto.MemberDto">
-   select * from zebra where ID=#{ID}
+   select * from zebra where mid=#{mid}
 </select>
 
 <!--관리자 로그인 확인-->
 <select id="selectLogin" resultType="com.java.dto.MemberDto" >
-	select * from zebra where id=0 and password=1234
+	select * from zebra where mid='admin'
 </select>
 
 </mapper>
