@@ -28,106 +28,106 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h3>상품 등록 페이지</h3>
+                            <h3>상품 수정 페이지</h3>
                         </div>
 	    <div class="field item form-group">
                         <label class="col-form-label col-md-3 col-sm-3  label-align">상품 번호<span class="required"></span></label>
                         <div class="col-md-6 col-sm-6">
-                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="pno" placeholder="ex) 12"  />
+                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="pno" placeholder="ex) 12"   required="required"/>
                         </div>
                     </div>
                     <div class="field item form-group">
                         <label class="col-form-label col-md-3 col-sm-3  label-align">상품 코드<span class="required"></span></label>
                         <div class="col-md-6 col-sm-6">
-                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="pcode" placeholder="ex) 0"  />
+                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="pcode" placeholder="ex) 0"  required="required"/>
                         </div>
                     </div>
                     <div class="field item form-group">
                         <label class="col-form-label col-md-3 col-sm-3  label-align">상품명<span class="required"></span></label>
                         <div class="col-md-6 col-sm-6">
-                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "text" name="pname" placeholder="ex) pants "  />
+                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "text" name="pname" placeholder="ex) pants " required="required" />
                         </div>
                     </div>
                     <div class="field item form-group">
                         <label class="col-form-label col-md-3 col-sm-3  label-align">판매 가격<span class="required"></span></label>
                         <div class="col-md-6 col-sm-6">
-                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="pprice" placeholder="ex) 100,000 "  />
+                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="pprice" placeholder="ex) 100,000 " required="required"/>
                         </div>
                     </div>
                     <div class="field item form-group">
                         <label class="col-form-label col-md-3 col-sm-3  label-align">재고 수량<span class="required"></span></label>
                         <div class="col-md-6 col-sm-6">
-                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="pstock" placeholder="ex) pants "  />
+                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="pstock" placeholder="ex) 3 "  required="required"/>
                         </div>
                     </div>
                     <div class="field item form-group">
                         <label class="col-form-label col-md-3 col-sm-3  label-align">판매 개수<span class="required"></span></label>
                         <div class="col-md-6 col-sm-6">
-                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="psoldcount" placeholder="ex) 1 "  />
+                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="psoldcount" placeholder="ex) 1 "  required="required"/>
                         </div>
                     </div>
                     <div class="field item form-group">
                         <label class="col-form-label col-md-3 col-sm-3  label-align">색상<span class="required"></span></label>
                         <div class="col-md-6 col-sm-6">
-                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "text" name="pcolor" placeholder="ex) black " />
+                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "text" name="pcolor" placeholder="ex) black "required="required" />
                         </div>
                     </div>
                     <div class="field item form-group">
                         <label class="col-form-label col-md-3 col-sm-3  label-align">상품 사이즈<span class="required"></span></label>
                         <div class="col-md-6 col-sm-6">
-                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "text" name="psize" placeholder="ex) s "  />
+                            <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "text" name="psize" placeholder="ex) s "  required="required"/>
                         </div>
                     </div>
                     <div class="field item form-group">
                         <label class="col-form-label col-md-3 col-sm-3  label-align">기본 설명<span class="required"></span></label>
                         <div class="col-md-6 col-sm-6">
-                            <textarea class="form-control" name="pdescript" cols="50" rows="10" placeholder="ex) women t-shirt " ></textarea>
+                            <textarea class="form-control" name="pdescript" cols="50" rows="10" placeholder="ex) women t-shirt " required="required" ></textarea>
                         </div>
                     </div>
                     <div class="field item form-group">
                         <label class="col-form-label col-md-3 col-sm-3  label-align">메인 이미지1<span class="required"></span></label>
                         <div class="col-md-6 col-sm-6">
-                            <input class="form-control" type="file"  name="pm1" id="file"  data-validate-minmax="10,100" ></div>
+                            <input class="form-control" type="file"  name="pm1"   data-validate-minmax="10,100" required="required" ></div>
                     </div>
                     <div class="field item form-group">
                         <label class="col-form-label col-md-3 col-sm-3  label-align">메인 이미지2<span class="required"></span></label>
                         <div class="col-md-6 col-sm-6">
-                            <input class="form-control" type="file"  name="pm2" id="file"  data-validate-minmax="10,100" ></div>
+                            <input class="form-control" type="file"  name="pm2"   data-validate-minmax="10,100" required="required"></div>
                     </div>
                     <div class="field item form-group">
                         <label class="col-form-label col-md-3 col-sm-3  label-align">메인 이미지3<span class="required"></span></label>
                         <div class="col-md-6 col-sm-6">
-                            <input class="form-control" type="file"  name="pm3" id="file"  data-validate-minmax="10,100" ></div>
+                            <input class="form-control" type="file"  name="pm3"   data-validate-minmax="10,100" required="required"></div>
                     </div>
                     <div class="field item form-group">
                         <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지1<span class="required"></span></label>
                         <div class="col-md-6 col-sm-6">
-                            <input class="form-control" type="file"  name="pd1" id="file"  data-validate-minmax="10,100" ></div>
+                            <input class="form-control" type="file"  name="pd1"  data-validate-minmax="10,100" required="required"></div>
                     </div>
                     <div class="field item form-group">
                         <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지2<span class="required"></span></label>
                         <div class="col-md-6 col-sm-6">
-                            <input class="form-control" type="file"  name="pd2" id="file"  data-validate-minmax="10,100" ></div>
+                            <input class="form-control" type="file"  name="pd2"  data-validate-minmax="10,100" required="required" ></div>
                     </div>
                     <div class="field item form-group">
                         <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지3<span class="required"></span></label>
                         <div class="col-md-6 col-sm-6">
-                            <input class="form-control" type="file"  name="pd3" id="file"  data-validate-minmax="10,100" ></div>
+                            <input class="form-control" type="file"  name="pd3"   data-validate-minmax="10,100" required="required"></div>
                     </div>
                     <div class="field item form-group">
                         <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지4<span class="required"></span></label>
                         <div class="col-md-6 col-sm-6">
-                            <input class="form-control" type="file"  name="pd4" id="file"  data-validate-minmax="10,100" ></div>
+                            <input class="form-control" type="file"  name="pd4"   data-validate-minmax="10,100" required="required"></div>
                     </div>
                     <div class="field item form-group">
                         <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지5<span class="required"></span></label>
                         <div class="col-md-6 col-sm-6">
-                            <input class="form-control" type="file"  name="pd5" id="file"  data-validate-minmax="10,100" ></div>
+                            <input class="form-control" type="file"  name="pd5"  data-validate-minmax="10,100" required="required"></div>
                     </div>
                     <div class="field item form-group">
                         <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지6<span class="required"></span></label>
                         <div class="col-md-6 col-sm-6">
-                            <input class="form-control" type="file"  name="pd6" id="file"  data-validate-minmax="10,100" ></div>
+                            <input class="form-control" type="file"  name="pd6"   data-validate-minmax="10,100" required="required"></div>
                     </div>
                     <hr>
       <div class="button-wrapper">

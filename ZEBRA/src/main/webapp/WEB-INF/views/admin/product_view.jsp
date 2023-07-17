@@ -18,6 +18,8 @@
 				location.href= "product_delete?pno=${pdto.pno}";
 			}
 		}
+		
+		
 	
 	</script>
   <style>
@@ -67,6 +69,7 @@
     <a href="product_list?page=${page}&category=${category}&s_word=${s_word}"><div class="list">목록</div></a>
     <a onclick="deleteBtn(${pdto.pno})"><div class="rebtn">삭제</div></a>
     <a href="product_update?pno=${pdto.pno}&page=${page}&category=${category}&s_word=${s_word}"><div class="list">수정</div></a>
+<%--     <a onclick="updateBtn(${pdto.pno})"><div class="rebtn">수정</div>></a> --%>
 </section>
 </body>
 </html>

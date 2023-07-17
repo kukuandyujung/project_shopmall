@@ -96,7 +96,7 @@
 	<!-- 게시글 수정  -->
 	<!-- 주어집 값에 대해 업데이트하기 그냥 상품 리스트에 적힌 변수를 적고 업데이트 대상을 pno가 주어진 값과 일치하는 레코드이다. -->
 	<update id="updateOne">
-		update product set pno=#{pno}, pcode =#{pcode}, pname=#{pname}, pprice=#{pprice},
+		update product set pcode =#{pcode}, pname=#{pname}, pprice=#{pprice},
 		pstock=#{pstock},psoldcount=#{psoldcount},  pcolor=#{pcolor}, psize=#{psize},
 		pdescript=#{pdescript},
 		pmainimg1=#{pmainimg1},pmainimg2=#{pmainimg2}, pmainimg3=#{pmainimg3},
