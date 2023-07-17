@@ -36,12 +36,19 @@ public class MemberServiceImpl implements MemberService {
 		 return map;
 	}
 
+	@Override
+	// 회원 정보 1개 수정하기
+	public void updateOne(MemberDto mdto) {
+		memberMapper.updateOne(mdto);
+	}
+	
 	@Override//로그인 확인
 	public MemberDto selectLogin(MemberDto memberDto) {
 		// 로그인 확인
 		MemberDto mdto = memberMapper.selectLogin(memberDto);
 		return mdto;
 	}
+
 
 
 }

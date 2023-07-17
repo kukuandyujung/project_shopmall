@@ -1,5 +1,9 @@
 package com.java.controller;
+import java.io.File;
+import java.net.URLEncoder;
 import java.util.HashMap;
+import java.util.UUID;
+
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.multipart.MultipartFile;
+
 import com.java.dto.MemberDto;
 import com.java.service.MemberService;
 @Controller
@@ -179,14 +186,21 @@ public class AdminController {
 		return "admin/member_table";
 	}		
 	
-	// 회원 정보 1개 전체 가져오기
+	// 회원 정보 1개 가져오기
 	@RequestMapping("/admin/member_tableView")
 	public String member_tableView(@RequestParam(defaultValue = "aannesdg")String MID, Model model) {
 		HashMap<String, Object> map = memberService.selectOne(MID);
 		model.addAttribute("mdto", map.get("mdto"));
-		System.out.println("map : "+map);
 		return "admin/member_tableView";
 	}
+
+	/*
+	 * @GetMapping("/admin/member_tableView") public String doMemberUpdate(String
+	 * MID, MemberDto mdto, Model model) throws Exception { // 회원 정보 1개 수정
+	 * System.out.println("MID :"+mdto.getMID());
+	 * System.out.println("MNAME :"+mdto.getMNAME()); memberService.updateOne(mdto);
+	 * return "redirect:admin/member_tableView?MID="+MID; }
+	 */
 	
 	@RequestMapping("/admin/morisjs")
 	public String morisjs() {

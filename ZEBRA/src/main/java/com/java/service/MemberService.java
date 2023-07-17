@@ -12,8 +12,12 @@ public interface MemberService {
 	// 회원 정보 1개 가져오기
 	HashMap<String, Object> selectOne(String MID);
 
+	// 회원 정보 1개 수정하기
+	void updateOne(MemberDto mdto);
+	
 	//로그인 확인하기
 	MemberDto selectLogin(MemberDto memberDto);
+
 
 	
 

@@ -144,7 +144,7 @@
                       <tbody>
                       <c:forEach var="mdto" items="${list}"> <!-- var는 변수 공간, list를 cdto에 넣어라 -->
 						<tr>
-						  <td><a href="/admin/member_tableView/?MID=${mdto.MID}" style="text-decoration: underline">${mdto.MID}</a></td> <!-- ? 뒤 컬럼명 꼭 맞출걸 -->
+						  <td><a href="/admin/member_tableView/?MID=${mdto.MID}" style="text-decoration: underline">${mdto.MID}</a></td> <!-- ?는 쿼리 문자열의 시작을 나타내는 기호  -->
 						  <td>${mdto.MNAME }</td>
 						  <td>${mdto.MPHONE }</td> 						  
 						  <td>${mdto.formattedJoinDay }</td>	

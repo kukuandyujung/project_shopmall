@@ -66,39 +66,15 @@
 
     <!-- Custom Theme Style -->
     <link href="/build/css/custom.min.css" rel="stylesheet">
-    <!-- 
-    <script type="text/javascript">
- 
-	/* ajax를 통한 비밀번호 수정처리 */
-	function modifyMember() {
-	    
-	    var nick = $("#nick").val();
-	    var full_name = $("#full_name").val();
-	    var phone = $("#phone").val();
-	    var address = $("#address").val();
-	    var email = $("#email").val();
-	    
-	    var param = {"nick":nick, "full_name":full_name, "phone":phone, "address":address, "email":email}
-	    
-	        $.ajax({
-	            anyne:true,
-	            type:'POST',
-	            data: JSON.stringify(param),
-	            url:"admin/member_tableView",
-	            dataType: "text",
-	            contentType: "application/json; charset=UTF-8",
-	            success : function(data) {    
-	                alert("회원 정보가 수정되었습니다.");
-	                location.href="/admin/member_table";
-	            },
-	            error: function(jqXHR, textStatus, errorThrown) {
-	                alert("ERROR : " + textStatus + " : " + errorThrown);
-	            }        
-	        })
-	      }
+   
+    <script>
+    function updateMtn(){
+    	if(confirm("게시글을 수정하시겠습니까?")){
+    		update.submit();
+    	}
+    }
+  </script>
 	
-	</script>
-     -->
   </head>
 
   <body class="nav-md">
@@ -141,38 +117,42 @@
 					
 				<h1>회원 정보 수정</h1>
 				<hr></hr>
-                <div>
+				<form action="memberUpdate" name="update" method="post">
 					<table class="memberTable">
 					<tr>
 		                <td class="text">아이디</td>
-		                <td class="textbox"><input type="text" name="id" value="${mdto.MID}" disabled></td>
+		                <td class="textbox"><input type="text" id="id" name="id" value="${mdto.MID}" disabled></td>
 		                
 		            </tr>		            
 		            
 		            <tr>
 		                <td class="text">이름</td>
-		                <td class="textbox"><input type="text" name="name" value="${mdto.MNAME}" value="${mdto.MNAME}"></td>
+		                <td class="textbox"><input type="text" id="name" name="name" value="${mdto.MNAME}" value="${mdto.MNAME}"></td>
 		            </tr>
 		            
 		            <tr>
 		                <td class="text">핸드폰</td>
-		                <td class="textbox"><input type="text" name="phone" value="${mdto.MPHONE}"></td>
+		                <td class="textbox"><input type="text" id="phone" name="phone" value="${mdto.MPHONE}"></td>
 		            </tr>
 		            
 		            <tr>
 		                <td class="text">이메일</td>
-		                <td class="textbox"><input type="text" name="email" value="${mdto.MEMAIL}"></td>
+		                <td class="textbox"><input type="text" id="email" name="email" value="${mdto.MEMAIL}"></td>
 		            </tr>
 		            </table>
 		            
 		            <div class="option">
-		            	<input type="submit" value="수정하기" onclick="modifyMember()" style="font-size: 17px; margin-right: 7px;">
-		            	<input type="reset" value="다시입력" style="font-size: 17px; margin-left: 7px;">	
+		            	<input type="submit" value="수정하기" onclick="updateMtn()" style="font-size: 17px; margin-right: 6px;">
+		            	<input type="reset" value="다시입력" style="font-size: 17px; margin-right: 6px; margin-left: 6px;">	
+		            	<input type="button" value="취소" onclick="javascript:location.href='../member_table'" style="font-size: 17px; margin-left: 6px;">
                   </div>
+                  </form>
                 </div>
               </div>
             </div>
+            
           </div>
+          
         <!-- /page content -->
 
         <!-- footer content -->
