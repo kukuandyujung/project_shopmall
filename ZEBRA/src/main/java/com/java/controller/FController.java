@@ -18,10 +18,7 @@ public class FController {
 	public String index() {
 		return "layout/index";
 	}
-	@RequestMapping("/member/login")
-	public String login() {
-		return "member/login";
-	}
+	
 	@RequestMapping("/member/register")
 	public String register() {
 		return "member/register";
