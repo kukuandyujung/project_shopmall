@@ -19,13 +19,12 @@
 <link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
 <link rel="stylesheet" href="../vendors/linericon/style.css">
 <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
-<link rel="stylesheet"
-	href="../vendors/owl-carousel/owl.theme.default.min.css">
-<link rel="stylesheet"
-	href="../vendors/owl-carousel/owl.carousel.min.css">
+<link rel="stylesheet" href="../vendors/owl-carousel/owl.theme.default.min.css">
+<link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css">
 <link rel="stylesheet" href="../css/style.css">
 
-<link rel="stylesheet" href="../css/360f749e5e2c173f.css" data-n-p=""><link rel="preload" href="../vendors/118f4578a1d7588b.css" as="style">
+<link rel="stylesheet" href="../css/360f749e5e2c173f.css" data-n-p="">
+<link rel="preload" href="../css/118f4578a1d7588b.css" as="style">
 
 </head>
 <body>

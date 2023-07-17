@@ -31,11 +31,12 @@ public class MemberController {
 	}	
 	
 	
-	//로그인
-	@RequestMapping("/member/login")
-	public String login() {
-	return "member/login";
-	}
+	/*
+	 * //로그인
+	 * 
+	 * @RequestMapping("/member/login") public String login() { return
+	 * "member/login"; }
+	 */
 
 			
 		
