@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,10 +24,52 @@
 <link rel="stylesheet" href="../css/style.css">
 
 <link rel="stylesheet" href="../css/360f749e5e2c173f.css" data-n-p="">
-<link rel="preload" href="../css/118f4578a1d7588b.css" as="style">
+<link rel="preload" href="../vendors/118f4578a1d7588b.css" as="style">
+
+
+<style>
+.image-button {
+  display: inline-block;
+  margin: 0;
+  width: 34px;
+  height: 34px;
+  padding: 2px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+}
+.image-button.selected {
+  border-color: #000;
+}
+#image1 {
+  background-image: url('../img/member/image_1_1.jpg');
+}
+#image2 {
+  background-image: url('../img/member/image_3_2.jpg');
+}
+#image3 {
+  background-image: url('../img/member/image_3_4.jpg');
+}
+</style>
+<script>
+function selectImage(imageId) {
+  var imageButtons = document.getElementsByClassName('image-button');
+  for (var i = 0; i < imageButtons.length; i++) {
+    imageButtons[i].classList.remove('selected');
+  }
+  document.getElementById(imageId).classList.add('selected');
+}
+</script>
+
+
 
 </head>
 <body>
+
+
+
+
+
+
 	<%@ include file="../top.jsp"%>
 	<!-- ================ start banner area ================= -->
 	<section class="blog-banner-area" id="blog">
@@ -84,17 +126,22 @@
 								        <button class="btn btn-primary" type="button" style="background-color: white; color: black; border: 1px solid gray;">XL</button>
 								        <input type="radio" id="xl_size" name="size" style="display: none;">
 								    </label>
-							</div>
-							<div class="size">
-								<img src ="../img/member/image_3_4.jpg">
-								<img class="img-fluid" src="../img/member/image_3_4.jpg" alt="">
-								
+							</div>	
+						<br>
+
+						<button class="image-button" id="image1"
+							onclick="selectImage('image1')"></button>
+						<button class="image-button" id="image2"
+							onclick="selectImage('image2')"></button>
+						<button class="image-button" id="image3"
+							onclick="selectImage('image3')"></button>
 							<br>
-							<br>
-							<br>
-							<br>
-							<br>
-							<div class="product_count">
+
+
+
+
+
+						<div class="product_count">
 								<label for="qty">Quantity:</label> <input type="text" name="qty" 
 								id="sst" size="2" maxlength="12" value="1" title="Quantity:" class="input-text qty"> 
 									<a class="button primary-btn" href="#">Buy Now</a>
