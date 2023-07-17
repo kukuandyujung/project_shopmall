@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.java.dto.MemberDto;
+import com.java.dto.ProductDto;
 import com.java.mapper.MemberMapper;
 
 @Service
@@ -28,9 +29,11 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	// 회원 정보 1개 가져오기
-	public MemberDto selectOne(String MID) {
-		MemberDto mdto = memberMapper.selectOne(MID);
-		return mdto;
+	public HashMap<String, Object> selectOne(String MID) {
+		 HashMap<String, Object> map = new HashMap<>();
+		 MemberDto mdto = memberMapper.selectOne(MID);
+	     map.put("mdto", mdto);
+		 return map;
 	}
 
 	@Override//로그인 확인

@@ -125,7 +125,7 @@
                           <div class="col-sm-12">
                             <div class="card-box table-responsive">
                             <p class="text-muted font-13 m-b-30">
-                     		회원번호를 누르면 정보 수정이 가능합니다.
+                     		회원 아이디를 누르면 정보 수정이 가능합니다.
                   			</p>
 					
 					<!-- 템플릿 데이터 시작  -->
@@ -144,7 +144,7 @@
                       <tbody>
                       <c:forEach var="mdto" items="${list}"> <!-- var는 변수 공간, list를 cdto에 넣어라 -->
 						<tr>
-						  <td><a href="/admin/member_tableView/?ID=${mdto.MID }" style="text-decoration: underline">${mdto.MID }</a></td>
+						  <td><a href="/admin/member_tableView/?MID=${mdto.MID}" style="text-decoration: underline">${mdto.MID}</a></td> <!-- ? 뒤 컬럼명 꼭 맞출걸 -->
 						  <td>${mdto.MNAME }</td>
 						  <td>${mdto.MPHONE }</td> 						  
 						  <td>${mdto.formattedJoinDay }</td>	

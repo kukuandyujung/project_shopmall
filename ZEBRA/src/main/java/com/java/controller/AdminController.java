@@ -187,9 +187,10 @@ public class AdminController {
 	
 	// 회원 정보 1개 전체 가져오기
 	@RequestMapping("/admin/member_tableView") 
-	public String member_tableView(@RequestParam(defaultValue = "1") String MID, Model model) {
-		MemberDto mdto = memberService.selectOne(MID);
-		model.addAttribute("mdto",mdto); // 모델에 속성 추가
+	public String member_tableView(@RequestParam(defaultValue = "aannesdg")String MID, Model model) {
+		HashMap<String, Object> map = memberService.selectOne(MID);
+		model.addAttribute("mdto", map.get("mdto")); 
+		System.out.println("map : "+map);
 		return "admin/member_tableView";
 	}
 	

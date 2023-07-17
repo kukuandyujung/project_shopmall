@@ -66,7 +66,7 @@
 
     <!-- Custom Theme Style -->
     <link href="/build/css/custom.min.css" rel="stylesheet">
-    
+    <!-- 
     <script type="text/javascript">
  
 	/* ajax를 통한 비밀번호 수정처리 */
@@ -98,7 +98,7 @@
 	      }
 	
 	</script>
-    
+     -->
   </head>
 
   <body class="nav-md">
@@ -130,7 +130,7 @@
              <%@ include file="common_code.jsp" %>
           </div>
         </div>
-      <%@ include file="top_common.jsp" %>
+      <%@ include file="top_common.jsp" %>      
 
         <!-- page content -->
         <div class="right_col" role="main">
@@ -145,22 +145,23 @@
 					<table class="memberTable">
 					<tr>
 		                <td class="text">아이디</td>
-		                <td class="textbox"><input type="text" name="nick" value="${mdto.MID }" disabled></td>
+		                <td class="textbox"><input type="text" name="id" value="${mdto.MID}" disabled></td>
+		                
 		            </tr>		            
 		            
 		            <tr>
 		                <td class="text">이름</td>
-		                <td class="textbox"><input type="text" name="full_name" value="${mdto.MNAME }" value="${mdto.MNAME }"></td>
+		                <td class="textbox"><input type="text" name="name" value="${mdto.MNAME}" value="${mdto.MNAME}"></td>
 		            </tr>
 		            
 		            <tr>
 		                <td class="text">핸드폰</td>
-		                <td class="textbox"><input type="text" name="phone" value="${mdto.MPHONE }"></td>
+		                <td class="textbox"><input type="text" name="phone" value="${mdto.MPHONE}"></td>
 		            </tr>
 		            
 		            <tr>
 		                <td class="text">이메일</td>
-		                <td class="textbox"><input type="text" name="email" value="${mdto.MEMAIL }"></td>
+		                <td class="textbox"><input type="text" name="email" value="${mdto.MEMAIL}"></td>
 		            </tr>
 		            </table>
 		            
