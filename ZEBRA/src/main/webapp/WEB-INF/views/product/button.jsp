@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 <style>
 .image-button {
-  background-image: url('../img/member/image_1_1.jpg');
   display: inline-block;
   margin: 0;
   width: 34px;
@@ -16,9 +15,36 @@
   border: 1px solid transparent;
   border-radius: 50%;
 }
+
+.image-button.selected {
+  border-color: #000;
+}
+
+#image1 {
+  background-image: url('../img/member/image_1_1.jpg');
+}
+
+#image2 {
+  background-image: url('../img/member/image_3_2.jpg');
+}
+
+#image3 {
+  background-image: url('../img/member/image_3_4.jpg');
+}
 </style>
+<script>
+function selectImage(imageId) {
+  var imageButtons = document.getElementsByClassName('image-button');
+  for (var i = 0; i < imageButtons.length; i++) {
+    imageButtons[i].classList.remove('selected');
+  }
+  document.getElementById(imageId).classList.add('selected');
+}
+</script>
 </head>
 <body>
-<button class="image-button"></button>
+<button class="image-button" id="image1" onclick="selectImage('image1')"></button>
+<button class="image-button" id="image2" onclick="selectImage('image2')"></button>
+<button class="image-button" id="image3" onclick="selectImage('image3')"></button>
 </body>
 </html>

@@ -12,45 +12,82 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title> ZEBRA </title>
+<title>ZEBRA</title>
 <link rel="icon" href="../img/logo2.png" type="image/png">
 <link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
 <link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
 <link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
 <link rel="stylesheet" href="../vendors/linericon/style.css">
-<link rel="stylesheet" href="../vendors/owl-carousel/owl.theme.default.min.css">
-<link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css">
+<link rel="stylesheet"
+	href="../vendors/owl-carousel/owl.theme.default.min.css">
+<link rel="stylesheet"
+	href="../vendors/owl-carousel/owl.carousel.min.css">
 <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
 <link rel="stylesheet" href="../css/style.css">
 
 <style>
-  .number-box {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    line-height: 23px;
-    color: #888;
-    text-decoration: none;
-    border: 1px #c0c0c0 solid;
-    background: #fff;
-    font-size: 15px;
-    text-align: center;
-  }
-    .btnAreaList {
-    display: flex;
-    justify-content: center;
-  }
+.number-box {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	line-height: 23px;
+	color: #888;
+	text-decoration: none;
+	border: 1px #c0c0c0 solid;
+	background: #fff;
+	font-size: 15px;
+	text-align: center;
+}
 
-  .allPageMoving1 {
-    display: flex;
-    align-items: center;
-  }
+.btnAreaList {
+	display: flex;
+	justify-content: center;
+}
+
+.allPageMoving1 {
+	display: flex;
+	align-items: center;
+}
+
+.image-button {
+	display: inline-block;
+	margin: 0;
+	width: 34px;
+	height: 34px;
+	padding: 2px;
+	border: 1px solid transparent;
+	border-radius: 50%;
+}
+
+.image-button.selected {
+	border-color: #000;
+}
+
+#image1 {
+	background-image: url('../img/member/image_1_1.jpg');
+}
+
+#image2 {
+	background-image: url('../img/member/image_3_2.jpg');
+}
+
+#image3 {
+	background-image: url('../img/member/image_3_4.jpg');
+}
 </style>
-
+<script>
+	function selectImage(imageId) {
+		var imageButtons = document.getElementsByClassName('image-button');
+		for (var i = 0; i < imageButtons.length; i++) {
+			imageButtons[i].classList.remove('selected');
+		}
+		document.getElementById(imageId).classList.add('selected');
+	}
+</script>
 </head>
 <body>
-<%@ include file="../top.jsp" %>
+	<%@ include file="../top.jsp"%>
 
 	<!-- ================ start banner area ================= -->
 	<section class="blog-banner-area" id="category">
@@ -58,8 +95,7 @@
 			<div class="blog-banner">
 				<div class="text-center">
 					<h1>Shop Category</h1>
-					<nav aria-label="breadcrumb" class="banner-breadcrumb">
-					</nav>
+					<nav aria-label="breadcrumb" class="banner-breadcrumb"></nav>
 				</div>
 			</div>
 		</div>
@@ -77,27 +113,50 @@
 							<div class="head">Color</div>
 							<form action="#">
 								<style>
-									#color {
-										column-count: 2; /* 두 개의 열로 나눔 */
-										column-gap: 1em; /* 열 사이의 간격 조절 */
-										padding-left: 10px;
-									}
-									</style>
+#color {
+	column-count: 2; /* 두 개의 열로 나눔 */
+	column-gap: 1em; /* 열 사이의 간격 조절 */
+	padding-left: 10px;
+}
+</style>
 								<ul id="color">
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="black" name="color"><label for="black">Black<span>(29)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="blue" name="color"><label for="blue">Blue<span>(29)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="brown" name="color"><label for="brown">Brown<span>(29)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="gray" name="color"><label for="gray">Gray<span>(29)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="green" name="color"><label for="green">Green<span>(29)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="multi" name="color"><label for="multicolor">Multi<span>(29)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="navy" name="color"><label for="navy">Navy<span>(29)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="neutral" name="color"><label for="neutral">Neutral<span>(29)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="orange" name="color"><label for="orange">Orange<span>(29)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="pink" name="color"><label for="pink">Pink<span>(29)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="purple" name="color"><label for="purple">Purple<span>(29)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="red" name="color"><label for="red">Red<span>(19)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="white" name="color"><label for="white">White<span>(19)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio" type="radio" id="yellow" name="color"><label for="yellow">Yellow<span>(19)</span></label></li>
+									<li class="filter-list"><input class="pixel-radio"
+										type="radio" id="black" name="color"><label
+										for="black">Black<span>(29)</span></label></li>
+									<li class="filter-list"><input class="pixel-radio"
+										type="radio" id="blue" name="color"><label for="blue">Blue<span>(29)</span></label></li>
+									<li class="filter-list"><input class="pixel-radio"
+										type="radio" id="brown" name="color"><label
+										for="brown">Brown<span>(29)</span></label></li>
+									<li class="filter-list"><input class="pixel-radio"
+										type="radio" id="gray" name="color"><label for="gray">Gray<span>(29)</span></label></li>
+									<li class="filter-list"><input class="pixel-radio"
+										type="radio" id="green" name="color"><label
+										for="green">Green<span>(29)</span></label></li>
+									<li class="filter-list"><input class="pixel-radio"
+										type="radio" id="multi" name="color"><label
+										for="multicolor">Multi<span>(29)</span></label></li>
+									<li class="filter-list"><input class="pixel-radio"
+										type="radio" id="navy" name="color"><label for="navy">Navy<span>(29)</span></label></li>
+									<li class="filter-list"><input class="pixel-radio"
+										type="radio" id="neutral" name="color"><label
+										for="neutral">Neutral<span>(29)</span></label></li>
+									<li class="filter-list"><input class="pixel-radio"
+										type="radio" id="orange" name="color"><label
+										for="orange">Orange<span>(29)</span></label></li>
+									<li class="filter-list"><input class="pixel-radio"
+										type="radio" id="pink" name="color"><label for="pink">Pink<span>(29)</span></label></li>
+									<li class="filter-list"><input class="pixel-radio"
+										type="radio" id="purple" name="color"><label
+										for="purple">Purple<span>(29)</span></label></li>
+									<li class="filter-list"><input class="pixel-radio"
+										type="radio" id="red" name="color"><label for="red">Red<span>(19)</span></label></li>
+									<li class="filter-list"><input class="pixel-radio"
+										type="radio" id="white" name="color"><label
+										for="white">White<span>(19)</span></label></li>
+									<li class="filter-list"><input class="pixel-radio"
+										type="radio" id="yellow" name="color"><label
+										for="yellow">Yellow<span>(19)</span></label></li>
 								</ul>
 							</form>
 						</div>
@@ -137,7 +196,7 @@
 						</div>
 						<div>
 							<div class="input-group filter-bar-search">
-								<input type="text" style="height:38px;" placeholder="Search">
+								<input type="text" style="height: 38px;" placeholder="Search">
 								<div class="input-group-append">
 									<button type="button">
 										<i class="ti-search"></i>
@@ -153,7 +212,8 @@
 							<div class="col-md-6 col-lg-4">
 								<div class="card text-center card-product">
 									<div class="card-product__img">
-										<a href="singleproduct"><img class="card-img" src="../img/product/product1.png" alt=""></a>
+										<a href="singleproduct"><img class="card-img"
+											src="../img/product/product1.png" alt=""></a>
 										<ul class="card-product__imgOverlay">
 											<li><button>
 													<i class="ti-shopping-cart"></i>
@@ -164,6 +224,9 @@
 										</ul>
 									</div>
 									<div class="card-body">
+										<button class="image-button" id="image1" onclick="selectImage('image1')"></button>
+										<button class="image-button" id="image2" onclick="selectImage('image2')"></button>
+										<button class="image-button" id="image3" onclick="selectImage('image3')"></button>
 										<p>Accessories</p>
 										<h4 class="card-product__title">
 											<a href="singleproduct">Quartz Belt Watch</a>
@@ -186,6 +249,9 @@
 										</ul>
 									</div>
 									<div class="card-body">
+										<button class="image-button" id="image1" onclick="selectImage('image1')"></button>
+										<button class="image-button" id="image2" onclick="selectImage('image2')"></button>
+										<button class="image-button" id="image3" onclick="selectImage('image3')"></button>
 										<p>Beauty</p>
 										<h4 class="card-product__title">
 											<a href="#">Women Freshwash</a>
@@ -208,6 +274,9 @@
 										</ul>
 									</div>
 									<div class="card-body">
+									    <button class="image-button" id="image1" onclick="selectImage('image1')"></button>
+										<button class="image-button" id="image2" onclick="selectImage('image2')"></button>
+										<button class="image-button" id="image3" onclick="selectImage('image3')"></button>
 										<p>Decor</p>
 										<h4 class="card-product__title">
 											<a href="#">Room Flash Light</a>
@@ -230,6 +299,9 @@
 										</ul>
 									</div>
 									<div class="card-body">
+									    <button class="image-button" id="image1" onclick="selectImage('image1')"></button>
+										<button class="image-button" id="image2" onclick="selectImage('image2')"></button>
+										<button class="image-button" id="image3" onclick="selectImage('image3')"></button>
 										<p>Decor</p>
 										<h4 class="card-product__title">
 											<a href="#">Room Flash Light</a>
@@ -252,6 +324,9 @@
 										</ul>
 									</div>
 									<div class="card-body">
+										<button class="image-button" id="image1" onclick="selectImage('image1')"></button>
+										<button class="image-button" id="image2" onclick="selectImage('image2')"></button>
+										<button class="image-button" id="image3" onclick="selectImage('image3')"></button>
 										<p>Accessories</p>
 										<h4 class="card-product__title">
 											<a href="#">Man Office Bag</a>
@@ -274,6 +349,9 @@
 										</ul>
 									</div>
 									<div class="card-body">
+										<button class="image-button" id="image1" onclick="selectImage('image1')"></button>
+										<button class="image-button" id="image2" onclick="selectImage('image2')"></button>
+										<button class="image-button" id="image3" onclick="selectImage('image3')"></button>
 										<p>Kids Toy</p>
 										<h4 class="card-product__title">
 											<a href="#">Charging Car</a>
@@ -296,6 +374,9 @@
 										</ul>
 									</div>
 									<div class="card-body">
+										<button class="image-button" id="image1" onclick="selectImage('image1')"></button>
+										<button class="image-button" id="image2" onclick="selectImage('image2')"></button>
+										<button class="image-button" id="image3" onclick="selectImage('image3')"></button>
 										<p>Accessories</p>
 										<h4 class="card-product__title">
 											<a href="#">Blutooth Speaker</a>
@@ -318,6 +399,9 @@
 										</ul>
 									</div>
 									<div class="card-body">
+										<button class="image-button" id="image1" onclick="selectImage('image1')"></button>
+										<button class="image-button" id="image2" onclick="selectImage('image2')"></button>
+										<button class="image-button" id="image3" onclick="selectImage('image3')"></button>
 										<p>Kids Toy</p>
 										<h4 class="card-product__title">
 											<a href="#">Charging Car</a>
@@ -340,6 +424,9 @@
 										</ul>
 									</div>
 									<div class="card-body">
+										<button class="image-button" id="image1" onclick="selectImage('image1')"></button>
+										<button class="image-button" id="image2" onclick="selectImage('image2')"></button>
+										<button class="image-button" id="image3" onclick="selectImage('image3')"></button>
 										<p>Accessories</p>
 										<h4 class="card-product__title">
 											<a href="#">Quartz Belt Watch</a>
@@ -350,133 +437,143 @@
 							</div>
 						</div>
 					</section>
-						<!-- ================ category section end ================= -->
-						<div class="btnAreaList">
-  <div class="allPageMoving1">
-    <a href="#"><img src="../img/btn/btn_pre2.gif" alt="처음으로"/></a>
-    <a href="#"><img src="../img/btn/btn_pre1.gif" alt="앞페이지로"/></a>
-    <div class="number-box"><strong>1</strong></div>
-    <div class="number-box"><a href="#">2</a></div>
-    <div class="number-box"><a href="#">3</a></div>
-    <div class="number-box"><a href="#">4</a></div>
-    <div class="number-box"><a href="#">5</a></div>
-    <a href="#"><img src="../img/btn/btn_next1.gif" alt="뒤페이지로"/></a>
-    <a href="#"><img src="../img/btn/btn_next2.gif" alt="마지막페이지로"/></a>
-  </div>
-</div>
-			<!-- ================ BEST SELELLERS section start ================= -->
+					<!-- ================ category section end ================= -->
+					<div class="btnAreaList">
+						<div class="allPageMoving1">
+							<a href="#"><img src="../img/btn/btn_pre2.gif" alt="처음으로" /></a>
+							<a href="#"><img src="../img/btn/btn_pre1.gif" alt="앞페이지로" /></a>
+							<div class="number-box">
+								<strong>1</strong>
+							</div>
+							<div class="number-box">
+								<a href="#">2</a>
+							</div>
+							<div class="number-box">
+								<a href="#">3</a>
+							</div>
+							<div class="number-box">
+								<a href="#">4</a>
+							</div>
+							<div class="number-box">
+								<a href="#">5</a>
+							</div>
+							<a href="#"><img src="../img/btn/btn_next1.gif" alt="뒤페이지로" /></a>
+							<a href="#"><img src="../img/btn/btn_next2.gif" alt="마지막페이지로" /></a>
+						</div>
+					</div>
+					<!-- ================ BEST SELELLERS section start ================= -->
 				</div>
 			</div>
 		</div>
 	</section>
 
-		<section class="section-margin calc-60px">
-			<div class="container">
-				<div class="section-intro pb-60px">
-					<p>Popular Item in the market</p>
-					<h2>
-						Best <span class="section-intro__style">Sellers</span>
-					</h2>
+	<section class="section-margin calc-60px">
+		<div class="container">
+			<div class="section-intro pb-60px">
+				<p>Popular Item in the market</p>
+				<h2>
+					Best <span class="section-intro__style">Sellers</span>
+				</h2>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="card text-center card-product">
+						<div class="card-product__img">
+							<img class="card-img" src="../img/index/image_1_5.jpg" alt="">
+							<ul class="card-product__imgOverlay">
+								<li><button>
+										<i class="ti-shopping-cart"></i>
+									</button></li>
+								<li><button>
+										<i class="ti-heart"></i>
+									</button></li>
+
+							</ul>
+						</div>
+						<div class="card-body">
+							<p>Accessories</p>
+							<h4 class="card-product__title">
+								<a href="singleproduct">Quartz Belt Watch</a>
+							</h4>
+							<p class="card-product__price">$150.00</p>
+						</div>
+					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-6 col-lg-4 col-xl-3">
-						<div class="card text-center card-product">
-							<div class="card-product__img">
-								<img class="card-img" src="../img/index/image_1_5.jpg" alt="">
-								<ul class="card-product__imgOverlay">
-									<li><button>
-											<i class="ti-shopping-cart"></i>
-										</button></li>
-									<li><button>
-											<i class="ti-heart"></i>
-										</button></li>
-										
-								</ul>
-							</div>
-							<div class="card-body">
-								<p>Accessories</p>
-								<h4 class="card-product__title">
-									<a href="singleproduct">Quartz Belt Watch</a>
-								</h4>
-								<p class="card-product__price">$150.00</p>
-							</div>
+				<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="card text-center card-product">
+						<div class="card-product__img">
+							<img class="card-img" src="../img/index/image_1_6.jpg" alt="">
+							<ul class="card-product__imgOverlay">
+								<li><button>
+										<i class="ti-shopping-cart"></i>
+									</button></li>
+								<li><button>
+										<i class="ti-heart"></i>
+									</button></li>
+							</ul>
+						</div>
+						<div class="card-body">
+							<p>Beauty</p>
+							<h4 class="card-product__title">
+								<a href="singleproduct">Women Freshwash</a>
+							</h4>
+							<p class="card-product__price">$150.00</p>
 						</div>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
-						<div class="card text-center card-product">
-							<div class="card-product__img">
-								<img class="card-img" src="../img/index/image_1_6.jpg" alt="">
-								<ul class="card-product__imgOverlay">
-									<li><button>
-											<i class="ti-shopping-cart"></i>
-										</button></li>
-									<li><button>
-											<i class="ti-heart"></i>
-										</button></li>
-								</ul>
-							</div>
-							<div class="card-body">
-								<p>Beauty</p>
-								<h4 class="card-product__title">
-									<a href="singleproduct">Women Freshwash</a>
-								</h4>
-								<p class="card-product__price">$150.00</p>
-							</div>
+				</div>
+				<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="card text-center card-product">
+						<div class="card-product__img">
+							<img class="card-img" src="../img/index/image_2_6.jpg" alt="">
+							<ul class="card-product__imgOverlay">
+								<li><button>
+										<i class="ti-shopping-cart"></i>
+									</button></li>
+								<li><button>
+										<i class="ti-heart"></i>
+									</button></li>
+							</ul>
+						</div>
+						<div class="card-body">
+							<p>Decor</p>
+							<h4 class="card-product__title">
+								<a href="singleproduct">Room Flash Light</a>
+							</h4>
+							<p class="card-product__price">$150.00</p>
 						</div>
 					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
-						<div class="card text-center card-product">
-							<div class="card-product__img">
-								<img class="card-img" src="../img/index/image_2_6.jpg" alt="">
-								<ul class="card-product__imgOverlay">
-									<li><button>
-											<i class="ti-shopping-cart"></i>
-										</button></li>
-									<li><button>
-											<i class="ti-heart"></i>
-										</button></li>
-								</ul>
-							</div>
-							<div class="card-body">
-								<p>Decor</p>
-								<h4 class="card-product__title">
-									<a href="singleproduct">Room Flash Light</a>
-								</h4>
-								<p class="card-product__price">$150.00</p>
-							</div>
+				</div>
+				<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="card text-center card-product">
+						<div class="card-product__img">
+							<img class="card-img" src="../img/index/image_3_7.jpg" alt="">
+							<ul class="card-product__imgOverlay">
+								<li><button>
+										<i class="ti-shopping-cart"></i>
+									</button></li>
+								<li><button>
+										<i class="ti-heart"></i>
+									</button></li>
+							</ul>
 						</div>
-					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
-						<div class="card text-center card-product">
-							<div class="card-product__img">
-								<img class="card-img" src="../img/index/image_3_7.jpg" alt="">
-								<ul class="card-product__imgOverlay">
-									<li><button>
-											<i class="ti-shopping-cart"></i>
-										</button></li>
-									<li><button>
-											<i class="ti-heart"></i>
-										</button></li>
-								</ul>
-							</div>
-							<div class="card-body">
-								<p>Decor</p>
-								<h4 class="card-product__title">
-									<a href="singleproduct">Room Flash Light</a>
-								</h4>
-								<p class="card-product__price">$150.00</p>
-							</div>
+						<div class="card-body">
+							<p>Decor</p>
+							<h4 class="card-product__title">
+								<a href="singleproduct">Room Flash Light</a>
+							</h4>
+							<p class="card-product__price">$150.00</p>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
-		
-		<!-- ================ BEST SELELLERS  section end ================= -->
-	
-  <%@ include file="../sidebar.jsp" %>	
-  <%@ include file="../footer.jsp" %>
-	
+		</div>
+	</section>
+
+	<!-- ================ BEST SELELLERS  section end ================= -->
+
+	<%@ include file="../sidebar.jsp"%>
+	<%@ include file="../footer.jsp"%>
+
 	<script src="../vendors/jquery/jquery-3.2.1.min.js"></script>
 	<script src="../vendors/bootstrap/bootstrap.bundle.min.js"></script>
 	<script src="../vendors/skrollr.min.js"></script>
