@@ -359,7 +359,7 @@ public class ProductController {
 		
 			
 			productService.updateOne(pdto);
-//			s_word = URLEncoder.encode(s_word, "utf-8"); //수정 후 목록으로 돌아오지 않은 이유는 한글이 지원되지 않았었기 때문
+			s_word = URLEncoder.encode(s_word, "utf-8"); //수정 후 목록으로 돌아오지 않은 이유는 한글이 지원되지 않았었기 때문
 //			return "redirect:product_list";
 			return "redirect:product_list?page="+page+"&category="+category+"&s_word="+s_word;
 	}//product_update post
