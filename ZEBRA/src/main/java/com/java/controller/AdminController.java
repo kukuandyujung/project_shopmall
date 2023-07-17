@@ -1,9 +1,6 @@
 package com.java.controller;
-
 import java.util.HashMap;
-
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,26 +8,25 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-
 import com.java.dto.MemberDto;
 import com.java.service.MemberService;
-
 @Controller
 public class AdminController {
-
 	@Autowired MemberService memberService;
 	@Autowired HttpSession session;
 	
-	//로그인을 해야 인덱스로 가도록 정리하기 
+	//로그인을 해야 인덱스로 가도록 정리하기
 	@RequestMapping("/admin/index")
 	public String index(String loginCheck, Model model) {
 		model.addAttribute("loginCheck", loginCheck); //로그인 성공 여부
 		
-		if(session.getAttribute("sessionId").equals("admin")) {
+//		if(session.getAttribute("sessionId").equals("admin")) {
+//			return "admin/index";
+//		}
+//		return "admin/login"; //보안을 위한 세션
+		
 			return "admin/index";
-		}
-		return "admin/login";
+		
 	}
 	
 	//관리자 로그인 getMapping
@@ -66,7 +62,6 @@ public class AdminController {
 			model.addAttribute("loginCheck", "fail");
 			return "/member/login";
 		}
-
 		
 		
 	}
@@ -74,7 +69,7 @@ public class AdminController {
 	//관리자 로그아웃
 	@RequestMapping("/admin/logout")
 	public String logout() {	
-		session.invalidate(); //session 모두 삭제 
+		session.invalidate(); //session 모두 삭제
 		return "redirect:/layout/index";
 	}
 	
@@ -162,7 +157,6 @@ public class AdminController {
 		return "admin/index3";
 	}
 	
-
 	
 	@RequestMapping("/admin/map")
 	public String map() {
@@ -177,7 +171,7 @@ public class AdminController {
 	}	
 	
 	// 회원 테이블 전체 가져오기
-	@RequestMapping("/admin/member_table") 
+	@RequestMapping("/admin/member_table")
 	public String member_table(@RequestParam(defaultValue = "") String s_word, Model model) {
 		HashMap<String,Object> map = memberService.selectAll(s_word);
 		model.addAttribute("list",map.get("list"));
@@ -186,10 +180,10 @@ public class AdminController {
 	}		
 	
 	// 회원 정보 1개 전체 가져오기
-	@RequestMapping("/admin/member_tableView") 
+	@RequestMapping("/admin/member_tableView")
 	public String member_tableView(@RequestParam(defaultValue = "aannesdg")String MID, Model model) {
 		HashMap<String, Object> map = memberService.selectOne(MID);
-		model.addAttribute("mdto", map.get("mdto")); 
+		model.addAttribute("mdto", map.get("mdto"));
 		System.out.println("map : "+map);
 		return "admin/member_tableView";
 	}
@@ -253,7 +247,6 @@ public class AdminController {
 		
 		return "admin/tables";
 	}
-
 	
 	@RequestMapping("/admin/widgets")
 	public String widgets() {
@@ -267,7 +260,6 @@ public class AdminController {
 		return "admin/xx";
 	}
 	
-
 	
 	
 	
