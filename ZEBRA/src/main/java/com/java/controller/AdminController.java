@@ -22,7 +22,7 @@ public class AdminController {
 	@Autowired MemberService memberService;
 	@Autowired HttpSession session;
 	
-	
+	//로그인을 해야 인덱스로 가도록 정리하기 
 	@RequestMapping("/admin/index")
 	public String index(String loginCheck, Model model) {
 		model.addAttribute("loginCheck", loginCheck); //로그인 성공 여부
@@ -38,7 +38,7 @@ public class AdminController {
 	
 	//관리자 로그인 PostMapping
 	@PostMapping("/admin/login")
-	public String  login(@RequestParam MemberDto memberDto, Model model) {
+	public String  login(String mid, String mpassword, MemberDto memberDto, Model model) {
 		System.out.println("memberDto 1 : "+ memberDto.getMid());
 		System.out.println("memberDto 2 : "+ memberDto.getMpassword());
 		MemberDto mdto = memberService.selectLogin(memberDto);
@@ -53,14 +53,14 @@ public class AdminController {
 			return "/admin/login";
 		}
 		
-		return "redirect:/index?loginCheck=success";
+		return "redirect:/admin/index?loginCheck=success";
 	}
 	
 	//관리자 로그아웃
 	@RequestMapping("/admin/logout")
 	public String logout() {	
 		session.invalidate(); //session 모두 삭제 
-		return "redirect:/index";
+		return "redirect:/layout/index";
 	}
 	
 	

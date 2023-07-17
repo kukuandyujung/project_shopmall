@@ -7,6 +7,8 @@
 
 if("${loginCheck}"== "success" ){
 	   alert("${sessionName}"+"님! 로그인 되었습니다.");
+}else if("${loginCheck}"== "fail" ){
+	alert("아이디 또는 패스워드가 잘못되었습니다.");
 }
 
 function logoutBtn(){

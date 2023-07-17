@@ -53,7 +53,7 @@
               </div>
               <div class="profile_info">
                 <span>환영합니다,</span>
-                <h2>멋쟁이 얼룩말님</h2>
+                <h2>${sessionName}님</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->

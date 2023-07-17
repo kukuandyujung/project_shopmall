@@ -55,20 +55,7 @@
 					loginfrm.submit();
 				}
 			  </script>
-<!--  
-<script>
-  function loginBtn() {
-    var loginId = $("#loginId").val();
-    var loginPw = $("#loginPw").val();
 
-    if (loginId == "admin") {
-      alert("관리자님 로그인 되었습니다.");
-      window.location.href = "index"; // index 페이지로 이동
-    } else {
-      alert("아이디 또는 비밀번호가 잘못되었습니다.");
-    }
-  }
-</script>-->
 
 
                <!-- 로그인 제출하기 시작-->
@@ -117,11 +104,10 @@
 		              	<label for="loginId">아이디</label>
 		                <input type="text" name="mid" class="form-control" placeholder="id" id="loginId" style="ime-mode:inactive;" required />
 		                 <label for="loginPw">비밀번호</label>
-		                <input type="password" name="mpw" class="form-control" placeholder="pw" id="loginPw" style="ime-mode:inactive;" required/>
+		                <input type="password" name="mpassword" class="form-control" placeholder="pw" id="loginPw" style="ime-mode:inactive;" required/>
 		
 		                <div class="btn">
 		                  <a style="cursor: pointer;" onclick="loginBtn()" class="sbtn">로그인</a>
-<!-- 							    <button type="button" onclick="loginBtn()">로그인</button>    -->
 		                </div>
 		                <div class="chk">
 		                  <input type="checkbox" id="idsave" /><label for="idsave">아이디 저장</label>
