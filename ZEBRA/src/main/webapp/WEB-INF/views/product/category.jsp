@@ -249,9 +249,9 @@
 										</ul>
 									</div>
 									<div class="card-body">
-										<button class="image-button" id="image1" onclick="selectImage('image1')"></button>
-										<button class="image-button" id="image2" onclick="selectImage('image2')"></button>
-										<button class="image-button" id="image3" onclick="selectImage('image3')"></button>
+										<button class="image-button" id="image4" onclick="selectImage('image4')"></button>
+										<button class="image-button" id="image5" onclick="selectImage('image5')"></button>
+										<button class="image-button" id="image6" onclick="selectImage('image6')"></button>
 										<p>Beauty</p>
 										<h4 class="card-product__title">
 											<a href="#">Women Freshwash</a>
@@ -274,9 +274,9 @@
 										</ul>
 									</div>
 									<div class="card-body">
-									    <button class="image-button" id="image1" onclick="selectImage('image1')"></button>
-										<button class="image-button" id="image2" onclick="selectImage('image2')"></button>
-										<button class="image-button" id="image3" onclick="selectImage('image3')"></button>
+									    <button class="image-button" id="image7" onclick="selectImage('image7')"></button>
+										<button class="image-button" id="image8" onclick="selectImage('image8')"></button>
+										<button class="image-button" id="image9" onclick="selectImage('image9')"></button>
 										<p>Decor</p>
 										<h4 class="card-product__title">
 											<a href="#">Room Flash Light</a>
@@ -299,9 +299,9 @@
 										</ul>
 									</div>
 									<div class="card-body">
-									    <button class="image-button" id="image1" onclick="selectImage('image1')"></button>
-										<button class="image-button" id="image2" onclick="selectImage('image2')"></button>
-										<button class="image-button" id="image3" onclick="selectImage('image3')"></button>
+									    <button class="image-button" id="image10" onclick="selectImage('image10')"></button>
+										<button class="image-button" id="image11" onclick="selectImage('image11')"></button>
+										<button class="image-button" id="image12" onclick="selectImage('image12')"></button>
 										<p>Decor</p>
 										<h4 class="card-product__title">
 											<a href="#">Room Flash Light</a>
@@ -324,9 +324,9 @@
 										</ul>
 									</div>
 									<div class="card-body">
-										<button class="image-button" id="image1" onclick="selectImage('image1')"></button>
-										<button class="image-button" id="image2" onclick="selectImage('image2')"></button>
-										<button class="image-button" id="image3" onclick="selectImage('image3')"></button>
+										<button class="image-button" id="image13" onclick="selectImage('image13')"></button>
+										<button class="image-button" id="image14" onclick="selectImage('image14')"></button>
+										<button class="image-button" id="image15" onclick="selectImage('image15')"></button>
 										<p>Accessories</p>
 										<h4 class="card-product__title">
 											<a href="#">Man Office Bag</a>
@@ -349,9 +349,9 @@
 										</ul>
 									</div>
 									<div class="card-body">
-										<button class="image-button" id="image1" onclick="selectImage('image1')"></button>
-										<button class="image-button" id="image2" onclick="selectImage('image2')"></button>
-										<button class="image-button" id="image3" onclick="selectImage('image3')"></button>
+										<button class="image-button" id="image16" onclick="selectImage('image16')"></button>
+										<button class="image-button" id="image17" onclick="selectImage('image17')"></button>
+										<button class="image-button" id="image18" onclick="selectImage('image18')"></button>
 										<p>Kids Toy</p>
 										<h4 class="card-product__title">
 											<a href="#">Charging Car</a>
@@ -374,9 +374,9 @@
 										</ul>
 									</div>
 									<div class="card-body">
-										<button class="image-button" id="image1" onclick="selectImage('image1')"></button>
-										<button class="image-button" id="image2" onclick="selectImage('image2')"></button>
-										<button class="image-button" id="image3" onclick="selectImage('image3')"></button>
+										<button class="image-button" id="image19" onclick="selectImage('image19')"></button>
+										<button class="image-button" id="image20" onclick="selectImage('image20')"></button>
+										<button class="image-button" id="image21" onclick="selectImage('image21')"></button>
 										<p>Accessories</p>
 										<h4 class="card-product__title">
 											<a href="#">Blutooth Speaker</a>
@@ -399,9 +399,9 @@
 										</ul>
 									</div>
 									<div class="card-body">
-										<button class="image-button" id="image1" onclick="selectImage('image1')"></button>
-										<button class="image-button" id="image2" onclick="selectImage('image2')"></button>
-										<button class="image-button" id="image3" onclick="selectImage('image3')"></button>
+										<button class="image-button" id="image22" onclick="selectImage('image22')"></button>
+										<button class="image-button" id="image23" onclick="selectImage('image23')"></button>
+										<button class="image-button" id="image24" onclick="selectImage('image24')"></button>
 										<p>Kids Toy</p>
 										<h4 class="card-product__title">
 											<a href="#">Charging Car</a>
@@ -424,9 +424,9 @@
 										</ul>
 									</div>
 									<div class="card-body">
-										<button class="image-button" id="image1" onclick="selectImage('image1')"></button>
-										<button class="image-button" id="image2" onclick="selectImage('image2')"></button>
-										<button class="image-button" id="image3" onclick="selectImage('image3')"></button>
+										<button class="image-button" id="image25" onclick="selectImage('image25')"></button>
+										<button class="image-button" id="image26" onclick="selectImage('image26')"></button>
+										<button class="image-button" id="image27" onclick="selectImage('image27')"></button>
 										<p>Accessories</p>
 										<h4 class="card-product__title">
 											<a href="#">Quartz Belt Watch</a>
