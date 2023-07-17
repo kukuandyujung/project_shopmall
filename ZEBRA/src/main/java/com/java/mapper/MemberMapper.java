@@ -16,6 +16,12 @@ public interface MemberMapper {
 	MemberDto selectOne(String MID);
 
 	//로그인 확인
-	MemberDto selectLogin(MemberDto memberDto);	
+	MemberDto selectLogin(MemberDto memberDto);
 
+	
+	//회원 로그인
+	MemberDto selectLoginMember(String mid, String mpassword);
+
+	
+	
 }
