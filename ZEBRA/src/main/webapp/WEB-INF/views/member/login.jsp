@@ -28,6 +28,23 @@
 <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
 <link rel="stylesheet" href="../css/style.css">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script> <!-- 제이쿼리 사용 할때 $ 사용 하기위한 js  -->
+
+
+<script type="text/javascript">
+
+/* start login button 눌렀을때 확인  */
+	function loginBtn(){
+			    
+		if($('#mid').val().length < 3 ){
+			alert("id는 두자리 이상입력하셔야 합니다");
+			return false;
+		}
+		loginfrm.submit();
+	}
+ end login button 눌렀을때 확인 
+
+</script>
 </head>
 <body>
 <%@ include file="../top.jsp"%>	
@@ -44,7 +61,7 @@
 	</section>
 	<!-- ================ end banner area ================= -->
   
-  <!--================Login Box Area =================-->
+  <!--================ start Login Box Area =================-->
 	<!-- container -->
 	<div id="container">
 	
@@ -73,18 +90,24 @@
 					<h3>회원 로그인</h3>
 					<div class="informbox">
 						<div class="inform">
+						<form action="/member/login" method="post" name="loginfrm">
 							<ul>
-								<li><input type="text" class="loginType" onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='loginType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" /></li>
-								<li><input type="password" class="passType" onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='passType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" /></li>
+								<li>
+									<input type="text" class="loginType" name="mid" id="mid"  onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='loginType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" />
+								</li>
+								<li>
+									<input type="password" class="passType" name="mpassword" id="mpassword" onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='passType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" />
+								</li>
 							</ul>
 
-							<div class="btn"><a href="#" class="sbtn">로그인</a></div>
+							<div class="btn"><a style="cursor: pointer;" onclick="loginBtn()" class="sbtn">로그인</a></div>
 							<div class="chk"><input type="checkbox" id="idsave"/><label for="idsave">아이디 저장</label></div>							
 
 							<div class="point">
 								<p>아이디와 비밀번호를 잊으셨나요?</p>
 								<a href="#" class="nbtn">아이디/비밀번호 찾기</a>
 							</div>
+							</form>
 						</div>
 					</div>
 
