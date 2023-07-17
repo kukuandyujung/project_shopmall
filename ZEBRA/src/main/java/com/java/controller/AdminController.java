@@ -26,7 +26,11 @@ public class AdminController {
 	@RequestMapping("/admin/index")
 	public String index(String loginCheck, Model model) {
 		model.addAttribute("loginCheck", loginCheck); //로그인 성공 여부
-		return "admin/index";
+		if("sessionId".equals("admin")) {
+			
+			return "admin/index";
+		}
+		return "admin/login";
 	}
 	
 	//관리자 로그인 getMapping
@@ -39,21 +43,27 @@ public class AdminController {
 	//관리자 로그인 PostMapping
 	@PostMapping("/admin/login")
 	public String  login(String mid, String mpassword, MemberDto memberDto, Model model) {
-		System.out.println("memberDto 1 : "+ memberDto.getMid());
-		System.out.println("memberDto 2 : "+ memberDto.getMpassword());
+//		System.out.println("memberDto 1 : "+ memberDto.getMid());
+//		System.out.println("memberDto 2 : "+ memberDto.getMpassword());
 		MemberDto mdto = memberService.selectLogin(memberDto);
 		if(mdto!=null) {
 			session.setAttribute("sessionId", mdto.getMid());
 			session.setAttribute("sessionName", mdto.getMname());
 			model.addAttribute("loginCheck", "success");
+			if(mdto.getMid().equals("admin")&& mdto.getMpassword().equals("1234")) {
 			
+				return "redirect:/admin/index?loginCheck=success";
+			}
+			
+			return "redirect:/layout/index";
 			
 		}else {
 			model.addAttribute("loginCheck", "fail");
-			return "/admin/login";
+			return "/member/login";
 		}
+
 		
-		return "redirect:/admin/index?loginCheck=success";
+		
 	}
 	
 	//관리자 로그아웃

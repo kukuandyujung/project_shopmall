@@ -54,46 +54,11 @@
 
 					loginfrm.submit();
 				}
+				
+				
 			  </script>
 
 
-
-               <!-- 로그인 제출하기 시작-->
-   <!--            <script type="text/javascript">
-				function loginBtn(){
-					if($("#loginId").val()=="admin" ){
-						alert("관리자님 로그인 되었습니다.");
-						 window.location.href = "/index"; // index 페이지로 이동
-						
-						
-					}else{
-						alert("아이디 또는 비밀번호가 잘못되었습니다.")
-						return false; 
-						}
-					loginfrm.submit();
-				}
-				
-				function loginBtn() {
-					  if ($("#loginId").val() == "0" && $("#loginPw").val() == "1234") {
-					    alert("관리자님 로그인 되었습니다.");
-					    window.location.href = "index"; // index 페이지로 이동
-					  } else {
-					    alert("아이디 또는 비밀번호가 잘못되었습니다.");
-					    return "/login";
-					  }
-					}	
-			  </script>   
-			  -->
-<!--  	 		  <script>   
-    if("${loginCheck}" == "success"){
-        alert(${sessionName}+ "님! 로그인 되었습니다.");
-    }
-
-    function logoutBtn(){
-        alert("로그아웃이 되었습니다.");
-        location.href = "/admin/index";  
-    }  
-</script>   -->
 
 		    <!-- 로그인 제출하기 끝-->
 		    <!-- 로그인 폼 -->
