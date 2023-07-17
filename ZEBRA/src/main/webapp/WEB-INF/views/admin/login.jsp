@@ -26,15 +26,12 @@
      <!-- 제이쿼리 최신 -->
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <!-- 아이디와 패스워드가 일치하지 않을 경우 -->
-    
-  
-   
-    <script type="text/javascript">
-		if("${loginCheck}"=="fail"){
-			alert("아이디 또는 패스워드가 일치하지 않습니다.");
-			$("#loginId").focus();
-		}
-    </script>
+  <script type="text/javascript">
+	if("${loginCheck}"=="fail"){
+		alert("아이디 또는 패스워드가 일치하지 않습니다.");
+		$("#loginId").focus();
+	}
+</script>
   </head>
 <!-- 로그인 바디 -->
   <body class="login">
@@ -104,7 +101,7 @@
 		    <!-- 로그인 제출하기 끝-->
 		    <!-- 로그인 폼 -->
 
-		          <form action="/login" method="post" name="loginfrm" id="loginfrm">
+		          <form action="/admin/login" method="post" name="loginfrm" id="loginfrm">
 		            <div class="informbox">
 		              <div class="inform">
 		              	<label for="loginId">아이디</label>
@@ -114,7 +111,7 @@
 		
 		                <div class="btn">
 <!-- 		                  <a style="cursor: pointer;" onclick="return loginBtn()" class="sbtn">로그인</a> -->
-							    <button type="button" onclick="loginBtn()">로그인</button>
+							    <button type="button" onclick="loginBtn()">로그인</button>   
 		                </div>
 		                <div class="chk">
 		                  <input type="checkbox" id="idsave" /><label for="idsave">아이디 저장</label>

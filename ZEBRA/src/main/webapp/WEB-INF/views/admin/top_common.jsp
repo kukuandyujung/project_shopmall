@@ -1,13 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<!DOCTYPE html>
 <script>
+
 if("${loginCheck}"== "success" ){
 	   alert(${sessionName}+ "님! 로그인 되었습니다.");
 }
 
 function logoutBtn(){
 	alert("로그아웃이 되었습니다.");
-	location.href="/ammin/logout";
+	location.href="/admin/logout";
 }
 
 </script> 
@@ -39,7 +43,7 @@ function logoutBtn(){
                       </c:if>
 					  <c:if test="${sessionId!=null}">
                       	<a class="dropdown-item"  href="login"><i class="fa fa-sign-out pull-right"></i>${sessionName}님</a>
-                      	<a onclick="logoutBtn()" style="cursor: pointer;" class="dropdown-item" ><i class="fa fa-sign-out pull-right"></i>로그아웃</a>
+                      	<a onclick="logoutBtn()" type="button" style="cursor: pointer;" class="dropdown-item" ><i class="fa fa-sign-out pull-right"></i>로그아웃</a>
 				 	  </c:if>
                       <!-- 로그인 기능 끝 -->
                     </div>
