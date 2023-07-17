@@ -37,7 +37,7 @@ public class MemberServiceImpl implements MemberService {
 	public MemberDto selectLogin(MemberDto memberDto) {
 		// 로그인 확인
 		MemberDto mdto = memberMapper.selectLogin(memberDto);
-		return null;
+		return mdto;
 	}
 
 

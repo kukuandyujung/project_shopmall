@@ -32,7 +32,7 @@
 
 <!--관리자 로그인 확인-->
 <select id="selectLogin" resultType="com.java.dto.MemberDto" >
-	select * from zebra where mid='admin'
+	select * from zebra where mid=#{mid} and mpassword=#{mpassword}
 </select>
 
 </mapper>

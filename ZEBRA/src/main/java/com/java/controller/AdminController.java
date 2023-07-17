@@ -38,14 +38,16 @@ public class AdminController {
 	
 	//관리자 로그인 PostMapping
 	@PostMapping("/admin/login")
-	public String  login2(MemberDto memberDto, Model model, HttpSession session) {
+	public String  login(@RequestParam MemberDto memberDto, Model model) {
 		System.out.println("memberDto 1 : "+ memberDto.getMid());
 		System.out.println("memberDto 2 : "+ memberDto.getMpassword());
 		MemberDto mdto = memberService.selectLogin(memberDto);
 		if(mdto!=null) {
 			session.setAttribute("sessionId", mdto.getMid());
-			session.setAttribute("sessionName", mdto.getMpassword());
-//			model.addAttribute("loginCheck", "success");
+			session.setAttribute("sessionName", mdto.getMname());
+			model.addAttribute("loginCheck", "success");
+			
+			
 		}else {
 			model.addAttribute("loginCheck", "fail");
 			return "/admin/login";
@@ -56,7 +58,7 @@ public class AdminController {
 	
 	//관리자 로그아웃
 	@RequestMapping("/admin/logout")
-	public String logout(HttpSession session) {	
+	public String logout() {	
 		session.invalidate(); //session 모두 삭제 
 		return "redirect:/index";
 	}

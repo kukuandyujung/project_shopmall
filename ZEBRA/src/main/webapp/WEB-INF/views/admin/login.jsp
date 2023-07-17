@@ -26,12 +26,12 @@
      <!-- 제이쿼리 최신 -->
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <!-- 아이디와 패스워드가 일치하지 않을 경우 -->
-  <script type="text/javascript">
+ <!--   <script type="text/javascript">
 	if("${loginCheck}"=="fail"){
 		alert("아이디 또는 패스워드가 일치하지 않습니다.");
 		$("#loginId").focus();
 	}
-</script>
+</script>  -->
   </head>
 <!-- 로그인 바디 -->
   <body class="login">
@@ -45,7 +45,17 @@
             
               <h1>Login Form</h1>
               <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!--
+ <script type="text/javascript">
+				function loginBtn(){
+					if($("#loginId").val().length<3){
+						alert("아이디는 3자리 이상 입력하셔야 합니다.");
+						return false;
+					}
+
+					loginfrm.submit();
+				}
+			  </script>
+<!--  
 <script>
   function loginBtn() {
     var loginId = $("#loginId").val();
@@ -58,8 +68,8 @@
       alert("아이디 또는 비밀번호가 잘못되었습니다.");
     }
   }
-</script>
--->
+</script>-->
+
 
                <!-- 로그인 제출하기 시작-->
    <!--            <script type="text/javascript">
@@ -87,7 +97,7 @@
 					}	
 			  </script>   
 			  -->
-	<!--  		  <script>   
+<!--  	 		  <script>   
     if("${loginCheck}" == "success"){
         alert(${sessionName}+ "님! 로그인 되었습니다.");
     }
@@ -96,8 +106,8 @@
         alert("로그아웃이 되었습니다.");
         location.href = "/admin/index";  
     }  
-</script>  
--->
+</script>   -->
+
 		    <!-- 로그인 제출하기 끝-->
 		    <!-- 로그인 폼 -->
 
@@ -105,13 +115,13 @@
 		            <div class="informbox">
 		              <div class="inform">
 		              	<label for="loginId">아이디</label>
-		                <input type="text" name="loginId" class="form-control" placeholder="id" id="loginId" style="ime-mode:inactive;" required />
+		                <input type="text" name="mid" class="form-control" placeholder="id" id="loginId" style="ime-mode:inactive;" required />
 		                 <label for="loginPw">비밀번호</label>
-		                <input type="password" name="loginPw" class="form-control" placeholder="pw" id="loginPw" style="ime-mode:inactive;" required/>
+		                <input type="password" name="mpw" class="form-control" placeholder="pw" id="loginPw" style="ime-mode:inactive;" required/>
 		
 		                <div class="btn">
-<!-- 		                  <a style="cursor: pointer;" onclick="return loginBtn()" class="sbtn">로그인</a> -->
-							    <button type="button" onclick="loginBtn()">로그인</button>   
+		                  <a style="cursor: pointer;" onclick="loginBtn()" class="sbtn">로그인</a>
+<!-- 							    <button type="button" onclick="loginBtn()">로그인</button>    -->
 		                </div>
 		                <div class="chk">
 		                  <input type="checkbox" id="idsave" /><label for="idsave">아이디 저장</label>
