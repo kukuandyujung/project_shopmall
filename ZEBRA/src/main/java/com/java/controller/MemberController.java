@@ -14,25 +14,7 @@ public class MemberController {
 	public String register() {
 		return "member/register";
 	}	
-	 //로그인
-	
-		/*
-		 * @GetMappin
-		 * 
-		 * 
-		 * 
-		 * 
-		 * //로그인
-		 * 
-		 * @RequestMapping("/doLogin") public String doLogin(@RequestParam("id")String
-		 * id, String pw, Model model) {
-		 * 
-		 * model.addAttribute("id",id); model.addAttribute("pw",pw);
-		 * 
-		 * return "member/doLogin"; }
-		 */
-	
-	
+	 
 	@GetMapping("/member/register02")
 	public String register02() {
 		return "member/register02";
@@ -47,6 +29,20 @@ public class MemberController {
 	public String register04() {
 		return "member/register04";
 	}	
+	
+	
+	//로그인
+	@RequestMapping("/member/login")
+	public String login() {
+	return "member/login";
+	}
+
+			
+		
+		
+	
+	
+	
 	
 	
 }
