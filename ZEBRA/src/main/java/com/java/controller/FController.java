@@ -51,8 +51,8 @@ public class FController {
 	public String singleproduct() {
 		return "product/singleproduct";
 	}
-	@RequestMapping("/product/singleproduct2")
-	public String singleproduct2() {
-		return "product/singleproduct2";
+	@RequestMapping("/product/detail")
+	public String detail() {
+		return "product/detail";
 	}
 }

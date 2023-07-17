@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +13,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>ZEBRA</title>
+<link rel="stylesheet" href="../css/360f749e5e2c173f.css" data-n-p="">
+<link rel="preload" href="../vendors/118f4578a1d7588b.css" as="style">
+<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+<link rel="stylesheet" type="text/css" href="../css/content.css" />
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript"></script>
 <link rel="icon" href="../img/logo2.png" type="image/png">
 <link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
 <link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
@@ -23,41 +30,42 @@
 <link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css">
 <link rel="stylesheet" href="../css/style.css">
 
-<link rel="stylesheet" href="../css/360f749e5e2c173f.css" data-n-p="">
-<link rel="preload" href="../vendors/118f4578a1d7588b.css" as="style">
-
-
 <style>
 .image-button {
-  display: inline-block;
-  margin: 0;
-  width: 34px;
-  height: 34px;
-  padding: 2px;
-  border: 1px solid transparent;
-  border-radius: 50%;
+	display: inline-block;
+	margin: 0;
+	width: 34px;
+	height: 34px;
+	padding: 2px;
+	border: 1px solid transparent;
+	border-radius: 50%;
 }
+
 .image-button.selected {
-  border-color: #000;
+	border-color: #000;
 }
+
 #image1 {
-  background-image: url('../img/member/image_1_1.jpg');
+	background-image: url('../img/member/image_1_1.jpg');
 }
+
 #image2 {
-  background-image: url('../img/member/image_3_2.jpg');
+	background-image: url('../img/member/image_3_2.jpg');
 }
+
 #image3 {
-  background-image: url('../img/member/image_3_4.jpg');
+	background-image: url('../img/member/image_3_4.jpg');
 }
 </style>
+
 <script>
-function selectImage(imageId) {
-  var imageButtons = document.getElementsByClassName('image-button');
-  for (var i = 0; i < imageButtons.length; i++) {
-    imageButtons[i].classList.remove('selected');
-  }
-  document.getElementById(imageId).classList.add('selected');
-}
+	function selectImage(imageId) {
+		var imageButtons = document.getElementsByClassName('image-button');
+		for (var i = 0; i < imageButtons.length; i++) {
+			imageButtons[i].classList.remove('selected');
+		}
+		document.getElementById(imageId).classList.add('selected');
+	}
 </script>
 
 
@@ -108,25 +116,30 @@ function selectImage(imageId) {
 							modern technology. If you are looking for something that can make
 							your interior look awesome, and at the same time give you the
 							pleasant warm feeling during the winter.</p>
-							<div class="size">
-								<h4>Size</h4>
-								    <label for="s_size">
-								        <button class="btn btn-primary" type="button" style="background-color: white; color: black; border: 1px solid gray;">S</button>
-								        <input type="radio" id="s_size" name="size" style="display: none;">
-								    </label>
-								    <label for="m_size">
-								        <button class="btn btn-primary" type="button" style="background-color: white; color: black; border: 1px solid gray;">M</button>
-								        <input type="radio" id="m_size" name="size" style="display: none;">
-								    </label>
-								    <label for="l_size">
-								        <button class="btn btn-primary" type="button" style="background-color: white; color: black; border: 1px solid gray;">L</button>
-								        <input type="radio" id="l_size" name="size" style="display: none;">
-								    </label>
-								    <label for="xl_size">
-								        <button class="btn btn-primary" type="button" style="background-color: white; color: black; border: 1px solid gray;">XL</button>
-								        <input type="radio" id="xl_size" name="size" style="display: none;">
-								    </label>
-							</div>	
+						<div class="size">
+							<h4>Size</h4>
+							<label for="s_size">
+								<button class="btn btn-primary" type="button"
+									style="background-color: white; color: black; border: 1px solid gray;">S</button>
+								<input type="radio" id="s_size" name="size"
+								style="display: none;">
+							</label> <label for="m_size">
+								<button class="btn btn-primary" type="button"
+									style="background-color: white; color: black; border: 1px solid gray;">M</button>
+								<input type="radio" id="m_size" name="size"
+								style="display: none;">
+							</label> <label for="l_size">
+								<button class="btn btn-primary" type="button"
+									style="background-color: white; color: black; border: 1px solid gray;">L</button>
+								<input type="radio" id="l_size" name="size"
+								style="display: none;">
+							</label> <label for="xl_size">
+								<button class="btn btn-primary" type="button"
+									style="background-color: white; color: black; border: 1px solid gray;">XL</button>
+								<input type="radio" id="xl_size" name="size"
+								style="display: none;">
+							</label>
+						</div>
 						<br>
 
 						<button class="image-button" id="image1"
@@ -135,27 +148,24 @@ function selectImage(imageId) {
 							onclick="selectImage('image2')"></button>
 						<button class="image-button" id="image3"
 							onclick="selectImage('image3')"></button>
-							<br>
-
-
-
-
+						<br>
 
 						<div class="product_count">
-								<label for="qty">Quantity:</label> <input type="text" name="qty" 
-								id="sst" size="2" maxlength="12" value="1" title="Quantity:" class="input-text qty"> 
-									<a class="button primary-btn" href="#">Buy Now</a>
-							</div>
-							<div class="card_area d-flex align-items-center">
-								<a class="icon_btn" href="#"><i class="lnr lnr lnr-link"></i></a>
-								<a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
-								<a class="icon_btn" href="#"><i class="lnr lnr lnr-cart"></i></a>
-							</div>
+							<label for="qty">Quantity:</label> <input type="text" name="qty"
+								id="sst" size="2" maxlength="12" value="1" title="Quantity:"
+								class="input-text qty">&nbsp;&nbsp;<a class="button primary-btn"
+								href="#">Buy Now</a>
+						</div>
+						<div class="card_area d-flex align-items-center">
+							<a class="icon_btn" href="#"><i class="lnr lnr lnr-link"></i></a>
+							<a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
+							<a class="icon_btn" href="#"><i class="lnr lnr lnr-cart"></i></a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	<!--================End Single Product Area =================-->
 
@@ -247,305 +257,353 @@ function selectImage(imageId) {
 					</div>
 				</div>
 				<div class="tab-pane fade" id="contact" role="tabpanel"
-					aria-labelledby="contact-tab">
-					<div class="row">
-						<div class="col-lg-6">
-							<div class="comment_list">
-								<div class="review_item">
-									<div class="media">
-										<div class="d-flex"></div>
-									</div>
+					aria-labelledby="contact-tab"></div>
+				<div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
+					<div class="inputWrap">
+						<div class="inputBody">
+							<div class="checkDivMt">
+								<table class="checkTable" style="border: 1px solid #d5d5d5;" border="1" cellspacing="0">
+									<caption>구매 후기 작성</caption>
+									<colgroup>
+										<col width="19%" class="tw30" />
+										<col width="*" />
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row"><span>평가</span></th>
+											<td>
+												<ul class="pta">
+													<li><input type="radio" name="appraisal" id="starFive" checked="checked" /> 
+													<label for="starFive" class="star">
+													<img src="../img/ico/ico_star.gif" alt="별점" /> 
+													<img src="../img/ico/ico_star.gif" alt="별점" /> 
+													<img src="../img/ico/ico_star.gif" alt="별점" /> 
+													<img src="../img/ico/ico_star.gif" alt="별점" /> 
+													<img src="../img/ico/ico_star.gif" alt="별점" />
+													</label></li>
+													<li><input type="radio" name="appraisal" id="starFour" />
+														<label for="starFour" class="star"> 
+														<img src="../img/ico/ico_star.gif" alt="별점" /> 
+														<img src="../img/ico/ico_star.gif" alt="별점" /> 
+														<img src="../img/ico/ico_star.gif" alt="별점" /> 
+														<img src="../img/ico/ico_star.gif" alt="별점" />
+													</label></li>
+													<li><input type="radio" name="appraisal" id="starThree" />
+														<label for="starThree" class="star"> 
+														<img src="../img/ico/ico_star.gif" alt="별점" /> 
+														<img src="../img/ico/ico_star.gif" alt="별점" /> 
+														<img src="../img/ico/ico_star.gif" alt="별점" />
+													</label></li>
+													<li><input type="radio" name="appraisal" id="startwo" />
+														<label for="startwo" class="star"> 
+														<img src="../img/ico/ico_star.gif" alt="별점" /> 
+														<img src="../img/ico/ico_star.gif" alt="별점" />
+													</label></li>
+													<li><input type="radio" name="appraisal" id="starOne" />
+														<label for="starOne" class="star"> 
+														<img src="../img/ico/ico_star.gif" alt="별점" />
+													</label></li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row"><span>제목</span></th>
+											<td><input type="text" class="wlong" /></td>
+										</tr>
+										<tr>
+											<th scope="row"><span>내용</span></th>
+											<td><textarea class="tta"></textarea></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<!-- Btn Area -->
+							<div class="btnArea">
+								<div class="bCenter">
+									<ul>
+										<li><a href="#" class="sbtnMini">확인</a></li>
+										<li><a onclick="parent.$.fancybox.close();"
+											href="javascript:;" class="nbtnbig">취소</a></li>
+									</ul>
 								</div>
 							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="review_box">
-								<h4>Post a comment</h4>
-								<form class="row contact_form"
-									action="https://themewagon.github.io/aroma/contact_process.php"
-									method="post" id="contactForm" novalidate="novalidate">
-									<div class="col-md-12">
-										<div class="form-group">
-											<input type="text" class="form-control" id="name" name="name"
-												placeholder="Your Full name">
+							<!-- //Btn Area -->
+							<!-- 상품리뷰 -->
+							<div class="accordion">
+								<ul>
+									<!-- 반복 -->
+									<li>
+										<div class="headArea">
+											<div class="subject">
+												<a href="javascript:;" class="accbtn">저렴한 가격에 커피맛과 향은
+													최고!!</a>
+											</div>
+											<div class="writer">[ezlin****]</div>
+											<div class="day">
+												<p>2023-03-24</p>
+												<p>
+													<img src="../img/ico/ico_star.gif" alt="별점" /> <img
+														src="../img/ico/ico_star.gif" alt="별점" /> <img
+														src="../img/ico/ico_star.gif" alt="별점" />
+												</p>
+											</div>
 										</div>
-									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<input type="email" class="form-control" id="email"
-												name="email" placeholder="Email Address">
+
+										<div class="hideArea">
+											<div class="bodyArea">
+												너무 맛있어서 재주문 했습니다!<br />쟈뎅 커피 너무 맛있어요!
+											</div>
+
+											<!-- 답변 -->
+											<div class="answer">
+												<div class="inbox">
+													<div class="aname">
+														<p>담당자</p>
+													</div>
+
+													<div class="atxt">쟈뎅 커피를 사랑해주셔서 감사합니다. 앞으로도 노력하는 쟈뎅이
+														되겠습니다. 감사합니다. 쟈뎅 커피를 사랑해주셔서 감사합니다. 앞으로도 노력하는 쟈뎅이 되겠습니다.
+														감사합니다.</div>
+												</div>
+											</div>
+											<!-- //답변 -->
+
+											<div class="modify">
+												<a href="#">수정</a> <a href="#">삭제</a>
+											</div>
+
 										</div>
-									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<input type="text" class="form-control" id="number"
-												name="number" placeholder="Phone Number">
+									</li>
+									<!-- //반복 -->
+
+									<li>
+										<div class="headArea">
+											<div class="subject">
+												<a href="javascript:;" class="accbtn">저렴한 가격에 커피맛과 향은
+													최고!!</a>
+											</div>
+											<div class="writer">[ezlin****]</div>
+											<div class="day">
+												<p>2023-03-24</p>
+												<p>
+													<img src="../img/ico/ico_star.gif" alt="별점" /> <img
+														src="../img/ico/ico_star.gif" alt="별점" /> <img
+														src="../img/ico/ico_star.gif" alt="별점" />
+												</p>
+											</div>
 										</div>
-									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<textarea class="form-control" name="message" id="message"
-												rows="1" placeholder="Message"></textarea>
+
+										<div class="hideArea">
+											<div class="bodyArea">
+												너무 맛있어서 재주문 했습니다!<br />쟈뎅 커피 너무 맛있어요!
+											</div>
+
+											<!-- 답변 -->
+											<div class="answer">
+												<div class="inbox">
+													<div class="aname">
+														<p>담당자</p>
+													</div>
+
+													<div class="atxt">쟈뎅 커피를 사랑해주셔서 감사합니다. 앞으로도 노력하는 쟈뎅이
+														되겠습니다. 감사합니다. 쟈뎅 커피를 사랑해주셔서 감사합니다. 앞으로도 노력하는 쟈뎅이 되겠습니다.
+														감사합니다.</div>
+												</div>
+											</div>
+											<!-- //답변 -->
+
+											<div class="modify">
+												<a href="#">수정</a> <a href="#">삭제</a>
+											</div>
+
 										</div>
-									</div>
-									<div class="col-md-12 text-right">
-										<button type="submit" value="submit" class="btn primary-btn">Submit
-											Now</button>
-									</div>
-								</form>
+									</li>
+
+									<li>
+										<div class="headArea">
+											<div class="subject">
+												<a href="javascript:;" class="accbtn">저렴한 가격에 커피맛과 향은
+													최고!!저렴한 가격에 커피맛과 향은 최고!!저렴한 가격에 커피맛과 향은 최고!!</a>
+											</div>
+											<div class="writer">[ezlin****]</div>
+											<div class="day">
+												<p>2023-03-24</p>
+												<p>
+													<img src="../img/ico/ico_star.gif" alt="별점" /> <img
+														src="../img/ico/ico_star.gif" alt="별점" /> <img
+														src="../img/ico/ico_star.gif" alt="별점" />
+												</p>
+											</div>
+										</div>
+
+										<div class="hideArea">
+											<div class="bodyArea">
+												너무 맛있어서 재주문 했습니다!<br />쟈뎅 커피 너무 맛있어요!
+											</div>
+
+											<!-- 답변 -->
+											<div class="answer">
+												<div class="inbox">
+													<div class="aname">
+														<p>담당자</p>
+													</div>
+
+													<div class="atxt">쟈뎅 커피를 사랑해주셔서 감사합니다. 앞으로도 노력하는 쟈뎅이
+														되겠습니다. 감사합니다. 쟈뎅 커피를 사랑해주셔서 감사합니다. 앞으로도 노력하는 쟈뎅이 되겠습니다.
+														감사합니다.</div>
+												</div>
+											</div>
+											<!-- //답변 -->
+
+											<div class="modify">
+												<a href="#">수정</a> <a href="#">삭제</a>
+											</div>
+
+										</div>
+									</li>
+
+								</ul>
 							</div>
+
+							<div class="btnAreaList">
+								<!-- 페이징이동1 -->
+								<div class="allPageMoving1">
+
+									<a href="#" class="n"><img src="../img/btn/btn_pre2.gif"
+										alt="처음으로" /></a><a href="#" class="pre"><img
+										src="../img/btn/btn_pre1.gif" alt="앞페이지로" /></a> <strong>1</strong>
+									<a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a
+										href="#">5</a> <a href="#" class="next"><img
+										src="../img/btn/btn_next1.gif" alt="뒤페이지로" /></a><a href="#"
+										class="n"><img src="../img/btn/btn_next2.gif"
+										alt="마지막페이지로" /></a>
+
+								</div>
+								<!-- //페이징이동1 -->
+							</div>
+							<!-- //상품리뷰 -->
+
+						</div>
+
+					</div>
+
+
+				</div>
+
+
+			</div>
+		</div>
+		</div>
+		</div>
+	</section>
+	<!--================End Product Description Area =================-->
+
+	<!-- ================ BEST SELELLERS section start ================= -->
+	<section class="section-margin calc-60px">
+		<div class="container">
+			<div class="section-intro pb-60px">
+				<p>Popular Item in the market</p>
+				<h2>
+					Best <span class="section-intro__style">Sellers</span>
+				</h2>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="card text-center card-product">
+						<div class="card-product__img">
+							<img class="card-img" src="../img/index/image_1_5.jpg" alt="">
+							<ul class="card-product__imgOverlay">
+								<li><button>
+										<i class="ti-shopping-cart"></i>
+									</button></li>
+								<li><button>
+										<i class="ti-heart"></i>
+									</button></li>
+							</ul>
+						</div>
+						<div class="card-body">
+							<p>Accessories</p>
+							<h4 class="card-product__title">
+								<a href="singleproduct">Quartz Belt Watch</a>
+							</h4>
+							<p class="card-product__price">$150.00</p>
 						</div>
 					</div>
 				</div>
-				<div class="tab-pane fade show active" id="review" role="tabpanel"
-					aria-labelledby="review-tab">
-					<div class="row">
-						<div class="col-lg-6">
-							<div class="row total_rate">
-								<div class="col-6">
-									<div class="box_total">
-										<h5>Overall</h5>
-										<h4>4.0</h4>
-										<h6>(03 Reviews)</h6>
-									</div>
-								</div>
-								<div class="col-6">
-									<div class="rating_list">
-										<h3>Based on 3 Reviews</h3>
-										<ul class="list">
-											<li><a href="#">5 Star <i class="fa fa-star"></i><i
-													class="fa fa-star"></i><i class="fa fa-star"></i><i
-													class="fa fa-star"></i><i class="fa fa-star"></i> 01
-											</a></li>
-											<li><a href="#">4 Star <i class="fa fa-star"></i><i
-													class="fa fa-star"></i><i class="fa fa-star"></i><i
-													class="fa fa-star"></i><i class="fa fa-star"></i> 01
-											</a></li>
-											<li><a href="#">3 Star <i class="fa fa-star"></i><i
-													class="fa fa-star"></i><i class="fa fa-star"></i><i
-													class="fa fa-star"></i><i class="fa fa-star"></i> 01
-											</a></li>
-											<li><a href="#">2 Star <i class="fa fa-star"></i><i
-													class="fa fa-star"></i><i class="fa fa-star"></i><i
-													class="fa fa-star"></i><i class="fa fa-star"></i> 01
-											</a></li>
-											<li><a href="#">1 Star <i class="fa fa-star"></i><i
-													class="fa fa-star"></i><i class="fa fa-star"></i><i
-													class="fa fa-star"></i><i class="fa fa-star"></i> 01
-											</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="review_list">
-								<div class="review_item">
-									<div class="media">
-										<div class="d-flex">
-											<img src="../img/product/review-1.png" alt="">
-										</div>
-										<div class="media-body">
-											<h4>Blake Ruiz</h4>
-											<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i>
-										</div>
-									</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-										elit, sed do eiusmod tempor incididunt ut labore et dolore
-										magna aliqua. Ut enim ad minim veniam, quis nostrud
-										exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
-								</div>
-								<div class="review_item">
-									<div class="media">
-										<div class="d-flex">
-											<img src="../img/product/review-2.png" alt="">
-										</div>
-										<div class="media-body">
-											<h4>Blake Ruiz</h4>
-											<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i>
-										</div>
-									</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-										elit, sed do eiusmod tempor incididunt ut labore et dolore
-										magna aliqua. Ut enim ad minim veniam, quis nostrud
-										exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
-								</div>
-								<div class="review_item">
-									<div class="media">
-										<div class="d-flex">
-											<img src="../img/product/review-3.png" alt="">
-										</div>
-										<div class="media-body">
-											<h4>Blake Ruiz</h4>
-											<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i>
-										</div>
-									</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-										elit, sed do eiusmod tempor incididunt ut labore et dolore
-										magna aliqua. Ut enim ad minim veniam, quis nostrud
-										exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
-								</div>
-							</div>
+				<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="card text-center card-product">
+						<div class="card-product__img">
+							<img class="card-img" src="../img/index/image_1_6.jpg" alt="">
+							<ul class="card-product__imgOverlay">
+								<li><button>
+										<i class="ti-shopping-cart"></i>
+									</button></li>
+								<li><button>
+										<i class="ti-heart"></i>
+									</button></li>
+							</ul>
 						</div>
-						<div class="col-lg-6">
-							<div class="review_box">
-								<h4>Add a Review</h4>
-								<p>Your Rating:</p>
-								<ul class="list">
-									<li><a href="#"><i class="fa fa-star"></i></a></li>
-									<li><a href="#"><i class="fa fa-star"></i></a></li>
-									<li><a href="#"><i class="fa fa-star"></i></a></li>
-									<li><a href="#"><i class="fa fa-star"></i></a></li>
-									<li><a href="#"><i class="fa fa-star"></i></a></li>
-								</ul>
-								<p>Outstanding</p>
-								<form action="#/" class="form-contact form-review mt-3">
-									<div class="form-group">
-										<input class="form-control" name="name" type="text"
-											placeholder="Enter your name" required>
-									</div>
-									<div class="form-group">
-										<input class="form-control" name="email" type="email"
-											placeholder="Enter email address" required>
-									</div>
-									<div class="form-group">
-										<input class="form-control" name="subject" type="text"
-											placeholder="Enter Subject">
-									</div>
-									<div class="form-group">
-										<textarea class="form-control different-control w-100"
-											name="textarea" id="textarea" cols="30" rows="5"
-											placeholder="Enter Message"></textarea>
-									</div>
-									<div class="form-group text-center text-md-right mt-3">
-										<button type="submit"
-											class="button button--active button-review">Submit
-											Now</button>
-									</div>
-									
-								</form>
-							</div>
+						<div class="card-body">
+							<p>Beauty</p>
+							<h4 class="card-product__title">
+								<a href="singleproduct">Women Freshwash</a>
+							</h4>
+							<p class="card-product__price">$150.00</p>
 						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="card text-center card-product">
+						<div class="card-product__img">
+							<img class="card-img" src="../img/index/image_2_6.jpg" alt="">
+							<ul class="card-product__imgOverlay">
+								<li><button>
+										<i class="ti-shopping-cart"></i>
+									</button></li>
+								<li><button>
+										<i class="ti-heart"></i>
+									</button></li>
+							</ul>
+						</div>
+						<div class="card-body">
+							<p>Decor</p>
+							<h4 class="card-product__title">
+								<a href="singleproduct">Room Flash Light</a>
+							</h4>
+							<p class="card-product__price">$150.00</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4 col-xl-3">
+					<div class="card text-center card-product">
+						<div class="card-product__img">
+							<img class="card-img" src="../img/index/image_3_7.jpg" alt="">
+							<ul class="card-product__imgOverlay">
+								<li><button>
+										<i class="ti-shopping-cart"></i>
+									</button></li>
+								<li><button>
+										<i class="ti-heart"></i>
+									</button></li>
+							</ul>
+						</div>
+						<div class="card-body">
+							<p>Decor</p>
+							<h4 class="card-product__title">
+								<a href="singleproduct">Room Flash Light</a>
+							</h4>
+							<p class="card-product__price">$150.00</p>
+						</div>
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!--================End Product Description Area =================-->
+	<!-- ================ BEST SELELLERS  section end ================= -->
 
-							<!-- ================ BEST SELELLERS section start ================= -->
-		<section class="section-margin calc-60px">
-			<div class="container">
-				<div class="section-intro pb-60px">
-					<p>Popular Item in the market</p>
-					<h2>
-						Best <span class="section-intro__style">Sellers</span>
-					</h2>
-				</div>
-				<div class="row">
-					<div class="col-md-6 col-lg-4 col-xl-3">
-						<div class="card text-center card-product">
-							<div class="card-product__img">
-								<img class="card-img" src="../img/index/image_1_5.jpg" alt="">
-								<ul class="card-product__imgOverlay">
-									<li><button>
-											<i class="ti-shopping-cart"></i>
-										</button></li>
-									<li><button>
-											<i class="ti-heart"></i>
-										</button></li>
-								</ul>
-							</div>
-							<div class="card-body">
-								<p>Accessories</p>
-								<h4 class="card-product__title">
-									<a href="singleproduct">Quartz Belt Watch</a>
-								</h4>
-								<p class="card-product__price">$150.00</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
-						<div class="card text-center card-product">
-							<div class="card-product__img">
-								<img class="card-img" src="../img/index/image_1_6.jpg" alt="">
-								<ul class="card-product__imgOverlay">
-									<li><button>
-											<i class="ti-shopping-cart"></i>
-										</button></li>
-									<li><button>
-											<i class="ti-heart"></i>
-										</button></li>
-								</ul>
-							</div>
-							<div class="card-body">
-								<p>Beauty</p>
-								<h4 class="card-product__title">
-									<a href="singleproduct">Women Freshwash</a>
-								</h4>
-								<p class="card-product__price">$150.00</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
-						<div class="card text-center card-product">
-							<div class="card-product__img">
-								<img class="card-img" src="../img/index/image_2_6.jpg" alt="">
-								<ul class="card-product__imgOverlay">
-									<li><button>
-											<i class="ti-shopping-cart"></i>
-										</button></li>
-									<li><button>
-											<i class="ti-heart"></i>
-										</button></li>
-								</ul>
-							</div>
-							<div class="card-body">
-								<p>Decor</p>
-								<h4 class="card-product__title">
-									<a href="singleproduct">Room Flash Light</a>
-								</h4>
-								<p class="card-product__price">$150.00</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-4 col-xl-3">
-						<div class="card text-center card-product">
-							<div class="card-product__img">
-								<img class="card-img" src="../img/index/image_3_7.jpg" alt="">
-								<ul class="card-product__imgOverlay">
-									<li><button>
-											<i class="ti-shopping-cart"></i>
-										</button></li>
-									<li><button>
-											<i class="ti-heart"></i>
-										</button></li>
-								</ul>
-							</div>
-							<div class="card-body">
-								<p>Decor</p>
-								<h4 class="card-product__title">
-									<a href="singleproduct">Room Flash Light</a>
-								</h4>
-								<p class="card-product__price">$150.00</p>
-							</div>
-
-						
-							
-							
-							
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- ================ BEST SELELLERS  section end ================= -->
-	
-	<%@ include file="../sidebar.jsp" %>
+	<%@ include file="../sidebar.jsp"%>
 	<%@ include file="../footer.jsp"%>
 
 	<script src="../vendors/jquery/jquery-3.2.1.min.js"></script>
@@ -557,7 +615,7 @@ function selectImage(imageId) {
 	<script src="../vendors/mail-script.js"></script>
 	<script src="../js/main.js"></script>
 
-							
+
 </body>
 
 <!-- Mirrored from themewagon.github.io/aroma/singleproduct by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 30 Jun 2023 06:56:14 GMT -->
