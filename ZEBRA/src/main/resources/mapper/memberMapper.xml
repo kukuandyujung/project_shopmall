@@ -10,16 +10,15 @@
   SELECT * FROM zebra WHERE id != 0
     <if test="#{s_word} != null">
       AND (
-        id LIKE '%' || #{s_word} || '%'
-        OR nickname LIKE '%' || #{s_word} || '%'
-        OR full_name LIKE '%' || #{s_word} || '%'
-        OR gender LIKE '%' || #{s_word} || '%'
-        OR phone LIKE '%' || #{s_word} || '%'
-        OR email LIKE '%' || #{s_word} || '%'
-        OR address LIKE '%' || #{s_word} || '%'
-        OR joinday LIKE '%' || #{s_word} || '%'
-        OR total_pay LIKE '%' || #{s_word} || '%'
-        OR num_pay LIKE '%' || #{s_word} || '%'
+        MCODE LIKE '%' || #{s_word} || '%'
+        OR MID LIKE '%' || #{s_word} || '%'
+        OR MNAME LIKE '%' || #{s_word} || '%'
+        OR MGENDER LIKE '%' || #{s_word} || '%'
+        OR MPHONE LIKE '%' || #{s_word} || '%'
+        OR MEMAIL LIKE '%' || #{s_word} || '%'
+        OR MJOINDAY LIKE '%' || #{s_word} || '%'
+        OR MTOTAL_PAY LIKE '%' || #{s_word} || '%'
+        OR MTOTAL_ORDER LIKE '%' || #{s_word} || '%'
       )
     </if>
   ORDER BY id ASC
