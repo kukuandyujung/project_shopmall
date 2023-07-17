@@ -41,6 +41,27 @@ public class MemberController {
 		return "member/register04";
 	}	
 	
+	@GetMapping("member/idsearch")
+	public String idsearch() {
+		return "member/idsearch";
+	}
+	
+	//id 확인 메일 전송
+	@RequestMapping("member/id_email")
+	public String id_email() {
+		return "member/id_email";
+	}
+	//비밀번호 확인 메일전송
+	@RequestMapping("member/pw_email")
+	public String pw_email() {
+		return "member/pw_email";
+	}
+	
+	
+	
+	
+	
+	
 	
 	@GetMapping("/member/login")
 	public String login() {
@@ -49,7 +70,7 @@ public class MemberController {
 	
 	
 	//로그인 오버로딩 , 다른 메소드 , 로그인 버튼을 눌렀을때 post로 들어옴
-		@PostMapping("/member/login")
+		@PostMapping("/index/login")
 		public String login(String mid,String mpassword, Model model) {
 			System.out.println("controller mid : "+mid);
 			System.out.println("controller mpassword : "+mpassword);
@@ -64,8 +85,20 @@ public class MemberController {
 				System.out.println("controller resultCode2 : "+resultCode);
 			}
 			
-			return "member/login";
+			return "redirect:member/login";
 		}
+		
+	//로그아웃
+		// 회원 로그아웃
+		@RequestMapping("/member/logout")
+		public String logout(Model model) {
+			//섹션 전체 삭제
+			session.invalidate();
+			model.addAttribute("logout",1);
+			return "redirect:/layout/index";
+		} //logou
+		
+		
 		
 	
 	

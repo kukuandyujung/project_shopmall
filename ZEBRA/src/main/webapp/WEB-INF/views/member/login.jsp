@@ -28,23 +28,15 @@
 <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
 <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/login.css">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script> <!-- 제이쿼리 사용 할때 $ 사용 하기위한 js  -->
 
 
 <script type="text/javascript">
 
-/* start login button 눌렀을때 확인  */
-	function loginBtn(){
-			    
-		if($('#mid').val().length < 3 ){
-			alert("id는 두자리 이상입력하셔야 합니다");
-			return false;
-		}
-		loginfrm.submit();
-	}
- end login button 눌렀을때 확인 
 
-</script>
+  </script> 
 </head>
 <body>
 <%@ include file="../top.jsp"%>	
@@ -63,22 +55,16 @@
   
   <!--================ start Login Box Area =================-->
 	<!-- container -->
-	<div id="container">
-	
-		<div id="location">
-			<ol>
-				
-			</ol>
+	<div id="container">	
+		<div id="location">			
 		</div>
 		
 		<div id="outbox">		
 			<div id="left">
 				<div id="title2">MEMBERSHIP<span>멤버쉽</span></div>
-				<ul>
-					
+				<ul>					
 					<li><a href="/member/login" id="leftNavi1">로그인</a></li>
-					<li><a href="/member/register" id="leftNavi2">회원가입</a></li>				
-					
+					<li><a href="/member/register" id="leftNavi2">회원가입</a></li>						
 				</ul>			
 			</div><script type="text/javascript">initSubmenu(1,0);</script>
 
@@ -90,7 +76,7 @@
 					<h3>회원 로그인</h3>
 					<div class="informbox">
 						<div class="inform">
-						<form action="/member/login" method="post" name="loginfrm">
+						<form action="/member/login" method="post" name="loginFrm">
 							<ul>
 								<li>
 									<input type="text" class="loginType" name="mid" id="mid"  onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='loginType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" />
