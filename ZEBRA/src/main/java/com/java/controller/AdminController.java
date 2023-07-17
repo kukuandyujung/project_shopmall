@@ -47,10 +47,10 @@ public class AdminController {
 //		System.out.println("memberDto 2 : "+ memberDto.getMpassword());
 		MemberDto mdto = memberService.selectLogin(memberDto);
 		if(mdto!=null) {
-			session.setAttribute("sessionId", mdto.getMid());
-			session.setAttribute("sessionName", mdto.getMname());
+			session.setAttribute("sessionId", mdto.getMID());
+			session.setAttribute("sessionName", mdto.getMNAME());
 			model.addAttribute("loginCheck", "success");
-			if(mdto.getMid().equals("admin")&& mdto.getMpassword().equals("1234")) {
+			if(mdto.getMID().equals("admin")&& mdto.getMPASSWORD().equals("1234")) {
 			
 				return "redirect:/admin/index?loginCheck=success";
 			}
@@ -182,8 +182,8 @@ public class AdminController {
 	
 	// 회원 정보 1개 전체 가져오기
 	@RequestMapping("/admin/member_tableView") 
-	public String member_tableView(@RequestParam(defaultValue = "1") int ID, Model model) {
-		MemberDto mdto = memberService.selectOne(ID);
+	public String member_tableView(@RequestParam(defaultValue = "1") String MID, Model model) {
+		MemberDto mdto = memberService.selectOne(MID);
 		model.addAttribute("mdto",mdto); // 모델에 속성 추가
 		return "admin/member_tableView";
 	}

@@ -10,7 +10,7 @@ public interface MemberService {
 	HashMap<String, Object> selectAll(String s_word);
 
 	// 회원 정보 1개 가져오기
-	MemberDto selectOne(int ID);
+	MemberDto selectOne(String MID);
 
 	//로그인 확인하기
 	MemberDto selectLogin(MemberDto memberDto);

@@ -28,8 +28,8 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	// 회원 정보 1개 가져오기
-	public MemberDto selectOne(int ID) {
-		MemberDto mdto = memberMapper.selectOne(ID);
+	public MemberDto selectOne(String MID) {
+		MemberDto mdto = memberMapper.selectOne(MID);
 		return mdto;
 	}
 

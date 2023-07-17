@@ -145,27 +145,22 @@
 					<table class="memberTable">
 					<tr>
 		                <td class="text">아이디</td>
-		                <td class="textbox"><input type="text" name="nick" value="${mdto.NICKNAME}" disabled></td>
+		                <td class="textbox"><input type="text" name="nick" value="${mdto.MID }" disabled></td>
 		            </tr>		            
 		            
 		            <tr>
 		                <td class="text">이름</td>
-		                <td class="textbox"><input type="text" name="full_name" value="${mdto.FULL_NAME}" value="${mdto.FULL_NAME}"></td>
+		                <td class="textbox"><input type="text" name="full_name" value="${mdto.MNAME }" value="${mdto.MNAME }"></td>
 		            </tr>
 		            
 		            <tr>
 		                <td class="text">핸드폰</td>
-		                <td class="textbox"><input type="text" name="phone" value="${mdto.PHONE}"></td>
-		            </tr>
-		            
-		            <tr>
-		                <td class="text">주소</td>
-		                <td class="textbox"><input type="text" name="address" value="${mdto.ADDRESS}"></td>
+		                <td class="textbox"><input type="text" name="phone" value="${mdto.MPHONE }"></td>
 		            </tr>
 		            
 		            <tr>
 		                <td class="text">이메일</td>
-		                <td class="textbox"><input type="text" name="email" value="${mdto.EMAIL}"></td>
+		                <td class="textbox"><input type="text" name="email" value="${mdto.MEMAIL }"></td>
 		            </tr>
 		            </table>
 		            
@@ -188,7 +183,6 @@
         </footer>
         <!-- /footer content -->
       </div>
-    </div>
 
     <!-- jQuery -->
     <script src="/vendors/jquery/dist/jquery.min.js"></script>

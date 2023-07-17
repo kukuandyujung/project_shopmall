@@ -13,26 +13,24 @@ import lombok.NoArgsConstructor;
 @Data
 public class MemberDto {
 
-	private int mcode;
-	private String mid;
-	private String mpassword;
-	private String mname;
-	private String mgender;
-	private Timestamp mbirth;
-	private String mphone;
-	private String memail;
-	private String mzip;
-	private Date mjoinday;
-	private int mtotal_pay;
-	private int mtotal_order;
-	private int magree;
+	private int MCODE;
+	private String MID ;
+	private String MPASSWORD;
+	private String MNAME ;
+	private String MGENDER;
+	private Timestamp MBIRTH;
+	private String MPHONE ;
+	private String MEMAIL ;
+	private String MZIP;
+	private Date MJOINDAY ;
+	private int MTOTAL_PAY ;
+	private int MTOTAL_ORDER ;
+	private int MAGREE;
 
 	
 	public String getFormattedJoinDay() {
 	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-	    return sdf.format(mjoinday);
+	    return sdf.format(MJOINDAY);
 	    
 	}
-	
-	
 }

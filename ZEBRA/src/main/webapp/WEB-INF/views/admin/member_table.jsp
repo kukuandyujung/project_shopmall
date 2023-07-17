@@ -132,11 +132,9 @@
                     <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%"> 
                       <thead>
                         <tr>
-                          <th>회원번호</th>
                           <th>아이디</th>
                           <th>이름</th>
                           <th>핸드폰</th>
-                          <th>주소</th>
                           <th>가입 날짜</th>
                           <th>총 결제금액</th>
                           <th>총 결제횟수</th>
@@ -146,15 +144,13 @@
                       <tbody>
                       <c:forEach var="mdto" items="${list}"> <!-- var는 변수 공간, list를 cdto에 넣어라 -->
 						<tr>
-						  <td><a href="/admin/member_tableView/?ID=${mdto.ID}" style="text-decoration: underline">${mdto.ID}</a></td>
-						  <td>${mdto.NICKNAME}</td>
-						  <td>${mdto.FULL_NAME}</td>	
-						  <td>${mdto.PHONE}</td>
-						  <td>${mdto.ADDRESS}</td> 
-						  <td>${mdto.formattedJoinDay}</td>
-						  <td>${mdto.TOTAL_PAY}</td>	
-						  <td>${mdto.NUM_PAY}</td>
-						  <td>${mdto.EMAIL}</td>
+						  <td><a href="/admin/member_tableView/?ID=${mdto.MID }" style="text-decoration: underline">${mdto.MID }</a></td>
+						  <td>${mdto.MNAME }</td>
+						  <td>${mdto.MPHONE }</td> 						  
+						  <td>${mdto.formattedJoinDay }</td>	
+						  <td>${mdto.MTOTAL_PAY }</td>
+						  <td>${mdto.MTOTAL_ORDER }</td>
+						  <td>${mdto.MEMAIL }</td>			
 						</tr>
 					</c:forEach>
                       
@@ -182,7 +178,6 @@
         </footer>
         <!-- /footer content -->
       </div>
-    </div>
 
     <!-- jQuery -->
     <script src="/vendors/jquery/dist/jquery.min.js"></script>
