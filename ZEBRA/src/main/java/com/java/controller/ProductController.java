@@ -71,18 +71,27 @@ public class ProductController {
 	
 	//상품 등록하기 post
 	@PostMapping("/admin/product_write")
-	public String doproduct_Write(ProductDto pdto, 
-			@RequestPart MultipartFile pmainimg1,
-			@RequestPart MultipartFile pmainimg2,
-			@RequestPart MultipartFile pmainimg3,
-			@RequestPart MultipartFile pdetailimg1,
-			@RequestPart MultipartFile pdetailimg2,
-			@RequestPart MultipartFile pdetailimg3,
-			@RequestPart MultipartFile pdetailimg4,
-			@RequestPart MultipartFile pdetailimg5,
-			@RequestPart MultipartFile pdetailimg6,
+	public String product_Write(ProductDto pdto,
+			@RequestPart("pm1") MultipartFile pmainimg1,
+			@RequestPart("pm2") MultipartFile pmainimg2,
+			@RequestPart("pm3") MultipartFile pmainimg3,
+			@RequestPart("pd1") MultipartFile pdetailimg1,
+			@RequestPart("pd2") MultipartFile pdetailimg2,
+			@RequestPart("pd3") MultipartFile pdetailimg3,
+			@RequestPart("pd4") MultipartFile pdetailimg4,
+			@RequestPart("pd5") MultipartFile pdetailimg5,
+			@RequestPart("pd6") MultipartFile pdetailimg6,
 			
-			Model model) throws Exception {
+			
+			Model model) throws Exception{
+		
+		
+		
+		
+		System.out.println("hjhhhhhhhhhhhhhhhhhh");
+	
+		
+		
 		//상품 1개 등록하기 
 		String new_pmainimg1 =""; //파일 등록을 위한 변수 설정
 		
@@ -97,6 +106,8 @@ public class ProductController {
 
 		System.out.println("doproduct_write pfile1: "+ new_pmainimg1);
 		pdto.setPmainimg1(new_pmainimg1);//pmainimg1
+		
+		
 		
 		String new_pmainimg2 =""; //파일 등록을 위한 변수 설정
 		if(!pmainimg2.isEmpty()) {	 

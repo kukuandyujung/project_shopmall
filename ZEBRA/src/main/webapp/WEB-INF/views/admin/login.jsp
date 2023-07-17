@@ -67,9 +67,9 @@
 		            <div class="informbox">
 		              <div class="inform">
 		              	<label for="loginId">아이디</label>
-		                <input type="text" name="mid" class="form-control" placeholder="id" id="loginId" style="ime-mode:inactive;" required />
+		                <input type="text" name="MID" class="form-control" placeholder="id" id="loginId" style="ime-mode:inactive;" required />
 		                 <label for="loginPw">비밀번호</label>
-		                <input type="password" name="mpassword" class="form-control" placeholder="pw" id="loginPw" style="ime-mode:inactive;" required/>
+		                <input type="password" name="MPASSWORD" class="form-control" placeholder="pw" id="loginPw" style="ime-mode:inactive;" required/>
 		
 		                <div class="btn">
 		                  <a style="cursor: pointer;" onclick="loginBtn()" class="sbtn">로그인</a>

@@ -26,8 +26,8 @@ public class AdminController {
 	@RequestMapping("/admin/index")
 	public String index(String loginCheck, Model model) {
 		model.addAttribute("loginCheck", loginCheck); //로그인 성공 여부
-		if("sessionId".equals("admin")) {
-			
+		
+		if(session.getAttribute("sessionId").equals("admin")) {
 			return "admin/index";
 		}
 		return "admin/login";
@@ -42,17 +42,22 @@ public class AdminController {
 	
 	//관리자 로그인 PostMapping
 	@PostMapping("/admin/login")
-	public String  login(String mid, String mpassword, MemberDto memberDto, Model model) {
-//		System.out.println("memberDto 1 : "+ memberDto.getMid());
-//		System.out.println("memberDto 2 : "+ memberDto.getMpassword());
+	public String  login(String MID, String MPASSWORD, MemberDto memberDto, Model model) {
+		System.out.println("memberDto 1 : "+ memberDto.getMID());
+		System.out.println("memberDto 2 : "+ memberDto.getMPASSWORD());
 		MemberDto mdto = memberService.selectLogin(memberDto);
 		if(mdto!=null) {
+			System.out.println("memberDto 1 : "+ mdto.getMID());
+			System.out.println("memberDto 2 : "+ mdto.getMPASSWORD());
+			
 			session.setAttribute("sessionId", mdto.getMID());
 			session.setAttribute("sessionName", mdto.getMNAME());
 			model.addAttribute("loginCheck", "success");
 			if(mdto.getMID().equals("admin")&& mdto.getMPASSWORD().equals("1234")) {
 			
-				return "redirect:/admin/index?loginCheck=success";
+				System.out.println("session"+ session.getAttribute("sessionId"));
+				return "redirect:/admin/index";
+//				return "redirect:/admin/index?loginCheck=success";
 			}
 			
 			return "redirect:/layout/index";
