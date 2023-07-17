@@ -533,7 +533,7 @@ function selectImage(imageId) {
 								<p class="card-product__price">$150.00</p>
 							</div>
 
-							<%@ include file="../product/button.jsp" %>
+						
 							
 							
 							
