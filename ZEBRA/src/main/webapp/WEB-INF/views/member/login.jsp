@@ -64,7 +64,8 @@
 				<div id="title2">MEMBERSHIP<span>멤버쉽</span></div>
 				<ul>					
 					<li><a href="/member/login" id="leftNavi1">로그인</a></li>
-					<li><a href="/member/register" id="leftNavi2">회원가입</a></li>						
+					<li><a href="/member/register" id="leftNavi2">회원가입</a></li>
+					<li><a href="member/idsearch" id="leftNavi3">아이디/<span>비밀번호 찾기</span></a></li>								
 				</ul>			
 			</div><script type="text/javascript">initSubmenu(1,0);</script>
 

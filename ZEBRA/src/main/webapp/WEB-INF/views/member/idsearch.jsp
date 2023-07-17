@@ -7,6 +7,7 @@
 <link rel="icon" href="../img/logo2.png" type="image/png">
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scaleable=no">
 <link rel="stylesheet" type="text/css" href="../css/reset.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="../css/layout.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="../css/content.css?v=Y" />
@@ -30,29 +31,7 @@
 </head>
 <body>
 
-<!-- <link rel="icon" href="../img/logo2.png" type="image/png">
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<link rel="stylesheet" type="text/css" href="../css/reset.css?v=Y" />
-<link rel="stylesheet" type="text/css" href="../css/layout.css?v=Y" />
-<link rel="stylesheet" type="text/css" href="../css/content.css?v=Y" />
-<script type="text/javascript" src="../js/top_navi.js"></script>
-<script type="text/javascript" src="../js/left_navi.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
-<script type="text/javascript" src="../js/common.js"></script>
-<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="../js/idangerous.swiper-2.1.min.js"></script>
-<script type="text/javascript" src="../js/jquery.anchor.js"></script>
-<script type="text/javascript"></script>
-<link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
-<link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
-<link rel="stylesheet" href="../vendors/linericon/style.css">
-<link rel="stylesheet" href="../vendors/owl-carousel/owl.theme.default.min.css">
-<link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css">
-<link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
-<link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
-<link rel="stylesheet" href="../css/style.css"> -->
+
 </head>
 <body>
 <%@ include file="../top.jsp"%>
@@ -70,7 +49,7 @@ $(document).ready(function() {
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
-					<h1>Membership Terms </h1>
+					<h1> ID SEARCH </h1>
 				</div>
 			</div>
     </div>
@@ -98,7 +77,7 @@ $(document).ready(function() {
 			<!-- contents -->
 			<div id="contents">
 				<div id="member">
-					<h2><strong>아이디/비밀번호 찾기</strong><span>회원님께서 가입하신 아이디와 비밀번호를 찾아드립니다.</span></h2>
+					<h2><strong></strong><span>회원님께서 가입하신 아이디와 비밀번호를 찾아드립니다.</span></h2>
 					<h3>아이디 찾기</h3>
 					<div class="informbox">
 						<div class="inform">
@@ -132,11 +111,6 @@ $(document).ready(function() {
 			</div>
 			<!-- //contents -->
 
-
-		</div>
-	</div>
-	<!-- //container -->		
-	
 	</div>
 </div>
 </div>

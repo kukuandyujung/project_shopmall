@@ -37,7 +37,7 @@
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
-					<h1>Member registration completed</h1>
+					<h1>ID 찾기 발송</h1>
 				</div>
 			</div>
     </div>
@@ -47,81 +47,77 @@
   
  <!--================Login Box Area =================-->
 	<!-- container -->
-	<div id="container">
+	<!-- <div id="container"> -->
 		<div id="outbox">		
-			<div id="left">
-				<div id="title2">MEMBERSHIP<span>멤버쉽</span></div>	
-				<br>			
-				<ul>
-					<li><a href="/member/login" id="leftNavi1">로그인</a></li>	
-					<li><a href="/member/register" id="leftNavi2">회원가입</a></li>
-				
-				</ul>			
-			</div><script type="text/javascript">initSubmenu(4,0);</script>
-
-
+		
+			
 			<!-- contents -->
-			<div id="contents" >
+		<!-- 	<div id="contents" > -->
 				<div id="member" >
-					
-						<!-- STEP -->
-					<div class="stepWrap">
-						
-						<div class="step">
-							<a href="">
-								<p class="web">STEP 01</p>
-								<p class="txt">약관 동의</p>
-							</a>
-						</div>
-
-						<div class="step">
-							<a href="">
-								<p class="web">STEP 02</p>
-								<p class="txt"><span>회원정보</span> <span>입력</span></p>
-							</a>
-						</div>
-
-						<div class="step stepon">
-							<a href="">
-								<p class="web">STEP 03</p>
-								<p class="txt"><span>회원가입</span> <span>완료</span></p>
-								<p class="ck"><img src="../img/member/bg_step.png" alt="현재위치" /></p>
-							</a>
-						</div>
-					</div>
-					<!-- //STEP -->	
-					<!-- //STEP -->
-			<!-- //Step box End -->
-		<div class="celebrate">	
-						<div class="img"><img src="#" alt="" /></div>
-						<p class="thx">감사합니다. <span>회원가입이 완료되었습니다.</span></p>
-						<p class="txt">
-							저희 가족이 되어주셔서 감사합니다.<br/>
-							가입 시 입력하신 이메일로 가입 완료 메일이 전송되었습니다.<br/>
-							언제나 고객님께 즐겁고 소중한 시간이 되도록 최선을 다 하겠습니다.<br/><br/>
-							
-						</p>
-					</div>
-
-					<!-- Btn Area -->
-					<div class="btnArea">
-						<div class="bCenter">
-							<ul>
-								<li><a href="/layout/index" class="nbtnbig">메인으로</a></li>
-								<li><a href="/member/login" class="sbtnMini">로그인</a></li>
-							</ul>
-						</div>
-					</div>
-					<!-- //Btn Area -->
+			
+    <div class="container">
+     <!--  <div class="d-none d-sm-block mb-5 pb-4">
+        <div id="map" style="height: 20px;"></div>
+       -->
+   <div id="member" >	
+					<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="margin:0; padding:0; font:normal 12px/1.5 돋움;">
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="margin:0; padding:0; font:normal 12px/1.5 돋움;">
 
 
-				</div>
-			</div>
-			<!-- //contents -->
+<table width="700" cellpadding="0" cellspacing="0" align="center">
+<tr>
+	<td style="width:700px;height:175px;padding:0;margin:0;vertical-align:top;font-size:0;line-height:0;">
+		<img src="../img/email/img_email_top.jpg" alt="JARDIN" />					
+	</td>
+</tr>
+<tr>
+	<td style="width:700px;height:78px;padding:0;margin:0;vertical-align:top;">
+		<p style="width:620px;margin:50px 0 40px 38px;text-align:center;font-size:0;line-height:0;"><img src="../img/email/img_txt_password01.jpg" alt="원두커피의 名家, JARDIN 임시 비밀번호가 발급되었습니다." /></p>
+	</td>
+</tr>
+<tr>
+	<td style="width:700px;height:196px;padding:0;margin:0;vertical-align:top;">
+		<table width="618" height="194" cellpadding="0" cellspacing="0" align="center" style="margin:0 0 0 40px;border:1px #d9d9d9 solid;">
+		<tr>
+			<td style="width:618px;height:194px;padding:0;margin:0;vertical-align:top;font-size:0;line-height:0;background:#f9f9f9;">
+				<p style="width:620px;margin:30px 0 0 0;padding:0;text-align:center;"><img src="../img/email/img_txt_password02.jpg" alt="JARDIN에서 비밀번호 찾기를 요청하셨습니다." /></p>
+				<p style="width:620px;margin:10px 0 0 0;padding:0;text-align:center;color:#888888;font-size:12px;line-height:1;">아래의 PASSWORD는 임시 PASSWORD이므로 홈페이지 로그인 후 다시 수정해 주십시오.</p>
+				<p style="width:620px;margin:28px 0 0 0;padding:0;text-align:center;color:#666666;font-size:12px;line-height:1;"><strong>임시 패스워드 : <span style="color:#f7703c;line-height:1;">dasdw2341</span></strong></p>
+				<p style="width:620px;margin:30px 0 0 0;padding:0;text-align:center;color:#888888;font-size:12px;line-height:1.4;">쟈뎅샵에서는 고객님께 보다 나은 서비스를 제공하기 위해 항상 노력하고 있습니다.<br/>앞으로 많은 관심 부탁드립니다.</p>
+			</td>
+		</tr>
+		</table>	
+	</td>
+</tr>
+<tr>
+	<td style="width:700px;height:120px;padding:0;margin:0;vertical-align:top;">
+		<p style="width:700px;margin:30px 0 50px 0;text-align:center;"><a href="#"><img src="../img/email/btn_jardin.jpg" alt="JARDIN 바로가기" /></a></p>
+	</td>
+</tr>
+<tr>
+	<td style="width:700px;height:50px;padding:0;vertical-align:top;font-size:0;line-height:0;text-align:center;">
+		<img src="../img/email/img_email_bottom.jpg" alt="" />
+	</td>
+</tr>
+<tr>
+	<td style="width:700px;height:140px;padding:0;margin:0;vertical-align:top;background-color:#5a524c;">
+		<p style="width:620px;margin:20px 0 0 40px;padding:0;text-align:center;line-height:1.5;color:#b2aeac;">메일수신을 원치 않으시는 분은 로그인 후. <span style="color:#ffffff">메일 수신 여부</span>를 변경해주시기 바랍니다.<br/>IF YOU DO NOT WISH TO RECEIVE EMAILS FROM US, PLEASE LOG-IN AND UPDATE<br/> YOUR MEMBERSHIP INFORMATION.</p>
+
+		<p style="width:620px;margin:15px 0 0 40px;padding:0;text-align:center;line-height:1.5;color:#b2aeac;"><span style="color:#ffffff">본 메일에 관한 문의사항은 사이트 내 고객센터를 이용해주시기 바랍니다.</span><br/>COPYRIGHT ©  2014 JARDIN ALL RIGHTS RESERVED.</p>
+	</td>
+</tr>
+</table>
 
 
-		</div>
-	</div>
+
+</div>
+</div>
+
+
+
+</div>
+			
+	
 	<!-- //container -->
 	<!--================End Login Box Area =================-->
 
