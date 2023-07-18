@@ -89,7 +89,7 @@ public class ProductServiceImpl implements ProductService{
     //==========================여기부터 상품 페이지===========================================
 	
 	@Override //상품 페이지에 상품 전체 가져오기
-	public HashMap<String, Object> selectPageAll(int page, String category, String s_word) {
+	public HashMap<String, Object> selectPageAll(int page, String category, String s_word, String pricehit) {
 		//상품 페이지에 상품 전체 가져오기
 		HashMap<String, Object> map = new HashMap<>();
 		//상품 페이지에서 넘버링 
@@ -105,7 +105,7 @@ public class ProductServiceImpl implements ProductService{
 		if(endPage>maxPage) endPage=maxPage;
 		
 		
-		ArrayList<ProductDto> list = productMapper.selectPageAll(startRow, endRow, category,s_word);
+		ArrayList<ProductDto> list = productMapper.selectPageAll(startRow, endRow, category,s_word,pricehit);
 		map.put("list", list);
 		map.put("listCount", listCount);
 		map.put("maxPage", maxPage);
@@ -114,6 +114,7 @@ public class ProductServiceImpl implements ProductService{
 		map.put("page", page);
 		map.put("category", category);
 		map.put("s_word", s_word);
+		map.put("pricehit", pricehit);
 		
 		return map;
 		

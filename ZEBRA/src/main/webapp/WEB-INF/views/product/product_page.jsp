@@ -89,6 +89,18 @@
 </script>
 </head>
 <body>
+<script type="text/javascript">
+function searchBtn(){
+	if($("#s_word").val().length<2){
+		alert("2글자 이상 입력하셔야 합니다.");
+		$("#s_word").focus();
+		return false;
+	}
+	
+	search.submit();
+
+}
+</script>
 	<%@ include file="../top.jsp"%>
 
 	<!-- ================ start banner area ================= -->
@@ -178,16 +190,18 @@
 						</div>
 					</div>
 				</div>
+			    
+			    
 				<div class="col-xl-9 col-lg-8 col-md-7">
 					<!-- 상단 필터 바 시작 -->
 					<div class="filter-bar d-flex flex-wrap align-items-center">
 						<!-- 필터 바 가격 순, 조회순 시작 -->
 						<div class="sorting">
-							<select>
-								<option value="1">Featured</option>
-								<option value="1">Price: Low - High</option>
-								<option value="1">Price: High - Low</option>
-								<option value="1">Hits</option>
+							<select name="pricehit" id="pricehit">
+								<option value="">유정이가최고</option>
+								<option value="rowprice">Price: Low - High</option>
+								<option value="highprice">Price: High - Low</option>
+								<option value="highhit">Hits</option>
 							</select>
 						</div>
 						<!-- 필터 바 가격 순, 조회순 끝 -->
@@ -222,9 +236,7 @@
 							<div class="col-md-6 col-lg-4">
 								<div class="card text-center card-product">
 									<div class="card-product__img">
-<!-- 										<a href="#"><img class="card-img" -->
-<!-- 											src="../img/product/product1.png" alt=""></a> -->
-										<a href="#"><span><img class="card-img" src="/upload/${product.pmainimg1}" style="width: 271px;" alt=""></span></a>
+										<a href="#"><img class="card-img" src="/upload/${product.pmainimg1}" style="width: 250px;" alt=""></a>
 										<ul class="card-product__imgOverlay">
 											<li><button>
 													<i class="ti-shopping-cart"></i> <!-- 장바구니 버튼 -->
@@ -248,254 +260,67 @@
 							</div>
 					</c:forEach>
 					<!-- 상품 리스트  끝-->		
-							
-							
-<!-- 							<div class="col-md-6 col-lg-4"> -->
-<!-- 								<div class="card text-center card-product"> -->
-<!-- 									<div class="card-product__img"> -->
-<!-- 										<img class="card-img" src="../img/product/product2.png" alt=""> -->
-<!-- 										<ul class="card-product__imgOverlay"> -->
-<!-- 											<li><button> -->
-<!-- 													<i class="ti-shopping-cart"></i> -->
-<!-- 												</button></li> -->
-<!-- 											<li><button> -->
-<!-- 													<i class="ti-heart"></i> -->
-<!-- 												</button></li> -->
-<!-- 										</ul> -->
-<!-- 									</div> -->
-<!-- 									<div class="card-body"> -->
-<!-- 										<button class="image-button" id="image4" onclick="selectImage('image4')"></button> -->
-<!-- 										<button class="image-button" id="image5" onclick="selectImage('image5')"></button> -->
-<!-- 										<button class="image-button" id="image6" onclick="selectImage('image6')"></button> -->
-<!-- 										<p>Beauty</p> -->
-<!-- 										<h4 class="card-product__title"> -->
-<!-- 											<a href="#">Women Freshwash</a> -->
-<!-- 										</h4> -->
-<!-- 										<p class="card-product__price">$150.00</p> -->
-<!-- 									</div> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
-<!-- 							<div class="col-md-6 col-lg-4"> -->
-<!-- 								<div class="card text-center card-product"> -->
-<!-- 									<div class="card-product__img"> -->
-<!-- 										<img class="card-img" src="../img/product/product3.png" alt=""> -->
-<!-- 										<ul class="card-product__imgOverlay"> -->
-<!-- 											<li><button> -->
-<!-- 													<i class="ti-shopping-cart"></i> -->
-<!-- 												</button></li> -->
-<!-- 											<li><button> -->
-<!-- 													<i class="ti-heart"></i> -->
-<!-- 												</button></li> -->
-<!-- 										</ul> -->
-<!-- 									</div> -->
-<!-- 									<div class="card-body"> -->
-<!-- 									    <button class="image-button" id="image7" onclick="selectImage('image7')"></button> -->
-<!-- 										<button class="image-button" id="image8" onclick="selectImage('image8')"></button> -->
-<!-- 										<button class="image-button" id="image9" onclick="selectImage('image9')"></button> -->
-<!-- 										<p>Decor</p> -->
-<!-- 										<h4 class="card-product__title"> -->
-<!-- 											<a href="#">Room Flash Light</a> -->
-<!-- 										</h4> -->
-<!-- 										<p class="card-product__price">$150.00</p> -->
-<!-- 									</div> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
-<!-- 							<div class="col-md-6 col-lg-4"> -->
-<!-- 								<div class="card text-center card-product"> -->
-<!-- 									<div class="card-product__img"> -->
-<!-- 										<img class="card-img" src="../img/product/product4.png" alt=""> -->
-<!-- 										<ul class="card-product__imgOverlay"> -->
-<!-- 											<li><button> -->
-<!-- 													<i class="ti-shopping-cart"></i> -->
-<!-- 												</button></li> -->
-<!-- 											<li><button> -->
-<!-- 													<i class="ti-heart"></i> -->
-<!-- 												</button></li> -->
-<!-- 										</ul> -->
-<!-- 									</div> -->
-<!-- 									<div class="card-body"> -->
-<!-- 									    <button class="image-button" id="image10" onclick="selectImage('image10')"></button> -->
-<!-- 										<button class="image-button" id="image11" onclick="selectImage('image11')"></button> -->
-<!-- 										<button class="image-button" id="image12" onclick="selectImage('image12')"></button> -->
-<!-- 										<p>Decor</p> -->
-<!-- 										<h4 class="card-product__title"> -->
-<!-- 											<a href="#">Room Flash Light</a> -->
-<!-- 										</h4> -->
-<!-- 										<p class="card-product__price">$150.00</p> -->
-<!-- 									</div> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
-<!-- 							<div class="col-md-6 col-lg-4"> -->
-<!-- 								<div class="card text-center card-product"> -->
-<!-- 									<div class="card-product__img"> -->
-<!-- 										<img class="card-img" src="../img/product/product5.png" alt=""> -->
-<!-- 										<ul class="card-product__imgOverlay"> -->
-<!-- 											<li><button> -->
-<!-- 													<i class="ti-shopping-cart"></i> -->
-<!-- 												</button></li> -->
-<!-- 											<li><button> -->
-<!-- 													<i class="ti-heart"></i> -->
-<!-- 												</button></li> -->
-<!-- 										</ul> -->
-<!-- 									</div> -->
-<!-- 									<div class="card-body"> -->
-<!-- 										<button class="image-button" id="image13" onclick="selectImage('image13')"></button> -->
-<!-- 										<button class="image-button" id="image14" onclick="selectImage('image14')"></button> -->
-<!-- 										<button class="image-button" id="image15" onclick="selectImage('image15')"></button> -->
-<!-- 										<p>Accessories</p> -->
-<!-- 										<h4 class="card-product__title"> -->
-<!-- 											<a href="#">Man Office Bag</a> -->
-<!-- 										</h4> -->
-<!-- 										<p class="card-product__price">$150.00</p> -->
-<!-- 									</div> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
-<!-- 							<div class="col-md-6 col-lg-4"> -->
-<!-- 								<div class="card text-center card-product"> -->
-<!-- 									<div class="card-product__img"> -->
-<!-- 										<img class="card-img" src="../img/product/product6.png" alt=""> -->
-<!-- 										<ul class="card-product__imgOverlay"> -->
-<!-- 											<li><button> -->
-<!-- 													<i class="ti-shopping-cart"></i> -->
-<!-- 												</button></li> -->
-<!-- 											<li><button> -->
-<!-- 													<i class="ti-heart"></i> -->
-<!-- 												</button></li> -->
-<!-- 										</ul> -->
-<!-- 									</div> -->
-<!-- 									<div class="card-body"> -->
-<!-- 										<button class="image-button" id="image16" onclick="selectImage('image16')"></button> -->
-<!-- 										<button class="image-button" id="image17" onclick="selectImage('image17')"></button> -->
-<!-- 										<button class="image-button" id="image18" onclick="selectImage('image18')"></button> -->
-<!-- 										<p>Kids Toy</p> -->
-<!-- 										<h4 class="card-product__title"> -->
-<!-- 											<a href="#">Charging Car</a> -->
-<!-- 										</h4> -->
-<!-- 										<p class="card-product__price">$150.00</p> -->
-<!-- 									</div> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
-<!-- 							<div class="col-md-6 col-lg-4"> -->
-<!-- 								<div class="card text-center card-product"> -->
-<!-- 									<div class="card-product__img"> -->
-<!-- 										<img class="card-img" src="../img/product/product7.png" alt=""> -->
-<!-- 										<ul class="card-product__imgOverlay"> -->
-<!-- 											<li><button> -->
-<!-- 													<i class="ti-shopping-cart"></i> -->
-<!-- 												</button></li> -->
-<!-- 											<li><button> -->
-<!-- 													<i class="ti-heart"></i> -->
-<!-- 												</button></li> -->
-<!-- 										</ul> -->
-<!-- 									</div> -->
-<!-- 									<div class="card-body"> -->
-<!-- 										<button class="image-button" id="image19" onclick="selectImage('image19')"></button> -->
-<!-- 										<button class="image-button" id="image20" onclick="selectImage('image20')"></button> -->
-<!-- 										<button class="image-button" id="image21" onclick="selectImage('image21')"></button> -->
-<!-- 										<p>Accessories</p> -->
-<!-- 										<h4 class="card-product__title"> -->
-<!-- 											<a href="#">Blutooth Speaker</a> -->
-<!-- 										</h4> -->
-<!-- 										<p class="card-product__price">$150.00</p> -->
-<!-- 									</div> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
-<!-- 							<div class="col-md-6 col-lg-4"> -->
-<!-- 								<div class="card text-center card-product"> -->
-<!-- 									<div class="card-product__img"> -->
-<!-- 										<img class="card-img" src="../img/product/product8.png" alt=""> -->
-<!-- 										<ul class="card-product__imgOverlay"> -->
-<!-- 											<li><button> -->
-<!-- 													<i class="ti-shopping-cart"></i> -->
-<!-- 												</button></li> -->
-<!-- 											<li><button> -->
-<!-- 													<i class="ti-heart"></i> -->
-<!-- 												</button></li> -->
-<!-- 										</ul> -->
-<!-- 									</div> -->
-<!-- 									<div class="card-body"> -->
-<!-- 										<button class="image-button" id="image22" onclick="selectImage('image22')"></button> -->
-<!-- 										<button class="image-button" id="image23" onclick="selectImage('image23')"></button> -->
-<!-- 										<button class="image-button" id="image24" onclick="selectImage('image24')"></button> -->
-<!-- 										<p>Kids Toy</p> -->
-<!-- 										<h4 class="card-product__title"> -->
-<!-- 											<a href="#">Charging Car</a> -->
-<!-- 										</h4> -->
-<!-- 										<p class="card-product__price">$150.00</p> -->
-<!-- 									</div> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
-<!-- 							<div class="col-md-6 col-lg-4"> -->
-<!-- 								<div class="card text-center card-product"> -->
-<!-- 									<div class="card-product__img"> -->
-<!-- 										<img class="card-img" src="../img/product/product1.png" alt=""> -->
-<!-- 										<ul class="card-product__imgOverlay"> -->
-<!-- 											<li><button> -->
-<!-- 													<i class="ti-shopping-cart"></i> -->
-<!-- 												</button></li> -->
-<!-- 											<li><button> -->
-<!-- 													<i class="ti-heart"></i> -->
-<!-- 												</button></li> -->
-<!-- 										</ul> -->
-<!-- 									</div> -->
-<!-- 									<div class="card-body"> -->
-<!-- 										<button class="image-button" id="image25" onclick="selectImage('image25')"></button> -->
-<!-- 										<button class="image-button" id="image26" onclick="selectImage('image26')"></button> -->
-<!-- 										<button class="image-button" id="image27" onclick="selectImage('image27')"></button> -->
-<!-- 										<p>Accessories</p> -->
-<!-- 										<h4 class="card-product__title"> -->
-<!-- 											<a href="#">Quartz Belt Watch</a> -->
-<!-- 										</h4> -->
-<!-- 										<p class="card-product__price">$150.00</p> -->
-<!-- 									</div> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
+														
 						</div>
 					</section>
 					<!-- ================ category section end ================= -->
 		<div class="btnAreaList">
-				<div class="allPageMoving1">		
+		<div class="allPageMoving1">
+					
 		<!-- 첫 페이지 이동 -->
-		
     	<c:if test="${page!=1 }">
-      <a href= "/product/product_page?page=1&category=${category}&s_word=${s_word}"><li class="first"></li></a>
+      	<a href= "/product/product_page?page=1&category=${category}&s_word=${s_word}">
+		<img src="../img/btn/btn_pre2.gif" alt="처음으로" />
+<!--       	<li class="first"></li>-->
+		</a>		
     	</c:if>
     	<c:if test="${page==1 }">
-  			<li class="first"></li>
+<!--   			<li class="first"></li> -->
+		<img src="../img/btn/btn_pre2.gif" alt="처음으로" />
     	</c:if>
       <!-- 이전 페이지 이동 -->
       <c:if test="${page>1 }">
-      <a href="/product/product_page?page=${page-1}&category=${category}&s_word=${s_word}"><li class="prev"></li></a>
+      <a href="/product/product_page?page=${page-1}&category=${category}&s_word=${s_word}">
+      <img src="../img/btn/btn_pre1.gif" alt="앞페이지로" />
+<!--       <li class="prev"></li> -->
+      </a>
       </c:if>
       <c:if test="${page==1 }">
-      	<li class="prev"></li>
+<!--       	<li class="prev"></li> -->
+	  <img src="../img/btn/btn_pre1.gif" alt="앞페이지로" />
       </c:if>
       <!-- 페이지 리스트 -->
       <c:forEach begin="${startPage}" end="${endPage}" step="1" var="num">
       	<c:if test="${num != page }">
 	      <a href="/product/product_page?page=${num}&category=${category}&s_word=${s_word}">      
-	     	 <li class="num"><div>${num}</div></li>
+	     	 <li class="num"><div class="number-box">${num}</div></li>
 	      </a>
       	</c:if>
       <c:if test="${num == page }">
-      	<li class="num on"><div>${num}</div></li>
+      	<li class="num on"><div class="number-box">${num}</div></li>
       </c:if>
       </c:forEach>
       <!-- 다음 페이지 이동 -->
       <c:if test="${page<maxPage }">
-	     <a href="/product/product_page?page=${page+1}&category=${category}&s_word=${s_word}"><li class="next"></li></a> 
+	     <a href="/product/product_page?page=${page+1}&category=${category}&s_word=${s_word}">
+<!-- 	     <li class="next"></li> -->
+	     <img src="../img/btn/btn_next1.gif" alt="뒤페이지로" />
+	     </a> 
       </c:if>
       <c:if test="${page==maxPage }">
-      	<li class="next">
+<!--       	<li class="next"> -->
+	  <img src="../img/btn/btn_next1.gif" alt="뒤페이지로" />
       </c:if>
       <!-- 끝 페이지 이동 -->
       <c:if test="${page !=  maxPage }">
       <a href="/product/product_page?page=${maxPage}&category=${category}&s_word=${s_word}">
-      <li class="last"></li>
+      <img src="../img/btn/btn_next2.gif" alt="마지막페이지로" />
+<!--       <li class="last"></li> -->
       </a>
       </c:if>
       <c:if test="${page ==  maxPage }">
-      <li class="last"></li>
+      <img src="../img/btn/btn_next2.gif" alt="마지막페이지로" />
+<!--       <li class="last"></li> -->
       </a>
       </c:if>
 						
