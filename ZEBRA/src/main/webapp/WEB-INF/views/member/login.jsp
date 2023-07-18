@@ -32,11 +32,13 @@
 <link rel="stylesheet" href="../css/login.css">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script> <!-- 제이쿼리 사용 할때 $ 사용 하기위한 js  -->
 
-
-<script type="text/javascript">
-
-
-  </script> 
+<script type="text/javascript"></script>
+<script>
+ 	if("${loginCheck}"=="fail"){
+		alert("아이디 또는 패스워드가 일치하지 않습니다.");
+		$("#loginID").focus();// 아이디 입력 창에서 클릭을 하면 입력 커서가 들어가있으라는 뜻 
+	} 
+</script>
 </head>
 <body>
 <%@ include file="../top.jsp"%>	
@@ -80,15 +82,20 @@
 						<form action="/member/login" method="post" name="loginFrm">
 							<ul>
 								<li>
-									<input type="text" class="loginType" name="mid" id="mid"  onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='loginType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" />
+									<input type="text" class="loginType" name="MID" id="MID"  onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='loginType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" />
 								</li>
 								<li>
-									<input type="password" class="passType" name="mpassword" id="mpassword" onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='passType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" />
+									<input type="password" class="passType" name="MPASSWORD" id="MPASSWORD" onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='passType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" />
 								</li>
 							</ul>
 
-							<div class="btn"><a style="cursor: pointer;" onclick="loginBtn()" class="sbtn">로그인</a></div>
-							<div class="chk"><input type="checkbox" id="idsave"/><label for="idsave">아이디 저장</label></div>							
+							<div class="btn">
+							<a onclick="loginBtn()"  href="http://localhost:8000/layout/index?resultCode=s_login" style="cursor: pointer;"  class="sbtn">로그인</a></div>
+							
+							
+							<div class="chk">
+							<input type="checkbox" id="idsave"/>
+							<label for="idsave">아이디 저장</label></div>							
 
 							<div class="point">
 								<p>아이디와 비밀번호를 잊으셨나요?</p>
@@ -99,7 +106,6 @@
 					</div>
 
 
-				</div>
 			</div>
 			<!-- //contents -->
 

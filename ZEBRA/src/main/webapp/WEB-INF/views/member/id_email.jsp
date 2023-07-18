@@ -51,10 +51,6 @@
 		<div id="outbox">		
 		
 			
-			<!-- contents -->
-		<!-- 	<div id="contents" > -->
-				<div id="member" >
-			
     <div class="container">
      <!--  <div class="d-none d-sm-block mb-5 pb-4">
         <div id="map" style="height: 20px;"></div>

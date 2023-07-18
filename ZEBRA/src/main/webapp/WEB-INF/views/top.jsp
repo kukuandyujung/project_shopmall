@@ -1,9 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
    <script>
-	      if("${resultCode}"=="s_login"){
-	    	   alert("로그인 하였습니다.!!");
-	       }
+	   if("${loginCheck}"== "success" ){
+		   alert("${sessionName}님! 로그인 되었습니다.");
+	}
+	
+	function logoutBtn(){
+		alert("로그아웃이 되었습니다.");
+		location.href="/member/logout";
+	}
 	</script>
 
       <!--================ Start Header Menu Area =================-->
@@ -93,11 +98,8 @@
 							</ul></li>
 					</ul>
 					
-					<script>
-					  function logoutBtn(){
-						  alert("로그아웃을 진행합니다.");
-					  }
-					</script>
+					
+				
 					
 					<ul class="nav-shop">
 						<li class="nav-item"><input type="text">
@@ -106,18 +108,25 @@
 							</button></li>
 						<li class="nav-item"><a href="/mypage/cart"><button>
 									<i class="ti-shopping-cart"></i>
-								</button></li></a>
+								</button></a></li>
 						
 						<li class="nav-item"><a class="" href="/mypage/orderhistory"
-							style="font-weight: bold; font-size: 15px;">My Page</a> 
-							<c:if test="${sessionId==null}"></li>
+							style="font-weight: bold; font-size: 15px;">My Page</a></li>
+							<c:if test="${sessionId==null}">
 								<li class="nav-item" style="margin-left: 10px;">
 								<a class="" href="/member/login" style="font-weight: bold; font-size: 15px;">Sign in</a></li>
 							</c:if> 
 							<c:if test="${sessionId!=null}">
 								<li><a href="#">${sessionName}님</a>
-								<li><a "onclick="logoutBtn()" style="cursor: pointer;style="font-weight:bold;  font-size: 15px;">LOGOUT</a></li>
+								<li><a onclick="logoutBtn()" style="cursor: pointer;style="font-weight:bold;  font-size: 15px;">LOGOUT</a></li>
 							</c:if>
+							
+							<!-- <script>
+					  		function logoutBtn(){
+						 	 alert("로그아웃을 진행합니다.");
+					 		 }
+					  		</script>
+							  -->
 							 </li>
 							</li>
 						</li>

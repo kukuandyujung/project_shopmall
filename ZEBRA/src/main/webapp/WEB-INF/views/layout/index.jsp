@@ -33,7 +33,21 @@
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/pretendard.css">
 <link rel="stylesheet" href="../css/style.css">
-<script type="text/javascript"></script>
+<script type="text/javascript">
+if("${resultCode}"=="f_login"){
+	   alert("아이디 또는 패스워드가 일치하지 않습니다. 다시 로그인해주세요.");
+	   $("#MID").focus();
+	}
+
+	function loginBtn(){
+		if($("#MID").val()=="" || $("#MPASSWORD").val()==""){
+			alert("아이디 또는 패스워드를 입력하셔야 로그인이 가능합니다.");
+			$("#MID").focus();
+			return false;
+		}
+		loginFrm.submit();
+	} 
+</script>
 </head>
 <body>
 	<%@ include file="../top.jsp"%>
@@ -358,11 +372,6 @@ style="height:500px;"  -->
 							<p class="card-product__price">$150.00</p>
 						</div>
 					</div>
-
-					
-
-					
-					
 
 					<div class="card text-center card-product">
 						<div class="card-product__img">

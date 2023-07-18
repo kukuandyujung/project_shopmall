@@ -91,7 +91,7 @@
 
 
 					<div class="memberbd">
-						<form action "/member/rasiter02" method ="post" name="joinFrm"></form>
+						<form action= "/member/register02" method ="post" name="joinFrm"></form>
 						<table summary="이름, 아이디, 비밀번호, 비밀번호 확인, 이메일, 이메일수신여부, 주소, 휴대폰, 생년월일 순으로 회원가입 정보를 등록할수 있습니다." class="memberWrite" border="1" cellspacing="0">
 							<caption>회원가입 입력</caption>
 							<colgroup>
@@ -122,28 +122,17 @@
 									<th scope="row"><span>아이디  </span></th>
 									<td>
 										<ul class="pta">
-											<li class="r10"><input type="text" name="id" id="register02Name" class="w134" /></li>
-											<li><a onclick="checkIdBtn()" class ="nbtnMini" class="nbtnMini">중복확인</a></li>
-											<input type="hidden"id="idck" value="false">
+											<li class="r10"><input type="text" name="MID" id="MID" class="w134" /></li>
+											<li><a onclick="heckIdBtn()" class ="nbtnMini" class="nbtnMini">중복확인</a></li>
+											<input type="hidden"id="idck" value="false">	
 											
-											<!-- 중복 검사  ajac -->
-											<script type="text/javascript">
-											function joinBtn(){
-											// alert("가입버튼을 클릭");
-											console.log($('#joinName').val());
-											console.log($('#joinId').val());
-											console.log($('#joinPw').val());
-											console.log($('#joinPhone').val());
-											console.log( $(":input:radio[name=gender]:checked").val());
-											console.log($("input[type=checkbox][name=hobby]:checked").val());
-											}
-											</script>
-											
-											
-											
-											
-											
-											
+											<!-- start 중복 확인 -->
+												<script type="text/javascript">
+													function checkIdBtn(){
+													alert("ckbtn");
+													console.log($('#idck').val())
+																					
+											    </script>
 											<li class="pt5"><span class="mvalign">첫 글자는 영문으로 4~16자 까지 가능, 영문, 숫자와 특수기호(_)만 사용 가능</span></li>
 										</ul>
 									</td>
@@ -152,7 +141,7 @@
 									<th scope="row"><span>비밀번호  </span></th>
 									<td>
 										<ul class="pta">
-											<li class="r10"><input type="password" name="pw" id= class="w134" /></li>
+											<li class="r10"><input type="password" name="MPASSWORD" id="MPASSWORD" class="w134" /></li>
 											<li><span class="mvalign">※ 영문 / 숫자 혼용으로 4~20자 까지 가능.</span></li>
 										</ul>
 									</td>
@@ -302,7 +291,23 @@
 
 					
 					<!-- Btn Area -->
-					<div class="btnArea">
+					
+					<!-- <!-- 중복 검사  ajac -->
+				<script type="text/javascript">
+					function joinBtn() {
+						 alert("가입버튼을 클릭");
+						console.log($('#ragisterName').val());
+						console.log($('#joinId').val());
+						console.log($('#joinPw').val());
+						console.log($('#joinPhone').val());
+						/* console.log($(":input:radio[name=gender]:checked")
+								.val());
+						console.log($(
+								"input[type=checkbox][name=hobby]:checked")
+								.val()); */
+					}
+				</script> -->
+				<div class="btnArea">
 						<div class="bCenter">
 							<ul>
 								<li><a href="/member/login" class="nbtnbig">취소하기</a></li>
