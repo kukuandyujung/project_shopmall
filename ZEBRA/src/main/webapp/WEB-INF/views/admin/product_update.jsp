@@ -25,16 +25,15 @@
     <h1>게시글수정</h1>
     <hr>
     <form action="product_update" name="update" method="post" enctype="multipart/form-data">
-     <div class="right_col" role="main">
-    <input type="hidden" name="pno" value="${pto.pno}">
-<%--       <input type="hidden" name="pfile" value="${pdto.pfile }"> --%>
-      <input type="hidden" name="page" value="${page }">
+     <input type="hidden" name="page" value="${page }">
       <input type="hidden" name="category" value="${category }">
       <input type="hidden" name="s_word" value="${s_word }">
+     <div class="right_col" role="main">
+  
 <!--                 <div class=""> -->
 <!--                     <div class="page-title"> -->
                         <div class="title_left">
-                            <h3>상품 수정 페이지</h3>
+                            <h3>상품 수정 페이지${pdto.pno}</h3>
                         </div>
 	    <div class="field item form-group">
                         <label class="col-form-label col-md-3 col-sm-3  label-align">상품 번호</label>
@@ -90,6 +89,8 @@
                             <textarea class="form-control" name="pdescript" cols="50" rows="10" placeholder="ex) women t-shirt " >${pdto.pdescript}</textarea>
                         </div>
                     </div>
+                    
+<!--                     data-validate-minmax="10,100"  -->
                     <div class="field item form-group">
                         <label class="col-form-label col-md-3 col-sm-3  label-align">메인 이미지1</label>
                         <div class="col-md-6 col-sm-6">
