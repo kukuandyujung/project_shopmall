@@ -164,10 +164,12 @@ public class AdminController {
 	
 	// 회원 테이블 전체 가져오기
 	@RequestMapping("/admin/member_table")
-	public String member_table(@RequestParam(defaultValue = "") String s_word, Model model) {
-		HashMap<String,Object> map = memberService.selectAll(s_word);
+	public String member_table(@RequestParam(defaultValue = "") String s_word, String category, Model model) {
+		System.out.println("AdminController member_table category : "+category);
+		HashMap<String,Object> map = memberService.selectAll(s_word, category);
 		model.addAttribute("list",map.get("list"));
 		model.addAttribute("s_word",map.get("s_word"));
+		model.addAttribute("category",map.get("category"));
 		return "admin/member_table";
 	}		
 	
@@ -178,20 +180,32 @@ public class AdminController {
 		model.addAttribute("mdto", map.get("mdto"));		
 		return "admin/member_tableView";
 	}
+	
+	// 회원 정보 1개 저장하기
+	@GetMapping("/admin/member_Write")
+	public String member_Write() {
+		return "admin/member_Write";
+	}
+	
+	@PostMapping("/admin/member_Write")
+	public String doMemberWrite(MemberDto mdto, Model model) throws Exception {
+		memberService.insertOne(mdto);
+		System.out.println("MCODE :"+mdto.getMCODE());
+		return "redirect:member_table";
+	}
 
 	// 회원 정보 1개 수정하기
 	@PostMapping("/admin/member_tableView") 
 	public String memberUpdate(MemberDto mdto, String MID, Model model) throws Exception { 
 		memberService.updateOne(mdto);		
-		System.out.println("MID :"+mdto.getMID());
-		System.out.println("MNAME :"+mdto.getMNAME());		
+		System.out.println("MID :"+mdto.getMTOTAL_PAY());
+		System.out.println("MNAME :"+mdto.getMTOTAL_ORDER());		
 		return "redirect:/admin/member_tableView?MID="+MID;
 	}	
 	
 	// 회원 정보 1개 삭제하기	  
 	@RequestMapping("/admin/memberDelete")
 	public String boardDelete(String MID) {
-		System.out.println("memberDelete : "+MID);
 		memberService.deleteOne(MID);
 		return "redirect:/admin/member_table";
 	}

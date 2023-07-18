@@ -18,7 +18,7 @@ public class MemberDto {
 	private String MPASSWORD;
 	private String MNAME ;
 	private String MGENDER;
-	private Timestamp MBIRTH;
+	private String MBIRTH;
 	private String MPHONE ;
 	private String MEMAIL ;
 	private String MZIP;

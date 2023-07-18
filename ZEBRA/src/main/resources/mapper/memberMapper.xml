@@ -8,17 +8,16 @@
 <!-- 회원 정보 전체 가져오기 -->
 <select id="selectAll" resultType="com.java.dto.MemberDto">
   SELECT * FROM zebra WHERE MCODE != 0
-  
-  	 <if test="category == 'all'">
-	     where btitle like '%'||#{s_word}||'%' or bcontent like '%'||#{s_word}||'%'
-	 </if>
-	 <if test="category == 'btitle'">
-	     where btitle like '%'||#{s_word}||'%'
-	 </if>
-	 <if test="category == 'bcontent'">
-	     where bcontent like '%'||#{s_word}||'%'
-	 </if>
-	 
+   
+   <if test="category == 'all'">
+	  AND (MID like '%'||#{s_word}||'%' or MNAME like '%'||#{s_word}||'%')
+	</if>
+	<if test="category == 'MID'">
+	  AND MID like '%'||#{s_word}||'%'
+	</if>
+	<if test="category == 'MNAME'">
+	  AND MNAME like '%'||#{s_word}||'%'
+	</if>
     <if test="#{s_word} != null">
       AND (
         MID LIKE '%' || #{s_word} || '%'
@@ -30,8 +29,7 @@
         OR MTOTAL_PAY LIKE '%' || #{s_word} || '%'
         OR MTOTAL_ORDER LIKE '%' || #{s_word} || '%'
       )
-      
-    </if>
+    </if>    
   ORDER BY MCODE ASC
 </select>
 
@@ -39,6 +37,11 @@
 <select id="selectOne" resultType="com.java.dto.MemberDto">
    select * from zebra where MID=#{MID}
 </select>
+
+<!-- 회원 정보 1개 저장하기 -->
+<insert id="insertOne">
+   insert into zebra values (1, #{MID}, #{MPASSWORD}, #{MNAME}, #{MGENDER}, #{MBIRTH}, #{MPHONE}, #{MEMAIL}, #{MZIP}, SYSDATE, 0, 0, 0)
+</insert>
 
 <!-- 회원 정보 1개 수정 -->
 <update id="updateOne">

@@ -79,7 +79,8 @@
         <div class="right_col" role="main">
           <div class="">
             <div class="page-title">
-            <form name="search" action="/admin/member_table" method="post"> <!-- form 아이디 지정  -->
+            
+            <form action="/admin/member_table" name="search" method="post"> 
               <div class="title_left">
                 <h3>Users <small>현재 가입자 목록</small></h3>
               </div>
@@ -90,9 +91,9 @@
                   
                     <!-- 검색창에 카테고리 추가 -->
                     <select name="category" id="category">
-			          <option value="all">전체</option>
-			          <option value="btitle">아이디</option>
-			          <option value="bcontent">이름</option>
+			          <option value="all">아이디+이름</option>
+			          <option value="MID">아이디</option>
+			          <option value="MNAME">이름</option>
 			        </select>
 			        
                     <input type="text" class="form-control" name="s_word" id="s_word" value="${s_word}" size="16">
@@ -112,6 +113,10 @@
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>회원 목록<small>Users</small></h2>
+                    
+                    <!-- 등록 페이지로 이동  -->
+                    <a href="/admin/member_Write"><input type="button" value="등록" class="write" style="font-size: 13px; margin-top: 2px; margin-left: 18px;"></a>
+                    
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -132,7 +137,7 @@
                           <div class="col-sm-12">
                             <div class="card-box table-responsive">
                             <p class="text-muted font-13 m-b-30">
-                     		회원 아이디를 누르면 수정과 삭제가 가능합니다.
+                     		회원 아이디를 누르면 수정, 삭제가 가능합니다.   
                   			</p>
 					
 					<!-- 템플릿 데이터 시작  -->

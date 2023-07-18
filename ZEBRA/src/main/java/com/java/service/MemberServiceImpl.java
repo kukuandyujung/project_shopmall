@@ -21,36 +21,44 @@ public class MemberServiceImpl implements MemberService {
 
 	// 회원 테이블 전체 가져오기
 	@Override
-	public HashMap<String, Object> selectAll(String s_word) {
+	public HashMap<String, Object> selectAll(String s_word, String category) {
 		HashMap<String, Object> map = new HashMap<>();
-
-		ArrayList<MemberDto> list = memberMapper.selectAll(s_word);
+		
+		ArrayList<MemberDto> list = memberMapper.selectAll(s_word, category);
 		map.put("list", list);
 		map.put("s_word", s_word);
-		System.out.println("s_word : " + s_word); // 값 잘 들어오는지 test 필수
+		System.out.println("s_word : "+s_word); // 값 잘 들어오는지 test 필수
 		return map;
 	}
 
 	@Override
 	// 회원 정보 1개 가져오기
 	public HashMap<String, Object> selectOne(String MID) {
-		HashMap<String, Object> map = new HashMap<>();
-		MemberDto mdto = memberMapper.selectOne(MID);
-		map.put("mdto", mdto);
-		return map;
+		 HashMap<String, Object> map = new HashMap<>();
+		 MemberDto mdto = memberMapper.selectOne(MID);
+	     map.put("mdto", mdto);
+		 return map;
 	}
 
+	@Override
+	// 회원 정보 1개 저장하기
+	public void insertOne(MemberDto mdto) {
+		System.out.println("member_Write : "+mdto);
+		memberMapper.insertOne(mdto);
+	}
+	
 	@Override
 	// 회원 정보 1개 수정하기
 	public void updateOne(MemberDto mdto) {
-		memberMapper.updateOne(mdto);
+		memberMapper.insertOne(mdto);
 	}
-
+	
 	@Override
 	// 회원 정보 1개 삭제하기
 	public void deleteOne(String MID) {
-		memberMapper.deleteOne(MID);
+		memberMapper.deleteOne(MID);		
 	}
+	
 
 	// START SUN //
 	@Override // 회원 로그인
