@@ -60,49 +60,78 @@ public class MemberController {
 	
 	
 	
-	
-	
+	// START SUN //
 	
 	@GetMapping("/member/login")
 	public String login() {
 		return "member/login";
 	}
 	
-	
 	//로그인 오버로딩 , 다른 메소드 , 로그인 버튼을 눌렀을때 post로 들어옴
-		@PostMapping("/index/login")
-		public String login(String mid,String mpassword, Model model) {
-			System.out.println("controller mid : "+mid);
-			System.out.println("controller mpassword : "+mpassword);
-			
-			//회원 1명 가져오기(로그인)
-			/* MemberDto mdto = memberService.selectOne(id,pw); */
-			String resultCode = memberService.selectLoginMember(mid,mpassword);
-			if(resultCode.equals("s_login")) {
-				return "redirect:/?resultCode="+resultCode;
-			}else {
-				model.addAttribute("resultCode",resultCode);  //f_login
-				System.out.println("controller resultCode2 : "+resultCode);
-			}
-			
-			return "redirect:member/login";
+	@PostMapping("/member/login")
+	public String login(String MID, String MPASSWORD, Model model) {
+		System.out.println("controller MID : " + MID);
+		System.out.println("controller MPASSWORD : " + MPASSWORD);
+
+		// 회원 1명 가져오기(로그인)
+		/* MemberDto mdto = memberService.selectOne(id,pw); */
+		String resultCode = memberService.selectLoginMember(MID, MPASSWORD);
+		if (resultCode.equals("s_login")) {
+			return "redirect:/?resultCode=" + resultCode;
+		} else {
+			model.addAttribute("resultCode", resultCode); // f_login
+			System.out.println("controller resultCode2 : " + resultCode);
 		}
+
+		return "redirect:member/login";
+	}
+	
+	
+	/* 로그인 체크
+	 * @PostMapping("/member/login") public String login(MemberDto memberDto, Model
+	 * model) {
+	 * 
+	 * System.out.println("memberDto 1: "+memberDto.getId());
+	 * System.out.println("memberDto 2: "+memberDto.getPw());
+	 * 
+	 * MemberDto mdto=memberService.selectLogin(memberDto); if(mdto!=null) {
+	 * session.setAttribute("sessionId", mdto.getId());
+	 * session.setAttribute("sessionName", mdto.getName());
+	 * model.addAttribute("loginCheck","success"); }else {
+	 * model.addAttribute("loginCheck","fail"); return "/member/login"; } return
+	 * "redirect:/index?loginCheck=success"; }
+	 */
+	/*
+	 * //로그아웃
+	 * 
+	 * @RequestMapping("/member/logout") public String logout(Model model) { //섹션 전체
+	 * 삭제 session.invalidate(); model.addAttribute("logout",1); return
+	 * "redirect:/layout/index"; } //logout
+	 * 
+	 */
+	// 회원 로그아웃
+	@RequestMapping("/member/logout")
+	public String logout() {
+		session.invalidate(); // 세션 모두 삭제
+		return "redirect:/index";
+	}
+		/*
 		
-	//로그아웃
-		// 회원 로그아웃
-		@RequestMapping("/member/logout")
-		public String logout(Model model) {
-			//섹션 전체 삭제
-			session.invalidate();
-			model.addAttribute("logout",1);
-			return "redirect:/layout/index";
-		} //logou
+		 *
+
+		 * //id 중복 검사
+		 * 
+		 * @PostMapping("/member/checkId")
+		 * 
+		 * @ResponseBody public String checkId(String MID) { //
+		 * System.out.println("checkID : " + id); MemberDto mdto =
+		 * memberService.selectId(MID); if(mdto==null) { //null인 경우 return "success";
+		 * }else { return "fail"; //가입 가능 } }
+		 * 
+		 * 
+		  */
 		
+	
+		// END SUN //
 		
-		
-	
-	
-	
-	
-	
 }

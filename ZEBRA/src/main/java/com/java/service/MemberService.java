@@ -21,9 +21,21 @@ public interface MemberService {
 	//로그인 확인하기
 	MemberDto selectLogin(MemberDto memberDto);
 	
+	
+	// START SUN //
 	// 회원 로그인
-	String selectLoginMember(String mid, String mpassword);
+	String selectLoginMember(String MID, String MPASSWORD);
 
-
+	/*
+	 * // 회원 로그아웃
+	 * 
+	 * 
+	 * 
+	 * 
+	 * //id 중복 검사 MemberDto selectId(String mid);
+	 */
+	// START SUN //
 	
 }
+
+	

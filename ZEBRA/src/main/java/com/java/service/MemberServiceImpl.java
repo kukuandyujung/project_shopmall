@@ -50,24 +50,34 @@ public class MemberServiceImpl implements MemberService {
 		memberMapper.deleteOne(MID);		
 	}
 	
-	@Override//로그인 확인
-	public MemberDto selectLogin(MemberDto memberDto) {
-		// 로그인 확인
-		MemberDto mdto = memberMapper.selectLogin(memberDto);
-		return mdto;
-	}
+	// START SUN
+		 @Override  //회원 로그인
+		 public String selectLoginMember(String MID, String MPASSWORD) {
+			  String resultCode = "";
+			  
+			  MemberDto mdto = memberMapper.selectLoginMember(MID, MPASSWORD);
+			  if(mdto!=null) {
+				  session.setAttribute("sessionId", mdto.getMID());
+				  session.setAttribute("sessionName", mdto.getMNAME()); resultCode = "s_login";
+			  }else { resultCode = "f_login"; } return resultCode;
+			  
+			  }
 
-	 @Override public String selectLoginMember(String mid, String mpassword) {
-		  String resultCode = "";
-		  
-		  MemberDto mdto = memberMapper.selectLoginMember(mid, mpassword);
-		  if(mdto!=null) {
-			  session.setAttribute("sessionId", mdto.getMID());
-			  session.setAttribute("sessionName", mdto.getMNAME()); resultCode = "s_login";
-		  }else { resultCode = "f_login"; } return resultCode;
-		  
-		  }
+		@Override
+		public MemberDto selectLogin(MemberDto memberDto) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		 
+				/*//
+				 * @Override //id 중복 검사 public MemberDto selectId(String MID) {
+				 * 
+				 * return null; }
+				 */
 
+		// END SUN //
+		
+		
 	
 	
 	
