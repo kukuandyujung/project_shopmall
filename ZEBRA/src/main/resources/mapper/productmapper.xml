@@ -109,6 +109,34 @@
 		update product set pstep=pstep+1 where pno=#{pno} and pstep=#{pstep};
 	</update>
 
+	<!-- ============================여기부터는 상품 페이지 ====================================== -->
+
+ 	<!-- 상품 전체 가져오기 --> 
+	<select id="selectPageAll" resultType="com.java.dto.ProductDto">
+		<!-- 공통 영역 -->
+	   		select * from (select rownum rnum, a.* from
+			(select * from product 
+				
+			<if test="category == 'all'">		
+				where pname like '%'||#{s_word}||'%' or pdescript like '%'||#{s_word}||'%'
+			</if>
+			<if test="category == 'pname'">		
+				where pname like '%'||#{s_word}||'%' 
+			</if>
+			<if test="category == 'pdescript'">		
+				where pdescript like '%'||#{s_word}||'%' 
+			</if>
+			
+		
+			<!-- 공통 영역  -->
+			<![CDATA[
+			order by pno asc) a) 
+		    where rnum>=#{startRow} and rnum<=#{endRow} 
+		  ]]> 
+	
+		
+	</select>
+
 
 </mapper>
 

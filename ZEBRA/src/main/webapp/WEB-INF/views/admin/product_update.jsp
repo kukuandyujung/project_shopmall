@@ -97,42 +97,42 @@
                             <input class="form-control-file border" type="file"  name="pm1"   data-validate-minmax="10,100"   >${pdto.pmainimg1}</div>
                     </div>
                     <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3  label-align">메인 이미지2<span class="required"></span></label>
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">메인 이미지2</label>
                         <div class="col-md-6 col-sm-6">
                             <input class="form-control" type="file"  name="pm2"   data-validate-minmax="10,100" >${pdto.pmainimg2}</div>
                     </div>
                     <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3  label-align">메인 이미지3<span class="required"></span></label>
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">메인 이미지3</label>
                         <div class="col-md-6 col-sm-6">
                             <input class="form-control" type="file"  name="pm3"   data-validate-minmax="10,100" >${pdto.pmainimg3}</div>
                     </div>
                     <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지1<span class="required"></span></label>
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지1</label>
                         <div class="col-md-6 col-sm-6">
                             <input class="form-control" type="file"  name="pd1"  data-validate-minmax="10,100" >${pdto.pdetailimg1}</div>
                     </div>
                     <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지2<span class="required"></span></label>
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지2</label>
                         <div class="col-md-6 col-sm-6">
                             <input class="form-control" type="file"  name="pd2"  data-validate-minmax="10,100" >${pdto.pdetailimg2}</div>
                     </div>
                     <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지3<span class="required"></span></label>
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지3</label>
                         <div class="col-md-6 col-sm-6">
                             <input class="form-control" type="file"  name="pd3"   data-validate-minmax="10,100"  >${pdto.pdetailimg3}</div>
                     </div>
                     <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지4<span class="required"></span></label>
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지4</label>
                         <div class="col-md-6 col-sm-6">
                             <input class="form-control" type="file"  name="pd4"   data-validate-minmax="10,100"  >${pdto.pdetailimg4}</div>
                     </div>
                     <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지5<span class="required"></span></label>
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지5</label>
                         <div class="col-md-6 col-sm-6">
                             <input class="form-control" type="file"  name="pd5"  data-validate-minmax="10,100" >${pdto.pdetailimg5}</div>
                     </div>
                     <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지6<span class="required"></span></label>
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지6</label>
                         <div class="col-md-6 col-sm-6">
                             <input class="form-control" type="file"  name="pd6"   data-validate-minmax="10,100" >${pdto.pdetailimg6}</div>
                     </div>
