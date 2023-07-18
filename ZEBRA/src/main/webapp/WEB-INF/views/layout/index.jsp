@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>
 <!DOCTYPE html>
 <html lang="en"> <!-- <html lang="en" class="skrollr skrollr-desktop"> -->
 <head>
@@ -8,6 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>ZEBRA</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script> <!-- 제이쿼리 사용 할때 $ 사용 하기위한 js  -->
 <link rel="icon" href="../img/logo2.png" type="image/png">
 <link rel="stylesheet" type="text/css" href="../css/reset.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="../css/layout.css?v=Y" />
@@ -33,21 +34,15 @@
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/pretendard.css">
 <link rel="stylesheet" href="../css/style.css">
-<script type="text/javascript">
-
+<script type="text/javascript"> </script>
  <script>
-	/* function loginBtn(){
-		if($("#MID").val()=="" || $("#MPASSWORD").val()==""){
-			alert("아이디 또는 패스워드를 입력하셔야 로그인이 가능합니다.");
-			$("#MID").focus();
-			return false;
-		}
-		loginFrm.submit();
-	}  */
+if("${resultCode}"=="s_login" ){
+	   alert("${sessionName}님! 로그인 되었습니다.");
+}//로그인 알림창
 </script> 
+
 </head>
 <body>
-
 
 	<%@ include file="../top.jsp"%>
 	<main class="site-main">

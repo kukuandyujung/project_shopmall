@@ -1,17 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<script> //성공 했을때 로그인 성공
-if("${resultCode}"=="s_login" ){
-	   alert("${sessionName}님! 로그인 되었습니다.");
-}
-
-function logoutBtn(){
-	alert("로그아웃이 되었습니다.");
-	location.href="/member/logout";
-}
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<script>
+	function logoutBtn() {
+		alert("로그아웃을 진행합니다.");
+		location.href = "../member/logout"; //클릭하는 순간 위치 url 찾아갈거야~
+	}//logoutBtn()
 </script>
 
-      <!--================ Start Header Menu Area =================-->
+<!--================ Start Header Menu Area =================-->
 <header class="header_area">
 	<div class="main_menu">
 		<nav class="navbar navbar-expand-lg navbar-light">
@@ -97,10 +95,10 @@ function logoutBtn(){
 									href="/product/category">Bedding</a></li>
 							</ul></li>
 					</ul>
-					
-					
-				
-					
+
+
+
+
 					<ul class="nav-shop">
 						<li class="nav-item"><input type="text">
 						<li class="nav-item"><button>
@@ -109,32 +107,26 @@ function logoutBtn(){
 						<li class="nav-item"><a href="/mypage/cart"><button>
 									<i class="ti-shopping-cart"></i>
 								</button></a></li>
-						
+
 						<li class="nav-item"><a class="" href="/mypage/orderhistory"
 							style="font-weight: bold; font-size: 15px;">My Page</a></li>
-							<c:if test="${sessionId==null}">
-								<li class="nav-item" style="margin-left: 10px;">
-								<a class="" href="/member/login" style="font-weight: bold; font-size: 15px;">Sign in</a></li>
-							</c:if> 
-							<c:if test="${sessionId!=null}">
-								<li><a href="#">${sessionName}님</a>
-								<li><a onclick="logoutBtn()" style="cursor: pointer;style="font-weight:bold;  font-size: 15px;">LOGOUT</a></li>
-							</c:if>
+						<c:if test="${sessionId==null}">
+							<li class="nav-item" style="margin-left: 10px;"><a class=""
+								href="/member/login" style="font-weight: bold; font-size: 15px;">Sign
+									in</a></li>
+						</c:if>
+						<c:if test="${sessionId!=null}">
+							<li><a href="#">${sessionName}님</a></li>
+							<li><a onclick="logoutBtn()" style="cursor: pointer;style="font-weight:bold;  font-size: 15px;">LOGOUT</a></li>
+						</c:if>	
 							
-							<!-- <script>
-					  		function logoutBtn(){
-						 	 alert("로그아웃을 진행합니다.");
-					 		 }
-					  		</script>
-							  -->
-							 </li>
 							</li>
 						</li>
 					</ul>
 				</div>
 			</div>
-	</div>
-	</nav>
+		</div>
+		</nav>
 	</div>
 </header>
 <!--================ End Header Menu Area =================-->

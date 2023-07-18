@@ -8,6 +8,7 @@
 <link rel="icon" href="../img/logo2.png" type="image/png">
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<script src="http://code.jquery.com/jquery-latest.min.js"></script> <!-- 제이쿼리 사용 할때 $ 사용 하기위한 js  -->
 <link rel="stylesheet" type="text/css" href="../css/reset.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="../css/layout.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="../css/content.css?v=Y" />
@@ -30,98 +31,103 @@
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/login.css">
-<script src="http://code.jquery.com/jquery-latest.min.js"></script> <!-- 제이쿼리 사용 할때 $ 사용 하기위한 js  -->
-
-<script type="text/javascript"></script>
-  
+<script type="text/javascript"></script> 
+<script>
+function loginBtn(){
+		if($("#MID").val()=="" || $("#MPASSWORD").val()==""){
+		alert("아이디 또는 패스워드를 입력하셔야 로그인이 가능합니다.");
+			$("#MID").focus();
+			return false;
+		}
+		loginFrm.submit();
+}//loginBtn
+</script> 
 
 </head>
 <body>
 <%@ include file="../top.jsp"%>	
   
-  <!-- ================ start banner area ================= -->	
+  <!-- ================ start banner area ================= -->
 	<section class="blog-banner-area" id="category">
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
-					<h1> Login </h1>
+					<h1>Login</h1>
 				</div>
 			</div>
-    </div>
+		</div>
 	</section>
 	<!-- ================ end banner area ================= -->
-  
-  <!--================ start Login Box Area =================-->
+
+	<!--================ start Login Box Area =================-->
 	<!-- container -->
-	<div id="container">	
-		<div id="location">			
-		</div>
-		
-		<div id="outbox">		
+	<div id="container">
+		<div id="location"></div>
+
+		<div id="outbox">
 			<div id="left">
-				<div id="title2">MEMBERSHIP<span>멤버쉽</span></div>
-				<ul>					
+				<div id="title2">
+					MEMBERSHIP<span>멤버쉽</span>
+				</div>
+				<ul>
 					<li><a href="/member/login" id="leftNavi1">로그인</a></li>
 					<li><a href="/member/register" id="leftNavi2">회원가입</a></li>
-					<li><a href="member/idsearch" id="leftNavi3">아이디/<span>비밀번호 찾기</span></a></li>								
-				</ul>			
-			</div><script type="text/javascript">initSubmenu(1,0);</script>
+					<li><a href="member/idsearch" id="leftNavi3">아이디/<span>비밀번호
+								찾기</span></a></li>
+				</ul>
+			</div>
+			<script type="text/javascript">
+				initSubmenu(1, 0);
+			</script>
 
 
 			<!-- contents -->
 			<div id="contents">
 				<div id="member">
-					
+
 					<h3>회원 로그인</h3>
 					<div class="informbox">
 						<div class="inform">
-						<form action="/member/login" method="post" name="loginFrm">
-							<ul>
-								<li>
-									<input type="text" class="loginType" name="MID" id="MID"  onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='loginType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" />
-								</li>
-								<li>
-									<input type="password" class="passType" name="MPASSWORD" id="MPASSWORD" onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='passType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" />
-								</li>
-							</ul>
+							<form action="/member/login" method="post" name="loginFrm">
+								<ul>
+									<li><input type="text" class="loginType" name="MID"
+										id="MID" onfocus="this.className='mfocus'"
+										onblur="if (this.value.length==0) {this.className='loginType'}else {this.className='mfocusnot'}"
+										style="ime-mode: inactive;" /></li>
+									<li><input type="password" class="passType"
+										name="MPASSWORD" id="MPASSWORD"
+										onfocus="this.className='mfocus'"
+										onblur="if (this.value.length==0) {this.className='passType'}else {this.className='mfocusnot'}"
+										style="ime-mode: inactive;" /></li>
+								</ul>
 
-							<div class="btn">
-							<a onclick="loginBtn()"  href="http://localhost:8000/layout/index?resultCode=s_login" style="cursor: pointer;"  class="sbtn">로그인</a></div>
-							
-							
-							<div class="chk">
-							<input type="checkbox" id="idsave"/>
-							<label for="idsave">아이디 저장</label></div>							
+								<div class="btn">
+									<a onclick="loginBtn()" style="cursor: pointer;" class="sbtn">로그인</a>
+								</div>
 
-							<div class="point">
-								<p>아이디와 비밀번호를 잊으셨나요?</p>
-								<a href="#" class="nbtn">아이디/비밀번호 찾기</a>
-							</div>
+
+								<div class="chk">
+									<input type="checkbox" id="idsave" /> <label for="idsave">아이디
+										저장</label>
+								</div>
+
+								<div class="point">
+									<p>아이디와 비밀번호를 잊으셨나요?</p>
+									<a href="#" class="nbtn">아이디/비밀번호 찾기</a>
+								</div>
 							</form>
 						</div>
 					</div>
-
-
+					</div>
+				</div>
+				<!-- //contents -->
 			</div>
-			<!-- //contents -->
-
-
 		</div>
-	</div>
-	<!-- //container -->
+		<!-- //container -->
 
-	<!--================End Login Box Area =================-->
+		<!--================End Login Box Area =================-->
 
- <%@ include file="../footer.jsp" %>
- 
-  <script src="../img/jquery/jquery-3.2.1.min.js"></script>
-  <script src="../img/bootstrap/bootstrap.bundle.min.js"></script>
-  <script src="../img/skrollr.min.js"></script>
-  <script src="../img/owl-carousel/owl.carousel.min.js"></script>
-  <script src="../img/nice-select/jquery.nice-select.min.js"></script>
-  <script src="../img/jquery.ajaxchimp.min.js"></script>
-  <script src="../img/mail-script.js"></script>
-  <script src="../js/main.js"></script>
+		<%@ include file="../footer.jsp"%>
 </body>
 
 <!-- Mirrored from themewagon.github.io/aroma/login by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 30 Jun 2023 06:56:25 GMT -->

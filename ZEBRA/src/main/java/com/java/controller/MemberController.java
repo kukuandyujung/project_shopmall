@@ -77,13 +77,22 @@ public class MemberController {
 		/* MemberDto mdto = memberService.selectOne(id,pw); */
 		String resultCode = memberService.selectLoginMember(MID, MPASSWORD);
 		if (resultCode.equals("s_login")) {
+			//System.out.println("resultCode: "+resultCode);
 			return "redirect:/layout/index?resultCode=" + resultCode;
 		} else {
 			model.addAttribute("resultCode", resultCode); // f_login
 			System.out.println("controller resultCode2 : " + resultCode);
 		}
 
-		return "member/login";
+		return "member/login";//여는 페이지
+	}
+	
+	// 로그아웃
+	@RequestMapping("/member/logout") // 로그아웃 링크 주소  url 찾아가는 주소 
+	public String logout(Model model) {
+		// 섹션 전체삭제
+		session.invalidate();
+		return "redirect:/layout/index"; // redirect 이 주소로 다시 찾아라 / 여는 페이지
 	}
 	
 	
@@ -102,19 +111,9 @@ public class MemberController {
 	 * "redirect:/index?loginCheck=success"; }
 	 */
 	/*
-	 * //로그아웃
-	 * 
-	 * @RequestMapping("/member/logout") public String logout(Model model) { //섹션 전체
-	 * 삭제 session.invalidate(); model.addAttribute("logout",1); return
-	 * "redirect:/layout/index"; } //logout
-	 * 
-	 */
-	// 회원 로그아웃
-	@RequestMapping("/member/logout")
-	public String logout() {
-		session.invalidate(); // 세션 모두 삭제
-		return "redirect:/index";
-	}
+	  //logout // *
+	
+*/	
 		/*
 		
 		 *
