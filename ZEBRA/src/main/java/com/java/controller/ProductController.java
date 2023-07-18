@@ -1,6 +1,7 @@
 package com.java.controller;
 
 import java.io.File;
+import java.io.ObjectInputStream.GetField;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -223,7 +224,8 @@ public class ProductController {
 	//상품 수정하기 get
 	@GetMapping("/admin/product_update") //product_update에 있는 뷰 페이지가 열림
 	public String product_update(int pno, 
-			int page, String category, String s_word, Model model) {
+			Integer page, 
+			String category, String s_word, Model model) {
 		System.out.println("product_update pno"+ pno );
 		
 		HashMap<String, Object> map= productService.selectOne(pno);
@@ -232,6 +234,7 @@ public class ProductController {
 		model.addAttribute("s_word", s_word);
 		model.addAttribute("page", page);
 		return "admin/product_update";
+		
 	}//product_update get 
 	
 	//상품 삭제하기 
@@ -244,20 +247,23 @@ public class ProductController {
 	//상품 수정하기 post
 	@PostMapping("/admin/product_update") //boardUpdate에 저장하기 
 	public String product_update(ProductDto pdto,
-			@RequestPart("pmainimg1") MultipartFile pmainimg1,
-			@RequestPart("pmainimg2") MultipartFile pmainimg2,
-			@RequestPart("pmainimg3") MultipartFile pmainimg3,
-			@RequestPart("pmainimg3") MultipartFile pdetailimg1,
-			@RequestPart("pmainimg3") MultipartFile pdetailimg2,
-			@RequestPart("pmainimg3") MultipartFile pdetailimg3,
-			@RequestPart("pmainimg3") MultipartFile pdetailimg4,
-			@RequestPart("pmainimg3") MultipartFile pdetailimg5,
-			@RequestPart("pmainimg3") MultipartFile pdetailimg6,
-		   int page, String category, String s_word,Model model)throws Exception {
-			//사진 1개 수정
+		
+			@RequestPart("pm1") MultipartFile pmainimg1,
+			@RequestPart("pm2") MultipartFile pmainimg2,
+			@RequestPart("pm3") MultipartFile pmainimg3,
+			@RequestPart("pd1") MultipartFile pdetailimg1,
+			@RequestPart("pd2") MultipartFile pdetailimg2,
+			@RequestPart("pd3") MultipartFile pdetailimg3,
+			@RequestPart("pd4") MultipartFile pdetailimg4,
+			@RequestPart("pd5") MultipartFile pdetailimg5,
+			@RequestPart("pd6") MultipartFile pdetailimg6,
+			Integer page,
+		   String category, String s_word,Model model)throws Exception {
+		
+		
+		//사진 1개 수정
 			System.out.println("product_update pdto" + pdto.getPno());
 		
-			
 			//파일이 있을 경우에 파일 저장 
 			if(!pmainimg1.isEmpty()) {	 
 				String ori_fileName = pmainimg1.getOriginalFilename();//실제 파일 이름
@@ -279,10 +285,82 @@ public class ProductController {
 				pdto.setPmainimg2(new_pmainimg2);
 				
 			}
+			if(!pmainimg3.isEmpty()) {	 
+				String ori_fileName = pmainimg3.getOriginalFilename();//실제 파일 이름
+				UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
+				String new_pmainimg3 = uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
+				String uploadUrl = "c:/upload/";//파일 업로드 위치 
+				File f = new File(uploadUrl+new_pmainimg3); 
+				pmainimg3.transferTo(f); //파일 저장 	
+				pdto.setPmainimg3(new_pmainimg3);
+				
+			}
+			if(!pdetailimg1.isEmpty()) {	 
+				String ori_fileName = pdetailimg1.getOriginalFilename();//실제 파일 이름
+				UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
+				String new_pdetailimg1 = uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
+				String uploadUrl = "c:/upload/";//파일 업로드 위치 
+				File f = new File(uploadUrl+new_pdetailimg1); 
+				pdetailimg1.transferTo(f); //파일 저장 	
+				pdto.setPdetailimg1(new_pdetailimg1);
+				
+			}
+			if(!pdetailimg2.isEmpty()) {	 
+				String ori_fileName = pdetailimg2.getOriginalFilename();//실제 파일 이름
+				UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
+				String new_pdetailimg2 = uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
+				String uploadUrl = "c:/upload/";//파일 업로드 위치 
+				File f = new File(uploadUrl+new_pdetailimg2); 
+				pdetailimg2.transferTo(f); //파일 저장 	
+				pdto.setPdetailimg2(new_pdetailimg2);
+				
+			}
+			if(!pdetailimg3.isEmpty()) {	 
+				String ori_fileName = pdetailimg3.getOriginalFilename();//실제 파일 이름
+				UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
+				String new_pdetailimg3 = uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
+				String uploadUrl = "c:/upload/";//파일 업로드 위치 
+				File f = new File(uploadUrl+new_pdetailimg3); 
+				pdetailimg3.transferTo(f); //파일 저장 	
+				pdto.setPdetailimg3(new_pdetailimg3);
+				
+			}
+			if(!pdetailimg4.isEmpty()) {	 
+				String ori_fileName = pdetailimg4.getOriginalFilename();//실제 파일 이름
+				UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
+				String new_pdetailimg4 = uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
+				String uploadUrl = "c:/upload/";//파일 업로드 위치 
+				File f = new File(uploadUrl+new_pdetailimg4); 
+				pdetailimg4.transferTo(f); //파일 저장 	
+				pdto.setPdetailimg4(new_pdetailimg4);
+				
+			}
+			if(!pdetailimg5.isEmpty()) {	 
+				String ori_fileName = pdetailimg5.getOriginalFilename();//실제 파일 이름
+				UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
+				String new_pdetailimg5 = uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
+				String uploadUrl = "c:/upload/";//파일 업로드 위치 
+				File f = new File(uploadUrl+new_pdetailimg5); 
+				pdetailimg5.transferTo(f); //파일 저장 	
+				pdto.setPdetailimg5(new_pdetailimg5);
+				
+			}
+			if(!pdetailimg6.isEmpty()) {	 
+				String ori_fileName = pdetailimg6.getOriginalFilename();//실제 파일 이름
+				UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
+				String new_pdetailimg6 = uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
+				String uploadUrl = "c:/upload/";//파일 업로드 위치 
+				File f = new File(uploadUrl+new_pdetailimg6); 
+				pdetailimg6.transferTo(f); //파일 저장 	
+				pdto.setPdetailimg6(new_pdetailimg6);
+				
+			}
+			
 		
 			
 			productService.updateOne(pdto);
 			s_word = URLEncoder.encode(s_word, "utf-8"); //수정 후 목록으로 돌아오지 않은 이유는 한글이 지원되지 않았었기 때문
+//			return "redirect:product_list";
 			return "redirect:product_list?page="+page+"&category="+category+"&s_word="+s_word;
 	}//product_update post
 }

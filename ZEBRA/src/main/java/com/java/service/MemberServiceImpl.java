@@ -3,6 +3,8 @@ package com.java.service;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +14,7 @@ import com.java.mapper.MemberMapper;
 
 @Service
 public class MemberServiceImpl implements MemberService {
-	
+	@Autowired HttpSession session;
 	@Autowired MemberMapper memberMapper;
 
 	// 회원 테이블 전체 가져오기
@@ -49,6 +51,20 @@ public class MemberServiceImpl implements MemberService {
 		return mdto;
 	}
 
+	 @Override public String selectLoginMember(String mid, String mpassword) {
+		  String resultCode = "";
+		  
+		  MemberDto mdto = memberMapper.selectLoginMember(mid, mpassword);
+		  if(mdto!=null) {
+			  session.setAttribute("sessionId", mdto.getMID());
+			  session.setAttribute("sessionName", mdto.getMNAME()); resultCode = "s_login";
+		  }else { resultCode = "f_login"; } return resultCode;
+		  
+		  }
+
+	
+	
+	
 
 
 }

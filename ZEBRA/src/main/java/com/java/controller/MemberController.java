@@ -1,14 +1,25 @@
 package com.java.controller;
 
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.java.service.MemberService;
 @Controller
 
 public class MemberController {	
 
+
+	@Autowired HttpSession session;
+	
+	@Autowired MemberService memberService;
+	
 	//회원가입
 	@GetMapping("/member/register")
 	public String register() {
@@ -30,19 +41,63 @@ public class MemberController {
 		return "member/register04";
 	}	
 	
+	@GetMapping("member/idsearch")
+	public String idsearch() {
+		return "member/idsearch";
+	}
 	
-	@RequestMapping("/member/login")
+	//id 확인 메일 전송
+	@RequestMapping("member/id_email")
+	public String id_email() {
+		return "member/id_email";
+	}
+	//비밀번호 확인 메일전송
+	@RequestMapping("member/pw_email")
+	public String pw_email() {
+		return "member/pw_email";
+	}
+	
+	
+	
+	
+	
+	
+	
+	@GetMapping("/member/login")
 	public String login() {
 		return "member/login";
 	}
-	/*
-	 * //로그인
-	 * 
-	 * @RequestMapping("/member/login") public String login() { return
-	 * "member/login"; }
-	 */
-
+	
+	
+	//로그인 오버로딩 , 다른 메소드 , 로그인 버튼을 눌렀을때 post로 들어옴
+		@PostMapping("/index/login")
+		public String login(String mid,String mpassword, Model model) {
+			System.out.println("controller mid : "+mid);
+			System.out.println("controller mpassword : "+mpassword);
 			
+			//회원 1명 가져오기(로그인)
+			/* MemberDto mdto = memberService.selectOne(id,pw); */
+			String resultCode = memberService.selectLoginMember(mid,mpassword);
+			if(resultCode.equals("s_login")) {
+				return "redirect:/?resultCode="+resultCode;
+			}else {
+				model.addAttribute("resultCode",resultCode);  //f_login
+				System.out.println("controller resultCode2 : "+resultCode);
+			}
+			
+			return "redirect:member/login";
+		}
+		
+	//로그아웃
+		// 회원 로그아웃
+		@RequestMapping("/member/logout")
+		public String logout(Model model) {
+			//섹션 전체 삭제
+			session.invalidate();
+			model.addAttribute("logout",1);
+			return "redirect:/layout/index";
+		} //logou
+		
 		
 		
 	

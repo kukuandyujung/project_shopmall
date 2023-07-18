@@ -39,4 +39,9 @@
 	select * from zebra where MID=#{MID} and MPASSWORD=#{MPASSWORD}
 </select>
 
+<!--회원 로그인 확인-->
+<select id="selectLoginMember" resultType="com.java.dto.MemberDto" >
+	select * from zebra where mid=#{mid} and mpassword=#{mpassword}
+</select>
+
 </mapper>

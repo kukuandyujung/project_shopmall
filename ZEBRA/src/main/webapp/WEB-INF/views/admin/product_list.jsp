@@ -12,17 +12,17 @@
 <meta name="description" content="JARDIN SHOP" />
 <meta name="keywords" content="JARDIN SHOP" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scaleable=no" />
-<link rel="stylesheet" type="text/css" href="../css/reset.css?v=Y" />
-<link rel="stylesheet" type="text/css" href="../css/layout.css?v=Y" />
-<link rel="stylesheet" type="text/css" href="../css/content.css?v=Y" />
-<script type="text/javascript" src="../js/jquery.min.js"></script>
-<script type="text/javascript" src="../js/top_navi.js"></script>
-<script type="text/javascript" src="../js/left_navi.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
-<script type="text/javascript" src="../js/common.js"></script>
-<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="../js/idangerous.swiper-2.1.min.js"></script>
-<script type="text/javascript" src="../js/jquery.anchor.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/reset.css?v=Y" />
+<link rel="stylesheet" type="text/css" href="/css/layout.css?v=Y" />
+<link rel="stylesheet" type="text/css" href="/css/content.css?v=Y" />
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/top_navi.js"></script>
+<script type="text/javascript" src="/js/left_navi.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript" src="/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="/js/idangerous.swiper-2.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery.anchor.js"></script>
 <style type="text/css">
 	*{margin: 0; padding: 0;}
 	h2,div{width:1000px auto; margin: 0px auto; } 

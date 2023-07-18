@@ -1,7 +1,9 @@
 package com.java.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class FController {
@@ -51,8 +53,13 @@ public class FController {
 	public String singleproduct() {
 		return "product/singleproduct";
 	}
-	@RequestMapping("/product/detail")
-	public String detail() {
-		return "product/detail";
+	
+	
+	@RequestMapping("/")
+	public String index(@RequestParam(defaultValue = "none") String resultCode,
+			Model model) {
+		model.addAttribute("resultCode",resultCode);
+		return "/member/index";	
 	}
+	
 }

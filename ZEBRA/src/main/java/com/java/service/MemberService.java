@@ -20,5 +20,8 @@ public interface MemberService {
 
 
 	
+	// 회원 로그인
+	String selectLoginMember(String mid, String mpassword);
 
+	
 }
