@@ -322,8 +322,7 @@
 								<div class="bCenter">
 									<ul>
 										<li><a href="#" class="sbtnMini">확인</a></li>
-										<li><a onclick="parent.$.fancybox.close();"
-											href="javascript:;" class="nbtnbig">취소</a></li>
+										<li><a onclick="parent.$.fancybox.close();" href="javascript:;" class="nbtnbig">취소</a></li>
 									</ul>
 								</div>
 							</div>
