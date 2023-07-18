@@ -15,12 +15,18 @@ public interface MemberMapper {
 	// 회원 정보 1개 가져오기
 	MemberDto selectOne(String MID);
 
+	// 회원 정보 1개 수정하기
+	void updateOne(MemberDto mdto);
+	
+	// 회원 정보 1개 삭제하기
+	void deleteOne(String MID);
+	
 	//로그인 확인
 	MemberDto selectLogin(MemberDto memberDto);
-
 	
 	//회원 로그인
 	MemberDto selectLoginMember(String mid, String mpassword);
+
 
 	
 	

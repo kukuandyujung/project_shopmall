@@ -105,6 +105,9 @@
 		where pno = #{pno}
 	</update>
 	
+	<update id="updatePstepCount">
+		update product set pstep=pstep+1 where pno=#{pno} and pstep=#{pstep};
+	</update>
 
 
 </mapper>

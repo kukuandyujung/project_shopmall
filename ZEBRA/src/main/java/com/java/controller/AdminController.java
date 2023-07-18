@@ -1,5 +1,9 @@
 package com.java.controller;
+import java.io.File;
+import java.net.URLEncoder;
 import java.util.HashMap;
+import java.util.UUID;
+
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.multipart.MultipartFile;
+
 import com.java.dto.MemberDto;
 import com.java.service.MemberService;
 @Controller
@@ -143,21 +150,6 @@ public class AdminController {
 	}
 	
 	
-	
-	
-	@RequestMapping("/admin/index2")
-	public String index2() {
-		
-		return "admin/index2";
-	}
-	
-	@RequestMapping("/admin/index3")
-	public String index3() {
-		
-		return "admin/index3";
-	}
-	
-	
 	@RequestMapping("/admin/map")
 	public String map() {
 		
@@ -179,14 +171,31 @@ public class AdminController {
 		return "admin/member_table";
 	}		
 	
-	// 회원 정보 1개 전체 가져오기
+	// 회원 정보 1개 가져오기
 	@RequestMapping("/admin/member_tableView")
 	public String member_tableView(@RequestParam(defaultValue = "aannesdg")String MID, Model model) {
 		HashMap<String, Object> map = memberService.selectOne(MID);
-		model.addAttribute("mdto", map.get("mdto"));
-		System.out.println("map : "+map);
+		model.addAttribute("mdto", map.get("mdto"));		
 		return "admin/member_tableView";
 	}
+
+	// 회원 정보 1개 수정하기
+	@PostMapping("/admin/member_tableView") 
+	public String memberUpdate(MemberDto mdto, String MID, Model model) throws Exception { 
+		memberService.updateOne(mdto);		
+		System.out.println("MID :"+mdto.getMID());
+		System.out.println("MNAME :"+mdto.getMNAME());		
+		return "redirect:/admin/member_tableView?MID="+MID;
+	}	
+	
+	// 회원 정보 1개 삭제하기	  
+	@RequestMapping("/admin/memberDelete")
+	public String boardDelete(String MID) {
+		System.out.println("memberDelete : "+MID);
+		memberService.deleteOne(MID);
+		return "redirect:/admin/member_table";
+	}
+	 
 	
 	@RequestMapping("/admin/morisjs")
 	public String morisjs() {

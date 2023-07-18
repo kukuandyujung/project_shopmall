@@ -4,11 +4,8 @@
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                  <li><a href="/admin/index"><i class="fa fa-home"></i> Home </a>
                     <ul class="nav child_menu">
-                      <li><a href="/admin/index">Dashboard</a></li>
-                      <li><a href="/admin/index2">Dashboard2</a></li>
-                      <li><a href="/admin/index3">Dashboard3</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>

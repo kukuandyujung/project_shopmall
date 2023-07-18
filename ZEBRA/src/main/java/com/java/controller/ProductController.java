@@ -224,15 +224,16 @@ public class ProductController {
 	//상품 수정하기 get
 	@GetMapping("/admin/product_update") //product_update에 있는 뷰 페이지가 열림
 	public String product_update(int pno, 
-			Integer page, 
+			int page, 
 			String category, String s_word, Model model) {
-		System.out.println("product_update pno"+ pno );
+		System.out.println("product_update pno get : "+ pno );
 		
 		HashMap<String, Object> map= productService.selectOne(pno);
 		model.addAttribute("pdto", map.get("pdto"));
 		model.addAttribute("category", category);
 		model.addAttribute("s_word", s_word);
 		model.addAttribute("page", page);
+		System.out.println("product_update page get : "+ page );
 		return "admin/product_update";
 		
 	}//product_update get 
@@ -257,12 +258,12 @@ public class ProductController {
 			@RequestPart("pd4") MultipartFile pdetailimg4,
 			@RequestPart("pd5") MultipartFile pdetailimg5,
 			@RequestPart("pd6") MultipartFile pdetailimg6,
-			Integer page,
+			int page,
 		   String category, String s_word,Model model)throws Exception {
 		
 		
 		//사진 1개 수정
-			System.out.println("product_update pdto" + pdto.getPno());
+			System.out.println("product_update getpno pdto" + pdto.getPno());
 		
 			//파일이 있을 경우에 파일 저장 
 			if(!pmainimg1.isEmpty()) {	 
@@ -357,10 +358,10 @@ public class ProductController {
 			}
 			
 		
-			
+			System.out.println("product_update post : " + page);
 			productService.updateOne(pdto);
 			s_word = URLEncoder.encode(s_word, "utf-8"); //수정 후 목록으로 돌아오지 않은 이유는 한글이 지원되지 않았었기 때문
 //			return "redirect:product_list";
-			return "redirect:product_list?page="+page+"&category="+category+"&s_word="+s_word;
+			return "redirect:product_list?page="+page+"&category="+category+"&s_word="+s_word ;
 	}//product_update post
 }

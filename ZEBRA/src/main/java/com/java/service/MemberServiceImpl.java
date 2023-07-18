@@ -38,6 +38,18 @@ public class MemberServiceImpl implements MemberService {
 		 return map;
 	}
 
+	@Override
+	// 회원 정보 1개 수정하기
+	public void updateOne(MemberDto mdto) {
+		memberMapper.updateOne(mdto);
+	}
+	
+	@Override
+	// 회원 정보 1개 삭제하기
+	public void deleteOne(String MID) {
+		memberMapper.deleteOne(MID);		
+	}
+	
 	@Override//로그인 확인
 	public MemberDto selectLogin(MemberDto memberDto) {
 		// 로그인 확인
@@ -59,5 +71,6 @@ public class MemberServiceImpl implements MemberService {
 	
 	
 	
+
 
 }
