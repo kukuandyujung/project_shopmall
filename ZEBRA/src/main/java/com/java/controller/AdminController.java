@@ -150,21 +150,6 @@ public class AdminController {
 	}
 	
 	
-	
-	
-	@RequestMapping("/admin/index2")
-	public String index2() {
-		
-		return "admin/index2";
-	}
-	
-	@RequestMapping("/admin/index3")
-	public String index3() {
-		
-		return "admin/index3";
-	}
-	
-	
 	@RequestMapping("/admin/map")
 	public String map() {
 		
@@ -190,17 +175,27 @@ public class AdminController {
 	@RequestMapping("/admin/member_tableView")
 	public String member_tableView(@RequestParam(defaultValue = "aannesdg")String MID, Model model) {
 		HashMap<String, Object> map = memberService.selectOne(MID);
-		model.addAttribute("mdto", map.get("mdto"));
+		model.addAttribute("mdto", map.get("mdto"));		
 		return "admin/member_tableView";
 	}
 
-	/*
-	 * @GetMapping("/admin/member_tableView") public String doMemberUpdate(String
-	 * MID, MemberDto mdto, Model model) throws Exception { // 회원 정보 1개 수정
-	 * System.out.println("MID :"+mdto.getMID());
-	 * System.out.println("MNAME :"+mdto.getMNAME()); memberService.updateOne(mdto);
-	 * return "redirect:admin/member_tableView?MID="+MID; }
-	 */
+	// 회원 정보 1개 수정하기
+	@PostMapping("/admin/member_tableView") 
+	public String memberUpdate(MemberDto mdto, String MID, Model model) throws Exception { 
+		memberService.updateOne(mdto);		
+		System.out.println("MID :"+mdto.getMID());
+		System.out.println("MNAME :"+mdto.getMNAME());		
+		return "redirect:/admin/member_tableView?MID="+MID;
+	}	
+	
+	// 회원 정보 1개 삭제하기	  
+	@RequestMapping("/admin/memberDelete")
+	public String boardDelete(String MID) {
+		System.out.println("memberDelete : "+MID);
+		memberService.deleteOne(MID);
+		return "redirect:/admin/member_table";
+	}
+	 
 	
 	@RequestMapping("/admin/morisjs")
 	public String morisjs() {

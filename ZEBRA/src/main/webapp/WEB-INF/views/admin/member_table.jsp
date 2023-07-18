@@ -35,12 +35,11 @@
     <link href="/build/css/custom.min.css" rel="stylesheet">
     
   </head>
-  
 
   <body class="nav-md">
   
   <script>
-	  /* 서치 기능 */
+	  /* 검색 기능 */
       function searchBtn(){		  
     	  if($("#s_word").val()) {
    	    search.submit();
@@ -56,7 +55,6 @@
             </div>
 
             <div class="clearfix"></div>
-            
 			
             <!-- menu profile quick info -->
             <div class="profile clearfix">
@@ -89,8 +87,17 @@
               <div class="title_right">
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                   <div class="input-group">
+                  
+                    <!-- 검색창에 카테고리 추가 -->
+                    <select name="category" id="category">
+			          <option value="all">전체</option>
+			          <option value="btitle">아이디</option>
+			          <option value="bcontent">이름</option>
+			        </select>
+			        
                     <input type="text" class="form-control" name="s_word" id="s_word" value="${s_word}" size="16">
-                    <span class="input-group-btn">
+                    <span class="input-group-btn">                   
+                    
                       <button class="btn btn-secondary" type="submit" onclick="searchBtn()">Go!</button>
                     </span>
                   </div>
@@ -125,7 +132,7 @@
                           <div class="col-sm-12">
                             <div class="card-box table-responsive">
                             <p class="text-muted font-13 m-b-30">
-                     		회원 아이디를 누르면 정보 수정이 가능합니다.
+                     		회원 아이디를 누르면 수정과 삭제가 가능합니다.
                   			</p>
 					
 					<!-- 템플릿 데이터 시작  -->
@@ -144,7 +151,7 @@
                       <tbody>
                       <c:forEach var="mdto" items="${list}"> <!-- var는 변수 공간, list를 cdto에 넣어라 -->
 						<tr>
-						  <td><a href="/admin/member_tableView/?MID=${mdto.MID}" style="text-decoration: underline">${mdto.MID}</a></td> <!-- ?는 쿼리 문자열의 시작을 나타내는 기호  -->
+						  <td><a href="/admin/member_tableView?MID=${mdto.MID}" style="text-decoration: underline">${mdto.MID}</a></td> <!-- ?는 쿼리 문자열의 시작을 나타내는 기호  -->
 						  <td>${mdto.MNAME }</td>
 						  <td>${mdto.MPHONE }</td> 						  
 						  <td>${mdto.formattedJoinDay }</td>	
@@ -168,15 +175,6 @@
           </div>
         </div>
         <!-- /page content -->
-
-        <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
-          </div>
-          <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
       </div>
 
     <!-- jQuery -->

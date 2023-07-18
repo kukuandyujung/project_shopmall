@@ -76,7 +76,7 @@
           <div class="tile_count">
             <div class="col-md-2 col-sm-4  tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> 총 회원수</span>
-              <div class="count">2500</div>
+              <div class="count"> ${mdto.MPHONE} </div>
               <span class="count_bottom"><i class="green">4% </i> 지난 달 대비</span>
             </div>
             <div class="col-md-2 col-sm-4  tile_stats_count">

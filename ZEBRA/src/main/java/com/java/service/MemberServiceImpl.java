@@ -44,6 +44,12 @@ public class MemberServiceImpl implements MemberService {
 		memberMapper.updateOne(mdto);
 	}
 	
+	@Override
+	// 회원 정보 1개 삭제하기
+	public void deleteOne(String MID) {
+		memberMapper.deleteOne(MID);		
+	}
+	
 	@Override//로그인 확인
 	public MemberDto selectLogin(MemberDto memberDto) {
 		// 로그인 확인
