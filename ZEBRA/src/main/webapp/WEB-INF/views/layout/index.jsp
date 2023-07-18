@@ -34,24 +34,22 @@
 <link rel="stylesheet" href="../css/pretendard.css">
 <link rel="stylesheet" href="../css/style.css">
 <script type="text/javascript">
-if("${resultCode}"=="f_login"){
-	   alert("아이디 또는 패스워드가 일치하지 않습니다. 다시 로그인해주세요.");
-	   $("#MID").focus();
-	}
 
-	function loginBtn(){
+ <script>
+	/* function loginBtn(){
 		if($("#MID").val()=="" || $("#MPASSWORD").val()==""){
 			alert("아이디 또는 패스워드를 입력하셔야 로그인이 가능합니다.");
 			$("#MID").focus();
 			return false;
 		}
 		loginFrm.submit();
-	} 
-</script>
+	}  */
+</script> 
 </head>
 <body>
-	<%@ include file="../top.jsp"%>
 
+
+	<%@ include file="../top.jsp"%>
 	<main class="site-main">
 <!-- 
 style="height:500px;"  -->
@@ -87,7 +85,7 @@ style="height:500px;"  -->
 				<div class="hero-carousel__slide">
 					<img src="../img/index/test1.png" alt="" class="img-fluid">
 					<a href="#" class="hero-carousel__slideOverlay">
-						<h2> WOMEN </h2>
+						<h2> WOMEN  </h2>
 						<p> Women Item </p>
 					</a>
 				</div>

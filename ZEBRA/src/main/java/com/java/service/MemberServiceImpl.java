@@ -58,10 +58,13 @@ public class MemberServiceImpl implements MemberService {
 			  MemberDto mdto = memberMapper.selectLoginMember(MID, MPASSWORD);
 			  if(mdto!=null) {
 				  session.setAttribute("sessionId", mdto.getMID());
-				  session.setAttribute("sessionName", mdto.getMNAME()); resultCode = "s_login";
-			  }else { resultCode = "f_login"; } return resultCode;
-			  
-			  }
+				  session.setAttribute("sessionName", mdto.getMNAME()); 
+				  resultCode = "s_login";
+				}else {
+					resultCode = "f_login";			
+				}		
+				return resultCode;
+			}
 
 		@Override
 		public MemberDto selectLogin(MemberDto memberDto) {
@@ -78,6 +81,7 @@ public class MemberServiceImpl implements MemberService {
 		// END SUN //
 		
 		
+
 	
 	
 	

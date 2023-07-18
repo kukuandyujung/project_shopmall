@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-   <script>
-	   if("${loginCheck}"== "success" ){
-		   alert("${sessionName}님! 로그인 되었습니다.");
-	}
-	
-	function logoutBtn(){
-		alert("로그아웃이 되었습니다.");
-		location.href="/member/logout";
-	}
-	</script>
+<script> //성공 했을때 로그인 성공
+if("${resultCode}"=="s_login" ){
+	   alert("${sessionName}님! 로그인 되었습니다.");
+}
+
+function logoutBtn(){
+	alert("로그아웃이 되었습니다.");
+	location.href="/member/logout";
+}
+</script>
 
       <!--================ Start Header Menu Area =================-->
 <header class="header_area">

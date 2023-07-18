@@ -77,13 +77,13 @@ public class MemberController {
 		/* MemberDto mdto = memberService.selectOne(id,pw); */
 		String resultCode = memberService.selectLoginMember(MID, MPASSWORD);
 		if (resultCode.equals("s_login")) {
-			return "redirect:/?resultCode=" + resultCode;
+			return "redirect:/layout/index?resultCode=" + resultCode;
 		} else {
 			model.addAttribute("resultCode", resultCode); // f_login
 			System.out.println("controller resultCode2 : " + resultCode);
 		}
 
-		return "redirect:member/login";
+		return "member/login";
 	}
 	
 	

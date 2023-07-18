@@ -15,12 +15,7 @@ public class FController {
 	@RequestMapping("/payment/confirmation")
 	public String confirmation() {
 		return "payment/confirmation";
-	}
-	@RequestMapping("/layout/index")
-	public String index() {
-		return "layout/index";
-	}
-	
+	}		
 	@RequestMapping("/member/register")
 	public String register() {
 		return "member/register";
@@ -55,11 +50,11 @@ public class FController {
 	}
 	
 	
-	@RequestMapping("/")
+	@RequestMapping("/layout/index")
 	public String index(@RequestParam(defaultValue = "none") String resultCode,
 			Model model) {
 		model.addAttribute("resultCode",resultCode);
-		return "/member/index";	
+		return "layout/index";	
 	}
 	
 }

@@ -33,12 +33,8 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script> <!-- 제이쿼리 사용 할때 $ 사용 하기위한 js  -->
 
 <script type="text/javascript"></script>
-<script>
- 	if("${loginCheck}"=="fail"){
-		alert("아이디 또는 패스워드가 일치하지 않습니다.");
-		$("#loginID").focus();// 아이디 입력 창에서 클릭을 하면 입력 커서가 들어가있으라는 뜻 
-	} 
-</script>
+  
+
 </head>
 <body>
 <%@ include file="../top.jsp"%>	
