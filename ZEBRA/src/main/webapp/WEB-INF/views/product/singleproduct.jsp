@@ -263,14 +263,13 @@
 						<div class="inputBody">
 							<div class="checkDivMt">
 								<table class="checkTable" style="border: 1px solid #d5d5d5;" border="1" cellspacing="0">
-									<caption>구매 후기 작성</caption>
 									<colgroup>
 										<col width="19%" class="tw30" />
 										<col width="*" />
 									</colgroup>
 									<tbody>
 										<tr>
-											<th scope="row"><span>평가</span></th>
+											<th scope="row"><span>평점</span></th>
 											<td>
 												<ul class="pta">
 													<li><input type="radio" name="appraisal" id="starFive" checked="checked" /> 
@@ -354,21 +353,6 @@
 											<div class="bodyArea">
 												너무 맛있어서 재주문 했습니다!<br />쟈뎅 커피 너무 맛있어요!
 											</div>
-
-											<!-- 답변 -->
-											<div class="answer">
-												<div class="inbox">
-													<div class="aname">
-														<p>담당자</p>
-													</div>
-
-													<div class="atxt">쟈뎅 커피를 사랑해주셔서 감사합니다. 앞으로도 노력하는 쟈뎅이
-														되겠습니다. 감사합니다. 쟈뎅 커피를 사랑해주셔서 감사합니다. 앞으로도 노력하는 쟈뎅이 되겠습니다.
-														감사합니다.</div>
-												</div>
-											</div>
-											<!-- //답변 -->
-
 											<div class="modify">
 												<a href="#">수정</a> <a href="#">삭제</a>
 											</div>
@@ -398,21 +382,6 @@
 											<div class="bodyArea">
 												너무 맛있어서 재주문 했습니다!<br />쟈뎅 커피 너무 맛있어요!
 											</div>
-
-											<!-- 답변 -->
-											<div class="answer">
-												<div class="inbox">
-													<div class="aname">
-														<p>담당자</p>
-													</div>
-
-													<div class="atxt">쟈뎅 커피를 사랑해주셔서 감사합니다. 앞으로도 노력하는 쟈뎅이
-														되겠습니다. 감사합니다. 쟈뎅 커피를 사랑해주셔서 감사합니다. 앞으로도 노력하는 쟈뎅이 되겠습니다.
-														감사합니다.</div>
-												</div>
-											</div>
-											<!-- //답변 -->
-
 											<div class="modify">
 												<a href="#">수정</a> <a href="#">삭제</a>
 											</div>
@@ -441,21 +410,6 @@
 											<div class="bodyArea">
 												너무 맛있어서 재주문 했습니다!<br />쟈뎅 커피 너무 맛있어요!
 											</div>
-
-											<!-- 답변 -->
-											<div class="answer">
-												<div class="inbox">
-													<div class="aname">
-														<p>담당자</p>
-													</div>
-
-													<div class="atxt">쟈뎅 커피를 사랑해주셔서 감사합니다. 앞으로도 노력하는 쟈뎅이
-														되겠습니다. 감사합니다. 쟈뎅 커피를 사랑해주셔서 감사합니다. 앞으로도 노력하는 쟈뎅이 되겠습니다.
-														감사합니다.</div>
-												</div>
-											</div>
-											<!-- //답변 -->
-
 											<div class="modify">
 												<a href="#">수정</a> <a href="#">삭제</a>
 											</div>
