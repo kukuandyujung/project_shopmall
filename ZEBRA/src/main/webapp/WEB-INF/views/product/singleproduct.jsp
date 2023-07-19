@@ -423,43 +423,44 @@
 
 				<!-- 댓글-->
 				<div class="replyWrite">
-					<ul>
-						<li class="in">
-							<p class="txt">
-								총 <span class="orange" id="cnum">${comList.size()}</span> 개의 댓글이
-								달려있습니다.
-							</p>
-							<p class="password">
-								비밀번호&nbsp;&nbsp;<input type="password" class="replynum" />
-							</p> <textarea class="replyType"></textarea>
-						</li>
-						<li class="btn"><a onclick="commentBtn()" class="replyBtn">등록</a></li>
-					</ul>
-				</div>
+						<ul>
+							<li class="in">
+								<p class="txt">총 <span class="orange" id="cnum">${comList.size()}</span> 개의 댓글이 달려있습니다.</p>
+								<p class="password">비밀번호&nbsp;&nbsp;<input type="password" class="replynum" /></p>
+								<textarea class="replyType"></textarea>
+							</li>
+							<li class="btn"><a onclick="commentBtn()" class="replyBtn">등록</a></li>
+						</ul>
+						<p class="ntic">※ 비밀번호를 입력하시면 댓글이 비밀글로 등록 됩니다.</p>
+					</div>
 
-				<div class="replyBox">
-					<c:forEach var="comDto" items="${comList }">
-						<ul id="${comDto.cno}">
-							<li class="name">${comDto.id}<span>[ ${comDto.cdate}
-									]</span></li>
+					<div class="replyBox">
+					    <c:forEach var="comDto" items="${comList }" >
+					    <ul id="${comDto.cno}">
+							<li class="name">${comDto.id} <span>[ ${comDto.cdate} ]</span></li>
 							<%--비밀글 노출 --%>
 							<c:if test="${sessionId != comDto.id && comDto.cpw !=null }">
-								<li class="txt"><span class="orange">※ 비밀글입니다.</span></li>
+							  <li class="txt">
+								<span class="orange">※ 비밀글입니다.</span>
+							  </li>
 							</c:if>
 							<c:if test="${!(sessionId != comDto.id && comDto.cpw !=null) }">
-								<li class="txt">${comDto.ccontent }</li>
+							  <li class="txt">${comDto.ccontent }</li>
 							</c:if>
-
+							
 							<%-- 자신의 댓글이 아닌경우 버튼노출 안됨 --%>
 							<c:if test="${sessionId == comDto.id }">
-								<li class="btn"><a
-									onclick="updateBtn(${comDto.cno},'${comDto.id }','${comDto.cdate}','${comDto.ccontent}')"
-									class="rebtn">수정</a> <a onclick="deleteBtn(${comDto.cno})"
-									class="rebtn">삭제</a></li>
+								<li class="btn">
+									<a onclick="updateBtn(${comDto.cno},'${comDto.id }','${comDto.cdate}','${comDto.ccontent}')" class="rebtn">수정</a>
+									<a onclick="deleteBtn(${comDto.cno})" class="rebtn">삭제</a>
+								</li>
 							</c:if>
 						</ul>
-					</c:forEach>
-				</div>
+					    </c:forEach>
+					   
+					   
+					   
+					</div>
 				<!-- //댓글 -->
 						<!-- 첫 페이지 이동 -->
 						<%--<div class="btnAreaList">

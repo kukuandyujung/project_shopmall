@@ -85,10 +85,8 @@ public class MemberController {
 			model.addAttribute("resultCode", resultCode); // f_login
 			System.out.println("controller resultCode2 : " + resultCode);
 		}
-
 		return "member/login";//여는 페이지
 	}
-	
 	// 로그아웃
 	@RequestMapping("/member/logout") // 로그아웃 링크 주소  url 찾아가는 주소 
 	public String logout(Model model) {
