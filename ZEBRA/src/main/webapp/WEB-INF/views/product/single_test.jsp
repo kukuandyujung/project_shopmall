@@ -19,6 +19,7 @@
 <link rel="stylesheet" type="text/css" href="../css/content.css" />
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script type="text/javascript"></script>
 <link rel="icon" href="../img/logo2.png" type="image/png">
 <link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
@@ -258,39 +259,210 @@
 						</table>
 					</div>
 				</div>
+				   <script>
+                      //1. 댓글추가 저장
+                      function commentBtn(){
+                    	  if("${sessionId}"==""){
+                    		  alert("로그인을 하셔야 댓글입력이 가능합니다.");
+                    		  location.href="/member/login";
+                    		  return false;
+                    	  }
+                    	  
+                    	  if($(".replyType").val().length<3){
+                    		  alert("2글자 이상 입력하셔야 등록가능합니다.");
+                    		  return false;
+                    	  }
+                    	  
+                    	  alert("댓글 저장합니다.");
+                    	  
+                    	  //ajax구문
+                    	  $.ajax({
+                    		  url:"/board/commentInsert",
+                    		  type:"post",
+                    		  data:{"id":"${sessionId}", //${sessionId}를 사용함.
+                    			    "bno":"${bdto.bno}",
+                    			    "cno":"111",
+                    			    "ccontent":$(".replyType").val(),
+                    			    "cpw":$(".replynum").val()
+                    		  },
+                    		  success:function(data){
+                    			  var dataHtml="";
+                    			  alert("댓글 저장 성공");
+                    			  //하단댓글 1개 가져오기
+                    			  //하단에 댓글추가코드
+                    			  dataHtml += "<ul id='"+ data.cno +"'>";
+                    			  dataHtml += "<li class='name'>"+ data.id +"<span>&nbsp&nbsp[ "+ moment(data.cdate).format("YYYY-MM-DD HH:mm:ss") +" ]</span></li>";
+                    			  dataHtml += "<li class='txt'>"+ data.ccontent +"</li>";
+                    			  dataHtml += "<li class='btn'>";
+                    			  dataHtml += "<a onclick=\"updateBtn("+data.cno+",'"+data.id+"','"+data.cdate+"','"+data.ccontent+"')\" class='rebtn'>수정</a>&nbsp";
+                    			  dataHtml += "<a onclick=\"deleteBtn("+data.cno+")\" class='rebtn'>삭제</a>";
+                    			  dataHtml += "</li>";
+                    			  dataHtml += "</ul>";
+                    			  
+                    			  $(".replyBox").prepend(dataHtml);  //prepend(위),append(아래),html(모두삭제후 추가)
+                    			  
+                    			  //글자삭제
+                    			  $(".replyType").val("");
+                    			  $(".replynum").val("");
+                    			  
+                    			  //총개수 수정
+		                    	  var cnum = Number($("#cnum").text())+1;
+		                    	  $("#cnum").text(cnum);
+                    			  
+                    			  
+                    		  },
+                    		  error:function(){
+                    			  alert("실패");
+                    		  }
+                    	  });//ajax
+                    	  
+                      }// 댓글저장 끝-->
+                      
+                      // <-- 2. 삭제버튼
+                      function deleteBtn(cno){
+                    	  if(confirm("댓글을 삭제하시겠습니까?")){
+	                    	  $.ajax({
+	                    		  url:"/board/commentDelete",
+	                    		  type:"post",
+	                    		  data:{"cno":cno }, // 댓글번호
+	                    		  success:function(data){
+	                    			  alert("댓글이 삭제되었습니다.");
+	                    			  $("#"+cno).remove();  // 삭제
+	                    			  //총개수 수정
+			                    	  var cnum = Number($("#cnum").text())-1;
+			                    	  $("#cnum").text(cnum);
+	                    		  },
+	                    		  error:function(){
+	                    			  alert("실패");
+	                    		  }
+	                    	  });//ajax
+                    	  }//if
+                    	  
+                    	  
+                      }//삭제버튼 -->
+                      
+                      
+                      //3. 댓글수정저장
+                      function updateSave(cno){
+                    	  //alert(cno);
+                    	  //alert($("#updateTxt").val());
+                    	  //alert($("#updatePw").val());
+                    	  
+                    	  if(confirm("댓글수정을 저장하시겠습니까?")){
+                    		  $.ajax({
+                        		  url:"/board/commentUpdateSave",
+                        		  type:"post",
+                        		  data:{ "cno":cno,
+                        			     "cpw":$("#updatePw").val(),
+                        			     "ccontent":$("#updateTxt").val() }, 
+                        		  success:function(data){
+                        			  alert(cno+"번 댓글수정 저장되었습니다.");
+                        			  
+                        			  var dataHtml="";
+                        			  
+                        			  //댓글화면 변경
+	                    			  dataHtml += "<li class='name'>"+ data.id +"<span>&nbsp&nbsp[ "+ moment(data.cdate).format("YYYY-MM-DD HH:mm:ss") +" ]</span></li>";
+	                    			  dataHtml += "<li class='txt'>"+ data.ccontent +"</li>";
+	                    			  dataHtml += "<li class='btn'>";
+	                    			  dataHtml += "<a onclick=\"updateBtn("+data.cno+",'"+data.id+"','"+data.cdate+"','"+data.ccontent+"')\" class='rebtn'>수정</a>&nbsp";
+	                    			  dataHtml += "<a onclick=\"deleteBtn("+data.cno+")\" class='rebtn'>삭제</a>";
+	                    			  dataHtml += "</li>";
+                        			  $("#"+cno).html(dataHtml);
+                        			  
+                        		  },
+                        		  error:function(){
+                        			  alert("실패");
+                        		  }
+                        	  });//ajax
+                    	  }//if
+                    	  
+                    	  
+                      }//댓글수정저장
+                      
+                      // 4. 댓글수정 폼
+                      function updateBtn(cno,id,cdate,ccontent){
+                    	  if(confirm("댓글을 수정하시겠습니까?")){
+                    		  
+                    		 let dataHtml="";
+                    		 
+                    		 dataHtml += "<li class='name'>"+id+"&nbsp;<span>["+cdate+"]</span>";
+                    		 dataHtml += "&nbsp;&nbsp;&nbsp;&nbsp;비밀번호&nbsp;&nbsp;<input type='password' class='replynum' id='updatePw' />";
+                    		 dataHtml += "</li>";
+                    		 dataHtml += "<li class='txt'>";
+                    		 dataHtml += "<textarea class='replyType' id='updateTxt'>"+ccontent+"</textarea>";
+                    		 dataHtml += "</li>";
+                    		 dataHtml += "<li class='btn'>";
+                    		 dataHtml += "<a onclick=\"updateSave("+cno+")\" class='rebtn'>저장</a>&nbsp;";
+                    		 dataHtml += "<a onclick=\"cancelBtn("+cno+",'"+id+"','"+cdate+"','"+ccontent+"')\" class='rebtn'>취소</a>";
+                    		 dataHtml += "</li>";
+  							
+                    		 $("#"+cno).html(dataHtml); 
+                    		 
+                    	  }//if
+                      }// 업데이트 -->
+                      
+                      function cancelBtn(cno,id,cdate,ccontent){
+                    	  alert("댓글 수정을 취소하셨습니다.");
+                    	  
+                    	  var dataHtml="";
+            			  
+            			  //댓글화면 변경
+            			  dataHtml += "<li class='name'>"+ id +"<span>&nbsp&nbsp[ "+ moment(cdate).format("YYYY-MM-DD HH:mm:ss") +" ]</span></li>";
+            			  dataHtml += "<li class='txt'>"+ ccontent +"</li>";
+            			  dataHtml += "<li class='btn'>";
+            			  dataHtml += "<a onclick=\"updateBtn("+cno+",'"+id+"','"+cdate+"','"+ccontent+"')\" class='rebtn'>수정</a>&nbsp";
+            			  dataHtml += "<a onclick=deleteBtn("+cno+") class='rebtn'>삭제</a>";
+            			  dataHtml += "</li>";
+            			  
+            			  $("#"+cno).html(dataHtml);
+                    	  
+                      }
+                      
+                      
+                    </script>
 
-				<div id="reply">
+					<!-- 댓글-->
+					<div class="replyWrite">
+						<ul>
+							<li class="in">
+								<p class="txt">총 <span class="orange" id="cnum">${comList.size()}</span> 개의 댓글이 달려있습니다.</p>
+								<p class="password">비밀번호&nbsp;&nbsp;<input type="password" class="replynum" /></p>
+								<textarea class="replyType"></textarea>
+							</li>
+							<li class="btn"><a onclick="commentBtn()" class="replyBtn">등록</a></li>
+						</ul>
+					</div>
 
-					<c:if test="${member == null }">
-						<p>
-							소감을 남기시려면 <a href="/member/login">로그인</a>해주세요
-						</p>
-					</c:if>
-
-					<c:if test="${member != null}">
-						<section class="replyForm">
-							<form role="form" method="post" autocomplete="off">
-							<input type="hidden" name="gdsNum" value="${view.gdsNum}">
-								<div class="input_area">
-									<textarea name="repCon" id="repCon"></textarea>
-								</div>
-
-								<div class="input_area">
-									<button type="submit" id="reply_btn">소감 남기기</button>
-								</div>
-
-							</form>
-						</section>
-					</c:if>
-
-					<section class="replyList">
-						<ol>
-							<li>댓글 목록</li>
-						</ol>
-					</section>
-				</div>
-				<div class="btnAreaList">
-					<!-- 페이징이동1 -->
+					<div class="replyBox">
+					    <c:forEach var="comDto" items="${comList }" >
+					    <ul id="${comDto.cno}">
+							<li class="name">${comDto.id} <span>[ ${comDto.cdate} ]</span></li>
+							<%--비밀글 노출 --%>
+							<c:if test="${sessionId != comDto.id && comDto.cpw !=null }">
+							  <li class="txt">
+								<span class="orange">※ 비밀글입니다.</span>
+							  </li>
+							</c:if>
+							<c:if test="${!(sessionId != comDto.id && comDto.cpw !=null) }">
+							  <li class="txt">${comDto.ccontent }</li>
+							</c:if>
+							
+							<%-- 자신의 댓글이 아닌경우 버튼노출 안됨 --%>
+							<c:if test="${sessionId == comDto.id }">
+								<li class="btn">
+									<a onclick="updateBtn(${comDto.cno},'${comDto.id }','${comDto.cdate}','${comDto.ccontent}')" class="rebtn">수정</a>
+									<a onclick="deleteBtn(${comDto.cno})" class="rebtn">삭제</a>
+								</li>
+							</c:if>
+						</ul>
+					    </c:forEach>
+					   
+					   
+					   
+					</div>
+					<!-- //댓글 -->
+				<!-- <div class="btnAreaList">
+					페이징이동1
 					<div class="allPageMoving1">
 
 						<a href="#" class="n"><img src="../img/btn/btn_pre2.gif"
@@ -302,9 +474,8 @@
 							src="../img/btn/btn_next2.gif" alt="마지막페이지로" /></a>
 
 					</div>
-					<!-- //페이징이동1 -->
-				</div>
-				<!-- //상품리뷰 -->
+					//페이징이동1
+				</div> -->
 
 			</div>
 
