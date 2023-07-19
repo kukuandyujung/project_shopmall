@@ -84,13 +84,12 @@ public class MemberServiceImpl implements MemberService {
 		return null;
 	}
 
-	/*
-	 * //
-	 * 
-	 * @Override //id 중복 검사 public MemberDto selectId(String MID) {
-	 * 
-	 * return null; }
-	 */
+	@Override //id 중복 검사
+	public MemberDto selectId(String MID) {		
+		MemberDto mdto = memberMapper.selectId(MID);
+		return mdto;
+	}
+
 
 	// END SUN //
 

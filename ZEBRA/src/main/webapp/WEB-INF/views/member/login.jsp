@@ -41,7 +41,20 @@ function loginBtn(){
 		}
 		loginFrm.submit();
 }//loginBtn
-</script> 
+</script>
+<!-- START 로그인 중복 검사  --> 
+<script type="text/javascript">
+function joinBtn(){
+// alert("가입버튼을 클릭");
+console.log($('#joinName').val());
+console.log($('#joinId').val());
+console.log($('#joinPw').val());
+console.log($('#joinPhone').val());
+console.log( $(":input:radio[name=gender]:checked").val());
+console.log($("input[type=checkbox][name=hobby]:checked").val());
+}
+</script>
+<!-- END 로그인 중복 검사  -->
 
 </head>
 <body>
@@ -113,7 +126,7 @@ function loginBtn(){
 
 								<div class="point">
 									<p>아이디와 비밀번호를 잊으셨나요?</p>
-									<a href="#" class="nbtn">아이디/비밀번호 찾기</a>
+									<a href="/member/idsearch" class="nbtn">아이디/비밀번호 찾기</a>
 								</div>
 							</form>
 						</div>

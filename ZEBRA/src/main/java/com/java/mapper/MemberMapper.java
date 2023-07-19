@@ -32,6 +32,8 @@ public interface MemberMapper {
 	
 		//회원 로그인
 		MemberDto selectLoginMember(String MID, String MPASSWORD);
+		//id 중복검사
+		MemberDto selectId(String MID);
 
 		// end sun //
 		

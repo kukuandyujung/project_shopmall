@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.java.dto.MemberDto;
 import com.java.service.MemberService;
 @Controller
 
@@ -95,40 +97,20 @@ public class MemberController {
 		return "redirect:/layout/index"; // redirect 이 주소로 다시 찾아라 / 여는 페이지
 	}
 	
+	//id 중복 검사	
+	@PostMapping("/member/idCheck")
+	@ResponseBody
+	public String checkId(String MID) {
+		System.out.println("checkID : " + MID);
+	    MemberDto mdto = memberService.selectId(MID);
+	    if(mdto==null) {
+	    	return "success";
+	    }else {
+	    	return "fail";
+	    }
+	}
 	
-	/* 로그인 체크
-	 * @PostMapping("/member/login") public String login(MemberDto memberDto, Model
-	 * model) {
-	 * 
-	 * System.out.println("memberDto 1: "+memberDto.getId());
-	 * System.out.println("memberDto 2: "+memberDto.getPw());
-	 * 
-	 * MemberDto mdto=memberService.selectLogin(memberDto); if(mdto!=null) {
-	 * session.setAttribute("sessionId", mdto.getId());
-	 * session.setAttribute("sessionName", mdto.getName());
-	 * model.addAttribute("loginCheck","success"); }else {
-	 * model.addAttribute("loginCheck","fail"); return "/member/login"; } return
-	 * "redirect:/index?loginCheck=success"; }
-	 */
-	/*
-	  //logout // *
 	
-*/	
-		/*
-		
-		 *
-
-		 * //id 중복 검사
-		 * 
-		 * @PostMapping("/member/checkId")
-		 * 
-		 * @ResponseBody public String checkId(String MID) { //
-		 * System.out.println("checkID : " + id); MemberDto mdto =
-		 * memberService.selectId(MID); if(mdto==null) { //null인 경우 return "success";
-		 * }else { return "fail"; //가입 가능 } }
-		 * 
-		 * 
-		  */
 		
 	
 		// END SUN //

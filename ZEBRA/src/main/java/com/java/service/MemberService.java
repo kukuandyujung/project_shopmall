@@ -29,15 +29,9 @@ public interface MemberService {
 	// START SUN //
 	// 회원 로그인
 	String selectLoginMember(String MID, String MPASSWORD);
+	//id 중복 검사 
+	MemberDto selectId(String MID);
 
-	/*
-	 * // 회원 로그아웃
-	 * 
-	 * 
-	 * 
-	 * 
-	 * //id 중복 검사 MemberDto selectId(String mid);
-	 */
 	// START SUN //
 	
 }

@@ -67,6 +67,9 @@
 	select * from zebra where MID=#{MID} and MPASSWORD=#{MPASSWORD}
 </select>
 
+<select id="selectId" resultType="com.java.dto.MemberDto" >
+	select * from zebra where MID=#{MID}
+</select>
 <!--  END SUN  -->
 
 </mapper>

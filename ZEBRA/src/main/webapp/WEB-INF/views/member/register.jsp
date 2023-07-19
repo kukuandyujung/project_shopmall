@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +12,7 @@
 <link rel="stylesheet" type="text/css" href="../css/reset.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="../css/layout.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="../css/content.css?v=Y" />
+<script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/top_navi.js"></script>
 <script type="text/javascript" src="../js/left_navi.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
@@ -28,8 +30,18 @@
 <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
 <link rel="stylesheet" href="../css/style.css">
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="JARDIN SHOP" />
+<meta name="keywords" content="JARDIN SHOP" />
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scaleable=no" />
+<script type="text/javascript">
+/* $(document).ready(function() {
+}); */
+</script>
 </head>
 <body>
+
 <%@ include file="../top.jsp"%>
 
   <!-- ================ start banner area ================= -->	
@@ -46,6 +58,9 @@
   
   <!--================Login Box Area =================-->
 	<!-- container -->
+	<div id="allwrap">
+	<div id="wrap">
+
 	<div id="container">
 		<div id="outbox">		
 			<div id="left">
@@ -54,7 +69,7 @@
 				<ul>
 					<li><a href="/member/login" id="leftNavi1">로그인</a></li>	
 					<li><a href="/member/register" id="leftNavi2">회원가입</a></li>
-					<li><a href="member/idsearch" id="leftNavi3">아이디/<span>비밀번호 찾기</span></a></li>		
+					<li><a href="/member/idsearch" id="leftNavi3">아이디/<span>비밀번호 찾기</span></a></li>		
 				</ul>			
 			</div><script type="text/javascript">initSubmenu(4,0);</script>
 
@@ -364,17 +379,16 @@
 						<p>본 약관은 2005년 5월 16일부터 시행합니다.</p>
 						</div>
 
-						</div>
+						<!-- </div>
 
 							<ul>
 								<li class="chk">
-									<input type="checkbox" id="agree1" /><label for="agree1">이용약관에 동의합니다.</label>
+									<input type="checkbox" name="agree"" id="agree1" /><label for="agree1">이용약관에 동의합니다.</label>
 								</li>
-								<!-- <li class="btn">
+								 <li class="btn">
 									<a href="#" class="nbtnMini">전체보기</a>
-								</li> -->
-							</ul>
-						</div>
+								</li> 
+						</div> -->
 										
 
 						<div class="agreeWrap">
@@ -420,11 +434,11 @@
 
 							<ul>
 								<li class="chk">
-									<input type="checkbox" id="agree2" /><label for="agree2">개인정보 보호를 위한 이용자 <span>동의사항에 동의합니다.</span></label>
+									<input type="checkbox" name="agree" id="agree2" /><label for="agree2">개인정보 보호를 위한 이용자 <span>동의사항에 동의합니다.</span></label>
 								</li>
-								<!-- <li class="btn">
+								<li class="btn">
 									<a href="#" class="nbtnMini">전체보기</a>
-								</li> -->
+								</li> 
 							</ul>
 						</div>
 
@@ -472,28 +486,44 @@
 
 							<ul class="fn">
 								<li class="chk">
-									<input type="checkbox" id="agree3" /><label for="agree3">개인정보 보호를 위한 이용자 <span>동의사항에 동의합니다.</span></label>
+									<input type="checkbox" name="agree" id="agree3" /><label for="agree3">개인정보 보호를 위한 이용자 <span>동의사항에 동의합니다.</span></label>
 								</li>
-								<!-- <li class="btn">
+								<li class="btn">
 									<a href="#" class="nbtnMini">전체보기</a>
-								</li> -->
+								</li> 
 							</ul>
 						</div>
 
 					</div>
 
-
 					<!-- Btn Area -->
+					<script>
+					   function chkBtn(){
+						   alert("체크박스 총 개수 : "+$("input:checkbox[name=agree]").length);
+						   //alert("체크된 체크박스 수 : "+ $("input:checkbox[name=agree]:checked").length);
+						   if($("input:checkbox[name=agree]:checked").length!=3){
+							   if(confirm("모두 체크를 하셔야 회원가입이 가능합니다.\n 모두 동의 할까요?")){
+								   // 반복문
+								   $("input:checkbox[name=agree]").each(function(){
+									   this.checked=true;
+								   });
+								   alert("모두동의 처리하였습니다.");
+								   return false;
+							   }
+							   
+						   }//if
+						   location.href="/member/register02";
+					   }
+					</script>
 					<div class="btnArea">
 						<div class="bCenter">
 							<ul>
-								<li><a href="/member/login" class="nbtnbig">취소하기</a></li>
-								<li><a href="/member/register02" class="sbtnMini">가입하기</a></li>
+								<li><a href="member/login" class="nbtnbig">취소하기</a></li>
+								<li><a onclick="chkBtn()" style="cursor: pointer;" class="sbtnMini">가입하기</a></li>
 							</ul>
 						</div>
 					</div>
 					<!-- //Btn Area -->
-
 
 
 				</div>
