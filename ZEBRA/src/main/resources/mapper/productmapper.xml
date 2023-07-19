@@ -135,17 +135,17 @@
 
 	</select>
 
-	<select id="selectPageAll" resultType="com.java.dto.ProductDto">
-		<if test="pricehit == 'rowprice'">
-		select * from product order by pprice asc  <!-- 가격 낮은-> 높은 순 -->
-		</if>
-		<if test="pricehit == 'highprice'">
- 		select * from product order by pprice desc <!-- 가격 높은 -> 낮은 순 -->
-		</if>
-		<if test="pricehit == 'highhit">
- 		select * from product order by phit desc <!-- 조회수 높은 -> 낮은 순 -->
-		</if> 
- 	</select>
+<!-- 	<select id="selectPageAll" resultType="com.java.dto.ProductDto"> -->
+<!-- 		<if test="pricehit == 'rowprice'"> -->
+<!-- 		select * from product order by pprice asc  가격 낮은-> 높은 순 -->
+<!-- 		</if> -->
+<!-- 		<if test="pricehit == 'highprice'"> -->
+<!--  		select * from product order by pprice desc 가격 높은 -> 낮은 순 -->
+<!-- 		</if> -->
+<!-- 		<if test="pricehit == 'highhit"> -->
+<!--  		select * from product order by phit desc 조회수 높은 -> 낮은 순 -->
+<!-- 		</if>  -->
+<!--  	</select> -->
 </mapper>
 
 
