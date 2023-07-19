@@ -44,17 +44,6 @@ public class FController {
 	public String category() {
 		return "product/category";
 	}
-	@RequestMapping("/product/singleproduct")
-	public String singleproduct() {
-		return "product/singleproduct";
-	}
-	
-	@RequestMapping("/product/singleproduct2")
-	public String singleproduc2t() {
-		return "product/singleproduct2";
-	}
-	
-	
 	@RequestMapping("/layout/index")
 	public String index(@RequestParam(defaultValue = "none") String resultCode,
 			Model model) {
