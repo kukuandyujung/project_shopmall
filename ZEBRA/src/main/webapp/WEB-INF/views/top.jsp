@@ -60,7 +60,7 @@
 								<li class="nav-item"><a class="nav-link"
 									href="/product/category">Shorts</a></li>
 								<li class="nav-item"><a class="nav-link"
-									href="/product/category">Coats</a></li>
+									href="/product/product_page">Coats</a></li>
 							</ul></li>
 						<li class="nav-item active submenu dropdown"><a href="#"
 							class="nav-link dropdown-toggle" data-toggle="dropdown"

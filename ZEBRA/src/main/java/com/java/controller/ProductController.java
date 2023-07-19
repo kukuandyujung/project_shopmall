@@ -44,6 +44,9 @@ public class ProductController {
 		model.addAttribute("maxPage" ,map.get("maxPage")); //상품 최대 페이지 수 
 		model.addAttribute("category" ,map.get("category")); //상품의 카테고리를 나타냄 특정 카테고리의 상품 목록을 읽기 위해 준비해 둔 것 
 		model.addAttribute("s_word" ,map.get("s_word")); //사용자가 상품 목록을 검색하면 그 검색어에 맞는 상품들이 나오는 것 
+		System.out.println("product_list category :" + model.getAttribute(category));
+		System.out.println("product_list page :" + model.addAttribute(page));
+		
 		return "admin/product_list";
 	}//product_list
 	
@@ -57,6 +60,7 @@ public class ProductController {
 		   int page, String category, String s_word,  Model model) {
 		//상품 번호의 값을 왜 디폴드 값으로 1을 했는 가 ? 
 		System.out.println("product_view pno  : " + pno );
+		System.out.println("product_view page  : " + page );
 		//상품 1개 가져오기 
 		HashMap<String, Object> map = productService.selectOne(pno);
 		model.addAttribute("pdto", map.get("pdto"));

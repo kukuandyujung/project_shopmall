@@ -128,11 +128,11 @@ public class ProductServiceImpl implements ProductService{
 		//조회수 1 증가 
 		productMapper.updatePhitUp(pno);
 		// 게시물 1개 가져오기 + 이전 게시물, 다음 게시물 가져오기 
-		ProductDto preDto = productMapper.selectPageOne(pno);
+//		ProductDto preDto = productMapper.selectPreOne(pno);
 		ProductDto pdto = productMapper.selectPageOne(pno);
-		ProductDto nextDto = productMapper.selectPageOne(pno);
-		map.put("prevDto", preDto);
-		map.put("nextDto", nextDto);
+//		ProductDto nextDto = productMapper.selectNextOne(pno);
+//		map.put("prevDto", preDto);
+//		map.put("nextDto", nextDto);
 		map.put("pdto", pdto);
 		return map;
 	}

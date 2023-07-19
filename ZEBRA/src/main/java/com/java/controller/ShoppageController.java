@@ -2,6 +2,9 @@ package com.java.controller;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,29 +38,37 @@ public class ShoppageController {
 		model.addAttribute("maxPage" ,map.get("maxPage")); //상품 최대 페이지 수 
 		model.addAttribute("category" ,map.get("category")); //상품의 카테고리를 나타냄 특정 카테고리의 상품 목록을 읽기 위해 준비해 둔 것 
 		model.addAttribute("s_word" ,map.get("s_word")); //사용자가 상품 목록을 검색하면 그 검색어에 맞는 상품들이 나오는 것 
-		System.out.println("product_page category " + model.getAttribute(category));
+		System.out.println("product_page category :" + model.getAttribute(category));
+		System.out.println("product_page page :" + model.addAttribute(page));
+		
 		return "product/product_page";
 	}//product_page
 	
 	@RequestMapping("/product/product_detail")
-	public String product_detail(
-			//pno 매개변수가 명시되지 않았다면 pno는 기본값으로 설정된 1을 가지도록.
-			//product_detail 메서드를 호출할 때 pno 값이 전달되지 않으면 1로 초기화.
-			@RequestParam(defaultValue = "1") 
+	public String product_detail(HttpSession session,
 			int pno,
-		   int page, String category, String s_word,  Model model) {
+			int page,
+			String category, String s_word,  Model model) {
+		
 		//상품 번호의 값을 왜 디폴드 값으로 1을 했는 가 ? 
 		System.out.println("product_detail pno  : " + pno );
+		System.out.println("product_detail page  : " + page );
 		//상품 1개 가져오기 
 		HashMap<String, Object> map = productService.selectPageOne(pno);
 		model.addAttribute("pdto", map.get("pdto"));
-		model.addAttribute("prevDto", map.get("prevDto"));
-		model.addAttribute("nextDto", map.get("nextDto"));
+//		model.addAttribute("prevDto", map.get("prevDto"));
+//		model.addAttribute("nextDto", map.get("nextDto"));
 		model.addAttribute("category", category);
 		model.addAttribute("s_word", s_word);
 		model.addAttribute("page", page);
+		System.out.println("product_detail category :" + model.getAttribute(category));
+		System.out.println("product_detail page :" + model.addAttribute(page));
 		//상품 뷰 페이지에서 하단에 목록을 만들기 위한 넘버링과 이 상품이 상품 목록에서 어디 페이지에 있는 지에 대해
 		return "product/product_detail";
+//		return "redirect:product_detail?page="+page+"&category="+category+"&s_word="+s_word ;
 	}//product_view
+	
+	
+
 	
 }

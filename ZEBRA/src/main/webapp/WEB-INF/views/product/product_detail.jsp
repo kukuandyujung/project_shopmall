@@ -30,7 +30,6 @@
 <link rel="stylesheet" href="../vendors/owl-carousel/owl.theme.default.min.css">
 <link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css">
 <link rel="stylesheet" href="../css/style.css">
-
 <style>
 .image-button {
 	display: inline-block;
@@ -73,9 +72,6 @@
 
 </head>
 <body>
-  <input type="hidden" name="page" value="${page }">
-      <input type="hidden" name="category" value="${category }">
-      <input type="hidden" name="s_word" value="${s_word }">
 
 
 
@@ -84,6 +80,10 @@
 	<%@ include file="../top.jsp"%>
 	<!-- ================ start banner area ================= -->
 	<section class="blog-banner-area" id="blog">
+  <input type="hidden" name="pno" value="${pno}">
+  <input type="hidden" name="page" value="${page }">
+      <input type="hidden" name="category" value="${category }">
+      <input type="hidden" name="s_word" value="${s_word }">
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
@@ -101,7 +101,7 @@
 				<div class="col-lg-6">
 					<div class="owl-carousel owl-theme s_Product_carousel">
 						<div class="single-prd-item">
-							<img class="img-fluid" src="../img/category/s-p1.jpg" alt="">
+							<img class="img-fluid" src="/upload/${pdto.pdetail_img1}" style="width: 270px" alt="">
 						</div>
 						<!-- <div class="single-prd-item">
 							<img class="img-fluid" src="../img/category/s-p1.jpg" alt="">
@@ -419,7 +419,7 @@
 								</ul>
 							</div>
 
-							<div class="btnAreaList">
+					<div class="btnAreaList">
 								<!-- 페이징이동1 -->
 								<div class="allPageMoving1">
 
@@ -432,10 +432,10 @@
 										class="n"><img src="../img/btn/btn_next2.gif"
 										alt="마지막페이지로" /></a>
 
-								</div>
+								</div> 
 								<!-- //페이징이동1 -->
-							</div>
-							<!-- //상품리뷰 -->
+							</div>             
+							<!-- //상품리뷰 -->  
 
 						</div>
 
@@ -451,7 +451,6 @@
 		</div>
 	</section>
 	<!--================End Product Description Area =================-->
-
 	<!-- ================ BEST SELELLERS section start ================= -->
 	<section class="section-margin calc-60px">
 		<div class="container">
