@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -45,9 +44,9 @@ public class ShoppageController {
 	}//product_page
 	
 	@RequestMapping("/product/product_detail")
-	public String product_detail(HttpSession session,
-			int pno,
-			int page,
+	public String product_detail(
+			@RequestParam int pno,
+			@RequestParam int page,
 			String category, String s_word,  Model model) {
 		
 		//상품 번호의 값을 왜 디폴드 값으로 1을 했는 가 ? 
