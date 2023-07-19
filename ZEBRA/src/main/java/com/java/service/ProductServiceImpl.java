@@ -121,4 +121,24 @@ public class ProductServiceImpl implements ProductService{
 		
 	}
 
+
+	@Override//상세 페이지에 상품 1개 가져오기 
+	public HashMap<String, Object> selectPageOne(int pno) {
+		HashMap<String, Object> map = new HashMap<>();
+		//조회수 1 증가 
+		productMapper.updatePhitUp(pno);
+		// 게시물 1개 가져오기 + 이전 게시물, 다음 게시물 가져오기 
+		ProductDto preDto = productMapper.selectPageOne(pno);
+		ProductDto pdto = productMapper.selectPageOne(pno);
+		ProductDto nextDto = productMapper.selectPageOne(pno);
+		map.put("prevDto", preDto);
+		map.put("nextDto", nextDto);
+		map.put("pdto", pdto);
+		return map;
+	}
+	
+	
+	
+
+
 }

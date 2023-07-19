@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <!-- Mirrored from themewagon.github.io/aroma/singleproduct by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 30 Jun 2023 06:56:13 GMT -->
 <!-- Added by HTTrack -->
@@ -17,6 +17,7 @@
 <link rel="preload" href="../vendors/118f4578a1d7588b.css" as="style">
 <link rel="stylesheet" type="text/css" href="../css/reset.css" />
 <link rel="stylesheet" type="text/css" href="../css/content.css" />
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/common.js"></script>
 <script type="text/javascript"></script>
@@ -72,7 +73,9 @@
 
 </head>
 <body>
-
+  <input type="hidden" name="page" value="${page }">
+      <input type="hidden" name="category" value="${category }">
+      <input type="hidden" name="s_word" value="${s_word }">
 
 
 
@@ -110,12 +113,9 @@
 				</div>
 				<div class="col-lg-5 offset-lg-1">
 					<div class="s_product_text">
-						<h3>Faded SkyBlu Denim Jeans</h3>
-						<h2>$149.99</h2>
-						<p>Mill Oil is an innovative oil filled radiator with the most
-							modern technology. If you are looking for something that can make
-							your interior look awesome, and at the same time give you the
-							pleasant warm feeling during the winter.</p>
+						<h3>${pdto.pname}</h3>
+						<h2>${pdto.pprice}원</h2>
+						<p>${pdto.pdescript}</p>
 						<div class="size">
 							<h4>Size</h4>
 							<label for="s_size">

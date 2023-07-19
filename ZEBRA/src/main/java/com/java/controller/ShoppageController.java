@@ -40,16 +40,16 @@ public class ShoppageController {
 	}//product_page
 	
 	@RequestMapping("/product/product_detail")
-	public String product_view(
+	public String product_detail(
 			//pno 매개변수가 명시되지 않았다면 pno는 기본값으로 설정된 1을 가지도록.
-			//product_view 메서드를 호출할 때 pno 값이 전달되지 않으면 1로 초기화.
+			//product_detail 메서드를 호출할 때 pno 값이 전달되지 않으면 1로 초기화.
 			@RequestParam(defaultValue = "1") 
 			int pno,
 		   int page, String category, String s_word,  Model model) {
 		//상품 번호의 값을 왜 디폴드 값으로 1을 했는 가 ? 
-		System.out.println("product_view pno  : " + pno );
+		System.out.println("product_detail pno  : " + pno );
 		//상품 1개 가져오기 
-		HashMap<String, Object> map = productService.selectOne(pno);
+		HashMap<String, Object> map = productService.selectPageOne(pno);
 		model.addAttribute("pdto", map.get("pdto"));
 		model.addAttribute("prevDto", map.get("prevDto"));
 		model.addAttribute("nextDto", map.get("nextDto"));
@@ -57,7 +57,7 @@ public class ShoppageController {
 		model.addAttribute("s_word", s_word);
 		model.addAttribute("page", page);
 		//상품 뷰 페이지에서 하단에 목록을 만들기 위한 넘버링과 이 상품이 상품 목록에서 어디 페이지에 있는 지에 대해
-		return "admin/product_view";
+		return "product/product_detail";
 	}//product_view
 	
 }

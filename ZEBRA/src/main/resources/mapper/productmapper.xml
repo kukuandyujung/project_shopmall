@@ -146,6 +146,13 @@
 <!--  		select * from product order by phit desc 조회수 높은 -> 낮은 순 -->
 <!-- 		</if>  -->
  	</select>
+ 	
+ 	<!-- 상세 페이지에서 상품 1개 가져오기 -->
+ 	<!-- 상품 1개 가져오기 -->
+	<select id="selectPageOne" resultType="com.java.dto.ProductDto">
+		select * from product where pno=#{pno}
+	</select>
+ 	
 </mapper>
 
 

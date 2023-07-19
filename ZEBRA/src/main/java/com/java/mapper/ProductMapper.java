@@ -39,5 +39,8 @@ public interface ProductMapper {
 	//상품 페이지에서 상품 전체 가져오기
 	ArrayList<ProductDto> selectPageAll(int startRow, int endRow, String category, String s_word);
 
+	//상세 페이지에서 상품 1개 가져오기 
+	ProductDto selectPageOne(int pno);
+
 
 }
