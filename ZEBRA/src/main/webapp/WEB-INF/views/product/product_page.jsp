@@ -14,6 +14,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>ZEBRA</title>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <link rel="icon" href="../img/logo2.png" type="image/png">
 <link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
 <link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
@@ -78,6 +79,7 @@
 	background-image: url('../img/member/image_3_4.jpg');
 }
 </style>
+
 <script>
 	function selectImage(imageId) {
 		var imageButtons = document.getElementsByClassName('image-button');
@@ -89,16 +91,15 @@
 </script>
 </head>
 <body>
-<script type="text/javascript">
-function searchBtn(){
-	if($("#s_word").val().length<2){
-		alert("2글자 이상 입력하셔야 합니다.");
-		$("#s_word").focus();
-		return false;
-	}
-	
-	search.submit();
-
+<script>
+function searchBtn() {
+  
+  var category = document.getElementById("category").value;
+  
+  if (category !== "pname") {
+    return;
+  }
+  document.forms["search"].submit();
 }
 </script>
 	<%@ include file="../top.jsp"%>
@@ -180,6 +181,7 @@ function searchBtn(){
 								<div id="price-range"></div>
 								<div class="value-wrapper d-flex">
 									<div class="price">Price:</div>
+<!-- 									<input type="range" min="1" max="10" value="1"> 개 -->
 									<span>$</span>
 									<div id="lower-value"></div>
 									<div class="to">to</div>
@@ -196,35 +198,43 @@ function searchBtn(){
 					<!-- 상단 필터 바 시작 -->
 					<div class="filter-bar d-flex flex-wrap align-items-center">
 						<!-- 필터 바 가격 순, 조회순 시작 -->
+						
+<%--       					 <input type="hidden" name="category" value="${category }"> --%>
 						<div class="sorting">
-							<select name="pricehit" id="pricehit">
+							<select name="category" id="category" >
 								<option value="">유정이가최고</option>
 								<option value="rowprice">Price: Low - High</option>
 								<option value="highprice">Price: High - Low</option>
 								<option value="highhit">Hits</option>
 							</select>
 						</div>
+						
 						<!-- 필터 바 가격 순, 조회순 끝 -->
 						<!-- 필터 바 n개씩 보기 선택 시작 -->
 						<div class="sorting mr-auto">
-							<select>
-								<option value="1">Show 6</option>
-								<option value="1">Show 9</option>
-								<option value="1">Show 12</option>
-							</select>
+					 
+					  <select >
+					    <option value="6">view 6</option>
+					    <option value="9">view 9</option>
+					    <option value="12">view 12</option>
+					  </select>
+				
 						</div>
 						<!-- 필터 바 n개씩 보기 선택 끝 -->
 						<div>
 							<div class="input-group filter-bar-search">
-								<input type="text" style="height: 38px;" placeholder="Search">
+							<form action="/product/product_page" name="search" method="post">
+								<input type="text" name="s_word" id="s_word" value="${s_word}" style="height: 38px;" placeholder="Search">
 								<div class="input-group-append">
-									<button type="button">
+									<button type="button" onclick="searchBtn()">
 										<i class="ti-search"></i>
 									</button>
-								</div>
+								</div>	
+							</form>	
 							</div>
 						</div>
 					</div>
+				</div>
 					<!-- 상단 필터 바 끝 -->
 					
 					<section class="lattest-product-area pb-40 category-list">
@@ -236,7 +246,7 @@ function searchBtn(){
 							<div class="col-md-6 col-lg-4">
 								<div class="card text-center card-product">
 									<div class="card-product__img">
-										<a href="#"><img class="card-img" src="/upload/${product.pmainimg1}" style="width: 250px;" alt=""></a>
+										<a href="/product/product_detail"><img class="card-img" src="/upload/${product.pmainimg1}" style="width: 250px;" alt=""></a>
 										<ul class="card-product__imgOverlay">
 											<li><button>
 													<i class="ti-shopping-cart"></i> <!-- 장바구니 버튼 -->
@@ -252,7 +262,7 @@ function searchBtn(){
 										<button class="image-button" id="image2" onclick="selectImage('image2')"></button>
 										<button class="image-button" id="image3" onclick="selectImage('image3')"></button>
 										<h4 class="card-product__title">
-											<a href="#">${product.pname}</a>
+											<a href="/product/product_detail">${product.pname}</a>
 										</h4>
 										<p class="card-product__price">${product.pprice}원</p>
 									</div>

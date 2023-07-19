@@ -2816,7 +2816,8 @@
                       Responsive is an extension for DataTables that resolves that problem by optimising the table's layout for different screen sizes through the dynamic insertion and removal of columns from the table.
                     </p>
 					
-                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                    <table id="datatable-responsive" cellspacing="0" width="100%">
+<!--                     class="table table-striped table-bordered dt-responsive nowrap"  -->
                       <thead>
                         <tr>
                           <th>First name</th>

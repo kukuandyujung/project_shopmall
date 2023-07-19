@@ -25,7 +25,7 @@ public interface ProductService {
 	//====================여기부터는 상품 페이지=============================== 
 	
 	//상품 페이지에 상품 전체 가져오기
-	HashMap<String, Object> selectPageAll(int page, String category, String s_word, String pricehit);
+	HashMap<String, Object> selectPageAll(int page, String category, String s_word);
 
 
 

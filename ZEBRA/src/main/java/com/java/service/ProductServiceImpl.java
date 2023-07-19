@@ -89,12 +89,12 @@ public class ProductServiceImpl implements ProductService{
     //==========================여기부터 상품 페이지===========================================
 	
 	@Override //상품 페이지에 상품 전체 가져오기
-	public HashMap<String, Object> selectPageAll(int page, String category, String s_word, String pricehit) {
+	public HashMap<String, Object> selectPageAll(int page, String category, String s_word) {
 		//상품 페이지에 상품 전체 가져오기
 		HashMap<String, Object> map = new HashMap<>();
 		//상품 페이지에서 넘버링 
 		int listCount = productMapper.selectListCount(category, s_word);
-		System.out.println("ProductServiceImpl listCount : " + listCount);;
+		System.out.println("ProductServiceImpl listCount : " + listCount);
 		//최대페이지
 		int maxPage = (int)Math.ceil((double)listCount/10); // 26/10 3개page
 		int startPage = (int)((page-1)/10)*10 + 1; //1
@@ -105,7 +105,7 @@ public class ProductServiceImpl implements ProductService{
 		if(endPage>maxPage) endPage=maxPage;
 		
 		
-		ArrayList<ProductDto> list = productMapper.selectPageAll(startRow, endRow, category,s_word,pricehit);
+		ArrayList<ProductDto> list = productMapper.selectPageAll(startRow, endRow, category,s_word);
 		map.put("list", list);
 		map.put("listCount", listCount);
 		map.put("maxPage", maxPage);
@@ -114,7 +114,8 @@ public class ProductServiceImpl implements ProductService{
 		map.put("page", page);
 		map.put("category", category);
 		map.put("s_word", s_word);
-		map.put("pricehit", pricehit);
+		
+		
 		
 		return map;
 		

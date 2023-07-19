@@ -119,23 +119,23 @@
 				
 			<if test="category == 'all'">		
 				where pname like '%'||#{s_word}||'%' or pdescript like '%'||#{s_word}||'%'
+				
 			</if>
 			<if test="category == 'pname'">		
 				where pname like '%'||#{s_word}||'%' 
+				
 			</if>
 			<if test="category == 'pdescript'">		
 				where pdescript like '%'||#{s_word}||'%' 
+			
 			</if>
-		
+			
 			<!-- 공통 영역  -->
 			<![CDATA[
 			order by pno asc) a) 
 		    where rnum>=#{startRow} and rnum<=#{endRow} 
 		  ]]> 
 
-	</select>
-
-<!-- 	<select id="selectPageAll" resultType="com.java.dto.ProductDto"> -->
 <!-- 		<if test="pricehit == 'rowprice'"> -->
 <!-- 		select * from product order by pprice asc  가격 낮은-> 높은 순 -->
 <!-- 		</if> -->
@@ -145,7 +145,7 @@
 <!-- 		<if test="pricehit == 'highhit"> -->
 <!--  		select * from product order by phit desc 조회수 높은 -> 낮은 순 -->
 <!-- 		</if>  -->
-<!--  	</select> -->
+ 	</select>
 </mapper>
 
 
