@@ -26,8 +26,10 @@
 <link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
 <link rel="stylesheet" href="../vendors/linericon/style.css">
 <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
-<link rel="stylesheet" href="../vendors/owl-carousel/owl.theme.default.min.css">
-<link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css">
+<link rel="stylesheet"
+	href="../vendors/owl-carousel/owl.theme.default.min.css">
+<link rel="stylesheet"
+	href="../vendors/owl-carousel/owl.carousel.min.css">
 <link rel="stylesheet" href="../css/style.css">
 
 <style>
@@ -153,8 +155,8 @@
 						<div class="product_count">
 							<label for="qty">Quantity:</label> <input type="text" name="qty"
 								id="sst" size="2" maxlength="12" value="1" title="Quantity:"
-								class="input-text qty">&nbsp;&nbsp;<a class="button primary-btn"
-								href="#">Buy Now</a>
+								class="input-text qty">&nbsp;&nbsp;<a
+								class="button primary-btn" href="#">Buy Now</a>
 						</div>
 						<div class="card_area d-flex align-items-center">
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-link"></i></a>
@@ -256,13 +258,26 @@
 						</table>
 					</div>
 				</div>
+				<div id="reply">
+					<section class="replyForm">
+						<form role="form" method="post" autocomplete="off">댓글 폼</form>
+					</section>
+
+					<section class="replyList">
+						<ol>
+							<li>댓글 목록</li>
+						</ol>
+					</section>
+				</div>
 				<div class="tab-pane fade" id="contact" role="tabpanel"
 					aria-labelledby="contact-tab"></div>
-				<div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
+				<div class="tab-pane fade show active" id="review" role="tabpanel"
+					aria-labelledby="review-tab">
 					<div class="inputWrap">
 						<div class="inputBody">
 							<div class="checkDivMt">
-								<table class="checkTable" style="border: 1px solid #d5d5d5;" border="1" cellspacing="0">
+								<table class="checkTable" style="border: 1px solid #d5d5d5;"
+									border="1" cellspacing="0">
 									<colgroup>
 										<col width="19%" class="tw30" />
 										<col width="*" />
@@ -272,35 +287,35 @@
 											<th scope="row"><span>평점</span></th>
 											<td>
 												<ul class="pta">
-													<li><input type="radio" name="appraisal" id="starFive" checked="checked" /> 
-													<label for="starFive" class="star">
-													<img src="../img/ico/ico_star.gif" alt="별점" /> 
-													<img src="../img/ico/ico_star.gif" alt="별점" /> 
-													<img src="../img/ico/ico_star.gif" alt="별점" /> 
-													<img src="../img/ico/ico_star.gif" alt="별점" /> 
-													<img src="../img/ico/ico_star.gif" alt="별점" />
+													<li><input type="radio" name="appraisal" id="starFive"
+														checked="checked" /> <label for="starFive" class="star">
+															<img src="../img/ico/ico_star.gif" alt="별점" /> <img
+															src="../img/ico/ico_star.gif" alt="별점" /> <img
+															src="../img/ico/ico_star.gif" alt="별점" /> <img
+															src="../img/ico/ico_star.gif" alt="별점" /> <img
+															src="../img/ico/ico_star.gif" alt="별점" />
 													</label></li>
 													<li><input type="radio" name="appraisal" id="starFour" />
-														<label for="starFour" class="star"> 
-														<img src="../img/ico/ico_star.gif" alt="별점" /> 
-														<img src="../img/ico/ico_star.gif" alt="별점" /> 
-														<img src="../img/ico/ico_star.gif" alt="별점" /> 
-														<img src="../img/ico/ico_star.gif" alt="별점" />
+														<label for="starFour" class="star"> <img
+															src="../img/ico/ico_star.gif" alt="별점" /> <img
+															src="../img/ico/ico_star.gif" alt="별점" /> <img
+															src="../img/ico/ico_star.gif" alt="별점" /> <img
+															src="../img/ico/ico_star.gif" alt="별점" />
 													</label></li>
-													<li><input type="radio" name="appraisal" id="starThree" />
-														<label for="starThree" class="star"> 
-														<img src="../img/ico/ico_star.gif" alt="별점" /> 
-														<img src="../img/ico/ico_star.gif" alt="별점" /> 
-														<img src="../img/ico/ico_star.gif" alt="별점" />
+													<li><input type="radio" name="appraisal"
+														id="starThree" /> <label for="starThree" class="star">
+															<img src="../img/ico/ico_star.gif" alt="별점" /> <img
+															src="../img/ico/ico_star.gif" alt="별점" /> <img
+															src="../img/ico/ico_star.gif" alt="별점" />
 													</label></li>
 													<li><input type="radio" name="appraisal" id="startwo" />
-														<label for="startwo" class="star"> 
-														<img src="../img/ico/ico_star.gif" alt="별점" /> 
-														<img src="../img/ico/ico_star.gif" alt="별점" />
+														<label for="startwo" class="star"> <img
+															src="../img/ico/ico_star.gif" alt="별점" /> <img
+															src="../img/ico/ico_star.gif" alt="별점" />
 													</label></li>
 													<li><input type="radio" name="appraisal" id="starOne" />
-														<label for="starOne" class="star"> 
-														<img src="../img/ico/ico_star.gif" alt="별점" />
+														<label for="starOne" class="star"> <img
+															src="../img/ico/ico_star.gif" alt="별점" />
 													</label></li>
 												</ul>
 											</td>
@@ -322,7 +337,8 @@
 								<div class="bCenter">
 									<ul>
 										<li><a href="#" class="sbtnMini">확인</a></li>
-										<li><a onclick="parent.$.fancybox.close();" href="javascript:;" class="nbtnbig">취소</a></li>
+										<li><a onclick="parent.$.fancybox.close();"
+											href="javascript:;" class="nbtnbig">취소</a></li>
 									</ul>
 								</div>
 							</div>
