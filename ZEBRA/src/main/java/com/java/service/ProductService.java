@@ -33,8 +33,11 @@ public interface ProductService {
 	//상품 페이지에 ajax 검색
 	ArrayList<ProductDto> selectSearchAll(String s_word);
 
-	//상품 페이지에서 ajaax 가격 순 , 조회 수
-	ArrayList<ProductDto> selectpricehitAll(int phit, int pprice);
+	//상품 페이지에서 ajax 가격 순
+	ArrayList<ProductDto> selectPriceAll(Integer pprice);
+
+	//상품 페이지에서 ajax n개씩 보기 
+	ArrayList<ProductDto> selectViewAll();
 
 
 

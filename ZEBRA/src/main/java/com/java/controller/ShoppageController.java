@@ -41,20 +41,39 @@ public class ShoppageController {
 		return list;
 	}
 	
+	//ArrayList<ProductDto> : 동적 배열. Product클래스의 객체들을 저장할 수 있는 리스트를 의미한다. 
+	//list : ArrayList<ProductDto>타입의 변수명으로, 선택된 제품들의 정보를 담을 리스트이다. 
+	//productService : 상품 정보를 가져오는 기능을 구현한 서비스 클래스 
+	//selectPriceAll : pprice라는 매개변수를 전달하기. 
+	
 	//상품을 가격과 조회수로 셀렉하는 ajax
-	@PostMapping("/product/pricehitAjax")
+	@PostMapping("/product/priceAjax")
 	@ResponseBody //ajax를 사용하기 위한 것. 데이터를 넘겨주는 어노테이션이다. 
-	public ArrayList<ProductDto> pricehitAjax(
-//			@RequestParam int pno,
-//			@RequestParam int page, 
-			int pprice, int phit){
+	public ArrayList<ProductDto> priceAjax(  
+			Integer pprice,
+			String selectprice
+			){
+		System.out.println("selectprice : " + selectprice);
+		//ArrayList 변수를 선언하고 productService라는 이름의 서비스를 사용하여 
+		//pprice라는 변수로 모든 제품의 가격 정보를 선택하고 그 결과를 list에 저장하기 
+		ArrayList<ProductDto> list = productService.selectPriceAll(pprice);
 		
-		System.out.println(pprice);
-		System.out.println(phit);
+		System.out.println("priceAjax 첫 상품 가격은 "+list.get(0).getPprice());
+		System.out.println("priceAjax 첫 상품 이름은" +list.get(0).getPname());
 		
-		ArrayList<ProductDto> list = productService.selectpricehitAll(phit, pprice);
+		//검색어에 맞는 상품들 가져오기 
+		return list;
+	}
+
+	
+	//상품을 n개씩 ajax
+	@PostMapping("/product/viewAjax")
+	@ResponseBody //ajax를 사용하기 위한 것. 데이터를 넘겨주는 어노테이션이다. 
+	public ArrayList<ProductDto> viewAjax(){
+		ArrayList<ProductDto> list = productService.selectViewAll();
 		
-		System.out.println(list.get(0).getPname());
+		System.out.println("viewAjax 첫 상품 가격은 "+list.get(0).getPprice());
+		System.out.println("viewAjax 첫 상품 이름은" +list.get(0).getPname());
 		
 		//검색어에 맞는 상품들 가져오기 
 		return list;

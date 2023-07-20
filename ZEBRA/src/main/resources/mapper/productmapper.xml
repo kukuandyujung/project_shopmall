@@ -152,20 +152,36 @@
  	<!--concat 연산자는 같은 문자열을 합치는 기능  -->
  	
  	<!-- 상품 페이지에서  ajax 가격, 조회 순 -->
- 	<select id="" resultType="com.java.dto.ProductDto">
-		<if test="pricehit == 'rowprice'">
+ 	<select id="selectPriceAll" resultType="com.java.dto.ProductDto">
+		<if test="selectprice == 'rowprice'">
 		select * from product order by pprice asc  <!-- 가격 낮은-> 높은 순 -->
 		</if>
-		<if test="pricehit == 'highprice'">
+		<if test="selectprice == 'highprice'">
  		select * from product order by pprice desc  <!--  가격 높은 -> 낮은 순-->
 		</if>
-		<if test="pricehit == 'highhit">
- 		select * from product order by phit desc <!--  조회수 높은 -> 낮은 순--> 
-		</if> 
  	</select>
+ 		
  	
- 	
- 	
+ 	<!-- 상품 페이지를 n개씩 보기로 정렬  -->	
+ 	<select id="selectViewAll" resultType="com.java.dto.ProductDto">
+	  	<![CDATA[
+	    select * from (
+	      select rownum rnum, a.* from (
+	        <choose>
+	          <when test="selectview == '6'">
+	            select * from product order by pno asc
+	          </when>
+	          <when test="selectview == '9'">
+	            select * from product order by pno asc
+	          </when>
+	          <when test="selectview == '12'">
+	            select * from product order by pno asc
+	          </when>
+	        </choose>
+	      ) a
+	    ) where rnum >= #{startRow} and rnum <= #{endRow}
+	  ]]>
+	</select>
 </mapper>
 
 
