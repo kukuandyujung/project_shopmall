@@ -2,6 +2,8 @@ package com.java.controller;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.java.dto.BoardDto;
 import com.java.dto.CommentDto;
+import com.java.dto.ProductDto;
 import com.java.service.BoardService;
 
 @Controller
@@ -18,26 +21,22 @@ public class BoardController {
 
 	@Autowired
 	BoardService boardService;
-	
-	@RequestMapping("/board/notice")
-	public String notice(Model model) {
-		ArrayList<BoardDto> list = new ArrayList<>();
-		//게시글 전체가져오기
-		list = boardService.selectAll();
-		model.addAttribute("list",list);
-		
-		return "board/notice";
-	}
+	@Autowired
+	HttpSession session;
 	
 	@RequestMapping("/product/singleproduct")
-	public String singleproduct(int bno,Model model) {
-		//게시글 1개가져오기
-		BoardDto bdto = boardService.selectOne(bno);
-		//하단댓글 모두가져오기
-		ArrayList<CommentDto> comList = boardService.selectComAll(bno);
+	public String singleproduct(int pno, Model model) {
 		
-		model.addAttribute("bdto",bdto);
+		
+		//게시글 1개가져오기
+		ProductDto pdto = boardService.selectOne(pno);
+		//하단댓글 모두가져오기
+		ArrayList<CommentDto> comList = boardService.selectComAll(pno);
+		
+		model.addAttribute("pdto",pdto);
 		model.addAttribute("comList",comList);
+		
+		
 		return "product/singleproduct";
 	}
 	

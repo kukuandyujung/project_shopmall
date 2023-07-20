@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.java.dto.BoardDto;
 import com.java.dto.CommentDto;
+import com.java.dto.ProductDto;
 import com.java.mapper.BoardMapper;
 
 @Service
@@ -14,25 +15,16 @@ public class BoardServiceImpl implements BoardService{
 
 	@Autowired
 	BoardMapper boardMapper;
-	
-	@Override //게시글 전체가져오기
-	public ArrayList<BoardDto> selectAll() {
-		ArrayList<BoardDto> list = new ArrayList<>();
-		//게시글 전체가져오기
-		list = boardMapper.selectAll();
-		
-		return list;
-	}
 
 	@Override //게시글 1개가져오기
-	public BoardDto selectOne(int bno) {
-		BoardDto bdto = boardMapper.selectOne(bno);
-		return bdto;
+	public ProductDto selectOne(int pno) {
+		ProductDto pdto = boardMapper.selectOne(pno);
+		return pdto;
 	}
 
 	@Override //하단댓글 전체가져오기
-	public ArrayList<CommentDto> selectComAll(int bno) {
-		ArrayList<CommentDto> comList = boardMapper.selectComAll(bno);
+	public ArrayList<CommentDto> selectComAll(int pno) {
+		ArrayList<CommentDto> comList = boardMapper.selectComAll(pno);
 		
 		return comList;
 	}
@@ -40,15 +32,9 @@ public class BoardServiceImpl implements BoardService{
 	@Override //하단댓글 저장
 	public CommentDto commentInsert(CommentDto comDto) {
 		//하단댓글저장 후
-		System.out.println("BoardServiceImpl comDto ccontent :"+ comDto.getCcontent());
-		System.out.println("BoardServiceImpl comDto cpw :"+ comDto.getCpw());
-		System.out.println("BoardServiceImpl comDto bno :"+ comDto.getBno());
-		System.out.println("BoardServiceImpl comDto Id :"+ comDto.getId());
-		
-		// (#{cno},#{bno},#{id},#{cpw},#{ccontent},
-		
-		
 		boardMapper.commentInsert(comDto);
+		System.out.println("BoardServiceImpl comDto cno :"+ comDto.getCno());
+		System.out.println("BoardServiceImpl comDto cdate :"+ comDto.getCdate());
 		//하단댓글 1개가져오기
 		CommentDto cdto = boardMapper.selectComOne(comDto);
 		

@@ -272,16 +272,13 @@
                     		  alert("2글자 이상 입력하셔야 등록가능합니다.");
                     		  return false;
                     	  }
-                    	  
                     	  alert("댓글 저장합니다.");
-                    	  
                     	  //ajax구문
                     	  $.ajax({
                     		  url:"/board/commentInsert",
                     		  type:"post",
-                    		  data:{"id":"${sessionId}", //${sessionId}를 사용함.
-                    			    "bno":"${bdto.bno}",
-                    			    "cno":"111",
+                    		  data:{"mid":"${sessionId}", //${sessionId}를 사용함.
+                    			    "pno":"${pdto.pno}",
                     			    "ccontent":$(".replyType").val(),
                     			    "cpw":$(".replynum").val()
                     		  },
@@ -290,11 +287,11 @@
                     			  alert("댓글 저장 성공");
                     			  //하단댓글 1개 가져오기
                     			  //하단에 댓글추가코드
-                    			  dataHtml += "<ul id='"+ data.cno +"'>";
-                    			  dataHtml += "<li class='name'>"+ data.id +"<span>&nbsp&nbsp[ "+ moment(data.cdate).format("YYYY-MM-DD HH:mm:ss") +" ]</span></li>";
+                    			  dataHtml += "<ul mid='"+ data.cno +"'>";
+                    			  dataHtml += "<li class='name'>"+ data.mid +"<span>&nbsp&nbsp[ "+ moment(data.cdate).format("YYYY-MM-DD HH:mm:ss") +" ]</span></li>";
                     			  dataHtml += "<li class='txt'>"+ data.ccontent +"</li>";
                     			  dataHtml += "<li class='btn'>";
-                    			  dataHtml += "<a onclick=\"updateBtn("+data.cno+",'"+data.id+"','"+data.cdate+"','"+data.ccontent+"')\" class='rebtn'>수정</a>&nbsp";
+                    			  dataHtml += "<a onclick=\"updateBtn("+data.cno+",'"+data.mid+"','"+data.cdate+"','"+data.ccontent+"')\" class='rebtn'>수정</a>&nbsp";
                     			  dataHtml += "<a onclick=\"deleteBtn("+data.cno+")\" class='rebtn'>삭제</a>";
                     			  dataHtml += "</li>";
                     			  dataHtml += "</ul>";
@@ -361,10 +358,10 @@
                         			  var dataHtml="";
                         			  
                         			  //댓글화면 변경
-	                    			  dataHtml += "<li class='name'>"+ data.id +"<span>&nbsp&nbsp[ "+ moment(data.cdate).format("YYYY-MM-DD HH:mm:ss") +" ]</span></li>";
+	                    			  dataHtml += "<li class='name'>"+ data.mid +"<span>&nbsp&nbsp[ "+ moment(data.cdate).format("YYYY-MM-DD HH:mm:ss") +" ]</span></li>";
 	                    			  dataHtml += "<li class='txt'>"+ data.ccontent +"</li>";
 	                    			  dataHtml += "<li class='btn'>";
-	                    			  dataHtml += "<a onclick=\"updateBtn("+data.cno+",'"+data.id+"','"+data.cdate+"','"+data.ccontent+"')\" class='rebtn'>수정</a>&nbsp";
+	                    			  dataHtml += "<a onclick=\"updateBtn("+data.cno+",'"+data.mid+"','"+data.cdate+"','"+data.ccontent+"')\" class='rebtn'>수정</a>&nbsp";
 	                    			  dataHtml += "<a onclick=\"deleteBtn("+data.cno+")\" class='rebtn'>삭제</a>";
 	                    			  dataHtml += "</li>";
                         			  $("#"+cno).html(dataHtml);
@@ -380,20 +377,20 @@
                       }//댓글수정저장
                       
                       // 4. 댓글수정 폼
-                      function updateBtn(cno,id,cdate,ccontent){
+                      function updateBtn(cno,mid,cdate,ccontent){
                     	  if(confirm("댓글을 수정하시겠습니까?")){
                     		  
                     		 let dataHtml="";
                     		 
-                    		 dataHtml += "<li class='name'>"+id+"&nbsp;<span>["+cdate+"]</span>";
-                    		 dataHtml += "&nbsp;&nbsp;&nbsp;&nbsp;비밀번호&nbsp;&nbsp;<input type='password' class='replynum' id='updatePw' />";
+                    		 dataHtml += "<li class='name'>"+mid+"&nbsp;<span>["+cdate+"]</span>";
+                    		 dataHtml += "&nbsp;&nbsp;&nbsp;&nbsp;비밀번호&nbsp;&nbsp;<input type='password' class='replynum' mid='updatePw' />";
                     		 dataHtml += "</li>";
                     		 dataHtml += "<li class='txt'>";
-                    		 dataHtml += "<textarea class='replyType' id='updateTxt'>"+ccontent+"</textarea>";
+                    		 dataHtml += "<textarea class='replyType' mid='updateTxt'>"+ccontent+"</textarea>";
                     		 dataHtml += "</li>";
                     		 dataHtml += "<li class='btn'>";
                     		 dataHtml += "<a onclick=\"updateSave("+cno+")\" class='rebtn'>저장</a>&nbsp;";
-                    		 dataHtml += "<a onclick=\"cancelBtn("+cno+",'"+id+"','"+cdate+"','"+ccontent+"')\" class='rebtn'>취소</a>";
+                    		 dataHtml += "<a onclick=\"cancelBtn("+cno+",'"+mid+"','"+cdate+"','"+ccontent+"')\" class='rebtn'>취소</a>";
                     		 dataHtml += "</li>";
   							
                     		 $("#"+cno).html(dataHtml); 
@@ -401,16 +398,16 @@
                     	  }//if
                       }// 업데이트 -->
                       
-                      function cancelBtn(cno,id,cdate,ccontent){
+                      function cancelBtn(cno,mid,cdate,ccontent){
                     	  alert("댓글 수정을 취소하셨습니다.");
                     	  
                     	  var dataHtml="";
             			  
             			  //댓글화면 변경
-            			  dataHtml += "<li class='name'>"+ id +"<span>&nbsp&nbsp[ "+ moment(cdate).format("YYYY-MM-DD HH:mm:ss") +" ]</span></li>";
+            			  dataHtml += "<li class='name'>"+ mid +"<span>&nbsp&nbsp[ "+ moment(cdate).format("YYYY-MM-DD HH:mm:ss") +" ]</span></li>";
             			  dataHtml += "<li class='txt'>"+ ccontent +"</li>";
             			  dataHtml += "<li class='btn'>";
-            			  dataHtml += "<a onclick=\"updateBtn("+cno+",'"+id+"','"+cdate+"','"+ccontent+"')\" class='rebtn'>수정</a>&nbsp";
+            			  dataHtml += "<a onclick=\"updateBtn("+cno+",'"+mid+"','"+cdate+"','"+ccontent+"')\" class='rebtn'>수정</a>&nbsp";
             			  dataHtml += "<a onclick=deleteBtn("+cno+") class='rebtn'>삭제</a>";
             			  dataHtml += "</li>";
             			  
@@ -437,21 +434,21 @@
 					<div class="replyBox">
 					    <c:forEach var="comDto" items="${comList }" >
 					    <ul id="${comDto.cno}">
-							<li class="name">${comDto.id} <span>[ ${comDto.cdate} ]</span></li>
+							<li class="name">${comDto.mid} <span>[ ${comDto.cdate} ]</span></li>
 							<%--비밀글 노출 --%>
-							<c:if test="${sessionId != comDto.id && comDto.cpw !=null }">
+							<c:if test="${sessionId != comDto.mid && comDto.cpw !=null }">
 							  <li class="txt">
 								<span class="orange">※ 비밀글입니다.</span>
 							  </li>
 							</c:if>
-							<c:if test="${!(sessionId != comDto.id && comDto.cpw !=null) }">
+							<c:if test="${!(sessionId != comDto.mid && comDto.cpw !=null) }">
 							  <li class="txt">${comDto.ccontent }</li>
 							</c:if>
 							
 							<%-- 자신의 댓글이 아닌경우 버튼노출 안됨 --%>
-							<c:if test="${sessionId == comDto.id }">
+							<c:if test="${sessionId == comDto.mid }">
 								<li class="btn">
-									<a onclick="updateBtn(${comDto.cno},'${comDto.id }','${comDto.cdate}','${comDto.ccontent}')" class="rebtn">수정</a>
+									<a onclick="updateBtn(${comDto.cno},'${comDto.mid }','${comDto.cdate}','${comDto.ccontent}')" class="rebtn">수정</a>
 									<a onclick="deleteBtn(${comDto.cno})" class="rebtn">삭제</a>
 								</li>
 							</c:if>

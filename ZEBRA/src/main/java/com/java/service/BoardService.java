@@ -2,19 +2,16 @@ package com.java.service;
 
 import java.util.ArrayList;
 
-import com.java.dto.BoardDto;
 import com.java.dto.CommentDto;
+import com.java.dto.ProductDto;
 
 public interface BoardService {
 
-	//게시글 전체가져오기
-	ArrayList<BoardDto> selectAll();
-
 	//게시글 1개가져오기
-	BoardDto selectOne(int bno);
+	ProductDto selectOne(int pno);
 
 	//하단댓글 전체가져오기
-	ArrayList<CommentDto> selectComAll(int bno);
+	ArrayList<CommentDto> selectComAll(int pno);
 
 	//하단댓글 저장
 	CommentDto commentInsert(CommentDto comDto);
