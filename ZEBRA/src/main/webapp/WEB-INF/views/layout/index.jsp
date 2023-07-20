@@ -108,7 +108,7 @@ style="height:500px;"  -->
 				<div class="section-intro pb-60px">
 					<p>Popular Item in the market</p>
 					<h2>
-						Hot <span class="section-intro__style"> Trending </span>
+						Trending<span class="section-intro__style"> Product </span>
 					</h2>
 				</div>
 				<div class="row">
