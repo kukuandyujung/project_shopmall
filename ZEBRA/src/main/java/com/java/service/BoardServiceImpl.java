@@ -18,8 +18,8 @@ public class BoardServiceImpl implements BoardService{
 
 	@Override //게시글 1개가져오기
 	public ProductDto selectOne(int pno) {
-		ProductDto pdto = boardMapper.selectOne(pno);
-		return pdto;
+		ProductDto pdto1 = boardMapper.selectOne(pno);
+		return pdto1;
 	}
 
 	@Override //하단댓글 전체가져오기
