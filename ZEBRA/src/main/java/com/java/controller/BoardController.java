@@ -1,6 +1,7 @@
 package com.java.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
 
@@ -15,6 +16,7 @@ import com.java.dto.BoardDto;
 import com.java.dto.CommentDto;
 import com.java.dto.ProductDto;
 import com.java.service.BoardService;
+import com.java.service.ProductService;
 
 @Controller
 public class BoardController {
@@ -23,11 +25,17 @@ public class BoardController {
 	BoardService boardService;
 	@Autowired
 	HttpSession session;
+	@Autowired
+	ProductService productService;
 	
-	@RequestMapping("/product/singleproduct")
-	public String singleproduct(int pno, Model model) {
-		
-		
+	@RequestMapping("/product/product_detail")
+	public String product_detail(int pno, Model model) {
+		//상품 번호의 값을 왜 디폴드 값으로 1을 했는 가 ? 
+		System.out.println("product_detail pno  : " + pno );
+		//상품 1개 가져오기 
+		HashMap<String, Object> map = productService.selectPageOne(pno);
+		model.addAttribute("pdto", map.get("pdto"));
+		//상품 뷰 페이지에서 하단에 목록을 만들기 위한 넘버링과 이 상품이 상품 목록에서 어디 페이지에 있는 지에 대해
 		//게시글 1개가져오기
 		ProductDto pdto = boardService.selectOne(pno);
 		//하단댓글 모두가져오기
@@ -37,8 +45,9 @@ public class BoardController {
 		model.addAttribute("comList",comList);
 		
 		
-		return "product/singleproduct";
+		return "product/product_detail";
 	}
+	
 	
 	@RequestMapping("/board/commentInsert")
 	@ResponseBody
