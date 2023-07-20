@@ -5,11 +5,31 @@
 
 <mapper namespace="com.java.mapper.MemberMapper">
 
+<!-- 회원 전체 수 -->
+<select id="selectMemberAll" resultType="com.java.dto.MemberDto">
+    select * from zebra
+<!--     
+<if test="category == 'all'">
+ where btitle like '%'||#{s_word}||'%' or bcontent like '%'||#{s_word}||'%'
+</if>
+<if test="category == 'btitle'">
+ where btitle like '%'||#{s_word}||'%'
+</if>
+<if test="category == 'bcontent'">
+ where bcontent like '%'||#{s_word}||'%'
+</if>
+     -->
+</select>
+
+<select id="selectMemberCount" resultType="int">
+    select count(*) from zebra
+</select>
+
 <!-- 회원 정보 전체 가져오기 -->
 <select id="selectAll" resultType="com.java.dto.MemberDto">
   SELECT * FROM zebra WHERE MCODE != 0
    
-   <if test="category == 'all'">
+   <if test="category == 'all'"> <!-- member_table : 92  -->
 	  AND (MID like '%'||#{s_word}||'%' or MNAME like '%'||#{s_word}||'%')
 	</if>
 	<if test="category == 'MID'">

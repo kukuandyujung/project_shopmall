@@ -12,6 +12,12 @@ public interface MemberMapper {
 	// 회원 테이블 전체 가져오기
 	ArrayList<MemberDto> selectAll(String s_word, String category);
 
+	// 종류별 회원 정보 가져오기
+	ArrayList<MemberDto> selectMemberAll();
+	
+	// 전체 회원 정보 수
+	int selectMemberCount();
+	
 	// 회원 정보 1개 가져오기
 	MemberDto selectOne(String MID);
 	
@@ -24,8 +30,10 @@ public interface MemberMapper {
 	// 회원 정보 1개 삭제하기
 	void deleteOne(String MID);
 	
+	
 	//로그인 확인
 	MemberDto selectLogin(MemberDto memberDto);
+	
 	
 
 	// start sun //
@@ -34,6 +42,15 @@ public interface MemberMapper {
 		MemberDto selectLoginMember(String MID, String MPASSWORD);
 		//id 중복검사
 		MemberDto selectId(String MID);
+
+
+		
+
+		
+
+		
+
+		
 
 		// end sun //
 		

@@ -1,6 +1,5 @@
 package com.java.controller;
-import java.io.File;
-import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -12,8 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.java.dto.MemberDto;
 import com.java.service.MemberService;
@@ -22,9 +20,11 @@ public class AdminController {
 	@Autowired MemberService memberService;
 	@Autowired HttpSession session;
 	
+	
 	//로그인을 해야 인덱스로 가도록 정리하기
 	@RequestMapping("/admin/index")
-	public String index(String loginCheck, Model model) {
+	public String index( String loginCheck, Model model) {
+		
 		model.addAttribute("loginCheck", loginCheck); //로그인 성공 여부
 		
 //		if(session.getAttribute("sessionId").equals("admin")) {
@@ -33,8 +33,7 @@ public class AdminController {
 //		return "admin/login"; //보안을 위한 세션
 		
 			return "admin/index";
-		
-	}
+	}	
 	
 	//관리자 로그인 getMapping
 	@GetMapping("/admin/login")
@@ -69,8 +68,6 @@ public class AdminController {
 			model.addAttribute("loginCheck", "fail");
 			return "/member/login";
 		}
-		
-		
 	}
 	
 	//관리자 로그아웃
@@ -78,6 +75,64 @@ public class AdminController {
 	public String logout() {	
 		session.invalidate(); //session 모두 삭제
 		return "redirect:/layout/index";
+	}
+	
+	// ajax로 종류별 회원 정보 가져오기
+		@PostMapping("/admin/indexAjax")
+		@ResponseBody // 데이터로 넘겨줌 -> return으로
+		public HashMap<String, Object> indexAjax() { // data를 받음	
+			HashMap<String, Object> map = memberService.selectMemberAll();
+			System.out.println("map :"+map);
+			return map; // function(data)로 넘김
+		}
+	
+	// 회원 테이블 전체 가져오기
+		@RequestMapping("/admin/member_table")
+		public String member_table(@RequestParam(defaultValue = "") String s_word, String category, Model model) {
+			System.out.println("AdminController member_table category : "+category);
+			HashMap<String,Object> map = memberService.selectAll(s_word, category);
+			model.addAttribute("list",map.get("list"));
+			model.addAttribute("listCount",map.get("listCount"));
+			model.addAttribute("s_word",map.get("s_word"));
+			model.addAttribute("category",map.get("category"));
+			return "admin/member_table";
+		}		
+		
+	// 회원 정보 1개 가져오기
+	@RequestMapping("/admin/member_tableView")
+	public String member_tableView(@RequestParam(defaultValue = "aannesdg")String MID, Model model) {
+		HashMap<String, Object> map = memberService.selectOne(MID);
+		model.addAttribute("mdto", map.get("mdto"));		
+		return "admin/member_tableView";
+	}
+	
+	@GetMapping("/admin/member_Write")
+	public String member_Write() {
+		return "admin/member_Write";
+	}
+	
+	// 회원 정보 1개 저장하기
+	@PostMapping("/admin/member_Write")
+	public String doMemberWrite(MemberDto mdto, Model model) throws Exception {
+		memberService.insertOne(mdto);
+		System.out.println("MCODE :"+mdto.getMCODE());
+		return "redirect:member_table";
+	}
+
+	// 회원 정보 1개 수정하기
+	@PostMapping("/admin/member_tableView") 
+	public String memberUpdate(MemberDto mdto, String MID, Model model) throws Exception { 
+		memberService.updateOne(mdto);		
+		System.out.println("MID :"+mdto.getMTOTAL_PAY());
+		System.out.println("MNAME :"+mdto.getMTOTAL_ORDER());		
+		return "redirect:/admin/member_tableView?MID="+MID;
+	}	
+	
+	// 회원 정보 1개 삭제하기	  
+	@RequestMapping("/admin/memberDelete")
+	public String boardDelete(String MID) {
+		memberService.deleteOne(MID);
+		return "redirect:/admin/member_table";
 	}
 	
 	
@@ -161,56 +216,7 @@ public class AdminController {
 		
 		return "admin/media_gallery";
 	}	
-	
-	// 회원 테이블 전체 가져오기
-	@RequestMapping("/admin/member_table")
-	public String member_table(@RequestParam(defaultValue = "") String s_word, String category, Model model) {
-		System.out.println("AdminController member_table category : "+category);
-		HashMap<String,Object> map = memberService.selectAll(s_word, category);
-		model.addAttribute("list",map.get("list"));
-		model.addAttribute("s_word",map.get("s_word"));
-		model.addAttribute("category",map.get("category"));
-		return "admin/member_table";
-	}		
-	
-	// 회원 정보 1개 가져오기
-	@RequestMapping("/admin/member_tableView")
-	public String member_tableView(@RequestParam(defaultValue = "aannesdg")String MID, Model model) {
-		HashMap<String, Object> map = memberService.selectOne(MID);
-		model.addAttribute("mdto", map.get("mdto"));		
-		return "admin/member_tableView";
-	}
-	
-	// 회원 정보 1개 저장하기
-	@GetMapping("/admin/member_Write")
-	public String member_Write() {
-		return "admin/member_Write";
-	}
-	
-	@PostMapping("/admin/member_Write")
-	public String doMemberWrite(MemberDto mdto, Model model) throws Exception {
-		memberService.insertOne(mdto);
-		System.out.println("MCODE :"+mdto.getMCODE());
-		return "redirect:member_table";
-	}
-
-	// 회원 정보 1개 수정하기
-	@PostMapping("/admin/member_tableView") 
-	public String memberUpdate(MemberDto mdto, String MID, Model model) throws Exception { 
-		memberService.updateOne(mdto);		
-		System.out.println("MID :"+mdto.getMTOTAL_PAY());
-		System.out.println("MNAME :"+mdto.getMTOTAL_ORDER());		
-		return "redirect:/admin/member_tableView?MID="+MID;
-	}	
-	
-	// 회원 정보 1개 삭제하기	  
-	@RequestMapping("/admin/memberDelete")
-	public String boardDelete(String MID) {
-		memberService.deleteOne(MID);
-		return "redirect:/admin/member_table";
-	}
-	 
-	
+		
 	@RequestMapping("/admin/morisjs")
 	public String morisjs() {
 		

@@ -126,7 +126,7 @@
 					
 					<tr style="display: none;">
 		                <td class="text">회원 코드</td>
-					    <td><input type="text" name="MCODE"></td>
+					    <td><input type="text" name="MCODE" value="1"></td>
 		            </tr>
 					
 					<tr>
@@ -171,22 +171,22 @@
 		            
 		            <tr style="display: none;">
 		         	    <td class="text">가입 날짜</td>
-		                <td><input type="text" name="MJOINDAY"></td>
+		                <td><input type="text" name="MJOINDAY" value="2023-08-01"></td>
 		            </tr>
 		            
 		            <tr style="display: none;">
 		            	<td class="text">총 결제 금액</td>
-		                <td><input type="text" name="MTOTAL_PAY"></td>
+		                <td><input type="text" name="MTOTAL_PAY" value="0"></td>
 		            </tr>
 		            
 		            <tr style="display: none;">
 		            	<td class="text">결제 횟수</td>
-		                <td><input type="text" name="MTOTAL_ORDER"></td>
+		                <td><input type="text" name="MTOTAL_ORDER" value="0"></td>
 		            </tr>
 		            
 		            <tr style="display: none;">
 		            	<td class="text">약관 동의</td>
-		                <td><input type="text" name="MAGREE"></td>
+		                <td><input type="text" name="MAGREE" value="0"></td>
 		            </tr>
 		            </table>
 		            

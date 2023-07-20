@@ -82,7 +82,7 @@
             
             <form action="/admin/member_table" name="search" method="post"> 
               <div class="title_left">
-                <h3>Users <small>현재 가입자 목록</small></h3>
+                <h3><a href="/admin/member_table">Users <small>현재 가입자 목록</small></a></h3>
               </div>
 
               <div class="title_right">
@@ -115,7 +115,7 @@
                     <h2>회원 목록<small>Users</small></h2>
                     
                     <!-- 등록 페이지로 이동  -->
-                    <a href="/admin/member_Write"><input type="button" value="등록" class="write" style="font-size: 13px; margin-top: 2px; margin-left: 18px;"></a>
+                    <a href="/admin/member_Write"><input type="button" value="등록" class="write" style="font-size: 13px; margin-top: 2px; margin-left: 15px;"></a>
                     
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>

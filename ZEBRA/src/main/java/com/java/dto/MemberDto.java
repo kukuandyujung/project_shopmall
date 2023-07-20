@@ -1,6 +1,6 @@
 package com.java.dto;
 
-import java.sql.Timestamp;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -8,9 +8,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
+@AllArgsConstructor // 전체 생성자
+@NoArgsConstructor // 기본 생성자
+@Data // 게터&세터
 public class MemberDto {
 
 	private int MCODE;
@@ -32,5 +32,10 @@ public class MemberDto {
 	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	    return sdf.format(MJOINDAY);
 	    
+	}
+	
+	public void setMJOINDAY(String MJOINDAY) throws ParseException {
+	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	    this.MJOINDAY = sdf.parse(MJOINDAY);
 	}
 }
