@@ -36,7 +36,7 @@ public class BoardController {
 		HashMap<String, Object> map = productService.selectPageOne(pno);
 		model.addAttribute("pdto", map.get("pdto"));
 		//상품 뷰 페이지에서 하단에 목록을 만들기 위한 넘버링과 이 상품이 상품 목록에서 어디 페이지에 있는 지에 대해
-		//게시글 1개가져오기
+		//상품 1개가져오기
 		ProductDto pdto = boardService.selectOne(pno);
 		//하단댓글 모두가져오기
 		ArrayList<CommentDto> comList = boardService.selectComAll(pno);
@@ -80,12 +80,5 @@ public class BoardController {
 		//String result="success";
 		return cdto;
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 }

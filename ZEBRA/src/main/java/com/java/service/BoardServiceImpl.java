@@ -16,7 +16,7 @@ public class BoardServiceImpl implements BoardService{
 	@Autowired
 	BoardMapper boardMapper;
 
-	@Override //게시글 1개가져오기
+	@Override //상품 1개가져오기
 	public ProductDto selectOne(int pno) {
 		ProductDto pdto1 = boardMapper.selectOne(pno);
 		return pdto1;
