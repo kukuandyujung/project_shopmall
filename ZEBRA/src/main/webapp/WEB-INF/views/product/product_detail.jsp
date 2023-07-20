@@ -102,7 +102,7 @@
 				<div class="col-lg-6">
 					<div class="owl-carousel owl-theme s_Product_carousel">
 						<div class="single-prd-item">
-							<img class="img-fluid" src="/upload/${pdto.pdetail_img1}" style="width: 100%" alt="">
+							<img class="img-fluid" src="/upload/${pdto.pdetailimg1}" style="width: 100%;" alt="">
 						</div>
 						<!-- <div class="single-prd-item">
 							<img class="img-fluid" src="../img/category/s-p1.jpg" alt="">

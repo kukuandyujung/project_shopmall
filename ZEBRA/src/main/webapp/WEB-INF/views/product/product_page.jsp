@@ -223,14 +223,14 @@ function searchBtn() {
 						<!-- 필터 바 n개씩 보기 선택 끝 -->
 						<div>
 							<div class="input-group filter-bar-search">
-							<form action="/product/product_page" name="search" method="post">
+<!-- 							<form action="/product/product_page" name="search" method="post"> -->
 								<input type="text" name="s_word" id="s_word" value="${s_word}" style="height: 38px;" placeholder="Search">
 								<div class="input-group-append">
 									<button type="button" onclick="searchBtn()">
 										<i class="ti-search"></i>
 									</button>
 								</div>	
-							</form>	
+<!-- 							</form>	 -->
 							</div>
 						</div>
 					</div>
@@ -246,7 +246,7 @@ function searchBtn() {
 							<div class="col-md-6 col-lg-4">
 								<div class="card text-center card-product">
 									<div class="card-product__img">
-										<a href="/product/product_detail"><img class="card-img" src="/upload/${product.pmainimg1}" style="width: 250px;" alt=""></a>
+										<a href="/product/product_detail?pno=${product.pno}"><img class="card-img" src="/upload/${product.pmainimg1}" style="width: 250px;" alt=""></a>
 										<ul class="card-product__imgOverlay">
 											<li><button>
 													<i class="ti-shopping-cart"></i> <!-- 장바구니 버튼 -->
