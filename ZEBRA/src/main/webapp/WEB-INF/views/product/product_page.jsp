@@ -210,6 +210,7 @@
 				
 						</div>
 						<!-- 필터 바 n개씩 보기 선택 끝 -->
+						
 						<script>
 						function searchBtn() {
 						  	  alert("검색을 하겠습니다.");
@@ -219,25 +220,70 @@
 						  		  data:$("form[name=search]").serialize(), //pname만을 검색하기 
 						  		  dataType:"json",
 						  		  success: function(result){
-						  			  console.log("result:"+ result);
+						  			  console.log(result);
 						  			  alert("controller에서 데이터 받기 성공");
-						  			  if(result.length>=1){
-						  				  
-						  			  }
-						  			  $(".searchproduct").append(str);
+						  			  console.log(result.length);
+						  			var htmlData='';
+									   
+									for(var i = 0; i <result.length; i++){
+										
+										var href="/product/product_detail?pno="+result[i].pno;
+								
+										htmlData += '<div class="col-md-6 col-lg-4">';
+										htmlData += '<div class="card text-center card-product">';
+										htmlData += '<div class="card-product__img">';
+										htmlData += '<a href="'+href+'"><img class="card-img" src="/upload/'+result[i].pmainimg1+'" style="width: 250px;" alt=""></a>';
+										htmlData += '<ul class="card-product__imgOverlay">';
+										htmlData += '<li><button>';
+										htmlData += '<i class="ti-shopping-cart"></i>';
+										htmlData += '</button></li>';
+										htmlData += '<li><button>';
+										htmlData += '<i class="ti-heart"></i> <!-- 찜 버튼 -->';
+										htmlData += '</button></li></ul></div>';
+										htmlData += '<div class="card-body">';
+										htmlData += '<button class="image-button" id="image1" onclick="selectImage(\'image1\')"></button>';
+										htmlData += '<button class="image-button" id="image2" onclick="selectImage(\'image2\')"></button>';
+										htmlData += '<button class="image-button" id="image3" onclick="selectImage(\'image3\')"></button>';
+										htmlData += '<h4 class="card-product__title">';
+										htmlData += '<a href="/product/product_detail?pno=${product.pno}">'+result[i].pname+'</a>';
+										htmlData += '</h4>';
+										htmlData += '<p class="card-product__price">'+result[i].pprice+'원</p>';
+										htmlData += '</div></div></div>';
+										
+										
+										
+										
+										
+										
+										
+									}
+									
+									
+
+									$(".row").html(htmlData);
+
+
+
+
+
+
 						  			  
-						  		  },
-						  		  error:function(result){
+						  		  },//success
+						  		  error:function(){
 						  			  alert("데이터 받기 실패");
 						  		  }
 						  	  });//ajax
 						}
+						
 						</script>
+						
 						<div>
 							<div class="input-group filter-bar-search">
 							<!--  s_word를 입력할 수 있는 input창과 검색 버튼  -->
 							<form action="/product/product_page" name="search" method="post">
-								<input type="text" name="s_word" style="height: 38px;" placeholder="Search" class="searchproduct">
+							
+							
+								<input type="text" name="s_word" style="height: 38px;" placeholder="Search" >
 								<div class="input-group-append">
 									<button type="button" onclick="searchBtn()">
 										<i class="ti-search"></i>
@@ -245,16 +291,18 @@
 								</div>	
 							</form>	
 							</div>
+							<!-- s_word를 입력할 수 있는 input창과 검색 버튼   -->
 						</div>
 					</div>
 				</div>
 					<!-- 상단 필터 바 끝 -->
 					
 					<section class="lattest-product-area pb-40 category-list">
+						
 						<div class="row">
-						
-						
+					
 					<!-- 상품 리스트  시작-->
+
 					<c:forEach var="product" items="${list}">
 							<div class="col-md-6 col-lg-4">
 								<div class="card text-center card-product">
@@ -282,6 +330,7 @@
 								</div>
 							</div>
 					</c:forEach>
+							
 					<!-- 상품 리스트  끝-->		
 														
 						</div>

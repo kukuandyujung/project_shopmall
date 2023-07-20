@@ -43,7 +43,7 @@ public interface ProductMapper {
 	ProductDto selectPageOne(int pno);
 
 	//상품 페이지에서 ajax 검색
-	ArrayList<ProductDto> selectSearchAll();
+	ArrayList<ProductDto> selectSearchAll(String s_word);
 
 
 }

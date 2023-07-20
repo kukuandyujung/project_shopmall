@@ -31,7 +31,7 @@ public interface ProductService {
 	HashMap<String, Object> selectPageOne(int pno);
 
 	//상품 페이지에 ajax 검색
-	ArrayList<ProductDto> selectSearchAll();
+	ArrayList<ProductDto> selectSearchAll(String s_word);
 
 
 

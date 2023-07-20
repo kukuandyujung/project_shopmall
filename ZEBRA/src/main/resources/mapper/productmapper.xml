@@ -156,9 +156,9 @@
  	<!-- 상품 페이지에서 ajax 검색하기 -->
  	<select id="selectSearchAll" resultType="com.java.dto.ProductDto" >
  		select * from product
- 		where pname like concat('%', #{s_word}, '%')
+ 		where pname like '%'||#{s_word}||'%' 
  	</select>
- 	
+ 	<!--concat 연산자는 같은 문자열을 합치는 기능  -->
  	
  	
 </mapper>
