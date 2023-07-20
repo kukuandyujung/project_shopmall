@@ -30,6 +30,9 @@ public interface ProductService {
 	//상세 페이지에 상품 1개 가져오기 
 	HashMap<String, Object> selectPageOne(int pno);
 
+	//상품 페이지에 ajax 검색
+	ArrayList<ProductDto> selectSearchAll();
+
 
 
 		

@@ -106,7 +106,7 @@
 	</update>
 	
 	<update id="updatePstepCount">
-		update product set pstep=pstep+1 where pno=#{pno} and pstep=#{pstep};
+		update product set pstep=pstep+1 where pno=#{pno} and pstep=#{pstep}
 	</update>
 
 	<!-- ============================여기부터는 상품 페이지 ====================================== -->
@@ -152,6 +152,14 @@
 	<select id="selectPageOne" resultType="com.java.dto.ProductDto">
 		select * from product where pno=#{pno}
 	</select>
+ 	
+ 	<!-- 상품 페이지에서 ajax 검색하기 -->
+ 	<select id="selectSearchAll" resultType="com.java.dto.ProductDto" >
+ 		select * from product
+ 		where pname like concat('%', #{s_word}, '%')
+ 	</select>
+ 	
+ 	
  	
 </mapper>
 

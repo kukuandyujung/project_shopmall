@@ -216,31 +216,28 @@
 						  	  $.ajax({
 						  		  url:"/product/searchAjax",
 						  		  type:"post",
-						  		  data:$("form[name=search]").serialize(), //category안에 있는 pname 
+						  		  data:$("form[name=search]").serialize(), //pname만을 검색하기 
 						  		  dataType:"json",
 						  		  success: function(result){
-						  			  console.log("result:", result);
+						  			  console.log("result:"+ result);
 						  			  alert("controller에서 데이터 받기 성공");
-						  			  $(".searchproduct").
+						  			  if(result.length>=1){
+						  				  
+						  			  }
+						  			  $(".searchproduct").append(str);
 						  			  
 						  		  },
-						  		  error:function(){
+						  		  error:function(result){
 						  			  alert("데이터 받기 실패");
 						  		  }
 						  	  });//ajax
-							  var category = document.getElementById("category").value;
-							  
-							  if (category !== "pname") {
-							    return;
-							  }
-							  document.forms["search"].submit();
 						}
 						</script>
 						<div>
 							<div class="input-group filter-bar-search">
 							<!--  s_word를 입력할 수 있는 input창과 검색 버튼  -->
 							<form action="/product/product_page" name="search" method="post">
-								<input type="text" name="s_word" style="height: 38px;" placeholder="Search">
+								<input type="text" name="s_word" style="height: 38px;" placeholder="Search" class="searchproduct">
 								<div class="input-group-append">
 									<button type="button" onclick="searchBtn()">
 										<i class="ti-search"></i>

@@ -24,4 +24,7 @@ public class ProductDto {
 	private String pdetailimg1,pdetailimg2, pdetailimg3, pdetailimg4,pdetailimg5, pdetailimg6;
 	private String pcolor;            
 	private String psize;            
+	
+	 
+	
 }

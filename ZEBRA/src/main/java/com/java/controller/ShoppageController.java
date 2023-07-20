@@ -1,5 +1,6 @@
 package com.java.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -8,8 +9,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.java.dto.ProductDto;
 import com.java.service.ProductService;
@@ -19,6 +22,32 @@ public class ShoppageController {
 
 	@Autowired
 	ProductService productService;
+	
+	
+//	@PostMapping("/product/searchAjax")
+//	@ResponseBody //ajax를 사용하기 위한 것. 데이터를 넘겨주는 어노테이션이다. 
+//	public ArrayList<ProductDto> searchAjax(
+//			@RequestParam int pno,
+//			@RequestParam int page, 
+//			String s_word){
+//		ArrayList<ProductDto> list = productService.selectSearchAll();
+//		
+//		//검색어에 맞는 상품들 가져오기 
+//		return list;
+//	}
+	@PostMapping("/product/searchAjax")
+	@ResponseBody //ajax를 사용하기 위한 것. 데이터를 넘겨주는 어노테이션이다. 
+	public ArrayList<ProductDto> searchAjax(
+//			@RequestParam int pno,
+//			@RequestParam int page, 
+			String s_word){
+		ArrayList<ProductDto> list = productService.selectSearchAll();
+		
+		//검색어에 맞는 상품들 가져오기 
+		return list;
+	}
+	
+	
 	
 	//상품 페이지에 상품 전체 가져오기 
 	@RequestMapping("/product/product_page")

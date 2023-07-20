@@ -42,5 +42,8 @@ public interface ProductMapper {
 	//상세 페이지에서 상품 1개 가져오기 
 	ProductDto selectPageOne(int pno);
 
+	//상품 페이지에서 ajax 검색
+	ArrayList<ProductDto> selectSearchAll();
+
 
 }
