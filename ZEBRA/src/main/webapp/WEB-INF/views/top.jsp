@@ -100,10 +100,6 @@
 
 
 					<ul class="nav-shop">
-						<li class="nav-item"><input type="text">
-						<li class="nav-item"><button>
-								<i class="ti-search"></i>
-							</button></li>
 						<li class="nav-item"><a href="/mypage/cart"><button>
 									<i class="ti-shopping-cart"></i>
 								</button></a></li>
