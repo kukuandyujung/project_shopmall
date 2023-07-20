@@ -91,17 +91,6 @@
 </script>
 </head>
 <body>
-<script>
-function searchBtn() {
-  
-  var category = document.getElementById("category").value;
-  
-  if (category !== "pname") {
-    return;
-  }
-  document.forms["search"].submit();
-}
-</script>
 	<%@ include file="../top.jsp"%>
 
 	<!-- ================ start banner area ================= -->
@@ -221,16 +210,43 @@ function searchBtn() {
 				
 						</div>
 						<!-- 필터 바 n개씩 보기 선택 끝 -->
+						<script>
+						function searchBtn() {
+						  	  alert("검색을 하겠습니다.");
+						  	  $.ajax({
+						  		  url:"/product/searchAjax",
+						  		  type:"post",
+						  		  data:$("form[name=search]").serialize(), //category안에 있는 pname 
+						  		  dataType:"json",
+						  		  success: function(result){
+						  			  console.log("result:", result);
+						  			  alert("controller에서 데이터 받기 성공");
+						  			  $(".searchproduct").
+						  			  
+						  		  },
+						  		  error:function(){
+						  			  alert("데이터 받기 실패");
+						  		  }
+						  	  });//ajax
+							  var category = document.getElementById("category").value;
+							  
+							  if (category !== "pname") {
+							    return;
+							  }
+							  document.forms["search"].submit();
+						}
+						</script>
 						<div>
 							<div class="input-group filter-bar-search">
-<!-- 							<form action="/product/product_page" name="search" method="post"> -->
-								<input type="text" name="s_word" id="s_word" value="${s_word}" style="height: 38px;" placeholder="Search">
+							<!--  s_word를 입력할 수 있는 input창과 검색 버튼  -->
+							<form action="/product/product_page" name="search" method="post">
+								<input type="text" name="s_word" style="height: 38px;" placeholder="Search">
 								<div class="input-group-append">
 									<button type="button" onclick="searchBtn()">
 										<i class="ti-search"></i>
 									</button>
 								</div>	
-<!-- 							</form>	 -->
+							</form>	
 							</div>
 						</div>
 					</div>
@@ -262,7 +278,7 @@ function searchBtn() {
 										<button class="image-button" id="image2" onclick="selectImage('image2')"></button>
 										<button class="image-button" id="image3" onclick="selectImage('image3')"></button>
 										<h4 class="card-product__title">
-											<a href="/product/product_detail">${product.pname}</a>
+											<a href="/product/product_detail?pno=${product.pno}">${product.pname}</a>
 										</h4>
 										<p class="card-product__price">${product.pprice}원</p>
 									</div>
