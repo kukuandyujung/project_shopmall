@@ -159,10 +159,10 @@
 		<if test="selectprice == 'highprice'">
  		select * from product order by pprice desc  <!--  가격 높은 -> 낮은 순-->
 		</if>
- 	</select>
+ 	</select> 
  		
- 	
  	<!-- 상품 페이지를 n개씩 보기로 정렬  -->	
+ <!-- 
  	<select id="selectViewAll" resultType="com.java.dto.ProductDto">
 	  	<![CDATA[
 	    select * from (
@@ -182,6 +182,7 @@
 	    ) where rnum >= #{startRow} and rnum <= #{endRow}
 	  ]]>
 	</select>
+  -->	
 </mapper>
 
 
