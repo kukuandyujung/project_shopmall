@@ -41,7 +41,12 @@ public class ShoppageController {
 //			@RequestParam int pno,
 //			@RequestParam int page, 
 			String s_word){
-		ArrayList<ProductDto> list = productService.selectSearchAll();
+		
+	System.out.println(s_word);
+		
+		ArrayList<ProductDto> list = productService.selectSearchAll(s_word);
+		
+		System.out.println(list.get(0).getPname());
 		
 		//검색어에 맞는 상품들 가져오기 
 		return list;
@@ -72,21 +77,7 @@ public class ShoppageController {
 		return "product/product_page";
 	}//product_page
 	
-	@RequestMapping("/product/product_detail")
-	public String product_detail( int pno,
- 
-			Model model) {
-		
-		//상품 번호의 값을 왜 디폴드 값으로 1을 했는 가 ? 
-		System.out.println("product_detail pno  : " + pno );
 
-		//상품 1개 가져오기 
-		HashMap<String, Object> map = productService.selectPageOne(pno);
-		model.addAttribute("pdto", map.get("pdto"));
-		//상품 뷰 페이지에서 하단에 목록을 만들기 위한 넘버링과 이 상품이 상품 목록에서 어디 페이지에 있는 지에 대해
-		return "product/product_detail";
-//		return "redirect:product_detail?pno="+pno ;
-	}//product_view
 	
 	
 
