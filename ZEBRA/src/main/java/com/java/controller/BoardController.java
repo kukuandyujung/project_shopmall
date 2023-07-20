@@ -40,11 +40,9 @@ public class BoardController {
 		ProductDto pdto = boardService.selectOne(pno);
 		//하단댓글 모두가져오기
 		ArrayList<CommentDto> comList = boardService.selectComAll(pno);
-		
 		model.addAttribute("pdto",pdto);
 		model.addAttribute("comList",comList);
-		
-		
+
 		return "product/product_detail";
 	}
 	

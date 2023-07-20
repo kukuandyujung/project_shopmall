@@ -20,8 +20,10 @@
 <link rel="stylesheet" type="text/css" href="../css/content.css" />
 <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.anchor.js"></script>
 <script type="text/javascript" src="../js/common.js"></script>
 <script type="text/javascript"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <link rel="icon" href="../img/logo2.png" type="image/png">
 <link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
@@ -286,7 +288,7 @@
                     			  alert("댓글 저장 성공");
                     			  //하단댓글 1개 가져오기
                     			  //하단에 댓글추가코드
-                    			  dataHtml += "<ul mid='"+ data.cno +"'>";
+                    			  dataHtml += "<ul id='"+ data.cno +"'>";
                     			  dataHtml += "<li class='name'>"+ data.mid +"<span>&nbsp&nbsp[ "+ moment(data.cdate).format("YYYY-MM-DD HH:mm:ss") +" ]</span></li>";
                     			  dataHtml += "<li class='txt'>"+ data.ccontent +"</li>";
                     			  dataHtml += "<li class='btn'>";
@@ -338,6 +340,8 @@
                       }//삭제버튼 -->
                       
                       
+                      
+                      
                       //3. 댓글수정저장
                       function updateSave(cno){
                     	  //alert(cno);
@@ -352,7 +356,7 @@
                         			     "cpw":$("#updatePw").val(),
                         			     "ccontent":$("#updateTxt").val() }, 
                         		  success:function(data){
-                        			  alert(cno+"번 댓글수정 저장되었습니다.");
+                        			  alert("댓글수정 저장되었습니다.");
                         			  
                         			  var dataHtml="";
                         			  
@@ -382,10 +386,10 @@
                     		 let dataHtml="";
                     		 
                     		 dataHtml += "<li class='name'>"+mid+"&nbsp;<span>["+cdate+"]</span>";
-                    		 dataHtml += "&nbsp;&nbsp;&nbsp;&nbsp;비밀번호&nbsp;&nbsp;<input type='password' class='replynum' mid='updatePw' />";
+                    		 dataHtml += "&nbsp;&nbsp;&nbsp;&nbsp;비밀번호&nbsp;&nbsp;<input type='password' class='replynum' id='updatePw' />";
                     		 dataHtml += "</li>";
                     		 dataHtml += "<li class='txt'>";
-                    		 dataHtml += "<textarea class='replyType' mid='updateTxt'>"+ccontent+"</textarea>";
+                    		 dataHtml += "<textarea class='replyType' id='updateTxt'>"+ccontent+"</textarea>";
                     		 dataHtml += "</li>";
                     		 dataHtml += "<li class='btn'>";
                     		 dataHtml += "<a onclick=\"updateSave("+cno+")\" class='rebtn'>저장</a>&nbsp;";
@@ -457,8 +461,8 @@
 					   
 					   
 					</div>
-					<div class="btnAreaList">
-								<!-- 페이징이동1 -->
+					<!-- <div class="btnAreaList">
+								페이징이동1
 								<div class="allPageMoving1">
 
 									<a href="#" class="n"><img src="../img/btn/btn_pre2.gif"
@@ -471,9 +475,9 @@
 										alt="마지막페이지로" /></a>
 
 								</div> 
-								<!-- //페이징이동1 -->
+								//페이징이동1
 							</div>             
-							<!-- //상품리뷰 -->  
+							//상품리뷰   -->
 
 						</div>
 
