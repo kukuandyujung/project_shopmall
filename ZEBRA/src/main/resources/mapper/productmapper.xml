@@ -136,15 +136,6 @@
 		    where rnum>=#{startRow} and rnum<=#{endRow} 
 		  ]]> 
 
-<!-- 		<if test="pricehit == 'rowprice'"> -->
-<!-- 		select * from product order by pprice asc  가격 낮은-> 높은 순 -->
-<!-- 		</if> -->
-<!-- 		<if test="pricehit == 'highprice'"> -->
-<!--  		select * from product order by pprice desc 가격 높은 -> 낮은 순 -->
-<!-- 		</if> -->
-<!-- 		<if test="pricehit == 'highhit"> -->
-<!--  		select * from product order by phit desc 조회수 높은 -> 낮은 순 -->
-<!-- 		</if>  -->
  	</select>
  	
  	<!-- 상세 페이지에서 상품 1개 가져오기 -->
@@ -159,6 +150,20 @@
  		where pname like '%'||#{s_word}||'%' 
  	</select>
  	<!--concat 연산자는 같은 문자열을 합치는 기능  -->
+ 	
+ 	<!-- 상품 페이지에서  ajax 가격, 조회 순 -->
+ 	<select id="" resultType="com.java.dto.ProductDto">
+		<if test="pricehit == 'rowprice'">
+		select * from product order by pprice asc  <!-- 가격 낮은-> 높은 순 -->
+		</if>
+		<if test="pricehit == 'highprice'">
+ 		select * from product order by pprice desc  <!--  가격 높은 -> 낮은 순-->
+		</if>
+		<if test="pricehit == 'highhit">
+ 		select * from product order by phit desc <!--  조회수 높은 -> 낮은 순--> 
+		</if> 
+ 	</select>
+ 	
  	
  	
 </mapper>

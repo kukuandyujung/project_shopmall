@@ -45,5 +45,8 @@ public interface ProductMapper {
 	//상품 페이지에서 ajax 검색
 	ArrayList<ProductDto> selectSearchAll(String s_word);
 
+    //상품 페이지에서 ajax 가격, 조회 
+	ArrayList<ProductDto> selectpricehitAll(int phit, int pprice);
+
 
 }
