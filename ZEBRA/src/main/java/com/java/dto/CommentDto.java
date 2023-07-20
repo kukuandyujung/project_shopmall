@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 public class CommentDto {
 	
 	private int cno;
-	private int bno;
-	private String id;
+	private int pno;
+	private String mid;
 	private String cpw;
 	private String ccontent;
 	private Timestamp cdate;

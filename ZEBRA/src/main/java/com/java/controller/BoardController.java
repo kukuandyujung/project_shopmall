@@ -1,6 +1,9 @@
 package com.java.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,35 +14,38 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.java.dto.BoardDto;
 import com.java.dto.CommentDto;
+import com.java.dto.ProductDto;
 import com.java.service.BoardService;
+import com.java.service.ProductService;
 
 @Controller
 public class BoardController {
 
 	@Autowired
 	BoardService boardService;
+	@Autowired
+	HttpSession session;
+	@Autowired
+	ProductService productService;
 	
-	@RequestMapping("/board/notice")
-	public String notice(Model model) {
-		ArrayList<BoardDto> list = new ArrayList<>();
-		//게시글 전체가져오기
-		list = boardService.selectAll();
-		model.addAttribute("list",list);
-		
-		return "board/notice";
-	}
-	
-	@RequestMapping("/product/singleproduct")
-	public String singleproduct(int bno,Model model) {
+	@RequestMapping("/product/product_detail")
+	public String product_detail(int pno, Model model) {
+		//상품 번호의 값을 왜 디폴드 값으로 1을 했는 가 ? 
+		System.out.println("product_detail pno  : " + pno );
+		//상품 1개 가져오기 
+		HashMap<String, Object> map = productService.selectPageOne(pno);
+		model.addAttribute("pdto", map.get("pdto"));
+		//상품 뷰 페이지에서 하단에 목록을 만들기 위한 넘버링과 이 상품이 상품 목록에서 어디 페이지에 있는 지에 대해
 		//게시글 1개가져오기
-		BoardDto bdto = boardService.selectOne(bno);
+		ProductDto pdto = boardService.selectOne(pno);
 		//하단댓글 모두가져오기
-		ArrayList<CommentDto> comList = boardService.selectComAll(bno);
-		
-		model.addAttribute("bdto",bdto);
+		ArrayList<CommentDto> comList = boardService.selectComAll(pno);
+		model.addAttribute("pdto",pdto);
 		model.addAttribute("comList",comList);
-		return "product/singleproduct";
+
+		return "product/product_detail";
 	}
+	
 	
 	@RequestMapping("/board/commentInsert")
 	@ResponseBody

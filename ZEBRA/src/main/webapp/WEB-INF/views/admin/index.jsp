@@ -35,11 +35,13 @@
   </head>
 
   <body class="nav-md">
-    <div class="container body">
+  
+      <div class="container body">
       <div class="main_container">
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
+            <div class="navbar nav_title" style="border: 0;">       
+                            
               <a href="index" class="site_title"><i class="fa fa-paw"></i> <span>ZEBRA</span></a>
             </div>
 
@@ -53,7 +55,7 @@
               </div>
               <div class="profile_info">
                 <span>환영합니다,</span>
-                <h2>${sessionName}님</h2>
+                <h2>${sessionName}님</h2>                
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -67,14 +69,45 @@
         </div>
 
       <%@ include file="top_common.jsp" %>
+      
+	  <script>
+		  function boardBtn(){
+			  
+				alert("그래프 데이터를 업데이트합니다.");
+				
+				$.ajax({
+					url:"/admin/indexAjax", 
+					type:"post",
+					data:{"count":"map"},
+					dataType:"json",
+					success:function(data){
+						console.log("list : "+list);
+						alert("controller에서 데이터 받기 성공!");
+						/* 
+						var arrSrc = data[0].bfile.split(","); // 자바스크립트 split함수 사용
+						console.log(arrSrc[0]);
+						var src = '/upload/'+ arrSrc[0];	 						
+						// 받은 데이터를 html에 넣음.
+						$(".review_ajax1").text(data[0].btitle);
+						$(".review_ajax2").html(data[0].bcontent);
+						$(".review_ajax3").prop("src",src); // 1개만 있을 때는 , 여러 개 있을 때는 :
+						  */
+						 
+					},
+					error:function(){
+						alert("데이터 받기 실패!");
+					}
+				});			
+		  }
+		</script>
 
-        <!-- page content -->
-        <div class="right_col" role="main">
+        <!-- page content -->        
+        <div class="right_col" role="main">        
           <div class="">
-            <!-- top tiles -->
-          <div class="row" style="display: inline-block;" >
+          <!-- top tiles -->
+          <div class="row" style="display: inline-block;" >          
           <div class="tile_count">
-            <div class="col-md-2 col-sm-4  tile_stats_count">
+              <div class="col-md-2 col-sm-4  tile_stats_count">            
               <span class="count_top"><i class="fa fa-user"></i> 총 회원수</span>
               <div class="count"> 10000 </div>
               <span class="count_bottom"><i class="green">4% </i> 지난 달 대비</span>
@@ -115,7 +148,8 @@
 
                 <div class="row x_title">
                   <div class="col-md-6">
-                    <h3>수익 현황 <small><small>월별 총 매출</small></small></h3>
+                    <h3 style="display: inline-block;">수익 현황 <small><small>월별 총 매출</small></small></h3> 
+                      <button onclick="boardBtn()" style="font-size:15px; width: 60px; height: 30px; margin-left:6px;">AJAX</button>
                   </div>
                   <div class="col-md-6">
                     <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">

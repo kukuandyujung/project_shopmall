@@ -76,10 +76,7 @@ public class ShoppageController {
 		
 		return "product/product_page";
 	}//product_page
-	
 
-	
-	
 
 	
 }
