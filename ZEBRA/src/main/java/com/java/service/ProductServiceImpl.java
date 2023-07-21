@@ -153,6 +153,13 @@ public class ProductServiceImpl implements ProductService{
 		ArrayList<ProductDto> list = productMapper.selectViewAll(); 
 		return list;
 	}
+
+
+	@Override //상품 페이지에서 ajax n개씩 보기와 가격순 
+	public ArrayList<ProductDto> selectPriceviewAll(Integer pprice) {
+		ArrayList<ProductDto> list= productMapper.selectPriceviewAll(pprice);
+		return list;
+	}
 	
 	
 	

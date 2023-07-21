@@ -264,73 +264,12 @@
 						</div>	
 						<!-- 필터 바 가격 순  끝 -->
 						
-						<!-- n개씩 보기 ajax 시작 -->
-						<script>
-			  		    function sortByView() {
-			  		        var selectedOption = document.getElementById("selectview").value;
-
-			  		        // AJAX 호출을 통해 데이터를 가져와서 페이지를 구성하는 로직을 작성하면 됩니다.
-			  		        // 여기에 필요한 AJAX 호출 및 데이터 처리 로직을 추가하세요.
-			  		        // AJAX 호출을 이용해 서버로부터 데이터를 받아오고, 해당 데이터로 페이지를 구성합니다.
-			  		        alert("가격순으로 고고고고고고고");
-							$.ajax({
-								 url:"/product/viewAjax",
-						  		 type:"post",
-						  		 data:$("form[name=view]").serialize(), //셀렉 창인데, 가격과 조회를 같이 해주어야 한다. 
-						  		  dataType:"json",
-						  		  success: function(data){
-						  			  console.log("data" + data);
-						  			  alert("n개씩 보기 데이터 받기 성공");
-						  			
-						  			  
-						  			var htmlData='';
-									   
-									for(var i = 0; i <data.length; i++){
-										
-										var href="/product/product_detail?pno="+data[i].pno;
-								
-										htmlData += '<div class="col-md-6 col-lg-4">';
-										htmlData += '<div class="card text-center card-product">';
-										htmlData += '<div class="card-product__img">';
-										htmlData += '<a href="'+href+'"><img class="card-img" src="/upload/'+data[i].pmainimg1+'" style="width: 250px;" alt=""></a>';
-										htmlData += '<ul class="card-product__imgOverlay">';
-										htmlData += '<li><button>';
-										htmlData += '<i class="ti-shopping-cart"></i>';
-										htmlData += '</button></li>';
-										htmlData += '<li><button>';
-										htmlData += '<i class="ti-heart"></i> <!-- 찜 버튼 -->';
-										htmlData += '</button></li></ul></div>';
-										htmlData += '<div class="card-body">';
-										htmlData += '<button class="image-button" id="image1" onclick="selectImage(\'image1\')"></button>';
-										htmlData += '<button class="image-button" id="image2" onclick="selectImage(\'image2\')"></button>';
-										htmlData += '<button class="image-button" id="image3" onclick="selectImage(\'image3\')"></button>';
-										htmlData += '<h4 class="card-product__title">';
-										htmlData += '<a href="/product/product_detail?pno=${product.pno}">'+data[i].pname+'</a>';
-										htmlData += '</h4>';
-										htmlData += '<p class="card-product__price">'+data[i].pprice+'원</p>';
-										htmlData += '</div></div></div>';
-
-										
-									}//for
-									
-									
-
-									$(".row").html(htmlData);
-						  			  
-						  		  },//fuction
-						  		  error:function(){
-						  			  alert("데이터 받기 실패함");
-						  		  }//error
-							});//ajax
-			  		    }
-			  			</script>
 						
-						<!-- n개씩 보기 ajax 끝 -->
 						
 						
 						<!-- 필터 바 n개씩 보기 선택 시작 -->
 						<div class="sorting mr-auto">	
-					  		<form action="/product/product_page" name="view" method="get">
+					  		<form action="/product/product_page" name="view" method="post">
 						  	<select name=selectview id="selectview" onchange="sortByView()">
 							    <option value="6">view 6</option>
 							    <option value="9">view 9</option>

@@ -39,6 +39,9 @@ public interface ProductService {
 	//상품 페이지에서 ajax n개씩 보기 
 	ArrayList<ProductDto> selectViewAll();
 
+	//상품 페이지제어 ajax 가격 순과 n개씩 보기  
+	ArrayList<ProductDto> selectPriceviewAll(Integer pprice);
+
 
 
 		

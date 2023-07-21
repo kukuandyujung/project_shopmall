@@ -51,5 +51,8 @@ public interface ProductMapper {
 	//상품 페이지에서 ajax n개씩 보기 
 	ArrayList<ProductDto> selectViewAll();
 
+	//상품 페이지에서 ajax n개씩 보기와 가격 셀렉하기 
+	ArrayList<ProductDto> selectPriceviewAll(Integer pprice);
+
 
 }
