@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
@@ -21,9 +21,9 @@
 <link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
 <link rel="stylesheet" href="../vendors/linericon/style.css">
 <link rel="stylesheet"
-	href="../vendors/owl-carousel/owl.theme.default.min.css">
+   href="../vendors/owl-carousel/owl.theme.default.min.css">
 <link rel="stylesheet"
-	href="../vendors/owl-carousel/owl.carousel.min.css">
+   href="../vendors/owl-carousel/owl.carousel.min.css">
 <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
 <link rel="stylesheet" href="../css/style.css">
@@ -31,388 +31,380 @@
 <style>
 .list{cursor: printer;}
 .number-box {
-	display: inline-block;
-	width: 30px;
-	height: 30px;
-	line-height: 23px;
-	color: #888;
-	text-decoration: none;
-	border: 1px #c0c0c0 solid;
-	background: #fff;
-	font-size: 15px;
-	text-align: center;
+   display: inline-block;
+   width: 30px;
+   height: 30px;
+   line-height: 23px;
+   color: #888;
+   text-decoration: none;
+   border: 1px #c0c0c0 solid;
+   background: #fff;
+   font-size: 15px;
+   text-align: center;
 }
 
 .btnAreaList {
-	display: flex;
-	justify-content: center;
+   display: flex;
+   justify-content: center;
 }
 
 .allPageMoving1 {
-	display: flex;
-	align-items: center;
+   display: flex;
+   align-items: center;
 }
 
 .image-button {
-	display: inline-block;
-	margin: 0;
-	width: 34px;
-	height: 34px;
-	padding: 2px;
-	border: 1px solid transparent;
-	border-radius: 50%;
+   display: inline-block;
+   margin: 0;
+   width: 34px;
+   height: 34px;
+   padding: 2px;
+   border: 1px solid transparent;
+   border-radius: 50%;
 }
 
 .image-button.selected {
-	border-color: #000;
+   border-color: #000;
 }
 
 #image1 {
- 	background-image: url('../img/member/image_1_1.jpg'); 
+    background-image: url('../img/member/image_1_1.jpg'); 
 }
 
 #image2 {
-	background-image: url('../img/member/image_3_2.jpg');
+   background-image: url('../img/member/image_3_2.jpg');
 }
 
 #image3 {
-	background-image: url('../img/member/image_3_4.jpg');
+   background-image: url('../img/member/image_3_4.jpg');
 }
 </style>
 
 <script>
-	function selectImage(imageId) {
-		var imageButtons = document.getElementsByClassName('image-button');
-		for (var i = 0; i < imageButtons.length; i++) {
-			imageButtons[i].classList.remove('selected');
-		}
-		document.getElementById(imageId).classList.add('selected');
-	}
+   function selectImage(imageId) {
+      var imageButtons = document.getElementsByClassName('image-button');
+      for (var i = 0; i < imageButtons.length; i++) {
+         imageButtons[i].classList.remove('selected');
+      }
+      document.getElementById(imageId).classList.add('selected');
+   }
 </script>
 </head>
 <body>
-	<%@ include file="../top.jsp"%>
+   <%@ include file="../top.jsp"%>
 
-	<!-- ================ start banner area ================= -->
-	<section class="blog-banner-area" id="category">
-		<div class="container h-100">
-			<div class="blog-banner">
-				<div class="text-center">
-					<h1>Shop Category</h1>
-					<nav aria-label="breadcrumb" class="banner-breadcrumb"></nav>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- ================ end banner area ================= -->
+   <!-- ================ start banner area ================= -->
+   <section class="blog-banner-area" id="category">
+      <div class="container h-100">
+         <div class="blog-banner">
+            <div class="text-center">
+               <h1>Shop Category</h1>
+               <nav aria-label="breadcrumb" class="banner-breadcrumb"></nav>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- ================ end banner area ================= -->
 
 
-	<!-- ================ category section start ================= -->
-	<section class="section-margin--small mb-5">
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-3 col-lg-4 col-md-5">
-					<div class="sidebar-categories">
-						<div class="common-filter">
-							<div class="head">Color</div>
-							<form action="#">
-								<style>
+   <!-- ================ category section start ================= -->
+   <section class="section-margin--small mb-5">
+      <div class="container">
+         <div class="row">
+            <div class="col-xl-3 col-lg-4 col-md-5">
+               <div class="sidebar-categories">
+                  <div class="common-filter">
+                     <div class="head">Color</div>
+                     <form action="#">
+                        <style>
 #color {
-	column-count: 2; /* 두 개의 열로 나눔 */
-	column-gap: 1em; /* 열 사이의 간격 조절 */
-	padding-left: 10px;
+   column-count: 2; /* 두 개의 열로 나눔 */
+   column-gap: 1em; /* 열 사이의 간격 조절 */
+   padding-left: 10px;
 }
 </style>
-								<ul id="color">
-									<li class="filter-list"><input class="pixel-radio"
-										type="radio" id="black" name="color"><label
-										for="black">Black<span>(29)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio"
-										type="radio" id="blue" name="color"><label for="blue">Blue<span>(29)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio"
-										type="radio" id="brown" name="color"><label
-										for="brown">Brown<span>(29)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio"
-										type="radio" id="gray" name="color"><label for="gray">Gray<span>(29)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio"
-										type="radio" id="green" name="color"><label
-										for="green">Green<span>(29)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio"
-										type="radio" id="multi" name="color"><label
-										for="multicolor">Multi<span>(29)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio"
-										type="radio" id="navy" name="color"><label for="navy">Navy<span>(29)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio"
-										type="radio" id="neutral" name="color"><label
-										for="neutral">Neutral<span>(29)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio"
-										type="radio" id="orange" name="color"><label
-										for="orange">Orange<span>(29)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio"
-										type="radio" id="pink" name="color"><label for="pink">Pink<span>(29)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio"
-										type="radio" id="purple" name="color"><label
-										for="purple">Purple<span>(29)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio"
-										type="radio" id="red" name="color"><label for="red">Red<span>(19)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio"
-										type="radio" id="white" name="color"><label
-										for="white">White<span>(19)</span></label></li>
-									<li class="filter-list"><input class="pixel-radio"
-										type="radio" id="yellow" name="color"><label
-										for="yellow">Yellow<span>(19)</span></label></li>
-								</ul>
-							</form>
-						</div>
-						<div class="common-filter">
-							<div class="head">Price</div>
-							<div class="price-range-area">
-								<div id="price-range"></div>
-								<div class="value-wrapper d-flex">
-									<div class="price">Price:</div>
-<!-- 									<input type="range" min="1" max="10" value="1"> 개 -->
-									<span>$</span>
-									<div id="lower-value"></div>
-									<div class="to">to</div>
-									<span>$</span>
-									<div id="upper-value"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			    
-			    
-				<div class="col-xl-9 col-lg-8 col-md-7">
-					<!-- 상단 필터 바 시작 -->
-					<div class="filter-bar d-flex flex-wrap align-items-center">
-						<!-- 필터 바 가격 순, 조회순 시작 -->
-						<!--  가격 ajax 시작 -->
-			  			<script>
-			  		    function sortByPrice() {
-			  		        var selectedOption = document.getElementById("selectprice").value;
+                        <ul id="color">
+                           <li class="filter-list"><input class="pixel-radio"
+                              type="radio" id="black" name="color"><label
+                              for="black">Black<span>(29)</span></label></li>
+                           <li class="filter-list"><input class="pixel-radio"
+                              type="radio" id="blue" name="color"><label for="blue">Blue<span>(29)</span></label></li>
+                           <li class="filter-list"><input class="pixel-radio"
+                              type="radio" id="brown" name="color"><label
+                              for="brown">Brown<span>(29)</span></label></li>
+                           <li class="filter-list"><input class="pixel-radio"
+                              type="radio" id="gray" name="color"><label for="gray">Gray<span>(29)</span></label></li>
+                           <li class="filter-list"><input class="pixel-radio"
+                              type="radio" id="green" name="color"><label
+                              for="green">Green<span>(29)</span></label></li>
+                           <li class="filter-list"><input class="pixel-radio"
+                              type="radio" id="multi" name="color"><label
+                              for="multicolor">Multi<span>(29)</span></label></li>
+                           <li class="filter-list"><input class="pixel-radio"
+                              type="radio" id="navy" name="color"><label for="navy">Navy<span>(29)</span></label></li>
+                           <li class="filter-list"><input class="pixel-radio"
+                              type="radio" id="neutral" name="color"><label
+                              for="neutral">Neutral<span>(29)</span></label></li>
+                           <li class="filter-list"><input class="pixel-radio"
+                              type="radio" id="orange" name="color"><label
+                              for="orange">Orange<span>(29)</span></label></li>
+                           <li class="filter-list"><input class="pixel-radio"
+                              type="radio" id="pink" name="color"><label for="pink">Pink<span>(29)</span></label></li>
+                           <li class="filter-list"><input class="pixel-radio"
+                              type="radio" id="purple" name="color"><label
+                              for="purple">Purple<span>(29)</span></label></li>
+                           <li class="filter-list"><input class="pixel-radio"
+                              type="radio" id="red" name="color"><label for="red">Red<span>(19)</span></label></li>
+                           <li class="filter-list"><input class="pixel-radio"
+                              type="radio" id="white" name="color"><label
+                              for="white">White<span>(19)</span></label></li>
+                           <li class="filter-list"><input class="pixel-radio"
+                              type="radio" id="yellow" name="color"><label
+                              for="yellow">Yellow<span>(19)</span></label></li>
+                        </ul>
+                     </form>
+                  </div>
+                  <div class="common-filter">
+                     <div class="head">Price</div>
+                     <div class="price-range-area">
+                        <div id="price-range"></div>
+                        <div class="value-wrapper d-flex">
+                           <div class="price">Price:</div>
+<!--                            <input type="range" min="1" max="10" value="1"> 개 -->
+                           <span>$</span>
+                           <div id="lower-value"></div>
+                           <div class="to">to</div>
+                           <span>$</span>
+                           <div id="upper-value"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+             
+             
+            <div class="col-xl-9 col-lg-8 col-md-7">
+               <!-- 상단 필터 바 시작 -->
+               <div class="filter-bar d-flex flex-wrap align-items-center">
+                  <!-- 필터 바 가격 순, 조회순 시작 -->
+                  <!--  가격, 조회 순 ajax 시작 -->
+                  <script>
+                  $(function(){
+                       alert("가격순, 상품 조회수순");
+                     $.ajax({
+                         url:"/product/pricehitAjax",
+                           type:"post",
+                           data:$("form[name=pricehit]").serialize(), //셀렉 창인데, 가격과 조회를 같이 해주어야 한다. 
+                            dataType:"json",
+                            success: function(data){
+                               console.log("data" + data);
+                               alert("가격과 조회 데이터 받기 성공");
+                             
+                               
+                               
+                             var htmlData='';
+                              
+                           for(var i = 0; i <result.length; i++){
+                              
+                              var href="/product/product_detail?pno="+result[i].pno;
+                        
+                              htmlData += '<div class="col-md-6 col-lg-4">';
+                              htmlData += '<div class="card text-center card-product">';
+                              htmlData += '<div class="card-product__img">';
+                              htmlData += '<a href="'+href+'"><img class="card-img" src="/upload/'+result[i].pmainimg1+'" style="width: 250px;" alt=""></a>';
+                              htmlData += '<ul class="card-product__imgOverlay">';
+                              htmlData += '<li><button>';
+                              htmlData += '<i class="ti-shopping-cart"></i>';
+                              htmlData += '</button></li>';
+                              htmlData += '<li><button>';
+                              htmlData += '<i class="ti-heart"></i> <!-- 찜 버튼 -->';
+                              htmlData += '</button></li></ul></div>';
+                              htmlData += '<div class="card-body">';
+                              htmlData += '<button class="image-button" id="image1" onclick="selectImage(\'image1\')"></button>';
+                              htmlData += '<button class="image-button" id="image2" onclick="selectImage(\'image2\')"></button>';
+                              htmlData += '<button class="image-button" id="image3" onclick="selectImage(\'image3\')"></button>';
+                              htmlData += '<h4 class="card-product__title">';
+                              htmlData += '<a href="/product/product_detail?pno=${product.pno}">'+result[i].pname+'</a>';
+                              htmlData += '</h4>';
+                              htmlData += '<p class="card-product__price">'+result[i].pprice+'원</p>';
+                              htmlData += '</div></div></div>';
 
-			  		        // AJAX 호출을 통해 데이터를 가져와서 페이지를 구성하는 로직을 작성하면 됩니다.
-			  		        // 여기에 필요한 AJAX 호출 및 데이터 처리 로직을 추가하세요.
-			  		        // AJAX 호출을 이용해 서버로부터 데이터를 받아오고, 해당 데이터로 페이지를 구성합니다.
-			  		        alert("가격순으로 고고고고고고고");
-							$.ajax({
-								 url:"/product/priceAjax",
-						  		 type:"post",
-						  		 data:$("form[name=price]").serialize(), //셀렉 창인데, 가격과 조회를 같이 해주어야 한다. 
-						  		  dataType:"json",
-						  		  success: function(data){
-						  			  console.log("data" + data);
-						  			  alert("가격순으로 데이터 받기 성공");
-						  			
-						  			  
-						  			var htmlData='';
-									   
-									for(var i = 0; i <data.length; i++){
-										
-										var href="/product/product_detail?pno="+data[i].pno;
-								
-										htmlData += '<div class="col-md-6 col-lg-4">';
-										htmlData += '<div class="card text-center card-product">';
-										htmlData += '<div class="card-product__img">';
-										htmlData += '<a href="'+href+'"><img class="card-img" src="/upload/'+data[i].pmainimg1+'" style="width: 250px;" alt=""></a>';
-										htmlData += '<ul class="card-product__imgOverlay">';
-										htmlData += '<li><button>';
-										htmlData += '<i class="ti-shopping-cart"></i>';
-										htmlData += '</button></li>';
-										htmlData += '<li><button>';
-										htmlData += '<i class="ti-heart"></i> <!-- 찜 버튼 -->';
-										htmlData += '</button></li></ul></div>';
-										htmlData += '<div class="card-body">';
-										htmlData += '<button class="image-button" id="image1" onclick="selectImage(\'image1\')"></button>';
-										htmlData += '<button class="image-button" id="image2" onclick="selectImage(\'image2\')"></button>';
-										htmlData += '<button class="image-button" id="image3" onclick="selectImage(\'image3\')"></button>';
-										htmlData += '<h4 class="card-product__title">';
-										htmlData += '<a href="/product/product_detail?pno=${product.pno}">'+data[i].pname+'</a>';
-										htmlData += '</h4>';
-										htmlData += '<p class="card-product__price">'+data[i].pprice+'원</p>';
-										htmlData += '</div></div></div>';
+                              
+                           }//for
+                           
+                           
 
-										
-									}//for
-									
-									
+                           $(".row").html(htmlData);
+                               
+                            },//fuction
+                            error:function(){
+                               alert("데이터 받기 실패함");
+                            }//error
+                     });//ajax
+                  }//function
 
-									$(".row").html(htmlData);
-						  			  
-						  		  },//fuction
-						  		  error:function(){
-						  			  alert("데이터 받기 실패함");
-						  		  }//error
-							});//ajax
-			  		    }
-			  			</script>
-					
-						
-						
-						<!--  가격 ajax 끝 -->
-						<!-- 필터 바 가격 순  시작 -->
-						<div class="sorting">
-						    <form action="/product/product_page" name="price" method="post">
-						        <select name="selectprice" id="selectprice" onchange="sortByPrice()">
-						            <option value="">유정이가최고</option>
-						            <option value="rowprice">Price: Low - High</option>
-						            <option value="highprice">Price: High - Low</option>
-						        </select>
-						    </form>
-						</div>
-						</div>	
-						<!-- 필터 바 가격 순  끝 -->
-						
-						
-						
-						
-						<!-- 필터 바 n개씩 보기 선택 시작 -->
-						<div class="sorting mr-auto">	
-					  		<form action="/product/product_page" name="view" method="post">
-						  	<select name=selectview id="selectview" onchange="sortByView()">
-							    <option value="6">view 6</option>
-							    <option value="9">view 9</option>
-							    <option value="12">view 12</option>
-						 	 </select>
-					  		</form>
-						</div>
-						<!-- 필터 바 n개씩 보기 선택 끝 -->
-						
-						
-						
-						
-						<!-- 검색 ajax 시작-->
-						<script>
-						function searchBtn() {
-						  	  alert("검색을 하겠습니다.");
-						  	  $.ajax({
-						  		  url:"/product/searchAjax",
-						  		  type:"post",
-						  		  data:$("form[name=search]").serialize(), //pname만을 검색하기 
-						  		  dataType:"json",
-						  		  success: function(result){
-						  			  console.log(result);
-						  			  alert("controller에서 데이터 받기 성공");
-						  			  console.log(result.length);
-						  			var htmlData='';
-									   
-									for(var i = 0; i <result.length; i++){
-										
-										var href="/product/product_detail?pno="+result[i].pno;
-								
-										htmlData += '<div class="col-md-6 col-lg-4">';
-										htmlData += '<div class="card text-center card-product">';
-										htmlData += '<div class="card-product__img">';
-										htmlData += '<a href="'+href+'"><img class="card-img" src="/upload/'+result[i].pmainimg1+'" style="width: 250px;" alt=""></a>';
-										htmlData += '<ul class="card-product__imgOverlay">';
-										htmlData += '<li><button>';
-										htmlData += '<i class="ti-shopping-cart"></i>';
-										htmlData += '</button></li>';
-										htmlData += '<li><button>';
-										htmlData += '<i class="ti-heart"></i> <!-- 찜 버튼 -->';
-										htmlData += '</button></li></ul></div>';
-										htmlData += '<div class="card-body">';
-										htmlData += '<button class="image-button" id="image1" onclick="selectImage(\'image1\')"></button>';
-										htmlData += '<button class="image-button" id="image2" onclick="selectImage(\'image2\')"></button>';
-										htmlData += '<button class="image-button" id="image3" onclick="selectImage(\'image3\')"></button>';
-										htmlData += '<h4 class="card-product__title">';
-										htmlData += '<a href="/product/product_detail?pno=${product.pno}">'+result[i].pname+'</a>';
-										htmlData += '</h4>';
-										htmlData += '<p class="card-product__price">'+result[i].pprice+'원</p>';
-										htmlData += '</div></div></div>';
+                  </script>
+                  
+                  
+                  <!--  가격, 조회 순 ajax 끝 -->
+                  <div class="sorting">
+                  <form action="/product/product_page" name="pricehit" method="post">
+                     <select name="category" id="category" >
+                        <option value="">유정이가최고</option>
+                        <option  value="rowprice" >Price: Low - High</option>
+                        <option value="highprice">Price: High - Low</option>
+                        <option value="highhit">Hits</option>
+                     </select>
+                  </form>
+                  </div>
+                  
+                  <!-- 필터 바 가격 순, 조회순 끝 -->
+                  <!-- 필터 바 n개씩 보기 선택 시작 -->
+                  <div class="sorting mr-auto">
+                
+                 <select >
+                   <option value="6">view 6</option>
+                   <option value="9">view 9</option>
+                   <option value="12">view 12</option>
+                 </select>
+            
+                  </div>
+                  <!-- 필터 바 n개씩 보기 선택 끝 -->
+                  
+                  
+                  
+                  
+                  <!-- 검색 ajax 시작-->
+                  <script>
+                  function searchBtn() {
+                         alert("검색을 하겠습니다.");
+                         $.ajax({
+                            url:"/product/searchAjax",
+                            type:"post",
+                            data:$("form[name=search]").serialize(), //pname만을 검색하기 
+                            dataType:"json",
+                            success: function(result){
+                               console.log(result);
+                               alert("controller에서 데이터 받기 성공");
+                               console.log(result.length);
+                             var htmlData='';
+                              
+                           for(var i = 0; i <result.length; i++){
+                              
+                              var href="/product/product_detail?pno="+result[i].pno;
+                        
+                              htmlData += '<div class="col-md-6 col-lg-4">';
+                              htmlData += '<div class="card text-center card-product">';
+                              htmlData += '<div class="card-product__img">';
+                              htmlData += '<a href="'+href+'"><img class="card-img" src="/upload/'+result[i].pmainimg1+'" style="width: 250px;" alt=""></a>';
+                              htmlData += '<ul class="card-product__imgOverlay">';
+                              htmlData += '<li><button>';
+                              htmlData += '<i class="ti-shopping-cart"></i>';
+                              htmlData += '</button></li>';
+                              htmlData += '<li><button>';
+                              htmlData += '<i class="ti-heart"></i> <!-- 찜 버튼 -->';
+                              htmlData += '</button></li></ul></div>';
+                              htmlData += '<div class="card-body">';
+                              htmlData += '<button class="image-button" id="image1" onclick="selectImage(\'image1\')"></button>';
+                              htmlData += '<button class="image-button" id="image2" onclick="selectImage(\'image2\')"></button>';
+                              htmlData += '<button class="image-button" id="image3" onclick="selectImage(\'image3\')"></button>';
+                              htmlData += '<h4 class="card-product__title">';
+                              htmlData += '<a href="/product/product_detail?pno=${product.pno}">'+result[i].pname+'</a>';
+                              htmlData += '</h4>';
+                              htmlData += '<p class="card-product__price">'+result[i].pprice+'원</p>';
+                              htmlData += '</div></div></div>';
 
-										
-									}
-									
-									
+                              
+                           }
+                           
+                           
 
-									$(".row").html(htmlData);
+                           $(".row").html(htmlData);
 
-						  			  
-						  		  },//success
-						  		  error:function(){
-						  			  alert("데이터 받기 실패");
-						  		  }
-						  	  });//ajax
-						}
-						
-						</script>
+                               
+                            },//success
+                            error:function(){
+                               alert("데이터 받기 실패");
+                            }
+                         });//ajax
+                  }
+                  
+                  </script>
 
-						<!-- 검색 ajax 끝-->
-						
-						<div>
-							<div class="input-group filter-bar-search">
-							<!--  s_word를 입력할 수 있는 input창과 검색 버튼  -->
-							<form action="/product/product_page" name="search" method="post">
-		
-								<input type="text" name="s_word" style="height: 38px;" placeholder="Search" >
-								<div class="input-group-append">
-									<button type="button" onclick="searchBtn()">
-										<i class="ti-search"></i>
-									</button>
-								</div>	
-							</form>	
-							</div>
-							<!-- s_word를 입력할 수 있는 input창과 검색 버튼   -->
-						</div>
-					</div>
-				</div>
-					<!-- 상단 필터 바 끝 -->
-					
-					<section class="lattest-product-area pb-40 category-list">
-						
-						<div class="row">
-					
-					<!-- 상품 리스트  시작-->
+                  <!-- 검색 ajax 끝-->
+                  
+                  <div>
+                     <div class="input-group filter-bar-search">
+                     <!--  s_word를 입력할 수 있는 input창과 검색 버튼  -->
+                     <form action="/product/product_page" name="search" method="post">
+      
+                        <input type="text" name="s_word" style="height: 38px;" placeholder="Search" >
+                        <div class="input-group-append">
+                           <button type="button" onclick="searchBtn()">
+                              <i class="ti-search"></i>
+                           </button>
+                        </div>   
+                     </form>   
+                     </div>
+                     <!-- s_word를 입력할 수 있는 input창과 검색 버튼   -->
+                  </div>
+               </div>
+            </div>
+               <!-- 상단 필터 바 끝 -->
+               
+               <section class="lattest-product-area pb-40 category-list">
+                  
+                  <div class="row">
+               
+               <!-- 상품 리스트  시작-->
 
-					<c:forEach var="product" items="${list}">
-							<div class="col-md-6 col-lg-4">
-								<div class="card text-center card-product">
-									<div class="card-product__img">
-										<a href="/product/product_detail?pno=${product.pno}"><img class="card-img" src="/upload/${product.pmainimg1}" style="width: 250px;" alt=""></a>
-										<ul class="card-product__imgOverlay">
-											<li><button>
-													<i class="ti-shopping-cart"></i> <!-- 장바구니 버튼 -->
-												</button></li>
-											<li><button>
-													<i class="ti-heart"></i> <!-- 찜 버튼 -->
-												</button></li>
-										</ul>
-									</div>
-									<div class="card-body">
-										<!-- 상품 색상 이미지 버튼 -->
-										<button class="image-button" id="image1" onclick="selectImage('image1')"></button>
-										<button class="image-button" id="image2" onclick="selectImage('image2')"></button>
-										<button class="image-button" id="image3" onclick="selectImage('image3')"></button>
-										<h4 class="card-product__title">
-											<a href="/product/product_detail?pno=${product.pno}">${product.pname}</a>
-										</h4>
-										<p class="card-product__price">${product.pprice}원</p>
-									</div>
-								</div>
-							</div>
-					</c:forEach>
-							
-					<!-- 상품 리스트  끝-->		
-														
-						</div>
-					</section>
-					<!-- ================ category section end ================= -->
-		<div class="btnAreaList">
-		<div class="allPageMoving1">
-					
-		<!-- 첫 페이지 이동 -->
-    	<c:if test="${page!=1 }">
-      	<a href= "/product/product_page?page=1&category=${category}&s_word=${s_word}">
-		<img src="../img/btn/btn_pre2.gif" alt="처음으로" />
-<!--       	<li class="first"></li>-->
-		</a>		
-    	</c:if>
-    	<c:if test="${page==1 }">
-<!--   			<li class="first"></li> -->
-		<img src="../img/btn/btn_pre2.gif" alt="처음으로" />
-    	</c:if>
+               <c:forEach var="product" items="${list}">
+                     <div class="col-md-6 col-lg-4">
+                        <div class="card text-center card-product">
+                           <div class="card-product__img">
+                              <a href="/product/product_detail?pno=${product.pno}"><img class="card-img" src="/upload/${product.pmainimg1}" style="width: 250px;" alt=""></a>
+                              <ul class="card-product__imgOverlay">
+                                 <li><button>
+                                       <i class="ti-shopping-cart"></i> <!-- 장바구니 버튼 -->
+                                    </button></li>
+                                 <li><button>
+                                       <i class="ti-heart"></i> <!-- 찜 버튼 -->
+                                    </button></li>
+                              </ul>
+                           </div>
+                           <div class="card-body">
+                              <!-- 상품 색상 이미지 버튼 -->
+                              <button class="image-button" id="image1" onclick="selectImage('image1')"></button>
+                              <button class="image-button" id="image2" onclick="selectImage('image2')"></button>
+                              <button class="image-button" id="image3" onclick="selectImage('image3')"></button>
+                              <h4 class="card-product__title">
+                                 <a href="/product/product_detail?pno=${product.pno}">${product.pname}</a>
+                              </h4>
+                              <p class="card-product__price">${product.pprice}원</p>
+                           </div>
+                        </div>
+                     </div>
+               </c:forEach>
+                     
+               <!-- 상품 리스트  끝-->      
+                                          
+                  </div>
+               </section>
+               <!-- ================ category section end ================= -->
+      <div class="btnAreaList">
+      <div class="allPageMoving1">
+               
+      <!-- 첫 페이지 이동 -->
+       <c:if test="${page!=1 }">
+         <a href= "/product/product_page?page=1&category=${category}&s_word=${s_word}">
+      <img src="../img/btn/btn_pre2.gif" alt="처음으로" />
+<!--          <li class="first"></li>-->
+      </a>      
+       </c:if>
+       <c:if test="${page==1 }">
+<!--            <li class="first"></li> -->
+      <img src="../img/btn/btn_pre2.gif" alt="처음으로" />
+       </c:if>
       <!-- 이전 페이지 이동 -->
       <c:if test="${page>1 }">
       <a href="/product/product_page?page=${page-1}&category=${category}&s_word=${s_word}">
@@ -421,30 +413,30 @@
       </a>
       </c:if>
       <c:if test="${page==1 }">
-<!--       	<li class="prev"></li> -->
-	  <img src="../img/btn/btn_pre1.gif" alt="앞페이지로" />
+<!--          <li class="prev"></li> -->
+     <img src="../img/btn/btn_pre1.gif" alt="앞페이지로" />
       </c:if>
       <!-- 페이지 리스트 -->
       <c:forEach begin="${startPage}" end="${endPage}" step="1" var="num">
-      	<c:if test="${num != page }">
-	      <a href="/product/product_page?page=${num}&category=${category}&s_word=${s_word}">      
-	     	 <li class="num"><div class="number-box">${num}</div></li>
-	      </a>
-      	</c:if>
+         <c:if test="${num != page }">
+         <a href="/product/product_page?page=${num}&category=${category}&s_word=${s_word}">      
+            <li class="num"><div class="number-box">${num}</div></li>
+         </a>
+         </c:if>
       <c:if test="${num == page }">
-      	<li class="num on"><div class="number-box">${num}</div></li>
+         <li class="num on"><div class="number-box">${num}</div></li>
       </c:if>
       </c:forEach>
       <!-- 다음 페이지 이동 -->
       <c:if test="${page<maxPage }">
-	     <a href="/product/product_page?page=${page+1}&category=${category}&s_word=${s_word}">
-<!-- 	     <li class="next"></li> -->
-	     <img src="../img/btn/btn_next1.gif" alt="뒤페이지로" />
-	     </a> 
+        <a href="/product/product_page?page=${page+1}&category=${category}&s_word=${s_word}">
+<!--         <li class="next"></li> -->
+        <img src="../img/btn/btn_next1.gif" alt="뒤페이지로" />
+        </a> 
       </c:if>
       <c:if test="${page==maxPage }">
-<!--       	<li class="next"> -->
-	  <img src="../img/btn/btn_next1.gif" alt="뒤페이지로" />
+<!--          <li class="next"> -->
+     <img src="../img/btn/btn_next1.gif" alt="뒤페이지로" />
       </c:if>
       <!-- 끝 페이지 이동 -->
       <c:if test="${page !=  maxPage }">
@@ -458,156 +450,156 @@
 <!--       <li class="last"></li> -->
       </a>
       </c:if>
-						
-						
-						
-						
-<!-- 						<div class="allPageMoving1"> -->
-<!-- 							<a href="#"><img src="../img/btn/btn_pre2.gif" alt="처음으로" /></a> -->
-<!-- 							<a href="#"><img src="../img/btn/btn_pre1.gif" alt="앞페이지로" /></a> -->
-<!-- 							<div class="number-box"> -->
-<!-- 								<strong>1</strong> -->
-<!-- 							</div> -->
-<!-- 							<div class="number-box"> -->
-<!-- 								<a href="#">2</a> -->
-<!-- 							</div> -->
-<!-- 							<div class="number-box"> -->
-<!-- 								<a href="#">3</a> -->
-<!-- 							</div> -->
-<!-- 							<div class="number-box"> -->
-<!-- 								<a href="#">4</a> -->
-<!-- 							</div> -->
-<!-- 							<div class="number-box"> -->
-<!-- 								<a href="#">5</a> -->
-<!-- 							</div> -->
-<!-- 							<a href="#"><img src="../img/btn/btn_next1.gif" alt="뒤페이지로" /></a> -->
-<!-- 							<a href="#"><img src="../img/btn/btn_next2.gif" alt="마지막페이지로" /></a> -->
-						
-						
-						</div>
-					</div>
-					<!-- ================ BEST SELELLERS section start ================= -->
-				</div>
-			</div>
-		</div>
-	</section>
+                  
+                  
+                  
+                  
+<!--                   <div class="allPageMoving1"> -->
+<!--                      <a href="#"><img src="../img/btn/btn_pre2.gif" alt="처음으로" /></a> -->
+<!--                      <a href="#"><img src="../img/btn/btn_pre1.gif" alt="앞페이지로" /></a> -->
+<!--                      <div class="number-box"> -->
+<!--                         <strong>1</strong> -->
+<!--                      </div> -->
+<!--                      <div class="number-box"> -->
+<!--                         <a href="#">2</a> -->
+<!--                      </div> -->
+<!--                      <div class="number-box"> -->
+<!--                         <a href="#">3</a> -->
+<!--                      </div> -->
+<!--                      <div class="number-box"> -->
+<!--                         <a href="#">4</a> -->
+<!--                      </div> -->
+<!--                      <div class="number-box"> -->
+<!--                         <a href="#">5</a> -->
+<!--                      </div> -->
+<!--                      <a href="#"><img src="../img/btn/btn_next1.gif" alt="뒤페이지로" /></a> -->
+<!--                      <a href="#"><img src="../img/btn/btn_next2.gif" alt="마지막페이지로" /></a> -->
+                  
+                  
+                  </div>
+               </div>
+               <!-- ================ BEST SELELLERS section start ================= -->
+            </div>
+         </div>
+      </div>
+   </section>
 
-	<section class="section-margin calc-60px">
-		<div class="container">
-			<div class="section-intro pb-60px">
-				<p>Popular Item in the market</p>
-				<h2>
-					Best <span class="section-intro__style">Sellers</span>
-				</h2>
-			</div>
-			<div class="row">
-				<div class="col-md-6 col-lg-4 col-xl-3">
-					<div class="card text-center card-product">
-						<div class="card-product__img">
-							<img class="card-img" src="../img/index/image_1_5.jpg" alt="">
-							<ul class="card-product__imgOverlay">
-								<li><button>
-										<i class="ti-shopping-cart"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-heart"></i>
-									</button></li>
+   <section class="section-margin calc-60px">
+      <div class="container">
+         <div class="section-intro pb-60px">
+            <p>Popular Item in the market</p>
+            <h2>
+               Best <span class="section-intro__style">Sellers</span>
+            </h2>
+         </div>
+         <div class="row">
+            <div class="col-md-6 col-lg-4 col-xl-3">
+               <div class="card text-center card-product">
+                  <div class="card-product__img">
+                     <img class="card-img" src="../img/index/image_1_5.jpg" alt="">
+                     <ul class="card-product__imgOverlay">
+                        <li><button>
+                              <i class="ti-shopping-cart"></i>
+                           </button></li>
+                        <li><button>
+                              <i class="ti-heart"></i>
+                           </button></li>
 
-							</ul>
-						</div>
-						<div class="card-body">
-							<p>Accessories</p>
-							<h4 class="card-product__title">
-								<a href="singleproduct">Quartz Belt Watch</a>
-							</h4>
-							<p class="card-product__price">$150.00</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4 col-xl-3">
-					<div class="card text-center card-product">
-						<div class="card-product__img">
-							<img class="card-img" src="../img/index/image_1_6.jpg" alt="">
-							<ul class="card-product__imgOverlay">
-								<li><button>
-										<i class="ti-shopping-cart"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-heart"></i>
-									</button></li>
-							</ul>
-						</div>
-						<div class="card-body">
-							<p>Beauty</p>
-							<h4 class="card-product__title">
-								<a href="singleproduct">Women Freshwash</a>
-							</h4>
-							<p class="card-product__price">$150.00</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4 col-xl-3">
-					<div class="card text-center card-product">
-						<div class="card-product__img">
-							<img class="card-img" src="../img/index/image_2_6.jpg" alt="">
-							<ul class="card-product__imgOverlay">
-								<li><button>
-										<i class="ti-shopping-cart"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-heart"></i>
-									</button></li>
-							</ul>
-						</div>
-						<div class="card-body">
-							<p>Decor</p>
-							<h4 class="card-product__title">
-								<a href="singleproduct">Room Flash Light</a>
-							</h4>
-							<p class="card-product__price">$150.00</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4 col-xl-3">
-					<div class="card text-center card-product">
-						<div class="card-product__img">
-							<img class="card-img" src="../img/index/image_3_7.jpg" alt="">
-							<ul class="card-product__imgOverlay">
-								<li><button>
-										<i class="ti-shopping-cart"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-heart"></i>
-									</button></li>
-							</ul>
-						</div>
-						<div class="card-body">
-							<p>Decor</p>
-							<h4 class="card-product__title">
-								<a href="singleproduct">Room Flash Light</a>
-							</h4>
-							<p class="card-product__price">$150.00</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+                     </ul>
+                  </div>
+                  <div class="card-body">
+                     <p>Accessories</p>
+                     <h4 class="card-product__title">
+                        <a href="singleproduct">Quartz Belt Watch</a>
+                     </h4>
+                     <p class="card-product__price">$150.00</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3">
+               <div class="card text-center card-product">
+                  <div class="card-product__img">
+                     <img class="card-img" src="../img/index/image_1_6.jpg" alt="">
+                     <ul class="card-product__imgOverlay">
+                        <li><button>
+                              <i class="ti-shopping-cart"></i>
+                           </button></li>
+                        <li><button>
+                              <i class="ti-heart"></i>
+                           </button></li>
+                     </ul>
+                  </div>
+                  <div class="card-body">
+                     <p>Beauty</p>
+                     <h4 class="card-product__title">
+                        <a href="singleproduct">Women Freshwash</a>
+                     </h4>
+                     <p class="card-product__price">$150.00</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3">
+               <div class="card text-center card-product">
+                  <div class="card-product__img">
+                     <img class="card-img" src="../img/index/image_2_6.jpg" alt="">
+                     <ul class="card-product__imgOverlay">
+                        <li><button>
+                              <i class="ti-shopping-cart"></i>
+                           </button></li>
+                        <li><button>
+                              <i class="ti-heart"></i>
+                           </button></li>
+                     </ul>
+                  </div>
+                  <div class="card-body">
+                     <p>Decor</p>
+                     <h4 class="card-product__title">
+                        <a href="singleproduct">Room Flash Light</a>
+                     </h4>
+                     <p class="card-product__price">$150.00</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3">
+               <div class="card text-center card-product">
+                  <div class="card-product__img">
+                     <img class="card-img" src="../img/index/image_3_7.jpg" alt="">
+                     <ul class="card-product__imgOverlay">
+                        <li><button>
+                              <i class="ti-shopping-cart"></i>
+                           </button></li>
+                        <li><button>
+                              <i class="ti-heart"></i>
+                           </button></li>
+                     </ul>
+                  </div>
+                  <div class="card-body">
+                     <p>Decor</p>
+                     <h4 class="card-product__title">
+                        <a href="singleproduct">Room Flash Light</a>
+                     </h4>
+                     <p class="card-product__price">$150.00</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
 
-	<!-- ================ BEST SELELLERS  section end ================= -->
+   <!-- ================ BEST SELELLERS  section end ================= -->
 
-	<%@ include file="../sidebar.jsp"%>
-	<%@ include file="../footer.jsp"%>
+   <%@ include file="../sidebar.jsp"%>
+   <%@ include file="../footer.jsp"%>
 
-	<script src="../vendors/jquery/jquery-3.2.1.min.js"></script>
-	<script src="../vendors/bootstrap/bootstrap.bundle.min.js"></script>
-	<script src="../vendors/skrollr.min.js"></script>
-	<script src="../vendors/owl-carousel/owl.carousel.min.js"></script>
-	<script src="../vendors/nice-select/jquery.nice-select.min.js"></script>
-	<script src="../vendors/nouislider/nouislider.min.js"></script>
-	<script src="../vendors/jquery.ajaxchimp.min.js"></script>
-	<script src="../vendors/mail-script.js"></script>
-	<script src="../js/main.js"></script>
+   <script src="../vendors/jquery/jquery-3.2.1.min.js"></script>
+   <script src="../vendors/bootstrap/bootstrap.bundle.min.js"></script>
+   <script src="../vendors/skrollr.min.js"></script>
+   <script src="../vendors/owl-carousel/owl.carousel.min.js"></script>
+   <script src="../vendors/nice-select/jquery.nice-select.min.js"></script>
+   <script src="../vendors/nouislider/nouislider.min.js"></script>
+   <script src="../vendors/jquery.ajaxchimp.min.js"></script>
+   <script src="../vendors/mail-script.js"></script>
+   <script src="../js/main.js"></script>
 </body>
 
 <!-- Mirrored from themewagon.github.io/aroma/category.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 30 Jun 2023 06:56:13 GMT -->
