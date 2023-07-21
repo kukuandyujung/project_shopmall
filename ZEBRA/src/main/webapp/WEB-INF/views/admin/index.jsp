@@ -33,6 +33,36 @@
     <!-- Custom Theme Style -->
     <link href="/build/css/custom.min.css" rel="stylesheet">
   </head>
+   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  
+   <script>
+      $(function(){
+    	  alert("그래프 데이터를 업데이트합니다.");
+			
+			$.ajax({
+				url:"/admin/indexAjax", 
+				type:"post",
+				data:{},
+				dataType:"json",
+				success:function(data){
+					console.log("data : "+data);
+					alert("controller에서 데이터 받기 성공!");
+					 
+					// 받아온 데이터를 count 클래스를 갖는 div 요소 내에 넣음
+	                $("#count1").text(data[0]);
+	                $("#count2").text(data[1]);
+	                $("#count3").text(data[2]);
+					  
+				},
+				error:function(){
+					alert("데이터 받기 실패!");
+				}
+			});			
+	  
+      });
+   
+			
+	</script>
 
   <body class="nav-md">
   
@@ -68,38 +98,7 @@
           </div>
         </div>
 
-      <%@ include file="top_common.jsp" %>
-      
-	  <script>
-		  function boardBtn(){
-			  
-				alert("그래프 데이터를 업데이트합니다.");
-				
-				$.ajax({
-					url:"/admin/indexAjax", 
-					type:"post",
-					data:{"count":"map"},
-					dataType:"json",
-					success:function(data){
-						console.log("list : "+list);
-						alert("controller에서 데이터 받기 성공!");
-						/* 
-						var arrSrc = data[0].bfile.split(","); // 자바스크립트 split함수 사용
-						console.log(arrSrc[0]);
-						var src = '/upload/'+ arrSrc[0];	 						
-						// 받은 데이터를 html에 넣음.
-						$(".review_ajax1").text(data[0].btitle);
-						$(".review_ajax2").html(data[0].bcontent);
-						$(".review_ajax3").prop("src",src); // 1개만 있을 때는 , 여러 개 있을 때는 :
-						  */
-						 
-					},
-					error:function(){
-						alert("데이터 받기 실패!");
-					}
-				});			
-		  }
-		</script>
+      <%@ include file="top_common.jsp" %>	 
 
         <!-- page content -->        
         <div class="right_col" role="main">        
@@ -109,17 +108,18 @@
           <div class="tile_count">
               <div class="col-md-2 col-sm-4  tile_stats_count">            
               <span class="count_top"><i class="fa fa-user"></i> 총 회원수</span>
-              <div class="count"> 10000 </div>
+              <div class="count" id="count1"> 10000 </div>
               <span class="count_bottom"><i class="green">4% </i> 지난 달 대비</span>
             </div>
-            <div class="col-md-2 col-sm-4  tile_stats_count">
+            <div class="col-md-2 col-sm-4  tile_stats_count">              
               <span class="count_top"><i class="fa fa-user"></i> 총 남자 회원수</span>
-              <div class="count green">2,500</div>
+              <div class="count green" id="count2">2,500</div>
+               
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> 지난 달 대비</span>
             </div>
             <div class="col-md-2 col-sm-4  tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> 총 여자 회원수</span>
-              <div class="count">4,567</div>
+              <div class="count red" id="count3">4,567</div>
               <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> 지난 달 대비</span>
             </div>
             <div class="col-md-2 col-sm-4  tile_stats_count">
@@ -149,7 +149,9 @@
                 <div class="row x_title">
                   <div class="col-md-6">
                     <h3 style="display: inline-block;">수익 현황 <small><small>월별 총 매출</small></small></h3> 
-                      <button onclick="boardBtn()" style="font-size:15px; width: 60px; height: 30px; margin-left:6px;">AJAX</button>
+                    <!--   
+                    <button onclick="boardBtn()" style="font-size:15px; width: 60px; height: 30px; margin-left:6px;">AJAX</button> 
+                    -->
                   </div>
                   <div class="col-md-6">
                     <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">

@@ -35,15 +35,16 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	@Override // 종류별 회원 정보 가져오기
-	public HashMap<String,Object> selectMemberAll() {
-		int listCount = memberMapper.selectMemberCount();
-		System.out.println("selectAll listCount : "+ listCount);
-		HashMap<String, Object> map = new HashMap<>();
+	public int[] selectMemberAll() {
+		int allCount = memberMapper.selectMemberCount();
+		int maleCount = memberMapper.selectMaleCount();
+		int femaleCount = memberMapper.selectFemaleCount();
+		System.out.println("allCount : "+allCount);
+		System.out.println("maleCount : "+maleCount);
+		System.out.println("FemaleCount : "+femaleCount);
 		
-		ArrayList<MemberDto> list = memberMapper.selectMemberAll();		
-		map.put("list", list);
-		map.put("listCount", listCount);		
-		return map;
+		int[] counts = {allCount, maleCount, femaleCount};
+	    return counts;
 	}	
 	
 	@Override
@@ -65,7 +66,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	// 회원 정보 1개 수정하기
 	public void updateOne(MemberDto mdto) {
-		memberMapper.insertOne(mdto);
+		memberMapper.updateOne(mdto);
 	}
 	
 	@Override

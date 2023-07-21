@@ -15,8 +15,14 @@ public interface MemberMapper {
 	// 종류별 회원 정보 가져오기
 	ArrayList<MemberDto> selectMemberAll();
 	
-	// 전체 회원 정보 수
+	// 전체 회원 수
 	int selectMemberCount();
+	
+	// 남자 회원 수
+	int selectMaleCount();
+	
+	// 여자 회원 수
+	int selectFemaleCount();
 	
 	// 회원 정보 1개 가져오기
 	MemberDto selectOne(String MID);
@@ -42,6 +48,14 @@ public interface MemberMapper {
 		MemberDto selectLoginMember(String MID, String MPASSWORD);
 		//id 중복검사
 		MemberDto selectId(String MID);
+
+		
+
+		
+
+		
+
+		
 
 
 		

@@ -26,7 +26,6 @@ public class MemberDto {
 	private int MTOTAL_PAY ;
 	private int MTOTAL_ORDER ;
 	private int MAGREE;
-
 	
 	public String getFormattedJoinDay() {
 	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -38,4 +37,6 @@ public class MemberDto {
 	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	    this.MJOINDAY = sdf.parse(MJOINDAY);
 	}
+
+	
 }

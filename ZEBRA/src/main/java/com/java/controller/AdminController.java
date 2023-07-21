@@ -1,7 +1,6 @@
 package com.java.controller;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,10 +79,10 @@ public class AdminController {
 	// ajax로 종류별 회원 정보 가져오기
 		@PostMapping("/admin/indexAjax")
 		@ResponseBody // 데이터로 넘겨줌 -> return으로
-		public HashMap<String, Object> indexAjax() { // data를 받음	
-			HashMap<String, Object> map = memberService.selectMemberAll();
-			System.out.println("map :"+map);
-			return map; // function(data)로 넘김
+		public int[] indexAjax() { // data를 받음	
+			int[] list = memberService.selectMemberAll();
+			System.out.println("list :"+list);
+			return list; // function(data)로 넘김
 		}
 	
 	// 회원 테이블 전체 가져오기
