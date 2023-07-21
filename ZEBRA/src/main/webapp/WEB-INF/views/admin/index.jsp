@@ -36,7 +36,7 @@
    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   
    <script>
-      $(function(){
+      function boardBtn(){
     	  alert("그래프 데이터를 업데이트합니다.");
 			
 			$.ajax({
@@ -57,9 +57,8 @@
 				error:function(){
 					alert("데이터 받기 실패!");
 				}
-			});			
-	  
-      });
+			});	
+      };
    
 			
 	</script>
@@ -134,7 +133,7 @@
             </div>
             <div class="col-md-2 col-sm-4  tile_stats_count">
               <span class="count_top"><i class="fa fa-clock-o"></i> 총 구매수</span>
-              <div class="count">123.50</div>
+              <div class="count">123</div>
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> 지난 달 대비</span>
             </div>
            
@@ -149,9 +148,9 @@
                 <div class="row x_title">
                   <div class="col-md-6">
                     <h3 style="display: inline-block;">수익 현황 <small><small>월별 총 매출</small></small></h3> 
-                    <!--   
+                       
                     <button onclick="boardBtn()" style="font-size:15px; width: 60px; height: 30px; margin-left:6px;">AJAX</button> 
-                    -->
+                    
                   </div>
                   <div class="col-md-6">
                     <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">

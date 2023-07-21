@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.java.mapper.CartMapper">
+
+<!-- 카트추가 -->
+<insert id="addCart">
+	insert into cart(cno, MID, pno, camount)
+	values(cart_seq.nextval, #{MCODE}, #{pno}, #{camount})
+</insert>
+
+<!-- 카트 삭제 -->
+<delete id="deleteCart">
+	delete from cart where cno = #{cno}
+</delete>
+
+<!-- 카트 수량 수정 -->
+<update id="modifyCount">
+	update cart set camount = #{camount} where cno = #{cno}
+</update>
+
+<!-- 카트 목록 -->
+<select id="getCart" resultType="com.java.dto.CartDto">
+	select a.cno, a.MCODE, a.pno, a.camount, b.pno
+	from cart a left outer join product_tbl b on a.pno = b.pno
+	where MCODE = #{MCODE}
+</select>
+
+<!-- 카트 확인 -->
+<select id="checkCart" resultType="com.java.dto.CartDto">
+	select * from cart where MCODE = #{MCODE} and pno = #{pno}
+</select>
+
+</mapper>
