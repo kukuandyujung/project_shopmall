@@ -48,31 +48,37 @@ public class MemberController {
 		return "member/idsearch";
 	}
 	
-	//id 확인 메일 전송
-	@RequestMapping("member/id_email")
-	public String id_email() {
-		return "member/id_email";
-	}
-	//비밀번호 확인 메일전송
-	@RequestMapping("member/pw_email")
-	public String pw_email() {
-		return "member/pw_email";
-	}
-	
+	/*
+	 * //id 확인 메일 전송
+	 * 
+	 * @RequestMapping("member/id_email") public String id_email() { return
+	 * "member/id_email"; } //비밀번호 확인 메일전송
+	 * 
+	 * @RequestMapping("member/pw_email") public String pw_email() { return
+	 * "member/pw_email"; }
+	 */
 	
 	
 	
 	// START SUN //	
 	
-	//신규 회원 가입 및 등록	  
-	@PostMapping("/member/register02") 
-	public String register02(MemberDto mdto) {
-	System.out.println("MID : "+mdto.getMID()); 	
-	System.out.println("MPASSWORD : "+mdto.getMPASSWORD()); 	
-	
-	return "member/register02"; }
+	  //신규 회원 가입 및 등록
+	  
+	  @PostMapping("/member/register02") public String register02(MemberDto mdto) {
+	  System.out.println("MID : "+mdto.getMID());
+	  System.out.println("MPASSWORD : "+mdto.getMPASSWORD());
+	  
+	  return "member/register02"; }
 	 
 
+
+
+	@GetMapping("/member/login")
+	public String login() {
+	return "member/login";
+	}
+	
+	
 	//로그인 오버로딩 , 다른 메소드 , 로그인 버튼을 눌렀을때 post로 들어옴
 	@PostMapping("/member/login")
 	public String login(String MID, String MPASSWORD, Model model) {
@@ -99,19 +105,16 @@ public class MemberController {
 		return "redirect:/layout/index"; // redirect 이 주소로 다시 찾아라 / 여는 페이지
 	}
 	
-	//id 중복 검사	
-	@PostMapping("/member/idCheck")
-	@ResponseBody
-	public String checkId(String MID) {
-		System.out.println("checkID : " + MID);
-	    MemberDto mdto = memberService.selectId(MID);
-	    if(mdto==null) {
-	    	return "success";
-	    }else {
-	    	return "fail";
-	    }
-	}
 	
+	  //id 중복 검사
+	  
+	  @PostMapping("/member/idCheck")
+	  
+	  @ResponseBody public String checkId(String MID) {
+	  System.out.println("checkID : " + MID); MemberDto mdto =
+	  memberService.selectId(MID); if(mdto==null) { return "success"; }else {
+	  return "fail"; } }
+	 
 	
 		
 	

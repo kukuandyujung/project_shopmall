@@ -26,10 +26,8 @@
 <link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
 <link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
 <link rel="stylesheet" href="../vendors/linericon/style.css">
-<link rel="stylesheet"
-	href="../vendors/owl-carousel/owl.theme.default.min.css">
-<link rel="stylesheet"
-	href="../vendors/owl-carousel/owl.carousel.min.css">
+<link rel="stylesheet" href="../vendors/owl-carousel/owl.theme.default.min.css">
+<link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css">
 <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
 <link rel="stylesheet" href="../css/style.css">
@@ -38,10 +36,59 @@
 
 <script type="text/javascript">
 <!-- start id 중복 확인 -->
-
 	   <!-- end 중복 확인 -->
-</script>	   
+		//	let nameCheck = /^[a-zA-Z]{1}[ㄱ-ㅎ가-힣]{2,7}$/; //^시작 
+			
+			//이름 - 한글만 입력가능
+			// if(!nameCheck.test($("#mem_name").val())){ //정규표현식 패턴과 입력한 글자 비교
+			   alert("한글만 입력이 가능합니다.");
+				console.log($('#mem_name').val());
+			/*    $("#mem_name").focus();
+			   return false;
+			}else{
+			   alert("성공!!!!");
+			}  */
+
+			/* let numCheck = /^[0-9]+$/; // 숫자인지
+			let alphaCheck = /^[a-zA-Z]+$/; //영문자인지
+			let etcCheck = /^[!@#$%^&*,.?_-]+$/; //특수문자인지 아닌지 
+			let idCheck = /^[a-zA-Z0-9_]{5,10}$/; //영문자,숫자,_만 가능
+			let idCheck2 = /^[a-zA-Z]{1}[a-zA-Z0-9_]{2,5}$/; //1번째는 무조건 영문자만 가능
+			let pwCheck = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{2,7}$/; //111111a가난
+
+
+			
+			//글자길이
+			/* let name_len = $("#mem_name").val().length;
+			if(name_len<2){
+			   alert("두글자 이상 입력을 하셔야 합니다.")
+			   $("#mem_name").focus();
+			   return false;
+			} */
+
+			// 아이디 - 영문,숫자만 가능
+			/* if(!idCheck.test($("#mem_id").val())){ //정규표현식 패턴과 입력한 글자 비교
+			   alert("영문,숫자,특수문자(_) 2자리 이상 5자리 이하만 입력이 가능합니다.");
+			   $("#mem_id").focus();
+			   return false;
+			}else{
+			   alert("성공!!!!");
+			} */
+			
+			// 패스워드 - 영문,숫자,특수문자가 1개이상 인지 검색
+			/* if(!pwCheck.test($("#mem_pw").val())){ //정규표현식 패턴과 입력한 글자 비교
+			   alert("영문,숫자,특수문자 1개이상 입력하셔야 합니다.");
+			   $("#mem_pw").focus();
+			   return false;
+			}else{
+			   alert("성공!!!!");*/
+			} 
+
+		/* 	alert("회원정보를 저장합니다.");
+			//memberFrm.submit();   
+	    */
 	   
+</script>   
 
 </head>
 <body>
@@ -59,7 +106,7 @@
 	</section>
 	<!-- ================ end banner area ================= -->
 
-	<!--================Login Box Area =================-->
+	<!--================join Box Area =================-->
 	<!-- container -->
 	<div id="container">
 		<div id="outbox">
@@ -91,10 +138,7 @@
 							<p class="web">STEP 02</p>
 							<p class="txt">
 								<span>회원정보</span> <span>입력</span>
-							</p>
-							<p class="ck">
-								<img src="../img/member/bg_step.png" alt="현재위치" />
-							</p>
+							</p>							
 						</div>
 
 						<div class="step">
@@ -115,7 +159,7 @@
 
 
 					<div class="memberbd">
-						<form action="/member/register02" method="post" name="joinFrm">
+						<form action="/member/register04" name="memberFrm" method="post">
 							<table
 								summary="이름, 아이디, 비밀번호, 비밀번호 확인, 이메일, 이메일수신여부, 주소, 휴대폰, 생년월일 순으로 회원가입 정보를 등록할수 있습니다."
 								class="memberWrite" border="1" cellspacing="0">
@@ -130,10 +174,11 @@
 										<th scope="row"><span>이름 </span></th>
 										<td>
 											<ul class="pta">
-												<li class="r10"><input type="text"  onKeyUp="nameKey()"name="MNAME" id="joinName" class="w134" /></li>
-												<li><span class="mvalign1" >※ 이름은 2~16자리까지 영문/한글만 사용 가능합니다.</span></li>
-											</ul>
-										</td>
+											<li class="r10"><input type="text" class="w134" name="MNAME" id="mem_name" /></li>
+											<li><span class="mvalign">※ 한글만 사용가능</span></li>
+												<!-- <li class="r10"><input type="text"  onKeyUp="nameKey()"name="MNAME" id="joinName" class="w134" /></li>
+												<li><span class="mvalign1" >※ 첫 글자는 영문으로 2~16자 까지 가능, 영문, 숫자와 특수기호(_)만 사용 가능</span></li> -->
+										</ul>										</td>
 									</tr>																
 							 								
 								   
@@ -153,11 +198,14 @@
 										<th scope="row"><span>아이디 </span></th>
 										<td>
 											<ul class="pta">
-												<li class="r10"><input type="text" name="MID" id="joinId" class="w134" /></li>
+											<li class="r10"><input type="text" class="w134" name="id" id="joinId" /></li>
+											<li><a href="#" class="nbtnMini">중복확인</a></li>
+											<li class="pt5"><span class="mvalign">첫 글자는 영문으로 4~16자 까지 가능, 영문, 숫자와 특수기호(_)만 사용 가능</span></li>
+											<!-- 	<li class="r10"><input type="text" name="MID" id="joinId" class="w134" /></li>
 												<li><a onclick="checkIdBtn()" class="nbtnMini" style="cursor: pointer;" >중복확인</a></li>
-												<input type="hidden" id="idck" value="false">
+												<input type="hidden" id="idck" value="false"> -->
 												<li class="pt5">												
-												<span class="mvalign">첫 글자는 영문으로 4~16자 까지 가능 (영문/숫자/특수기호만 사용 가능)</span></li>
+												<span class="mvalign">첫 글자는 영문으로 4~20자 까지 가능 (영문/숫자/특수기호만 사용 가능)</span></li>
 										
 											</ul>
 										</td>
@@ -169,8 +217,10 @@
 										<th scope="row"><span>비밀번호 </span></th>
 										<td>
 											<ul class="pta">
-												<li class="r10"><input type="password" onKeyUp="pwKey()" name="MPW" id="joinPw" class="w134" /></li>
-												<li><span class="mvalign" >※ 영문 / 숫자 혼용으로 4~20자까지 가능.</span></li>
+											<li class="r10"><input type="text" id="mem_pw"  id="joinPw" class="w134" /></li>
+											<li><span class="mvalign">※ 영문 / 숫자 혼용으로 4~20자 까지 가능.</span></li>
+												<!-- <li class="r10"><input type="password" onKeyUp="pwKey()" name="MPW" id="joinPw" class="w134" /></li>
+												<li><span class="mvalign" >※ 영문 / 숫자 혼용으로 4~20자까지 가능.</span></li> -->
 													<button type="button" onclick="pwKey()">   <!-- 버튼test</button> test용	 -->		 -->														 
 											</ul>
 										</td>
@@ -178,16 +228,20 @@
 									<tr>
 										<th scope="row"><span>비밀번호 확인 </span></th>
 										<td>
-											<ul class="pta">
+										<ul class="pta">
+											<li class="r10"><input type="text" id="mem_pw"  id="joinPw" class="w134" /></li>
+											<li><span class="mvalign">※ 영문 / 숫자 혼용으로 4~20자 까지 가능.</span></li>
+										</ul>
+											<!-- <ul class="pta">
 												<li class="r10">
 												<input type="password"  id="joinPw2"  class="w134" /></li>
 												<li><span class="mvalign"  >※ 영문 / 숫자 혼용으로 4~20자까지 가능.</span></li> 
-												<!-- <button type="button" onclick="pwKey()">버튼</button> -->
-												<!-- <span class="mvalign black" >비밀번호가 일치입니다.</span>  -->
-												<!-- <span class="mvalign orange">* 비밀번호가 일치하지 않습니다.</span> -->
+												<button type="button" onclick="pwKey()">버튼</button>
+												<span class="mvalign black" >비밀번호가 일치입니다.</span>  -->
+												<span class="mvalign orange">* 비밀번호가 일치하지 않습니다.</span>
 																				
 												 
-											</ul>
+											</ul> -->
 										</td>
 									</tr>
 									<tr>								       
@@ -324,41 +378,55 @@
 
 				<!-- Btn Area -->
 				<!-- 가입 중복 검사  ajac -->
-				<script type="text/javascript">
+				<!-- <script type="text/javascript">
 					function joinBtn() {
 						 alert("가입하기");
 						 joinFrm.submit();
 					}
-				</script>
+				</script> -->
 
 				<div class="btnArea">
 					<div class="bCenter">
 						<ul>
 							<li><a href="/member/login" class="nbtnbig">취소하기</a></li>
-							<li><a style="cursor: pointer;" onclick="joinBtn()" class="sbtnMini">가입하기</a></li>
+							<li><a style="cursor: pointer; "onclick="joinBtn()"  class="sbtnMini">가입하기</a></li>
 						</ul>
 					</div>
 				</div>
 				<!-- //Btn Area -->
-				
-
 				</form>
 			</div>
 		</div>
-		<!-- //contents -->
-	
+		<!-- //contents -->	
 	</div>
 	</div>
-	
-	
-	
+<!-- //container -->
+	<!-- 가입 중복 검사  ajac -->
+	 <script type="text/javascript">
+				function joinBtn() {
+						 alert("가입하기");
+						//console.log($('#joinName').val());
+					
+					}
+				</script>
 
-	<!-- //container -->
 
+<!-- 비밀번호 확인 -->
+<!-- <script> 
+								  function pwKey(){
+									  let pw1 = $("#mem_pw").val();
+									  if(pw1 == $("#mem_pw2").val()){
+										  $("#pwKeyText").html("<span class='mvalign black'>* 비밀번호가 일치입니다.</span>");
+									  }else{
+										  $("#pwKeyText").html("<span class='mvalign orange'>* 비밀번호가 일치하지 않습니다.</span>");
+									  }
+									  console.log($("#mem_pw2").val());
+									  return false;
+								  }
+								</script> -->
 
-	<!--================End Login Box Area =================-->
+	<!--================End join Box Area =================-->
 
 	<%@ include file="../footer.jsp"%>  
 </body>
-<!-- Mirrored from themewagon.github.io/aroma/category.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 30 Jun 2023 06:56:13 GMT -->
 </html>
