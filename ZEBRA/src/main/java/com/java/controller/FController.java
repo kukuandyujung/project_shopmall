@@ -36,7 +36,7 @@ public class FController {
 	
 	// 카트 정보 저장하기
 	@PostMapping("/mypage/addCart")
-	public String addCart() {
+	public String addCart() throws Exception {
 		int MCODE = 1;
 		int pno = 1;
 		int camount = 10;
