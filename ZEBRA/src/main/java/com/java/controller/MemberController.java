@@ -22,22 +22,22 @@ public class MemberController {
 	
 	@Autowired MemberService memberService;
 	
-	//회원가입
+	//회원가입1
 	@GetMapping("/member/register")
 	public String register() {
 		return "member/register";
 	}	
-	 
+	// 회원가입 2
 	@GetMapping("/member/register02")
 	public String register02() {
 		return "member/register02";
-	}	
-	
+	}
+	// 회원가입 3	
 	@GetMapping("/member/register03")
 	public String register03() {
 		return "member/register03";
 	}	
-	
+	//test
 	@GetMapping("/member/register04")
 	public String register04() {
 		return "member/register04";
@@ -62,13 +62,17 @@ public class MemberController {
 	
 	
 	
-	// START SUN //
+	// START SUN //	
 	
-	@GetMapping("/member/login")
-	public String login() {
-		return "member/login";
-	}
+	//신규 회원 가입 및 등록	  
+	@PostMapping("/member/register02") 
+	public String register02(MemberDto mdto) {
+	System.out.println("MID : "+mdto.getMID()); 	
+	System.out.println("MPASSWORD : "+mdto.getMPASSWORD()); 	
 	
+	return "member/register02"; }
+	 
+
 	//로그인 오버로딩 , 다른 메소드 , 로그인 버튼을 눌렀을때 post로 들어옴
 	@PostMapping("/member/login")
 	public String login(String MID, String MPASSWORD, Model model) {

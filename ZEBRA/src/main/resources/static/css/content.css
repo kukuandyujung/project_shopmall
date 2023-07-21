@@ -552,6 +552,8 @@
 .pta li.cb{clear:both; padding-right:40px;}
 .pta li span.valign{line-height:20px;}
 .pta li span.mvalign{font-size:12px; font-weight:600; line-height:20px; color:#999;}
+.pta li span.mvalign1{font-size:12px; font-weight:600; line-height:20px; color:#999;}
+.pta li span.mvalign2{font-size:12px; font-weight:600; line-height:20px; color:#999;}
 .pta li span.black{color:#5a524c; font-weight:normal;}
 .pta li span.orange{color:#3A4CEA; font-weight:normal;}
 .pta li label.star{padding:2px 20px 0 2px;}
@@ -1094,6 +1096,8 @@ span.searchStyleSelectBox.changed{background-color: #fff;}
 
 /* WRITE TYPE */
 .pta li span.mvalign{line-height:1.4;}
+.pta li span.mvalign1{line-height:1.4;}
+.pta li span.mvalign2{line-height:1.4;}
 .pta li{display:block; padding:2px 0;}
 .pta li.or10{padding:2px 4px 0 0;}
 .pta li.r10{padding:2px 0;}
