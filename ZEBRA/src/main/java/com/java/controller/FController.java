@@ -73,7 +73,8 @@ public class FController {
 		cartMapper.modifyCount(cdto);
 	}
 	
-	// 카트 정보 조회하기
+	// 카트 목록
+	@RequestMapping("/mypage/getCart")
 	public void getCart() {
 		
 		int MCODE = 1;
@@ -81,12 +82,28 @@ public class FController {
 		ArrayList<CartDto> list = cartMapper.getCart(MCODE);
 		for(CartDto cdto : list) {
 			System.out.println(cdto);
-			/*
-			 * cdto.initSaleTotal();
-			 */
+			
+			  cdto.initSaleTotal();
+			 
 			System.out.println("init cart : " + cdto);
 		}
 	}
+	
+	// 카트 확인
+	@RequestMapping("/mypage/checkCart")
+	public void checkCart() {
+		
+		int MCODE = 1;
+		int pno = 1;
+		
+		CartDto cartdto = new CartDto();
+		cartdto.setMCODE(MCODE);
+		cartdto.setPno(pno);
+		
+		CartDto resultCart = cartMapper.checkCart(cartdto);
+		System.out.println("결과 : " + resultCart);
+	}
+	
 	
 	@RequestMapping("/mypage/wishlist")
 	public String wishlist() {
