@@ -141,11 +141,6 @@ public class ProductServiceImpl implements ProductService{
    }
 
 
-   @Override //상품 페이지에서 ajaax 가격 순 , 조회 수
-   public ArrayList<ProductDto> selectpricehitAll(int phit, int pprice) {
-      ArrayList<ProductDto> list = productMapper.selectpricehitAll(phit, pprice);
-      return null;
-   }
    
    
    

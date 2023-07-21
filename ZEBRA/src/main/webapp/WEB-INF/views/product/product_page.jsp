@@ -187,66 +187,8 @@
                <!-- 상단 필터 바 시작 -->
                <div class="filter-bar d-flex flex-wrap align-items-center">
                   <!-- 필터 바 가격 순, 조회순 시작 -->
-                  <!--  가격, 조회 순 ajax 시작 -->
-                  <script>
-                  $(function(){
-                       alert("가격순, 상품 조회수순");
-                     $.ajax({
-                         url:"/product/pricehitAjax",
-                           type:"post",
-                           data:$("form[name=pricehit]").serialize(), //셀렉 창인데, 가격과 조회를 같이 해주어야 한다. 
-                            dataType:"json",
-                            success: function(data){
-                               console.log("data" + data);
-                               alert("가격과 조회 데이터 받기 성공");
-                             
-                               
-                               
-                             var htmlData='';
-                              
-                           for(var i = 0; i <result.length; i++){
-                              
-                              var href="/product/product_detail?pno="+result[i].pno;
-                        
-                              htmlData += '<div class="col-md-6 col-lg-4">';
-                              htmlData += '<div class="card text-center card-product">';
-                              htmlData += '<div class="card-product__img">';
-                              htmlData += '<a href="'+href+'"><img class="card-img" src="/upload/'+result[i].pmainimg1+'" style="width: 250px;" alt=""></a>';
-                              htmlData += '<ul class="card-product__imgOverlay">';
-                              htmlData += '<li><button>';
-                              htmlData += '<i class="ti-shopping-cart"></i>';
-                              htmlData += '</button></li>';
-                              htmlData += '<li><button>';
-                              htmlData += '<i class="ti-heart"></i> <!-- 찜 버튼 -->';
-                              htmlData += '</button></li></ul></div>';
-                              htmlData += '<div class="card-body">';
-                              htmlData += '<button class="image-button" id="image1" onclick="selectImage(\'image1\')"></button>';
-                              htmlData += '<button class="image-button" id="image2" onclick="selectImage(\'image2\')"></button>';
-                              htmlData += '<button class="image-button" id="image3" onclick="selectImage(\'image3\')"></button>';
-                              htmlData += '<h4 class="card-product__title">';
-                              htmlData += '<a href="/product/product_detail?pno=${product.pno}">'+result[i].pname+'</a>';
-                              htmlData += '</h4>';
-                              htmlData += '<p class="card-product__price">'+result[i].pprice+'원</p>';
-                              htmlData += '</div></div></div>';
-
-                              
-                           }//for
-                           
-                           
-
-                           $(".row").html(htmlData);
-                               
-                            },//fuction
-                            error:function(){
-                               alert("데이터 받기 실패함");
-                            }//error
-                     });//ajax
-                  }//function
-
-                  </script>
+                 
                   
-                  
-                  <!--  가격, 조회 순 ajax 끝 -->
                   <div class="sorting">
                   <form action="/product/product_page" name="pricehit" method="post">
                      <select name="category" id="category" >

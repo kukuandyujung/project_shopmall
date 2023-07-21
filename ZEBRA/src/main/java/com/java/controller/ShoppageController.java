@@ -41,25 +41,7 @@ public class ShoppageController {
       return list;
    }
    
-   //상품을 가격과 조회수로 셀렉하는 ajax
-   @PostMapping("/product/pricehitAjax")
-   @ResponseBody //ajax를 사용하기 위한 것. 데이터를 넘겨주는 어노테이션이다. 
-   public ArrayList<ProductDto> pricehitAjax(
-//         @RequestParam int pno,
-//         @RequestParam int page, 
-         int pprice, int phit){
-      
-      System.out.println(pprice);
-      System.out.println(phit);
-      
-      ArrayList<ProductDto> list = productService.selectpricehitAll(phit, pprice);
-      
-      System.out.println(list.get(0).getPname());
-      
-      //검색어에 맞는 상품들 가져오기 
-      return list;
-   }
-   
+
    
    
    //상품 페이지에 상품 전체 가져오기 

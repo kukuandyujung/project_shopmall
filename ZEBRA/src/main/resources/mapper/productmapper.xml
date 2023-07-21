@@ -155,20 +155,6 @@
     
     
     
-    <!-- 상품 페이지에서  ajax 가격, 조회 순 -->
-  <!--    <select id="" resultType="com.java.dto.ProductDto">
-      <if test="pricehit == 'rowprice'">
-      select * from product order by pprice asc  
-      </if> 
-      <if test="pricehit == 'highprice'">
-       select * from product order by pprice desc  
-      </if>
-      <if test="pricehit == 'highhit">
-       select * from product order by phit desc 
-      </if> 
-    </select>
-  -->
-    
     
 </mapper>
 
