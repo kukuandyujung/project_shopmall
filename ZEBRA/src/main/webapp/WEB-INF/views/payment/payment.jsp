@@ -287,7 +287,7 @@
 						수취자 주소 입력
 						
 						<input type="checkbox" id="infosame"/>
-						<label for="infosame">회원정보와 동일</label>
+						<label for="infosame">주문자 정보와 동일</label>
 					</h3>
 					<div class="checkDiv">
 						<table summary="수취자 주소를 입력할 수 있는 란으로 이름, 주소, 이메일, 휴대폰 번호, 전화번호 순으로 입력 하실수 있습니다." class="checkTable" border="1" cellspacing="0">
