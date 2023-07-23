@@ -27,7 +27,7 @@ public class ProductController {
    @Autowired
    ProductService productService; 
    
-   //상품 목록
+   // 상품 관리 상품 목록
    @RequestMapping("/admin/product_list")
    public String product_list(@RequestParam(defaultValue = "1") int page, 
          String category , String s_word, Model model) {
@@ -50,7 +50,7 @@ public class ProductController {
       return "admin/product_list";
    }//product_list
    
-   //상품 1개 가져오기 
+   //상품 관리 상품 1개 가져오기 
    @RequestMapping("/admin/product_view")
    public String product_view(
          //pno 매개변수가 명시되지 않았다면 pno는 기본값으로 설정된 1을 가지도록.
@@ -73,14 +73,14 @@ public class ProductController {
       return "admin/product_view";
    }//product_view
    
-   //상품 등록하기  get
+   //상품 관리 상품 등록하기  get
    @GetMapping("/admin/product_write")
    public String product_write() {
       
       return "admin/product_write";
    }
    
-   //상품 등록하기 post
+   //상품 관리 상품 등록하기 post
    @PostMapping("/admin/product_write")
    public String product_Write(ProductDto pdto,
          @RequestPart("pm1") MultipartFile pmainimg,
@@ -97,7 +97,7 @@ public class ProductController {
    
       
       
-      //상품 1개 등록하기 
+      //상품 관리 상품 1개 등록하기 
       String new_pmainimg =""; //파일 등록을 위한 변수 설정
       
       if(!pmainimg.isEmpty()) {    
@@ -160,7 +160,7 @@ public class ProductController {
    }//product_write post
    
    
-   //상품 수정하기 get
+   //상품 관리 상품 수정하기 get
    @GetMapping("/admin/product_update") //product_update에 있는 뷰 페이지가 열림
    //위 경로에 대한 get요청을 처리하는 핸들러 메서드 
    public String product_update(int pno, 
@@ -184,7 +184,7 @@ public class ProductController {
    }//product_update get 
    
    
-   //상품 수정하기 post
+   //상품 관리 상품 수정하기 post
    @PostMapping("/admin/product_update") //boardUpdate에 저장하기 
    public String product_update(ProductDto pdto, 
          @RequestPart("pm1") MultipartFile pmainimg,
@@ -262,11 +262,42 @@ public class ProductController {
          return "redirect:product_list?page="+page+"&category="+category+"&s_word="+s_word ;
    }//product_update post
    
-       //상품 삭제하기 
+       //상품 관리 상품 삭제하기 
       @RequestMapping("/admin/product_delete")
       public String product_delete(int pno) {
          productService.deleteOne(pno);
          return "redirect:product_list";
       }
+      
+      
+      
+      //주문 관리 리스트 
+      @RequestMapping("/admin/order_list")
+      public String order_list() {
+    	 return "admin/order_list";
+      }
+      
+      //주문 관리 뷰
+      @RequestMapping("/admin/order_view")
+      public String order_view() {
+    	 return "admin/order_view";
+      }
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       
 }

@@ -29,7 +29,7 @@ function logoutBtn(){
                   <!-- 오른쪽 상단에 프로필 -->
                   <li class="nav-item dropdown open" style="padding-left: 15px;">
                     <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                      <img src="production/images/img.jpg" alt="">
+                      <img src="/upload/a.jpg" alt="">
                     </a>
                     <!-- 오른쪽 상단에 프로필을 누르면 나오는 프로필, 설정, 헬프, 로그인 로그아웃 시작 -->
                     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">

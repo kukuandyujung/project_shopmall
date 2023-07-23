@@ -19,7 +19,7 @@ import com.java.service.MemberService;
 public class AdminController {
 	@Autowired MemberService memberService;
 	@Autowired HttpSession session;
-	
+
 	
 	//로그인을 해야 인덱스로 가도록 정리하기
 	@RequestMapping("/admin/index")
@@ -76,6 +76,10 @@ public class AdminController {
 		session.invalidate(); //session 모두 삭제
 		return "redirect:/layout/index";
 	}
+	
+	
+
+	
 	
 	// ajax로 종류별 회원 정보 가져오기
 		@PostMapping("/admin/indexAjax")

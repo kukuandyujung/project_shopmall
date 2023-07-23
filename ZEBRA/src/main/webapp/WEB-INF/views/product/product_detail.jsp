@@ -114,15 +114,14 @@
 				<div class="col-lg-6">
 					<div class="owl-carousel owl-theme s_Product_carousel">
 						<div class="single-prd-item">
-							<img class="img-fluid" src="/upload/${pdto.pdetailimg1}"
-								style="width: 100%;" alt="">
+							<img class="img-fluid" src="/upload/${pdto.pdetailimg1}" style="width: 100%;" alt="">
 						</div>
-						<!-- <div class="single-prd-item">
-                     <img class="img-fluid" src="../img/category/s-p1.jpg" alt="">
-                  </div>
-                  <div class="single-prd-item">
-                     <img class="img-fluid" src="../img/category/s-p1.jpg" alt="">
-                  </div> -->
+						<div class="single-prd-item">
+                     		<img class="img-fluid" src="/upload/${pdto.pdetailimg2}" style="width: 100%;" alt="">
+                  		</div>
+                  		<div class="single-prd-item">
+                     		<img class="img-fluid" src="/upload/${pdto.pdetailimg3}" style="width: 100%;" alt="">
+                  		</div>
 					</div>
 				</div>
 				<div class="col-lg-5 offset-lg-1">
@@ -137,22 +136,20 @@
 									style="background-color: white; color: black; border: 1px solid gray;">S</button>
 								<input type="radio" id="s_size" name="size"
 								style="display: none;">
-							</label> <label for="m_size">
+							</label> 
+							<label for="m_size">
 								<button class="btn btn-primary" type="button"
 									style="background-color: white; color: black; border: 1px solid gray;">M</button>
 								<input type="radio" id="m_size" name="size"
 								style="display: none;">
-							</label> <label for="l_size">
+							</label> 
+							<label for="l_size">
 								<button class="btn btn-primary" type="button"
 									style="background-color: white; color: black; border: 1px solid gray;">L</button>
 								<input type="radio" id="l_size" name="size"
 								style="display: none;">
-							</label> <label for="xl_size">
-								<button class="btn btn-primary" type="button"
-									style="background-color: white; color: black; border: 1px solid gray;">XL</button>
-								<input type="radio" id="xl_size" name="size"
-								style="display: none;">
-							</label>
+							</label> 
+							
 						</div>
 						<br>
 
@@ -556,111 +553,10 @@
 		</div>
 	</section>
 	<!--================End Product Description Area =================-->
-	<!-- ================ BEST SELELLERS section start ================= -->
-	<section class="section-margin calc-60px">
-		<div class="container">
-			<div class="section-intro pb-60px">
-				<p>Popular Item in the market</p>
-				<h2>
-					Best <span class="section-intro__style">Sellers</span>
-				</h2>
-			</div>
-			<div class="row">
-				<div class="col-md-6 col-lg-4 col-xl-3">
-					<div class="card text-center card-product">
-						<div class="card-product__img">
-							<img class="card-img" src="../img/index/image_1_5.jpg" alt="">
-							<ul class="card-product__imgOverlay">
-								<li><button>
-										<i class="ti-shopping-cart"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-heart"></i>
-									</button></li>
-							</ul>
-						</div>
-						<div class="card-body">
-							<p>Accessories</p>
-							<h4 class="card-product__title">
-								<a href="singleproduct">Quartz Belt Watch</a>
-							</h4>
-							<p class="card-product__price">$150.00</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4 col-xl-3">
-					<div class="card text-center card-product">
-						<div class="card-product__img">
-							<img class="card-img" src="../img/index/image_1_6.jpg" alt="">
-							<ul class="card-product__imgOverlay">
-								<li><button>
-										<i class="ti-shopping-cart"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-heart"></i>
-									</button></li>
-							</ul>
-						</div>
-						<div class="card-body">
-							<p>Beauty</p>
-							<h4 class="card-product__title">
-								<a href="singleproduct">Women Freshwash</a>
-							</h4>
-							<p class="card-product__price">$150.00</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4 col-xl-3">
-					<div class="card text-center card-product">
-						<div class="card-product__img">
-							<img class="card-img" src="../img/index/image_2_6.jpg" alt="">
-							<ul class="card-product__imgOverlay">
-								<li><button>
-										<i class="ti-shopping-cart"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-heart"></i>
-									</button></li>
-							</ul>
-						</div>
-						<div class="card-body">
-							<p>Decor</p>
-							<h4 class="card-product__title">
-								<a href="singleproduct">Room Flash Light</a>
-							</h4>
-							<p class="card-product__price">$150.00</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4 col-xl-3">
-					<div class="card text-center card-product">
-						<div class="card-product__img">
-							<img class="card-img" src="../img/index/image_3_7.jpg" alt="">
-							<ul class="card-product__imgOverlay">
-								<li><button>
-										<i class="ti-shopping-cart"></i>
-									</button></li>
-								<li><button>
-										<i class="ti-heart"></i>
-									</button></li>
-							</ul>
-						</div>
-						<div class="card-body">
-							<p>Decor</p>
-							<h4 class="card-product__title">
-								<a href="singleproduct">Room Flash Light</a>
-							</h4>
-							<p class="card-product__price">$150.00</p>
-						</div>
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- ================ BEST SELELLERS  section end ================= -->
 
 	<%@ include file="../sidebar.jsp"%>
+	<%@ include file="../best.jsp"%>
 	<%@ include file="../footer.jsp"%>
 
 	<script src="../vendors/jquery/jquery-3.2.1.min.js"></script>
