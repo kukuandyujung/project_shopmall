@@ -162,8 +162,8 @@
 						<br>
 
 						<div class="product_count">
-							<label for="qty">Quantity:</label> <input type="text" name="qty"
-								id="sst" size="2" maxlength="12" value="1" title="Quantity:"
+							<label for="qty">Quantity:</label> <input type="number" name="qty"
+								id="sst" size="2" min="1"  maxlength="12" value="1" title="Quantity:"
 								class="input-text qty">&nbsp;&nbsp;<a
 								class="button primary-btn" href="#">Buy Now</a>
 						</div>

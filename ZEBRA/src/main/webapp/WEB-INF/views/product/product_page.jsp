@@ -115,52 +115,30 @@
                <div class="sidebar-categories">
                   <div class="common-filter">
                      <div class="head">Color</div>
-                     <form action="#">
+                     <form action="#" >
                         <style>
-#color {
-   column-count: 2; /* 두 개의 열로 나눔 */
-   column-gap: 1em; /* 열 사이의 간격 조절 */
-   padding-left: 10px;
-}
-</style>
+						#color {
+						   column-count: 2; /* 두 개의 열로 나눔 */
+						   column-gap: 1em; /* 열 사이의 간격 조절 */
+						   padding-left: 10px;
+						}
+						</style>
                         <ul id="color">
                            <li class="filter-list"><input class="pixel-radio"
-                              type="radio" id="black" name="color"><label
-                              for="black">Black<span>(29)</span></label></li>
+                              type="radio" id="black" name="color"><label for="black">Black<span>(29)</span></label></li>
+                              
                            <li class="filter-list"><input class="pixel-radio"
-                              type="radio" id="blue" name="color"><label for="blue">Blue<span>(29)</span></label></li>
+                              type="radio" id="orange" name="color"><label for="orange">orange<span>(29)</span></label></li>
+                              
                            <li class="filter-list"><input class="pixel-radio"
-                              type="radio" id="brown" name="color"><label
-                              for="brown">Brown<span>(29)</span></label></li>
+                              type="radio" id="yellow" name="color"><label for="yellow">yellow<span>(29)</span></label></li>
+                              
                            <li class="filter-list"><input class="pixel-radio"
-                              type="radio" id="gray" name="color"><label for="gray">Gray<span>(29)</span></label></li>
-                           <li class="filter-list"><input class="pixel-radio"
-                              type="radio" id="green" name="color"><label
-                              for="green">Green<span>(29)</span></label></li>
-                           <li class="filter-list"><input class="pixel-radio"
-                              type="radio" id="multi" name="color"><label
-                              for="multicolor">Multi<span>(29)</span></label></li>
-                           <li class="filter-list"><input class="pixel-radio"
-                              type="radio" id="navy" name="color"><label for="navy">Navy<span>(29)</span></label></li>
-                           <li class="filter-list"><input class="pixel-radio"
-                              type="radio" id="neutral" name="color"><label
-                              for="neutral">Neutral<span>(29)</span></label></li>
-                           <li class="filter-list"><input class="pixel-radio"
-                              type="radio" id="orange" name="color"><label
-                              for="orange">Orange<span>(29)</span></label></li>
-                           <li class="filter-list"><input class="pixel-radio"
-                              type="radio" id="pink" name="color"><label for="pink">Pink<span>(29)</span></label></li>
-                           <li class="filter-list"><input class="pixel-radio"
-                              type="radio" id="purple" name="color"><label
-                              for="purple">Purple<span>(29)</span></label></li>
-                           <li class="filter-list"><input class="pixel-radio"
-                              type="radio" id="red" name="color"><label for="red">Red<span>(19)</span></label></li>
-                           <li class="filter-list"><input class="pixel-radio"
-                              type="radio" id="white" name="color"><label
-                              for="white">White<span>(19)</span></label></li>
-                           <li class="filter-list"><input class="pixel-radio"
-                              type="radio" id="yellow" name="color"><label
-                              for="yellow">Yellow<span>(19)</span></label></li>
+        					  type="radio" id="pink" name="color"><label for="pink">pink<span>(29)</span></label></li>
+                              
+                           <li class="filter-list"><input class="pixel-radio" 
+                           	  type="radio" id="white" name="color"><label for="white">white<span>(29)</span></label></li>       
+                         
                         </ul>
                      </form>
                   </div>
@@ -186,7 +164,7 @@
             <div class="col-xl-9 col-lg-8 col-md-7">
                <!-- 상단 필터 바 시작 -->
                <div class="filter-bar d-flex flex-wrap align-items-center">
-                  <!-- 필터 바 가격 순, 조회순 시작 -->
+                  <!-- 필터 바 가격 순 시작 -->
                  
                   
                   <div class="sorting">
@@ -194,13 +172,12 @@
                      <select name="category" id="category" >
                         <option value="">유정이가최고</option>
                         <option  value="rowprice" >Price: Low - High</option>
-                        <option value="highprice">Price: High - Low</option>
-                        <option value="highhit">Hits</option>
+                        <option value="highprice">Price: High - Low</option>  
                      </select>
                   </form>
                   </div>
                   
-                  <!-- 필터 바 가격 순, 조회순 끝 -->
+                  <!-- 필터 바 가격 순  끝 -->
                   <!-- 필터 바 n개씩 보기 선택 시작 -->
                   <div class="sorting mr-auto">
                 
@@ -238,7 +215,7 @@
                               htmlData += '<div class="col-md-6 col-lg-4">';
                               htmlData += '<div class="card text-center card-product">';
                               htmlData += '<div class="card-product__img">';
-                              htmlData += '<a href="'+href+'"><img class="card-img" src="/upload/'+result[i].pmainimg1+'" style="width: 250px;" alt=""></a>';
+                              htmlData += '<a href="'+href+'"><img class="card-img" src="/upload/'+result[i].pmainimg+'" style="width: 250px;" alt=""></a>';
                               htmlData += '<ul class="card-product__imgOverlay">';
                               htmlData += '<li><button>';
                               htmlData += '<i class="ti-shopping-cart"></i>';
