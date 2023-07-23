@@ -215,9 +215,11 @@
 										<a href="singleproduct"><img class="card-img"
 											src="../img/product/product1.png" alt=""></a>
 										<ul class="card-product__imgOverlay">
-											<li><button>
+											<c:forEach var="cdto" items="${list}">
+											<li><a href="/mypage/cart/{"><button>
 													<i class="ti-shopping-cart"></i>
-												</button></li>
+												</button></a></li>
+											</c:forEach>
 											<li><button>
 													<i class="ti-heart"></i>
 												</button></li>

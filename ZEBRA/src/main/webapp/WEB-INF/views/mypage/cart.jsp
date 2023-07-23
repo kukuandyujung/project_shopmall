@@ -32,6 +32,40 @@
 <link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
 <link rel="stylesheet" href="../css/style.css">
 </head>
+
+<script>
+const form = {
+		memberId : '${member.memberId}',
+		bookId : '${goodsInfo.bookId}',
+		bookCount : ''
+}
+
+//장바구니 추가 버튼
+$(".btn_cart").on("click", function(e){
+		form.bookCount = $(".quantity_input").val();
+		$.ajax({
+			url: '/cart/add',
+			type: 'POST',
+			data: form,
+			success: function(result){
+				cartAlert(result);
+			}
+		})
+	});
+	
+	function cartAlert(result){
+		if(result == '0'){
+			alert("장바구니에 추가를 하지 못하였습니다.");
+		} else if(result == '1'){
+			alert("장바구니에 추가되었습니다.");
+		} else if(result == '2'){
+			alert("장바구니에 이미 추가되어져 있습니다.");
+		} else if(result == '5'){
+			alert("로그인이 필요합니다.");	
+		}
+	}
+</script>
+
 <body>
 <%@ include file="../top.jsp"%>
 
@@ -41,6 +75,7 @@
 			<div class="blog-banner">
 				<div class="text-center">
 					<h1>Shopping Cart</h1>
+					${cartinfo} <!-- FController 36 회원 정보 받아오는 중 -->
 				</div>
 			</div>
     </div>
@@ -72,8 +107,9 @@
 				<!-- 장바구니에 상품이 있을경우 -->
 					<!-- 장바구니 상품 -->
 					
+					<h4>${cdto.MID}님의 장바구니 리스트</h4>
 					<div class="orderDivNm">
-						<table summary="장바구니에 담긴 상품들을 전체선택, 상품명, 가격/포인트, 수량, 합계, 주문 순으로 조회 및 주문을 하실수 있습니다." class="orderTable" border="1" cellspacing="0">
+						<table summary="장바구니에 담긴 상품들을 전체선택, 상품명, 가격/포인트, 수량, 합계, 주문 순으로 조회 및 주문을 하실수 있습니다." class="orderTable" border="1" cellspacing="0">					
 							<caption>장바구니 상품목록</caption>
 							<colgroup>
 							<col width="7%"/>
@@ -95,7 +131,7 @@
 								<tr>
 									<td><input type="checkbox" /></td>
 									<td class="left">
-										<p class="img"><img src="../images/img/sample_product.jpg" alt="상품" width="66" height="66" /></p>
+										<p class="img"><img src="../img/product/product1.png" alt="상품" width="66" height="66" /></p>
 
 										<ul class="goods">
 											<li>
@@ -108,7 +144,7 @@
 									<td>1,123,400 원</td>
 									<td class="tnone">
 										<ul class="order">	
-											<li><a href="#" class="obtnMini iw70">바로구매</a></li>
+											<li><a href="/payment/payment" class="obtnMini iw70">바로구매</a></li>
 											<li><a href="#" class="nbtnMini iw70">상품삭제</a></li>
 										</ul>
 									</td>
@@ -117,7 +153,7 @@
 								<tr>
 									<td><input type="checkbox" /></td>
 									<td class="left">
-										<p class="img"><img src="../images/img/sample_product.jpg" alt="상품" width="66" height="66" /></p>
+										<p class="img"><img src="../img/product/product1.png" alt="상품" width="66" height="66" /></p>
 
 										<ul class="goods">
 											<li>
@@ -130,7 +166,7 @@
 									<td>1,123,400 원</td>
 									<td class="tnone">
 										<ul class="order">	
-											<li><a href="#" class="obtnMini iw70">바로구매</a></li>
+											<li><a href="/payment/payment" class="obtnMini iw70">바로구매</a></li>
 											<li><a href="#" class="nbtnMini iw70">상품삭제</a></li>
 										</ul>
 									</td>

@@ -100,7 +100,7 @@
 
 
 					<ul class="nav-shop">
-						<li class="nav-item"><a href="/mypage/cart"><button>
+						<li class="nav-item"><a href="../mypage/cart?MCODE=${cdto.MCODE}"><button>
 									<i class="ti-shopping-cart"></i>
 								</button></a></li>
 

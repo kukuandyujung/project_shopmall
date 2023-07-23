@@ -18,8 +18,7 @@ import com.java.service.MemberService;
 public class MemberController {	
 
 
-	@Autowired HttpSession session;
-	
+	@Autowired HttpSession session;	
 	@Autowired MemberService memberService;
 	
 	//회원가입1

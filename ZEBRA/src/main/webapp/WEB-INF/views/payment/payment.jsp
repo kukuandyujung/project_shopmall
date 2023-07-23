@@ -80,7 +80,7 @@
 							<tbody>
 								<tr>
 									<td class="left">
-										<p class="img"><img src="../images/img/sample_product.jpg" alt="상품" width="66" height="66" /></p>
+										<p class="img"><img src="../img/product/product1.png" alt="상품" width="66" height="66" /></p>
 
 										<ul class="goods">
 											<li>
@@ -97,7 +97,7 @@
 								
 								<tr>
 									<td class="left">
-										<p class="img"><img src="../images/img/sample_product.jpg" alt="상품" width="66" height="66" /></p>
+										<p class="img"><img src="../img/product/product1.png" alt="상품" width="66" height="66" /></p>
 
 										<ul class="goods">
 											<li>

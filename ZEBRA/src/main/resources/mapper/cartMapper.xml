@@ -5,9 +5,17 @@
     
 <mapper namespace="com.java.mapper.CartMapper">
 
-<!-- 카트추가 -->
+<!-- 카트 정보 가져오기 -->
+<select id="getCart" resultType="com.java.dto.CartDto">
+	select a.cno, a.MCODE, a.pno, a.camount, b.pno, b.pname, b.pprice, b.pmainimg
+	from cart a 
+	left outer join product b on a.pno = b.pno
+	where MCODE = 1
+</select>
+
+<!-- 카트 추가 -->
 <insert id="addCart">
-	insert into cart(cno, MID, pno, camount)
+	insert into cart(cno, camount, pno, MCODE)
 	values(cart_seq.nextval, #{MCODE}, #{pno}, #{camount})
 </insert>
 
@@ -20,13 +28,6 @@
 <update id="modifyCount">
 	update cart set camount = #{camount} where cno = #{cno}
 </update>
-
-<!-- 카트 목록 -->
-<select id="getCart" resultType="com.java.dto.CartDto">
-	select a.cno, a.MCODE, a.pno, a.camount, b.pno
-	from cart a left outer join product_tbl b on a.pno = b.pno
-	where MCODE = #{MCODE}
-</select>
 
 <!-- 카트 확인 -->
 <select id="checkCart" resultType="com.java.dto.CartDto">
