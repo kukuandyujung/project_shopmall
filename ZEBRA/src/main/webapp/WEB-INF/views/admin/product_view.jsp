@@ -44,18 +44,13 @@
         <td>상품 번호<span>${pdto.pno}</span></td><br>
       </tr>
       <tr>
-        <td>메인 이미지1<span><img src="/upload/${pdto.pmainimg1}" style="width: 100px;" alt="" /></span></td>
-        <td>메인 이미지2<span><img src="/upload/${pdto.pmainimg2}" style="width: 100px;" alt="" /></span></td>
-        <td>메인 이미지3<span><img src="/upload/${pdto.pmainimg3}" style="width: 100px;" alt="" /></span></td>
+        <td>메인 이미지<span><img src="/upload/${pdto.pmainimg}" style="width: 100px;" alt="" /></span></td>
       </tr>
       
       <tr>
         <td>상세 이미지1<span><img src="/upload/${pdto.pdetailimg1}" style="width: 100px;" alt="" /></span></td>
         <td>상세 이미지2<span><img src="/upload/${pdto.pdetailimg2}" style="width: 100px;" alt="" /></span></td>    
         <td>상세 이미지3<span><img src="/upload/${pdto.pdetailimg3}" style="width: 100px;" alt="" /></span></td>    
-        <td>상세 이미지4<span><img src="/upload/${pdto.pdetailimg4}" style="width: 100px;" alt="" /></span></td>    
-        <td>상세 이미지5<span><img src="/upload/${pdto.pdetailimg5}" style="width: 100px;" alt="" /></span></td> 
-        <td>상세 이미지6<span><img src="/upload/${pdto.pdetailimg6}" style="width: 100px;" alt="" /></span></td>
       </tr>
     <hr>
       <tr>

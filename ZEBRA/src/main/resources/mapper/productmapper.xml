@@ -80,34 +80,32 @@
    insert into product (pno, pcode, pname, pprice, 
       pstock, psoldcount, pcolor,psize, 
       pdescript, 
-      pmainimg1,pmainimg2,pmainimg3,pdetailimg1,pdetailimg2,pdetailimg3,pdetailimg4,pdetailimg5,pdetailimg6)
+      pmainimg,pdetailimg1,pdetailimg2,pdetailimg3)
    values (#{pno}, #{pcode}, #{pname}, #{pprice},
       #{pstock},#{psoldcount}, #{pcolor}, #{psize},
       #{pdescript},
-        #{pmainimg1},#{pmainimg2}, #{pmainimg3},
-      #{pdetailimg1},#{pdetailimg2},#{pdetailimg3},
-        #{pdetailimg4},#{pdetailimg5},#{pdetailimg6})
+        #{pmainimg},#{pdetailimg1},#{pdetailimg2},#{pdetailimg3})
    </insert>
    
    <delete id="deleteOne">
       delete product where pno=#{pno}
    </delete>
    
-   <!-- 게시글 수정  -->
+   <!-- 상품 1개 수정  -->
    <!-- 주어집 값에 대해 업데이트하기 그냥 상품 리스트에 적힌 변수를 적고 업데이트 대상을 pno가 주어진 값과 일치하는 레코드이다. -->
    <update id="updateOne">
       update product set pcode =#{pcode}, pname=#{pname}, pprice=#{pprice},
       pstock=#{pstock},psoldcount=#{psoldcount},  pcolor=#{pcolor}, psize=#{psize},
       pdescript=#{pdescript},
-      pmainimg1=#{pmainimg1},pmainimg2=#{pmainimg2}, pmainimg3=#{pmainimg3},
-      pdetailimg1=#{pdetailimg1},pdetailimg2=#{pdetailimg2}, pdetailimg3=#{pdetailimg3},pdetailimg4=#{pdetailimg4},
-      pdetailimg5=#{pdetailimg5},pdetailimg6=#{pdetailimg6}
+      pmainimg=#{pmainimg},
+      pdetailimg1=#{pdetailimg1},pdetailimg2=#{pdetailimg2}, pdetailimg3=#{pdetailimg3}
       where pno = #{pno}
    </update>
-   
+   <!--  
    <update id="updatePstepCount">
       update product set pstep=pstep+1 where pno=#{pno} and pstep=#{pstep}
    </update>
+   -->
 
    <!-- ============================여기부터는 상품 페이지 ====================================== -->
 

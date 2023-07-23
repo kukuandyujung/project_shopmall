@@ -18,10 +18,8 @@ public class ProductDto {
 	private int pstock;
 	private int psoldcount;
 	private int phit;
-	private int pscore;
-	private int previewcount;
-	private String pmainimg1,pmainimg2,pmainimg3;
-	private String pdetailimg1,pdetailimg2, pdetailimg3, pdetailimg4,pdetailimg5, pdetailimg6;
+	private String pmainimg;
+	private String pdetailimg1,pdetailimg2, pdetailimg3;
 	private String pcolor;            
 	private String psize;            
 	

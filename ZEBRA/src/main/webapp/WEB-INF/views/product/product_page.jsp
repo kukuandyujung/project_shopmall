@@ -304,7 +304,7 @@
                      <div class="col-md-6 col-lg-4">
                         <div class="card text-center card-product">
                            <div class="card-product__img">
-                              <a href="/product/product_detail?pno=${product.pno}"><img class="card-img" src="/upload/${product.pmainimg1}" style="width: 250px;" alt=""></a>
+                              <a href="/product/product_detail?pno=${product.pno}"><img class="card-img" src="/upload/${product.pmainimg}" style="width: 250px;" alt=""></a>
                               <ul class="card-product__imgOverlay">
                                  <li><button>
                                        <i class="ti-shopping-cart"></i> <!-- 장바구니 버튼 -->

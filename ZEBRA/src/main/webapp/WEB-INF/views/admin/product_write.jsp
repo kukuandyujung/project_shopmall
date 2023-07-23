@@ -111,20 +111,11 @@
                         </div>
                     </div>                   
                     <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3  label-align">메인 이미지1<span class="required"></span></label>
+                        <label class="col-form-label col-md-3 col-sm-3  label-align">메인 이미지<span class="required"></span></label>
                         <div class="col-md-6 col-sm-6">
                             <input class="form-control" type="file"  name="pm1"   data-validate-minmax="10,100" ></div>
                     </div>                    
-                    <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3  label-align">메인 이미지2<span class="required"></span></label>
-                        <div class="col-md-6 col-sm-6">
-                            <input class="form-control" type="file"  name="pm2"   data-validate-minmax="10,100" ></div>
-                    </div>                    
-                    <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3  label-align">메인 이미지3<span class="required"></span></label>
-                        <div class="col-md-6 col-sm-6">
-                            <input class="form-control" type="file"  name="pm3"  data-validate-minmax="10,100" ></div>
-                    </div>                    
+                           
                     <div class="field item form-group">
                         <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지1<span class="required"></span></label>
                         <div class="col-md-6 col-sm-6">
@@ -140,21 +131,7 @@
                         <div class="col-md-6 col-sm-6">
                             <input class="form-control" type="file"  name="pd3"   data-validate-minmax="10,100" ></div>
                     </div>                    
-                    <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지4<span class="required"></span></label>
-                        <div class="col-md-6 col-sm-6">
-                            <input class="form-control" type="file"  name="pd4"   data-validate-minmax="10,100" ></div>
-                    </div>                    
-                    <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지5<span class="required"></span></label>
-                        <div class="col-md-6 col-sm-6">
-                            <input class="form-control" type="file"  name="pd5"  data-validate-minmax="10,100" ></div>
-                    </div>                    
-                    <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3  label-align">상세 이미지6<span class="required"></span></label>
-                        <div class="col-md-6 col-sm-6">
-                            <input class="form-control" type="file"  name="pd6"  data-validate-minmax="10,100" ></div>
-                    </div>                    
+                                
                    
       <br>
       <br>

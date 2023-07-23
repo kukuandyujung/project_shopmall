@@ -83,15 +83,10 @@ public class ProductController {
    //상품 등록하기 post
    @PostMapping("/admin/product_write")
    public String product_Write(ProductDto pdto,
-         @RequestPart("pm1") MultipartFile pmainimg1,
-         @RequestPart("pm2") MultipartFile pmainimg2,
-         @RequestPart("pm3") MultipartFile pmainimg3,
+         @RequestPart("pm1") MultipartFile pmainimg,
          @RequestPart("pd1") MultipartFile pdetailimg1,
          @RequestPart("pd2") MultipartFile pdetailimg2,
          @RequestPart("pd3") MultipartFile pdetailimg3,
-         @RequestPart("pd4") MultipartFile pdetailimg4,
-         @RequestPart("pd5") MultipartFile pdetailimg5,
-         @RequestPart("pd6") MultipartFile pdetailimg6,
    
          Model model) throws Exception{
       
@@ -103,54 +98,27 @@ public class ProductController {
       
       
       //상품 1개 등록하기 
-      String new_pmainimg1 =""; //파일 등록을 위한 변수 설정
+      String new_pmainimg =""; //파일 등록을 위한 변수 설정
       
-      if(!pmainimg1.isEmpty()) {    
-      String ori_fileName = pmainimg1.getOriginalFilename(); //실제 파일 이름
-      UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
-      new_pmainimg1 = uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
+      if(!pmainimg.isEmpty()) {    
+      String ori_fileName = pmainimg.getOriginalFilename(); //실제 파일 이름
+      //UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
+      new_pmainimg = ori_fileName; //변경 파일 이름 - 중복 방지
       String uploadUrl = "c:/upload/";//파일 업로드 위치 
-      File f = new File(uploadUrl+new_pmainimg1); 
-      pmainimg1.transferTo(f);//파일 저장
+      File f = new File(uploadUrl+new_pmainimg); 
+      pmainimg.transferTo(f);//파일 저장
       }
 
-      System.out.println("doproduct_write pfile1: "+ new_pmainimg1);
-      pdto.setPmainimg1(new_pmainimg1);//pmainimg1
+      System.out.println("doproduct_write pfile1: "+ new_pmainimg);
+      pdto.setPmainimg(new_pmainimg);//pmainimg
       
-      
-      
-      String new_pmainimg2 =""; //파일 등록을 위한 변수 설정
-      if(!pmainimg2.isEmpty()) {    
-         String ori_fileName = pmainimg2.getOriginalFilename(); //실제 파일 이름
-         UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
-         new_pmainimg2 = uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
-         String uploadUrl = "c:/upload/";//파일 업로드 위치 
-         File f = new File(uploadUrl+new_pmainimg2); 
-         pmainimg2.transferTo(f);//파일 저장
-      }
-      
-      System.out.println("doproduct_write pfile2: "+ new_pmainimg2);
-      pdto.setPmainimg2(new_pmainimg2);
-
-      String new_pmainimg3 =""; //파일 등록을 위한 변수 설정
-      if(!pmainimg3.isEmpty()) {    
-         String ori_fileName = pmainimg3.getOriginalFilename(); //실제 파일 이름
-         UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
-         new_pmainimg3 = uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
-         String uploadUrl = "c:/upload/";//파일 업로드 위치 
-         File f = new File(uploadUrl+new_pmainimg3); 
-         pmainimg3.transferTo(f);//파일 저장
-      }
-      
-      System.out.println("doproduct_write pfile3: "+ new_pmainimg3);
-      pdto.setPmainimg3(new_pmainimg3);
       
       
       String new_pdetailimg1=""; //파일 등록을 위한 변수 설정
       if(!pdetailimg1.isEmpty()) {    
          String ori_fileName = pdetailimg1.getOriginalFilename(); //실제 파일 이름
-         UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
-         new_pdetailimg1= uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
+         //UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
+         new_pdetailimg1= ori_fileName; //변경 파일 이름 - 중복 방지
          String uploadUrl = "c:/upload/";//파일 업로드 위치 
          File f = new File(uploadUrl+new_pdetailimg1); 
          pdetailimg1.transferTo(f);//파일 저장
@@ -162,8 +130,8 @@ public class ProductController {
       String new_pdetailimg2=""; //파일 등록을 위한 변수 설정
       if(!pdetailimg2.isEmpty()) {    
          String ori_fileName = pdetailimg2.getOriginalFilename(); //실제 파일 이름
-         UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
-         new_pdetailimg2= uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
+         //UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
+         new_pdetailimg2= ori_fileName; //변경 파일 이름 - 중복 방지
          String uploadUrl = "c:/upload/";//파일 업로드 위치 
          File f = new File(uploadUrl+new_pdetailimg2); 
          pdetailimg2.transferTo(f);//파일 저장
@@ -175,8 +143,8 @@ public class ProductController {
       String new_pdetailimg3=""; //파일 등록을 위한 변수 설정
       if(!pdetailimg3.isEmpty()) {    
          String ori_fileName = pdetailimg3.getOriginalFilename(); //실제 파일 이름
-         UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
-         new_pdetailimg3= uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
+         //UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
+         new_pdetailimg3= ori_fileName; //변경 파일 이름 - 중복 방지
          String uploadUrl = "c:/upload/";//파일 업로드 위치 
          File f = new File(uploadUrl+new_pdetailimg1); 
          pdetailimg3.transferTo(f);//파일 저장
@@ -185,45 +153,7 @@ public class ProductController {
       System.out.println("doproduct_write pdfile3: "+ new_pdetailimg3);
       pdto.setPdetailimg3(new_pdetailimg3);
       
-      String new_pdetailimg4=""; //파일 등록을 위한 변수 설정
-      if(!pdetailimg4.isEmpty()) {    
-         String ori_fileName = pdetailimg4.getOriginalFilename(); //실제 파일 이름
-         UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
-         new_pdetailimg4= uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
-         String uploadUrl = "c:/upload/";//파일 업로드 위치 
-         File f = new File(uploadUrl+new_pdetailimg4); 
-         pdetailimg4.transferTo(f);//파일 저장
-      }
-      
-      System.out.println("doproduct_write pdfile4: "+ new_pdetailimg4);
-      pdto.setPdetailimg4(new_pdetailimg4);
-      
-      String new_pdetailimg5=""; //파일 등록을 위한 변수 설정
-      if(!pdetailimg5.isEmpty()) {    
-         String ori_fileName = pdetailimg5.getOriginalFilename(); //실제 파일 이름
-         UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
-         new_pdetailimg5= uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
-         String uploadUrl = "c:/upload/";//파일 업로드 위치 
-         File f = new File(uploadUrl+new_pdetailimg5); 
-         pdetailimg5.transferTo(f);//파일 저장
-      }
-      
-      System.out.println("doproduct_write pdfile5: "+ new_pdetailimg5);
-      pdto.setPdetailimg5(new_pdetailimg5);
 
-      String new_pdetailimg6=""; //파일 등록을 위한 변수 설정
-      if(!pdetailimg6.isEmpty()) {    
-         String ori_fileName = pdetailimg6.getOriginalFilename(); //실제 파일 이름
-         UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
-         new_pdetailimg6= uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
-         String uploadUrl = "c:/upload/";//파일 업로드 위치 
-         File f = new File(uploadUrl+new_pdetailimg6); 
-         pdetailimg6.transferTo(f);//파일 저장
-      }
-      
-      System.out.println("doproduct_write pdfile6: "+ new_pdetailimg6);
-      pdto.setPdetailimg6(new_pdetailimg6);
-      
       productService.insertOne(pdto);
       
       return "redirect:product_list";
@@ -257,15 +187,11 @@ public class ProductController {
    //상품 수정하기 post
    @PostMapping("/admin/product_update") //boardUpdate에 저장하기 
    public String product_update(ProductDto pdto, 
-         @RequestPart("pm1") MultipartFile pmainimg1,
-         @RequestPart("pm2") MultipartFile pmainimg2,
-         @RequestPart("pm3") MultipartFile pmainimg3,
+         @RequestPart("pm1") MultipartFile pmainimg,
          @RequestPart("pd1") MultipartFile pdetailimg1,
          @RequestPart("pd2") MultipartFile pdetailimg2,
          @RequestPart("pd3") MultipartFile pdetailimg3,
-         @RequestPart("pd4") MultipartFile pdetailimg4,
-         @RequestPart("pd5") MultipartFile pdetailimg5,
-         @RequestPart("pd6") MultipartFile pdetailimg6,
+      
          int page,
          String category, 
          String s_word,
@@ -280,40 +206,22 @@ public class ProductController {
       
       
          //파일이 있을 경우에 파일 저장 
-         if(!pmainimg1.isEmpty()) {    
-            String ori_fileName = pmainimg1.getOriginalFilename();//실제 파일 이름
-            UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
-            String new_pmainimg1 = uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
+         if(!pmainimg.isEmpty()) {    
+            String ori_fileName = pmainimg.getOriginalFilename();//실제 파일 이름
+            //UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
+            String new_pmainimg = ori_fileName; //변경 파일 이름 - 중복 방지
             String uploadUrl = "c:/upload/";//파일 업로드 위치 
-            File f = new File(uploadUrl+new_pmainimg1); 
-            pmainimg1.transferTo(f); //파일 저장    
-            pdto.setPmainimg1(new_pmainimg1);
+            File f = new File(uploadUrl+new_pmainimg); 
+            pmainimg.transferTo(f); //파일 저장    
+            pdto.setPmainimg(new_pmainimg);
             
          }
-         if(!pmainimg2.isEmpty()) {    
-            String ori_fileName = pmainimg2.getOriginalFilename();//실제 파일 이름
-            UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
-            String new_pmainimg2 = uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
-            String uploadUrl = "c:/upload/";//파일 업로드 위치 
-            File f = new File(uploadUrl+new_pmainimg2); 
-            pmainimg2.transferTo(f); //파일 저장    
-            pdto.setPmainimg2(new_pmainimg2);
-            
-         }
-         if(!pmainimg3.isEmpty()) {    
-            String ori_fileName = pmainimg3.getOriginalFilename();//실제 파일 이름
-            UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
-            String new_pmainimg3 = uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
-            String uploadUrl = "c:/upload/";//파일 업로드 위치 
-            File f = new File(uploadUrl+new_pmainimg3); 
-            pmainimg3.transferTo(f); //파일 저장    
-            pdto.setPmainimg3(new_pmainimg3);
-            
-         }
+         
+         
          if(!pdetailimg1.isEmpty()) {    
             String ori_fileName = pdetailimg1.getOriginalFilename();//실제 파일 이름
-            UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
-            String new_pdetailimg1 = uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
+            //UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
+            String new_pdetailimg1 =ori_fileName; //변경 파일 이름 - 중복 방지
             String uploadUrl = "c:/upload/";//파일 업로드 위치 
             File f = new File(uploadUrl+new_pdetailimg1); 
             pdetailimg1.transferTo(f); //파일 저장    
@@ -322,8 +230,8 @@ public class ProductController {
          }
          if(!pdetailimg2.isEmpty()) {    
             String ori_fileName = pdetailimg2.getOriginalFilename();//실제 파일 이름
-            UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
-            String new_pdetailimg2 = uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
+            //UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
+            String new_pdetailimg2 = ori_fileName; //변경 파일 이름 - 중복 방지
             String uploadUrl = "c:/upload/";//파일 업로드 위치 
             File f = new File(uploadUrl+new_pdetailimg2); 
             pdetailimg2.transferTo(f); //파일 저장    
@@ -332,48 +240,22 @@ public class ProductController {
          }
          if(!pdetailimg3.isEmpty()) {    
             String ori_fileName = pdetailimg3.getOriginalFilename();//실제 파일 이름
-            UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
-            String new_pdetailimg3 = uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
+            //UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
+            String new_pdetailimg3 =ori_fileName; //변경 파일 이름 - 중복 방지
             String uploadUrl = "c:/upload/";//파일 업로드 위치 
             File f = new File(uploadUrl+new_pdetailimg3); 
             pdetailimg3.transferTo(f); //파일 저장    
             pdto.setPdetailimg3(new_pdetailimg3);
             
          }
-         if(!pdetailimg4.isEmpty()) {    
-            String ori_fileName = pdetailimg4.getOriginalFilename();//실제 파일 이름
-            UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
-            String new_pdetailimg4 = uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
-            String uploadUrl = "c:/upload/";//파일 업로드 위치 
-            File f = new File(uploadUrl+new_pdetailimg4); 
-            pdetailimg4.transferTo(f); //파일 저장    
-            pdto.setPdetailimg4(new_pdetailimg4);
-            
-         }
-         if(!pdetailimg5.isEmpty()) {    
-            String ori_fileName = pdetailimg5.getOriginalFilename();//실제 파일 이름
-            UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
-            String new_pdetailimg5 = uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
-            String uploadUrl = "c:/upload/";//파일 업로드 위치 
-            File f = new File(uploadUrl+new_pdetailimg5); 
-            pdetailimg5.transferTo(f); //파일 저장    
-            pdto.setPdetailimg5(new_pdetailimg5);
-            
-         }
-         if(!pdetailimg6.isEmpty()) {    
-            String ori_fileName = pdetailimg6.getOriginalFilename();//실제 파일 이름
-            UUID uuid = UUID.randomUUID(); //랜덤 숫자가 생성 
-            String new_pdetailimg6 = uuid+"_"+ori_fileName; //변경 파일 이름 - 중복 방지
-            String uploadUrl = "c:/upload/";//파일 업로드 위치 
-            File f = new File(uploadUrl+new_pdetailimg6); 
-            pdetailimg6.transferTo(f); //파일 저장    
-            pdto.setPdetailimg6(new_pdetailimg6);
-            
-         }
+         
+         
+      
+       
          
          
          System.out.println("product_update post page: " + page);
-         System.out.println("product_update post pmainimg1: " + pdto.getPmainimg1());
+         System.out.println("product_update post pmainimg: " + pdto.getPmainimg());
          productService.updateOne(pdto);
          s_word = URLEncoder.encode(s_word, "utf-8"); //수정 후 목록으로 돌아오지 않은 이유는 한글이 지원되지 않았었기 때문
 //         return "redirect:product_list";
