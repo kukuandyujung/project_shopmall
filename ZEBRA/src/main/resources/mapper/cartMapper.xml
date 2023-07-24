@@ -5,33 +5,49 @@
     
 <mapper namespace="com.java.mapper.CartMapper">
 
-<!-- 카트 정보 가져오기 -->
-<select id="getCart" resultType="com.java.dto.CartDto">
-	select a.cno, a.MCODE, a.pno, a.camount, b.pno, b.pname, b.pprice, b.pmainimg
-	from cart a 
-	left outer join product b on a.pno = b.pno
-	where MCODE = 1
-</select>
-
 <!-- 카트 추가 -->
 <insert id="addCart">
-	insert into cart(cno, camount, pno, MCODE)
-	values(cart_seq.nextval, #{MCODE}, #{pno}, #{camount})
+
+	insert into cart(MID, pno, pstock)
+	values(#{MID}, #{pno}, #{pstock}) 
+
 </insert>
+
 
 <!-- 카트 삭제 -->
 <delete id="deleteCart">
-	delete from cart where cno = #{cno}
+
+	delete from cart where cartId = #{cartId}
+
 </delete>
 
 <!-- 카트 수량 수정 -->
 <update id="modifyCount">
-	update cart set camount = #{camount} where cno = #{cno}
+
+	update cart set pstock=#{pstock} where cartId = #{cartId}
+
 </update>
 
+
+<!-- 카트 목록 -->
+<select id="getCart" resultType="com.java.dto.CartDTO">
+
+	SELECT MID FROM ZEBRA WHERE MID = #{MID}
+<!-- 
+	SELECT c.*, m.*, p.* c.cartId, m.MID, p.pno, p.pstock, p.pname, p.price
+	FROM cart c
+	INNER JOIN zebra m ON c.MID = m.MID
+	INNER JOIN product p ON c.pno = p.pno
+	where m.MID = #{MID}	
+	     -->
+</select>
+
 <!-- 카트 확인 -->
-<select id="checkCart" resultType="com.java.dto.CartDto">
-	select * from cart where MCODE = #{MCODE} and pno = #{pno}
+<select id="checkCart" resultType="com.java.dto.CartDTO">
+
+	select * from cart 
+	where MID = #{MID} and pno = #{pno}
+
 </select>
 
 </mapper>

@@ -15,7 +15,7 @@
 		<nav class="navbar navbar-expand-lg navbar-light">
 			<div class="container">
 				<a class="navbar-brand logo_h" href="/layout/index"><img
-					src="../img/logo.png" alt=""></a>
+					src="/img/logo.png" alt=""></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
 					data-target="#navbarSupportedContent"
 					aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -96,16 +96,27 @@
 							</ul></li>
 					</ul>
 
-
-
-
 					<ul class="nav-shop">
-						<li class="nav-item"><a href="../mypage/cart?MCODE=${cdto.MCODE}"><button>
-									<i class="ti-shopping-cart"></i>
-								</button></a></li>
+						<c:if test="${sessionId==null}">
+							<li class="nav-item" style="margin-left: 10px;"><a class=""
+								href="/member/login" style="font-weight: bold; font-size: 15px;">
+								<button><i class="ti-shopping-cart"></i></button> <!-- 장바구니 아이콘 -->
+								</a></li>
+						</c:if>								
+						<c:if test="${sessionId!=null}">
+							<li>
+							<a href="/mypage/cart/${sessionId}">
+							<button style="margin-right: 10px;">
+							<i class="ti-shopping-cart" style="font-size: 15px;"></i>
+							</button>
+							</a>
+							</li> <!-- 장바구니 아이콘 -->
+						</c:if>	
+							
 
 						<li class="nav-item"><a class="" href="/mypage/orderhistory"
 							style="font-weight: bold; font-size: 15px;">My Page</a></li>
+							
 						<c:if test="${sessionId==null}">
 							<li class="nav-item" style="margin-left: 10px;"><a class=""
 								href="/member/login" style="font-weight: bold; font-size: 15px;">Sign
@@ -116,7 +127,6 @@
 							<li><a onclick="logoutBtn()" style="cursor: pointer;style="font-weight:bold;  font-size: 15px;">LOGOUT</a></li>
 						</c:if>	
 							
-							</li>
 						</li>
 					</ul>
 				</div>

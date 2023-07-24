@@ -82,6 +82,42 @@
     });
 </script>
 
+<script>
+// 입력된 수량을 받는 변수
+let quantity = $(".quantity_input").val();
+
+//서버로 전송할 데이터
+const form = {
+		MID : '${cart.MID}',
+		pno : '${cart.pno}',
+		pstock : ''
+}
+
+//장바구니 추가 버튼
+$(".lnr lnr lnr-cart").on("click", function(e){
+		form.pstock = $(".quantity_input").val();
+		$.ajax({
+			url: '/mypage/cart',
+			type: 'POST',
+			data: form,
+			success: function(result){
+				cartAlert(result);
+			}
+		})
+	});
+	
+	function cartAlert(result){
+		if(result == '0'){
+			alert("장바구니에 추가를 하지 못하였습니다.");
+		} else if(result == '1'){
+			alert("장바구니에 추가되었습니다.");
+		} else if(result == '2'){
+			alert("장바구니에 이미 추가되어져 있습니다.");
+		} else if(result == '5'){
+			alert("로그인이 필요합니다.");	
+		}
+	}
+</script>
 
 </head>
 <body>
@@ -164,13 +200,13 @@
 						<div class="product_count">
 							<label for="qty">Quantity:</label> <input type="number" name="qty"
 								id="sst" size="2" min="1"  maxlength="12" value="1" title="Quantity:"
-								class="input-text qty">&nbsp;&nbsp;<a
-								class="button primary-btn" href="#">Buy Now</a>
+								class="input-text qty">&nbsp;&nbsp;
+								<a class="button primary-btn" href="#">Buy Now</a>
 						</div>
 						<div class="card_area d-flex align-items-center">
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-link"></i></a>
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
-							<a class="icon_btn" href="#"><i class="lnr lnr lnr-cart"></i></a>
+							<a class="icon_btn" href="#"><i class="lnr lnr lnr-cart"></i></a> <!-- 장바구니 이동 버튼  -->
 						</div>
 					</div>
 				</div>
@@ -270,11 +306,7 @@
                                }
                             });//ajax
                          }//if
-                         
-                         
                       }//삭제버튼 -->
-                      
-                      
                       
                       
                       //3. 댓글수정저장

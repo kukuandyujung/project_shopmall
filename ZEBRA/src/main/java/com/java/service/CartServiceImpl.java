@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
-import com.java.dto.CartDto;
+import com.java.dto.CartDTO;
 import com.java.dto.MemberDto;
 import com.java.mapper.CartMapper;
 
@@ -15,46 +15,75 @@ public class CartServiceImpl implements CartService {
 
 	@Autowired CartMapper cartMapper;
 	
-	@Override // 카트 추가
-	public int addCart(CartDto cdto) {
+	@Override
+	public int addCart(CartDTO cart) {
 		// 장바구니 데이터 체크
-		CartDto checkCart = cartMapper.checkCart(cdto);		
+		CartDTO checkCart = cartMapper.checkCart(cart);
+		
 		if(checkCart != null) {
-			return 2; // 동록된 데이터 존재
+			return 2;
 		}
 		
 		// 장바구니 등록 & 에러 시 0반환
 		try {
-			return cartMapper.addCart(cdto);
+			return cartMapper.addCart(cart);
 		} catch (Exception e) {
-			return 0; // 등록 실패
-		}
+			return 0;
+			
+		}		
+	}	
+	
+	/* 카트 삭제 */
+	@Override
+	public void deleteCart() {
+		int cartId = 1;
+		cartMapper.deleteCart(cartId);
 	}
-	
-	@Override // 장바구니 정보 리스트
-	public ArrayList<CartDto> getCartList(int MCODE) {
-		ArrayList<CartDto> list = cartMapper.getCart(MCODE);		
-		return list;
-	}
-	
-	@Override // 카트 정보 가져오기
-	public ArrayList<CartDto> getCart(int MCODE) {			
-			ArrayList<CartDto> list = cartMapper.getCart(MCODE);
-			return list;
-	}
-	
-	
-	/*
-	 * // 카트 삭제 public void deleteCart() { cartMapper.deleteCart(0); }
-	 * 
-	 * // 카트 수량 수정 public void modifyCount(CartDto cdto) {
-	 * cartMapper.modifyCount(cdto); }
-	 * 
-	 * // 카트 확인 public CartDto checkCart(CartDto cdto);
-	 */
 
 	
-	
+	/* 카트 수량 수정 */
+	@Override
+	public void modifyCart() {
+		int cartId = 3;
+		int pstock = 5;
+		
+		CartDTO cart = new CartDTO();
+		cart.setCartId(cartId);
+		cart.setPstock(pstock);
+		
+		cartMapper.modifyCount(cart);
+		
 	}
+
+	
+	/* 카트 목록 */ 
+	@Override
+	public ArrayList<CartDTO> getCartList(String MID) {
+		ArrayList<CartDTO> cart = cartMapper.getCart(MID);
+		
+		for(CartDTO dto : cart) {
+			dto.initSaleTotal();
+		}
+		
+		return cart;
+	}
+	
+	/* 카트 확인 */
+
+	@Override
+	public void checkCart() {
+		
+		String MID = "admin";
+		int pno = 71;
+		
+		CartDTO cart = new CartDTO();
+		cart.setMID(MID);
+		cart.setPno(pno);
+		
+		CartDTO resutlCart = cartMapper.checkCart(cart);
+		System.out.println("결과 : " + resutlCart);
+		
+	}
+}
 
 	

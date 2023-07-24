@@ -2,18 +2,22 @@ package com.java.service;
 
 import java.util.ArrayList;
 
-import com.java.dto.CartDto;
+import com.java.dto.CartDTO;
 
 public interface CartService {
 	
-	// 카트 추가
-	public int addCart(CartDto cdto);
+	/* 장바구니 추가 */
+	public int addCart(CartDTO cart);
 	
-	// 카트 정보 리스트
-	public ArrayList<CartDto> getCartList(int MCODE);
-	
-	// 카트 정보 가져오기
-	public ArrayList<CartDto> getCart(int MCODE);
+	void deleteCart();
 
+	void modifyCart();
+
+	/* 장바구니 정보 리스트 */
+	public ArrayList<CartDTO> getCartList(String MID);
+
+	void checkCart();
+	
+	
 	
 }

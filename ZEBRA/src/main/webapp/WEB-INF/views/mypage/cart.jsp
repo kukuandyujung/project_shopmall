@@ -9,62 +9,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title> ZEBRA </title>
-<link rel="icon" href="../img/logo2.png" type="image/png">
-<link rel="stylesheet" type="text/css" href="../css/reset.css?v=Y" />
-<link rel="stylesheet" type="text/css" href="../css/layout.css?v=Y" />
-<link rel="stylesheet" type="text/css" href="../css/content.css?v=Y" />
-<script type="text/javascript" src="../js/top_navi.js"></script>
-<script type="text/javascript" src="../js/left_navi.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
-<script type="text/javascript" src="../js/common.js"></script>
-<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="../js/idangerous.swiper-2.1.min.js"></script>
-<script type="text/javascript" src="../js/jquery.anchor.js"></script>
+<link rel="icon" href="/img/logo.png" type="image/png">
+<link rel="stylesheet" type="text/css" href="/css/reset.css?v=Y" />
+<link rel="stylesheet" type="text/css" href="/css/layout.css?v=Y" />
+<link rel="stylesheet" type="text/css" href="/css/content.css?v=Y" />
+<script type="text/javascript" src="/js/top_navi.js"></script>
+<script type="text/javascript" src="/js/left_navi.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript" src="/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="/js/idangerous.swiper-2.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery.anchor.js"></script>
 <script type="text/javascript"></script>
-<script src="../js/main.js"></script>
-<link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
-<link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
-<link rel="stylesheet" href="../vendors/linericon/style.css">
-<link rel="stylesheet" href="../vendors/owl-carousel/owl.theme.default.min.css">
-<link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css">
-<link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
-<link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
-<link rel="stylesheet" href="../css/style.css">
+<script src="/js/main.js"></script>
+<link rel="stylesheet" href="/vendors/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="/vendors/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="/vendors/themify-icons/themify-icons.css">
+<link rel="stylesheet" href="/vendors/linericon/style.css">
+<link rel="stylesheet" href="/vendors/owl-carousel/owl.theme.default.min.css">
+<link rel="stylesheet" href="/vendors/owl-carousel/owl.carousel.min.css">
+<link rel="stylesheet" href="/vendors/nice-select/nice-select.css">
+<link rel="stylesheet" href="/vendors/nouislider/nouislider.min.css">
+<link rel="stylesheet" href="/css/style.css">
 </head>
-
-<script>
-const form = {
-		memberId : '${member.memberId}',
-		bookId : '${goodsInfo.bookId}',
-		bookCount : ''
-}
-
-//장바구니 추가 버튼
-$(".btn_cart").on("click", function(e){
-		form.bookCount = $(".quantity_input").val();
-		$.ajax({
-			url: '/cart/add',
-			type: 'POST',
-			data: form,
-			success: function(result){
-				cartAlert(result);
-			}
-		})
-	});
-	
-	function cartAlert(result){
-		if(result == '0'){
-			alert("장바구니에 추가를 하지 못하였습니다.");
-		} else if(result == '1'){
-			alert("장바구니에 추가되었습니다.");
-		} else if(result == '2'){
-			alert("장바구니에 이미 추가되어져 있습니다.");
-		} else if(result == '5'){
-			alert("로그인이 필요합니다.");	
-		}
-	}
-</script>
 
 <body>
 <%@ include file="../top.jsp"%>
@@ -131,7 +98,7 @@ $(".btn_cart").on("click", function(e){
 								<tr>
 									<td><input type="checkbox" /></td>
 									<td class="left">
-										<p class="img"><img src="../img/product/product1.png" alt="상품" width="66" height="66" /></p>
+										<p class="img"><img src="/img/product/product1.png" alt="상품" width="66" height="66" /></p>
 
 										<ul class="goods">
 											<li>
@@ -140,7 +107,7 @@ $(".btn_cart").on("click", function(e){
 										</ul>
 									</td>
 									<td class="tnone">1,123,400 원<br/>
-									<td><input type="number" min="1" max="999" value="1" /></td>
+									<td><input type="number" class="quantity_input" min="1" max="999" value="1" /></td> <!-- <input type="number"> 수량 버튼  -->
 									<td>1,123,400 원</td>
 									<td class="tnone">
 										<ul class="order">	
@@ -153,7 +120,7 @@ $(".btn_cart").on("click", function(e){
 								<tr>
 									<td><input type="checkbox" /></td>
 									<td class="left">
-										<p class="img"><img src="../img/product/product1.png" alt="상품" width="66" height="66" /></p>
+										<p class="img"><img src="/img/product/product1.png" alt="상품" width="66" height="66" /></p>
 
 										<ul class="goods">
 											<li>
@@ -162,7 +129,7 @@ $(".btn_cart").on("click", function(e){
 										</ul>
 									</td>
 									<td class="tnone">1,123,400 원</td>
-									<td><input type="number" min="1" max="999" value="1" /></td>
+									<td><input type="number" class="quantity_input" min="1" max="999" value="1" /></td>
 									<td>1,123,400 원</td>
 									<td class="tnone">
 										<ul class="order">	
