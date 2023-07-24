@@ -32,13 +32,13 @@
 							style="font-weight: bold; font-size: 20px;">New</a>
 							<ul class="dropdown-menu">
 								<li class="nav-item"><a class="nav-link"
-									href="/product/category">For Women</a></li>
+									href="/product/product_page"">For Women</a></li>
 								<li class="nav-item"><a class="nav-link"
-									href="/product/category">For Men</a></li>
+									href="/product/product_page"">For Men</a></li>
 								<li class="nav-item"><a class="nav-link"
-									href="/product/category">For Girl</a></li>
+									href="/product/product_page"">For Girl</a></li>
 								<li class="nav-item"><a class="nav-link"
-									href="/product/category">For Boy</a></li>
+									href="/product/product_page"">For Boy</a></li>
 							</ul></li>
 						<li class="nav-item active submenu dropdown"><a href="#"
 							class="nav-link dropdown-toggle" data-toggle="dropdown"
@@ -46,19 +46,19 @@
 							style="font-weight: bold; font-size: 20px;">Women</a>
 							<ul class="dropdown-menu">
 								<li class="nav-item"><a class="nav-link"
-									href="/product/category">New Arrivals</a></li>
+									href="/product/product_page"">New Arrivals</a></li>
 								<li class="nav-item"><a class="nav-link"
-									href="/product/category">Best Sellers</a></li>
+									href="/product/product_page"">Best Sellers</a></li>
 								<li class="nav-item"><a class="nav-link"
-									href="/product/category">All Clothing</a></li>
+									href="/product/product_page"">All Clothing</a></li>
 								<li class="nav-item"><a class="nav-link"
-									href="/product/category">Dresses</a></li>
+									href="/product/product_page"">Dresses</a></li>
 								<li class="nav-item"><a class="nav-link"
-									href="/product/category">Shirts</a></li>
+									href="/product/product_page"">Shirts</a></li>
 								<li class="nav-item"><a class="nav-link"
-									href="/product/category">Pants</a></li>
+									href="/product/product_page"">Pants</a></li>
 								<li class="nav-item"><a class="nav-link"
-									href="/product/category">Shorts</a></li>
+									href="/product/product_page"">Shorts</a></li>
 								<li class="nav-item"><a class="nav-link"
 									href="/product/product_page">Coats</a></li>
 							</ul></li>
@@ -68,19 +68,19 @@
 							style="font-weight: bold; font-size: 20px;">Men</a>
 							<ul class="dropdown-menu">
 								<li class="nav-item"><a class="nav-link"
-									href="/product/category">New Arrivals</a></li>
+									href="/product/product_page"">New Arrivals</a></li>
 								<li class="nav-item"><a class="nav-link"
-									href="/product/category">Best Sellers</a></li>
+									href="/product/product_page"">Best Sellers</a></li>
 								<li class="nav-item"><a class="nav-link"
-									href="/product/category">All Clothing</a></li>
+									href="/product/product_page"">All Clothing</a></li>
 								<li class="nav-item"><a class="nav-link"
-									href="/product/category">Shirts</a></li>
+									href="/product/product_page"">Shirts</a></li>
 								<li class="nav-item"><a class="nav-link"
-									href="/product/category">Pants</a></li>
+									href="/product/product_page"">Pants</a></li>
 								<li class="nav-item"><a class="nav-link"
-									href="/product/category">Shorts</a></li>
+									href="/product/product_page""">Shorts</a></li>
 								<li class="nav-item"><a class="nav-link"
-									href="/product/category">Coats</a></li>
+									href="/product/product_page"">Coats</a></li>
 							</ul></li>
 						<li class="nav-item active submenu dropdown"><a href="#"
 							class="nav-link dropdown-toggle" data-toggle="dropdown"

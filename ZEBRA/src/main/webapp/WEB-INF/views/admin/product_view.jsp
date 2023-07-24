@@ -1,58 +1,152 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>상품 정보 페이지</title>
-  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/read.css">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <title>Gentelella Alela! | </title>
+
+    <!-- Bootstrap -->
+    <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+   <link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="/build/css/custom.min.css" rel="stylesheet">
   <script type="text/javascript">
-		function deleteBtn(){
-			if(confirm("상품을 삭제하시겠습니까?")){
-				location.href= "product_delete?pno=${pdto.pno}";
-			}
-		}
-		
-		
-	
-	</script>
-  <style>
-  	.list{cursor: printer;}
-  </style>
+  	function updateBtn(){
+  		if(confirm("주문 내역 상태를 수정하시겠습니까?")){
+  			update.submit();
+  		}
+  	}
+  </script>
+  </head>
 
-</head>
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="index" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+            </div>
 
-<body>
-<section>
+            <div class="clearfix"></div>
 
-    <h1>상품 정보 페이지</h1>
-	<hr>
-	
-    <table>
-    	
-      <tr>
-        <th><strong>상품명 : <span>${pdto.pname}</span></strong></th>
-      </tr>
-      <tr>
-        <td>상품 번호<span>${pdto.pno}</span></td><br>
-      </tr>
-      <tr>
-        <td>메인 이미지<span><img src="/upload/${pdto.pmainimg}" style="width: 100px;" alt="" /></span></td>
-      </tr>
-      
-      <tr>
-        <td>상세 이미지1<span><img src="/upload/${pdto.pdetailimg1}" style="width: 100px;" alt="" /></span></td>
-        <td>상세 이미지2<span><img src="/upload/${pdto.pdetailimg2}" style="width: 100px;" alt="" /></span></td>    
-        <td>상세 이미지3<span><img src="/upload/${pdto.pdetailimg3}" style="width: 100px;" alt="" /></span></td>    
-      </tr>
-    <hr>
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="production/images/img.jpg" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Welcome,</span>
+                <h2>John Doe</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <%@ include file="common_code.jsp" %>
+
+          
+          </div>
+        </div>
+
+      <%@ include file="top_common.jsp" %>
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Tables <small>Some examples to get you started</small></h3>
+              </div>
+
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5   form-group pull-right top_search">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+          
+          
+
+              <div class="col-md-6 col-sm-6  ">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Bordered table <small>Bordered table subtitle</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Settings 1</a>
+                            <a class="dropdown-item" href="#">Settings 2</a>
+                          </div>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content" >
+
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>First Name</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">상품명</th>
+                          <td><span>${pdto.pname}</span></td> 
+                        </tr>
+                        <tr>
+                          <th scope="row">상품 번호</th>
+                          <td>
+                          	<span>${pdto.pno}</span>
+                          </td> 
+                        </tr> 
+                        <tr>
+                          <th scope="row">메인 이미지</th>
+                          <td><span><img src="/upload/${pdto.pmainimg}" style="width: 100px;" alt="" /></span></td> 
+                        </tr>
+                        <tr>
+                        <tr>
+                          <th scope="row">상세 이미지1</th>
+                          <td><span><img src="/upload/${pdto.pdetailimg1}" style="width: 100px;" alt="" /></span></td> 
+                        </tr>
+                        <tr>
+                          <th scope="row">상세 이미지2</th>
+                          <td><span><img src="/upload/${pdto.pdetailimg2}" style="width: 100px;" alt="" /></span></td> 
+                        </tr>
+                          <th scope="row">상세 이미지3</th>
+                          <td><span><img src="/upload/${pdto.pdetailimg1}" style="width: 100px;" alt="" /></span></td> 
+                        </tr>
+                          <hr>
       <tr>
         <td><strong>다음 상품</strong> <span class="separator">|</span> </span> <a href="/admin/product_view?pno=${nextDto.pno }&page=${page}&category=${category}&s_word=${s_word}">  ${nextDto.pname } </a></td>
       </tr>
@@ -68,4 +162,44 @@
 <%--     <a onclick="updateBtn(${pdto.pno})"><div class="rebtn">수정</div>></a> --%>
 </section>
 </body>
+</html>
+                      </tbody>
+                    </table>
+   
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="clearfix"></div>
+
+              
+                    
+							
+						
+                
+               
+           
+        
+        
+        <!-- /page content -->
+
+      
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+   <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FastClick -->
+    <script src="../vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="../vendors/nprogress/nprogress.js"></script>
+    <!-- iCheck -->
+    <script src="../vendors/iCheck/icheck.min.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="../build/js/custom.min.js"></script>
+  </body>
 </html>
