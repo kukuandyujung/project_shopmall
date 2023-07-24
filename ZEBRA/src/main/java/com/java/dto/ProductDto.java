@@ -14,7 +14,7 @@ public class ProductDto {
 	private String pname;
 	private int pcode;
 	private String pdescript;
-	private int pprice;
+	private Integer pprice;
 	private int pstock;
 	private int psoldcount;
 	private int phit;

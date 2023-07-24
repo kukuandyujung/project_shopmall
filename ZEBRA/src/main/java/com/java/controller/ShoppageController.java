@@ -24,16 +24,14 @@ public class ShoppageController {
    ProductService productService;
    
    //상품을 검색하는 검색 ajax 
-   @PostMapping("/product/searchAjax")
+   @PostMapping("/product/sortingAjax")
    @ResponseBody //ajax를 사용하기 위한 것. 데이터를 넘겨주는 어노테이션이다. 
-   public ArrayList<ProductDto> searchAjax(
-//         @RequestParam int pno,
-//         @RequestParam int page, 
-         String s_word){
+   public ArrayList<ProductDto> sortingAjax(
+         String s_word, Integer pprice, String sorting, String pcolor){
+	  System.out.println("s_word" + s_word);
+	  System.out.println("sorting" +  sorting);
       
-   System.out.println(s_word);
-      
-      ArrayList<ProductDto> list = productService.selectSearchAll(s_word);
+      ArrayList<ProductDto> list = productService.selectSortAll(s_word, pprice, sorting,pcolor);
       
       System.out.println(list.get(0).getPname());
       
@@ -48,10 +46,12 @@ public class ShoppageController {
    @RequestMapping("/product/product_page")
    public String product_page(@RequestParam(defaultValue = "1") int page, 
       String category , String s_word, Model model) {
+	   
+	  
 //      System.out.println("ShoppageController product_page category : " + category);
       //상품 페이지의 디폴트 값을 1로 해서
       //상품 페이지에 상품 전체 가져오기
-      HashMap<String, Object> map = productService.selectPageAll(page,category,s_word);   
+      HashMap<String, Object> map = productService.selectPageAll(page,category,s_word );   
       //selectPageAll 상품 페이지에 상품 데이터를 전체 가져와주기
       model.addAttribute("list", map.get("list")); //상품 목록을 담고 있는 모델의 속성 
       model.addAttribute("page" ,map.get("page")); //상품 목록의 번호를 나타냄 

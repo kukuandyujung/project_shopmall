@@ -40,6 +40,7 @@ public class AdminController {
 	public String login() {
 		
 		return "admin/login";
+
 	}
 	
 	//관리자 로그인 PostMapping

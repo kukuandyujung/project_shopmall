@@ -135,8 +135,8 @@ public class ProductServiceImpl implements ProductService{
 
 
    @Override //상품 페이지에서 ajax 검색하기 
-   public ArrayList<ProductDto> selectSearchAll(String s_word) {
-      ArrayList<ProductDto> list= productMapper.selectSearchAll(s_word);
+   public ArrayList<ProductDto> selectSortAll(String s_word, Integer pprice, String sorting, String pcolor) {
+      ArrayList<ProductDto> list= productMapper.selectSortAll(s_word, pprice, sorting,pcolor);
       return list;
    }
 
