@@ -31,48 +31,6 @@
 <link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
 <link rel="stylesheet" href="../css/style.css">
 <!-- <script type="text/javascript">
-function joinBtn(){	
-	
-	   let nameCheck = /^[a-zA-Z-ㄱ-ㅎ가-힣]+$/ ;   //영문/한글 
-	   let numCheck = /^[0-9]+$/;     // 숫자인지
-	   let alphaCheck = /^[a-zA-Z]+$/ ; //영문자인지
-	   let etcCheck = /^[!@#$%^&*,.?_-]+$/ ; //특수문자인지 아닌지 
-	   let idCheck = /^[a-zA-Z0-9_]{4,20}$/ ; //영문자,숫자,_만 가능	 
-	   let pwCheck = /^[a-zA-Z0-9_]{4,20}$/ ; //영문/숫자, _만 가능 {} 는 자릿수
-	   let phoneCheck = /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/ ; //010-1111-1111 , 02-355-1111
-	   
-	    console.log($('#joinName').val()); 
-	 
-		console.log($('#joinId').val());
-		console.log($('#joinPw').val());//비번
-		
-		   
-	   //글자길이
-	    let name_len = $("#joinName").val().length;
-	    if(name_len<2){
-		   alert("이름은 두글자 이상 입력을 하셔야 합니다.")
-		   $("#joinName").focus();
-		   return false;
-	    }
-	   //이름 - 한글만 입력가능
-		 
-	   // 아이디 - 영문,숫자만 가능
-	    if(!idCheck.test($("#joinId").val())){ //정규표현식 패턴과 입력한 글자 비교
-		   alert("아이디는 영문,숫자,특수문자(_) 4~20자 까지 입력 가능합니다..");
-		   $("#joinId").focus();
-		   return false;
-	   }else{
-		   alert("아이디 사용 가능!!!!");
-	   } 	
-
-	
-		
-	 
-	}
-	</script> -->
-	<!-- ================ END 정규식 조건  Area ================= -->
-
-
 
 </head>
 <body>
@@ -113,33 +71,32 @@ function joinBtn(){
 				<div id="member">
 				
 				<!--=============START 이름,EMAIL 중복 체크 Area ==============-->
-									<script type="text/javascript">
-									function checkIdEmailBtn(){
-								 	 //alert("아이디중복확인");
-									 	console.log($('#idEmck').val());
-								
-									    $.ajax({
-									      url:"/member/idEmaiCheck",
-									      type:"post",
-									      data:{"MNAME":$('#joinName').val(),
-									    	   "MEMAIL":$('#joinEmail').val() },
-									      success:function(data){
-									    	 console.log(data); 
-									    	 if(data=="fail")
-									    		 alert("존재하지 않는 회원입니다.")
-									         else{
-									        	 alert("id: "+data)
-									         }	 
-										    },//success
-										   error:function(){
-										      alert("아이디와 이메일을 확인해주세요 : 사용이 불가합니다.");	  
-										   }//error
-										});//ajax 
-									
-										
-									}//checkIdEmailBtn
-									</script>
-				 <!--=============END 이름,EMAIL 중복 체크 Area ==============-->		
+					<script type="text/javascript">
+					function checkIdEmailBtn(){
+				 	 //alert("아이디중복확인");
+					 	console.log($('#idEmck').val());
+				
+					    $.ajax({
+					      url:"/member/idEmaiCheck",
+					      type:"post",
+					      data:{"MNAME":$('#joinName').val(),
+					    	   "MEMAIL":$('#joinEmail').val() },
+					      success:function(data){
+					    	 console.log(data); 
+					    	 if(data=="fail")
+					    		 alert("존재하지 않는 회원입니다.")
+					         else{
+					        	 alert("id: "+data)
+					         }	 
+						    },//success
+						   error:function(){
+						      alert("아이디와 이메일을 확인해주세요 : 사용이 불가합니다.");	  
+						   }//error
+						});//ajax 				
+						
+					}//checkIdEmailBtn
+					</script>
+ <!--=============END 이름,EMAIL 중복 체크 Area ==============-->		
 								
 					<h2><strong></strong><span>회원님께서 가입하신 아이디와 이메일을 검색하세요.</span></h2>
 					<h3>아이디 찾기</h3>
@@ -209,6 +166,7 @@ function joinBtn(){
 			   
 		   }//f
 	</script>
+	<!-- ================ end 이메일 인증 area ================= -->	
 								<tr>
 									<th scope="row"><span>이메일주소 *</span></th>
 									<td>

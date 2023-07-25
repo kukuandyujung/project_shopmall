@@ -70,7 +70,7 @@
 							<tbody>
 								<tr>
 									<th scope="row"><span>이름  </span></th>
-									<td>김슬기</td>
+									<td>{mdto.MNAME}</td>
 								</tr>
 								<tr>
 								<th scope="row"><span>성별 </span></th>

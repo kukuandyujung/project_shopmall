@@ -50,6 +50,7 @@ public class MemberController {
 	// START SUN //	
 	
 	
+	
 	// 신규 회원 가입 및 등록
 	@PostMapping("/member/register02")
 	public String register02(MemberDto member, Model model) {
@@ -133,18 +134,18 @@ public class MemberController {
 		System.out.println("controller MID : " + MID);
 		System.out.println("controller MPASSWORD : " + MPASSWORD);
 
-	// 회원 1명 가져오기(로그인)
-	/* MemberDto mdto = memberService.selectOne(id,pw); */
-	String resultCode = memberService.selectLoginMember(MID, MPASSWORD);
-	if (resultCode.equals("s_login")) {
-		// System.out.println("resultCode: "+resultCode);
-		return "redirect:/layout/index?resultCode=" + resultCode;
-	} else {
-		model.addAttribute("resultCode", resultCode); // f_login
-		System.out.println("controller resultCode2 : " + resultCode);
+	/// 회원 1명 가져오기(로그인)
+		/* MemberDto mdto = memberService.selectOne(id,pw); */
+		String resultCode = memberService.selectLoginMember(MID, MPASSWORD);
+		if (resultCode.equals("s_login")) {
+			// System.out.println("resultCode: "+resultCode);
+			return "redirect:/layout/index?resultCode=" + resultCode;
+		} else {
+			model.addAttribute("resultCode", resultCode); // f_login
+			System.out.println("controller resultCode2 : " + resultCode);
+		}
+		return "member/login";// 여는 페이지
 	}
-	return "member/login";// 여는 페이지
-}
 
 	// 로그아웃
 	@RequestMapping("/member/logout") // 로그아웃 링크 주소 url 찾아가는 주소
@@ -154,15 +155,7 @@ public class MemberController {
 		return "redirect:/layout/index"; // redirect 이 주소로 다시 찾아라 / 여는 페이지
 	}
 
-	/*
-	 * //id 확인 메일 전송
-	 * 
-	 * @RequestMapping("member/id_email") public String id_email() { return
-	 * "member/id_email"; } //비밀번호 확인 메일전송
-	 * 
-	 * @RequestMapping("member/pw_email") public String pw_email() { return
-	 * "member/pw_email"; }
-	 */
+	
 
 	// END SUN //
 		
