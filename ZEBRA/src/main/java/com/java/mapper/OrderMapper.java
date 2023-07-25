@@ -14,7 +14,4 @@ public interface OrderMapper {
 	// 수령자 정보 1개 저장하기
 	void insertOne(OrderDto odto);
 	
-	//수령자 정보 1개 가져오기
-	OrderDto selectOne(int ono);
-	
 }

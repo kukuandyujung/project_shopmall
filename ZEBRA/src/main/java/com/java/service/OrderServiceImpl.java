@@ -37,14 +37,4 @@ public class OrderServiceImpl implements OrderService {
 		return result;
 	}
 
-	//수령자 정보 1개가져오기
-	@Override
-	public HashMap<String, Object> selectOne(int ono) {
-		HashMap<String, Object> map = new HashMap<>();
-		
-		OrderDto odto = orderMapper.selectOne(ono);
-		map.put("odto", odto);
-		
-		return map;
-	}
 }

@@ -71,13 +71,5 @@ public class OrderController {
 		 return "redirect:/payment/confirmation";
 	}
 	
-	@RequestMapping("/payment/confirmation/{MID}")
-	public String confirmation(String MID, OrderDto odto, int ono, Model model) {
-		System.out.println("confirmation ono : "+ono);
-		//정보 1개 가져오기
-		HashMap<String, Object> map = orderService.selectOne(ono);
-		model.addAttribute("odto",map.get("odto"));
-		return "redirect:/payment/confirmation";
-	}
 	
 }

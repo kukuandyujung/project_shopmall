@@ -14,7 +14,5 @@ public interface OrderService {
 	//수령자 정보 1개 저장
 	void insertOne(OrderDto orderDto);
 	
-	//수령자 정보 1개가져오기
-		HashMap<String, Object> selectOne(int ono);
 
 }
