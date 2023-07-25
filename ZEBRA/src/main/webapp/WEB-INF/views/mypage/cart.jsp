@@ -43,10 +43,42 @@
 /* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
 
 $(document).ready(function()){
-	/* 종합 정보 섹션 정보 삽입 */
-	setTotalInfo();
 	
-});
+	/* 종합 정보 섹션 정보 삽입 
+	setTotalInfo();
+	*/
+	
+	/* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
+	/* function setTotalInfo(){  */
+		
+		let totalPrice = 0;				// 총 가격
+		let totalCount = 0;				// 총 갯수
+		let finalTotalPrice = 0; 		// 최종 가격
+		
+		$(".cart_info_td").each(function(index, element){
+			
+			/* if($(element).find(".individual_cart_checkbox").is(":checked") === true){ */
+			// 총 가격
+			totalPrice += parseInt($(element).find(".individual_pprice_input").val());
+			// 총 갯수
+			totalCount += parseInt($(element).find(".quantity_input").val());			
+			/* } */	
+		});
+		
+		/* 최종 가격 */
+		finalTotalPrice = totalPrice;
+		
+		/* 값 삽입 */
+		// 총 가격
+		$(".totalPrice_span").text(totalPrice.toLocaleString());
+		// 총 갯수
+		$(".totalCount_span").text(totalCount);
+		// 최종 가격 LINE.302
+		$(".finalTotalPrice_span").text(finalTotalPrice.toLocaleString());
+		
+		/* } */
+	
+};
 
 /* 체크여부에따른 종합 정보 변화 */
 $(".individual_cart_checkbox").on("change", function(){
@@ -74,7 +106,6 @@ function setTotalInfo(){
 	
 	let totalPrice = 0;				// 총 가격
 	let totalCount = 0;				// 총 갯수
-	let totalKind = 0;				// 총 종류
 	let finalTotalPrice = 0; 		// 최종 가격
 	
 	$(".cart_info_td").each(function(index, element){
@@ -84,8 +115,6 @@ function setTotalInfo(){
 		totalPrice += parseInt($(element).find(".individual_pprice_input").val());
 		// 총 갯수
 		totalCount += parseInt($(element).find(".quantity_input").val());
-		// 총 종류
-		totalKind += 1;
 		
 		}	
 	});		
@@ -98,9 +127,7 @@ function setTotalInfo(){
 	$(".totalPrice_span").text(totalPrice.toLocaleString());
 	// 총 갯수
 	$(".totalCount_span").text(totalCount);
-	// 총 종류
-	$(".totalKind_span").text(totalKind);
-	// 최종 가격(총 가격 + 배송비)
+	// 최종 가격(총 가격 + 배송비) LINE.302
 	$(".finalTotalPrice_span").text(finalTotalPrice.toLocaleString());
 	
 	}
@@ -296,9 +323,6 @@ $(".ty2").on("click", function(){
 					<div class="amount">
 						<h4>총 주문금액</h4>
 						<ul class="info">
-							<!-- <li>
-								<span class="won"><strong>1,132,310</strong> 원</span>
-							</li> -->
 							
 						</ul>
 						<ul class="total">							
@@ -330,8 +354,7 @@ $(".ty2").on("click", function(){
 					</form>
 					
 					<!-- 주문 form -->
-					<form action="payment/payment/${sessionId}" method="get" class="order_form">
-		
+					<form action="payment/payment/${sessionId}" method="get" class="order_form">		
 					</form>
 
 				<!-- //장바구니에 상품이 있을경우 -->

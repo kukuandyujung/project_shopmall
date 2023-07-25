@@ -23,7 +23,6 @@
 <script type="text/javascript" src="../js/jquery.anchor.js"></script>
 <script type="text/javascript" src="../js/common.js"></script>
 <script type="text/javascript"></script>
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript"
 	src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <link rel="icon" href="../img/logo2.png" type="image/png">
@@ -84,19 +83,21 @@
 </script>
 
 <script>
-// 입력된 수량을 받는 변수
-let quantity = $("#sst").val(); // 218번째 줄
-console.log(quantity); // 출력 테스트
+//입력된 수량을 받는 변수
+$(document).ready(function() {
+	let quantity = $("#sst").val(); // 218번째 줄
+	console.log({"quantity" : quantity}); // 출력 테스트
+});
 
 // 서버로 전송할 데이터
 const form = {
 		MID : '${sessionId}',
-		pno : '${goodsInfo.pno}',
+		pno : '${pdto.pno}',
 		cartCount : ''
 }
-console.log(MID); // 출력 테스트
-console.log(pno); // 출력 테스트
-console.log(cartCount); // 출력 테스트
+console.log(form.MID); // 출력 테스트
+console.log(form.pno); // 출력 테스트
+console.log(form.cartCount); // 출력 테스트
 
 // 장바구니 추가 버튼
 function cartCtn() {
@@ -109,6 +110,7 @@ function cartCtn() {
 			data: form,
 			success: function(result){
 				cartAlert(result);
+				console.log({"cartCount" : form.cartCount});
 			}
 		})
 	};
@@ -126,11 +128,11 @@ function cartCtn() {
 	}
 
 /* 바로구매 버튼 */
-	$(".btn_buy").on("click", function(){
-		let cartCount = $(".input-text").val();
-		$(".order_form").find("input[name='orders[0].cartCount']").val(cartCount);
-		$(".order_form").submit();
-	});
+$(".btn_buy").on("click", function(){
+	let cartCount = $(".input-text").val();
+	$(".order_form").find("input[name='orders[0].cartCount']").val(cartCount);
+	$(".order_form").submit();
+});
 
 </script>
 
@@ -140,7 +142,7 @@ function cartCtn() {
 
 <!-- 주문 form -->
 <form action="product/product_detail/${sessionId}" method="get" class="order_form">
-	<input type="hidden" name="orders[0].pno" value="${goodsInfo.pno}">
+	<input type="hidden" name="orders[0].pno" value="${pdto.pno}">
 	<input type="hidden" name="orders[0].cartCount" value="">
 </form>
 
@@ -220,13 +222,13 @@ function cartCtn() {
 							<!-- 수량 버튼 -->
 							<input type="number" name="quantity_input" id="sst" size="2" min="1"  maxlength="12" value="1" title="Quantity:"
 								class="input-text qty">&nbsp;&nbsp;
-								<a class="button primary-btn" href="#">Buy Now</a>
+								<a class="button primary-btn" href="#">Buy Now</a>								
 						</div>
-						
+												
 						<div class="card_area d-flex align-items-center">
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-link"></i></a>
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
-							<a class="icon_btn" href="#" onclick="cartCtn()"><i class="lnr lnr lnr-cart"></i></a> <!-- 장바구니 이동 버튼 97번째 줄 -->
+							<a class="icon_btn" href="../mypage/cart/${sessionId}" onclick="cartCtn()"><i class="lnr lnr lnr-cart"></i></a> <!-- 장바구니 이동 버튼 97번째 줄 -->
 						</div>
 					</div>
 				</div>

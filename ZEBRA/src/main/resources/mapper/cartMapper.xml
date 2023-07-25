@@ -8,8 +8,8 @@
 <!-- 카트 추가 -->
 <insert id="addCart">
 
-	insert into cart(MID, pno, pstock)
-	values(#{MID}, #{pno}, #{pstock}) 
+	insert into cart(CARTID, MID, pno, cartCount)
+	values(CART_SEQ.NEXTVAL, #{MID}, #{pno}, #{cartCount}) 
 
 </insert>
 
@@ -32,14 +32,14 @@
 <!-- 카트 목록 -->
 <select id="getCart" resultType="com.java.dto.CartDTO">
 
-	SELECT MID FROM ZEBRA WHERE MID = #{MID}
-<!-- 
-	SELECT c.*, m.*, p.* c.cartId, m.MID, p.pno, p.pstock, p.pname, p.price
+	SELECT c.*, m.*, p.*, c.cartId, c.cartCount, m.MID, p.pno, p.pname, p.pprice
 	FROM cart c
 	INNER JOIN zebra m ON c.MID = m.MID
 	INNER JOIN product p ON c.pno = p.pno
 	where m.MID = #{MID}	
-	     -->
+	
+	<!-- SELECT MID FROM ZEBRA WHERE MID = #{MID} -->
+	     
 </select>
 
 <!-- 카트 확인 -->

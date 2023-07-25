@@ -40,6 +40,7 @@ public class FController {
 		return result + "";
 	}	
 	
+	// 장바구니 정보 리스트
 	@GetMapping("mypage/cart/{MID}")
 	public String cartPageGET(@PathVariable("MID") String MID, Model model) {		
 		model.addAttribute("cartInfo", cartService.getCartList(MID));	

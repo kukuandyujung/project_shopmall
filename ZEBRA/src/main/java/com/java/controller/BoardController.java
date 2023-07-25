@@ -32,12 +32,15 @@ public class BoardController {
 	public String product_detail(int pno, Model model) {
 		//상품 번호의 값을 왜 디폴드 값으로 1을 했는 가 ? 
 		System.out.println("product_detail pno  : " + pno );
+		
 		//상품 1개 가져오기 
 		HashMap<String, Object> map = productService.selectPageOne(pno);
 		model.addAttribute("pdto", map.get("pdto"));
+		
 		//상품 뷰 페이지에서 하단에 목록을 만들기 위한 넘버링과 이 상품이 상품 목록에서 어디 페이지에 있는 지에 대해
 		//상품 1개가져오기
 		ProductDto pdto = boardService.selectOne(pno);
+		
 		//하단댓글 모두가져오기
 		ArrayList<CommentDto> comList = boardService.selectComAll(pno);
 		model.addAttribute("pdto1",pdto);
