@@ -29,7 +29,6 @@
 <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
 <link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/login.css">
 <script type="text/javascript"></script> 
 <script>

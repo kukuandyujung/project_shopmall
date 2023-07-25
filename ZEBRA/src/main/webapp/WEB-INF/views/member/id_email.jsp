@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../css/reset.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="../css/layout.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="../css/content.css?v=Y" />
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="../js/top_navi.js"></script>
 <script type="text/javascript" src="../js/left_navi.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
@@ -32,7 +33,7 @@
 <body>
 <%@ include file="../top.jsp"%>
 
-  <!-- ================ start banner area ================= -->	
+	<!-- ================ start banner area ================= -->
 	<section class="blog-banner-area" id="category">
 		<div class="container h-100">
 			<div class="blog-banner">
@@ -40,12 +41,12 @@
 					<h1>ID 찾기 발송</h1>
 				</div>
 			</div>
-    </div>
+		</div>
 	</section>
 	<!-- ================ end banner area ================= -->
-  
-  
- <!--================Login Box Area =================-->
+
+
+	<!--================Login Box Area =================-->
 	<!-- container -->
 	<!-- <div id="container"> -->
 		<div id="outbox">		

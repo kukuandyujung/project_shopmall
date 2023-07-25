@@ -7,10 +7,12 @@
 <link rel="icon" href="../img/logo2.png" type="image/png">
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scaleable=no">
 <link rel="stylesheet" type="text/css" href="../css/reset.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="../css/layout.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="../css/content.css?v=Y" />
+<script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/top_navi.js"></script>
 <script type="text/javascript" src="../js/left_navi.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
@@ -28,22 +30,14 @@
 <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
 <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
+<script type="text/javascript">
+
+</script>
 
 
 </head>
 <body>
 <%@ include file="../top.jsp"%>
-
-<script type="text/javascript">
-$(document).ready(function() {
-	
-
-
-});
-</script>
-
   <!-- ================ start banner area ================= -->	
 	<section class="blog-banner-area" id="category">
 		<div class="container h-100">
@@ -54,17 +48,18 @@ $(document).ready(function() {
 			</div>
     </div>
 	</section>
-	<!-- ================ end banner area ================= -->
+  <!-- ================ end banner area ================= -->
   
   <!--================Login Box Area =================-->
 	<div id="allwrap">
 	<div id="wrap">
-
-	<div id="header">
-	<!-- container -->
-	<div id="container">
-		<div id="outbox">		
-			<div id="left">
+	
+		<div id="header">
+		<!-- container -->
+		<div id="container">
+		
+			<div id="outbox">		
+				<div id="left">
 
 					<div id="title2">MEMBERSHIP<span>멤버쉽</span></div>
 				<ul>	
@@ -73,11 +68,11 @@ $(document).ready(function() {
 					<li><a href="member/idsearch" id="leftNavi3">아이디/<span>비밀번호 찾기</span></a></li>				
 				</ul>			
 			</div><script type="text/javascript">initSubmenu(3,0);</script>
-
+			
 			<!-- contents -->
 			<div id="contents">
 				<div id="member">
-					<h2><strong></strong><span>회원님께서 가입하신 아이디와 비밀번호를 찾아드립니다.</span></h2>
+					<h2><strong></strong><span>회원님께서 가입하신 아이디와 이메일을 검색하세요.</span></h2>
 					<h3>아이디 찾기</h3>
 					<div class="informbox">
 						<div class="inform">
@@ -89,33 +84,182 @@ $(document).ready(function() {
 							<div class="btn"><a href="#" class="gbtn">아이디 찾기</a></div>
 						</div>
 					</div>
-
-
-
-					<h3>비밀번호 찾기</h3>
+						
+<!--=============START 아이디 찾기 Area ==============-->
+									<script type="text/javascript">
+									function checkIdBtn(){
+								 	// alert("중복확인");
+									 	console.log($('#idck').val());
+								
+									    $.ajax({
+									      url:"/member/idCheck",
+									      type:"post",
+									      data:{"MID":$('#joinId').val() },
+									      success:function(data){
+									          if(data == "fail"){
+									 			alert("이미 존재하는 아이디 입니다.");
+												$('#joinId').val("");
+												return false;
+												}//if
+											  alert("아이디 중복 확인 : 사용이 가능합니다. ");
+									 			$('#idck').val("true")
+										   },//success
+										   error:function(){
+										      alert("아이디 중복 확인 : 사용이 불가합니다.");	      
+										   }//error
+										});//ajax 
+									
+									}//checkIdBtn
+									</script>
+								<!--=============END 아이디 중복 체크 Area ==============-->		
+														
+				
+					<table summary="이름, 아이디, 비밀번호, 비밀번호 확인, 이메일, 이메일수신여부, 주소, 휴대폰, 유선전화, 생년월일 순으로 회원가입 정보를 등록할수 있습니다." class="memberWrite" border="1" cellspacing="0">
+							<caption>이메일인증 입력</caption>
+							<colgroup>
+							<col width="22%" class="tw30" />
+							<col width="*" />
+							</colgroup>
+							<tbody>
+							<tr> 
+								<!-- 이메일인증 코드 생성 -->
+					<h3>이메일 인증 코드 입력</h3>
 					<div class="informbox">
 						<div class="inform">
-							<ul>
-								<li><input type="text" class="loginType" onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='loginType'}else {this.className='mfocusnot'}" /></li>
-								<li><input type="text" class="emailType" onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='emailType'}else {this.className='mfocusnot'}" /></li>
-							</ul>
+								<tr>
+									<th scope="row"><span>이름 *</span></th>
+									<td>
+										<ul class="pta">
+											<li class="r10"><input type="text" class="emailType" name="MNAME" id="mem_name" /></li>
+											<li><span class="mvalign">※ 영문/한글만 사용가능</span></li>											
+											</ul>
+										
+									</td>
+									</tr>
+<!-- ================ start 이메일 인증 area ================= -->	
+		<script type="text/javascript">		
+		   let tempcode="";
+		    
+		   function emailView(){
+			   alert("이름과 이메일을 입력한 후 인증코드 발송을 클릭하세요.");
+			   $(".memberbd").css("display","block");
+		   }
 
-							<div class="btn"><a href="#" class="gbtn">비밀번호 찾기</a></div>
-						</div>
-					</div>
+		   function emailBtn(){
+			   alert("임시번호를 발송합니다.");
+			   //alert($("#mem_name").val());
+			   //alert($("#mem_email").val());
+			   
+			   $.ajax({
+				   url:"/email/emailSend",
+				   type:"post",
+				   data:{"name":$("#mem_name").val(),"email":$("#mem_email").val()},
+				   success:function(data){
+					   alert("이메일이 발송되었습니다.");
+					   console.log(data);
+					   //임시비밀번호
+					   tempcode=data;
+					   $("#mem_name").attr("readonly",true);
+				   },
+				   error:function(){
+					   alert("실패");
+				   }
+			   }); //ajax
+			   
+		   }//f
+	</script>
+								<tr>
+									<th scope="row"><span>이메일주소 *</span></th>
+									<td>
+										<ul class="pta">
+											<li class="r10"><input type="text"  class="emailType" name="EMAIL" id="mem_email" /></li>
+											<li><a onclick="emailBtn()" style="cursor: pointer;"  class="gbtn">인증코드발송</a></li>
+											<li class="pt5"><span class="mvalign">입력하신 이메일로 인증코드가 발송됩니다. 인증코드를 아래에 입력해주세요.</span></li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><span>인증코드입력 *</span></th>
+									<td>
+										<ul class="pta">
+											<li class="r10"><input type="text" id="temp_code" class="w134" /></li>
+											<li><span class="mvalign">※ 이메일을 확인해서 인증코드를 입력해주세요.</span></li>
+										 </ul>
+									</td>
+								</tr>
+						
+							</tbody>
+							</table>
+							</div>	
+							</div>
+		
 
 
+   	<script type="text/javascript">
+   function authBtn(){
+	 //코드입력-이름
+		 let nameCheck = /^[a-zA-Z-ㄱ-ㅎ가-힣]+$/ ;   //영문/한글 
+		 
+		 alert("코드입력-이름입니다.")
+		 console.log($('#mem_name').val()); 
+		 //글자길이
+		    let name_len = $("#mem_name").val().length;
+		    if(name_len<2){
+			   alert("이름은 두글자 이상 입력을 하셔야 합니다.")
+			   $("#mem_name").focus();
+			   return false;
+		    }
+		     //이름 - 한글만 입력가능
+		   /* if(!nameCheck.test($("#mem_name").val())){ 
+			   alert("이름은 영문/한글만 입력이 가능합니다.");
+		   }
+			    $("#mem_name").focus();
+			    return false;
+		   }else{
+			   alert("이름 사용 가능!!!!");
+    */
+    
+		//   alert($("#temp_code").val());
+	   if($("#temp_code").val().length==0){
+		   alert("인증코드를 입력하셔야 진행됩니다.");
+		   $("#temp_code").focus();
+		   return false;
+	   }
+	   
+	   if(tempcode==$("#temp_code").val() ){
+		   alert("이메일 인증이 완료되었습니다.");
+		   location.href="/member/step02";
+	   }else{
+		   alert("이메일 인증코드가 틀립니다. 다시 인증요청을 해주세요.");
+		   $("#temp_code").val("");
+	   }
+   }//authbtn
+</script>
+</div>
+
+							<!-- Btn Area -->
+							<div class="btnArea">
+								<div class="bCenter">
+									<ul>
+										<li><a href="#" class="nbtnbig">취소하기</a></li>
+										<li><a style="cursor: pointer;" onclick="authBtn()" class="sbtnMini">인증완료</a></li>
+									</ul>
+								</div>
+							
+							<!-- //Btn Area -->
+						
 					<p class="alert">지브라 온라인 쇼핑몰에서는 2012년 8월 18일로 시행되는 정보통신망 이용 촉진 및 정보 보호 등에 관한 법률 “주민등록번호의 <span>사용 제한”과 관련하여 주민등록번호를 수집하지 않습니다.</span></p>
+					</div>
+					</div>
 
 				</div>
 			</div>
 			<!-- //contents -->
-
+		</div>
+	</div>
+	<!-- //container -->	
 	</div>
 </div>
-</div>
-	
-	
 	<!--================End  Box Area =================-->
 
  <%@ include file="../footer.jsp"%>

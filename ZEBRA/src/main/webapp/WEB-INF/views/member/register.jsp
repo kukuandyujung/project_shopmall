@@ -379,16 +379,16 @@
 						<p>본 약관은 2005년 5월 16일부터 시행합니다.</p>
 						</div>
 
-						<!-- </div>
+						</div>
 
 							<ul>
 								<li class="chk">
-									<input type="checkbox" name="agree"" id="agree1" /><label for="agree1">이용약관에 동의합니다.</label>
+									<input type="checkbox" name="agree" id="agree1" /><label for="agree1">이용약관에 동의합니다.</label>
 								</li>
 								 <li class="btn">
 									<a href="#" class="nbtnMini">전체보기</a>
 								</li> 
-						</div> -->
+						</div>
 										
 
 						<div class="agreeWrap">
@@ -499,7 +499,7 @@
 					<!-- Btn Area -->
 					<script>
 					   function chkBtn(){
-						   alert("체크박스 총 개수 : "+$("input:checkbox[name=agree]").length);
+						   //alert("체크박스 총 개수 : "+$("input:checkbox[name=agree]").length);
 						   //alert("체크된 체크박스 수 : "+ $("input:checkbox[name=agree]:checked").length);
 						   if($("input:checkbox[name=agree]:checked").length!=3){
 							   if(confirm("모두 체크를 하셔야 회원가입이 가능합니다.\n 모두 동의 할까요?")){
