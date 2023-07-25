@@ -120,13 +120,16 @@
 						</ul>
 					</div>
 					<!-- //주문 상품 -->
-					
-
-			<!-- 주문자 주소 입력 -->
-					<h3 class="diviLeft">주문자 주소 입력</h3>
+			<!-- 수령인 주소 입력 -->
+					<h3 class="dep">
+						수령인 주소 입력
+						
+						<input type="checkbox" id="infosame"/>
+						<label for="infosame">회원 정보와 동일</label>
+					</h3>
 					<div class="checkDiv">
-						<table summary="주문자 주소를 입력할 수 있는 란으로 이름, 주소, 이메일, 휴대폰 번호, 전화번호 순으로 입력 하실수 있습니다." class="checkTable" border="1" cellspacing="0">
-							<caption>주문자 주소 입력</caption>
+						<table summary="수령인 주소를 입력할 수 있는 란으로 이름, 주소, 이메일, 휴대폰 번호, 전화번호 순으로 입력 하실수 있습니다." class="checkTable" border="1" cellspacing="0">
+							<caption>수령인 주소 입력</caption>
 							<colgroup>
 							<col width="22%" class="tw30" />
 							<col width="*" />
@@ -136,8 +139,7 @@
 									<th scope="row"><span>이름</span></th>
 									<td><input type="text" class="w134" /></td>
 								</tr>
-
-								<tr>
+<tr>
 									<th scope="row"><span>주소</span></th>
 									<td>
 										<ul class="pta">
@@ -150,7 +152,7 @@
 								</tr>
 								<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 								<script>
-								    function sample6_execDaumPostcode() {
+								    function sample7_execDaumPostcode() {
 								        new daum.Postcode({
 								            oncomplete: function(data) {
 								                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
@@ -191,170 +193,6 @@
 								                document.getElementById("sample6_address").value = addr;
 								                // 커서를 상세주소 필드로 이동한다.
 								                document.getElementById("sample6_detailAddress").focus();
-								            }
-								        }).open();
-								    }
-								</script>
-								<tr>
-									<th scope="row"><span>이메일</span></th>
-									<td>
-										<ul class="pta">
-											<li><input type="text" class="w134" /></li>
-											<li><span class="valign">&nbsp;@&nbsp;</span></li>
-											<li class="r10"><input type="text" class="w134" /></li>
-											<li>
-												<select id="emailList">
-													<option value="#" selected="selected">직접입력</option>
-													<option value="naver.com">naver.com</option>
-													<option value="daum.net">daum.net</option>
-													<option value="hanmail.net">hanmail.net</option>
-													<option value="nate.com">nate.com</option>    
-													<option value="yahoo.co.kr">yahoo.co.kr</option>    
-													<option value="paran.com">paran.com</option>    
-													<option value="empal.com">empal.com</option>    
-													<option value="hotmail.com">hotmail.com</option>    
-													<option value="korea.com">korea.com</option>    
-													<option value="lycos.co.kr">lycos.co.kr</option>    
-													<option value="dreamwiz.com">dreamwiz.com</option>    
-													<option value="hanafos.com">hanafos.com</option>    
-													<option value="chol.com">chol.com</option>    
-													<option value="gmail.com">gmail.com</option>    
-													<option value="empas.com">empas.com</option>
-												</select>&nbsp;&nbsp;&nbsp;
-											</li>
-										</ul>
-									</td>
-								</tr>
-								<tr>
-									<th scope="row"><span>휴대폰 번호</span></th>
-									<td>
-										<ul class="pta">
-											<li>
-												<select>
-													<option value="010" selected="selected">010</option>
-													<option value="011">011</option>
-													<option value="016">016</option>
-													<option value="017">017</option>
-													<option value="018">018</option>    
-													<option value="019">019</option>    
-												</select>
-											</li>
-											<li>&nbsp;<span class="valign">-</span>&nbsp;</li>
-											<li><input type="text" class="w74" maxlength="4" /> <span class="valign">-</span>&nbsp;</li>
-											<li class="r10"><input type="text" class="w74" maxlength="4" /></li>
-										</ul>
-									</td>
-								</tr>
-								<tr>
-									<th scope="row"><span>유선번호</span></th>
-									<td>
-										<ul class="pta">
-											<li>
-												<select>
-													<option value="02" selected="selected">02</option>
-													<option value="031">031</option>
-													<option value="032">032</option>
-													<option value="033">033</option>
-													<option value="041">041</option>
-													<option value="042">042</option>
-													<option value="043">043</option>
-													<option value="051">051</option>
-													<option value="052">052</option>
-													<option value="053">053</option>
-													<option value="054">054</option>
-													<option value="055">055</option>
-													<option value="061">061</option>
-													<option value="062">062</option>
-													<option value="063">063</option>
-													<option value="064">064</option>
-													<option value="070">070</option>
-												</select>
-											</li>
-											<li>&nbsp;<span class="valign">-</span>&nbsp;</li>
-											<li><input type="text" class="w74" maxlength="4" /> <span class="valign">-</span>&nbsp;</li>
-											<li><input type="text" class="w74" maxlength="4" /></li>
-										</ul>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-			<!-- //주문자 주소 입력 -->
-
-
-			<!-- 수취자 주소 입력 -->
-					<h3 class="dep">
-						수취자 주소 입력
-						
-						<input type="checkbox" id="infosame"/>
-						<label for="infosame">주문자 정보와 동일</label>
-					</h3>
-					<div class="checkDiv">
-						<table summary="수취자 주소를 입력할 수 있는 란으로 이름, 주소, 이메일, 휴대폰 번호, 전화번호 순으로 입력 하실수 있습니다." class="checkTable" border="1" cellspacing="0">
-							<caption>수취자 주소 입력</caption>
-							<colgroup>
-							<col width="22%" class="tw30" />
-							<col width="*" />
-							</colgroup>
-							<tbody>
-								<tr>
-									<th scope="row"><span>이름</span></th>
-									<td><input type="text" class="w134" /></td>
-								</tr>
-<tr>
-									<th scope="row"><span>주소</span></th>
-									<td>
-										<ul class="pta">
-										<input type="text" id="sample7_postcode" placeholder="우편번호" readonly="readonly">
-										<input type="button" onclick="sample7_execDaumPostcode()" value="우편번호 찾기"><br>
-										<input type="text" id="sample7_address" placeholder="주소" readonly="readonly"><br>
-										<input type="text" id="sample7_detailAddress" placeholder="상세주소">
-										</ul>
-									</td>
-								</tr>
-								<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-								<script>
-								    function sample7_execDaumPostcode() {
-								        new daum.Postcode({
-								            oncomplete: function(data) {
-								                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-								
-								                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-								                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-								                var addr = ''; // 주소 변수
-								                var extraAddr = ''; // 참고항목 변수
-								
-								                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-								                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-								                    addr = data.roadAddress;
-								                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-								                    addr = data.jibunAddress;
-								                }
-								
-								                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-								                if(data.userSelectedType === 'R'){
-								                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-								                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-								                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-								                        extraAddr += data.bname;
-								                    }
-								                    // 건물명이 있고, 공동주택일 경우 추가한다.
-								                    if(data.buildingName !== '' && data.apartment === 'Y'){
-								                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-								                    }
-								                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-								                    if(extraAddr !== ''){
-								                        extraAddr = ' (' + extraAddr + ')';
-								                    }
-								                } else {
-								                    document.getElementById("sample7_extraAddress").value = '';
-								                }
-								
-								                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-								                document.getElementById('sample7_postcode').value = data.zonecode;
-								                document.getElementById("sample7_address").value = addr;
-								                // 커서를 상세주소 필드로 이동한다.
-								                document.getElementById("sample7_detailAddress").focus();
 								            }
 								        }).open();
 								    }
@@ -431,7 +269,7 @@
 							</tbody>
 						</table>
 					</div>
-			<!-- //수취자 주소 입력 -->
+			<!-- //수령인 주소 입력 -->
 
 
 			<!-- 결제 금액 -->
