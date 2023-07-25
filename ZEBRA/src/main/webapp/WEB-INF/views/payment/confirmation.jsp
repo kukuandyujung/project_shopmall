@@ -130,24 +130,24 @@
 							<tbody>
 								<tr>
 									<th scope="row"><span>이름</span></th>
-									<td colspan="3">홍길동</td>
+									<td colspan="3">${odto.oname}</td>
 								</tr>
 
 								<tr>
 									<th scope="row" rowspan="2"><span>주소</span></th>
-									<td rowspan="2">220 - 920<br/>강원도 원주시 원동<br/>123-456</td>
+									<td rowspan="2">${odto.OZIP}<br/>${odto.OADDR1}<br/>${odto.OADDR2}</td>
 									<th scope="row"><span>휴대폰 <u>번호</u></span></th>
-									<td>010-2456-7894</td>
+									<td>${odto.OHP}</td>
 								</tr>
 
 								<tr>
 									<th scope="row"><span>유선<u>번호</u></span></th>
-									<td>02-6534-8652</td>
+									<td>${odto.ORHP}</td>
 								</tr>
 
 								<tr>
 									<th scope="row"><span>배송시 <u>요구사항</u></span></th>
-									<td colspan="3">부재시 경비실에 맡겨주세요.</td>
+									<td colspan="3">${odto.OWANT}</td>
 								</tr>
 							</tbody>
 						</table>
@@ -167,23 +167,23 @@
 							<tbody>
 								<tr>
 									<th scope="row"><span>주문번호</span></th>
-									<td>201404253254-1354</td>
+									<td>${odto.ono}</td>
 									<th scope="row"><span>주문일</span></th>
-									<td>2014-04-20</td>
+									<td>${odto.odate}</td>
 								</tr>
 
 								<tr>
 									<th scope="row"><span>결제수단</span></th>
-									<td>무통장 입금</td>
+									<td>${odto.OPAYMENT}</td>
 									<th scope="row"><span>결제금액</span></th>
-									<td>22,820원</td>
+									<td>${odto.OTOPRICE}</td>
 								</tr>
 
 								<tr>
 									<th scope="row"><span>요구사항</span></th>
-									<td>부재시 경비실에 맡겨주세요.</td>
+									<td>${odto.OWANT}</td>
 									<th scope="row"><span>입금자 <u>명</u></span></th>
-									<td>홍길동</td>
+									<td>${odto.oname}</td>
 								</tr>
 							</tbody>
 						</table>

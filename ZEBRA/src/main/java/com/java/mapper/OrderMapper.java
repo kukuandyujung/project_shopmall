@@ -11,7 +11,10 @@ public interface OrderMapper {
 	/* 주문 상품 정보 */	
 	public OrderPageItemDTO getGoodsInfo(int pno);
 	
-	// 주문자 정보 1개 저장하기
+	// 수령자 정보 1개 저장하기
 	void insertOne(OrderDto odto);
+	
+	//수령자 정보 1개 가져오기
+	OrderDto selectOne(int ono);
 	
 }

@@ -22,4 +22,9 @@
 </insert>
 
 
+<!-- 수령인 정보 1개 가져오기 -->
+<select resultType="com.java.dto.OrderDto" id="selectOne">
+select * from zebraorder where ono=#{ono} 
+</select>
+
 </mapper>

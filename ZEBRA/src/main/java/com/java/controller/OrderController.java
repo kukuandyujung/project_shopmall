@@ -1,11 +1,15 @@
 package com.java.controller;
 
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.java.dto.OrderDto;
 import com.java.dto.OrderPageDTO;
@@ -65,6 +69,15 @@ public class OrderController {
 		 
 		 orderService.insertOne(odto);
 		 return "redirect:/payment/confirmation";
+	}
+	
+	@RequestMapping("/payment/confirmation/{MID}")
+	public String confirmation(String MID, OrderDto odto, int ono, Model model) {
+		System.out.println("confirmation ono : "+ono);
+		//정보 1개 가져오기
+		HashMap<String, Object> map = orderService.selectOne(ono);
+		model.addAttribute("odto",map.get("odto"));
+		return "redirect:/payment/confirmation";
 	}
 	
 }
