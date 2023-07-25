@@ -116,47 +116,11 @@
 						</ul>
 					</div>
 					<!-- //주문 상품 -->
-			<!-- 주문자 정보확인 -->
-					<h3 class="dep">주문자 정보</h3>
+			<!-- 수령인 정보확인 -->
+					<h3 class="dep">수령인 정보</h3>
 					<div class="checkDiv">
-						<table summary="주문자 정보를 이름, 주소, 이메일, 휴대폰 번호, 전화번호 순으로 확인 하실수 있습니다." class="checkTable" border="1" cellspacing="0">
-							<caption>주문자 정보확인</caption>
-							<colgroup>
-							<col width="17%" class="tw20" />
-							<col width="*" />
-							<col width="17%" class="tw20" />
-							<col width="*" class="tw25" />
-							</colgroup>
-							<tbody>
-								<tr>
-									<th scope="row"><span>이름</span></th>
-									<td>홍길동</td>
-									<th scope="row"><span>이메일</span></th>
-									<td>sldkfje@naver.com</td>
-								</tr>
-
-								<tr>
-									<th scope="row" rowspan="2"><span>주소</span></th>
-									<td rowspan="2">220 - 920<br/>강원도 원주시 원동<br/>123-456</td>
-									<th scope="row"><span>휴대폰 <u>번호</u></span></th>
-									<td>010-2456-7894</td>
-								</tr>
-
-								<tr>
-									<th scope="row"><span>유선<u>번호</u></span></th>
-									<td>02-6534-8652</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-			<!-- //주문자 정보확인 -->
-
-
-			<!-- 수취자 정보확인 -->
-					<h3 class="dep">수취자 정보</h3>
-					<div class="checkDiv">
-						<table summary="수취자 정보를 이름, 주소, 이메일, 휴대폰 번호, 전화번호, 배송시 요구사항 순으로 확인 하실수 있습니다." class="checkTable" border="1" cellspacing="0">
-							<caption>수취자 정보확인</caption>
+						<table summary="수령인 정보를 이름, 주소, 이메일, 휴대폰 번호, 전화번호, 배송시 요구사항 순으로 확인 하실수 있습니다." class="checkTable" border="1" cellspacing="0">
+							<caption>수령인 정보확인</caption>
 							<colgroup>
 							<col width="17%" class="tw20" />
 							<col width="*" />
