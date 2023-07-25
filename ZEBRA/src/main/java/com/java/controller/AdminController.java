@@ -26,13 +26,17 @@ public class AdminController {
    public String index( String loginCheck, Model model) {
       
       model.addAttribute("loginCheck", loginCheck); //로그인 성공 여부
-      
-//      if(session.getAttribute("sessionId").equals("admin")) {
-//         return "admin/index";
-//      }
-//      return "admin/login"; //보안을 위한 세션
-      
+       
+      if(session.getAttribute("sessionId")!=null) {
+    	  
+      if(session.getAttribute("sessionId").equals("admin")) {
          return "admin/index";
+      }//로그인을 성공하면 인덱스 페이지로 가줘
+      return "admin/login"; //보안을 위한 세션 
+    	  //그렇지 않으면 로그인 페이지에 남아줘
+      }
+      
+         return "admin/login";
    }   
    
    //관리자 로그인 getMapping

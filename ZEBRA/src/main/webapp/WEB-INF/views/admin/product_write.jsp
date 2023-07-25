@@ -83,7 +83,10 @@
 
               <div class="col-md-6 col-sm-6  ">
                 <div class="x_panel">
-                
+                 
+                 
+                 
+                 <form action="product_write" name="write" method="post" enctype="multipart/form-data">
                   <div class="x_content" >
 
                     <table class="table table-bordered">
@@ -98,7 +101,12 @@
                         <tr>
                           <th scope="row">상품 코드</th>
                           <td>
-                          	<input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="pcode" placeholder="ex) 1" />
+                            <select name="pcode" >
+		                        <option>-</option>
+		                        <option>10</option>
+		                        <option>11</option>    
+                     		</select>
+<!--                           	<input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="pcode" placeholder="ex) 1" /> -->
                           </td> 
                         </tr> 
                         
@@ -134,14 +142,28 @@
                         <tr>
                           <th scope="row">색상</th>
                           <td>
-                          	<input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "text" name="pcolor" placeholder="ex) black "  />
+                          	 <select name="pcolor" >
+		                        <option>--</option>
+		                        <option>black</option>
+		                        <option>orange</option>    
+		                        <option>pink</option>    
+		                        <option>white</option>    
+		                        <option>yellow</option>    
+                     		</select>
+<!--                           	<input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "text" name="pcolor" placeholder="ex) black "  /> -->
                           </td> 
                         </tr>
 
                         <tr>
                           <th scope="row">상품 사이즈</th>
                           <td>
-                          	<input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "text" name="psize" placeholder="ex) s " />
+                       		 <select name="psize" >
+		                        <option>--</option>
+		                        <option>S</option>
+		                        <option>M</option>    
+		                        <option>L</option>       
+                     		</select>
+<!--                           	<input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "text" name="psize" placeholder="ex) s " /> -->
                           </td> 
                         </tr>
                         <tr>
@@ -187,7 +209,7 @@
                                             <div class="form-group">
                                                 <div class="col-md-6 offset-md-3">
                                                      <button type="button" class="write" onclick="writeBtn()">작성완료</button>
-<!--                                                     <button type='button' class="btn btn-primary" onclick="javascript:location.href='product_list.do'">취소</button> -->
+                                                    <button type='button' class="btn btn-primary" onclick="javascript:location.href='product_list.do'">취소</button>
 <!--                                                     <button type='reset' class="btn btn-success">Reset</button> -->
                                                 </div>
                                             </div>
