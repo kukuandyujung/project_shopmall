@@ -36,7 +36,7 @@
    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   
    <script>
-      function boardBtn(){
+      function boardBtn(){ // 152번째 줄
     	  alert("그래프 데이터를 업데이트합니다.");
 			
 			$.ajax({
@@ -59,7 +59,6 @@
 				}
 			});	
       };
-   
 			
 	</script>
 

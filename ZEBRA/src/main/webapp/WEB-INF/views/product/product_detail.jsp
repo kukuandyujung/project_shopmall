@@ -85,27 +85,33 @@
 
 <script>
 // 입력된 수량을 받는 변수
-let quantity = $(".quantity_input").val();
+let quantity = $("#sst").val(); // 218번째 줄
+console.log(quantity); // 출력 테스트
 
-//서버로 전송할 데이터
+// 서버로 전송할 데이터
 const form = {
-		MID : '${cart.MID}',
-		pno : '${cart.pno}',
-		pstock : ''
+		MID : '${sessionId}',
+		pno : '${goodsInfo.pno}',
+		cartCount : ''
 }
+console.log(MID); // 출력 테스트
+console.log(pno); // 출력 테스트
+console.log(cartCount); // 출력 테스트
 
-//장바구니 추가 버튼
-$(".lnr lnr lnr-cart").on("click", function(e){
-		form.pstock = $(".quantity_input").val();
+// 장바구니 추가 버튼
+function cartCtn() {
+		alert("Test") // 테스트
+		
+		form.cartCount = $("#sst").val(); 
 		$.ajax({
-			url: '/mypage/cart',
+			url: '/mypage/cart/add',
 			type: 'POST',
 			data: form,
 			success: function(result){
 				cartAlert(result);
 			}
 		})
-	});
+	};
 	
 	function cartAlert(result){
 		if(result == '0'){
@@ -121,12 +127,13 @@ $(".lnr lnr lnr-cart").on("click", function(e){
 
 /* 바로구매 버튼 */
 	$(".btn_buy").on("click", function(){
-		let cartCount = $(".quantity_input").val();
+		let cartCount = $(".input-text").val();
 		$(".order_form").find("input[name='orders[0].cartCount']").val(cartCount);
 		$(".order_form").submit();
 	});
 
 </script>
+
 
 </head>
 <body>
@@ -209,21 +216,22 @@ $(".lnr lnr lnr-cart").on("click", function(e){
 						<br>
 
 						<div class="product_count">
-							<label for="qty">Quantity:</label> 
+							<label for="qty">Quantity:</label> 	
+							<!-- 수량 버튼 -->
 							<input type="number" name="quantity_input" id="sst" size="2" min="1"  maxlength="12" value="1" title="Quantity:"
 								class="input-text qty">&nbsp;&nbsp;
 								<a class="button primary-btn" href="#">Buy Now</a>
 						</div>
+						
 						<div class="card_area d-flex align-items-center">
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-link"></i></a>
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
-							<a class="icon_btn" href="#"><i class="lnr lnr lnr-cart"></i></a> <!-- 장바구니 이동 버튼  -->
+							<a class="icon_btn" href="#" onclick="cartCtn()"><i class="lnr lnr lnr-cart"></i></a> <!-- 장바구니 이동 버튼 97번째 줄 -->
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 	<!--================End Single Product Area =================-->
 

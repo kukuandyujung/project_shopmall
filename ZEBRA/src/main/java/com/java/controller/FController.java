@@ -1,10 +1,5 @@
 package com.java.controller;
 
-import java.util.ArrayList;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,7 +32,7 @@ public class FController {
 		return "member/register";
 	}
 	
-	@PostMapping("/cart/add")
+	@PostMapping("mypage/cart/add")
 	@ResponseBody
 	public String addCartPOST(CartDTO cart) {
 		// 카트 등록		
