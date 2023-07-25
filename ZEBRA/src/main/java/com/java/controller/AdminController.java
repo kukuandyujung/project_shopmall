@@ -78,10 +78,6 @@ public class AdminController {
 		return "redirect:/layout/index";
 	}
 	
-	
-
-	
-	
 	// ajax로 종류별 회원 정보 가져오기
 		@PostMapping("/admin/indexAjax")
 		@ResponseBody // 데이터로 넘겨줌 -> return으로

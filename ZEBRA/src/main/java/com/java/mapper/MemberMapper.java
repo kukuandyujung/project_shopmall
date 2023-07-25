@@ -36,6 +36,8 @@ public interface MemberMapper {
 	// 회원 정보 1개 삭제하기
 	void deleteOne(String MID);
 	
+	/* 주문자 주소 정보 */
+	public MemberDto getMemberInfo(String MID);	
 	
 	//로그인 확인
 	MemberDto selectLogin(MemberDto memberDto);

@@ -74,6 +74,7 @@
       document.getElementById(imageId).classList.add('selected');
    }
 </script>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // 코멘트 버튼을 자동으로 클릭합니다.
@@ -117,14 +118,24 @@ $(".lnr lnr lnr-cart").on("click", function(e){
 			alert("로그인이 필요합니다.");	
 		}
 	}
+
+/* 바로구매 버튼 */
+	$(".btn_buy").on("click", function(){
+		let cartCount = $(".quantity_input").val();
+		$(".order_form").find("input[name='orders[0].cartCount']").val(cartCount);
+		$(".order_form").submit();
+	});
+
 </script>
 
 </head>
 <body>
 
-
-
-
+<!-- 주문 form -->
+<form action="product/product_detail/${sessionId}" method="get" class="order_form">
+	<input type="hidden" name="orders[0].pno" value="${goodsInfo.pno}">
+	<input type="hidden" name="orders[0].cartCount" value="">
+</form>
 
 	<%@ include file="../top.jsp"%>
 	<!-- ================ start banner area ================= -->
@@ -198,8 +209,8 @@ $(".lnr lnr lnr-cart").on("click", function(e){
 						<br>
 
 						<div class="product_count">
-							<label for="qty">Quantity:</label> <input type="number" name="qty"
-								id="sst" size="2" min="1"  maxlength="12" value="1" title="Quantity:"
+							<label for="qty">Quantity:</label> 
+							<input type="number" name="quantity_input" id="sst" size="2" min="1"  maxlength="12" value="1" title="Quantity:"
 								class="input-text qty">&nbsp;&nbsp;
 								<a class="button primary-btn" href="#">Buy Now</a>
 						</div>

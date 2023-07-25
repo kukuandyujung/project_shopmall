@@ -67,6 +67,15 @@
    delete ZEBRA where MID=#{MID}
 </delete>
 
+<!-- 주문자 정보 -->
+<select id="getMemberInfo" resultType="com.java.dto.MemberDto">
+
+	SELECT MID, MNAME, MEMAIL, MADDR1, MADDR2, MTOTAL_PAY
+	FROM ZEBRA
+	WHERE MID = #{MID}
+
+</select>
+
 <!--관리자 로그인 확인-->
 <select id="selectLogin" resultType="com.java.dto.MemberDto" >
 	select * from zebra where MID=#{MID} and MPASSWORD=#{MPASSWORD}

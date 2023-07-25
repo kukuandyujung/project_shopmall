@@ -35,21 +35,19 @@ public class CartServiceImpl implements CartService {
 	
 	/* 카트 삭제 */
 	@Override
-	public void deleteCart() {
-		int cartId = 1;
-		cartMapper.deleteCart(cartId);
+	public int deleteCart(int cartId) {
+		return cartMapper.deleteCart(cartId);
 	}
-
 	
 	/* 카트 수량 수정 */
 	@Override
 	public void modifyCart() {
 		int cartId = 3;
-		int pstock = 5;
+		int cartCount = 5;
 		
 		CartDTO cart = new CartDTO();
 		cart.setCartId(cartId);
-		cart.setPstock(pstock);
+		cart.setCartCount(cartCount);
 		
 		cartMapper.modifyCount(cart);
 		
@@ -60,16 +58,13 @@ public class CartServiceImpl implements CartService {
 	@Override
 	public ArrayList<CartDTO> getCartList(String MID) {
 		ArrayList<CartDTO> cart = cartMapper.getCart(MID);
-		
 		for(CartDTO dto : cart) {
 			dto.initSaleTotal();
 		}
-		
 		return cart;
 	}
 	
 	/* 카트 확인 */
-
 	@Override
 	public void checkCart() {
 		
@@ -84,6 +79,13 @@ public class CartServiceImpl implements CartService {
 		System.out.println("결과 : " + resutlCart);
 		
 	}
+	
+	// 카트 수량
+	@Override
+	public int modifyCount(CartDTO cart) {
+		return cartMapper.modifyCount(cart);
+	}
+	
 }
 
 	

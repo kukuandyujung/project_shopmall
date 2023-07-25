@@ -75,6 +75,12 @@ public class MemberServiceImpl implements MemberService {
 		memberMapper.deleteOne(MID);		
 	}
 	
+	@Override
+	// 주문자 정보
+	public MemberDto getMemberInfo(String MID) {
+		return memberMapper.getMemberInfo(MID);
+	}
+	
 
 	// START SUN //
 	@Override // 회원 로그인
@@ -116,6 +122,7 @@ public class MemberServiceImpl implements MemberService {
 			return "fail";
 		}
 	}
+
 	
 
 

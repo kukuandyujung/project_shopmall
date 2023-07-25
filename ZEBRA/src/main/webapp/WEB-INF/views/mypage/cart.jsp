@@ -33,7 +33,132 @@
 <link rel="stylesheet" href="/css/style.css">
 </head>
 
+<style>
+.orderTable .td_width_1_cart_info_td {
+    padding: 0;
+}
+</style>
+
+<script>
+/* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
+
+$(document).ready(function()){
+	/* 종합 정보 섹션 정보 삽입 */
+	setTotalInfo();
+	
+});
+
+/* 체크여부에따른 종합 정보 변화 */
+$(".individual_cart_checkbox").on("change", function(){
+	/* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
+	setTotalInfo($(".cart_info_td"));
+});
+
+/* 체크박스 전체 선택 */
+$(".all_check_input").on("click", function(){
+
+	/* 체크박스 체크/해제 */
+	if($(".all_check_input").prop("checked")){
+		$(".individual_cart_checkbox").attr("checked", true);
+	} else{
+		$(".individual_cart_checkbox").attr("checked", false);
+	}
+	
+	/* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
+	setTotalInfo($(".cart_info_td"));	
+	
+});
+
+/* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
+function setTotalInfo(){
+	
+	let totalPrice = 0;				// 총 가격
+	let totalCount = 0;				// 총 갯수
+	let totalKind = 0;				// 총 종류
+	let finalTotalPrice = 0; 		// 최종 가격
+	
+	$(".cart_info_td").each(function(index, element){
+		
+		if($(element).find(".individual_cart_checkbox").is(":checked") === true){		
+		// 총 가격
+		totalPrice += parseInt($(element).find(".individual_pprice_input").val());
+		// 총 갯수
+		totalCount += parseInt($(element).find(".quantity_input").val());
+		// 총 종류
+		totalKind += 1;
+		
+		}	
+	});		
+	
+	/* 최종 가격 */
+	finalTotalPrice = totalPrice;
+	
+	/* 값 삽입 */
+	// 총 가격
+	$(".totalPrice_span").text(totalPrice.toLocaleString());
+	// 총 갯수
+	$(".totalCount_span").text(totalCount);
+	// 총 종류
+	$(".totalKind_span").text(totalKind);
+	// 최종 가격(총 가격 + 배송비)
+	$(".finalTotalPrice_span").text(finalTotalPrice.toLocaleString());
+	
+	}
+</script>
+
+<script>
+
+/* 수량 수정 버튼 */
+$(".selectbtn").on("click", function(){
+	let cartId = $(this).data("cartid");
+	let cartCount = $(this).parent("td").find("input").val();
+	$(".update_cartId").val(cartId);
+	$(".update_cartCount").val(cartCount);
+	$(".quantity_update_form").submit();
+	
+});
+
+/* 장바구니 삭제 버튼 */
+$(".selectbtn2").on("click", function(e){
+	e.preventDefault();
+	const cartId = $(this).data("cartid");
+	$(".delete_cartId").val(cartId);
+	$(".quantity_delete_form").submit();
+});
+
+/* 주문 페이지 이동 */	
+$(".ty2").on("click", function(){
+	
+	let form_contents ='';
+	let orderNumber = 0;
+	
+	$(".cart_info_td").each(function(index, element){
+		
+		if($(element).find(".individual_cart_checkbox").is(":checked") === true){	//체크여부
+			
+			let pno = $(element).find(".individual_pno_input").val();
+			let cartCount = $(element).find(".individual_cartCount_input").val();
+			
+			let pno_input = "<input name='orders[" + orderNumber + "].pno' type='hidden' value='" + pno + "'>";
+			form_contents += pno_input;
+			
+			let cartCount_input = "<input name='orders[" + orderNumber + "].cartCount' type='hidden' value='" + cartCount + "'>";
+			form_contents += cartCount_input;
+			
+			orderNumber += 1;
+			
+		}
+	});	
+
+	$(".order_form").html(form_contents);
+	$(".order_form").submit();
+	
+});
+
+</script>
+
 <body>
+
 <%@ include file="../top.jsp"%>
 
   <!-- ================ start banner area ================= -->	
@@ -42,7 +167,7 @@
 			<div class="blog-banner">
 				<div class="text-center">
 					<h1>Shopping Cart</h1>
-					${cartinfo} <!-- FController 36 회원 정보 받아오는 중 -->
+					${cartInfo} <!-- FController 50 회원 정보 받아오는 중 -->
 				</div>
 			</div>
     </div>
@@ -74,7 +199,7 @@
 				<!-- 장바구니에 상품이 있을경우 -->
 					<!-- 장바구니 상품 -->
 					
-					<h4>${cdto.MID}님의 장바구니 리스트</h4>
+					<h4>${sessionId}님의 장바구니 리스트</h4>
 					<div class="orderDivNm">
 						<table summary="장바구니에 담긴 상품들을 전체선택, 상품명, 가격/포인트, 수량, 합계, 주문 순으로 조회 및 주문을 하실수 있습니다." class="orderTable" border="1" cellspacing="0">					
 							<caption>장바구니 상품목록</caption>
@@ -87,7 +212,13 @@
 							<col width="14%" class="tnone" />
 							</colgroup>
 							<thead>
-								<th scope="col"><input type="checkbox" /></th>
+								<th scope="col">
+								<!-- 체크박스 전체 여부 -->
+								<div class="all_check_input_div">
+								<input type="checkbox" class="individual_cart_checkbox" />
+								</div>
+								</th> 
+								
 								<th scope="col">상품명</th>
 								<th scope="col" class="tnone">가격</th>
 								<th scope="col">수량</th>
@@ -95,18 +226,24 @@
 								<th scope="col" class="tnone">주문</th>
 							</thead>
 							<tbody>
+								<c:forEach items="${cartInfo}" var="ci"> <!-- 장바구니 정보 -->
+								<td class="td_width_1_cart_info_td">
+										<input type="hidden" class="individual_pprice_input" value="${ci.pprice}">
+										<input type="hidden" class="quantity_input" value="${ci.cartCount}">
+										<input type="hidden" class="individual_totalPrice_input" value="${ci.totalPrice}">
+										<input type="hidden" class="individual_pno_input" value="${ci.pno}">
+								</td>
 								<tr>
-									<td><input type="checkbox" /></td>
+									<td><input type="checkbox" class="individual_cart_checkbox" /></td>
 									<td class="left">
-										<p class="img"><img src="/img/product/product1.png" alt="상품" width="66" height="66" /></p>
-
+										<p class="img"><img src="/upload/${product.pmainimg}" alt="상품" width="66" height="66" /></p>
 										<ul class="goods">
 											<li>
 												<a href="#">쟈뎅 오리지널 콜롬비아 페레이라 원두커피백 15p</a>
 											</li>
 										</ul>
 									</td>
-									<td class="tnone">1,123,400 원<br/>
+									<td class="td_width_1"><input type="hidden" class="individual_pprice_input">1,123,400 원<br/></td>
 									<td><input type="number" class="quantity_input" min="1" max="999" value="1" /></td> <!-- <input type="number"> 수량 버튼  -->
 									<td>1,123,400 원</td>
 									<td class="tnone">
@@ -118,7 +255,7 @@
 								</tr>
 								
 								<tr>
-									<td><input type="checkbox" /></td>
+									<td><input type="checkbox" class="individual_cart_checkbox" /></td>
 									<td class="left">
 										<p class="img"><img src="/img/product/product1.png" alt="상품" width="66" height="66" /></p>
 
@@ -128,7 +265,7 @@
 											</li>
 										</ul>
 									</td>
-									<td class="tnone">1,123,400 원</td>
+									<td class="td_width_1"><input type="hidden" class="individual_pprice_input">1,123,400 원<br/></td>
 									<td><input type="number" class="quantity_input" min="1" max="999" value="1" /></td>
 									<td>1,123,400 원</td>
 									<td class="tnone">
@@ -138,6 +275,7 @@
 										</ul>
 									</td>
 								</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>
@@ -146,8 +284,8 @@
 						<div class="bRight">
 							<ul>
 								<li><a href="#" class="selectbtn">전체선택</a></li>
-								<li><a href="#" class="selectbtn2">선택수정</a></li>
-								<li><a href="#" class="selectbtn2">선택삭제</a></li>
+								<li><a href="#" class="selectbtn" data-cartId="${ci.cartId}">선택수정</a></li>
+								<li><a href="#" class="selectbtn2" data-cartId="${ci.cartId}">선택삭제</a></li>
 							</ul>
 						</div>
 					</div>
@@ -176,6 +314,25 @@
 							<li class="last"><a href="/layout/index" class="ty3">쇼핑 <span>계속하기</span></a></li>
 						</ul>
 					</div>
+					
+				
+					<!-- 수량 조정 form -->
+					<form action="mypage/cart/update" method="post" class="quantity_update_form">
+						<input type="hidden" name="cartId" class="update_cartId">
+						<input type="hidden" name="cartCount" class="update_cartCount">
+						<input type="hidden" name="sessionId" value="${sessionId}">
+					</form>
+					
+					<!-- 삭제 form -->
+					<form action="mypage/cart/delete" method="post" class="quantity_delete_form">
+						<input type="hidden" name="cartId" class="delete_cartId">
+						<input type="hidden" name="sessionId" value="${sessionId}">
+					</form>
+					
+					<!-- 주문 form -->
+					<form action="payment/payment/${sessionId}" method="get" class="order_form">
+		
+					</form>
 
 				<!-- //장바구니에 상품이 있을경우 -->
 

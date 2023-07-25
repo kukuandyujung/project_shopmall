@@ -47,8 +47,23 @@ public class FController {
 	
 	@GetMapping("mypage/cart/{MID}")
 	public String cartPageGET(@PathVariable("MID") String MID, Model model) {		
-		model.addAttribute("cartInfo", cartService.getCartList(MID));		
+		model.addAttribute("cartInfo", cartService.getCartList(MID));	
+		System.out.println("cartInfo : "+cartService.getCartList(MID));
 		return "mypage/cart";
+	}
+	
+	/* 장바구니 수량 수정 */
+	@PostMapping("mypage/cart/update")
+	public String updateCartPOST(CartDTO cart) {		
+		cartService.modifyCount(cart);		
+		return "redirect:mypage/cart/" + cart.getMID();
+	}
+	
+	/* 장바구니 수량 삭제 */
+	@PostMapping("mypage/cart/delete")
+	public String deleteCartPOST(CartDTO cart) {		
+		cartService.deleteCart(cart.getCartId());		
+		return "redirect:/cart/" + cart.getMID();		
 	}
 	
 	@RequestMapping("/mypage/cart")
