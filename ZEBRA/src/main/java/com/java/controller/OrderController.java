@@ -20,10 +20,10 @@ import com.java.service.OrderService;
 public class OrderController {
 
 	@Autowired
-	private OrderService orderService;
+	OrderService orderService;
 	
 	@Autowired
-	private MemberService memberService;
+	MemberService memberService;
 	
 	@GetMapping("payment/payment/{MID}")
 	public String orderPgaeGET(@PathVariable("MID") String MID, OrderPageDTO opd, Model model) {

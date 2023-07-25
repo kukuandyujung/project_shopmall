@@ -14,7 +14,7 @@ import com.java.mapper.OrderMapper;
 public class OrderServiceImpl implements OrderService {
 	
 	@Autowired
-	private OrderMapper orderMapper;
+	OrderMapper orderMapper;
 	
 	@Override
 	public void insertOne(OrderDto odto) {
