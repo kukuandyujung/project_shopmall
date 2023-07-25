@@ -619,7 +619,15 @@ pre code {
     margin-left: auto
 }
 
-.row, .row1 {
+.row{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px
+}
+.row1{
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;

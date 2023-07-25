@@ -30,6 +30,8 @@ public class ShoppageController {
          String s_word, Integer pprice, String sorting, String pcolor){
 	  System.out.println("s_word" + s_word);
 	  System.out.println("sorting" +  sorting);
+	  System.out.println("pcolor" +  pcolor);
+	  
       
       ArrayList<ProductDto> list = productService.selectSortAll(s_word, pprice, sorting,pcolor);
       

@@ -152,38 +152,43 @@
     <!-- 상품 페이지에서 ajax 검색하기 -->
     <select id="selectSortAll" resultType="com.java.dto.ProductDto" >
        
-<!--   		select * from product where  pname like '%'||#{s_word}||'%' and pcode=10 -->
+		select * from product where pcode=10
+		
+         <if test="s_word">     
+            and upper(pname) like upper('%'||#{s_word}||'%')
+         
+         </if>
+		
+		<if test="pcolor == 'black'">     
+            and pcolor='black' 
+        </if>	
+		<if test="pcolor == 'pink'">      
+            and pcolor='pink' 
+         </if>
+         <if test="pcolor == 'orange'">      
+            and pcolor='orange'
+         
+         </if>
+		 <if test="pcolor == 'yellow'">     
+            and pcolor='yellow'
+         
+         </if>
+         <if test="pcolor == 'white'">     
+            and pcolor='white'
+         
+         </if>
+         
+		<if test="sorting == 'rowprice'">
+		 	order by pprice asc 
+		</if>
+		<if test="sorting == 'highprice'">
+			order by pprice desc 
+		</if>
+		
 
-         <if test="sorting == 'rowprice'">    
-           select * from product where pcode=10 order by pprice asc 
-            
-         </if>
-         <if test="sorting == 'highprice'">      
-           select * from product where pcode=10 order by pprice desc
-            
-         </if>
-         <if test="sorting == 'black'">     
-            select * from product where pcolor='black' 
-         
-         </if>
-         <if test="sorting == 'pink'">      
-            select * from product where pcolor='pink'
-         
-         </if>
-         <if test="sorting == 'orange'">      
-            select * from product where pcolor='orange'
-         
-         </if>
-         <if test="sorting == 'yellow'">     
-            select * from product where pcolor='yellow'
-         
-         </if>
-         <if test="sorting == 'white'">     
-            select * from product where pcolor='white'
-         
-         </if>
+
  
-    
+   
     </select>
     
 </mapper>
