@@ -28,6 +28,13 @@
 <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
 <link rel="stylesheet" href="../css/style.css">
+<script>
+    function writeBtn(){
+    	if(confirm("주문 및 결제를 하시겠습니까?")){
+    		write.submit();
+    	}
+    }
+  </script>
 </head>
 <body>
 <%@ include file="../top.jsp"%>
@@ -120,16 +127,17 @@
 						</ul>
 					</div>
 					<!-- //주문 상품 -->
-			<!-- 수령인 주소 입력 -->
+			<!-- 수령인 정보 입력 -->
+			<form action="/payment/payment1" name="write" method="post" enctype="multipart/form-data">
 					<h3 class="dep">
-						수령인 주소 입력
+						수령인 정보 입력
 						
 						<input type="checkbox" id="infosame"/>
 						<label for="infosame">회원 정보와 동일</label>
 					</h3>
 					<div class="checkDiv">
-						<table summary="수령인 주소를 입력할 수 있는 란으로 이름, 주소, 이메일, 휴대폰 번호, 전화번호 순으로 입력 하실수 있습니다." class="checkTable" border="1" cellspacing="0">
-							<caption>수령인 주소 입력</caption>
+						<table summary="수령인 정보 입력할 수 있는 란으로 이름, 주소, 이메일, 휴대폰 번호, 전화번호 순으로 입력 하실수 있습니다." class="checkTable" border="1" cellspacing="0">
+							<caption>수령인 정보 입력</caption>
 							<colgroup>
 							<col width="22%" class="tw30" />
 							<col width="*" />
@@ -137,86 +145,48 @@
 							<tbody>
 								<tr>
 									<th scope="row"><span>이름</span></th>
-									<td><input type="text" class="w134" /></td>
+									<td><input type="text" class="w134" name="ONAME" /></td>
 								</tr>
-<tr>
-									<th scope="row"><span>주소</span></th>
-									<td>
-										<ul class="pta">
-										<input type="text" id="sample6_postcode" placeholder="우편번호" readonly="readonly">
-										<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-										<input type="text" id="sample6_address" placeholder="주소" readonly="readonly"><br>
-										<input type="text" id="sample6_detailAddress" placeholder="상세주소">
-										</ul>
-									</td>
-								</tr>
-								<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-								<script>
-								    function sample7_execDaumPostcode() {
-								        new daum.Postcode({
-								            oncomplete: function(data) {
-								                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-								
-								                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-								                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-								                var addr = ''; // 주소 변수
-								                var extraAddr = ''; // 참고항목 변수
-								
-								                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-								                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-								                    addr = data.roadAddress;
-								                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-								                    addr = data.jibunAddress;
-								                }
-								
-								                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-								                if(data.userSelectedType === 'R'){
-								                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-								                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-								                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-								                        extraAddr += data.bname;
-								                    }
-								                    // 건물명이 있고, 공동주택일 경우 추가한다.
-								                    if(data.buildingName !== '' && data.apartment === 'Y'){
-								                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-								                    }
-								                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-								                    if(extraAddr !== ''){
-								                        extraAddr = ' (' + extraAddr + ')';
-								                    }
-								                } else {
-								                    document.getElementById("sample6_extraAddress").value = '';
-								                }
-								
-								                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-								                document.getElementById('sample6_postcode').value = data.zonecode;
-								                document.getElementById("sample6_address").value = addr;
-								                // 커서를 상세주소 필드로 이동한다.
-								                document.getElementById("sample6_detailAddress").focus();
-								            }
-								        }).open();
-								    }
-								</script>
 								<tr>
-								<!-- <tr>
 									<th scope="row"><span>주소</span></th>
-									<td>
-										<ul class="pta">
-											<li>
-												<input type="text" class="w134" />&nbsp;
-											</li>
-											<li><a href="../member/zip.html" class="addressBtn"><span>우편번호 찾기</span></a></li>
-											<li class="pt5"><input type="text" class="addressType2" /></li>
-											<li class="pt5"><input type="text" class="addressType2" /></li>
-										</ul>
-									</td>
-								</tr> -->
+										<td>
+										<input type="text" name="OZIP" id="sample6_postcode" placeholder="우편번호">
+										<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+										<input type="text" name="OADDR1" id="sample6_address" placeholder="주소"><br>
+										<input type="text" name="OADDR2" id="sample6_detailAddress" placeholder="상세주소">
+										
+										<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+										<script>
+										    function sample6_execDaumPostcode() {
+										        new daum.Postcode({
+										            oncomplete: function(data) {
+										                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+										
+										                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+										                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+										                var addr = ''; // 주소 변수
+										                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+										                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+										                    addr = data.roadAddress;
+										                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+										                    addr = data.jibunAddress;
+										                }
+										                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+										                document.getElementById('sample6_postcode').value = data.zonecode;
+										                document.getElementById("sample6_address").value = addr;
+										                // 커서를 상세주소 필드로 이동한다.
+										                document.getElementById("sample6_detailAddress").focus();
+										            }
+										        }).open();
+										    }
+										</script>
+								</tr>
 								<tr>
 									<th scope="row"><span>휴대폰 번호</span></th>
 									<td>
 										<ul class="pta">
 											<li>
-												<select>
+												<select name="OHP1">
 													<option value="010" selected="selected">010</option>
 													<option value="011">011</option>
 													<option value="016">016</option>
@@ -226,8 +196,8 @@
 												</select>
 											</li>
 											<li>&nbsp;<span class="valign">-</span>&nbsp;</li>
-											<li><input type="text" class="w74" maxlength="4" /> <span class="valign">-</span>&nbsp;</li>
-											<li class="r10"><input type="text" class="w74" maxlength="4" /></li>
+											<li><input type="text" class="w74" maxlength="4" name="OHP2"/> <span class="valign">-</span>&nbsp;</li>
+											<li class="r10"><input type="text" class="w74" maxlength="4" name="OHP3"/></li>
 										</ul>
 									</td>
 								</tr>
@@ -236,7 +206,7 @@
 									<td>
 										<ul class="pta">
 											<li>
-												<select>
+												<select name="ORHP1">
 													<option value="02" selected="selected">02</option>
 													<option value="031">031</option>
 													<option value="032">032</option>
@@ -257,14 +227,14 @@
 												</select>
 											</li>
 											<li>&nbsp;<span class="valign">-</span>&nbsp;</li>
-											<li><input type="text" class="w74" maxlength="4" /> <span class="valign">-</span>&nbsp;</li>
-											<li><input type="text" class="w74" maxlength="4" /></li>
+											<li><input type="text" class="w74" maxlength="4" name="ORHP2"/> <span class="valign">-</span>&nbsp;</li>
+											<li><input type="text" class="w74" maxlength="4" name="ORHP3"/></li>
 										</ul>
 									</td>
 								</tr>
 								<tr>
 									<th scope="row"><span>배송시 <u>요구사항</u></span></th>
-									<td><textarea class="demandtta"></textarea></td>
+									<td><textarea class="demandtta" name="OWANT"></textarea></td>
 								</tr>
 							</tbody>
 						</table>
@@ -307,13 +277,13 @@
 									<td>
 										<ul class="pta">
 											<li>
-												<input type="radio" id="method01" name="method" checked="checked" /><label for="method01">신용카드 결제</label>
+												<input type="radio" id="method01" name="OPAYMENT" value="1" checked="checked" /><label for="method01">신용카드 결제</label>
 											</li>
 											<li>
-												<input type="radio" id="method03" name="method" /><label for="method03">무통장 입금</label>
+												<input type="radio" id="method03" name="OPAYMENT" value="2"/><label for="method03">무통장 입금</label>
 											</li>
 											<li>
-												<input type="radio" id="method04" name="method" /><label for="method04">간편 결제</label>
+												<input type="radio" id="method04" name="OPAYMENT" value="3"/><label for="method04">간편 결제</label>
 											</li>
 										</ul>
 									</td>
@@ -341,8 +311,8 @@
 					<div class="btnArea">
 						<div class="orderCenter">
 							<ul>
-								<li><a href="#" class="nbtnbig iw0140">뒤로가기</a></li>
-								<li><a href="#" class="sbtnMini iw0140">주문 / 결제</a></li>								
+								<li><a href="#" class="nbtnbig iw0140" onclick="javascript:location.href='payment'">뒤로가기</a></li>
+								<li><a href="#" class="sbtnMini iw0140" onclick="writeBtn()">주문 / 결제</a></li>								
 							</ul>
 						</div>
 					</div>

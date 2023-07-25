@@ -13,4 +13,13 @@
 	
 	</select>
 
+<!-- 수령인 정보 1개 저장하기 -->
+<insert id="insertOne">
+   insert into ZEBRAORDER (ONO, ONAME, OZIP, OADDR1, OADDR2, 
+      OHP1, OHP2, OHP3, ORHP1, ORHP2, ORHP3, OWANT, OPAYMENT)
+   values (ORDER_SEQ_NUM.nextval, #{ONAME}, #{OZIP}, #{OADDR1}, #{OADDR2},
+      #{OHP1},#{OHP2},#{OHP3},#{ORHP1},#{ORHP2},#{ORHP3}, #{OWANT}, #{OPAYMENT})
+</insert>
+
+
 </mapper>

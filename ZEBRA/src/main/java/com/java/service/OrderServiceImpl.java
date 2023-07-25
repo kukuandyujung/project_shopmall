@@ -5,14 +5,23 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.java.dto.OrderDto;
 import com.java.dto.OrderPageItemDTO;
 import com.java.mapper.OrderMapper;
 
 @Service
 public class OrderServiceImpl implements OrderService {
-
+	
 	@Autowired
 	private OrderMapper orderMapper;
+	
+	@Override
+	public void insertOne(OrderDto odto) {
+		// 수령자 1명 저장
+		orderMapper.insertOne(odto);
+		
+	}
+	
 	
 	@Override
 	public ArrayList<OrderPageItemDTO> getGoodsInfo(ArrayList<OrderPageItemDTO> orders) {

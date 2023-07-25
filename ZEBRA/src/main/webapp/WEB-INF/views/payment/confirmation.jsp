@@ -196,8 +196,11 @@
 
 
 					<!-- Btn Area -->
-					<div class="btnArea2">
-						<a href="/mypage/orderhistory" class="nbtnbig iw0140">확인</a>
+					<div class="cartarea">
+					<ul>
+						<li><a href="/layout/index" class="nbtnbig iw0140">쇼핑계속하기</a></li>
+						<li><a href="/mypage/orderhistory" class="sbtnMini iw0140">주문확인하기</a></li>
+					</ul>
 					</div>
 					<!-- //Btn Area -->
 
