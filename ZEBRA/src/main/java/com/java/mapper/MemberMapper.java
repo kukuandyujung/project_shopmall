@@ -46,33 +46,18 @@ public interface MemberMapper {
 
 	// start sun //
 	
-		//회원 로그인
-		MemberDto selectLoginMember(String MID, String MPASSWORD);
-		//id 중복검사
-		MemberDto selectId(String MID);
-
-		void insertMember(MemberDto member);
-
-		
-
-		
-
-		
-
-		
-
-
-		
-
-		
-
-		
-
-		
-
-		// end sun //
-		
+	//회원 로그인
+	MemberDto selectLoginMember(String MID, String MPASSWORD);
+	
+	//id 중복검사
+	MemberDto selectId(String MID);
+	
+	// 신규 회원 가입 및 등록 
+	void insertMember(MemberDto member);
+	
+	//ID SEARCH - ID EMAIL 중복 체크
+	MemberDto selectIdEmail(String MNAME, String MEMAIL);
 
 	
-	
+	// end sun //	
 }

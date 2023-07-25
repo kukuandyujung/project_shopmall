@@ -31,22 +31,21 @@ public interface MemberService {
 	MemberDto selectLogin(MemberDto memberDto);	
 	
 	// START SUN //
-	// 회원 로그인
-	String selectLoginMember(String MID, String MPASSWORD);
-	//id 중복 검사 
-	MemberDto selectId(String MID);
-    //신규 회원 가입
-	String insertMember(MemberDto member);
+		// 회원 로그인
+		String selectLoginMember(String MID, String MPASSWORD);
+		
+		//id 중복 검사 
+		MemberDto selectId(String MID);
+		
+		//id search- idEmaiCheck
+		MemberDto selectIdEmail(String MNAME,String MEMAIL);
+		
+	    //신규 회원 가입
+		String insertMember(MemberDto member);
+		
 
-
-	
-	
-
-
-	
-
-	// START SUN //
-	
+		// START SUN //
+		
 }
 
 	

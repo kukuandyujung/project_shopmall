@@ -94,8 +94,14 @@
 	select * from zebra where MID=#{MID} and MPASSWORD=#{MPASSWORD}
 </select>
 
+<!-- ID 중복 체크 -->
 <select id="selectId" resultType="com.java.dto.MemberDto" >
 	select * from zebra where MID=#{MID}
+</select>
+
+<!-- ID SEARCH - ID EMAIL 중복 체크 -->
+<select id="selectIdEmail" resultType="com.java.dto.MemberDto" >
+	select * from zebra where MNAME=#{MNAME} and MEMAIL=#{MEMAIL}
 </select>
 <!--  END SUN  -->
 

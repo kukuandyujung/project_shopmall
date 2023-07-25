@@ -30,9 +30,48 @@
 <link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
 <link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
 <link rel="stylesheet" href="../css/style.css">
-<script type="text/javascript">
+<!-- <script type="text/javascript">
+function joinBtn(){	
+	
+	   let nameCheck = /^[a-zA-Z-ㄱ-ㅎ가-힣]+$/ ;   //영문/한글 
+	   let numCheck = /^[0-9]+$/;     // 숫자인지
+	   let alphaCheck = /^[a-zA-Z]+$/ ; //영문자인지
+	   let etcCheck = /^[!@#$%^&*,.?_-]+$/ ; //특수문자인지 아닌지 
+	   let idCheck = /^[a-zA-Z0-9_]{4,20}$/ ; //영문자,숫자,_만 가능	 
+	   let pwCheck = /^[a-zA-Z0-9_]{4,20}$/ ; //영문/숫자, _만 가능 {} 는 자릿수
+	   let phoneCheck = /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/ ; //010-1111-1111 , 02-355-1111
+	   
+	    console.log($('#joinName').val()); 
+	 
+		console.log($('#joinId').val());
+		console.log($('#joinPw').val());//비번
+		
+		   
+	   //글자길이
+	    let name_len = $("#joinName").val().length;
+	    if(name_len<2){
+		   alert("이름은 두글자 이상 입력을 하셔야 합니다.")
+		   $("#joinName").focus();
+		   return false;
+	    }
+	   //이름 - 한글만 입력가능
+		 
+	   // 아이디 - 영문,숫자만 가능
+	    if(!idCheck.test($("#joinId").val())){ //정규표현식 패턴과 입력한 글자 비교
+		   alert("아이디는 영문,숫자,특수문자(_) 4~20자 까지 입력 가능합니다..");
+		   $("#joinId").focus();
+		   return false;
+	   }else{
+		   alert("아이디 사용 가능!!!!");
+	   } 	
 
-</script>
+	
+		
+	 
+	}
+	</script> -->
+	<!-- ================ END 정규식 조건  Area ================= -->
+
 
 
 </head>
@@ -72,48 +111,50 @@
 			<!-- contents -->
 			<div id="contents">
 				<div id="member">
+				
+				<!--=============START 이름,EMAIL 중복 체크 Area ==============-->
+									<script type="text/javascript">
+									function checkIdEmailBtn(){
+								 	 //alert("아이디중복확인");
+									 	console.log($('#idEmck').val());
+								
+									    $.ajax({
+									      url:"/member/idEmaiCheck",
+									      type:"post",
+									      data:{"MNAME":$('#joinName').val(),
+									    	   "MEMAIL":$('#joinEmail').val() },
+									      success:function(data){
+									    	 console.log(data); 
+									    	 if(data=="fail")
+									    		 alert("존재하지 않는 회원입니다.")
+									         else{
+									        	 alert("id: "+data)
+									         }	 
+										    },//success
+										   error:function(){
+										      alert("아이디와 이메일을 확인해주세요 : 사용이 불가합니다.");	  
+										   }//error
+										});//ajax 
+									
+										
+									}//checkIdEmailBtn
+									</script>
+				 <!--=============END 이름,EMAIL 중복 체크 Area ==============-->		
+								
 					<h2><strong></strong><span>회원님께서 가입하신 아이디와 이메일을 검색하세요.</span></h2>
 					<h3>아이디 찾기</h3>
 					<div class="informbox">
 						<div class="inform">
+							
 							<ul>
-								<li><input type="text" class="nameType" onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='nameType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" /></li>
-								<li><input type="password" class="emailType" onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='emailType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" /></li>
+								<li><input type="text" class="nameType" name="MNAME" id="joinName"  onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='nameType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" /></li>
+								<input type="hidden" id="idEmck" ></li>
+								<li><input type="text" class="emailType" name="MEMAIL" id="joinEmail"   onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='emailType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" /></li>
 							</ul>
 
-							<div class="btn"><a href="#" class="gbtn">아이디 찾기</a></div>
+							<div class="btn"><a a onclick="checkIdEmailBtn()" class="gbtn">아이디 찾기</a></div>
 						</div>
-					</div>
-						
-<!--=============START 아이디 찾기 Area ==============-->
-									<script type="text/javascript">
-									function checkIdBtn(){
-								 	// alert("중복확인");
-									 	console.log($('#idck').val());
-								
-									    $.ajax({
-									      url:"/member/idCheck",
-									      type:"post",
-									      data:{"MID":$('#joinId').val() },
-									      success:function(data){
-									          if(data == "fail"){
-									 			alert("이미 존재하는 아이디 입니다.");
-												$('#joinId').val("");
-												return false;
-												}//if
-											  alert("아이디 중복 확인 : 사용이 가능합니다. ");
-									 			$('#idck').val("true")
-										   },//success
-										   error:function(){
-										      alert("아이디 중복 확인 : 사용이 불가합니다.");	      
-										   }//error
-										});//ajax 
-									
-									}//checkIdBtn
-									</script>
-								<!--=============END 아이디 중복 체크 Area ==============-->		
-														
-				
+					</div>											
 					<table summary="이름, 아이디, 비밀번호, 비밀번호 확인, 이메일, 이메일수신여부, 주소, 휴대폰, 유선전화, 생년월일 순으로 회원가입 정보를 등록할수 있습니다." class="memberWrite" border="1" cellspacing="0">
 							<caption>이메일인증 입력</caption>
 							<colgroup>
@@ -123,7 +164,7 @@
 							<tbody>
 							<tr> 
 								<!-- 이메일인증 코드 생성 -->
-					<h3>이메일 인증 코드 입력</h3>
+					<h3>비밀번호 이메일 인증 코드 입력</h3>
 					<div class="informbox">
 						<div class="inform">
 								<tr>
@@ -153,7 +194,7 @@
 			   $.ajax({
 				   url:"/email/emailSend",
 				   type:"post",
-				   data:{"name":$("#mem_name").val(),"email":$("#mem_email").val()},
+				   data:{"EMAIL":$("#mem_name").val(),"email":$("#mem_email").val()},
 				   success:function(data){
 					   alert("이메일이 발송되었습니다.");
 					   console.log(data);
@@ -173,7 +214,7 @@
 									<td>
 										<ul class="pta">
 											<li class="r10"><input type="text"  class="emailType" name="EMAIL" id="mem_email" /></li>
-											<li><a onclick="emailBtn()" style="cursor: pointer;"  class="gbtn">인증코드발송</a></li>
+											<li><a onclick="checkIdEmailBtn()" style="cursor: pointer;"  class="gbtn">인증코드발송</a></li>
 											<li class="pt5"><span class="mvalign">입력하신 이메일로 인증코드가 발송됩니다. 인증코드를 아래에 입력해주세요.</span></li>
 										</ul>
 									</td>
@@ -198,28 +239,7 @@
    	<script type="text/javascript">
    function authBtn(){
 	 //코드입력-이름
-		 let nameCheck = /^[a-zA-Z-ㄱ-ㅎ가-힣]+$/ ;   //영문/한글 
-		 
-		 alert("코드입력-이름입니다.")
-		 console.log($('#mem_name').val()); 
-		 //글자길이
-		    let name_len = $("#mem_name").val().length;
-		    if(name_len<2){
-			   alert("이름은 두글자 이상 입력을 하셔야 합니다.")
-			   $("#mem_name").focus();
-			   return false;
-		    }
-		     //이름 - 한글만 입력가능
-		   /* if(!nameCheck.test($("#mem_name").val())){ 
-			   alert("이름은 영문/한글만 입력이 가능합니다.");
-		   }
-			    $("#mem_name").focus();
-			    return false;
-		   }else{
-			   alert("이름 사용 가능!!!!");
-    */
-    
-		//   alert($("#temp_code").val());
+	 //   alert($("#temp_code").val());
 	   if($("#temp_code").val().length==0){
 		   alert("인증코드를 입력하셔야 진행됩니다.");
 		   $("#temp_code").focus();

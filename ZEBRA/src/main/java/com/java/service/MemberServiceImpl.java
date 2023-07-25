@@ -123,6 +123,11 @@ public class MemberServiceImpl implements MemberService {
 		}
 	}
 
+	@Override // IDSerach - idEmailSearch 검사
+	public MemberDto selectIdEmail(String MNAME, String MEMAIL) {
+		MemberDto mdto = memberMapper.selectIdEmail(MNAME, MEMAIL);
+		return mdto;
+	}
 	
 
 
