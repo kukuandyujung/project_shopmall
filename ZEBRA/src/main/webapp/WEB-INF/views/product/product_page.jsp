@@ -108,11 +108,7 @@
            },
            
            
-           
-
-
-
-           
+    
            
            
            dataType:"json",
@@ -333,7 +329,7 @@
                
                <!-- 상품 리스트  시작-->
 
-               <c:forEach var="product" items="${list}" >
+               <c:forEach var="product" items="${list}" end="8">
                      <div class="col-md-6 col-lg-4">
                         <div class="card text-center card-product">
                            <div class="card-product__img">
