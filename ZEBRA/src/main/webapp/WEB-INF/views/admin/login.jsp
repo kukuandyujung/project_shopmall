@@ -27,10 +27,10 @@
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <!-- 아이디와 패스워드가 일치하지 않을 경우 -->
  <!--   <script type="text/javascript">
-	if("${loginCheck}"=="fail"){
-		alert("아이디 또는 패스워드가 일치하지 않습니다.");
-		$("#loginId").focus();
-	}
+   if("${loginCheck}"=="fail"){
+      alert("아이디 또는 패스워드가 일치하지 않습니다.");
+      $("#loginId").focus();
+   }
 </script>  -->
   </head>
 <!-- 로그인 바디 -->
@@ -46,49 +46,50 @@
               <h1>Login Form</h1>
               <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
  <script type="text/javascript">
-				function loginBtn(){
-					if($("#loginId").val().length<3){
-						alert("아이디는 3자리 이상 입력하셔야 합니다.");
-						return false;
-					}
+            function loginBtn(){
+               if($("#loginId").val().length<3){
+                  alert("아이디는 3자리 이상 입력하셔야 합니다.");
+                  return false;
+               }
 
-					loginfrm.submit();
-				}
-				
-				
-			  </script>
+               loginfrm.submit();
+            }
+            
+            
+           </script>
 
 
 
-		    <!-- 로그인 제출하기 끝-->
-		    <!-- 로그인 폼 -->
 
-		          <form action="/admin/login" method="post" name="loginfrm" id="loginfrm">
-		            <div class="informbox">
-		              <div class="inform">
-		              	<label for="loginId">아이디</label>
-		                <input type="text" name="MID" class="form-control" placeholder="id" id="loginId" style="ime-mode:inactive;" required />
-		                 <label for="loginPw">비밀번호</label>
-		                <input type="password" name="MPASSWORD" class="form-control" placeholder="pw" id="loginPw" style="ime-mode:inactive;" required/>
-		
-		                <div class="btn">
-		                  <a style="cursor: pointer;" onclick="loginBtn()" class="sbtn">로그인</a>
-		                </div>
-		                <div class="chk">
-		                  <input type="checkbox" id="idsave" /><label for="idsave">아이디 저장</label>
-		                </div>
-		         
-		                <div class="point">
-		                  <p>아이디와 비밀번호를 잊으셨나요?</p>
-		                  <a href="#" class="nbtn">아이디/비밀번호 찾기</a>
-		                </div>
-		              </div>
-		            </div>
-		          </form>
+          <!-- 로그인 제출하기 끝-->
+          <!-- 로그인 폼 -->
+
+                <form action="/admin/login" method="post" name="loginfrm" id="loginfrm">
+                  <div class="informbox">
+                    <div class="inform">
+                       <label for="loginId">아이디</label>
+                      <input type="text" name="MID" class="form-control" placeholder="id" id="loginId" style="ime-mode:inactive;" required />
+                       <label for="loginPw">비밀번호</label>
+                      <input type="password" name="MPASSWORD" class="form-control" placeholder="pw" id="loginPw" style="ime-mode:inactive;" required/>
+      
+                      <div class="btn">
+                        <a style="cursor: pointer;" onclick="loginBtn()" class="sbtn">로그인</a>
+                      </div>
+                      <div class="chk">
+                        <input type="checkbox" id="idsave" /><label for="idsave">아이디 저장</label>
+                      </div>
+               
+                      <div class="point">
+                        <p>아이디와 비밀번호를 잊으셨나요?</p>
+                        <a href="#" class="nbtn">아이디/비밀번호 찾기</a>
+                      </div>
+                    </div>
+                  </div>
+                </form>
            <!-- 여기까지가 로그인 구현 기능  -->
-			  
+           
 
-			<!-- 관리자 가입하는 창 -->
+         <!-- 관리자 가입하는 창 -->
               <div class="clearfix"></div>
 
               <div class="separator">

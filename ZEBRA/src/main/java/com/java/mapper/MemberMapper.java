@@ -9,6 +9,13 @@ import com.java.dto.MemberDto;
 @Mapper
 public interface MemberMapper {
 
+	
+	//===============관리자 로그인==============================
+	MemberDto selectLogin(MemberDto memberDto);
+	//===============관리자 로그인==============================
+	
+	
+	
 	// 회원 테이블 전체 가져오기
 	ArrayList<MemberDto> selectAll(String s_word, String category);
 
@@ -39,10 +46,7 @@ public interface MemberMapper {
 	/* 주문자 주소 정보 */
 	public MemberDto getMemberInfo(String MID);	
 	
-	//로그인 확인
-	MemberDto selectLogin(MemberDto memberDto);
-	
-	
+
 
 	// start sun //
 	

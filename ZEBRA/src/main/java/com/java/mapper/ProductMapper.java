@@ -36,7 +36,7 @@ public interface ProductMapper {
    void deleteOne(int pno);
 
    //==============================여기부터 상품 페이지==============================================
-   //상품 페이지에서 상품 전체 가져오기
+   //상품 페이지에서 women 상품 전체 가져오기
    ArrayList<ProductDto> selectPageAll(int startRow, int endRow, String category, String s_word);
 
    //상세 페이지에서 상품 1개 가져오기 
@@ -44,6 +44,9 @@ public interface ProductMapper {
 
    //상품 페이지에 ajax 검색 (색상, 가격, 검색 ajax)
    ArrayList<ProductDto> selectSortAll(String s_word, Integer pprice, String sorting,String pcolor);
+
+   //상품 페이지에서 home 상품 전체 가져오기 
+   ArrayList<ProductDto> selectHomeAll(int startRow, int endRow, String category, String s_word);
 
 
 

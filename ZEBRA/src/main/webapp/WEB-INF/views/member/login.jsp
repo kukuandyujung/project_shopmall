@@ -39,7 +39,15 @@ function loginBtn(){
 			return false;
 		}
 		loginFrm.submit();
+		
 }//loginBtn
+
+
+
+
+//로그인 알림창
+
+
 </script>
 <!-- START 로그인 중복 검사  --> 
 <script type="text/javascript">
@@ -127,6 +135,10 @@ console.log($("input[type=checkbox][name=hobby]:checked").val());
 									<p>아이디와 비밀번호를 잊으셨나요?</p>
 									<a href="/member/idsearch" class="nbtn">아이디/비밀번호 찾기</a>
 								</div>
+								<div class="point">
+									<a href="/admin/login" class="nbtn">관리자 로그인 페이지</a>
+								</div>
+								
 							</form>
 						</div>
 					</div>

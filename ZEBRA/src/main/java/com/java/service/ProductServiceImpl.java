@@ -145,6 +145,40 @@ public class ProductServiceImpl implements ProductService{
    }
 
 
+
+   @Override
+   public HashMap<String, Object> selectHomeAll(int page, String category, String s_word) {
+      //상품 페이지에 상품 전체 가져오기
+      HashMap<String, Object> map = new HashMap<>();
+      //상품 페이지에서 넘버링 
+      int listCount = productMapper.selectListCount(category, s_word);
+      System.out.println("ProductServiceImpl listCount : " + listCount);
+      //최대페이지
+      int maxPage = (int)Math.ceil((double)listCount/10); // 26/10 3개page
+      int startPage = (int)((page-1)/10)*10 + 1; //1
+      int endPage = startPage+10-1;
+      int startRow = (page-1)*10+1;  //1page -> 1-10, 2page -> 11-20
+      int endRow = startRow+10-1;
+      //endPage가 최대페이지보다 더 크면 최대페이지까지만 노출
+      if(endPage>maxPage) endPage=maxPage;
+      
+      
+      ArrayList<ProductDto> list = productMapper.selectHomeAll(startRow, endRow, category,s_word);
+      map.put("list", list);
+      map.put("listCount", listCount);
+      map.put("maxPage", maxPage);
+      map.put("startPage", startPage);
+      map.put("endPage", endPage);
+      map.put("page", page);
+      map.put("category", category);
+      map.put("s_word", s_word);
+      
+      
+      
+      return map;
+   }
+
+
    
    
    

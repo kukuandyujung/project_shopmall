@@ -24,7 +24,7 @@ public interface ProductService {
 
    //====================여기부터는 상품 페이지=============================== 
    
-   //상품 페이지에 상품 전체 가져오기
+   //상품 페이지에 women 상품 전체 가져오기
    HashMap<String, Object> selectPageAll(int page, String category, String s_word);
 
    //상세 페이지에 상품 1개 가져오기 
@@ -32,6 +32,9 @@ public interface ProductService {
 
    //상품 페이지에 ajax 검색 (색상, 가격, 검색 ajax)
    ArrayList<ProductDto> selectSortAll(String s_word, Integer pprice, String sorting,String pcolor);
+
+   //상품 페이지에 home 상품 전체 가져오기
+   HashMap<String, Object> selectHomeAll(int page, String category, String s_word);
 
   
 

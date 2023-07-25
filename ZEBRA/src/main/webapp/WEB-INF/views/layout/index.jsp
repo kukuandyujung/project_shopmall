@@ -38,7 +38,9 @@
  <script>
 if("${resultCode}"=="s_login" ){
 	   alert("${sessionName}님! 로그인 되었습니다.");
-}//로그인 알림창
+}
+
+//로그인 알림창
 </script> 
 
 </head>

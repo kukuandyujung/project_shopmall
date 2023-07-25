@@ -88,11 +88,11 @@
 							style="font-weight: bold; font-size: 20px;">Home</a>
 							<ul class="dropdown-menu">
 								<li class="nav-item"><a class="nav-link"
-									href="/product/category">Shop All</a></li>
+									href="/product/product_pagehome">Shop All</a></li>
 								<li class="nav-item"><a class="nav-link"
-									href="/product/category">Dining</a></li>
+									href="/product/product_pagehome">Dining</a></li>
 								<li class="nav-item"><a class="nav-link"
-									href="/product/category">Bedding</a></li>
+									href="/product/product_pagehome">Bedding</a></li>
 							</ul></li>
 					</ul>
 

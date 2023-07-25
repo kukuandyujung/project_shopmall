@@ -21,6 +21,17 @@ public class MemberServiceImpl implements MemberService {
 	@Autowired
 	MemberMapper memberMapper;
 
+	//=========================관리자 로그인======================================
+   @Override
+   public MemberDto selectLogin(MemberDto memberDto) {
+      MemberDto mdto = memberMapper.selectLogin(memberDto); 
+      return mdto;
+   }
+	   
+
+	//=========================관리자 로그인======================================
+	
+	
 	// 회원 테이블 전체 가져오기
 	@Override
 	public HashMap<String, Object> selectAll(String s_word, String category) {
@@ -100,11 +111,7 @@ public class MemberServiceImpl implements MemberService {
 		return resultCode;
 	}
 
-	@Override
-	public MemberDto selectLogin(MemberDto memberDto) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override //id 중복 검사
 	public MemberDto selectId(String MID) {		

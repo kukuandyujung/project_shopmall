@@ -6,6 +6,11 @@ import com.java.dto.MemberDto;
 
 public interface MemberService {
 
+
+	//=================관리자 로그인 확인하기========================
+	MemberDto selectLogin(MemberDto memberDto);	
+	//=================관리자 로그인 확인하기========================
+	
 	// 회원 테이블 전체 가져오기
 	HashMap<String, Object> selectAll(String s_word, String category);
 
@@ -27,8 +32,7 @@ public interface MemberService {
 	/* 주문자 정보 */
 	public MemberDto getMemberInfo(String MID);
 	
-	//로그인 확인하기
-	MemberDto selectLogin(MemberDto memberDto);	
+	
 	
 	// START SUN //
 		// 회원 로그인
@@ -47,5 +51,3 @@ public interface MemberService {
 		// START SUN //
 		
 }
-
-	

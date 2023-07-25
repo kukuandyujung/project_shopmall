@@ -109,7 +109,7 @@
 
    <!-- ============================여기부터는 상품 페이지 ====================================== -->
 
-    <!-- 상품 페이지에서 상품 전체 가져오기 아무 옵션을 누르지 않을 경우--> 
+    <!-- women 상품 페이지에서 상품 전체 가져오기 아무 옵션을 누르지 않을 경우--> 
    <select id="selectPageAll" resultType="com.java.dto.ProductDto">
       <!-- 공통 영역 -->
             select * from (select rownum rnum, a.* from
@@ -138,7 +138,34 @@
 
     </select>
     
-    
+    <!-- home 상품 페이지에서 상품 전체 가져오기 아무 옵션을 누르지 않을 경우--> 
+	<select id="selectHomeAll" resultType="com.java.dto.ProductDto">
+   	<!-- 공통 영역 -->
+        select * from (select rownum rnum, a.* from
+         (select * from product 
+   
+         <if test="category == 'all'">      
+            where pname like '%'||#{s_word}||'%' or pdescript like '%'||#{s_word}||'%' order by pno asc
+            
+         </if>
+         <if test="category == 'pname'">      
+            where pname like '%'||#{s_word}||'%' order by pno asc
+            
+         </if>
+         <if test="category == 'pdescript'">      
+            where pdescript like '%'||#{s_word}||'%' order by pno asc
+         
+         </if>
+       
+   
+         
+         <!-- 공통 영역  -->
+         <![CDATA[
+         where pcode=11 order by pno asc) a) 
+          where rnum>=#{startRow} and rnum<=#{endRow} 
+        ]]> 
+
+    </select>
   
     
     <!-- 상세 페이지에서 상품 1개 가져오기 -->
