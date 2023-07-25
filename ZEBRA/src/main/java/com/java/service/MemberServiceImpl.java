@@ -106,6 +106,17 @@ public class MemberServiceImpl implements MemberService {
 		return mdto;
 	}
 
+	@Override//신규 회원 가입 및 등록
+	public String insertMember(MemberDto member) {
+		MemberDto mdto = memberMapper.selectId(member.getMID());
+		if (mdto == null ) {
+			memberMapper.insertMember(member);
+			return "success";
+		}else {
+			return "fail";
+		}
+	}
+	
 
 
 

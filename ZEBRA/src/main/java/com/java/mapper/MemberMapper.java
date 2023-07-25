@@ -49,6 +49,8 @@ public interface MemberMapper {
 		//id 중복검사
 		MemberDto selectId(String MID);
 
+		void insertMember(MemberDto member);
+
 		
 
 		

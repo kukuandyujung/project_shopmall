@@ -53,7 +53,7 @@
 
 <!-- 회원 정보 1개 저장하기 -->
 <insert id="insertOne">
-   insert into zebra values (1, #{MID}, #{MPASSWORD}, #{MNAME}, #{MGENDER}, #{MBIRTH}, #{MPHONE}, #{MEMAIL}, #{MZIP}, SYSDATE, 0, 0, 0)
+   insert into zebra values (zebra_seq.nextval, #{MID}, #{MPASSWORD}, #{MNAME}, #{MGENDER}, #{MBIRTH}, #{MPHONE}, #{MEMAIL}, #{MZIP}, SYSDATE, 0, 0, 0)
 </insert>
 
 <!-- 회원 정보 1개 수정 -->
@@ -75,6 +75,11 @@
 	
 <!--  START SUN  -->
 
+<!--신규 회원 가입 및 등록  -->
+<insert id="insertMember" >
+	insert into zebra (MCODE,MID,MPASSWORD,MNAME,MGENDER,MBIRTH,MPHONE,MEMAIL,MAGREE,MJOINDAY) values
+	(zebra_seq.nextval, #{MID}, #{MPASSWORD}, #{MNAME}, #{MGENDER}, #{MBIRTH}, #{MPHONE}, #{MEMAIL}, #{MAGREE},SYSDATE)
+</insert>
 <!--회원 로그인 확인-->
 <select id="selectLoginMember" resultType="com.java.dto.MemberDto" >
 	select * from zebra where MID=#{MID} and MPASSWORD=#{MPASSWORD}

@@ -32,6 +32,8 @@ public interface MemberService {
 	String selectLoginMember(String MID, String MPASSWORD);
 	//id 중복 검사 
 	MemberDto selectId(String MID);
+    //신규 회원 가입
+	String insertMember(MemberDto member);
 
 
 	
