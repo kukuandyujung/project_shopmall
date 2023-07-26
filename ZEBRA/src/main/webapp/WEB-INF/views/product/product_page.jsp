@@ -89,6 +89,7 @@
       document.getElementById(imageId).classList.add('selected');
    }
    
+   
    function ajaxsort(){
        // 사용자가 선택한 컬러, 가격 정렬 및 검색 값을 가져오기.
      
@@ -351,7 +352,7 @@
                               <h4 class="card-product__title">
                                  <a href="/product/product_detail?pno=${product.pno}">${product.pname}</a>
                               </h4>
-                              <p class="card-product__price">${product.pprice}원</p>
+                              <p class="card-product__price"><fmt:formatNumber value="${product.pprice}" pattern="###,###원" /></p>
                            </div>
                         </div>
                      </div>
@@ -360,8 +361,6 @@
                <!-- 상품 리스트  끝-->      
                                           
                   </div>
-               </section>
-               <!-- ================ category section end ================= -->
       <div class="btnAreaList">
       <div class="allPageMoving1">
                
@@ -424,31 +423,13 @@
                   
                   
                   
-                  
-<!--                   <div class="allPageMoving1"> -->
-<!--                      <a href="#"><img src="../img/btn/btn_pre2.gif" alt="처음으로" /></a> -->
-<!--                      <a href="#"><img src="../img/btn/btn_pre1.gif" alt="앞페이지로" /></a> -->
-<!--                      <div class="number-box"> -->
-<!--                         <strong>1</strong> -->
-<!--                      </div> -->
-<!--                      <div class="number-box"> -->
-<!--                         <a href="#">2</a> -->
-<!--                      </div> -->
-<!--                      <div class="number-box"> -->
-<!--                         <a href="#">3</a> -->
-<!--                      </div> -->
-<!--                      <div class="number-box"> -->
-<!--                         <a href="#">4</a> -->
-<!--                      </div> -->
-<!--                      <div class="number-box"> -->
-<!--                         <a href="#">5</a> -->
-<!--                      </div> -->
-<!--                      <a href="#"><img src="../img/btn/btn_next1.gif" alt="뒤페이지로" /></a> -->
-<!--                      <a href="#"><img src="../img/btn/btn_next2.gif" alt="마지막페이지로" /></a> -->
+
                   
                   
                   </div>
                </div>
+               </section>
+               <!-- ================ category section end ================= -->
             </div>
          </div>
       </div>

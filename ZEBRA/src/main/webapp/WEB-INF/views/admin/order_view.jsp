@@ -121,8 +121,8 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <th scope="row">주문 번호(pno)</th>
-                          <td>22</td> 
+                          <th scope="row">주문 번호</th>
+                          <td>${odto.}</td> 
                         </tr>
                         <tr>
                           <th scope="row">물품 번호</th>
@@ -143,35 +143,21 @@
                           <th scope="row">전체 결제 금액</th>
                           <td>100,000</td> 
                         </tr>
-                          <th scope="row">주문자 이름</th>
-                          <td>Mark</td> 
-                        </tr>
-                        <tr>
-                          <th scope="row">주문자 휴대 번호</th>
-                          <td>Mark</td> 
-                        </tr>
-                        <tr>
-                          <th scope="row">주문자 우편 번호</th>
-                          <td>Mark</td> 
-                        </tr>
-                        <tr>
-                          <th scope="row">주문자 주소1</th>
-                          <td>Mark</td> 
-                        </tr>
-                        <tr>
-                          <th scope="row">주문자 주소2</th>
-                          <td>Mark</td> 
-                        </tr>
-                        <tr>
-                          <th scope="row">주문자 이메일</th>
-                          <td>Mark</td> 
-                        </tr>
+                          
                         <tr>
                           <th scope="row">수령자 이름</th>
                           <td>Mark</td> 
                         </tr>
                         <tr>
-                          <th scope="row">수령자 휴대 번호</th>
+                          <th scope="row">수령자 휴대 번호1(앞 번호)</th>
+                          <td>Mark</td> 
+                        </tr>
+                        <tr>
+                          <th scope="row">수령자 휴대 번호2(중간 번호)</th>
+                          <td>Mark</td> 
+                        </tr>
+                        <tr>
+                          <th scope="row">수령자 휴대 번호3(뒷 번호)</th>
                           <td>Mark</td> 
                         </tr>
                         <tr>
@@ -187,9 +173,17 @@
                           <td>Mark</td> 
                         </tr>
                         <tr>
-                          <th scope="row">수령자 이메일</th>
+                          <th scope="row">수령자 유선 번호1(앞 번호)</th>
                           <td>Mark</td> 
                         </tr>
+                        <tr>
+                          <th scope="row">수령자 유선 번호2(중간 번호)</th>
+                          <td>Mark</td> 
+                        </tr>
+                        <tr>
+                          <th scope="row">수령자 유선 번호3(뒷 번호)</th>
+                          <td>Mark</td> 
+                        </tr>      
                         <tr>
                           <th scope="row">배송 상태</th>
                           <td>

@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -35,17 +36,17 @@
 
   <body class="nav-md">
   <script type="text/javascript">
-function searchBtn(){
-	if($("#s_word").val().length<2){
-		alert("2글자 이상 입력하셔야 합니다.");
-		$("#s_word").focus();
-		return false;
-	}
+	function searchBtn(){
+		if($("#s_word").val().length<2){
+			alert("2글자 이상 입력하셔야 합니다.");
+			$("#s_word").focus();
+			return false;
+		}
+		
+		search.submit();
 	
-	search.submit();
-
-}
-</script>
+	}
+	</script>
     <div class="container body">
       <div class="main_container">
         <div class="col-md-3 left_col">
@@ -59,7 +60,7 @@ function searchBtn(){
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="/upload/a.jpg"  alt="" class="img-circle profile_img">
+                <img src="production/images/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
@@ -83,154 +84,141 @@ function searchBtn(){
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>✅ 🛒 Product List 🛒 ✅</h3>
+                <h3>✅ 🛒 Product List ✅ 🛒</h3>
               </div>
 
-			  <!--셀렉해서 검색하기 시작  -->
-			  
+			 <!-- 셀렉해서 검색하기 시작-->
               <div class="title_right">
-              <form action="/admin/product_list" name="search" method="post">
-	              <!-- 상품 선택하기 -->
-			      <!-- 상품 검색 하기-->      
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-	              <select name="category" id="category">
-			        <option value="all">상품명 + 상품 설명</option>
-			        <option value="pname">상품명</option>
-			        <option value="pdescript">상품 설명</option>
-			      </select>   
+                  <!-- 검색 시작 -->
+                  <form action="/admin/product_list" name="search" method="post">
+	                  <select name="category" id="category">
+				        <option value="all">전체</option>
+				        <option value="pname">상품명</option>
+				        <option value="pdescript">상품 설명</option>
+				      </select>
                   <div class="input-group">
-                    <input type="text" class="form-control" name="s_word" id="s_word" value="${s_word}" placeholder="Search for...">
+                    <input type="text" class="form-control" name="s_word" id="s_word"  value="${s_word }" placeholder="Search for...">
                     <span class="input-group-btn">
-                      <button class="btn btn-secondary" type="button" onclick="searchBtn()">Go!</button>
+                      <button class="btn btn-secondary" type="button" onclick="searchBtn()" data-toggle="tooltip" title="검색을 해보세요~!">검색</button>
                     </span>
                   </div>
+                  <!-- 검색 끝 -->
+                    </form>
                 </div>
-              </form> 
-             </div>
-           </div>
+              </div>
+            </div>
+		    <!-- 셀렉해서 검색하기 끝-->
+		
 
             <div class="clearfix"></div>
 
             <div class="row">
+         
+
+			<!-- 테이블 시작 -->
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
-                                    <div class="x_title">
-                    <h2>Default Example <small>Users</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Settings 1</a>
-                            <a class="dropdown-item" href="#">Settings 2</a>
-                          </div>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  
-                  
-                  <!-- 상품 리스트 시작 -->
-                  
+
                   <div class="x_content">
                       <div class="row">
                           <div class="col-sm-12">
                             <div class="card-box table-responsive">
                    
-                    <table id="datatable" class="table table-striped table-bordered" style="width:100%">
-                      <thead>
-                        <tr>
-                          <th>상품 번호</th>
-                          <th>상품명</th>
-                          <th>상품 코드</th>
-                          <th>상품 재고</th>
-                          <th>판매 개수</th>
-                        </tr>
-                      </thead>
+			                    <table id="datatable-buttons" class="table table-striped table-bordered" style="width:100%">
+			                      <thead>
+			                        <tr>
+			                          <th>상품 번호</th>
+			                          <th>상품명</th>
+			                          <th>카테고리</th>
+			                          <th>상품 재고</th>
+			                          <th>판매 개수</th>
+			                        </tr>
+			                      </thead>
+			
+			
+			                      <tbody>   
+				                     <c:forEach var ="product" items="${list}"> 
+										<tr>
+											<td><sapn class="table-notice">${product.pno}</sapn></td>
+											<td >
+												<a href="product_view?pno=${product.pno}&page=${page}&category=${category}&s_word=${s_word}">${product.pname}</a>
+											</td>
+											<td>${product.pcode}</td>
+											<td >${product.pstock}</td>
+											<td >${product.psoldcount}</td>
+										</tr>
+									</c:forEach>                
+			                      </tbody>
+			                    </table>
+                 		  </div>
+                		</div>
+              		</div>
+							<!-- 하단 페이징  시작-->
+							<div class="dataTables_paginate paging_simple_numbers" id="datatable-responsive_paginate">
+						     		<ul class="pagination">
+						    	<!-- 첫 페이지 이동 -->
+						    	<c:if test="${page!=1 }">
+						      <a href= "/admin/product_list?page=1&category=${category}&s_word=${s_word}"><li class="paginate_button previous disabled"></li></a>
+						    	</c:if>
+						    	<c:if test="${page==1 }">
+						  			<li class="paginate_button active"></li>
+						    	</c:if>
+						      <!-- 이전 페이지 이동 -->
+						      <c:if test="${page>1 }">
+						      <a href="/admin/product_list?page=${page-1}&category=${category}&s_word=${s_word}"><li class="paginate_button "></li></a>
+						      </c:if>
+						      <c:if test="${page==1 }">
+						      	<li class="prev"></li>
+						      </c:if>
+						      <!-- 페이지 리스트 -->
+						      <c:forEach begin="${startPage}" end="${endPage}" step="1" var="num">
+						      	<c:if test="${num != page }">
+							      <a href="/admin/product_list?page=${num}&category=${category}&s_word=${s_word}">      
+							     	 <li class="paginate_button "><div>${num}</div></li>
+							      </a>
+						      	</c:if>
+						      <c:if test="${num == page }">
+						      	<li class="paginate_button"><div>${num}</div></li>
+						      </c:if>
+						      </c:forEach>
+						      <!-- 다음 페이지 이동 -->
+						      <c:if test="${page<maxPage }">
+							     <a href="/admin/product_list?page=${page+1}&category=${category}&s_word=${s_word}"><li class="paginate_button"></li></a> 
+						      </c:if>
+						      <c:if test="${page==maxPage }">
+						      	<li class="paginate_button">
+						      </c:if>
+						      <!-- 끝 페이지 이동 -->
+						      <c:if test="${page !=  maxPage }">
+						      <a href="/admin/product_list?page=${maxPage}&category=${category}&s_word=${s_word}">
+						      <li class="paginate_button next"></li>
+						      </a>
+						      </c:if>
+						      <c:if test="${page ==  maxPage }">
+						      <li class="paginate_button next"></li>
+						      </a>
+						      </c:if>
+						      
+						    </ul>
+						    </div>
+						<!-- 	<button type='button' class="btn btn-primary" onclick="javascript:location.href='product_write'">상품 등록하기</button> -->
+							<button type="button" class="btn btn-secondary" onclick="javascript:location.href='product_write'"  data-toggle="tooltip" data-placement="bottom" title="상품을 등록하시겠습니까?">상품 등록</button>
+							<!-- 하단 페이징  끝-->
+            	</div>
+               </div>
+             </div>
+			<!-- 테이블 끝 -->
+			
+          
 
-
-                      <tbody>
-                      <c:forEach var="product" items="${list}">
-                        <tr>
-                  	     <td><sapn>${product.pno}</sapn></td>
-							<td>
-								<a href="product_view?pno=${product.pno}&page=${page}&category=${category}&s_word=${s_word}">${product.pname}</a>
-							</td>
-							<td>${product.pcode}</td>
-							<td >${product.pstock}</td>
-							<td >${product.psoldcount}</td>
-                        </tr> 
-                      </c:forEach>
-                      </tbody>
-                      
-                      
-                      
-                    </table>
-                  </div>
-                  </div>
-              </div>
-            </div>
-                </div>
-              </div>
-
-
-
-        </div> <!-- class = row -->
+              
+            </div> <!-- row -->
+          </div>
+        </div>
         <!-- /page content -->
 
-
-<!-- 넘버링 -->
-		<div class="page-num">
-    	<!-- 첫 페이지 이동 -->
-    	<c:if test="${page!=1 }">
-      <a href= "/admin/product_list?page=1&category=${category}&s_word=${s_word}"><li class="first"></li></a>
-    	</c:if>
-    	<c:if test="${page==1 }">
-  			<li class="first"></li>
-    	</c:if>
-      <!-- 이전 페이지 이동 -->
-      <c:if test="${page>1 }">
-      <a href="/admin/product_list?page=${page-1}&category=${category}&s_word=${s_word}"><li class="prev"></li></a>
-      </c:if>
-      <c:if test="${page==1 }">
-      	<li class="prev"></li>
-      </c:if>
-      <!-- 페이지 리스트 -->
-      <c:forEach begin="${startPage}" end="${endPage}" step="1" var="num">
-      	<c:if test="${num != page }">
-	      <a href="/admin/product_list?page=${num}&category=${category}&s_word=${s_word}">      
-	     	 <li class="num"><div>${num}</div></li>
-	      </a>
-      	</c:if>
-      <c:if test="${num == page }">
-      	<li class="num on"><div>${num}</div></li>
-      </c:if>
-      </c:forEach>
-      <!-- 다음 페이지 이동 -->
-      <c:if test="${page<maxPage }">
-	     <a href="/admin/product_list?page=${page+1}&category=${category}&s_word=${s_word}"><li class="next"></li></a> 
-      </c:if>
-      <c:if test="${page==maxPage }">
-      	<li class="next">
-      </c:if>
-      <!-- 끝 페이지 이동 -->
-      <c:if test="${page !=  maxPage }">
-      <a href="/admin/product_list?page=${maxPage}&category=${category}&s_word=${s_word}">
-      <li class="last"></li>
-      </a>
-      </c:if>
-      <c:if test="${page ==  maxPage }">
-      <li class="last"></li>
-      </a>
-      </c:if>
-      
-    </div>
-	<button type='button' class="btn btn-primary" onclick="javascript:location.href='product_write'">상품 등록하기</button>
-		
- 
+     
       </div>
     </div>
 

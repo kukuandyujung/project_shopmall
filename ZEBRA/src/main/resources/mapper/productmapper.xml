@@ -225,5 +225,69 @@
    
     </select>
     
+    
+    
+    
+    <!-- ===============================주문 관리 페이지============================================  -->
+      
+      <!-- 주문 전체에서 셀렉하기 개수 -->
+      <select id="selectorder_page_listCount" resultType="int">
+      select count(*) from zebraorder
+      <if test="ordercate == 'prepare'">      <!-- 준비 중 -->
+         where OSTATUS='배송 중'
+      </if>
+      <if test="ordercate == 'shipping'">      <!-- 배송 중 -->
+         where OSTATUS='배송 완료'
+      </if>
+      <if test="ordercate == 'completed'">      <!-- 배송 완료 -->
+         where OSTATUS='상품 준비 중'
+      </if>
+   	  </select>
+   
+   
+	 <!-- 상품 전체 가져오기 -->
+	 <select id="selectOrderAll" resultType="com.java.dto.ProductDto">
+  	 <!-- 공통 영역 -->
+            select * from (select rownum rnum, a.* from
+         (select * from zebraorder 
+            
+         <if test="ordercate == 'prepare'">      <!-- 준비 중 -->
+         where OSTATUS='배송 중'
+      </if>
+      <if test="ordercate == 'shipping'">      <!-- 배송 중 -->
+         where OSTATUS='배송 완료'
+      </if>
+      <if test="ordercate == 'completed'">      <!-- 배송 완료 -->
+         where OSTATUS='상품 준비 중'
+      </if>
+         
+      
+        <!-- 공통 영역  -->
+        <![CDATA[
+        order by ONO asc) a)
+        where rnum>=#{startRow} and rnum<=#{endRow}
+       ]]>
+
+      
+   	</select>
+    
+     <!-- 상품 1개 가져오기 -->
+   <select id="selectOrderOne" resultType="com.java.dto.ProductDto">
+      select * from zebraorder where CNO=#{CNO}
+   </select>
+    <!-- ===============================주문 관리 페이지============================================  -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 </mapper>
 

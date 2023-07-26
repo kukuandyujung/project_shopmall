@@ -6,7 +6,7 @@ import java.util.HashMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+import com.java.dto.OrderDto;
 import com.java.dto.ProductDto;
 import com.java.mapper.ProductMapper;
 
@@ -202,11 +202,59 @@ public class ProductServiceImpl implements ProductService{
    }
 
 
+   //====================================주문 관리========================================
+   //주문 관리 페이지에 주문 전체 가져오기 
+    @Override
+	public HashMap<String, Object> selectOrderAll(int page, String ordercate, String OSTATUS) {
+		HashMap<String, Object> map =new HashMap<>(); 
+		int order_page_listCount = productMapper.selectorder_page_listCount(ordercate,OSTATUS);
+		  System.out.println("ProductServiceImpl order_page_listCount : " + order_page_listCount);;
+	      //최대페이지
+	      int maxPage = (int)Math.ceil((double)order_page_listCount/10); // 26/10 3개page
+	      int startPage = (int)((page-1)/10)*10 + 1; //1
+	      int endPage = startPage+10-1;
+	      int startRow = (page-1)*10+1;  //1page -> 1-10, 2page -> 11-20
+	      int endRow = startRow+10-1;
+	      //endPage가 최대페이지보다 더 크면 최대페이지까지만 노출
+	      if(endPage>maxPage) endPage=maxPage;
+	      
+	   
+	      ArrayList<ProductDto> list = productMapper.selectOrderAll(startRow, endRow, ordercate,OSTATUS);
+	      map.put("list", list);
+	      map.put("order_page_listCount", order_page_listCount);
+	      map.put("maxPage", maxPage);
+	      map.put("startPage", startPage);
+	      map.put("endPage", endPage);
+	      map.put("page", page);
+	      map.put("ordercate", ordercate);
+	      map.put("OPAYMENT", OSTATUS);
+	      
+	      return map;
+		
+	}
+    //주문 관리 페이지에서 주문 하나 가져오기
+    @Override
+    public HashMap<String, Object> selectOrderOne(int CNO) {
+    	HashMap<String, Object> map = new HashMap<>();
+    	OrderDto preDto = productMapper.selectOrderPreOne(CNO);
+    	OrderDto oDto = productMapper.selectOrderOne(CNO);
+    	OrderDto nextDto = productMapper.selectOrderNextOne(CNO);
+    	map.put("preDto", preDto);
+	    map.put("nextDto", nextDto);
+	    map.put("pdto", oDto);
+    	return map;
+    }   
+   
+ 
+
+	//====================================주문 관리========================================
 
 
+
+
+
    
-   
-   
+
 
 
 }

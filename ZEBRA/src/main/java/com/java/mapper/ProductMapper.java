@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.java.dto.OrderDto;
 import com.java.dto.ProductDto;
 
 @Mapper
@@ -51,6 +52,23 @@ public interface ProductMapper {
    //상품 페이지에서 상품  총 개수를 반환하기 위한 함수 
    int selectproduct_page_listCount(String s_word, String pcolor, String sorting);
 
+   //===================================주문 관리===============================================
+   //주문 관리에서 주문 총 개수를 반환하기 위한 함수
+   int selectorder_page_listCount(String ordercate, String OSTATUS);
+
+   //주문 관리에서 주문 리스트 주문 전체 가져오기 
+   ArrayList<ProductDto> selectOrderAll(int startRow, int endRow, String ordercate, String OSTATUS);
+
+   //주문 관리 주문 이전 주문
+   OrderDto selectOrderPreOne(int CNO);
+
+   //주문 관리 주문 1개 가져오기
+   OrderDto selectOrderOne(int CNO);
+
+   //주문 관리 주문 다음 주문 
+   OrderDto selectOrderNextOne(int CNO);
+
+   //===================================주문 관리===============================================
 
 
 
