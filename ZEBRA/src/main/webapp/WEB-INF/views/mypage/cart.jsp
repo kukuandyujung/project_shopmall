@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title> ZEBRA </title>
-<link rel="icon" href="/img/logo.png" type="image/png">
+<link rel="icon" href="/img/logo2.png" type="image/png">
 <link rel="stylesheet" type="text/css" href="/css/reset.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="/css/layout.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="/css/content.css?v=Y" />
