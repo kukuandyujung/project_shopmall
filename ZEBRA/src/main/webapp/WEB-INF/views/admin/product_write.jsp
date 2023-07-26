@@ -133,9 +133,10 @@
                         </tr>
                         
                         <tr>
-                          <th scope="row">판매 개수</th>
+                          <th scope="row">판매 개수</th> <!-- 상품 등록 시 상품 테이블에 null값이 안 들어가기 위해서! -->
                           <td>
-                          	<input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="psoldcount" placeholder="ex) 1 "  />
+                          0
+<!--                           	<input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="psoldcount" placeholder="ex) 1 "  /> -->
                           </td> 
                         </tr>
 

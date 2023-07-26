@@ -37,7 +37,7 @@ public interface ProductMapper {
 
    //==============================여기부터 상품 페이지==============================================
    //상품 페이지에서 women 상품 전체 가져오기
-   ArrayList<ProductDto> selectPageAll(int startRow, int endRow, String category, String s_word);
+   ArrayList<ProductDto> selectPageAll(int startRow, int endRow, String s_word, String sorting, String pcolor);
 
    //상세 페이지에서 상품 1개 가져오기 
    ProductDto selectPageOne(int pno);
@@ -47,6 +47,9 @@ public interface ProductMapper {
 
    //상품 페이지에서 home 상품 전체 가져오기 
    ArrayList<ProductDto> selectHomeAll(int startRow, int endRow, String category, String s_word);
+
+   //상품 페이지에서 상품  총 개수를 반환하기 위한 함수 
+   int selectproduct_page_listCount(String s_word, String pcolor, String sorting);
 
 
 

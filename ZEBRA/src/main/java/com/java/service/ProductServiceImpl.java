@@ -89,38 +89,59 @@ public class ProductServiceImpl implements ProductService{
     //==========================여기부터 상품 페이지===========================================
    
    @Override //상품 페이지에 상품 전체 가져오기
-   public HashMap<String, Object> selectPageAll(int page, String category, String s_word) {
+   public HashMap<String, Object> selectPageAll(int page, String s_word, String sorting,String pcolor) {
       //상품 페이지에 상품 전체 가져오기
-      HashMap<String, Object> map = new HashMap<>();
+      //결과를 담을 객체를 생성하고 이후 조회된 상품 리스트, 페이지 정보 등을 객체에 저장하여 반환 
+	  HashMap<String, Object> map = new HashMap<>();
       //상품 페이지에서 넘버링 
-      int listCount = productMapper.selectListCount(category, s_word);
-      System.out.println("ProductServiceImpl listCount : " + listCount);
-      //최대페이지
-      int maxPage = (int)Math.ceil((double)listCount/10); // 26/10 3개page
-      int startPage = (int)((page-1)/10)*10 + 1; //1
+	  //상품의 총 개수를 데이터 베이스로부터 조회. 
+	  //productMapper는 데이터베이스와 상호작용하는 데이터 메퍼 클래스로 추정된다. 
+	  //selectListCount는 해당 카테고리와 검색어를 기준으로 상품의 총 개수를 반환하는 함수
+      int product_page_listCount = productMapper.selectproduct_page_listCount(s_word, pcolor, sorting);
+      System.out.println("ProductServiceImpl product_page_listCount : " + product_page_listCount);
+      
+      //전체 상품 개수를 페이지 당 9개씩 보여줄 때 필요한 전체 페이지 수를 계산하기 
+      int maxPage = (int)Math.ceil((double)product_page_listCount/9); // 67/9 8개 page
+      int startPage = (int)((page-1)/9)*9 + 1; //현재 페이지에 해당하는 시작 페이지를 계산하기. 
+      //페이지 당 9개씩 보여줄 때 현재 페이지의 시작 페이지가 된다. 
+      //예를 들어 페이지가 1일 경우 시작페이지는 1이 된다. 
+      
+      //시작 페이지로부터 10개의 페이지를 더한 후 1을 빼서 현재 페이지 범위에서의 끝 페이지를 계산
+      //예를 들어 시작 페이지가 1이라면 마지막 페이지는 10이 된다. 
       int endPage = startPage+10-1;
-      int startRow = (page-1)*10+1;  //1page -> 1-10, 2page -> 11-20
-      int endRow = startRow+10-1;
+      
+      //현재 페이지에 해당하는 시작 레코드 번호를 계산하기
+      //페이지당 9개씩 보여줄 때 해당 페이지의 첫 번째 상품의 인덱스를 구하기 
+      //예를 들어 페이지가 1일 경우에 startRow는 1이 된다. 
+      int startRow = (page-1)*9+1;  //1page -> 1-9, 2page -> 10-18
+      
+      //시작 레코드 번호로 부터 9개의 상품을 가져올 때 마지막 상품의 인덱스를 계산
+      //시작 startRow가 1이라면 endRow는 9가 된다.
+      int endRow = startRow+9-1;
+      
       //endPage가 최대페이지보다 더 크면 최대페이지까지만 노출
       if(endPage>maxPage) endPage=maxPage;
       
       
-      ArrayList<ProductDto> list = productMapper.selectPageAll(startRow, endRow, category,s_word);
+      ArrayList<ProductDto> list = productMapper.selectPageAll(startRow, endRow, s_word, pcolor, sorting);
       map.put("list", list);
-      map.put("listCount", listCount);
+      map.put("selectproduct_page_listCount", product_page_listCount);
       map.put("maxPage", maxPage);
       map.put("startPage", startPage);
       map.put("endPage", endPage);
       map.put("page", page);
-      map.put("category", category);
       map.put("s_word", s_word);
+      map.put("pcolor", pcolor);
+      map.put("sorting", sorting);
       
       
       
       return map;
       
    }
-
+	      
+	    
+   
 
    @Override//상세 페이지에 상품 1개 가져오기 
    public HashMap<String, Object> selectPageOne(int pno) {
@@ -145,6 +166,8 @@ public class ProductServiceImpl implements ProductService{
    }
 
 
+   
+   //홈 제품 
 
    @Override
    public HashMap<String, Object> selectHomeAll(int page, String category, String s_word) {
@@ -177,6 +200,8 @@ public class ProductServiceImpl implements ProductService{
       
       return map;
    }
+
+
 
 
    
