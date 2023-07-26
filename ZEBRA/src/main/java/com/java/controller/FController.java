@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.java.dto.CartDTO;
+import com.java.dto.MemberDto;
 import com.java.mapper.CartMapper;
 import com.java.service.CartService;
 
@@ -76,7 +77,9 @@ public class FController {
 		return "payment/payment";
 	}
 	@RequestMapping("/mypage/myaccount")
-	public String myaccount() {
+	public String myaccount(MemberDto member, Model model) {
+		
+		/* member.addAttribute("mdto",member); */
 		return "mypage/myaccount";
 	}
 	@RequestMapping("/mypage/orderhistory")

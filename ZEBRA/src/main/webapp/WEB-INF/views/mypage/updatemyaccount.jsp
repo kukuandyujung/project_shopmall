@@ -72,17 +72,22 @@
 							<tbody>
 								<tr>
 									<th scope="row"><span>이름  </span></th>
-									<td>김슬기</td>
+									<td>${mdto.MNAME}</td>
 								</tr>
 								<tr>
 								<th scope="row"><span>성별 </span></th>
 								<td>
 								  <ul class="baseQues">
 								    <li>
-								      <input type="radio" name="gender" id="solar" class="radio_t" checked="checked"/><label for="solar">남성</label>
+								     <c:if test="${mdto.gender!='male'}">
+								      <input type="radio" name="MGENDER" id="solar" class="radio_t" checked="checked" />
+								      </c:if>
+								      <label for="solar">남성</label>
+								     <c:if test="${mdto.gender!='female'}">
+								      </c:if>
 								    </li>
 								    <li>
-								      <input type="radio" name="gender" id="lunar" class="radio_t"/><label for="lunar">여성</label>
+								      <input type="radio" name="MGENDER" id="lunar" va class="radio_t" /><label for="lunar">여성</label>
 								    </li>
 								  </ul>
 								</td>

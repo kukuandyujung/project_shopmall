@@ -49,8 +49,28 @@ public class MemberController {
 	}
 	// START SUN //	
 	
-	
-	
+	//회원정보수정
+	@GetMapping("/mypage/updatemyaccount")
+	public String updatemyaccount(MemberDto mdto,Model model) {
+		model.addAttribute("mdto",mdto);
+		return "mypage/updatemyaccount";
+	}
+		
+	 // id search - 이름 & 이메일 검사  
+	  @PostMapping("/member/idEmaiCheck")  
+	  @ResponseBody 
+	  public String checkIdEmail(String MNAME, String MEMAIL) {
+	  System.out.println("id search - 이름 & 이메일 checkID : " + MNAME);
+	  System.out.println("id search - 이름 & 이메일 checkMAIL : " + MEMAIL);
+	  
+	  MemberDto mdto = memberService.selectIdEmail(MNAME, MEMAIL); 
+	  if (mdto != null) { 
+		  return mdto.getMID(); 
+		  }else{ 
+			 return "fail"; 
+		  		} 
+	  }
+			
 	// 신규 회원 가입 및 등록
 	@PostMapping("/member/register02")
 	public String register02(MemberDto member, Model model) {

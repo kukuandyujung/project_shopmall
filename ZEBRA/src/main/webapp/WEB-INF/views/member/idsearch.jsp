@@ -134,27 +134,29 @@
 										
 									</td>
 									</tr>
-<!-- ================ start 이메일 인증 area ================= -->	
+<!-- ================ start 이메일 인증 임시 비밀번호 area ================= -->	
 		<script type="text/javascript">		
 		   let tempcode="";
 		    
-		   function emailView(){
-			   alert("이름과 이메일을 입력한 후 인증코드 발송을 클릭하세요.");
-			   $(".memberbd").css("display","block");
+		   /*  function emailView(){
+			  alert("이름과 이메일을 입력한 후 인증코드 발송을 클릭하세요.");
+			   //$(".memberbd").css("display","block");
 		   }
-
+ */
 		   function emailBtn(){
 			   alert("임시번호를 발송합니다.");
-			   //alert($("#mem_name").val());
-			   //alert($("#mem_email").val());
+			   alert($("#mem_name").val());
+			   alert($("#mem_email").val());
 			   
 			   $.ajax({
 				   url:"/email/emailSend",
 				   type:"post",
-				   data:{"EMAIL":$("#mem_name").val(),"email":$("#mem_email").val()},
+				   data:{"ENAME":$("#mem_name").val(),
+					   	 "MEMAIL":$("#mem_email").val()
+					   	 },
 				   success:function(data){
 					   alert("이메일이 발송되었습니다.");
-					   console.log(data);
+					  // console.log(data);
 					   //임시비밀번호
 					   tempcode=data;
 					   $("#mem_name").attr("readonly",true);
@@ -172,7 +174,7 @@
 									<td>
 										<ul class="pta">
 											<li class="r10"><input type="text"  class="emailType" name="EMAIL" id="mem_email" /></li>
-											<li><a onclick="checkIdEmailBtn()" style="cursor: pointer;"  class="gbtn">인증코드발송</a></li>
+											<li><a onclick="emailBtn()" style="cursor: pointer;"  class="gbtn">인증코드발송</a></li>
 											<li class="pt5"><span class="mvalign">입력하신 이메일로 인증코드가 발송됩니다. 인증코드를 아래에 입력해주세요.</span></li>
 										</ul>
 									</td>

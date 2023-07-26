@@ -1,7 +1,10 @@
 package com.java.controller;
   
   import org.springframework.beans.factory.annotation.Autowired; import
-  org.springframework.stereotype.Controller; import
+  org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import
   org.springframework.web.bind.annotation.PostMapping; import
   org.springframework.web.bind.annotation.RequestMapping; import
   org.springframework.web.bind.annotation.ResponseBody;
@@ -18,18 +21,9 @@ import com.java.service.MemberService;
   
   @ResponseBody 
   public String emailSend(String MNAME, String MEMAIL) {
-	  System.out.println("name : "+MNAME); System.out.println("email : "+MEMAIL);
+	  System.out.println("controller name : "+MNAME); 
+	  System.out.println("controller email : "+MEMAIL);
   
-
-		/*
-		 * //id-search 확인 메일 전송
-		 * 
-		 * @RequestMapping("member/id_email") public String id_email() { return
-		 * "member/id_email"; } //비밀번호 확인 메일전송
-		 * 
-		 * @RequestMapping("member/pw_email") public String pw_email() { return
-		 * "member/pw_email"; }
-		 */
   
   //임시비밀번호 코드 생성 
   String pwCode = emailService.insertPwCode(MNAME, MEMAIL);
@@ -39,19 +33,18 @@ import com.java.service.MemberService;
   return "pwCode"; 
   }
   
-  // id search - 이름 & 이메일 검사  
-  @PostMapping("/member/idEmaiCheck")  
-  @ResponseBody 
-  public String checkIdEmail(String MNAME, String MEMAIL) {
-  System.out.println("id search - 이름 & 이메일 checkID : " + MNAME);
-  System.out.println("id search - 이름 & 이메일 checkMAIL : " + MEMAIL);
+  /*
+   * //id-search 확인 메일 전송
+   * 
+   * @RequestMapping("member/id_email") public String id_email() { return
+   * "member/id_email"; } //비밀번호 확인 메일전송
+   * 
+   * @RequestMapping("member/pw_email") public String pw_email() { return
+   * "member/pw_email"; }
+   */
   
-  MemberDto mdto = memberService.selectIdEmail(MNAME, MEMAIL); 
-  if (mdto != null) { 
-	  return mdto.getMNAME(); 
-	  }else{ 
-		 return "fail"; 
-	  		} 
-  }
+  
+		
+ 
   
   }
