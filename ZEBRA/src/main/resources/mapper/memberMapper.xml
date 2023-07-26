@@ -84,6 +84,12 @@
 	
 <!--  START SUN  -->
 
+
+<!-- 임시 비밀번호 -->
+<update id="changepwsend"  >	
+	 UPDATE ZEBRA SET MPASSWORD =#{pwcode} where  MEMAIL= #{MEMAIL}
+</update>
+
 <!--신규 회원 가입 및 등록  -->
 <insert id="insertMember" >
 	insert into zebra (MCODE,MID,MPASSWORD,MNAME,MGENDER,MBIRTH,MPHONE,MEMAIL,MAGREE,MJOINDAY) values
@@ -104,6 +110,8 @@
 	select * from zebra where MNAME=#{MNAME} and MEMAIL=#{MEMAIL}
 </select>
 <!--  END SUN  -->
+
+
 
 </mapper>
 

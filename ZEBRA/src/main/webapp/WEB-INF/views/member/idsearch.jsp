@@ -124,6 +124,7 @@
 					<h3>비밀번호 이메일 인증 코드 입력</h3>
 					<div class="informbox">
 						<div class="inform">
+						<div id="header">
 								<tr>
 									<th scope="row"><span>이름 *</span></th>
 									<td>
@@ -134,6 +135,7 @@
 										
 									</td>
 									</tr>
+									</div>
 <!-- ================ start 이메일 인증 임시 비밀번호 area ================= -->	
 		<script type="text/javascript">		
 		   let tempcode="";
@@ -155,7 +157,7 @@
 					   	 "MEMAIL":$("#mem_email").val()
 					   	 },
 				   success:function(data){
-					   alert("이메일이 발송되었습니다.");
+					   alert("이메일이 발송되었습니다. 로그인 페이지로 이동해 주세요");
 					  // console.log(data);
 					   //임시비밀번호
 					   tempcode=data;
@@ -174,12 +176,12 @@
 									<td>
 										<ul class="pta">
 											<li class="r10"><input type="text"  class="emailType" name="EMAIL" id="mem_email" /></li>
-											<li><a onclick="emailBtn()" style="cursor: pointer;"  class="gbtn">인증코드발송</a></li>
+											<li><a onclick="emailBtn()" style="cursor: pointer;"  class="gbtn"> 임시 비밀번호 발송 </a></li>
 											<li class="pt5"><span class="mvalign">입력하신 이메일로 인증코드가 발송됩니다. 인증코드를 아래에 입력해주세요.</span></li>
 										</ul>
 									</td>
 								</tr>
-								<tr>
+								<!-- <tr>
 									<th scope="row"><span>인증코드입력 *</span></th>
 									<td>
 										<ul class="pta">
@@ -187,7 +189,7 @@
 											<li><span class="mvalign">※ 이메일을 확인해서 인증코드를 입력해주세요.</span></li>
 										 </ul>
 									</td>
-								</tr>
+								</tr> -->
 						
 							</tbody>
 							</table>
@@ -196,7 +198,7 @@
 		
 
 
-   	<script type="text/javascript">
+   	<!-- <script type="text/javascript">
    function authBtn(){
 	 //코드입력-이름
 	 //   alert($("#temp_code").val());
@@ -208,16 +210,16 @@
 	   
 	   if(tempcode==$("#temp_code").val() ){
 		   alert("이메일 인증이 완료되었습니다.");
-		   location.href="/member/step02";
+		   location.href="//login";
 	   }else{
 		   alert("이메일 인증코드가 틀립니다. 다시 인증요청을 해주세요.");
 		   $("#temp_code").val("");
 	   }
    }//authbtn
-</script>
-</div>
+</script> -->
+</div><!-- 
 
-							<!-- Btn Area -->
+							Btn Area
 							<div class="btnArea">
 								<div class="bCenter">
 									<ul>
@@ -226,11 +228,11 @@
 									</ul>
 								</div>
 							
-							<!-- //Btn Area -->
+							//Btn Area
 						
 					<p class="alert">지브라 온라인 쇼핑몰에서는 2012년 8월 18일로 시행되는 정보통신망 이용 촉진 및 정보 보호 등에 관한 법률 “주민등록번호의 <span>사용 제한”과 관련하여 주민등록번호를 수집하지 않습니다.</span></p>
 					</div>
-					</div>
+					</div> -->
 
 				</div>
 			</div>

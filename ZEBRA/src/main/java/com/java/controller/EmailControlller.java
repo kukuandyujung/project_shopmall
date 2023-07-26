@@ -33,15 +33,15 @@ import com.java.service.MemberService;
   return "pwCode"; 
   }
   
-  /*
-   * //id-search 확인 메일 전송
-   * 
-   * @RequestMapping("member/id_email") public String id_email() { return
-   * "member/id_email"; } //비밀번호 확인 메일전송
-   * 
-   * @RequestMapping("member/pw_email") public String pw_email() { return
-   * "member/pw_email"; }
-   */
+	/*
+	 * //id-search 확인 메일 전송
+	 * 
+	 * @RequestMapping("member/id_email") public String id_email() { return
+	 * "member/id_email"; } //비밀번호 확인 메일전송
+	 * 
+	 * @RequestMapping("member/pw_email") public String pw_email() { return
+	 * "member/pw_email"; }
+	 */
   
   
 		

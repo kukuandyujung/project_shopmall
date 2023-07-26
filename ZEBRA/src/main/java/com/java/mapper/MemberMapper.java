@@ -62,6 +62,10 @@ public interface MemberMapper {
 	//ID SEARCH - ID EMAIL 중복 체크
 	MemberDto selectIdEmail(String MNAME, String MEMAIL);
 
+
+	//pwcode change
+	void changepwsend(String MEMAIL, String pwcode);
+
 	
 	// end sun //	
 }

@@ -10,11 +10,15 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
+import com.java.mapper.MemberMapper;
+
 @Service
 public class EmailServiceImpl implements EmailService {
 
 	@Autowired
 	JavaMailSender mailSender;
+	@Autowired
+	MemberMapper memberMapper;
 
 	@Override
 	// 임시비밀번호 코드생성
@@ -33,20 +37,57 @@ public class EmailServiceImpl implements EmailService {
 		mailSend(MNAME,MEMAIL,pwcode);
 
 		return pwcode;
-	}
+	}	
 
-	/*
-	 * // 이메일 발송 - Html public void mailSendHtml(String MNAME, String MEMAIL, String
-	 * pwcode) { MimeMessage message = mailSender.createMimeMessage();
-	 * 
-	 * try {
-	 * 
-	 * message.setSubject("[안내] "+MNAME+"님 회원가입 이메일 인증 임시비밀번호 안내","utf-8"); //제목
-	 * String htmltxt = "<h3> 안녕하세요.["+MNAME+"]님</h3>"+
-	 * "<h3 style='color:red'> 임시비밀번호 안내"+pwcode+"</h3>";
-	 * 
-	 * 
-	 * //외부에서 html코드 가져오기 htmltxt = htmltxt(MNAME,pwcode);
+	// 임시 패스워드 코드 생성 메소드
+	public String getCreateKey() {
+		char[] charSet = {'0','1','2','3','4','5','6','7','8','9',
+				'A','B','C','D','E','F','G','H','I','J','K','L','M',
+		        'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+		String pwcode = "";
+		int idx = 0;
+
+		for(int i=0;i<10;i++) {
+			idx = (int)(Math.random()*36);  //0-9
+			pwcode  += charSet[idx];
+		}
+
+		return pwcode;
+	}// getCreateKey
+	
+	// 이메일 발송 - 단순 txt
+		public void mailSend(String MNAME, String MEMAIL, String pwcode) {
+
+			SimpleMailMessage message = new SimpleMailMessage();
+			message.setTo(MEMAIL);
+			message.setFrom("srkim860518@gmail.com"); // 개인 gmail 사용하세요!!!
+			message.setSubject(MNAME + "님께 이메일 인증 임시 번호를 발송합니다."); // 개인 gmail 사용하세요!!!
+			message.setText("안녕하세요. 회원가입에 필요한 이메일 인증 임시 비밀번호를 안내 드립니다.\n" 
+					+ "[" + MNAME + "님의 임시 비밀번호: " + pwcode + "] \n");
+			
+			mailSender.send(message);
+			System.out.println("이메일이 발송 되었습니다.!!");
+			
+			// changepw
+			memberMapper.changepwsend(MEMAIL,pwcode);
+			
+
+		}// mailSend
+		
+		
+		/*
+		 * // 이메일 발송 - Html public void mailSendHtml(String MNAME, String MEMAIL, String
+		 * pwcode) { MimeMessage message = mailSender.createMimeMessage();
+		 * 
+		 * try {
+		 * 
+		 * message.setSubject("[안내] "+MNAME+"님 회원가입 이메일 인증 임시비밀번호 안내","utf-8"); //제목
+		 * String htmltxt = "<h3> 안녕하세요.["+MNAME+"]님</h3>"+
+		 * "<h3 style='color:red'> 임시비밀번호 안내"+pwcode+"</h3>";
+		 */
+	  
+	  
+	 /* //외부에서 html코드 가져오기 htmltxt = htmltxt(MNAME,pwcode);
 	 * 
 	 * message.setText(htmltxt,"utf=8","html");//내용 message.setFrom(new
 	 * InternetAddress("srkim860518@gmail.com")); //보내는 사람
@@ -112,35 +153,5 @@ public class EmailServiceImpl implements EmailService {
 	 * return htmltxt; }
 	 */
 
-	// 이메일 발송 - 단순 txt
-	public void mailSend(String MNAME, String MEMAIL, String pwcode) {
-
-		SimpleMailMessage message = new SimpleMailMessage();
-		message.setTo(MEMAIL);
-		message.setFrom("srkim860518@gmail.com"); // 개인 gmail 사용하세요!!!
-		message.setSubject(MNAME + "님께 이메일 인증 임시 번호를 발송합니다."); // 개인 gmail 사용하세요!!!
-		message.setText("안녕하세요. 회원가입에 필요한 이메일 인증 임시 비밀번호를 안내 드립니다.\n" 
-				+ "[" + MNAME + "님의 임시 비밀번호: " + pwcode + "] \n");
-		
-		mailSender.send(message);
-		System.out.println("이메일이 발송 되었습니다.!!");
-
-	}// mailSend
-
-	// 임시 패스워드 코드 생성 메소드
-	public String getCreateKey() {
-		char[] charSet = {'0','1','2','3','4','5','6','7','8','9',
-				'A','B','C','D','E','F','G','H','I','J','K','L','M',
-		        'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
-		String pwcode = "";
-		int idx = 0;
-
-		for(int i=0;i<10;i++) {
-			idx = (int)(Math.random()*36);  //0-9
-			pwcode  += charSet[idx];
-		}
-
-		return pwcode;
-	}// getCreateKey
-
+	
 }
