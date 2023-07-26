@@ -296,7 +296,7 @@
 .faqTab ul li{float:left; padding:0 5px 0 0;}
 .faqTab ul li a{display:block; width:163px; height:40px; line-height:40px; background:#ebebeb; font-weight:600; font-size:14px; text-align:center;}
 .faqTab ul li a span{color:#3A4CEA;}
-.faqTab ul li a.on{background:#5a524c; color:#fff;}
+.faqTab ul li a.on{background:#3A4CEA; color:#fff;}
 .faqTab ul li a.on span{color:#fff;}
 .faqTab ul li.last{padding:0;}
 .faqTab ul li.last a{width:166px;}
