@@ -108,12 +108,15 @@ function cartCtn() {
 		
 		form.cartCount = $("#sst").val(); 
 		$.ajax({
-			url: '/mypage/cart/add',
+			url: '/mypage/cart/${sessionId}',
 			type: 'POST',
 			data: form,
 			success: function(result){
 				cartAlert(result);
-				console.log({"cartCount" : form.cartCount});
+				console.log({"cartCount" : form.cartCount});	
+				console.log(form.MID); // 출력 테스트
+				console.log(form.pno); // 출력 테스트
+				console.log(form.cartCount); // 출력 테스트
 			}
 		})
 	};

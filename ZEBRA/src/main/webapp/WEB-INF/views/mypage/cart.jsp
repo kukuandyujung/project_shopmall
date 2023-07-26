@@ -52,9 +52,7 @@
 			/* function setTotalInfo(){ */		
 			let totalPrice = 0;				// 총 가격
 			let totalCount = 0;				// 총 갯수
-			let finalTotalPrice = 0; 		// 최종 가격			
-			console.log({"1차 totalPrice" : totalPrice}); // 테스트	
-			console.log($(".cart_info_td").length) // 테스트
+			let finalTotalPrice = 0; 		// 최종 가격		
 			
 			$(".cart_info_td").each(function(index, element){
 				/* if($(element).find(".individual_cart_checkbox").is(":checked") === true){ */			

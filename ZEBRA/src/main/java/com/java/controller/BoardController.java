@@ -30,7 +30,7 @@ public class BoardController {
 	
 	@RequestMapping("/product/product_detail")
 	public String product_detail(int pno, Model model) {
-		//상품 번호의 값을 왜 디폴드 값으로 1을 했는 가 ? 
+		//상품 번호의 값을 왜 디폴드 값으로 1을 했는가 ? 
 		System.out.println("product_detail pno  : " + pno );
 		
 		//상품 1개 가져오기 
