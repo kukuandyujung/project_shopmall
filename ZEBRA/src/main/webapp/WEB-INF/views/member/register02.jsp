@@ -372,6 +372,23 @@ function joinBtn(){
 											</ul>
 										</td>
 									</tr>
+									
+									<tr>
+									<th scope="row"><span>주소 </span></th>
+									<td>
+										<ul class="pta">
+											<li>
+												<input type="text" class="w134" />&nbsp;
+											</li>
+											<li><a href="zip.html" class="addressBtn"><span>우편번호 찾기</span></a></li>
+											<li class="pt5"><input type="text" class="addressType" /></li>
+											<li class="cb">
+												<span class="mvalign">※ 상품 배송 시 받으실 주소입니다. 주소를 정확히 적어 주세요.</span>
+											</li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
 
 									<tr>
 										<th scope="row"><span>생년월일</span></th>
