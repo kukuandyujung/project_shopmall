@@ -13,6 +13,8 @@
 <link rel="stylesheet" type="text/css" href="/css/reset.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="/css/layout.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="/css/content.css?v=Y" />
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js" type="text/javascript"></script>
 <script type="text/javascript" src="/js/top_navi.js"></script>
 <script type="text/javascript" src="/js/left_navi.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
@@ -41,147 +43,44 @@
 
 <script>
 /* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
-
-$(document).ready(function()){
-	
-	/* 종합 정보 섹션 정보 삽입 
-	setTotalInfo();
-	*/
-	
-	/* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
-	/* function setTotalInfo(){  */
+(function($) {	
+	$(document).ready(function() {			
+		/* 종합 정보 섹션 정보 삽입 */
+		/* setTotalInfo();	 */
 		
-		let totalPrice = 0;				// 총 가격
-		let totalCount = 0;				// 총 갯수
-		let finalTotalPrice = 0; 		// 최종 가격
-		
-		$(".cart_info_td").each(function(index, element){
+		/* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
+			/* function setTotalInfo(){ */		
+			let totalPrice = 0;				// 총 가격
+			let totalCount = 0;				// 총 갯수
+			let finalTotalPrice = 0; 		// 최종 가격			
+			console.log({"1차 totalPrice" : totalPrice}); // 테스트	
+			console.log($(".cart_info_td").length) // 테스트
 			
-			/* if($(element).find(".individual_cart_checkbox").is(":checked") === true){ */
+			$(".cart_info_td").each(function(index, element){
+				/* if($(element).find(".individual_cart_checkbox").is(":checked") === true){ */			
+				// 총 가격
+				totalPrice += parseInt($(element).find(".individual_pprice_input").val());				
+				// 총 갯수
+				totalCount += parseInt($(element).find(".quantity_input").val());			
+				/* } */					
+			});
+			
+			/* 최종 가격 */
+			finalTotalPrice = totalPrice;	
+			console.log({"finalTotalPrice" : finalTotalPrice}); // 테스트			
+			$("#finalTotalPrice").val(finalTotalPrice); // script에서 input text - id에 값 주입하기
+			 
+			/* 값 삽입 */ 
 			// 총 가격
-			totalPrice += parseInt($(element).find(".individual_pprice_input").val());
+			$(".totalPrice_span").text(totalPrice.toLocaleString());
 			// 총 갯수
-			totalCount += parseInt($(element).find(".quantity_input").val());			
-			/* } */	
+			$(".totalCount_span").text(totalCount);
+			// 최종 가격 LINE.302
+			$(".finalTotalPrice_span").text(finalTotalPrice.toLocaleString()); /* LINE 231
+			/* } */				 
+			
 		});
-		
-		/* 최종 가격 */
-		finalTotalPrice = totalPrice;
-		
-		/* 값 삽입 */
-		// 총 가격
-		$(".totalPrice_span").text(totalPrice.toLocaleString());
-		// 총 갯수
-		$(".totalCount_span").text(totalCount);
-		// 최종 가격 LINE.302
-		$(".finalTotalPrice_span").text(finalTotalPrice.toLocaleString());
-		
-		/* } */
-	
-};
-
-/* 체크여부에따른 종합 정보 변화 */
-$(".individual_cart_checkbox").on("change", function(){
-	/* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
-	setTotalInfo($(".cart_info_td"));
-});
-
-/* 체크박스 전체 선택 */
-$(".all_check_input").on("click", function(){
-
-	/* 체크박스 체크/해제 */
-	if($(".all_check_input").prop("checked")){
-		$(".individual_cart_checkbox").attr("checked", true);
-	} else{
-		$(".individual_cart_checkbox").attr("checked", false);
-	}
-	
-	/* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
-	setTotalInfo($(".cart_info_td"));	
-	
-});
-
-/* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
-function setTotalInfo(){
-	
-	let totalPrice = 0;				// 총 가격
-	let totalCount = 0;				// 총 갯수
-	let finalTotalPrice = 0; 		// 최종 가격
-	
-	$(".cart_info_td").each(function(index, element){
-		
-		if($(element).find(".individual_cart_checkbox").is(":checked") === true){		
-		// 총 가격
-		totalPrice += parseInt($(element).find(".individual_pprice_input").val());
-		// 총 갯수
-		totalCount += parseInt($(element).find(".quantity_input").val());
-		
-		}	
-	});		
-	
-	/* 최종 가격 */
-	finalTotalPrice = totalPrice;
-	
-	/* 값 삽입 */
-	// 총 가격
-	$(".totalPrice_span").text(totalPrice.toLocaleString());
-	// 총 갯수
-	$(".totalCount_span").text(totalCount);
-	// 최종 가격(총 가격 + 배송비) LINE.302
-	$(".finalTotalPrice_span").text(finalTotalPrice.toLocaleString());
-	
-	}
-</script>
-
-<script>
-
-/* 수량 수정 버튼 */
-$(".selectbtn").on("click", function(){
-	let cartId = $(this).data("cartid");
-	let cartCount = $(this).parent("td").find("input").val();
-	$(".update_cartId").val(cartId);
-	$(".update_cartCount").val(cartCount);
-	$(".quantity_update_form").submit();
-	
-});
-
-/* 장바구니 삭제 버튼 */
-$(".selectbtn2").on("click", function(e){
-	e.preventDefault();
-	const cartId = $(this).data("cartid");
-	$(".delete_cartId").val(cartId);
-	$(".quantity_delete_form").submit();
-});
-
-/* 주문 페이지 이동 */	
-$(".ty2").on("click", function(){
-	
-	let form_contents ='';
-	let orderNumber = 0;
-	
-	$(".cart_info_td").each(function(index, element){
-		
-		if($(element).find(".individual_cart_checkbox").is(":checked") === true){	//체크여부
-			
-			let pno = $(element).find(".individual_pno_input").val();
-			let cartCount = $(element).find(".individual_cartCount_input").val();
-			
-			let pno_input = "<input name='orders[" + orderNumber + "].pno' type='hidden' value='" + pno + "'>";
-			form_contents += pno_input;
-			
-			let cartCount_input = "<input name='orders[" + orderNumber + "].cartCount' type='hidden' value='" + cartCount + "'>";
-			form_contents += cartCount_input;
-			
-			orderNumber += 1;
-			
-		}
-	});	
-
-	$(".order_form").html(form_contents);
-	$(".order_form").submit();
-	
-});
-
+	}) (jQuery);
 </script>
 
 <body>
@@ -255,10 +154,10 @@ $(".ty2").on("click", function(){
 							<tbody>
 								<c:forEach items="${cartInfo}" var="ci"> <!-- 장바구니 정보 -->
 								<td class="td_width_1_cart_info_td">
-										<input type="hidden" class="individual_pprice_input" value="${ci.pprice}">
-										<input type="hidden" class="quantity_input" value="${ci.cartCount}">
-										<input type="hidden" class="individual_totalPrice_input" value="${ci.totalPrice}">
-										<input type="hidden" class="individual_pno_input" value="${ci.pno}">
+									<input type="hidden" class="individual_pprice_input" value="${ci.pprice}">
+									<input type="hidden" class="quantity_input" value="${ci.cartCount}">
+									<input type="hidden" class="individual_totalPrice_input" value="${ci.totalPrice}">
+									<input type="hidden" class="individual_pno_input" value="${ci.pno}">
 								</td>
 								<tr>
 									<td><input type="checkbox" class="individual_cart_checkbox" /></td>
@@ -270,8 +169,10 @@ $(".ty2").on("click", function(){
 											</li>
 										</ul>
 									</td>
-									<td class="td_width_1"><input type="hidden" class="individual_pprice_input">1,123,400 원<br/></td>
-									<td><input type="number" class="quantity_input" min="1" max="999" value="1" /></td> <!-- <input type="number"> 수량 버튼  -->
+									<td class="cart_info_td"> <!-- 상품1 가격  -->
+									<input type="text" class="individual_pprice_input" value="${ci.pprice}" style="border: none;" readonly><br/></td>
+									
+									<td><input type="number" class="quantity_input_cart_info_td" min="1" max="999" value="1" /></td> <!-- <input type="number"> 수량 버튼  -->
 									<td>1,123,400 원</td>
 									<td class="tnone">
 										<ul class="order">	
@@ -292,8 +193,10 @@ $(".ty2").on("click", function(){
 											</li>
 										</ul>
 									</td>
-									<td class="td_width_1"><input type="hidden" class="individual_pprice_input">1,123,400 원<br/></td>
-									<td><input type="number" class="quantity_input" min="1" max="999" value="1" /></td>
+									<td class="cart_info_td"> <!-- 상품2 가격  -->
+									<input type="text" class="individual_pprice_input" value="${ci.pprice}" style="border: none;" readonly><br/></td>
+									
+									<td><input type="number" class="quantity_input_cart_info_td" min="1" max="999" value="1" /></td>
 									<td>1,123,400 원</td>
 									<td class="tnone">
 										<ul class="order">	
@@ -316,19 +219,21 @@ $(".ty2").on("click", function(){
 							</ul>
 						</div>
 					</div>
+					
 					<!-- //장바구니 상품 -->
 					
-
 					<!-- 총 주문금액 -->
+					<form action="/mypage/cart" name="search" method="post"> 
 					<div class="amount">
 						<h4>총 주문금액</h4>
-						<ul class="info">
-							
-						</ul>
-						<ul class="total">							
-							<li class="money"><span>1,134,810</span> 원</li>
+						<ul class="info">	
+						</ul>	
+						<ul class="total">	
+							<li class="money"><span><input type="text" id="finalTotalPrice" style="border: none;" readonly>원</span></li>
 						</ul>
 					</div>
+					</form>
+					
 					<!-- //총 주문금액 -->
 
 					<div class="cartarea">
@@ -387,6 +292,7 @@ $(".ty2").on("click", function(){
 $(function() {
 	var spinner = $( ".spinner" ).spinner({ min: 1, max: 999 });
 });
+
 </script>
 
 

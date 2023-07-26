@@ -19,6 +19,7 @@
 <link rel="stylesheet" type="text/css" href="../css/reset.css" />
 <link rel="stylesheet" type="text/css" href="../css/content.css" />
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js" type="text/javascript"></script>
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/jquery.anchor.js"></script>
 <script type="text/javascript" src="../js/common.js"></script>
@@ -84,10 +85,12 @@
 
 <script>
 //입력된 수량을 받는 변수
-$(document).ready(function() {
-	let quantity = $("#sst").val(); // 218번째 줄
-	console.log({"quantity" : quantity}); // 출력 테스트
-});
+(function($) {
+	$(document).ready(function() {
+		let quantity = $("#sst").val(); // 218번째 줄
+		console.log({"quantity" : quantity}); // 출력 테스트
+	});
+}) (jQuery);
 
 // 서버로 전송할 데이터
 const form = {
