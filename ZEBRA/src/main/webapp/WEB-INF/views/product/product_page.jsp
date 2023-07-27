@@ -361,12 +361,12 @@
                <!-- 상품 리스트  끝-->      
                                           
                   </div>
-      <div class="btnAreaList">
+      <div class="btnAreaList">    
       <div class="allPageMoving1">
                
       <!-- 첫 페이지 이동 -->
        <c:if test="${page!=1 }">
-         <a href= "/product/product_page?page=1&category=${category}&s_word=${s_word}">
+         <a href= "/product/product_page?page=1&s_word=${s_word}$sorting=${sorting}$pcolor=${pcolor}">
       <img src="../img/btn/btn_pre2.gif" alt="처음으로" />
 <!--          <li class="first"></li>-->
       </a>      
@@ -377,7 +377,7 @@
        </c:if>
       <!-- 이전 페이지 이동 -->
       <c:if test="${page>1 }">
-      <a href="/product/product_page?page=${page-1}&category=${category}&s_word=${s_word}">
+      <a href="/product/product_page?page=${page-1}&s_word=${s_word}$sorting=${sorting}$pcolor=${pcolor}">
       <img src="../img/btn/btn_pre1.gif" alt="앞페이지로" />
 <!--       <li class="prev"></li> -->
       </a>
@@ -389,7 +389,7 @@
       <!-- 페이지 리스트 -->
       <c:forEach begin="${startPage}" end="${endPage}" step="1" var="num">
          <c:if test="${num != page }">
-         <a href="/product/product_page?page=${num}&category=${category}&s_word=${s_word}">      
+         <a href="/product/product_page?page=${num}&s_word=${s_word}$sorting=${sorting}$pcolor=${pcolor}">      
             <li class="num"><div class="number-box">${num}</div></li>
          </a>
          </c:if>
@@ -399,7 +399,7 @@
       </c:forEach>
       <!-- 다음 페이지 이동 -->
       <c:if test="${page<maxPage }">
-        <a href="/product/product_page?page=${page+1}&category=${category}&s_word=${s_word}">
+        <a href="/product/product_page?page=${page+1}&s_word=${s_word}$sorting=${sorting}$pcolor=${pcolor}">
 <!--         <li class="next"></li> -->
         <img src="../img/btn/btn_next1.gif" alt="뒤페이지로" />
         </a> 
@@ -410,7 +410,7 @@
       </c:if>
       <!-- 끝 페이지 이동 -->
       <c:if test="${page !=  maxPage }">
-      <a href="/product/product_page?page=${maxPage}&category=${category}&s_word=${s_word}">
+      <a href="/product/product_page?page=${maxPage}&s_word=${s_word}$sorting=${sorting}$pcolor=${pcolor}">
       <img src="../img/btn/btn_next2.gif" alt="마지막페이지로" />
 <!--       <li class="last"></li> -->
       </a>

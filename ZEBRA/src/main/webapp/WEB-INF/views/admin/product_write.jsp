@@ -91,12 +91,13 @@
 
                     <table class="table table-bordered">
                       <tbody>
-                        <tr>
-                          <th scope="row">상품 번호</th>
-                          <td>
-                          	<input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="pno" placeholder="ex) 12"  />
-                          </td> 
-                        </tr>
+<!--                         <tr> -->
+<!--                           <th scope="row">상품 번호</th> -->
+<!--                           <td> -->
+<%--                           ${pno} --%>
+<%-- <%--                           	<input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number"  value="${pno}" name="pno" placeholder="ex) 12"  /> --%> 
+<!--                           </td>  -->
+<!--                         </tr> -->
                        
                         <tr>
                           <th scope="row">상품 코드</th>

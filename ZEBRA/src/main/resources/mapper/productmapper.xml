@@ -88,6 +88,8 @@
       #{pdescript}, #{pmainimg}, #{pdetailimg1}, #{pdetailimg2}, #{pdetailimg3})
 </insert>
    
+   
+   <!-- 상품 삭제 -->
    <delete id="deleteOne">
       delete product where pno=#{pno}
    </delete>
@@ -110,6 +112,7 @@
 
    <!-- ============================여기부터는 상품 페이지 ====================================== -->
 
+	<!-- 여자 상품 개수 -->
 	 <select id="selectproduct_page_listCount" resultType="int">
       select count(*) from product where pcode=10
      	
@@ -144,6 +147,11 @@
 			order by pprice desc 
 		</if>
 
+
+   </select>
+    <!-- 홈 제품 개수 -->
+   	 <select id="selectproduct_page_listCounthome" resultType="int">
+      select count(*) from product where pcode=11
 
    </select>
 

@@ -47,10 +47,12 @@ public interface ProductMapper {
    ArrayList<ProductDto> selectSortAll(String s_word, Integer pprice, String sorting,String pcolor);
 
    //상품 페이지에서 home 상품 전체 가져오기 
-   ArrayList<ProductDto> selectHomeAll(int startRow, int endRow, String category, String s_word);
+   ArrayList<ProductDto> selectHomeAll(int startRow, int endRow);
 
-   //상품 페이지에서 상품  총 개수를 반환하기 위한 함수 
+   //상품 페이지에서 상품  총 개수를 반환하기 위한 함수 (women)
    int selectproduct_page_listCount(String s_word, String pcolor, String sorting);
+   //상품 페이지에서 상품  총 개수를 반환하기 위한 함수(home)
+   int selectproduct_page_listCounthome();
 
    //===================================주문 관리===============================================
    //주문 관리에서 주문 총 개수를 반환하기 위한 함수
@@ -67,6 +69,7 @@ public interface ProductMapper {
 
    //주문 관리 주문 다음 주문 
    OrderDto selectOrderNextOne(int CNO);
+
 
    //===================================주문 관리===============================================
 

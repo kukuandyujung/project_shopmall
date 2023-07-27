@@ -34,7 +34,7 @@ public interface ProductService {
    ArrayList<ProductDto> selectSortAll(String s_word, Integer pprice, String sorting,String pcolor);
 
    //상품 페이지에 home 상품 전체 가져오기
-   HashMap<String, Object> selectHomeAll(int page, String category, String s_word);
+   HashMap<String, Object> selectHomeAll(int page);
 
    //=================주문 관리 페이지===========================================
    //주문 관리 페이지에 주문 전체 가져오기 
