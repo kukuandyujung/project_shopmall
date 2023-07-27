@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +32,6 @@
 </head>
 <body>
 <%@ include file="../top.jsp"%>
-
   <!-- ================ start banner area ================= -->	
 	<section class="blog-banner-area" id="category">
 		<div class="container h-100">
@@ -130,24 +130,24 @@
 							<tbody>
 								<tr>
 									<th scope="row"><span>이름</span></th>
-									<td colspan="3">${odto.oname}</td>
+									<td colspan="3">${odto1.ONAME}</td>
 								</tr>
 
 								<tr>
 									<th scope="row" rowspan="2"><span>주소</span></th>
-									<td rowspan="2">${odto.OZIP}<br/>${odto.OADDR1}<br/>${odto.OADDR2}</td>
+									<td rowspan="2">${odto1.OZIP}<br/>${odto1.OADDR1}<br/>${odto1.OADDR2}</td>
 									<th scope="row"><span>휴대폰 <u>번호</u></span></th>
-									<td>${odto.OHP}</td>
+									<td>${odto1.OHP1}-${odto1.OHP2}-${odto1.OHP3}</td>
 								</tr>
 
 								<tr>
 									<th scope="row"><span>유선<u>번호</u></span></th>
-									<td>${odto.ORHP}</td>
+									<td>${odto1.ORHP1}-${odto1.ORHP2}-${odto1.ORHP3}</td>
 								</tr>
 
 								<tr>
 									<th scope="row"><span>배송시 <u>요구사항</u></span></th>
-									<td colspan="3">${odto.OWANT}</td>
+									<td colspan="3">${odto1.OWANT}</td>
 								</tr>
 							</tbody>
 						</table>
@@ -167,23 +167,15 @@
 							<tbody>
 								<tr>
 									<th scope="row"><span>주문번호</span></th>
-									<td>${odto.ono}</td>
-									<th scope="row"><span>주문일</span></th>
-									<td>${odto.odate}</td>
-								</tr>
-
-								<tr>
+									<td>${odto1.ONO}</td>
 									<th scope="row"><span>결제수단</span></th>
-									<td>${odto.OPAYMENT}</td>
-									<th scope="row"><span>결제금액</span></th>
-									<td>${odto.OTOPRICE}</td>
+									<td>${odto1.OPAYMENT}</td>
 								</tr>
-
 								<tr>
 									<th scope="row"><span>요구사항</span></th>
-									<td>${odto.OWANT}</td>
+									<td>${odto1.OWANT}</td>
 									<th scope="row"><span>입금자 <u>명</u></span></th>
-									<td>${odto.oname}</td>
+									<td>${odto1.ONAME}</td>
 								</tr>
 							</tbody>
 						</table>

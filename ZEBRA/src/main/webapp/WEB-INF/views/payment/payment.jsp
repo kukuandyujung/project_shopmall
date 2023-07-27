@@ -128,10 +128,12 @@
 					</div>
 					<!-- //주문 상품 -->
 			<!-- 수령인 정보 입력 -->
-			<form action="/payment/payment1" name="write" method="post" enctype="multipart/form-data">
+			<form action="/payment/confirmation" name="write" method="post" enctype="multipart/form-data">
 					<h3 class="dep">
 						수령인 정보 입력
 						
+						<input type="checkbox" id="infosame"/>
+						<label for="infosame">회원 정보와 동일</label>
 					</h3>
 					<div class="checkDiv">
 						<table summary="수령인 정보 입력할 수 있는 란으로 이름, 주소, 이메일, 휴대폰 번호, 전화번호 순으로 입력 하실수 있습니다." class="checkTable" border="1" cellspacing="0">
@@ -275,13 +277,13 @@
 									<td>
 										<ul class="pta">
 											<li>
-												<input type="radio" id="method01" name="OPAYMENT" value="1" checked="checked" /><label for="method01">신용카드 결제</label>
+												<input type="radio" id="method01" name="OPAYMENT" value="신용카드 결제" checked="checked" /><label for="method01">신용카드 결제</label>
 											</li>
 											<li>
-												<input type="radio" id="method03" name="OPAYMENT" value="2"/><label for="method03">무통장 입금</label>
+												<input type="radio" id="method03" name="OPAYMENT" value="무통장 입금"/><label for="method03">무통장 입금</label>
 											</li>
 											<li>
-												<input type="radio" id="method04" name="OPAYMENT" value="3"/><label for="method04">간편 결제</label>
+												<input type="radio" id="method04" name="OPAYMENT" value="간편 결제"/><label for="method04">간편 결제</label>
 											</li>
 										</ul>
 									</td>

@@ -25,21 +25,15 @@ public class OrderController {
 	@Autowired
 	MemberService memberService;
 	
-	@GetMapping("payment/payment/{MID}")
-	public String orderPgaeGET(@PathVariable("MID") String MID, OrderPageDTO opd, Model model) {
-		
-		model.addAttribute("orderList", orderService.getGoodsInfo(opd.getOrders()));
-		model.addAttribute("memberInfo", memberService.getMemberInfo(MID));
-		
-		return "/payment/payment";
-	}	
+	@GetMapping("/payment/payment")
+	public String payment() {
+		return "payment/payment";
+	}
 	
-	@PostMapping("/payment/payment1")
+	//수령자 정보 저장하기
+	@PostMapping("/payment/payment")
 	public String payment1(OrderDto odto, Model model) {
-		System.out.println("getONAME : "+odto.getONAME());
-		System.out.println("getOADDR1 : "+odto.getOADDR1());
-		 System.out.println("getOADDR2 : "+odto.getOADDR2());
-
+		
 		 //핸드폰 번호 가져오기
 		 String OHP1 = odto.getOHP1();
 		 String OHP2 = odto.getOHP2();
@@ -47,7 +41,6 @@ public class OrderController {
 		 String OHP = "";
 		 OHP = OHP1+"-"+OHP2+"-"+OHP3;
 		 odto.setOHP(OHP);
-		 System.out.println("휴대폰번호 : " + odto.getOHP());
 		 
 		 
 		 //유선번호 가져오기
@@ -57,7 +50,6 @@ public class OrderController {
 
 		 String ORHP = ORHP1+"-"+ORHP2+"-"+ORHP3;
 		 odto.setORHP(ORHP);
-		 System.out.println("유선번호 : " + odto.getORHP());
 		 
 		 //주소 가져오기
 		 String OZIP = odto.getOZIP();
@@ -65,11 +57,19 @@ public class OrderController {
 		 String OADDR2 = odto.getOADDR2();
 		 String OADDR = OZIP+OADDR1+OADDR2;
 		 odto.setOADDR(OADDR);
-		 System.out.println("주소 : " + odto.getOADDR());
 		 
-		 orderService.insertOne(odto);
-		 return "redirect:/payment/confirmation";
+		 return "payment/payment";
 	}
 	
+
+	@RequestMapping("/payment/confirmation")
+	public String confirmation(OrderDto odto, Model model) {
+		orderService.insertOne(odto);
+		System.out.println("ono : "+ odto.getONO());
+		OrderDto odto1 = orderService.selectOne(odto.getONO());
+		model.addAttribute("odto1", odto1);
 	
+	return "payment/confirmation"; 
+	}
+	 	 
 }
