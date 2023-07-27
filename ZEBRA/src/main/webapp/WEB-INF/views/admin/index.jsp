@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -37,14 +37,38 @@
      
    <style>
    
-   .best1 { /* LINE 279  */
+   .media .profile_thumb {
+  padding: 0;
+}
+   
+  .best { /* LINE 279  */
   border: 1px solid;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   padding: 10px 25px;
-  background-image: url("/img/best/best1.jpg"); /* 배경 이미지 경로 */
   background-size: cover; /* 배경 이미지 크기 조절 */
+  }
+  
+  /* 이미지 경로를 바꾸어 사용할 클래스들 */
+  .best1 {
+    background-image: url("/img/best/best1.jpg");
+  }
+
+  .best2 {
+    background-image: url("/img/best/best2.jpg");
+  }
+
+  .best3 {
+    background-image: url("/img/best/best3.jpg");
+  }
+  
+  .best4 {
+    background-image: url("/img/best/best4.jpg");
+  }
+  
+  .best5 {
+    background-image: url("/img/best/best5.jpg");
   }
   
 }
@@ -53,7 +77,6 @@
      
    <script>
       function boardBtn(){ // 152번째 줄
-    	  alert("그래프 데이터를 업데이트합니다.");
 			
 			$.ajax({
 				url:"/admin/indexAjax", 
@@ -126,8 +149,7 @@
       <%@ include file="top_common.jsp" %>	 
 
         <!-- page content -->        
-        <div class="right_col" role="main">        
-          <div class="">
+        <div class="right_col" role="main">   
           <!-- top tiles -->
           <div class="col-md-12" style="display: inline-block;" >          
           <div class="tile_count">
@@ -138,13 +160,13 @@
             </div>
             
             <div class="col-md-1 col-sm-4  tile_stats_count">              
-              <span class="count_top"><i class="fa fa-user"></i> 총 남자 회원수</span>
+              <span class="count_top"><i class="fa fa-user"></i> 남자 회원수</span>
               <div class="count green" id="count2"> ${maleCount} </div>               
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> 지난 달 대비</span>
             </div>
             
             <div class="col-md-1 col-sm-4  tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> 총 여자 회원수</span>
+              <span class="count_top"><i class="fa fa-user"></i> 여자 회원수</span>
               <div class="count red" id="count3"> ${FemaleCount} </div>
               <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> 지난 달 대비</span>
             </div>
@@ -155,7 +177,7 @@
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> 지난 달 대비</span>
             </div>
             
-            <div class="col-md-1 col-sm-4  tile_stats_count">
+            <div class="col-md-1 col-sm-4  tile_stats_count" style="margin-right:20px">
               <span class="count_top"><i class="fa fa-clock-o"></i> 총 구매수</span>
               <div class="count" id="count5"><fmt:formatNumber value="${totalOrder}" pattern="#,##0" /></div>
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> 지난 달 대비</span>
@@ -280,7 +302,9 @@
                         <ul class="list-unstyled top_profiles scroll-view">
                           <li class="media event">
                             <a class="pull-left border-aero profile_thumb">
-                              <i class="best1"></i>
+                            
+                              <img class="best best1">
+                              
                             </a>
                             <div class="media-body">  
                               <a class="title" href="#">${list1.get(0).getMNAME()}</a>
@@ -291,7 +315,7 @@
                           </li>
                           <li class="media event">
                             <a class="pull-left border-green profile_thumb">
-                              <i class="fa fa-user green"></i>
+                             <img class="best best2">
                             </a>
                             <div class="media-body">
                               <a class="title" href="#">${list1.get(1).getMNAME()}</a>
@@ -302,7 +326,7 @@
                           </li>
                           <li class="media event">
                             <a class="pull-left border-blue profile_thumb">
-                              <i class="fa fa-user blue"></i>
+                              <img class="best best3">
                             </a>
                             <div class="media-body">
                               <a class="title" href="#">${list1.get(2).getMNAME()}</a>
@@ -313,7 +337,7 @@
                           </li>
                           <li class="media event">
                             <a class="pull-left border-aero profile_thumb">
-                              <i class="fa fa-user aero"></i>
+                              <img class="best best4">
                             </a>
                             <div class="media-body">
                               <a class="title" href="#">${list1.get(3).getMNAME()}</a>
@@ -324,7 +348,7 @@
                           </li>
                           <li class="media event">
                             <a class="pull-left border-green profile_thumb">
-                              <i class="fa fa-user green"></i>
+                              <img class="best best5">
                             </a>
                             <div class="media-body">
                               <a class="title" href="#">${list1.get(4).getMNAME()}</a>
@@ -343,7 +367,7 @@
 
           </div>
           <br />
-
+<!-- 
           <div class="row">
 
 
@@ -603,10 +627,8 @@
           </div>
             </div>
           </div>
-        </div>
-        <!-- /page content -->
-        
-        
+         
+         -->
 
     <!-- jQuery -->
     <script src="/vendors/jquery/dist/jquery.min.js"></script>

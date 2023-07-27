@@ -101,21 +101,19 @@ console.log(form.MID); // 출력 테스트
 console.log(form.pno); // 출력 테스트
 console.log(form.cartCount); // 출력 테스트
 
-// 장바구니 추가 버튼
+// 장바구니 추가 버튼 LINE 236
 function cartCtn() {
-		alert("Test") // 테스트
-		
+		alert("Test") // 테스트		
 		form.cartCount = $("#sst").val(); 
 		$.ajax({
-			url: '/mypage/cart/${sessionId}',
+			url: '/mypage/cart/add',
 			type: 'POST',
 			data: form,
 			success: function(result){
-				cartAlert(result);
-				console.log({"cartCount" : form.cartCount});	
+				cartAlert(result);					
 				console.log(form.MID); // 출력 테스트
 				console.log(form.pno); // 출력 테스트
-				console.log(form.cartCount); // 출력 테스트
+				console.log({"cartCount" : form.cartCount}); // 출력 테스트
 			}
 		})
 	};
@@ -233,7 +231,8 @@ $(".btn_buy").on("click", function(){
 						<div class="card_area d-flex align-items-center">
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-link"></i></a>
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
-							<a class="icon_btn" href="../mypage/cart/${sessionId}" onclick="cartCtn()"><i class="lnr lnr lnr-cart"></i></a> <!-- 장바구니 이동 버튼 97번째 줄 -->
+							<!-- 장바구니 버튼 LINE 104 -->
+							<a class="icon_btn" href="../mypage/cart/${sessionId}" onclick="cartCtn()"><i class="lnr lnr lnr-cart"></i></a> 
 						</div>
 					</div>
 				</div>

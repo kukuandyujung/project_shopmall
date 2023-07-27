@@ -73,7 +73,7 @@
 			$(".totalPrice_span").text(totalPrice.toLocaleString());
 			// 총 갯수
 			$(".totalCount_span").text(totalCount);
-			// 최종 가격 LINE.302
+			// 최종 가격 LINE 219
 			$(".finalTotalPrice_span").text(finalTotalPrice.toLocaleString()); /* LINE 231
 			/* } */				 
 			
@@ -149,61 +149,50 @@
 								<th scope="col">합계</th>
 								<th scope="col" class="tnone">주문</th>
 							</thead>
+							
 							<tbody>
-								<c:forEach items="${cartInfo}" var="ci"> <!-- 장바구니 정보 -->
-								<td class="td_width_1_cart_info_td">
-									<input type="hidden" class="individual_pprice_input" value="${ci.pprice}">
-									<input type="hidden" class="quantity_input" value="${ci.cartCount}">
-									<input type="hidden" class="individual_totalPrice_input" value="${ci.totalPrice}">
-									<input type="hidden" class="individual_pno_input" value="${ci.pno}">
-								</td>
+								<c:forEach items="${cartInfo}" var="ci"> <!-- 장바구니 정보 -->								
 								<tr>
-									<td><input type="checkbox" class="individual_cart_checkbox" /></td>
-									<td class="left">
-										<p class="img"><img src="/upload/${product.pmainimg}" alt="상품" width="66" height="66" /></p>
-										<ul class="goods">
-											<li>
-												<a href="#">쟈뎅 오리지널 콜롬비아 페레이라 원두커피백 15p</a>
-											</li>
-										</ul>
-									</td>
-									<td class="cart_info_td"> <!-- 상품1 가격  -->
-									<input type="text" class="individual_pprice_input" value="${ci.pprice}" style="border: none;" readonly><br/></td>
-									
-									<td><input type="number" class="quantity_input_cart_info_td" min="1" max="999" value="1" /></td> <!-- <input type="number"> 수량 버튼  -->
-									<td>1,123,400 원</td>
-									<td class="tnone">
-										<ul class="order">	
-											<li><a href="/payment/payment" class="obtnMini iw70">바로구매</a></li>
-											<li><a href="#" class="nbtnMini iw70">상품삭제</a></li>
-										</ul>
-									</td>
-								</tr>
+								<td><input type="checkbox" class="individual_cart_checkbox" /></td> <!-- 체크박스 -->
 								
-								<tr>
-									<td><input type="checkbox" class="individual_cart_checkbox" /></td>
-									<td class="left">
-										<p class="img"><img src="/img/product/product1.png" alt="상품" width="66" height="66" /></p>
-
-										<ul class="goods">
-											<li>
-												<a href="#">쟈뎅 오리지널 콜롬비아 페레이라 원두커피백 15p</a>
-											</li>
-										</ul>
-									</td>
-									<td class="cart_info_td"> <!-- 상품2 가격  -->
-									<input type="text" class="individual_pprice_input" value="${ci.pprice}" style="border: none;" readonly><br/></td>
-									
-									<td><input type="number" class="quantity_input_cart_info_td" min="1" max="999" value="1" /></td>
-									<td>1,123,400 원</td>
-									<td class="tnone">
-										<ul class="order">	
-											<li><a href="/payment/payment" class="obtnMini iw70">바로구매</a></li>
-											<li><a href="#" class="nbtnMini iw70">상품삭제</a></li>
-										</ul>
-									</td>
-								</tr>
-								</c:forEach>
+								<td class="left_cart_info_td">
+									<p class="img"><img src="/upload/${ci.pmainimg}" alt="상품" width="66" height="66" /></p>
+									<ul class="goods">
+										<li>
+											<a href="#" style="font-size:15px;">${ci.pname}</a>
+										</li>
+									</ul>
+								</td>
+								
+								<td class="cart_info_td"> <!-- 상품1 가격  -->
+									<input type="text" class="individual_pprice_input" 
+									value=<fmt:formatNumber value="${ci.pprice}" pattern="#,##0" /> 
+									style="outline: none; border: none; width: 70px; text-align: right; " readonly>원								
+								</td>
+								
+								<td>
+									<input type="number" class="quantity_input_cart_info_td" min="1" max="999" 
+									value="${ci.cartCount}" />
+								</td> <!-- <input type="number"> 수량 버튼  -->
+								<td><fmt:formatNumber value="${ci.totalPrice}" pattern="#,##0" /> 원</td>
+								<td class="tnone">
+									<ul class="order">	
+										<li><a href="/payment/payment" class="obtnMini iw70">바로구매</a></li>
+										<li><a href="#" class="nbtnMini iw70">상품삭제</a></li>
+									</ul>
+								</td>
+							</tr>
+							
+							<%-- 
+							<td class="td_width_1_cart_info_td">
+								<input type="hidden" class="individual_pprice_input" value="${ci.pprice}">
+								<input type="hidden" class="quantity_input" value="${ci.cartCount}">
+								<input type="hidden" class="individual_totalPrice_input" value="${ci.totalPrice}">
+								<input type="hidden" class="individual_pno_input" value="${ci.pno}">
+							</td>
+							 --%>
+							
+							</c:forEach>
 							</tbody>
 						</table>
 					</div>

@@ -1,5 +1,7 @@
 package com.java.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,8 +41,9 @@ public class FController {
 	
 	// 장바구니 정보 리스트
 	@GetMapping("mypage/cart/{MID}")
-	public String cartPageGET(@PathVariable("MID") String MID, Model model) {		
-		model.addAttribute("cartInfo", cartService.getCartList(MID));	
+	public String cartPageGET(@PathVariable("MID") String MID, Model model) {	
+		ArrayList<CartDTO> cartInfo = cartService.getCartList(MID);
+		model.addAttribute("cartInfo",cartInfo);
 		System.out.println("cartInfo : "+cartService.getCartList(MID));
 		return "mypage/cart";
 	}
