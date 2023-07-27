@@ -10,6 +10,10 @@ import com.java.dto.ProductDto;
 
 @Mapper
 public interface BoardMapper {
+	
+	// 총 상품 개수 가져오기
+	int selectProductCount();
+	
 	//게시글 1개가져오기
 	ProductDto selectOne(int pno);
 
@@ -27,5 +31,7 @@ public interface BoardMapper {
 
 	//하단댓글 수정저장
 	void commentUpdateSave(CommentDto comDto);
+
+	
 
 }

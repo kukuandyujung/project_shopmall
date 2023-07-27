@@ -16,6 +16,12 @@ public class BoardServiceImpl implements BoardService{
 	@Autowired
 	BoardMapper boardMapper;
 
+	@Override // 상품 총 개수 가져오기
+	public int selectProductCount() {
+		int allProductCount = boardMapper.selectProductCount();
+		return allProductCount;
+	}
+	
 	@Override //상품 1개가져오기
 	public ProductDto selectOne(int pno) {
 		ProductDto pdto1 = boardMapper.selectOne(pno);
@@ -56,4 +62,6 @@ public class BoardServiceImpl implements BoardService{
 		
 		return cdto;
 	}
+
+	
 }

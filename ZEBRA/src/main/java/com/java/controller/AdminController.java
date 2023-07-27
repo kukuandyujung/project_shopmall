@@ -14,11 +14,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.java.dto.MemberDto;
+import com.java.service.BoardService;
 import com.java.service.MemberService;
 
 @Controller
 public class AdminController {
    @Autowired MemberService memberService;
+   @Autowired BoardService boardService;
    @Autowired HttpSession session;
 
    
@@ -29,10 +31,12 @@ public class AdminController {
 	  model.addAttribute("list1", list1);
 	  System.out.println("no1NAME : "+list1.get(0).getMNAME()); // 매출 1위의 사람 이름 조회
       model.addAttribute("loginCheck", loginCheck); //로그인 성공 여부
-      int[] list = memberService.selectMemberAll();      
+      int[] list = memberService.selectMemberAll();     
+      int allProductCount = boardService.selectProductCount();
       model.addAttribute("allCount", list[0]);
       model.addAttribute("maleCount", list[1]);
       model.addAttribute("FemaleCount", list[2]);
+      model.addAttribute("allProductCount", allProductCount);
       model.addAttribute("totalOrder", list[3]);
       model.addAttribute("totalPay", list[4]);
       model.addAttribute("totalPay3", list[5]);

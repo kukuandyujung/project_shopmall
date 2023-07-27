@@ -122,7 +122,7 @@
             </div>
             <div class="col-md-1 col-sm-4  tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> 총 상품수</span>
-              <div class="count">2,315</div>
+              <div class="count"> ${allProductCount} </div>
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> 지난 달 대비</span>
             </div>
             
@@ -256,7 +256,7 @@
                             <div class="media-body">  
                               <a class="title" href="#">${list1.get(0).getMNAME()}</a>
                               <p><strong>₩<fmt:formatNumber value="${list1.get(0).getMTOTAL_PAY()}" pattern="#,##0" /> </strong> / ${list1.get(0).getMPHONE()}</p>
-                              <p> <small>총 ${list1.get(0).getMTOTAL_ORDER()}회 주문</small>
+                              <p> <small>총 ${list1.get(0).getMTOTAL_ORDER()}회 결제</small>
                               </p>
                             </div>
                           </li>
@@ -267,7 +267,7 @@
                             <div class="media-body">
                               <a class="title" href="#">${list1.get(1).getMNAME()}</a>
                               <p><strong>₩<fmt:formatNumber value="${list1.get(1).getMTOTAL_PAY()}" pattern="#,##0" /> </strong> / ${list1.get(1).getMPHONE()}</p>
-                              <p> <small>총 ${list1.get(1).getMTOTAL_ORDER()}회 주문</small>
+                              <p> <small>총 ${list1.get(1).getMTOTAL_ORDER()}회 결제</small>
                               </p>
                             </div>
                           </li>
@@ -278,7 +278,7 @@
                             <div class="media-body">
                               <a class="title" href="#">${list1.get(2).getMNAME()}</a>
                               <p><strong>₩<fmt:formatNumber value="${list1.get(2).getMTOTAL_PAY()}" pattern="#,##0" /> </strong> / ${list1.get(2).getMPHONE()}</p>
-                              <p> <small>총 ${list1.get(2).getMTOTAL_ORDER()}회 주문</small>
+                              <p> <small>총 ${list1.get(2).getMTOTAL_ORDER()}회 결제</small>
                               </p>
                             </div>
                           </li>
@@ -289,7 +289,7 @@
                             <div class="media-body">
                               <a class="title" href="#">${list1.get(3).getMNAME()}</a>
                               <p><strong>₩<fmt:formatNumber value="${list1.get(3).getMTOTAL_PAY()}" pattern="#,##0" /> </strong> / ${list1.get(3).getMPHONE()}</p>
-                              <p> <small>총 ${list1.get(3).getMTOTAL_ORDER()}회 주문</small>
+                              <p> <small>총 ${list1.get(3).getMTOTAL_ORDER()}회 결제</small>
                               </p>
                             </div>
                           </li>
@@ -300,7 +300,7 @@
                             <div class="media-body">
                               <a class="title" href="#">${list1.get(4).getMNAME()}</a>
                               <p><strong>₩<fmt:formatNumber value="${list1.get(4).getMTOTAL_PAY()}" pattern="#,##0" /> </strong> / ${list1.get(4).getMPHONE()}</p>
-                              <p> <small>총 ${list1.get(4).getMTOTAL_ORDER()}회 주문</small>
+                              <p> <small>총 ${list1.get(4).getMTOTAL_ORDER()}회 결제</small>
                               </p>
                             </div>
                           </li>
