@@ -70,7 +70,7 @@
 	                $("#count1").text(data[0][0]); // 총 회원수
 	                $("#count2").text(data[0][1]);
 	                $("#count3").text(data[0][2]); // 총 여자 회원수
-	                $("#count4").text(data[0][4]); // 총 매출액
+	                $("#count4").text("₩" + data[0][4].toLocaleString()); // 총 매출액
 	                $("#count5").text(data[0][3].toLocaleString()); // 총 구매수
 	                $("#count6").text(data[0][5]); // 3월
 	                $("#count7").text(data[0][6]); // 4월
@@ -162,8 +162,8 @@
             </div>
             
             <div class="col-md-3 col-sm-4  tile_stats_count">
-              <span class="count_top" id="count4"><i class="fa fa-user"></i> 총 매출액</span>
-              <div class="count">₩<fmt:formatNumber value="${totalPay}" pattern="#,##0" /></div>
+              <span class="count_top"><i class="fa fa-user"></i> 총 매출액</span>
+              <div class="count" id="count4">₩<fmt:formatNumber value="${totalPay}" pattern="#,##0" /></div>
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> 지난 달 대비</span>
             </div>
            
@@ -280,7 +280,6 @@
                         <ul class="list-unstyled top_profiles scroll-view">
                           <li class="media event">
                             <a class="pull-left border-aero profile_thumb">
-                              <img>
                               <i class="best1"></i>
                             </a>
                             <div class="media-body">  
