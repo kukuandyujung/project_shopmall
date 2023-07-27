@@ -1,5 +1,6 @@
 package com.java.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
@@ -23,10 +24,24 @@ public class AdminController {
    
    //로그인을 해야 인덱스로 가도록 정리하기
    @RequestMapping("/admin/index")
-   public String index( String loginCheck, Model model) {
-      
+   public String index(MemberDto mdto, String loginCheck, Model model) {
+	  ArrayList<MemberDto> list1 = memberService.selectBest(mdto);
+	  model.addAttribute("list1", list1);
+	  System.out.println("no1NAME : "+list1.get(0).getMNAME()); // 매출 1위의 사람 이름 조회
       model.addAttribute("loginCheck", loginCheck); //로그인 성공 여부
-       
+      int[] list = memberService.selectMemberAll();      
+      model.addAttribute("allCount", list[0]);
+      model.addAttribute("maleCount", list[1]);
+      model.addAttribute("FemaleCount", list[2]);
+      model.addAttribute("totalOrder", list[3]);
+      model.addAttribute("totalPay", list[4]);
+      model.addAttribute("totalPay3", list[5]);
+      model.addAttribute("totalPay4", list[6]);
+      model.addAttribute("totalPay5", list[7]);
+      model.addAttribute("totalPay6", list[8]);
+      model.addAttribute("totalPay7", list[9]);
+      model.addAttribute("totalPay8", list[10]);
+      
       if(session.getAttribute("sessionId")!=null) {
     	  
       if(session.getAttribute("sessionId").equals("admin")) {
@@ -89,11 +104,12 @@ public class AdminController {
    // ajax로 종류별 회원 정보 가져오기
       @PostMapping("/admin/indexAjax")
       @ResponseBody // 데이터로 넘겨줌 -> return으로
-      public int[] indexAjax() { // data를 받음   
+      public int[] indexAjax(Model model) { // data를 받음   
          int[] list = memberService.selectMemberAll();
          System.out.println("list :"+list);
          return list; // function(data)로 넘김
       }
+   
    
    // 회원 테이블 전체 가져오기
       @RequestMapping("/admin/member_table")

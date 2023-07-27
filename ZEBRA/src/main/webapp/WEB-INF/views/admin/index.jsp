@@ -34,7 +34,7 @@
     <link href="/build/css/custom.min.css" rel="stylesheet">
   </head>
    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-  
+     
    <script>
       function boardBtn(){ // 152번째 줄
     	  alert("그래프 데이터를 업데이트합니다.");
@@ -102,38 +102,40 @@
         <div class="right_col" role="main">        
           <div class="">
           <!-- top tiles -->
-          <div class="row" style="display: inline-block;" >          
+          <div class="col-md-12" style="display: inline-block;" >          
           <div class="tile_count">
-              <div class="col-md-2 col-sm-4  tile_stats_count">            
+              <div class="col-md-1 col-sm-4  tile_stats_count">            
               <span class="count_top"><i class="fa fa-user"></i> 총 회원수</span>
-              <div class="count" id="count1"> 10000 </div>
+              <div class="count" id="count1"> ${allCount} </div>              
               <span class="count_bottom"><i class="green">4% </i> 지난 달 대비</span>
             </div>
-            <div class="col-md-2 col-sm-4  tile_stats_count">              
+            <div class="col-md-1 col-sm-4  tile_stats_count">              
               <span class="count_top"><i class="fa fa-user"></i> 총 남자 회원수</span>
-              <div class="count green" id="count2">2,500</div>
+              <div class="count green" id="count2"> ${maleCount} </div>
                
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> 지난 달 대비</span>
             </div>
-            <div class="col-md-2 col-sm-4  tile_stats_count">
+            <div class="col-md-1 col-sm-4  tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> 총 여자 회원수</span>
-              <div class="count red" id="count3">4,567</div>
+              <div class="count red" id="count3"> ${FemaleCount} </div>
               <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> 지난 달 대비</span>
             </div>
-            <div class="col-md-2 col-sm-4  tile_stats_count">
+            <div class="col-md-1 col-sm-4  tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> 총 상품수</span>
               <div class="count">2,315</div>
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> 지난 달 대비</span>
             </div>
-            <div class="col-md-2 col-sm-4  tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> 총 매출액</span>
-              <div class="count">7,325</div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> 지난 달 대비</span>
-            </div>
-            <div class="col-md-2 col-sm-4  tile_stats_count">
+            
+            <div class="col-md-1 col-sm-4  tile_stats_count">
               <span class="count_top"><i class="fa fa-clock-o"></i> 총 구매수</span>
-              <div class="count">123</div>
+              <div class="count"><fmt:formatNumber value="${totalOrder}" pattern="#,##0" /></div>
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> 지난 달 대비</span>
+            </div>
+            
+            <div class="col-md-3 col-sm-4  tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i> 총 매출액</span>
+              <div class="count">₩<fmt:formatNumber value="${totalPay}" pattern="#,##0" /></div>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> 지난 달 대비</span>
             </div>
            
           </div>
@@ -181,7 +183,7 @@
 			            'rgba(128, 0, 128, 0.1)',   // Purple, 컬러 세기 0.1
 			            'rgba(255, 165, 0, 0.1)'    // Orange, 컬러 세기 0.1			        	
 			        ], 
-			        data: [12, 19, 3, 5, 2, 3],
+			        data: [${totalPay3}, ${totalPay4}, ${totalPay5}, ${totalPay6}, ${totalPay7}, ${totalPay8}],
 			        borderWidth: 1,
 			        pointBackgroundColor: 'transparent', // 점의 색상을 투명으로 설정
 			        fill: {
@@ -193,7 +195,7 @@
 			          type: 'line', // 라인 그래프 데이터셋
 			          label: '라인 데이터',
 			          backgroundColor: "rgba(26, 187, 156, 0.5)",
-			          data: [12, 19, 3, 5, 2, 3], // 라인 그래프 데이터
+			          data: [${totalPay3}, ${totalPay4}, ${totalPay5}, ${totalPay6}, ${totalPay7}, ${totalPay8}], // 라인 그래프 데이터
 			          borderColor: 'rgba(26, 187, 156, 0.5)', // 라인 색상 설정
 			          borderWidth: 2,
 			          fill: false, // 라인 그래프 내부를 채우지 않음
@@ -251,10 +253,10 @@
                             <a class="pull-left border-aero profile_thumb">
                               <i class="fa fa-user aero"></i>
                             </a>
-                            <div class="media-body">
-                              <a class="title" href="#">Ms. Mary Jane</a>
-                              <p><strong>$2300. </strong> Agent Avarage Sales </p>
-                              <p> <small>12 Sales Today</small>
+                            <div class="media-body">  
+                              <a class="title" href="#">${list1.get(0).getMNAME()}</a>
+                              <p><strong>₩<fmt:formatNumber value="${list1.get(0).getMTOTAL_PAY()}" pattern="#,##0" /> </strong> / ${list1.get(0).getMPHONE()}</p>
+                              <p> <small>총 ${list1.get(0).getMTOTAL_ORDER()}회 주문</small>
                               </p>
                             </div>
                           </li>
@@ -263,9 +265,9 @@
                               <i class="fa fa-user green"></i>
                             </a>
                             <div class="media-body">
-                              <a class="title" href="#">Ms. Mary Jane</a>
-                              <p><strong>$2300. </strong> Agent Avarage Sales </p>
-                              <p> <small>12 Sales Today</small>
+                              <a class="title" href="#">${list1.get(1).getMNAME()}</a>
+                              <p><strong>₩<fmt:formatNumber value="${list1.get(1).getMTOTAL_PAY()}" pattern="#,##0" /> </strong> / ${list1.get(1).getMPHONE()}</p>
+                              <p> <small>총 ${list1.get(1).getMTOTAL_ORDER()}회 주문</small>
                               </p>
                             </div>
                           </li>
@@ -274,9 +276,9 @@
                               <i class="fa fa-user blue"></i>
                             </a>
                             <div class="media-body">
-                              <a class="title" href="#">Ms. Mary Jane</a>
-                              <p><strong>$2300. </strong> Agent Avarage Sales </p>
-                              <p> <small>12 Sales Today</small>
+                              <a class="title" href="#">${list1.get(2).getMNAME()}</a>
+                              <p><strong>₩<fmt:formatNumber value="${list1.get(2).getMTOTAL_PAY()}" pattern="#,##0" /> </strong> / ${list1.get(2).getMPHONE()}</p>
+                              <p> <small>총 ${list1.get(2).getMTOTAL_ORDER()}회 주문</small>
                               </p>
                             </div>
                           </li>
@@ -285,9 +287,9 @@
                               <i class="fa fa-user aero"></i>
                             </a>
                             <div class="media-body">
-                              <a class="title" href="#">Ms. Mary Jane</a>
-                              <p><strong>$2300. </strong> Agent Avarage Sales </p>
-                              <p> <small>12 Sales Today</small>
+                              <a class="title" href="#">${list1.get(3).getMNAME()}</a>
+                              <p><strong>₩<fmt:formatNumber value="${list1.get(3).getMTOTAL_PAY()}" pattern="#,##0" /> </strong> / ${list1.get(3).getMPHONE()}</p>
+                              <p> <small>총 ${list1.get(3).getMTOTAL_ORDER()}회 주문</small>
                               </p>
                             </div>
                           </li>
@@ -296,9 +298,9 @@
                               <i class="fa fa-user green"></i>
                             </a>
                             <div class="media-body">
-                              <a class="title" href="#">Ms. Mary Jane</a>
-                              <p><strong>$2300. </strong> Agent Avarage Sales </p>
-                              <p> <small>12 Sales Today</small>
+                              <a class="title" href="#">${list1.get(4).getMNAME()}</a>
+                              <p><strong>₩<fmt:formatNumber value="${list1.get(4).getMTOTAL_PAY()}" pattern="#,##0" /> </strong> / ${list1.get(4).getMPHONE()}</p>
+                              <p> <small>총 ${list1.get(4).getMTOTAL_ORDER()}회 주문</small>
                               </p>
                             </div>
                           </li>

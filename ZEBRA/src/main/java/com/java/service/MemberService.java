@@ -1,5 +1,6 @@
 package com.java.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.java.dto.MemberDto;
@@ -13,6 +14,9 @@ public interface MemberService {
 	
 	// 회원 테이블 전체 가져오기
 	HashMap<String, Object> selectAll(String s_word, String category);
+	
+	// 최고 구매 고객 정보 가져오기
+	ArrayList<MemberDto> selectBest(MemberDto mdto);
 
 	// 종류별 회원 정보 가져오기
 	int[] selectMemberAll();

@@ -45,16 +45,32 @@ public class MemberServiceImpl implements MemberService {
 		return map;
 	}
 	
+	// 최고 구매 고객 정보 가져오기
+	@Override
+	public ArrayList<MemberDto> selectBest(MemberDto mdto) {
+		ArrayList<MemberDto> list = memberMapper.selectBest(mdto);
+		System.out.println("list : "+list);
+		return list;
+	}
+	
 	@Override // 종류별 회원 정보 가져오기
 	public int[] selectMemberAll() {
 		int allCount = memberMapper.selectMemberCount();
 		int maleCount = memberMapper.selectMaleCount();
 		int femaleCount = memberMapper.selectFemaleCount();
+		int totalOrder = memberMapper.sumTotalorder();
+		int totalPay = memberMapper.sumTotalpay();
+		int totalPay3 = memberMapper.sumTotalpay3();
+		int totalPay4 = memberMapper.sumTotalpay4();
+		int totalPay5 = memberMapper.sumTotalpay5();
+		int totalPay6 = memberMapper.sumTotalpay6();
+		int totalPay7 = memberMapper.sumTotalpay7();
+		int totalPay8 = memberMapper.sumTotalpay8();
 		System.out.println("allCount : "+allCount);
 		System.out.println("maleCount : "+maleCount);
 		System.out.println("FemaleCount : "+femaleCount);
 		
-		int[] counts = {allCount, maleCount, femaleCount};
+		int[] counts = {allCount, maleCount, femaleCount, totalOrder, totalPay, totalPay3, totalPay4, totalPay5, totalPay6, totalPay7, totalPay8};
 	    return counts;
 	}	
 	
@@ -135,6 +151,9 @@ public class MemberServiceImpl implements MemberService {
 		MemberDto mdto = memberMapper.selectIdEmail(MNAME, MEMAIL);
 		return mdto;
 	}
+
+
+	
 	
 
 

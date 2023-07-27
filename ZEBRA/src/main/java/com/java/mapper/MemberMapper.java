@@ -19,6 +19,9 @@ public interface MemberMapper {
 	// 회원 테이블 전체 가져오기
 	ArrayList<MemberDto> selectAll(String s_word, String category);
 
+	// 최고 구매 고객 정보 가져오기
+	ArrayList<MemberDto> selectBest(MemberDto mdto);
+	
 	// 종류별 회원 정보 가져오기
 	ArrayList<MemberDto> selectMemberAll();
 	
@@ -30,6 +33,20 @@ public interface MemberMapper {
 	
 	// 여자 회원 수
 	int selectFemaleCount();
+	
+	// 총 매출액
+	int sumTotalpay();
+	
+	// 월별 매출
+	int sumTotalpay3();
+	int sumTotalpay4();
+	int sumTotalpay5();
+	int sumTotalpay6();
+	int sumTotalpay7();
+	int sumTotalpay8();
+	
+	// 총 주문수
+	int sumTotalorder();
 	
 	// 회원 정보 1개 가져오기
 	MemberDto selectOne(String MID);
@@ -65,6 +82,14 @@ public interface MemberMapper {
 
 	//pwcode change
 	void changepwsend(String MEMAIL, String pwcode);
+
+
+
+	
+
+
+
+	
 
 	
 	// end sun //	
