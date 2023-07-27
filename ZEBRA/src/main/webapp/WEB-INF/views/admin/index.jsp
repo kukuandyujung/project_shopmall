@@ -35,6 +35,22 @@
   </head>
    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
      
+   <style>
+   
+   .best1 { /* LINE 279  */
+  border: 1px solid;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 10px 25px;
+  background-image: url("/img/best/best1.jpg"); /* 배경 이미지 경로 */
+  background-size: cover; /* 배경 이미지 크기 조절 */
+  }
+  
+}
+
+   </style>
+     
    <script>
       function boardBtn(){ // 152번째 줄
     	  alert("그래프 데이터를 업데이트합니다.");
@@ -46,12 +62,23 @@
 				dataType:"json",
 				success:function(data){
 					console.log("data : "+data);
-					alert("controller에서 데이터 받기 성공!");
-					 
+					console.log("data[0][2] : "+data[0][2]);
+					console.log("data[1] : "+data[1]);
+					alert("controller에서 데이터 받기 성공!");					
+										 
 					// 받아온 데이터를 count 클래스를 갖는 div 요소 내에 넣음
-	                $("#count1").text(data[0]);
-	                $("#count2").text(data[1]);
-	                $("#count3").text(data[2]);
+	                $("#count1").text(data[0][0]); // 총 회원수
+	                $("#count2").text(data[0][1]);
+	                $("#count3").text(data[0][2]); // 총 여자 회원수
+	                $("#count4").text(data[0][4]); // 총 매출액
+	                $("#count5").text(data[0][3].toLocaleString()); // 총 구매수
+	                $("#count6").text(data[0][5]); // 3월
+	                $("#count7").text(data[0][6]); // 4월
+	                $("#count8").text(data[0][7]); // 5월
+	                $("#count9").text(data[0][8]); // 6월
+	                $("#count10").text(data[0][9]); // 7월
+	                $("#count11").text(data[0][10]); // 8월
+	                $("#count12").text(data[1]); // 총 물품수
 					  
 				},
 				error:function(){
@@ -109,31 +136,33 @@
               <div class="count" id="count1"> ${allCount} </div>              
               <span class="count_bottom"><i class="green">4% </i> 지난 달 대비</span>
             </div>
+            
             <div class="col-md-1 col-sm-4  tile_stats_count">              
               <span class="count_top"><i class="fa fa-user"></i> 총 남자 회원수</span>
-              <div class="count green" id="count2"> ${maleCount} </div>
-               
+              <div class="count green" id="count2"> ${maleCount} </div>               
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> 지난 달 대비</span>
             </div>
+            
             <div class="col-md-1 col-sm-4  tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> 총 여자 회원수</span>
               <div class="count red" id="count3"> ${FemaleCount} </div>
               <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> 지난 달 대비</span>
             </div>
+            
             <div class="col-md-1 col-sm-4  tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> 총 상품수</span>
-              <div class="count"> ${allProductCount} </div>
+              <div class="count" id="count12"> ${allProductCount} </div>
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> 지난 달 대비</span>
             </div>
             
             <div class="col-md-1 col-sm-4  tile_stats_count">
               <span class="count_top"><i class="fa fa-clock-o"></i> 총 구매수</span>
-              <div class="count"><fmt:formatNumber value="${totalOrder}" pattern="#,##0" /></div>
+              <div class="count" id="count5"><fmt:formatNumber value="${totalOrder}" pattern="#,##0" /></div>
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> 지난 달 대비</span>
             </div>
             
             <div class="col-md-3 col-sm-4  tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> 총 매출액</span>
+              <span class="count_top" id="count4"><i class="fa fa-user"></i> 총 매출액</span>
               <div class="count">₩<fmt:formatNumber value="${totalPay}" pattern="#,##0" /></div>
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> 지난 달 대비</span>
             </div>
@@ -251,7 +280,8 @@
                         <ul class="list-unstyled top_profiles scroll-view">
                           <li class="media event">
                             <a class="pull-left border-aero profile_thumb">
-                              <i class="fa fa-user aero"></i>
+                              <img>
+                              <i class="best1"></i>
                             </a>
                             <div class="media-body">  
                               <a class="title" href="#">${list1.get(0).getMNAME()}</a>

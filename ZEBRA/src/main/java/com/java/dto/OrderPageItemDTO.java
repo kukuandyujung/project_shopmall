@@ -11,7 +11,7 @@ public class OrderPageItemDTO {
 
 	/* 뷰로부터 전달받을 값 */
     private int MID;
-    private int cartCount;
+    private int cartCount; 
     private String oaddr1;
     private String oaddr2;
     

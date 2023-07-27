@@ -108,10 +108,15 @@ public class AdminController {
    // ajax로 종류별 회원 정보 가져오기
       @PostMapping("/admin/indexAjax")
       @ResponseBody // 데이터로 넘겨줌 -> return으로
-      public int[] indexAjax(Model model) { // data를 받음   
+      public int[][] indexAjax(Model model) { // data를 받음   
          int[] list = memberService.selectMemberAll();
+         int allProductCount = boardService.selectProductCount();
+         
+         int[][] memberNproduct = new int[2][];
+         memberNproduct[0] = list;
+         memberNproduct[1] = new int[] { allProductCount };
          System.out.println("list :"+list);
-         return list; // function(data)로 넘김
+         return memberNproduct; // function(data)로 넘김
       }
    
    
