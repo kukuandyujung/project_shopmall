@@ -24,10 +24,6 @@ public class FController {
 	public String checkout() {
 		return "payment/checkout";
 	}
-	@RequestMapping("/payment/confirmation")
-	public String confirmation() {
-		return "payment/confirmation";
-	}		
 	@RequestMapping("/member/register")
 	public String register() {
 		return "member/register";
@@ -71,10 +67,6 @@ public class FController {
 	@RequestMapping("/mypage/wishlist")
 	public String wishlist() {
 		return "mypage/wishlist";
-	}
-	@RequestMapping("/payment/payment")
-	public String payment() {
-		return "payment/payment";
 	}
 	@RequestMapping("/mypage/myaccount")
 	public String myaccount(MemberDto member, Model model) {
