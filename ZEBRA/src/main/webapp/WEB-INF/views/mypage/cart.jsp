@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
@@ -59,7 +60,8 @@
 				// 총 가격
 				totalPrice += parseInt($(element).find(".individual_pprice_input").val().replace(/,/g, '')); // 수정한 부분				
 				// 총 갯수
-				totalCount += parseInt($(element).find(".quantity_input").val());		
+				totalCount += parseInt($(element).find(".quantity_input_cart_info_td").val());		
+				console.log({"totalPrice" : totalPrice});
 				console.log({"totalCount" : totalCount}); // 테스트
 				/* } */					
 			});
@@ -75,7 +77,7 @@
 			// 총 갯수
 			$(".totalCount_span").text(totalCount);
 			// 최종 가격 LINE 219
-			$(".finalTotalPrice_span").text(finalTotalPrice.toLocaleString()); /* LINE 231
+			$(".finalTotalPrice_span").text(finalTotalPrice.toLocaleString()); 
 			/* } */				 
 			
 		});
@@ -92,7 +94,6 @@
 			<div class="blog-banner">
 				<div class="text-center">
 					<h1>Shopping Cart</h1>
-					${cartInfo} <!-- FController 50 회원 정보 받아오는 중 -->
 				</div>
 			</div>
     </div>
@@ -173,7 +174,7 @@
 								
 								<td> <!-- <input type="number"> 수량 버튼  -->
 									<input type="number" class="quantity_input_cart_info_td" min="1" max="999" 
-									value="${ci.cartCount}" />
+									value="${ci.cartCount}" style="text-align: right;" />
 								</td> 
 								
 								<td><fmt:formatNumber value="${ci.totalPrice}" pattern="#,##0" /> 원</td>
@@ -183,17 +184,7 @@
 										<li><a href="#" class="nbtnMini iw70">상품삭제</a></li>
 									</ul>
 								</td>
-							</tr>
-							
-							<%-- 
-							<td class="td_width_1_cart_info_td">
-								<input type="hidden" class="individual_pprice_input" value="${ci.pprice}">
-								<input type="hidden" class="quantity_input" value="${ci.cartCount}">
-								<input type="hidden" class="individual_totalPrice_input" value="${ci.totalPrice}">
-								<input type="hidden" class="individual_pno_input" value="${ci.pno}">
-							</td>
-							 --%>
-							
+							</tr>							
 							</c:forEach>
 							</tbody>
 						</table>
@@ -218,7 +209,8 @@
 						<ul class="info">	
 						</ul>	
 						<ul class="total">	
-							<li class="money"><span><input type="text" id="finalTotalPrice" style="border: none;" readonly>원</span></li>
+							<li class="money"><span><input type="text" id="finalTotalPrice" 
+							style="border: none; text-align: right; margin-right:right" readonly>원</span></li>
 						</ul>
 					</div>
 					</form>
