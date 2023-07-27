@@ -1,5 +1,6 @@
 package com.java.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.java.dto.CartDTO;
 import com.java.dto.OrderDto;
 import com.java.dto.OrderPageDTO;
+import com.java.service.CartService;
 import com.java.service.MemberService;
 import com.java.service.OrderService;
 
@@ -25,8 +28,14 @@ public class OrderController {
 	@Autowired
 	MemberService memberService;
 	
-	@GetMapping("/payment/payment")
-	public String payment() {
+	@Autowired
+	CartService cartService;
+	
+	@GetMapping("/payment/payment/{MID}")
+	public String payment(@PathVariable("MID") String MID, Model model) {
+		ArrayList<CartDTO> cartInfo = cartService.getCartList(MID);
+		model.addAttribute("cartInfo",cartInfo);
+		System.out.println("cartInfo : "+cartService.getCartList(MID));
 		return "payment/payment";
 	}
 	

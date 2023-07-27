@@ -57,17 +57,18 @@
 			$(".cart_info_td").each(function(index, element){
 				/* if($(element).find(".individual_cart_checkbox").is(":checked") === true){ */			
 				// 총 가격
-				totalPrice += parseInt($(element).find(".individual_pprice_input").val());				
+				totalPrice += parseInt($(element).find(".individual_pprice_input").val().replace(/,/g, '')); // 수정한 부분				
 				// 총 갯수
-				totalCount += parseInt($(element).find(".quantity_input").val());			
+				totalCount += parseInt($(element).find(".quantity_input").val());		
+				console.log({"totalCount" : totalCount}); // 테스트
 				/* } */					
 			});
 			
 			/* 최종 가격 */
 			finalTotalPrice = totalPrice;	
-			console.log({"finalTotalPrice" : finalTotalPrice}); // 테스트			
-			$("#finalTotalPrice").val(finalTotalPrice); // script에서 input text - id에 값 주입하기
-			 
+			console.log({"finalTotalPrice" : finalTotalPrice}); // 테스트				
+			$("#finalTotalPrice").val(finalTotalPrice); // script에서 input text - id에 값 주입하기			 
+			
 			/* 값 삽입 */ 
 			// 총 가격
 			$(".totalPrice_span").text(totalPrice.toLocaleString());
@@ -170,10 +171,11 @@
 									style="outline: none; border: none; width: 70px; text-align: right; " readonly>원								
 								</td>
 								
-								<td>
+								<td> <!-- <input type="number"> 수량 버튼  -->
 									<input type="number" class="quantity_input_cart_info_td" min="1" max="999" 
 									value="${ci.cartCount}" />
-								</td> <!-- <input type="number"> 수량 버튼  -->
+								</td> 
+								
 								<td><fmt:formatNumber value="${ci.totalPrice}" pattern="#,##0" /> 원</td>
 								<td class="tnone">
 									<ul class="order">	
