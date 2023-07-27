@@ -191,6 +191,8 @@
                                <option value="">상품 준비 중</option>
                                <option  value="" >배송 중</option>
                                <option value="">배송 완료</option>
+                               <option value="">주문 취소</option>
+                               <option value="">구매 확정</option>
                             </select>
                           </td> 
                         </tr>
@@ -203,10 +205,8 @@
                           <td>
                           <select name="" id="" >
                              <option value="">신용 카드</option>
-                             <option  value="" >체크 카드</option>
                              <option value="">무통장 입금</option>
                              <option value="">간편 결제</option>
-                             <option value="">휴대폰 결제</option>
                           </select>    
                           </td> 
                         </tr>

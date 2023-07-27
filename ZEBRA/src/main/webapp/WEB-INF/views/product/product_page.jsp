@@ -293,16 +293,18 @@
                   
 
                   
-                  
                   <!-- 필터 바 n개씩 보기 선택 시작 -->
                   <div class="sorting mr-auto" >
+                <%-- 
                  <select id="viewnum"  class="viewnum">
                    <option value="6">view 6</option>
                    <option value="9">view 9</option>
                    <option value="12">view 12</option>
                  </select>
+                --%>  
             
                   </div>
+                  
                   <!-- 필터 바 n개씩 보기 선택 끝 -->
                   
 
@@ -310,7 +312,7 @@
                   <div>
                      <div class="input-group filter-bar-search"> 
                      <form action="/product/product_page" name="search" method="post">
-                        <input type="text" name="s_word" style="height: 38px;" placeholder="Search" >
+                        <input type="text" name="s_word" style="height: 38px;" placeholder="Search product name" >
                         <div class="input-group-append">
                            <button type="button" onclick="searchBtn()">
                               <i class="ti-search"></i>

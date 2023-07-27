@@ -147,7 +147,7 @@
 											<td >
 												<a href="order_list?CNO=${zebraorder.ONO}&page=${page}&ordercate=${ordercate}>${zebraorder.ONAME}</a>
 											</td>
-											<td>${zebraorder.OSTATUS}</td>
+											<td><span>${zebraorder.OSTATUS}</span>></td>
 											<td >${zebraorder.OPAYMENT}</td>
 										</tr>
 									</c:forEach>                

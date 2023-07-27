@@ -107,6 +107,38 @@
                           </td> 
                         </tr> 
                         <tr>
+                          <th scope="row">상품 설명</th>
+                          <td>
+                          	<span>${pdto.pdescript}</span>
+                          </td> 
+                        </tr> 
+                        <tr>
+                          <th scope="row">상품 재고</th>
+                          <td>
+                          	<span>${pdto.pstock}</span>
+                          </td> 
+                        </tr> 
+                        <tr>
+                          <th scope="row">판매 개수</th>
+                          <td>
+                          	<span>${pdto.psoldcount}</span>
+                          </td> 
+                        </tr> 
+                        <tr>
+                        <tr>
+                          <th scope="row">색상</th>
+                          <td>
+                          	<span>${pdto.pcolor}</span>
+                          </td> 
+                        </tr> 
+                        <tr>
+                        <tr>
+                          <th scope="row">판매 사이즈</th>
+                          <td>
+                          	<span>${pdto.psize}</span>
+                          </td> 
+                        </tr> 
+                        <tr>
                           <th scope="row">메인 이미지</th>
                           <td><span><img src="/upload/${pdto.pmainimg}" style="width: 100px;" alt="" /></span></td> 
                         </tr>

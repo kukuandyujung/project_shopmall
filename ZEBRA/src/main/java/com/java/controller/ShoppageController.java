@@ -27,15 +27,15 @@ public class ShoppageController {
    @PostMapping("/product/sortingAjax")
    @ResponseBody //ajax를 사용하기 위한 것. 데이터를 넘겨주는 어노테이션이다. 
    public ArrayList<ProductDto> sortingAjax(
-      String s_word, Integer pprice, String sorting, String pcolor){
+      String s_word, Integer pprice, String sorting, String pcolor, Model model){
 	  System.out.println("s_word" + s_word);
 	  System.out.println("sorting" +  sorting);
 	  System.out.println("pcolor" +  pcolor);
 	  
+	  
       
-      ArrayList<ProductDto> list = productService.selectSortAll(s_word, pprice, sorting,pcolor);
-      
-      System.out.println(list.get(0).getPname());
+     ArrayList<ProductDto> list = productService.selectSortAll(s_word, pprice, sorting,pcolor);
+    
       
       //검색어에 맞는 상품들 가져오기 
       return list;

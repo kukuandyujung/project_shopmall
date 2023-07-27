@@ -151,6 +151,7 @@
 		                        <option>pink</option>    
 		                        <option>white</option>    
 		                        <option>yellow</option>    
+		                        <option>H</option>    
                      		</select>
 <!--                           	<input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "text" name="pcolor" placeholder="ex) black "  /> -->
                           </td> 
@@ -164,6 +165,7 @@
 		                        <option>S</option>
 		                        <option>M</option>    
 		                        <option>L</option>       
+		                        <option>H</option>       
                      		</select>
 <!--                           	<input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "text" name="psize" placeholder="ex) s " /> -->
                           </td> 

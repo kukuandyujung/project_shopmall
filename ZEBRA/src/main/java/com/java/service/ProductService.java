@@ -32,7 +32,7 @@ public interface ProductService {
 
    //상품 페이지에 ajax 검색 (색상, 가격, 검색 ajax)
    ArrayList<ProductDto> selectSortAll(String s_word, Integer pprice, String sorting,String pcolor);
-
+ 
    //상품 페이지에 home 상품 전체 가져오기
    HashMap<String, Object> selectHomeAll(int page);
 
@@ -43,6 +43,7 @@ public interface ProductService {
    //주문 관리 페이지에서 주문 하나 가져오기
    HashMap<String, Object> selectOrderOne(int CNO);    
    //=================주문 관리 페이지===========================================
+
    }
 
    

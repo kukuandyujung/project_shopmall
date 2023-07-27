@@ -130,9 +130,10 @@
 			                        <tr>
 			                          <th>상품 번호</th>
 			                          <th>상품명</th>
-			                          <th>카테고리</th>
+			                          <th>카테고리<small>(women: 10, home: 11)</small></th>
 			                          <th>상품 재고</th>
 			                          <th>판매 개수</th>
+			                          <th>색상<small>(home: H)</small></th>
 			                        </tr>
 			                      </thead>
 			
@@ -147,6 +148,7 @@
 											<td>${product.pcode}</td>
 											<td >${product.pstock}</td>
 											<td >${product.psoldcount}</td>
+											<td >${product.pcolor}</td>
 										</tr>
 									</c:forEach>                
 			                      </tbody>
