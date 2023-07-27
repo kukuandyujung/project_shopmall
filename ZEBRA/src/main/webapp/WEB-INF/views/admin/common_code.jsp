@@ -19,7 +19,7 @@
 <!--                       <li><a href="/admin/form_buttons">Form Buttons</a></li> -->
                       <li><a href="/admin/product_list">상품 관리</a></li>
                       <li><a href="/admin/order_list">주문 관리</a></li>
-                      <li><a href="/admin/order_view">주문 뷰</a></li>
+<!--                       <li><a href="/admin/order_view">주문 뷰</a></li> -->
                     </ul>
                   </li>
                   <li><a><i class="fa fa-user"></i> Member Control <span class="fa fa-chevron-down"></span></a>

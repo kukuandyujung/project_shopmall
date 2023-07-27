@@ -3,6 +3,7 @@ package com.java.service;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.java.dto.OrderDto;
 import com.java.dto.ProductDto;
 
 public interface ProductService {
@@ -41,8 +42,14 @@ public interface ProductService {
    HashMap<String, Object> selectOrderAll(int page, String ordercate, String OSTATUS);
 
    //주문 관리 페이지에서 주문 하나 가져오기
-   HashMap<String, Object> selectOrderOne(int CNO);    
+   HashMap<String, Object> selectOrderOne(int ONO);    
+
+   //주문 관리에서 배송 상태 ajax 
+   ArrayList<OrderDto> selectUPAjaxAll(Integer ONO, String OSTATUS, String ordercate);
    //=================주문 관리 페이지===========================================
+   
+
+   
 
    }
 

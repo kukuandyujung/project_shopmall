@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import com.java.dto.OrderDto;
 import com.java.dto.ProductDto;
@@ -179,24 +180,10 @@ public class ProductServiceImpl implements ProductService{
 	      
 	      //전체 상품 개수를 페이지 당 9개씩 보여줄 때 필요한 전체 페이지 수를 계산하기 
 	      int maxPage = (int)Math.ceil((double)product_page_listCounthome/9); // 67/9 8개 page
-	      int startPage = (int)((page-1)/9)*9 + 1; //현재 페이지에 해당하는 시작 페이지를 계산하기. 
-	      //페이지 당 9개씩 보여줄 때 현재 페이지의 시작 페이지가 된다. 
-	      //예를 들어 페이지가 1일 경우 시작페이지는 1이 된다. 
-	      
-	      //시작 페이지로부터 10개의 페이지를 더한 후 1을 빼서 현재 페이지 범위에서의 끝 페이지를 계산
-	      //예를 들어 시작 페이지가 1이라면 마지막 페이지는 10이 된다. 
+	      int startPage = (int)((page-1)/9)*9 + 1; //현재 페이지에 해당하는 시작 페이지를 계산하기.  
 	      int endPage = startPage+10-1;
-	      
-	      //현재 페이지에 해당하는 시작 레코드 번호를 계산하기
-	      //페이지당 9개씩 보여줄 때 해당 페이지의 첫 번째 상품의 인덱스를 구하기 
-	      //예를 들어 페이지가 1일 경우에 startRow는 1이 된다. 
-	      int startRow = (page-1)*9+1;  //1page -> 1-9, 2page -> 10-18
-	      
-	      //시작 레코드 번호로 부터 9개의 상품을 가져올 때 마지막 상품의 인덱스를 계산
-	      //시작 startRow가 1이라면 endRow는 9가 된다.
+	      int startRow = (page-1)*9+1;  //1page -> 1-9, 2page -> 10-18  
 	      int endRow = startRow+9-1;
-	      
-	      //endPage가 최대페이지보다 더 크면 최대페이지까지만 노출
 	      if(endPage>maxPage) endPage=maxPage;
       
       
@@ -247,16 +234,29 @@ public class ProductServiceImpl implements ProductService{
 	}
     //주문 관리 페이지에서 주문 하나 가져오기
     @Override
-    public HashMap<String, Object> selectOrderOne(int CNO) {
+    public HashMap<String, Object> selectOrderOne(int ONO) {
     	HashMap<String, Object> map = new HashMap<>();
-    	OrderDto preDto = productMapper.selectOrderPreOne(CNO);
-    	OrderDto oDto = productMapper.selectOrderOne(CNO);
-    	OrderDto nextDto = productMapper.selectOrderNextOne(CNO);
-    	map.put("preDto", preDto);
-	    map.put("nextDto", nextDto);
-	    map.put("pdto", oDto);
+//    	OrderDto preDto = productMapper.selectOrderPreOne(ONO);
+    	OrderDto odto = productMapper.selectOrderOne(ONO);
+//    	OrderDto nextDto = productMapper.selectOrderNextOne(ONO);
+//    	map.put("preDto", preDto);
+//	    map.put("nextDto", nextDto);
+	    map.put("odto", odto);
     	return map;
-    }   
+    }
+
+
+    //주문 관리에서 배송 상태 ajax 
+	@Override
+	public ArrayList<OrderDto> selectUPAjaxAll(Integer ONO, String OSTATUS, String ordercate) {
+		
+		System.out.println("impl ONO : " + ONO);
+		System.out.println("impl OSTATUS : " + OSTATUS);
+		System.out.println("impl ordercate : " + ordercate);
+		
+		ArrayList<OrderDto> list = productMapper.selectUPAjaxAll(ONO, OSTATUS, ordercate);
+		return list;
+	}   
    
  
 

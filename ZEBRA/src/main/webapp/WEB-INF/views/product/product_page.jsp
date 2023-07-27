@@ -141,12 +141,9 @@
              htmlData += '<h4 class="card-product__title">';
              htmlData += '<a href="/product/product_detail?pno=${product.pno}">'+result[i].pname+'</a>';
              htmlData += '</h4>';
-             htmlData += '<p class="card-product__price">'+result[i].pprice+'원</p>';
              htmlData += '</div></div></div>';
 
-             
           }
-          
           
 
           $(".row1").html(htmlData);
