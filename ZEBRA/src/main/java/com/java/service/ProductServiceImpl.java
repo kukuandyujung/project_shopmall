@@ -248,13 +248,13 @@ public class ProductServiceImpl implements ProductService{
 
     //주문 관리에서 배송 상태 ajax 
 	@Override
-	public ArrayList<OrderDto> selectUPAjaxAll(Integer ONO, String OSTATUS, String ordercate) {
+	public ArrayList<OrderDto> selectUPAjaxAll(OrderDto odto) {
 		
-		System.out.println("impl ONO : " + ONO);
-		System.out.println("impl OSTATUS : " + OSTATUS);
-		System.out.println("impl ordercate : " + ordercate);
+		System.out.println("impl ONO : " + odto.getONO());
+		System.out.println("impl OSTATUS : " + odto.getOSTATUS());
+	
 		
-		ArrayList<OrderDto> list = productMapper.selectUPAjaxAll(ONO, OSTATUS, ordercate);
+		ArrayList<OrderDto> list = productMapper.selectUPAjaxAll(odto);
 		return list;
 	}   
    

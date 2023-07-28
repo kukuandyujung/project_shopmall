@@ -141,6 +141,7 @@
              htmlData += '<h4 class="card-product__title">';
              htmlData += '<a href="/product/product_detail?pno=${product.pno}">'+result[i].pname+'</a>';
              htmlData += '</h4>';
+             htmlData += '<p class="card-product__price">'+result[i].pprice+'원</p>';
              htmlData += '</div></div></div>';
 
           }
@@ -244,7 +245,7 @@
                   <!-- 색상 필터 끝  -->
                   
                   <!-- 가격 슬라이드 시작  -->
-                  <div class="common-filter">
+           <%-- <div class="common-filter">
                      <div class="head">Price</div>
                      <div class="price-range-area">
                         <div id="price-range"></div>
@@ -260,7 +261,7 @@
                      </div>
                   </div>
                   <!-- 가격 슬라이드 끝  -->
-               
+               --%>       
                </div>
             </div>
              
@@ -269,7 +270,7 @@
                <!-- 상단 필터 바 시작 -->
                <div class="filter-bar d-flex flex-wrap align-items-center">
                             
-                  <!-- 필터 바 가격 순 시작 -->       
+                  <!-- 필터 바 가격순 시작 -->       
                   <div class="sorting">
                   <form action="/product/product_page" name="price" method="post">
                   <!-- selectprice()를 통해 셀렉 시 바로 변경 되도록 -->
@@ -286,7 +287,7 @@
                   </form>
                   </div>
                   
-                  <!-- 필터 바 가격 순  끝 -->
+                  <!-- 필터 바 가격순  끝 -->
                   
 
                   

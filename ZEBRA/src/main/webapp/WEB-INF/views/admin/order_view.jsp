@@ -27,14 +27,13 @@
   <script type="text/javascript">
   function updateBtn(){
 		  alert("배송 상태를 수정합니다.");
+		  //alert(${odto.ONO});
+		  
 		  $.ajax({
 			 url:"/admin/updateAjax",
 			 type:"post",
-			 data:  {
-		            
-		           "OSTATUS":  $("select[name='ordercate']").val(),     
-		       	    
-		   
+			 data:  {"OSTATUS":$("select[name='OSTATUS']").val(),
+				 	"ONO" :${odto.ONO},
 		           },
 		           
 			 dataType:"json",
@@ -46,8 +45,7 @@
 				 
 				 
 				
-				 //받은 데이터를 html에 넣음
-				 $(".updateAjax").html(data.OSTATUS);
+                  location.reload(true);//새로 고침
 				 
 			 },
 			 error:function(){
@@ -183,20 +181,20 @@
                            
                           <th scope="row">배송 상태</th>
                           
-                          <td class="updateAjax" >${odto.OSTATUS}
-                          </td> 
-                        </tr>
-                         <tr> 	
-                          	<select id="ordercate" name="ordercate" onchange="updateBtn()" >
-                               <option value="">-- --</option>
-                               <option value="preprare" >상품 준비 중</option>
-                               <option value="shipping" >배송 중</option>
-                               <option value="completed" >배송 완료</option>
-                               <option value="ordercancel" >주문 취소</option>
-                               <option value="confirmaion" >구매 확정</option>
+                          <td> 
+                          
+                          	<select id="OSTATUS" name="OSTATUS" onchange="updateBtn()" >
+                               <option >${odto.OSTATUS}</option>
+                               <option value="상품 준비 중" >상품 준비 중</option>
+                               <option value="배송 중" >배송 중</option>
+                               <option value="배송 완료" >배송 완료</option>
+                               <option value="주문 취소" >주문 취소</option>
+                               <option value="구매 확정" >구매 확정</option>
                             </select>    
                      		   <button  type="button" onclick="updateBtn()" >수정하기</button>
+                        </td> 
                         </tr>
+                          	
                         
                         <tr>
                           <th scope="row">주문자 배송 요구 사항</th>

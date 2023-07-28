@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class OrderDto {
 
-	private Integer ONO; //주문번호
+	private int ONO; //주문번호
 	private String MID;
 	private int PNO;
 	private int OAMOUNT; //주문수량

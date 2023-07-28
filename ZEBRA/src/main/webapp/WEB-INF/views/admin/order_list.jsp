@@ -87,7 +87,7 @@
                 <h3>✅ 🛒 Order List 🛒 ✅</h3>
               </div>
 
-			 <!-- 셀렉해서 검색하기 시작-->
+<!-- 			 셀렉해서 검색하기 시작 -->
               <div class="title_right">
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                   <form action="/admin/order_list" name="search" method="post">
@@ -97,19 +97,19 @@
 				        <option value="shipping">배송 중</option>
 				        <option value="completed">배송 완료</option>
 				      </select>
-                  검색 시작
+<!--                   검색 시작 -->
                   <div class="input-group">
                     <input type="text" class="form-control" name="s_word" id="s_word"  value="${s_word }" placeholder="Search for...">
                     <span class="input-group-btn">
                       <button class="btn btn-secondary" type="button" onclick="searchBtn()" data-toggle="tooltip" title="검색을 해보세요~!">검색</button>
                     </span>
                   </div>
-                  검색 끝
+<!--                   검색 끝 -->
                     </form>
                 </div>
               </div>
             </div>
-		    <!-- 셀렉해서 검색하기 끝-->
+<!-- 		    셀렉해서 검색하기 끝 -->
 		
 
             <div class="clearfix"></div>

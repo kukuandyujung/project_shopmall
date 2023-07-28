@@ -2,6 +2,8 @@ package com.java.controller;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +23,7 @@ import com.java.service.CartService;
 public class FController {
 	@Autowired CartMapper cartMapper;
 	@Autowired CartService cartService;
+	@Autowired HttpSession session;
 
 	@RequestMapping("/payment/checkout")
 	public String checkout() {
@@ -79,6 +82,9 @@ public class FController {
 	}
 	@RequestMapping("/mypage/orderhistory")
 	public String orderhistory() {
+		if (session.getAttribute("sessionId")== null) {
+			return "member/login";
+		}
 		return "mypage/orderhistory";
 	}
 	

@@ -301,23 +301,7 @@
    
    <!--  주문 관리에서 배송 상태 ajax  -->
      <select id="selectUPAjaxAll" resultType="com.java.dto.OrderDto">
-      update zebraorder set 
-	  <if test="ordercate == 'prepare'">      <!-- 상품 준비 중 -->
-      OSTATUS='상품 준비 중' 
-      </if>
-      <if test="ordercate == 'shipping'">      <!-- 배송 중 -->
-      OSTATUS='배송 중' 
-      </if>
-      <if test="ordercate == 'completed'">      <!-- 배송 완료 -->      
-      OSTATUS='배송 완료'
-      </if>
-      <if test="ordercate == 'ordercancel'">      <!-- 주문 취소 -->      
-      OSTATUS='주문 취소' 
-      </if>
-      <if test="ordercate == 'confirmaion'">      <!-- 구매 확정-->
-      OSTATUS='구매 확정' 
-      </if>
-	  where ONO=#{ONO}
+      update zebraorder set OSTATUS=#{OSTATUS} where ONO=#{ONO}
 	  </select>
    
     <!-- ===============================주문 관리 페이지============================================  -->

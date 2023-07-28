@@ -65,7 +65,7 @@ public interface ProductMapper {
    OrderDto selectOrderOne(int ONO);
 
    //주문 관리에서 배송 상태 ajax 
-   ArrayList<OrderDto> selectUPAjaxAll(Integer ONO, String OSTATUS, String ordercate);
+   ArrayList<OrderDto> selectUPAjaxAll(OrderDto odto);
    
 
 

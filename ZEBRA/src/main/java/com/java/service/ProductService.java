@@ -45,7 +45,7 @@ public interface ProductService {
    HashMap<String, Object> selectOrderOne(int ONO);    
 
    //주문 관리에서 배송 상태 ajax 
-   ArrayList<OrderDto> selectUPAjaxAll(Integer ONO, String OSTATUS, String ordercate);
+   ArrayList<OrderDto> selectUPAjaxAll(OrderDto odto);
    //=================주문 관리 페이지===========================================
    
 

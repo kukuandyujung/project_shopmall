@@ -92,13 +92,7 @@ public class ProductController {
          @RequestPart("pd3") MultipartFile pdetailimg3,
    
          Model model) throws Exception{
-      
-      
-      
-      
-      System.out.println("hjhhhhhhhhhhhhhhhhhh");
-   
-      
+
       
       //상품 관리 상품 1개 등록하기 
       String new_pmainimg =""; //파일 등록을 위한 변수 설정
@@ -201,8 +195,6 @@ public class ProductController {
          Model model)throws Exception {
    
          
-      
-      //사진 1개 수정
 //         System.out.println("product_update getpno pdto" + pdto.getPno());
 //         System.out.println("product_update getpcode pdto" + pdto.getPcode());
 //         System.out.println("product_update getpname pdto" + pdto.getPname());
@@ -324,13 +316,16 @@ public class ProductController {
 	  	@PostMapping("/admin/updateAjax")
 	  	@ResponseBody
 	  	public ArrayList<OrderDto> updateAjax(
-	  			Integer ONO, String OSTATUS, String ordercate, Model model) {
+	  			OrderDto odto ,int ONO) {
 	  	 
 	  		
-	  		System.out.println("ProductController aJax OSTATUS : "+ OSTATUS);
-	  		System.out.println("ProductController aJax ordercate : "+ ordercate);
+	  		System.out.println("ProductController aJax OSTATUS : "+ odto.getOSTATUS());
+	  		System.out.println("ProductController aJax OSTATUS : "+ odto.getONO());
+	  		System.out.println("ProductController aJax ordercate : "+ ONO);
+	  		odto.setOno(ONO); //ono를 강제로 값  넣기? 
+	  		
 	  		//주문 여러개 가져오기 
-	  		ArrayList<OrderDto> list= productService.selectUPAjaxAll(ONO, OSTATUS, ordercate); //mapper데이터 List 가져옴. 여러 개 
+	  		ArrayList<OrderDto> list= productService.selectUPAjaxAll(odto); //mapper데이터 List 가져옴. 여러 개 
 	  	
 	  	
 	  		return list;
