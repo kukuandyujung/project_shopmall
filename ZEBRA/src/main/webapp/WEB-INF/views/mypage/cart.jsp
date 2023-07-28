@@ -60,25 +60,21 @@
 				// 총 가격
 				totalPrice += parseInt($(element).find(".individual_pprice_input").val().replace(/,/g, '')); // 수정한 부분				
 				// 총 갯수
-				totalCount += parseInt($(element).find(".quantity_input_cart_info_td").val());		
+				totalCount += parseInt($(element).find(".quantity_input_cart_info_td").val());					
 				console.log({"totalPrice" : totalPrice});
-				console.log({"totalCount" : totalCount}); // 테스트
+				console.log({"totalCount" : totalCount});
 				/* } */					
 			});
 			
-			/* 최종 가격 */
-			finalTotalPrice = totalPrice;	
-			console.log({"finalTotalPrice" : finalTotalPrice}); // 테스트				
-			$("#finalTotalPrice").val(finalTotalPrice); // script에서 input text - id에 값 주입하기			 
-			
-			/* 값 삽입 */ 
-			// 총 가격
-			$(".totalPrice_span").text(totalPrice.toLocaleString());
-			// 총 갯수
-			$(".totalCount_span").text(totalCount);
-			// 최종 가격 LINE 219
-			$(".finalTotalPrice_span").text(finalTotalPrice.toLocaleString()); 
-			/* } */				 
+			 // cartInfo 배열의 각 요소들을 순회하며 totalPrice 값을 합산합니다.
+			  <c:forEach items="${cartInfo}" var="ci">
+			    finalTotalPrice += ${ci.totalPrice};
+			  </c:forEach>			  
+			  
+			// finalTotalPrice 값을 콤마(,)를 포함하여 표시하기 위해 toLocaleString() 메서드를 사용합니다.
+			  const formattedFinalTotalPrice = finalTotalPrice.toLocaleString();			  
+			  $("#finalTotalPrice").val(formattedFinalTotalPrice);
+			  console.log("Formatted Final Total Price: " + formattedFinalTotalPrice);
 			
 		});
 	}) (jQuery);
@@ -169,7 +165,7 @@
 								<td class="cart_info_td"> <!-- 상품1 가격  -->
 									<input type="text" class="individual_pprice_input" 
 									value=<fmt:formatNumber value="${ci.pprice}" pattern="#,##0" /> 
-									style="outline: none; border: none; width: 70px; text-align: right; " readonly>원								
+									style="outline: none; border: none; width: 70px; text-align: right; vertical-align: middle; " readonly>원								
 								</td>
 								
 								<td> <!-- <input type="number"> 수량 버튼  -->
@@ -184,8 +180,8 @@
 										<li><a href="#" class="nbtnMini iw70">상품삭제</a></li>
 									</ul>
 								</td>
-							</tr>							
-							</c:forEach>
+								</tr>		
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>
@@ -210,7 +206,7 @@
 						</ul>	
 						<ul class="total">	
 							<li class="money"><span><input type="text" id="finalTotalPrice" 
-							style="border: none; text-align: right; margin-right:right" readonly>원</span></li>
+							style="border: none; text-align: right; margin-right:right; vertical-align: middle; " readonly > 원</span></li>
 						</ul>
 					</div>
 					</form>
@@ -220,7 +216,7 @@
 					<div class="cartarea">
 						<ul>
 							<li><a href="#" class="ty1">선택상품 <span>주문하기</span></a></li>
-							<li><a href="#" class="ty2">전체상품 <span>주문하기</span></a></li>
+							<li><a href="/payment/payment/${sessionId}" class="ty2">전체상품 <span>주문하기</span></a></li>
 							<li class="last"><a href="/layout/index" class="ty3">쇼핑 <span>계속하기</span></a></li>
 						</ul>
 					</div>
