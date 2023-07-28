@@ -42,12 +42,7 @@ function loginBtn(){
 		
 }//loginBtn
 
-
-
-
 //로그인 알림창
-
-
 </script>
 <!-- START 로그인 중복 검사  --> 
 <script type="text/javascript">
@@ -92,7 +87,7 @@ console.log($("input[type=checkbox][name=hobby]:checked").val());
 				<ul>
 					<li><a href="/member/login" id="leftNavi1">로그인</a></li>
 					<li><a href="/member/register" id="leftNavi2">회원가입</a></li>
-					<li><a href="member/idsearch" id="leftNavi3">아이디/<span>비밀번호
+					<li><a href="/member/idsearch" id="leftNavi3">아이디<span>비밀번호
 								찾기</span></a></li>
 				</ul>
 			</div>
@@ -126,10 +121,9 @@ console.log($("input[type=checkbox][name=hobby]:checked").val());
 								</div>
 
 
-								<div class="chk">
-									<input type="checkbox" id="idsave" /> <label for="idsave">아이디
-										저장</label>
-								</div>
+								<!-- <div class="chk">
+									<input type="" id="idsave" /> <label for="idsave"></label>
+								</div> -->
 
 								<div class="point">
 									<p>아이디와 비밀번호를 잊으셨나요?</p>

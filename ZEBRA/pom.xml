@@ -62,12 +62,14 @@
 			<artifactId>javax.mail-api</artifactId>
 			<version>1.6.2</version>
 		</dependency>	
+		<!-- oracle 11g -->
 		<dependency>
 			<groupId>ojdbc</groupId>
 			<artifactId>ojdbc6</artifactId>
 			<version>6</version>
 			<scope>system</scope>
-			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/ojdbc6_g.jar</systemPath>
+			<systemPath>C:/ojdbc6_g.jar</systemPath>
+			<!--<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/ojdbc6_g.jar</systemPath>-->
 		</dependency>
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
@@ -81,6 +83,14 @@
 			<version>2.3.1</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- log4jdbc 마이바티스 출력 -->
+		<dependency>
+		    <groupId>org.bgee.log4jdbc-log4j2</groupId>
+		    <artifactId>log4jdbc-log4j2-jdbc4.1</artifactId>
+		    <version>1.16</version>
+		</dependency>
+		
 	</dependencies>
 	<build>
 		<plugins>

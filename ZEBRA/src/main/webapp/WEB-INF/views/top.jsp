@@ -96,6 +96,12 @@
 							</ul></li>
 					</ul>
 
+							<c:if test="${sessionId!=null}">
+							<li class="nav-item"><a ref="/customer/faqList" style="margin-right: 10px; font-size: 15px; style="font-weight:bold;class=""
+							 href="/customer/faqList"
+							style="font-weight: bold; font-size: 15px;">고객센터</a></li>
+							</c:if>	
+							
 					<ul class="nav-shop">
 						<c:if test="${sessionId==null}">
 							<li class="nav-item" style="margin-left: 10px;"><a class=""
@@ -110,11 +116,10 @@
 							<i class="ti-shopping-cart" style="font-size: 15px;"></i>
 							</button>
 							</a>
-							</li> <!-- 장바구니 아이콘 -->
-						</c:if>	
 							
-
-						<li class="nav-item"><a class="" href="/mypage/orderhistory"
+							</li> <!-- 장바구니 아이콘 -->
+						</c:if>			
+							<li class="nav-item"><a class="" href="/mypage/orderhistory"
 							style="font-weight: bold; font-size: 15px;">My Page</a></li>
 							
 						<c:if test="${sessionId==null}">

@@ -71,25 +71,31 @@
 							</colgroup>
 							<tbody>
 								<tr>
-									<th scope="row"><span>이름  </span></th>
+									<th scope="row"><label for="name"><span>이름  </span></th>
 									<td>김슬기</td>
 								</tr>
 								<tr>
 								<th scope="row"><span>성별 </span></th>
 								<td>
 								  <ul class="baseQues">
-								    <li>
-								      <input type="radio" name="gender" id="solar" class="radio_t" checked="checked"/><label for="solar">남성</label>
+								    <li><input type="radio" name="gender" id="solar" class="radio_t" checked="checked"/><label for="solar">남성</label>
+								    </li>
+								    <li><input type="radio" name="gender" id="lunar" class="radio_t"/><label for="lunar">여성</label>
+									  </c:if>
+								
+									  
+									  <input type="radio" name="gender" id="solar" class="radio_t" checked="checked"/><label for="solar">남성</label>
 								    </li>
 								    <li>
 								      <input type="radio" name="gender" id="lunar" class="radio_t"/><label for="lunar">여성</label>
+								  </c:if>
 								    </li>
 								  </ul>
 								</td>
 								</tr>
 								<tr>
-									<th scope="row"><span>아이디  </span></th>
-									<td>sleifhglsle123</td>
+									<th scope="row"><label for="id">아이디 </label></th>
+									<td>${member.sessionId }</td>
 								</tr>
 								<!--================ START 비밀번호 비교 확인 =================-->						
 								<script type="text/javascript">
@@ -124,7 +130,9 @@
 									<th scope="row"><span>이메일</span></th>
 									<td>
 										<ul class="pta">
-											<li><input type="text" class="w134" /></li>
+											<li><input type="text" name="MEMAIL1" id="joinEmail1" value="${member.MEMAIL }" required />
+											
+												<class="w134" /></li>
 											<li><span class="valign">&nbsp;@&nbsp;</span></li>
 											<li class="r10"><input type="text" class="w134" /></li>
 											<li>
@@ -191,13 +199,13 @@
 										<ul class="pta">
 											<li>
 												<select>
-													<option value='' selected="selected">년</option>
+													<option value="${member.MBIRTH}" selected="selected">${member.MBIRTH}</option>
 													<script type="text/javascript">
-													//<![CDATA[
+													<![CDATA[
 														for(var i=1940; i<=2014; i++){
 															document.write("<option value=''>" + i + "년"+ "</option>");	
 														};
-													//]]>
+													]]>
 													</script>
 												</select>
 											</li>
@@ -260,7 +268,6 @@
 					</div>
 					<!-- //Btn Area -->
 
-
 <script type="text/javascript" src="../js/jquery.fancybox-1.3.4.pack.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/jquery.fancybox-1.3.4.css" />
 
@@ -269,14 +276,9 @@
 				</div>
 			</div>
 			<!-- //contents -->
-
-
 		</div>
 	</div>
 	<!-- //container -->
-
-
-
 </div>
 </div>
 

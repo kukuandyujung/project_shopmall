@@ -76,14 +76,14 @@ function joinBtn(){
 	   alert("이름 사용 가능!!!!");
    } 
  
-   // 아이디 - 영문,숫자만 가능
+   /* // 아이디 - 영문,숫자만 가능
     if(!idCheck.test($("#joinId").val())){ //정규표현식 패턴과 입력한 글자 비교
 	   alert("아이디는 영문,숫자,특수문자(_) 4~20자 까지 입력 가능합니다..");
 	   $("#joinId").focus();
 	   return false;
    }else{
 	   alert("아이디 사용 가능!!!!");
-   } 	
+   } 	 */
 
    // 패스워드 - 영문,숫자,특수문자가 개이상 인지 검색
    if(!pwCheck.test($("#joinPw").val())){ //정규표현식 패턴과 입력한 글자 비교
@@ -439,20 +439,20 @@ function joinBtn(){
 													</script>
 												</select></li>
 												<li class="r20">&nbsp;<span class="valign"></span></li>
-												
-											</ul>
-										</td>
-									</tr>
-									<tr>
-
-									</tr>
-								</tbody>
+											</li>
+										</ul>
+									</td>
+								</tr>
+							</tbody>
 							</table>
+						</div>
 						
+
 					</div>
-				</div>
-			
+
+						
 					<!-- Btn Area -->
+					<div class="btnArea">
 						<div class="bCenter">
 							<ul>
 								<li><a href="/member/login" class="nbtnbig">취소하기</a></li>
