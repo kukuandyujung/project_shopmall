@@ -57,7 +57,7 @@ public class MemberController {
 	}
 		
 	 // id search - 이름 & 이메일 검사  
-	  @PostMapping("/member/idEmaiCheck")  
+	  @PostMapping("/member/idEmailCheck")  
 	  @ResponseBody 
 	  public String checkIdEmail(String MNAME, String MEMAIL) {
 	  System.out.println("id search - 이름 & 이메일 checkID : " + MNAME);

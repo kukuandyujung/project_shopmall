@@ -163,7 +163,7 @@ WHERE ROWNUM BETWEEN 1 AND 5
 	select * from zebra where MID=#{MID}
 </select>
 
-<!-- ID SEARCH - ID EMAIL 중복 체크 -->
+<!-- ID SEARCH - 이름 EMAIL 중복 체크 -->
 <select id="selectIdEmail" resultType="com.java.dto.MemberDto" >
 	select * from zebra where MNAME=#{MNAME} and MEMAIL=#{MEMAIL}
 </select>

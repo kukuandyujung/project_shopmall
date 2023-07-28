@@ -18,7 +18,6 @@ import com.java.service.MemberService;
   @Autowired MemberService memberService;
   
   @RequestMapping("/email/emailSend")
-  
   @ResponseBody 
   public String emailSend(String MNAME, String MEMAIL) {
 	  System.out.println("controller name : "+MNAME); 

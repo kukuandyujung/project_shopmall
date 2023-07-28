@@ -61,14 +61,14 @@ public class EmailServiceImpl implements EmailService {
 			SimpleMailMessage message = new SimpleMailMessage();
 			message.setTo(MEMAIL);
 			message.setFrom("srkim860518@gmail.com"); // 개인 gmail 사용하세요!!!
-			message.setSubject(MNAME + "님께 이메일 인증 임시 번호를 발송합니다."); // 개인 gmail 사용하세요!!!
-			message.setText("안녕하세요. 회원가입에 필요한 이메일 인증 임시 비밀번호를 안내 드립니다.\n" 
+			message.setSubject(MNAME + "님께 이메일 인증 임시 번호를 발송합니다."); // 이메일 제목, 개인 gmail 사용하세요!!!
+			message.setText("안녕하세요. 회원가입에 필요한 이메일 인증 임시 비밀번호를 안내 드립니다.\n" //임ㅔ일  
 					+ "[" + MNAME + "님의 임시 비밀번호: " + pwcode + "] \n");
 			
 			mailSender.send(message);
 			System.out.println("이메일이 발송 되었습니다.!!");
 			
-			// changepw
+			// change pw
 			memberMapper.changepwsend(MEMAIL,pwcode);
 			
 
