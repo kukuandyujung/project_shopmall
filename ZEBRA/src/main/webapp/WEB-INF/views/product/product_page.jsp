@@ -89,6 +89,7 @@
       document.getElementById(imageId).classList.add('selected');
    }
    
+   
    function ajaxsort(){
        // 사용자가 선택한 컬러, 가격 정렬 및 검색 값을 가져오기.
      
@@ -140,12 +141,9 @@
              htmlData += '<h4 class="card-product__title">';
              htmlData += '<a href="/product/product_detail?pno=${product.pno}">'+result[i].pname+'</a>';
              htmlData += '</h4>';
-             htmlData += '<p class="card-product__price">'+result[i].pprice+'원</p>';
              htmlData += '</div></div></div>';
 
-             
           }
-          
           
 
           $(".row1").html(htmlData);
@@ -292,16 +290,18 @@
                   
 
                   
-                  
                   <!-- 필터 바 n개씩 보기 선택 시작 -->
                   <div class="sorting mr-auto" >
+                <%-- 
                  <select id="viewnum"  class="viewnum">
                    <option value="6">view 6</option>
                    <option value="9">view 9</option>
                    <option value="12">view 12</option>
                  </select>
+                --%>  
             
                   </div>
+                  
                   <!-- 필터 바 n개씩 보기 선택 끝 -->
                   
 
@@ -309,7 +309,7 @@
                   <div>
                      <div class="input-group filter-bar-search"> 
                      <form action="/product/product_page" name="search" method="post">
-                        <input type="text" name="s_word" style="height: 38px;" placeholder="Search" >
+                        <input type="text" name="s_word" style="height: 38px;" placeholder="Search product name" >
                         <div class="input-group-append">
                            <button type="button" onclick="searchBtn()">
                               <i class="ti-search"></i>
@@ -351,7 +351,7 @@
                               <h4 class="card-product__title">
                                  <a href="/product/product_detail?pno=${product.pno}">${product.pname}</a>
                               </h4>
-                              <p class="card-product__price">${product.pprice}원</p>
+                              <p class="card-product__price"><fmt:formatNumber value="${product.pprice}" pattern="###,###원" /></p>
                            </div>
                         </div>
                      </div>
@@ -360,14 +360,12 @@
                <!-- 상품 리스트  끝-->      
                                           
                   </div>
-               </section>
-               <!-- ================ category section end ================= -->
-      <div class="btnAreaList">
+      <div class="btnAreaList">    
       <div class="allPageMoving1">
                
       <!-- 첫 페이지 이동 -->
        <c:if test="${page!=1 }">
-         <a href= "/product/product_page?page=1&category=${category}&s_word=${s_word}">
+         <a href= "/product/product_page?page=1&s_word=${s_word}$sorting=${sorting}$pcolor=${pcolor}">
       <img src="../img/btn/btn_pre2.gif" alt="처음으로" />
 <!--          <li class="first"></li>-->
       </a>      
@@ -378,7 +376,7 @@
        </c:if>
       <!-- 이전 페이지 이동 -->
       <c:if test="${page>1 }">
-      <a href="/product/product_page?page=${page-1}&category=${category}&s_word=${s_word}">
+      <a href="/product/product_page?page=${page-1}&s_word=${s_word}$sorting=${sorting}$pcolor=${pcolor}">
       <img src="../img/btn/btn_pre1.gif" alt="앞페이지로" />
 <!--       <li class="prev"></li> -->
       </a>
@@ -390,7 +388,7 @@
       <!-- 페이지 리스트 -->
       <c:forEach begin="${startPage}" end="${endPage}" step="1" var="num">
          <c:if test="${num != page }">
-         <a href="/product/product_page?page=${num}&category=${category}&s_word=${s_word}">      
+         <a href="/product/product_page?page=${num}&s_word=${s_word}$sorting=${sorting}$pcolor=${pcolor}">      
             <li class="num"><div class="number-box">${num}</div></li>
          </a>
          </c:if>
@@ -400,7 +398,7 @@
       </c:forEach>
       <!-- 다음 페이지 이동 -->
       <c:if test="${page<maxPage }">
-        <a href="/product/product_page?page=${page+1}&category=${category}&s_word=${s_word}">
+        <a href="/product/product_page?page=${page+1}&s_word=${s_word}$sorting=${sorting}$pcolor=${pcolor}">
 <!--         <li class="next"></li> -->
         <img src="../img/btn/btn_next1.gif" alt="뒤페이지로" />
         </a> 
@@ -411,7 +409,7 @@
       </c:if>
       <!-- 끝 페이지 이동 -->
       <c:if test="${page !=  maxPage }">
-      <a href="/product/product_page?page=${maxPage}&category=${category}&s_word=${s_word}">
+      <a href="/product/product_page?page=${maxPage}&s_word=${s_word}$sorting=${sorting}$pcolor=${pcolor}">
       <img src="../img/btn/btn_next2.gif" alt="마지막페이지로" />
 <!--       <li class="last"></li> -->
       </a>
@@ -424,31 +422,13 @@
                   
                   
                   
-                  
-<!--                   <div class="allPageMoving1"> -->
-<!--                      <a href="#"><img src="../img/btn/btn_pre2.gif" alt="처음으로" /></a> -->
-<!--                      <a href="#"><img src="../img/btn/btn_pre1.gif" alt="앞페이지로" /></a> -->
-<!--                      <div class="number-box"> -->
-<!--                         <strong>1</strong> -->
-<!--                      </div> -->
-<!--                      <div class="number-box"> -->
-<!--                         <a href="#">2</a> -->
-<!--                      </div> -->
-<!--                      <div class="number-box"> -->
-<!--                         <a href="#">3</a> -->
-<!--                      </div> -->
-<!--                      <div class="number-box"> -->
-<!--                         <a href="#">4</a> -->
-<!--                      </div> -->
-<!--                      <div class="number-box"> -->
-<!--                         <a href="#">5</a> -->
-<!--                      </div> -->
-<!--                      <a href="#"><img src="../img/btn/btn_next1.gif" alt="뒤페이지로" /></a> -->
-<!--                      <a href="#"><img src="../img/btn/btn_next2.gif" alt="마지막페이지로" /></a> -->
+
                   
                   
                   </div>
                </div>
+               </section>
+               <!-- ================ category section end ================= -->
             </div>
          </div>
       </div>

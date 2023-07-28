@@ -15,9 +15,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-
+import com.java.dto.BoardDto;
+import com.java.dto.OrderDto;
 import com.java.dto.ProductDto;
 import com.java.service.ProductService;
 
@@ -69,6 +71,7 @@ public class ProductController {
       model.addAttribute("category", category);
       model.addAttribute("s_word", s_word);
       model.addAttribute("page", page);
+  
       //상품 뷰 페이지에서 하단에 목록을 만들기 위한 넘버링과 이 상품이 상품 목록에서 어디 페이지에 있는 지에 대해
       return "admin/product_view";
    }//product_view
@@ -271,22 +274,71 @@ public class ProductController {
       
       
       
-      //주문 관리 리스트 
+      
+      
+      
+      //==============================================주문 관리 ============================================================
+      
+      //주문 관리 페이지에 주문 전체 가져오기  
       @RequestMapping("/admin/order_list")
-      public String order_list() {
-    	 return "admin/order_list";
+      public String order_list(@RequestParam(defaultValue = "1") int page,
+      String ordercate, String OSTATUS, Model model ) {
+    	 
+    	  System.out.println("order_list controller OSTATUS: " + OSTATUS);
+    	  HashMap<String, Object> map= productService.selectOrderAll(page, ordercate, OSTATUS);
+    	  model.addAttribute("list", map.get("list"));
+    	  model.addAttribute("page", map.get("page"));
+    	  model.addAttribute("order_page_listCount", map.get("order_page_listCount"));
+    	  model.addAttribute("startPage", map.get("startPage"));
+    	  model.addAttribute("endPage", map.get("endPage"));
+    	  model.addAttribute("maxPage", map.get("maxPage"));
+    	  model.addAttribute("ordercate", map.get("ordercate"));
+    	  model.addAttribute("OSTATUS", map.get("OSTATUS"));
+    	  System.out.println("controller order_list page : " +model.addAttribute(page));
+	  
+    	  return "admin/order_list";
       }
       
-      //주문 관리 뷰
+      //주문 관리 페이지에서 주문 하나 가져오기
       @RequestMapping("/admin/order_view")
-      public String order_view() {
-    	 return "admin/order_view";
+      public String order_view( 
+    		  int ONO,
+      int page, String ordercate, String OSTATUS,  Model model) {
+    	  System.out.println("controller order_view ON0: "+ ONO);
+    	  System.out.println("controller order_view page: "+ page);
+    	  //주문 1개 가져오기 
+    	  HashMap<String, Object> map = productService.selectOrderOne(ONO);
+          model.addAttribute("odto", map.get("odto"));
+//          model.addAttribute("prevDto", map.get("prevDto"));
+//          model.addAttribute("nextDto", map.get("nextDto"));
+          model.addAttribute("ordercate", ordercate);
+          model.addAttribute("OSTATUS", OSTATUS);
+          model.addAttribute("page", page);
+      
+    	  return "admin/order_view";
+    	 
       }
       
+    
+      //주문 관리에서 배송 상태 ajax 
+	  	@PostMapping("/admin/updateAjax")
+	  	@ResponseBody
+	  	public ArrayList<OrderDto> updateAjax(
+	  			Integer ONO, String OSTATUS, String ordercate, Model model) {
+	  	 
+	  		
+	  		System.out.println("ProductController aJax OSTATUS : "+ OSTATUS);
+	  		System.out.println("ProductController aJax ordercate : "+ ordercate);
+	  		//주문 여러개 가져오기 
+	  		ArrayList<OrderDto> list= productService.selectUPAjaxAll(ONO, OSTATUS, ordercate); //mapper데이터 List 가져옴. 여러 개 
+	  	
+	  	
+	  		return list;
+	  	}
       
       
       
-      
+      //==============================================주문 관리 ============================================================
       
       
       

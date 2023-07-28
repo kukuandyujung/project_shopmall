@@ -93,9 +93,9 @@
                   
                   <div class="x_content" >
 
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" >
                       
-                      <tbody>
+                      <tbody >
                         <tr>
                           <th scope="row">상품명</th>
                           <td><span>${pdto.pname}</span></td> 
@@ -104,6 +104,38 @@
                           <th scope="row">상품 번호</th>
                           <td>
                           	<span>${pdto.pno}</span>
+                          </td> 
+                        </tr> 
+                        <tr>
+                          <th scope="row">상품 설명</th>
+                          <td>
+                          	<span>${pdto.pdescript}</span>
+                          </td> 
+                        </tr> 
+                        <tr>
+                          <th scope="row">상품 재고</th>
+                          <td>
+                          	<span>${pdto.pstock}</span>
+                          </td> 
+                        </tr> 
+                        <tr>
+                          <th scope="row">판매 개수</th>
+                          <td>
+                          	<span>${pdto.psoldcount}</span>
+                          </td> 
+                        </tr> 
+                        <tr>
+                        <tr>
+                          <th scope="row">색상</th>
+                          <td>
+                          	<span>${pdto.pcolor}</span>
+                          </td> 
+                        </tr> 
+                        <tr>
+                        <tr>
+                          <th scope="row">판매 사이즈</th>
+                          <td>
+                          	<span>${pdto.psize}</span>
                           </td> 
                         </tr> 
                         <tr>
@@ -123,15 +155,20 @@
                           <td><span><img src="/upload/${pdto.pdetailimg1}" style="width: 100px;" alt="" /></span></td> 
                         </tr>
                           <hr>
+    </table>
+    <table class="table table-bordered">
+    	
       <tr>
         <td><strong>다음 상품</strong> <span class="separator">|</span> </span> <a href="/admin/product_view?pno=${nextDto.pno }&page=${page}&category=${category}&s_word=${s_word}">  ${nextDto.pname } </a></td>
       </tr>
       <tr>
         <td><strong>이전글</strong> <span class="separator">|</span> <a href="/admin/product_view?pno=${prevDto.pno }&page=${page}&category=${category}&s_word=${s_word}"> ${prevDto.pname}</a></td>
       </tr>
+ 
     </table>
 	<hr>
 
+	
     <a href="product_list?page=${page}&category=${category}&s_word=${s_word}"><div class="list">목록</div></a>
     <a onclick="deleteBtn(${pdto.pno})" style="cursor: pointer;" ><div class="rebtn">삭제</div></a>
     <a href="product_update?pno=${pdto.pno}&page=${page}&category=${category}&s_word=${s_word}"><div class="list">수정</div></a>

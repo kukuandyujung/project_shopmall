@@ -31,15 +31,11 @@
 
 <!-- 카트 목록 -->
 <select id="getCart" resultType="com.java.dto.CartDTO">
-
 	SELECT c.*, m.*, p.*, c.cartId, c.cartCount, m.MID, p.pno, p.pname, p.pprice
 	FROM cart c
 	INNER JOIN zebra m ON c.MID = m.MID
 	INNER JOIN product p ON c.pno = p.pno
-	where m.MID = #{MID}	
-	
-	<!-- SELECT MID FROM ZEBRA WHERE MID = #{MID} -->
-	     
+	where m.MID = #{MID}		     
 </select>
 
 <!-- 카트 확인 -->

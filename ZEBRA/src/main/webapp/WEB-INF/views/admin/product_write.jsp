@@ -91,12 +91,13 @@
 
                     <table class="table table-bordered">
                       <tbody>
-                        <tr>
-                          <th scope="row">상품 번호</th>
-                          <td>
-                          	<input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="pno" placeholder="ex) 12"  />
-                          </td> 
-                        </tr>
+<!--                         <tr> -->
+<!--                           <th scope="row">상품 번호</th> -->
+<!--                           <td> -->
+<%--                           ${pno} --%>
+<%-- <%--                           	<input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number"  value="${pno}" name="pno" placeholder="ex) 12"  /> --%> 
+<!--                           </td>  -->
+<!--                         </tr> -->
                        
                         <tr>
                           <th scope="row">상품 코드</th>
@@ -133,9 +134,10 @@
                         </tr>
                         
                         <tr>
-                          <th scope="row">판매 개수</th>
+                          <th scope="row">판매 개수</th> <!-- 상품 등록 시 상품 테이블에 null값이 안 들어가기 위해서! -->
                           <td>
-                          	<input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="psoldcount" placeholder="ex) 1 "  />
+                          0
+<!--                           	<input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="psoldcount" placeholder="ex) 1 "  /> -->
                           </td> 
                         </tr>
 
@@ -149,6 +151,7 @@
 		                        <option>pink</option>    
 		                        <option>white</option>    
 		                        <option>yellow</option>    
+		                        <option>H</option>    
                      		</select>
 <!--                           	<input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "text" name="pcolor" placeholder="ex) black "  /> -->
                           </td> 
@@ -162,6 +165,7 @@
 		                        <option>S</option>
 		                        <option>M</option>    
 		                        <option>L</option>       
+		                        <option>H</option>       
                      		</select>
 <!--                           	<input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "text" name="psize" placeholder="ex) s " /> -->
                           </td> 

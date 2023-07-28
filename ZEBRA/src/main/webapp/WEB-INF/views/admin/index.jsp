@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -34,10 +34,49 @@
     <link href="/build/css/custom.min.css" rel="stylesheet">
   </head>
    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+     
+   <style>
+   
+   .media .profile_thumb {
+  padding: 0;
+}
+   
+  .best { /* LINE 279  */
+  border: 1px solid;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 10px 25px;
+  background-size: cover; /* 배경 이미지 크기 조절 */
+  }
   
+  /* 이미지 경로를 바꾸어 사용할 클래스들 */
+  .best1 {
+    background-image: url("/img/best/best1.jpg");
+  }
+
+  .best2 {
+    background-image: url("/img/best/best2.jpg");
+  }
+
+  .best3 {
+    background-image: url("/img/best/best3.jpg");
+  }
+  
+  .best4 {
+    background-image: url("/img/best/best4.jpg");
+  }
+  
+  .best5 {
+    background-image: url("/img/best/best5.jpg");
+  }
+  
+}
+
+   </style>
+     
    <script>
       function boardBtn(){ // 152번째 줄
-    	  alert("그래프 데이터를 업데이트합니다.");
 			
 			$.ajax({
 				url:"/admin/indexAjax", 
@@ -46,12 +85,23 @@
 				dataType:"json",
 				success:function(data){
 					console.log("data : "+data);
-					alert("controller에서 데이터 받기 성공!");
-					 
+					console.log("data[0][2] : "+data[0][2]);
+					console.log("data[1] : "+data[1]);
+					alert("controller에서 데이터 받기 성공!");					
+										 
 					// 받아온 데이터를 count 클래스를 갖는 div 요소 내에 넣음
-	                $("#count1").text(data[0]);
-	                $("#count2").text(data[1]);
-	                $("#count3").text(data[2]);
+	                $("#count1").text(data[0][0]); // 총 회원수
+	                $("#count2").text(data[0][1]);
+	                $("#count3").text(data[0][2]); // 총 여자 회원수
+	                $("#count4").text("₩" + data[0][4].toLocaleString()); // 총 매출액
+	                $("#count5").text(data[0][3].toLocaleString()); // 총 구매수
+	                $("#count6").text(data[0][5]); // 3월
+	                $("#count7").text(data[0][6]); // 4월
+	                $("#count8").text(data[0][7]); // 5월
+	                $("#count9").text(data[0][8]); // 6월
+	                $("#count10").text(data[0][9]); // 7월
+	                $("#count11").text(data[0][10]); // 8월
+	                $("#count12").text(data[1]); // 총 물품수
 					  
 				},
 				error:function(){
@@ -99,41 +149,44 @@
       <%@ include file="top_common.jsp" %>	 
 
         <!-- page content -->        
-        <div class="right_col" role="main">        
-          <div class="">
+        <div class="right_col" role="main">   
           <!-- top tiles -->
-          <div class="row" style="display: inline-block;" >          
+          <div class="col-md-12" style="display: inline-block;" >          
           <div class="tile_count">
-              <div class="col-md-2 col-sm-4  tile_stats_count">            
+              <div class="col-md-1 col-sm-4  tile_stats_count">            
               <span class="count_top"><i class="fa fa-user"></i> 총 회원수</span>
-              <div class="count" id="count1"> 10000 </div>
+              <div class="count" id="count1"> ${allCount} </div>              
               <span class="count_bottom"><i class="green">4% </i> 지난 달 대비</span>
             </div>
-            <div class="col-md-2 col-sm-4  tile_stats_count">              
-              <span class="count_top"><i class="fa fa-user"></i> 총 남자 회원수</span>
-              <div class="count green" id="count2">2,500</div>
-               
+            
+            <div class="col-md-1 col-sm-4  tile_stats_count">              
+              <span class="count_top"><i class="fa fa-user"></i> 남자 회원수</span>
+              <div class="count green" id="count2"> ${maleCount} </div>               
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> 지난 달 대비</span>
             </div>
-            <div class="col-md-2 col-sm-4  tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> 총 여자 회원수</span>
-              <div class="count red" id="count3">4,567</div>
+            
+            <div class="col-md-1 col-sm-4  tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i> 여자 회원수</span>
+              <div class="count red" id="count3"> ${FemaleCount} </div>
               <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> 지난 달 대비</span>
             </div>
-            <div class="col-md-2 col-sm-4  tile_stats_count">
+            
+            <div class="col-md-1 col-sm-4  tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> 총 상품수</span>
-              <div class="count">2,315</div>
+              <div class="count" id="count12"> ${allProductCount} </div>
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> 지난 달 대비</span>
             </div>
-            <div class="col-md-2 col-sm-4  tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> 총 매출액</span>
-              <div class="count">7,325</div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> 지난 달 대비</span>
-            </div>
-            <div class="col-md-2 col-sm-4  tile_stats_count">
+            
+            <div class="col-md-1 col-sm-4  tile_stats_count" style="margin-right:20px">
               <span class="count_top"><i class="fa fa-clock-o"></i> 총 구매수</span>
-              <div class="count">123</div>
+              <div class="count" id="count5"><fmt:formatNumber value="${totalOrder}" pattern="#,##0" /></div>
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> 지난 달 대비</span>
+            </div>
+            
+            <div class="col-md-3 col-sm-4  tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i> 총 매출액</span>
+              <div class="count" id="count4">₩<fmt:formatNumber value="${totalPay}" pattern="#,##0" /></div>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> 지난 달 대비</span>
             </div>
            
           </div>
@@ -150,12 +203,6 @@
                        
                     <button onclick="boardBtn()" style="font-size:15px; width: 60px; height: 30px; margin-left:6px;">AJAX</button> 
                     
-                  </div>
-                  <div class="col-md-6">
-                    <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
-                      <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-                      <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
-                    </div>
                   </div>
                 </div>
 
@@ -181,7 +228,7 @@
 			            'rgba(128, 0, 128, 0.1)',   // Purple, 컬러 세기 0.1
 			            'rgba(255, 165, 0, 0.1)'    // Orange, 컬러 세기 0.1			        	
 			        ], 
-			        data: [12, 19, 3, 5, 2, 3],
+			        data: [${totalPay3}, ${totalPay4}, ${totalPay5}, ${totalPay6}, ${totalPay7}, ${totalPay8}],
 			        borderWidth: 1,
 			        pointBackgroundColor: 'transparent', // 점의 색상을 투명으로 설정
 			        fill: {
@@ -193,7 +240,7 @@
 			          type: 'line', // 라인 그래프 데이터셋
 			          label: '라인 데이터',
 			          backgroundColor: "rgba(26, 187, 156, 0.5)",
-			          data: [12, 19, 3, 5, 2, 3], // 라인 그래프 데이터
+			          data: [${totalPay3}, ${totalPay4}, ${totalPay5}, ${totalPay6}, ${totalPay7}, ${totalPay8}], // 라인 그래프 데이터
 			          borderColor: 'rgba(26, 187, 156, 0.5)', // 라인 색상 설정
 			          borderWidth: 2,
 			          fill: false, // 라인 그래프 내부를 채우지 않음
@@ -249,56 +296,58 @@
                         <ul class="list-unstyled top_profiles scroll-view">
                           <li class="media event">
                             <a class="pull-left border-aero profile_thumb">
-                              <i class="fa fa-user aero"></i>
+                            
+                              <img class="best best1">
+                              
                             </a>
-                            <div class="media-body">
-                              <a class="title" href="#">Ms. Mary Jane</a>
-                              <p><strong>$2300. </strong> Agent Avarage Sales </p>
-                              <p> <small>12 Sales Today</small>
+                            <div class="media-body">  
+                              <a class="title" href="#">${list1.get(0).getMNAME()}</a>
+                              <p><strong>₩<fmt:formatNumber value="${list1.get(0).getMTOTAL_PAY()}" pattern="#,##0" /> </strong> / ${list1.get(0).getMPHONE()}</p>
+                              <p> <small>총 ${list1.get(0).getMTOTAL_ORDER()}회 결제</small>
                               </p>
                             </div>
                           </li>
                           <li class="media event">
                             <a class="pull-left border-green profile_thumb">
-                              <i class="fa fa-user green"></i>
+                             <img class="best best2">
                             </a>
                             <div class="media-body">
-                              <a class="title" href="#">Ms. Mary Jane</a>
-                              <p><strong>$2300. </strong> Agent Avarage Sales </p>
-                              <p> <small>12 Sales Today</small>
+                              <a class="title" href="#">${list1.get(1).getMNAME()}</a>
+                              <p><strong>₩<fmt:formatNumber value="${list1.get(1).getMTOTAL_PAY()}" pattern="#,##0" /> </strong> / ${list1.get(1).getMPHONE()}</p>
+                              <p> <small>총 ${list1.get(1).getMTOTAL_ORDER()}회 결제</small>
                               </p>
                             </div>
                           </li>
                           <li class="media event">
                             <a class="pull-left border-blue profile_thumb">
-                              <i class="fa fa-user blue"></i>
+                              <img class="best best3">
                             </a>
                             <div class="media-body">
-                              <a class="title" href="#">Ms. Mary Jane</a>
-                              <p><strong>$2300. </strong> Agent Avarage Sales </p>
-                              <p> <small>12 Sales Today</small>
+                              <a class="title" href="#">${list1.get(2).getMNAME()}</a>
+                              <p><strong>₩<fmt:formatNumber value="${list1.get(2).getMTOTAL_PAY()}" pattern="#,##0" /> </strong> / ${list1.get(2).getMPHONE()}</p>
+                              <p> <small>총 ${list1.get(2).getMTOTAL_ORDER()}회 결제</small>
                               </p>
                             </div>
                           </li>
                           <li class="media event">
                             <a class="pull-left border-aero profile_thumb">
-                              <i class="fa fa-user aero"></i>
+                              <img class="best best4">
                             </a>
                             <div class="media-body">
-                              <a class="title" href="#">Ms. Mary Jane</a>
-                              <p><strong>$2300. </strong> Agent Avarage Sales </p>
-                              <p> <small>12 Sales Today</small>
+                              <a class="title" href="#">${list1.get(3).getMNAME()}</a>
+                              <p><strong>₩<fmt:formatNumber value="${list1.get(3).getMTOTAL_PAY()}" pattern="#,##0" /> </strong> / ${list1.get(3).getMPHONE()}</p>
+                              <p> <small>총 ${list1.get(3).getMTOTAL_ORDER()}회 결제</small>
                               </p>
                             </div>
                           </li>
                           <li class="media event">
                             <a class="pull-left border-green profile_thumb">
-                              <i class="fa fa-user green"></i>
+                              <img class="best best5">
                             </a>
                             <div class="media-body">
-                              <a class="title" href="#">Ms. Mary Jane</a>
-                              <p><strong>$2300. </strong> Agent Avarage Sales </p>
-                              <p> <small>12 Sales Today</small>
+                              <a class="title" href="#">${list1.get(4).getMNAME()}</a>
+                              <p><strong>₩<fmt:formatNumber value="${list1.get(4).getMTOTAL_PAY()}" pattern="#,##0" /> </strong> / ${list1.get(4).getMPHONE()}</p>
+                              <p> <small>총 ${list1.get(4).getMTOTAL_ORDER()}회 결제</small>
                               </p>
                             </div>
                           </li>
@@ -312,7 +361,7 @@
 
           </div>
           <br />
-
+<!-- 
           <div class="row">
 
 
@@ -572,10 +621,8 @@
           </div>
             </div>
           </div>
-        </div>
-        <!-- /page content -->
-        
-        
+         
+         -->
 
     <!-- jQuery -->
     <script src="/vendors/jquery/dist/jquery.min.js"></script>

@@ -25,11 +25,38 @@
     <!-- Custom Theme Style -->
     <link href="/build/css/custom.min.css" rel="stylesheet">
   <script type="text/javascript">
-  	function updateBtn(){
-  		if(confirm("주문 내역 상태를 수정하시겠습니까?")){
-  			update.submit();
-  		}
-  	}
+  function updateBtn(){
+		  alert("배송 상태를 수정합니다.");
+		  $.ajax({
+			 url:"/admin/updateAjax",
+			 type:"post",
+			 data:  {
+		            
+		           "OSTATUS":  $("select[name='ordercate']").val(),     
+		       	    
+		   
+		           },
+		           
+			 dataType:"json",
+			 success:function(data){
+				  
+				 console.log("data:"+data);
+                  alert("controller에서 데이터 받기 성공");
+				
+				 
+				 
+				
+				 //받은 데이터를 html에 넣음
+				 $(".updateAjax").html(data.OSTATUS);
+				 
+			 },
+			 error:function(){
+				 alert("데이터 받기 실패!!");
+			 }
+		  });
+	
+		 
+	  }
   </script>
   </head>
 
@@ -71,19 +98,10 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Tables <small>Some examples to get you started</small></h3>
+                <h3>Order View</h3>
               </div>
 
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5   form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                  </div>
-                </div>
-              </div>
+              
             </div>
 
             <div class="clearfix"></div>
@@ -93,136 +111,108 @@
 
               <div class="col-md-6 col-sm-6  ">
                 <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Bordered table <small>Bordered table subtitle</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Settings 1</a>
-                            <a class="dropdown-item" href="#">Settings 2</a>
-                          </div>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
+                
                   <div class="x_content" >
 
                     <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>First Name</th>
-                        </tr>
-                      </thead>
+                      
                       <tbody>
                         <tr>
-                          <th scope="row">주문 번호(pno)</th>
-                          <td>22</td> 
+                          <th scope="row">주문 번호</th>
+                          <td>${odto.ONO}</td> 
                         </tr>
                         <tr>
                           <th scope="row">물품 번호</th>
-                          <td>
-                          	1, 49
-                          </td> 
+                          <td>${odto.PNO}</td> 
                         </tr> 
                         <tr>
                           <th scope="row">회원 아이디</th>
-                          <td>Mark</td> 
+                          <td>${odto.MID}</td> 
                         </tr>
                         <tr>
                         <tr>
                           <th scope="row">주문 수량</th>
-                          <td>2</td> 
+                          <td>${odto.OAMOUNT}</td> 
                         </tr>
                         <tr>
                           <th scope="row">전체 결제 금액</th>
-                          <td>100,000</td> 
+                          <td>${odto.OTOPRICE}</td> 
                         </tr>
-                          <th scope="row">주문자 이름</th>
-                          <td>Mark</td> 
-                        </tr>
-                        <tr>
-                          <th scope="row">주문자 휴대 번호</th>
-                          <td>Mark</td> 
-                        </tr>
-                        <tr>
-                          <th scope="row">주문자 우편 번호</th>
-                          <td>Mark</td> 
-                        </tr>
-                        <tr>
-                          <th scope="row">주문자 주소1</th>
-                          <td>Mark</td> 
-                        </tr>
-                        <tr>
-                          <th scope="row">주문자 주소2</th>
-                          <td>Mark</td> 
-                        </tr>
-                        <tr>
-                          <th scope="row">주문자 이메일</th>
-                          <td>Mark</td> 
-                        </tr>
+                          
                         <tr>
                           <th scope="row">수령자 이름</th>
-                          <td>Mark</td> 
+                          <td>${odto.ONAME}</td> 
                         </tr>
                         <tr>
-                          <th scope="row">수령자 휴대 번호</th>
-                          <td>Mark</td> 
+                          <th scope="row">수령자 휴대 번호1(앞 번호)</th>
+                          <td>${odto.OHP1}</td> 
+                        </tr>
+                        <tr>
+                          <th scope="row">수령자 휴대 번호2(중간 번호)</th>
+                          <td>${odto.OHP2}</td> 
+                        </tr>
+                        <tr>
+                          <th scope="row">수령자 휴대 번호3(뒷 번호)</th>
+                          <td>${odto.OHP3}</td> 
                         </tr>
                         <tr>
                           <th scope="row">수령자 우편 번호</th>
-                          <td>Mark</td> 
+                          <td>${odto.OZIP}</td> 
                         </tr>
                         <tr>
                           <th scope="row">수령자 주소1</th>
-                          <td>Mark</td> 
+                          <td>${odto.OADDR1}</td> 
                         </tr>
                         <tr>
                           <th scope="row">수령자 주소2</th>
-                          <td>Mark</td> 
+                          <td>${odto.OADDR2}</td> 
                         </tr>
                         <tr>
-                          <th scope="row">수령자 이메일</th>
-                          <td>Mark</td> 
+                          <th scope="row">수령자 유선 번호1(앞 번호)</th>
+                          <td>${odto.ORHP1}</td> 
                         </tr>
                         <tr>
+                          <th scope="row">수령자 유선 번호2(중간 번호)</th>
+                          <td>${odto.ORHP2}</td> 
+                        </tr>
+                        <tr>
+                          <th scope="row">수령자 유선 번호3(뒷 번호)</th>
+                          <td>${odto.ORHP3}</td> 
+                        </tr>      
+                        <tr clss="ordercate">
+                           
                           <th scope="row">배송 상태</th>
-                          <td>
-                          	<select name="" id="" >
-                               <option value="">상품 준비 중</option>
-                               <option  value="" >배송 중</option>
-                               <option value="">배송 완료</option>
-                            </select>
+                          
+                          <td class="updateAjax" >${odto.OSTATUS}
                           </td> 
                         </tr>
+                         <tr> 	
+                          	<select id="ordercate" name="ordercate" onchange="updateBtn()" >
+                               <option value="">-- --</option>
+                               <option value="preprare" >상품 준비 중</option>
+                               <option value="shipping" >배송 중</option>
+                               <option value="completed" >배송 완료</option>
+                               <option value="ordercancel" >주문 취소</option>
+                               <option value="confirmaion" >구매 확정</option>
+                            </select>    
+                     		   <button  type="button" onclick="updateBtn()" >수정하기</button>
+                        </tr>
+                        
                         <tr>
                           <th scope="row">주문자 배송 요구 사항</th>
-                          <td>Mark</td> 
+                          <td>${odto.OWANT}</td> 
                         </tr>
                         <tr>
                           <th scope="row">결제 방법</th>
-                          <td>
-                          <select name="" id="" >
-                             <option value="">신용 카드</option>
-                             <option  value="" >체크 카드</option>
-                             <option value="">무통장 입금</option>
-                             <option value="">간편 결제</option>
-                             <option value="">휴대폰 결제</option>
-                          </select>    
-                          </td> 
+                          <td>${odto.OPAYMENT}</td>                 
                         </tr>
                         <tr>
                           <th scope="row">결제 완료 여부</th>
-                          <td>0</td> 
+                          <td><span>${odto.OCOMPLETE}</span></td> 
                         </tr>
                         <tr>
                           <th scope="row">주문 날짜</th>
-                          <td>2023-07-23</td> 
+                          <td>${odto.ODATE}</td> 
                         </tr>
                        
                         
@@ -230,8 +220,7 @@
                       </tbody>
                     </table>
     <div class="button-wrapper">
-      <button type="button" onclick="updateBtn()" class="update">수정완료</button>
-      <button type="button" class="cancel" onclick="javascript:location.href='order_list'">취소</button>
+      <button type="button" class="cancel" onclick="javascript:location.href='order_list'">주문 목록으로 돌아가기</button>
     </div>
 
                   </div>
@@ -243,7 +232,7 @@
               
                     
 							
-						
+					
                 
                
            

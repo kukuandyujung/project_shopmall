@@ -4,6 +4,11 @@
 
 <mapper namespace="com.java.mapper.BoardMapper">
   
+  <!-- 총 물품 개수 -->
+<select id="selectProductCount" resultType="int">
+    select count(*) as allProductCount from product
+</select>
+  
   <!-- 페이지 1개 가져오기 -->
   <select id="selectOne" resultType="com.java.dto.ProductDto">
      select * from product where pno=#{pno}

@@ -3,6 +3,7 @@ package com.java.service;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.java.dto.OrderDto;
 import com.java.dto.ProductDto;
 
 public interface ProductService {
@@ -25,20 +26,31 @@ public interface ProductService {
    //====================여기부터는 상품 페이지=============================== 
    
    //상품 페이지에 women 상품 전체 가져오기
-   HashMap<String, Object> selectPageAll(int page, String category, String s_word);
+   HashMap<String, Object> selectPageAll(int page, String s_word, String sorting, String pcolor);
 
    //상세 페이지에 상품 1개 가져오기 
    HashMap<String, Object> selectPageOne(int pno);
 
    //상품 페이지에 ajax 검색 (색상, 가격, 검색 ajax)
    ArrayList<ProductDto> selectSortAll(String s_word, Integer pprice, String sorting,String pcolor);
-
+ 
    //상품 페이지에 home 상품 전체 가져오기
-   HashMap<String, Object> selectHomeAll(int page, String category, String s_word);
+   HashMap<String, Object> selectHomeAll(int page);
 
-  
+   //=================주문 관리 페이지===========================================
+   //주문 관리 페이지에 주문 전체 가져오기 
+   HashMap<String, Object> selectOrderAll(int page, String ordercate, String OSTATUS);
 
-      
+   //주문 관리 페이지에서 주문 하나 가져오기
+   HashMap<String, Object> selectOrderOne(int ONO);    
+
+   //주문 관리에서 배송 상태 ajax 
+   ArrayList<OrderDto> selectUPAjaxAll(Integer ONO, String OSTATUS, String ordercate);
+   //=================주문 관리 페이지===========================================
+   
+
+   
+
    }
 
    

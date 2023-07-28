@@ -10,10 +10,10 @@
       <if test="category == 'all'">      
          where pname like '%'||#{s_word}||'%' or pdescript like '%'||#{s_word}||'%'
       </if>
-      <if test="category == 'btitle'">      
+      <if test="category == 'pname'">      
          where pname like '%'||#{s_word}||'%' 
       </if>
-      <if test="category == 'bcontent'">      
+      <if test="category == 'pdescript'">      
          where pname like '%'||#{s_word}||'%' 
       </if>
    </select>
@@ -88,6 +88,8 @@
       #{pdescript}, #{pmainimg}, #{pdetailimg1}, #{pdetailimg2}, #{pdetailimg3})
 </insert>
    
+   
+   <!-- 상품 삭제 -->
    <delete id="deleteOne">
       delete product where pno=#{pno}
    </delete>
@@ -110,26 +112,56 @@
 
    <!-- ============================여기부터는 상품 페이지 ====================================== -->
 
+	<!-- 여자 상품 개수 -->
+	 <select id="selectproduct_page_listCount" resultType="int">
+      select count(*) from product where pcode=10
+     	
+     	<if test="s_word">     
+            and upper(pname) like upper('%'||#{s_word}||'%')
+         
+        </if>
+		
+		<if test="pcolor == 'black'">     
+            and pcolor='black' 
+        </if>	
+		<if test="pcolor == 'pink'">      
+            and pcolor='pink' 
+         </if>
+         <if test="pcolor == 'orange'">      
+            and pcolor='orange'
+         
+         </if>
+		 <if test="pcolor == 'yellow'">     
+            and pcolor='yellow'
+         
+         </if>
+         <if test="pcolor == 'white'">     
+            and pcolor='white'
+         
+         </if>
+         
+		<if test="sorting == 'rowprice'">
+		 	order by pprice asc 
+		</if>
+		<if test="sorting == 'highprice'">
+			order by pprice desc 
+		</if>
+
+
+   </select>
+    <!-- 홈 제품 개수 -->
+   	 <select id="selectproduct_page_listCounthome" resultType="int">
+      select count(*) from product where pcode=11
+
+   </select>
+
+
+
     <!-- women 상품 페이지에서 상품 전체 가져오기 아무 옵션을 누르지 않을 경우--> 
    <select id="selectPageAll" resultType="com.java.dto.ProductDto">
       <!-- 공통 영역 -->
-            select * from (select rownum rnum, a.* from
-         (select * from product 
-   
-         <if test="category == 'all'">      
-            where pname like '%'||#{s_word}||'%' or pdescript like '%'||#{s_word}||'%' order by pno asc
-            
-         </if>
-         <if test="category == 'pname'">      
-            where pname like '%'||#{s_word}||'%' order by pno asc
-            
-         </if>
-         <if test="category == 'pdescript'">      
-            where pdescript like '%'||#{s_word}||'%' order by pno asc
-         
-         </if>
-       
-   
+        select * from (select rownum rnum, a.* from
+       (select * from product  
          
          <!-- 공통 영역  -->
          <![CDATA[
@@ -144,22 +176,7 @@
    	<!-- 공통 영역 -->
         select * from (select rownum rnum, a.* from
          (select * from product 
-   
-         <if test="category == 'all'">      
-            where pname like '%'||#{s_word}||'%' or pdescript like '%'||#{s_word}||'%' order by pno asc
-            
-         </if>
-         <if test="category == 'pname'">      
-            where pname like '%'||#{s_word}||'%' order by pno asc
-            
-         </if>
-         <if test="category == 'pdescript'">      
-            where pdescript like '%'||#{s_word}||'%' order by pno asc
-         
-         </if>
-       
-   
-         
+     
          <!-- 공통 영역  -->
          <![CDATA[
          where pcode=11 order by pno asc) a) 
@@ -212,12 +229,110 @@
 		<if test="sorting == 'highprice'">
 			order by pprice desc 
 		</if>
-		
 
-
- 
    
     </select>
+    
+    
+    
+    
+    <!-- ===============================주문 관리 페이지============================================  -->
+      
+      <!-- 주문 전체에서 셀렉하기 개수 -->
+      <select id="selectorder_page_listCount" resultType="int">
+      select count(*) from zebraorder
+      <if test="ordercate == 'prepare'">      <!-- 상품 준비 중 -->
+         where OSTATUS='상품 준비 중'
+      </if>
+      <if test="ordercate == 'shipping'">      <!-- 배송 중 -->
+         where OSTATUS='배송 중'
+      </if>
+      <if test="ordercate == 'completed'">      <!-- 배송 완료 -->
+         where OSTATUS='배송 완료'
+      </if>
+      <if test="ordercate == 'ordercancel'">      <!-- 주문 취소 -->
+         where OSTATUS='주문 취소'
+      </if>
+      <if test="ordercate == 'confirmaion'">      <!-- 구매 확정-->
+         where OSTATUS='구매 확정'
+      </if>
+   	  </select>
+   
+   
+	 <!-- 상품 전체 가져오기 -->
+	 <select id="selectOrderAll" resultType="com.java.dto.OrderDto">
+  	 <!-- 공통 영역 -->
+            select * from (select rownum rnum, a.* from
+         (select * from zebraorder 
+            
+        <if test="ordercate == 'prepare'">      <!-- 상품 준비 중 -->
+         where OSTATUS='상품 준비 중'
+      </if>
+      <if test="ordercate == 'shipping'">      <!-- 배송 중 -->
+         where OSTATUS='배송 중'
+      </if>
+      <if test="ordercate == 'completed'">      <!-- 배송 완료 -->
+         where OSTATUS='배송 완료'
+      </if>
+      <if test="ordercate == 'ordercancel'">      <!-- 주문 취소 -->
+         where OSTATUS='주문 취소'
+      </if>
+      <if test="ordercate == 'confirmaion'">      <!-- 구매 확정-->
+         where OSTATUS='구매 확정'
+      </if>
+         
+      
+        <!-- 공통 영역  -->
+        <![CDATA[
+        order by ONO asc) a)
+        where rnum>=#{startRow} and rnum<=#{endRow}
+       ]]>
+
+      
+   	</select>
+    
+     <!-- 상품 1개 가져오기 -->
+   <select id="selectOrderOne" resultType="com.java.dto.OrderDto">
+      select * from zebraorder where ONO=#{ONO}
+   
+   </select>
+   
+   
+   
+   <!--  주문 관리에서 배송 상태 ajax  -->
+     <select id="selectUPAjaxAll" resultType="com.java.dto.OrderDto">
+      update zebraorder set 
+	  <if test="ordercate == 'prepare'">      <!-- 상품 준비 중 -->
+      OSTATUS='상품 준비 중' 
+      </if>
+      <if test="ordercate == 'shipping'">      <!-- 배송 중 -->
+      OSTATUS='배송 중' 
+      </if>
+      <if test="ordercate == 'completed'">      <!-- 배송 완료 -->      
+      OSTATUS='배송 완료'
+      </if>
+      <if test="ordercate == 'ordercancel'">      <!-- 주문 취소 -->      
+      OSTATUS='주문 취소' 
+      </if>
+      <if test="ordercate == 'confirmaion'">      <!-- 구매 확정-->
+      OSTATUS='구매 확정' 
+      </if>
+	  where ONO=#{ONO}
+	  </select>
+   
+    <!-- ===============================주문 관리 페이지============================================  -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 </mapper>
 

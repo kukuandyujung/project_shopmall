@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -10,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>🛒 주문 관리 🛒</title>
+     <title>🛒 주문 관리 🛒</title>
 
     <!-- Bootstrap -->
     <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
@@ -34,6 +35,18 @@
   </head>
 
   <body class="nav-md">
+  <script type="text/javascript">
+	function searchBtn(){
+		if($("#s_word").val().length<2){
+			alert("2글자 이상 입력하셔야 합니다.");
+			$("#s_word").focus();
+			return false;
+		}
+		
+		search.submit();
+	
+	}
+	</script> 
     <div class="container body">
       <div class="main_container">
         <div class="col-md-3 left_col">
@@ -47,7 +60,7 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="/upload/a.jpg"  alt="" class="img-circle profile_img">
+                <img src="production/images/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
@@ -74,114 +87,139 @@
                 <h3>✅ 🛒 Order List 🛒 ✅</h3>
               </div>
 
+			 <!-- 셀렉해서 검색하기 시작-->
               <div class="title_right">
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                  <form action="/admin/order_list" name="search" method="post">
+	                  <select name="ordercate" id="ordercate">
+				        <option value="">배송 상태</option>
+				        <option value="prepare">상품 준비중</option>
+				        <option value="shipping">배송 중</option>
+				        <option value="completed">배송 완료</option>
+				      </select>
+                  검색 시작
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
+                    <input type="text" class="form-control" name="s_word" id="s_word"  value="${s_word }" placeholder="Search for...">
                     <span class="input-group-btn">
-                      <button class="btn btn-secondary" type="button">Go!</button>
+                      <button class="btn btn-secondary" type="button" onclick="searchBtn()" data-toggle="tooltip" title="검색을 해보세요~!">검색</button>
                     </span>
                   </div>
+                  검색 끝
+                    </form>
                 </div>
               </div>
             </div>
+		    <!-- 셀렉해서 검색하기 끝-->
+		
 
             <div class="clearfix"></div>
 
             <div class="row">
+         
+
+			<!-- 테이블 시작 -->
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Default Example <small>Users</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Settings 1</a>
-                            <a class="dropdown-item" href="#">Settings 2</a>
-                          </div>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
+
                   <div class="x_content">
                       <div class="row">
                           <div class="col-sm-12">
                             <div class="card-box table-responsive">
-                    <p class="text-muted font-13 m-b-30">
-                      DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction function: <code>$().DataTable();</code>
-                    </p>
-                    <table id="datatable" class="table table-striped table-bordered" style="width:100%">
-                      <thead>
-                        <tr>
-                          <th>주문 날짜</th>
-                          <th>주문 번호</th>
-                          <th>주문 수량</th>
-                          <th>주문자 이름</th>
-                          <th>수령자 이름</th>
-                          <th>배송 상태</th>
-                          <th>결제 방법</th>
-                        </tr>
-                      </thead>
+                   
+			                    <table id="datatable-buttons" class="table table-striped table-bordered" style="width:100%">
+			                      <thead>
+			                        <tr>
+			                          <th>주문 번호</th>
+			                          <th>수령자 이름</th>
+			                          <th>주문 날짜</th>
+			                          
+			                          <th>배송 상태</th>
+			                          <th>결제 방법</th>
+			                        </tr>
+			                      </thead>
+			
+			
+			                      <tbody>   
+				                     <c:forEach var ="zebraorder" items="${list}"> 
+										<tr>
+											<td>${zebraorder.ONO}</td>
+											<td >
+												<a href="order_view?ONO=${zebraorder.ONO}&page=${page}&ordercate=${ordercate}">${zebraorder.ONAME}</a>
+											</td>
+											<td>${zebraorder.ODATE}</td>
+											<td>${zebraorder.OSTATUS}</td>
+											<td >${zebraorder.OPAYMENT}</td>
+										</tr>
+									</c:forEach>                
+			                      </tbody>
+			                    </table>
+                 		  </div>
+                		</div>
+              		</div>
+							<!-- 하단 페이징  시작-->
+							<div class="dataTables_paginate paging_simple_numbers" id="datatable-responsive_paginate">
+						     		<ul class="pagination">
+						    	<!-- 첫 페이지 이동 -->
+						    	<c:if test="${page!=1 }">
+						      <a href= "/admin/order_list?page=1&ordercate=${ordercate}"><li class="paginate_button previous disabled"></li></a>
+						    	</c:if>
+						    	<c:if test="${page==1 }">
+						  			<li class="paginate_button active"></li>
+						    	</c:if>
+						      <!-- 이전 페이지 이동 -->
+						      <c:if test="${page>1 }">
+						      <a href="/admin/order_list?page=${page-1}&ordercate=${ordercate}"><li class="paginate_button "></li></a>
+						      </c:if>
+						      <c:if test="${page==1 }">
+						      	<li class="prev"></li>
+						      </c:if>
+						      <!-- 페이지 리스트 -->
+						      <c:forEach begin="${startPage}" end="${endPage}" step="1" var="num">
+						      	<c:if test="${num != page }">
+							      <a href="/admin/order_list?page=${num}&ordercate=${ordercate}">      
+							     	 <li class="paginate_button "><div>${num}</div></li>
+							      </a>
+						      	</c:if>
+						      <c:if test="${num == page }">
+						      	<li class="paginate_button"><div>${num}</div></li>
+						      </c:if>
+						      </c:forEach>
+						      <!-- 다음 페이지 이동 -->
+						      <c:if test="${page<maxPage }">
+							     <a href="/admin/order_list?page=${page+1}&ordercate=${ordercate}"><li class="paginate_button"></li></a> 
+						      </c:if>
+						      <c:if test="${page==maxPage }">
+						      	<li class="paginate_button">
+						      </c:if>
+						      <!-- 끝 페이지 이동 -->
+						      <c:if test="${page !=  maxPage }">
+						      <a href="/admin/order_list?page=${maxPage}&ordercate=${ordercate}">
+						      <li class="paginate_button next"></li>
+						      </a>
+						      </c:if>
+						      <c:if test="${page ==  maxPage }">
+						      <li class="paginate_button next"></li>
+						      </a>
+						      </c:if>
+						      
+						    </ul>
+						    </div>
+						
+							<!-- 하단 페이징  끝-->
+            	</div>
+               </div>
+             </div>
+			<!-- 테이블 끝 -->
+			
+          
 
-
-                      <tbody>
-                      <c:forEach var="product" items="{list}">
-                        <tr>
-                          <td>Tiger Nixon</td>
-                          <td>System Architect</td>
-                          <td>Edinburgh</td>
-                          <td>61</td>
-                          <td>2011/04/25</td>
-                          <td>$320,800</td>
-                          <td>$320,800</td>
-                        </tr> 
-                      </c:forEach>
-                      </tbody>
-                      
-                      
-                      
-                    </table>
-                  </div>
-                  </div>
-              </div>
-            </div>
-                </div>
-              </div>
-
-
-              <div class="col-md-12 col-sm-12 ">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Responsive example<small>Users</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Settings 1</a>
-                            <a class="dropdown-item" href="#">Settings 2</a>
-                          </div>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  
               
-              
-            </div>
+            </div> <!-- row -->
           </div>
         </div>
         <!-- /page content -->
 
- 
+     
       </div>
     </div>
 

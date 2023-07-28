@@ -7,6 +7,9 @@ import com.java.dto.ProductDto;
 
 public interface BoardService {
 
+	// 물품 총 개수 가져오기
+	int selectProductCount();
+	
 	//게시글 1개가져오기
 	ProductDto selectOne(int pno);
 

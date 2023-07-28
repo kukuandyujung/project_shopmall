@@ -36,5 +36,12 @@ public class OrderServiceImpl implements OrderService {
 		
 		return result;
 	}
+	
+	//수령자 정보 1개가져오기
+		@Override 
+		public OrderDto selectOne(int ONO) {
+			OrderDto odto = orderMapper.selectOne(ONO);
+			return odto;
+		}
 
 }

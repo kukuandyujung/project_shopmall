@@ -8,26 +8,26 @@
 <link rel="icon" href="../img/logo2.png" type="image/png">
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<link rel="stylesheet" type="text/css" href="../css/reset.css?v=Y" />
-<link rel="stylesheet" type="text/css" href="../css/layout.css?v=Y" />
-<link rel="stylesheet" type="text/css" href="../css/content.css?v=Y" />
-<script type="text/javascript" src="../js/top_navi.js"></script>
-<script type="text/javascript" src="../js/left_navi.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
-<script type="text/javascript" src="../js/common.js"></script>
-<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="../js/idangerous.swiper-2.1.min.js"></script>
-<script type="text/javascript" src="../js/jquery.anchor.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/reset.css?v=Y" />
+<link rel="stylesheet" type="text/css" href="/css/layout.css?v=Y" />
+<link rel="stylesheet" type="text/css" href="/css/content.css?v=Y" />
+<script type="text/javascript" src="/js/top_navi.js"></script>
+<script type="text/javascript" src="/js/left_navi.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript" src="/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="/js/idangerous.swiper-2.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery.anchor.js"></script>
 <script type="text/javascript"></script>
-<link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" href="../vendors/fontawesome/css/all.min.css">
-<link rel="stylesheet" href="../vendors/themify-icons/themify-icons.css">
-<link rel="stylesheet" href="../vendors/linericon/style.css">
-<link rel="stylesheet" href="../vendors/owl-carousel/owl.theme.default.min.css">
-<link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css">
-<link rel="stylesheet" href="../vendors/nice-select/nice-select.css">
-<link rel="stylesheet" href="../vendors/nouislider/nouislider.min.css">
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="/vendors/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="/vendors/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="/vendors/themify-icons/themify-icons.css">
+<link rel="stylesheet" href="/vendors/linericon/style.css">
+<link rel="stylesheet" href="/vendors/owl-carousel/owl.theme.default.min.css">
+<link rel="stylesheet" href="/vendors/owl-carousel/owl.carousel.min.css">
+<link rel="stylesheet" href="/vendors/nice-select/nice-select.css">
+<link rel="stylesheet" href="/vendors/nouislider/nouislider.min.css">
+<link rel="stylesheet" href="/css/style.css">
 <script>
     function writeBtn(){
     	if(confirm("주문 및 결제를 하시겠습니까?")){
@@ -84,40 +84,35 @@
 								<th scope="col">수량</th>
 								<th scope="col">합계</th>
 							</thead>
+							
+							
 							<tbody>
+								<c:forEach items="${cartInfo}" var="ci"> <!-- 장바구니 정보 -->	
 								<tr>
 									<td class="left">
-										<p class="img"><img src="../img/product/product1.png" alt="상품" width="66" height="66" /></p>
-
+										<p class="img"><img src="/upload/${ci.pmainimg}" alt="상품" width="66" height="66" /></p>
+										
 										<ul class="goods">
 											<li>
-												<a href="#">쟈뎅 오리지널 콜롬비아 페레이라 원두커피백 15p</a>
+												<a href="#" style="font-size:15px;">${ci.pname}</a>
 											</li>
 										</ul>
 									</td>
-									<td class="tnone">
-										123,400 원
+									<td class="tnone" >
+										<input type="text" class="individual_pprice_input" 
+										value=<fmt:formatNumber value="${ci.pprice}" pattern="#,##0" /> 
+										style="outline: none; border: none; width: 70px; text-align: right; " readonly>원
 									</td>
-									<td>1 개</td>
-									<td>123,400 원</td>
+									
+									<td>
+										<input type="number" class="quantity_input_cart_info_td" min="1" max="999" 
+										value="${ci.cartCount}" style="outline: none; border: none; text-align: right;" readonly />개								
+									</td>
+									
+									<td><fmt:formatNumber value="${ci.totalPrice}" pattern="#,##0" /> 원</td>
 								</tr>
+								</c:forEach>
 								
-								<tr>
-									<td class="left">
-										<p class="img"><img src="../img/product/product1.png" alt="상품" width="66" height="66" /></p>
-
-										<ul class="goods">
-											<li>
-												<a href="#">가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하</a>
-											</li>
-										</ul>
-									</td>
-									<td class="tnone">
-										123,400 원
-									</td>
-									<td>1 개</td>
-									<td>123,400 원</td>
-								</tr>
 							</tbody>
 						</table>
 					</div>
@@ -128,10 +123,9 @@
 					</div>
 					<!-- //주문 상품 -->
 			<!-- 수령인 정보 입력 -->
-			<form action="/payment/payment1" name="write" method="post" enctype="multipart/form-data">
+			<form action="/payment/confirmation" name="write" method="post" enctype="multipart/form-data">
 					<h3 class="dep">
 						수령인 정보 입력
-						
 					</h3>
 					<div class="checkDiv">
 						<table summary="수령인 정보 입력할 수 있는 란으로 이름, 주소, 이메일, 휴대폰 번호, 전화번호 순으로 입력 하실수 있습니다." class="checkTable" border="1" cellspacing="0">
@@ -275,13 +269,13 @@
 									<td>
 										<ul class="pta">
 											<li>
-												<input type="radio" id="method01" name="OPAYMENT" value="1" checked="checked" /><label for="method01">신용카드 결제</label>
+												<input type="radio" id="method01" name="OPAYMENT" value="신용카드 결제" checked="checked" /><label for="method01">신용카드 결제</label>
 											</li>
 											<li>
-												<input type="radio" id="method03" name="OPAYMENT" value="2"/><label for="method03">무통장 입금</label>
+												<input type="radio" id="method03" name="OPAYMENT" value="무통장 입금"/><label for="method03">무통장 입금</label>
 											</li>
 											<li>
-												<input type="radio" id="method04" name="OPAYMENT" value="3"/><label for="method04">간편 결제</label>
+												<input type="radio" id="method04" name="OPAYMENT" value="간편 결제"/><label for="method04">간편 결제</label>
 											</li>
 										</ul>
 									</td>
