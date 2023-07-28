@@ -48,8 +48,13 @@ public interface ProductService {
    ArrayList<OrderDto> selectUPAjaxAll(OrderDto odto);
    //=================주문 관리 페이지===========================================
 
+   //=================메인 페이지===============================================
+   
    //메인 페이지에서 조회수 순을 위한 리스트
    ArrayList<ProductDto> selectphitAll();
+
+   //메인 페이지에서 판매 개수(베스트)순으로 리스트 
+   ArrayList<ProductDto> selectBestAll();
    
 
    

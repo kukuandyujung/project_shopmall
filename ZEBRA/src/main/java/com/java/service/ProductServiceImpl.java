@@ -123,9 +123,10 @@ public class ProductServiceImpl implements ProductService{
       //endPage가 최대페이지보다 더 크면 최대페이지까지만 노출
       if(endPage>maxPage) endPage=maxPage;
       
-      
+      ArrayList<ProductDto> list1 = productMapper.selectBestAll();
       ArrayList<ProductDto> list = productMapper.selectPageAll(startRow, endRow, s_word, pcolor, sorting);
       map.put("list", list);
+      map.put("list1", list1);
       map.put("product_page_listCount", product_page_listCount);
       map.put("maxPage", maxPage);
       map.put("startPage", startPage);
@@ -258,20 +259,29 @@ public class ProductServiceImpl implements ProductService{
 		return list;
 	}
 
-	//메인 페이지에서 조회수순을 위한 서비스임플리
-	@Override
-	public ArrayList<ProductDto> selectphitAll() {
-		ArrayList<ProductDto> list =productMapper.selectphitAll();
-		return list;
-	}   
-   
  
 
 	//====================================주문 관리========================================
 
 
+   //=====================================메인 페이지======================================
+
+	//메인 페이지에서 조회수순을 위한 서비스임플리
+	@Override
+	public ArrayList<ProductDto> selectphitAll() {
+		ArrayList<ProductDto> list =productMapper.selectphitAll();
+		return list;
+	}
 
 
+	//메인 페이지에서 베스트순을 위한 서비스 임플리 
+	@Override
+	public ArrayList<ProductDto> selectBestAll() {
+		ArrayList<ProductDto> list1 = productMapper.selectBestAll();
+		return list1;
+	}   
+	
+	//=====================================메인 페이지======================================
 
    
 

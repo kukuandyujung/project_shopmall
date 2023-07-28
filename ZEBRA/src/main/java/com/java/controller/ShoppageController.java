@@ -53,9 +53,11 @@ public class ShoppageController {
 //      System.out.println("ShoppageController product_page sorting : " + sorting);
       //상품 페이지의 디폴트 값을 1로 해서
       //상품 페이지에 상품 전체 가져오기
-      HashMap<String, Object> map = productService.selectPageAll(page,s_word,sorting,pcolor);   
+      HashMap<String, Object> map = productService.selectPageAll(page,s_word,sorting,pcolor); 
+      ArrayList<ProductDto> list1 = productService.selectBestAll();
       //selectPageAll 상품 페이지에 상품 데이터를 전체 가져와주기
       model.addAttribute("list", map.get("list")); //상품 목록을 담고 있는 모델의 속성 
+      model.addAttribute("list1", map.get("list1")); //베스트 순
       model.addAttribute("page" ,map.get("page")); //상품 목록의 번호를 나타냄 
       model.addAttribute("product_page_listCount" ,map.get("product_page_listCount"));//상품 목록 전체 개수를 나타내는 모델의 속성 
       model.addAttribute("startPage" ,map.get("startPage"));//시작 페이지 
@@ -98,8 +100,10 @@ public class ShoppageController {
 	public String index(@RequestParam(defaultValue = "none") String resultCode,
 			Model model) {
 		ArrayList<ProductDto> list = productService.selectphitAll();
+		ArrayList<ProductDto> list1 = productService.selectBestAll();
 		
 		model.addAttribute("list",list);
+		model.addAttribute("list1",list1);
 		model.addAttribute("resultCode",resultCode);
 		return "layout/index";	
 	}

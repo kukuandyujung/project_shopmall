@@ -108,10 +108,7 @@
 
    <!-- ============================여기부터는 상품 페이지 ====================================== -->
 
-   <!-- 상품 조회수 1 증가 생각해보니 이거는 지금 할 수 없 ... ㅋ-->
-   <update id="updatePhitUp">
-      update product set phit= phit+1 where pno=#{pno}
-   </update>
+ 
    
 
 
@@ -313,14 +310,31 @@
     <!-- ===============================주문 관리 페이지============================================  -->
     
     
+    <!-- ===============================메인 페이지 ================================================ -->
+    
     <select id="selectphitAll" resultType="com.java.dto.ProductDto" >
     	select * from product order by phit desc
     </select>
+
+
+    <select id="selectBestAll" resultType="com.java.dto.ProductDto" >
+    	select * from product order by psoldcount desc
+    </select>
+    
+    
+    <!-- 상품 조회수 1 증가 -->
+   <update id="updatePhitUp">
+      update product set phit= phit+1 where pno=#{pno}
+   </update>
+    <!-- 상품 베스트 1 증가 -->
+   <update id="updatePsoldCountUp">
+      update product set psoldcount= psoldcount+1 where pno=#{pno}
+   </update>
     
     
     
     
-    
+    <!-- ===============================메인 페이지 ================================================ -->
     
     
     
