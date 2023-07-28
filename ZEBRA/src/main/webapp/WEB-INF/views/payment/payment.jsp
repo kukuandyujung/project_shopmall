@@ -277,6 +277,7 @@
 											</li>
 											<li>
 												<input type="radio" id="method04" name="OPAYMENT" value="간편 결제"/><label for="method04">간편 결제</label>
+												<input type="hidden" class="w134" name="OSTATUS" value="상품 준비 중" />
 											</li>
 										</ul>
 									</td>
