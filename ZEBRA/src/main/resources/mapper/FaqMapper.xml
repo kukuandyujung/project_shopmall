@@ -57,7 +57,7 @@
       </update>
       
       
-      <!-- admin 댓글 수정하기 -->
+      <!-- admin  admin  수정하기 -->
       <insert id="insertComment">
       	insert into commentfqa values(cfaq_seq.nextval,#{pno},#{mid},'1234',#{ccontent},sysdate)
       </insert>
@@ -69,10 +69,18 @@
       
       
       <!-- admin 댓글 삭제하기 -->
-       <delete id="deleteComment">
+       <delete id="deleteComment" >
       	delete from  commentfqa where pno=#{pno}
       </delete>
       
+      <!-- admin 댓글 수정하기(update) -->
+       <update id="updateComment">
+      	update commentfqa set ccontent=#{ccontent}, cdate =sysdate where pno = ${pno}
+      </update>
       
+      <!-- // admin의 문의 답변 수정 -->
+       <update id="updatefqa">
+      	update faq set fqa=#{fqa} where fno = ${fno}
+      </update>
       
 </mapper>

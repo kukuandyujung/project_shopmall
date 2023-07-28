@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class FaqDto {
 
 		private int fno;
-		private int fqa;
+		private int fqa; // 1:문의 0:답변 완료
 		private String fcategory;
 		private String ftitle;
 		private String fcontent;

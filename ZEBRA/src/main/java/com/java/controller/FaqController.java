@@ -46,6 +46,9 @@ public class FaqController {
 		 cdto.setMid(id);
 		 
 		 faqService.insertComment(cdto);
+		 faqdto.setFqa(0);
+		 faqService.updatefqa(faqdto);// 문의 답변 수정
+		 
 		return "success";
 	}
 	// admin 댓글 삭제
@@ -54,12 +57,32 @@ public class FaqController {
 	public String admincommentdelete(FaqDto faqdto) {
 		
 		System.out.println(faqdto.getFno());
+		faqdto.setFqa(1); // 삭제했을 경우 문의로 수정
+		 faqService.updatefqa(faqdto);// 문의 답변 수정
+		 
 		faqService.deleteComment(faqdto.getFno());
 		return "success";
 	}
 	
 	// admin 댓글 수정하기
-	
+	@PostMapping("/customer/admincommentupdate")
+	@ResponseBody
+	public String admincommentupdate(FaqDto faqdto, String ccontent) {
+		
+		System.out.println("ccontent:"+ccontent);
+		System.out.println("댓글수정버튼 :"+faqdto.getFno());
+		
+		CommentDto cdto =faqService.selectComment(faqdto.getFno());
+		System.out.println("cdto.getccontent:"+cdto.getCcontent()); //기존에 있던 댓글 출력
+		
+		//admin 댓글 수정 후 faq에서 문의 답변 수정 확인 가능
+		 faqdto.setFqa(0);
+		 faqService.updatefqa(faqdto);// 문의 답변 수정
+		
+		cdto.setCcontent(ccontent);
+		faqService.updateComment(cdto);
+		return "success";
+	}
 	
 	
 	

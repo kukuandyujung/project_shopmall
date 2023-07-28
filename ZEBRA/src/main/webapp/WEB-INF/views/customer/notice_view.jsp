@@ -69,24 +69,21 @@ function admininsertBtn(){
 
 function adminupdateBtn(){
 	alert("admin 수정하기-update")
-	/* 
-	$.ajax({
-		url:"/customer/admincommentupdate",
-		type:"post",
-		data:{"id":"${sessionId}" ,
-			"fno":${faqDto.fno },
-			"ccontent": $("#ccontent").val()
-			},		
-		success:function(data){
-			var dataHtml="";
-			alert("admin 댓글 저장 성공");			
-		},
-		error:function(){
-			alert("실패");
-			
-		}
-	});
-	 */
+	
+	  $.ajax({
+	url:"/customer/admincommentupdate",
+	type:"post",
+	data:{"id":"${sessionId}" ,
+		"fno":${faqDto.fno },
+		"ccontent": $("#ccontent").val()
+		},	
+	success:function(data){
+		location.reload(true);	
+	},
+	error:function(){
+		alert("실패");			
+	}
+});  
 }
 
 function admindelBtn(){

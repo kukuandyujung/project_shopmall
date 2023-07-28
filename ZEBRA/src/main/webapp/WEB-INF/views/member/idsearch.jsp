@@ -104,9 +104,9 @@
 						<div class="inform">
 							
 							<ul>
-								<li><input type="text" class="nameType" name="MNAME" id="joinName"  onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='nameType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" /></li>
+								<li><input type="text" class="nameType" name="MNAME" id="joinName" placeholder="이름" onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='nameType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" /></li>
 								<input type="hidden" id="idEmck" ></li>
-								<li><input type="text" class="emailType" name="MEMAIL" id="joinEmail"   onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='emailType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" /></li>
+								<li><input type="text" class="emailType" name="MEMAIL" id="joinEmail"  placeholder="이메일" onfocus="this.className='mfocus'" onblur="if (this.value.length==0) {this.className='emailType'}else {this.className='mfocusnot'}" style="ime-mode:inactive;" /></li>
 							</ul>
 
 							<div class="btn"><a a onclick="checkIdEmailBtn()" class="gbtn">아이디 찾기</a></div>

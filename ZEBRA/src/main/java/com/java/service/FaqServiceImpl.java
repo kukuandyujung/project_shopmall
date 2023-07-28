@@ -91,7 +91,7 @@ public class FaqServiceImpl implements FaqService {
 		faqMapper.insertupdate(faqdto);		
 	}
 
-	@Override 	// admin 댓글 수정하기
+	@Override 	// admin  수정하기
 	public void insertComment(CommentDto cdto) {
 		faqMapper.insertComment(cdto);		
 	}
@@ -105,6 +105,18 @@ public class FaqServiceImpl implements FaqService {
 	@Override	//admin 댓글 삭제
 	public void deleteComment(int pno) {
 		faqMapper.deleteComment(pno);
+	}
+
+	@Override//admin 댓글 수정(
+	public void updateComment(CommentDto cdto) {
+		faqMapper.updateComment(cdto);
+		
+	}
+
+	@Override 	// admin의 문의 답변 수정
+	public void updatefqa(FaqDto faqdto) {
+		faqMapper.updatefqa(faqdto);
+		
 	}
 	
 

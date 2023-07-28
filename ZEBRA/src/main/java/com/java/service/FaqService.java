@@ -32,7 +32,7 @@ public interface FaqService {
 	//게시글 수정 update
 	void insertupdate(FaqDto faqdto);
 
-	// admin 댓글 수정하기
+	// admin 
 	void insertComment(CommentDto cdto);
 
 	// admin 댓글 입력 확인하기
@@ -40,5 +40,11 @@ public interface FaqService {
 
 	//admin 댓글 삭제
 	void deleteComment(int pno);
+	
+	//admin 댓글 수정(
+	void updateComment(CommentDto cdto);
+
+	// admin의 문의 답변 수정
+	void updatefqa(FaqDto faqdto);
 	
 }
