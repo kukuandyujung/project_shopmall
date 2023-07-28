@@ -84,6 +84,12 @@ public class CartServiceImpl implements CartService {
 	public int modifyCount(CartDTO cart) {
 		return cartMapper.modifyCount(cart);
 	}
+
+	@Override
+	public void updateONO(CartDTO cdto) {
+		// TODO Auto-generated method stub
+		cartMapper.updateONO(cdto);
+	}
 	
 }
 

@@ -29,5 +29,8 @@
 <select resultType="com.java.dto.OrderDto" id="selectOne">
 select * from zebraorder where ono=#{ono} 
 </select>
+	
+
+
 
 </mapper>

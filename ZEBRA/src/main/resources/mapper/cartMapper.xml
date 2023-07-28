@@ -47,11 +47,10 @@
 </select>
 
 <!-- 카트 ONO 업데이트 -->
- <!--  <update id="updateOno" parameterType="com.java.dto.CartDTO">
-	<selectKey resultType="int" keyProperty="ono" order="BEFORE">
-          select ORDER_SEQ_NUM.nextval from dual
-     </selectKey>
-     	  update cart set ONO=#{ONO} where MID=#{MID};
-  </update> -->
+<update id="updateONO">
+	update cart set ONO = #{ONO} where MID=#{MID} and cartId=#{cartId}
+	</update> 
+	
+	
 
 </mapper>

@@ -83,6 +83,20 @@ public class OrderController {
 		System.out.println("odto에 저장된 MID 값: " + odto.getMID());
 		
 		ArrayList<CartDTO> cartInfo = cartService.getCartList(MID);
+		
+		System.out.println(cartInfo.get(0).getMID());
+		System.out.println(cartInfo.get(0).getCartId());
+		
+		CartDTO cdto = new CartDTO();
+		
+		// MID와 cartID를 통해 ONO를 지정해주는 for 문
+		for (int i = 0; i < cartInfo.size(); i++) {
+		cdto.setONO(odto.getONO());
+		cdto.setMID(cartInfo.get(i).getMID());
+		cdto.setCartId(cartInfo.get(i).getCartId());
+		cartService.updateONO(cdto);
+		}
+		
 		model.addAttribute("MID",MID);
 		model.addAttribute("cartInfo",cartInfo);
 		System.out.println("cartInfo : "+cartService.getCartList(MID));

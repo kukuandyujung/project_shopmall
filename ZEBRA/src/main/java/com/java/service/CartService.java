@@ -22,6 +22,9 @@ public interface CartService {
 
 	void modifyCart();
 	
+	//업데이트
+	public void updateONO(CartDTO cdto);
+	
 	
 	
 }

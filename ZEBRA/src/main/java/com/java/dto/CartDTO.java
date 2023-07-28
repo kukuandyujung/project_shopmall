@@ -13,6 +13,7 @@ public class CartDTO {
 	private int cartId;
 	private String MID;
 	private int pno;
+	private int ONO;
 	private int cartCount;
 	
 	// Product
@@ -26,7 +27,7 @@ public class CartDTO {
 	@Override
 	public String toString() {
 		return "CartDTO [cartid=" + cartId + ", MID=" + MID + ", pno=" + pno + ", cartCount="
-				+ cartCount + ",pname=" + pname + ", pprice=" + pprice + ", pmainimg=" + pmainimg + ", totalPrice=" + totalPrice + "]";
+				+ cartCount + ",pname=" + pname + ",ONO=" + ONO + ", pprice=" + pprice + ", pmainimg=" + pmainimg + ", totalPrice=" + totalPrice + "]";
 	}    
 	   
 	public void initSaleTotal() {
