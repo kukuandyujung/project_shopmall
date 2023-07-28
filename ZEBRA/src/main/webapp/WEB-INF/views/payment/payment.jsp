@@ -11,6 +11,8 @@
 <link rel="stylesheet" type="text/css" href="/css/reset.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="/css/layout.css?v=Y" />
 <link rel="stylesheet" type="text/css" href="/css/content.css?v=Y" />
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js" type="text/javascript"></script>
 <script type="text/javascript" src="/js/top_navi.js"></script>
 <script type="text/javascript" src="/js/left_navi.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
@@ -33,8 +35,45 @@
     	if(confirm("주문 및 결제를 하시겠습니까?")){
     		write.submit();
     	}
-    }
-  </script>
+    }    
+</script>
+
+<script>
+(function($) {	
+	$(document).ready(function() {			
+		/* 종합 정보 섹션 정보 삽입 */
+		/* setTotalInfo();	 */
+		
+		/* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
+			/* function setTotalInfo(){ */		
+			let totalPrice = 0;				// 총 가격
+			let totalCount = 0;				// 총 갯수
+			let finalTotalPrice = 0; 		// 최종 가격		
+			
+			$(".cart_info_td").each(function(index, element){
+				/* if($(element).find(".individual_cart_checkbox").is(":checked") === true){ */			
+				// 총 가격
+				totalPrice += parseInt($(element).find(".individual_pprice_input").val().replace(/,/g, '')); // 수정한 부분				
+				// 총 갯수
+				totalCount += parseInt($(element).find(".quantity_input_cart_info_td").val());					
+				console.log({"totalPrice" : totalPrice});
+				console.log({"totalCount" : totalCount});
+				/* } */					
+			});
+			
+			 // cartInfo 배열의 각 요소들을 순회하며 totalPrice 값을 합산합니다.
+			  <c:forEach items="${cartInfo}" var="ci"> 
+			    finalTotalPrice += ${ci.totalPrice};
+			  </c:forEach>			  
+			  
+			// finalTotalPrice 값을 콤마(,)를 포함하여 표시하기 위해 toLocaleString() 메서드를 사용합니다.
+			  const formattedFinalTotalPrice = finalTotalPrice.toLocaleString();			  
+			  $("#finalTotalPrice").val(formattedFinalTotalPrice);
+			  console.log("Formatted Final Total Price: " + formattedFinalTotalPrice);
+			
+		});
+	}) (jQuery);
+</script>
 </head>
 <body>
 <%@ include file="../top.jsp"%>
@@ -94,19 +133,19 @@
 										
 										<ul class="goods">
 											<li>
-												<a href="#" style="font-size:15px;">${ci.pname}</a>
+												<a href="#" style="font-size:15px; ">${ci.pname}</a>
 											</li>
 										</ul>
 									</td>
 									<td class="tnone" >
 										<input type="text" class="individual_pprice_input" 
 										value=<fmt:formatNumber value="${ci.pprice}" pattern="#,##0" /> 
-										style="outline: none; border: none; width: 70px; text-align: right; " readonly>원
+										style="outline: none; border: none; width: 70px; text-align: right; vertical-align: middle;" readonly>원
 									</td>
 									
 									<td>
 										<input type="number" class="quantity_input_cart_info_td" min="1" max="999" 
-										value="${ci.cartCount}" style="outline: none; border: none; text-align: right;" readonly />개								
+										value="${ci.cartCount}" style="outline: none; border: none; text-align: right; " readonly />개								
 									</td>
 									
 									<td><fmt:formatNumber value="${ci.totalPrice}" pattern="#,##0" /> 원</td>
@@ -118,7 +157,11 @@
 					</div>
 					<div class="poroductTotal">
 						<ul>	
-							<li>총 합계 <strong>1,134,810</strong> 원</li>
+							<li>총 합계 
+							<input type="text" id="finalTotalPrice" 
+							style="border: none; text-align: right; margin-right:10px; background: transparent;
+							 font-size: 20px; font-weight: bold; vertical-align: middle;" readonly> 원
+							</li>
 						</ul>
 					</div>
 					<!-- //주문 상품 -->
@@ -283,6 +326,7 @@
 									</td>
 								</tr>
 							</tbody>
+							
 						</table>
 					</div>
 				<!-- //결제수단 선택 -->

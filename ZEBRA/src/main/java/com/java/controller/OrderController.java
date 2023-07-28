@@ -74,6 +74,8 @@ public class OrderController {
 
 	@RequestMapping("/payment/confirmation")
 	public String confirmation(OrderDto odto, Model model, String MID) {
+		
+		System.out.println("MID : "+MID);
 		orderService.insertOne(odto);
 		System.out.println("ono getONO : "+ odto.getONO());
 		OrderDto odto1 = orderService.selectOne(odto.getONO());
