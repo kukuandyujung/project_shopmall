@@ -48,12 +48,13 @@
 <div id="wrap">
 	
 	<div id="header">	
-	<!-- container -->
+		<!-- container -->
 	<div id="container">
 		<div id="outbox">		
+			
 			<!-- maxcontents -->
 			<div id="maxcontents">
-				<div id="mypage" style=" height:1300px;">
+				<div id="mypage">
 					<h2><strong>주문/결제</strong></h2>
 					
 					<!-- 주문 상품 -->
@@ -73,46 +74,41 @@
 								<th scope="col">수량</th>
 								<th scope="col">합계</th>
 							</thead>
+							
+							
 							<tbody>
+								<c:forEach items="${cartInfo}" var="ci"> <!-- 장바구니 정보 -->	
 								<tr>
 									<td class="left">
-										<p class="img"><img src="../img/sample_product.jpg" alt="상품" width="66" height="66" /></p>
-
+										<p class="img"><img src="/upload/${ci.pmainimg}" alt="상품" width="66" height="66" /></p>
+										
 										<ul class="goods">
 											<li>
-												<a href="#">쟈뎅 오리지널 콜롬비아 페레이라 원두커피백 15p</a>
+												<a href="#" style="font-size:15px;">${ci.pname}</a>
 											</li>
 										</ul>
 									</td>
-									<td class="tnone">
-										123,400 원
+									<td class="tnone" >
+										<input type="text" class="individual_pprice_input" 
+										value=<fmt:formatNumber value="${ci.pprice}" pattern="#,##0" /> 
+										style="outline: none; border: none; width: 70px; text-align: right; " readonly>원
 									</td>
-									<td>1 개</td>
-									<td>123,400 원</td>
+									
+									<td>
+										<input type="number" class="quantity_input_cart_info_td" min="1" max="999" 
+										value="${ci.cartCount}" style="outline: none; border: none; text-align: right;" readonly />개								
+									</td>
+									
+									<td><fmt:formatNumber value="${ci.totalPrice}" pattern="#,##0" /> 원</td>
 								</tr>
+								</c:forEach>
 								
-								<tr>
-									<td class="left">
-										<p class="img"><img src="../img/sample_product.jpg" alt="상품" width="66" height="66" /></p>
-
-										<ul class="goods">
-											<li>
-												<a href="#">가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하</a>
-											</li>
-										</ul>
-									</td>
-									<td class="tnone">
-										123,400 원
-									</td>
-									<td>1 개</td>
-									<td>123,400 원</td>
-								</tr>
 							</tbody>
 						</table>
 					</div>
 					<div class="poroductTotal">
-						<ul>														
-							<li> 총 합계 <strong>1,134,810</strong> 원</li>
+						<ul>	
+							<li>총 합계 <strong>1,134,810</strong> 원</li>
 						</ul>
 					</div>
 					<!-- //주문 상품 -->

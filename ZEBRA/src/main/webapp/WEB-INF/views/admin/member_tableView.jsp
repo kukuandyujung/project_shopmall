@@ -137,7 +137,7 @@
 		            
 		            <tr>
 		                <td class="text">이름</td>
-		                <td class="textbox"><input type="text" id="name" name="MNAME" value="${mdto.MNAME}" value="${mdto.MNAME}"></td>
+		                <td class="textbox"><input type="text" id="name" name="MNAME" value="${mdto.MNAME}"></td>
 		            </tr>
 		            
 		            <tr>

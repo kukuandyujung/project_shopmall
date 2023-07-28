@@ -50,14 +50,15 @@ public class MemberController {
 	// START SUN //	
 	
 	//회원정보수정
-	@GetMapping("/mypage/updatemyaccount")
+	@GetMapping("/mypage/updateMyForm")
+	@ResponseBody
 	public String updatemyaccount(MemberDto mdto,Model model) {
 		model.addAttribute("mdto",mdto);
 		return "mypage/updatemyaccount";
 	}
 		
 	 // id search - 이름 & 이메일 검사  
-	  @PostMapping("/member/idEmaiCheck")  
+	  @PostMapping("/member/idEmailCheck")  
 	  @ResponseBody 
 	  public String checkIdEmail(String MNAME, String MEMAIL) {
 	  System.out.println("id search - 이름 & 이메일 checkID : " + MNAME);

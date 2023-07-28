@@ -73,11 +73,11 @@
 				<!--=============START 이름,EMAIL 중복 체크 Area ==============-->
 					<script type="text/javascript">
 					function checkIdEmailBtn(){
-				 	 //alert("아이디중복확인");
+				 	alert("아이디중복확인");
 					 	console.log($('#idEmck').val());
 				
 					    $.ajax({
-					      url:"/member/idEmaiCheck",
+					      url:"/member/idEmailCheck",
 					      type:"post",
 					      data:{"MNAME":$('#joinName').val(),
 					    	   "MEMAIL":$('#joinEmail').val() },
@@ -139,12 +139,11 @@
 <!-- ================ start 이메일 인증 임시 비밀번호 area ================= -->	
 		<script type="text/javascript">		
 		   let tempcode="";
-		    
-		   /*  function emailView(){
+		    function emailView(){
 			  alert("이름과 이메일을 입력한 후 인증코드 발송을 클릭하세요.");
-			   //$(".memberbd").css("display","block");
+			 //  $(".memberbd").css("display","block");
 		   }
- */
+ 
 		   function emailBtn(){
 			   alert("임시번호를 발송합니다.");
 			   alert($("#mem_name").val());
@@ -153,8 +152,8 @@
 			   $.ajax({
 				   url:"/email/emailSend",
 				   type:"post",
-				   data:{"ENAME":$("#mem_name").val(),
-					   	 "MEMAIL":$("#mem_email").val()
+				   data:{"MNAME":$("#mem_name").val(),
+					     "MEMAIL":$("#mem_email").val()
 					   	 },
 				   success:function(data){
 					   alert("이메일이 발송되었습니다. 로그인 페이지로 이동해 주세요");

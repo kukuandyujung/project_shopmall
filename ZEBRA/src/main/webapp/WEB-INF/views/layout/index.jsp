@@ -81,21 +81,21 @@ style="height:500px;"  -->
 			
 				<div class="hero-carousel__slide">
 					<img src="../img/index/test1.png" alt="" class="img-fluid">
-					<a href="#" class="hero-carousel__slideOverlay">
+					<a href="/product/product_page" class="hero-carousel__slideOverlay">
 						<h2> WOMEN  </h2>
 						<p> Women Item </p>
 					</a>
 				</div>
 				<div class="hero-carousel__slide">
 					<img src="../img/index/test2.png" alt="" class="img-fluid">
-					<a href="#" class="hero-carousel__slideOverlay">
+					<a href="/product/product_page" class="hero-carousel__slideOverlay">
 						<h2> Men </h2>
 						<p>MenItem</p>
 					</a>
 				</div>
 				<div class="hero-carousel__slide">
 					<img src="../img/index/test3.png" alt="" class="img-fluid">
-					<a href="#" class="hero-carousel__slideOverlay">
+					<a href="/product/product_pagehome" class="hero-carousel__slideOverlay">
 						<h2> HOME </h2>
 						<p> Home Item </p>
 					</a>
@@ -309,7 +309,7 @@ style="height:500px;"  -->
 							<h4> HOME & DECO </h4>
 							<!-- <p>Shop Category</p> -->
 							<a class="button button--active mt-3 mt-xl-4"
-								href="product/category">SHOP HOME</a>
+								href="/product/product_pagehome">SHOP HOME</a>
 						</div>
 					</div>
 				</div>

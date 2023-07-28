@@ -46,10 +46,8 @@ function joinBtn(){
    let phoneCheck = /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/ ; //010-1111-1111 , 02-355-1111
    
     console.log($('#joinName').val()); 
- //   console.log($(":input:radio[name=GENDER]:checked").val());		
-	console.log($('#joinId').val());
+	console.log($(":input:radio[name=GENDER]:checked").val());		
 	console.log($('#joinPw').val());//비번
-	console.log("id 체크여부 : "+$('#idck').val());
 	
 	console.log($('#joinEmail').val());//  이메일도 한 번에 보내나?? 
 	console.log($('#joinEmail2').val());//@주소 직접입력- 	
@@ -60,31 +58,7 @@ function joinBtn(){
 	console.log($('#joinPhone3').val());// 폰 주소 끝 +에러,, 폰도 한 번에 되는게 있겢ㅆ찌?
 	console.log($('#joinBirth').val()); // 생년 에러, 한 번에 되는게 있는 듯;  		
 	   
-   //글자길이
-    let name_len = $("#joinName").val().length;
-    if(name_len<2){
-	   alert("이름은 두글자 이상 입력을 하셔야 합니다.")
-	   $("#joinName").focus();
-	   return false;
-    }
-   //이름 - 한글만 입력가능
-   if(!nameCheck.test($("#joinName").val())){ 
-	   alert("이름은 영문/한글만 입력이 가능합니다.");
-	   $("#joinName").focus();
-	   return false;
-   }else{
-	   alert("이름 사용 가능!!!!");
-   } 
- 
-   // 아이디 - 영문,숫자만 가능
-    if(!idCheck.test($("#joinId").val())){ //정규표현식 패턴과 입력한 글자 비교
-	   alert("아이디는 영문,숫자,특수문자(_) 4~20자 까지 입력 가능합니다..");
-	   $("#joinId").focus();
-	   return false;
-   }else{
-	   alert("아이디 사용 가능!!!!");
-   } 	
-
+  
    // 패스워드 - 영문,숫자,특수문자가 개이상 인지 검색
    if(!pwCheck.test($("#joinPw").val())){ //정규표현식 패턴과 입력한 글자 비교
 	   alert("패스워드는 영문,숫자,특수문자 혼용 4개 이상 입력 가능합니다.");
@@ -103,7 +77,7 @@ function joinBtn(){
 	} 
 	
 	 updateFrm.submit();
-	alert("가입이 완료되었습니다.");
+	alert("회원 정보 수정이 완료되었습니다.");
 }//
 </script>
 <!-- ================ END UPDATE 버튼  ================= -->
@@ -132,76 +106,99 @@ function joinBtn(){
 		<div id="outbox">		
 			<div id="left">
 				<div id="title">MY PAGE<span>마이페이지</span></div>
-				<ul>
+				<ul><c:if test="${sessionId!=null}">
 					<li><a href="/mypage/orderhistory" id="leftNavi2">주문 내역</a></li>	
 					<li><a href="/mypage/wishlist" id="leftNavi1">위시리스트</a></li>
 					<li><a href="/mypage/cart" id="leftNavi1">장바구니</a></li>
-					<li><a href="/mypage/myaccount" id="leftNavi3">내정보수정</a></li>
+					<li><a href="/mypage/myaccount${sessionId}" id="leftNavi3">내정보수정</a></li>
+					</c:if>	
 				</ul>			
 			</div><script type="text/javascript">initSubmenu(4,0);</script>
 			<!-- contents -->
 			<div id="contents">
-				<div id="member">
-					<form action="/mypage/updateMyForm"  name="updateFrm" method="get" >
-					
+			<div id="member">
+							
 					<!-- START  -->
 					<div class="attention">
 						<!-- <ul>
-							<li>※ 모든 항목은 필수 항목이므로 반드시 입력하셔야 회원가입이 진행됩니다.</li>
+							<li>※ 모든 항목은 필수 항목이므로 반드시 입력하셔야 회원수정이 진행됩니다.</li>
 						</ul> -->
 					</div>
 
 
 					<div class="memberbd">
-						<form action="/member/register04"  name="joinFrm" method="post" >
+						<form action="/member/register02"  name="joinFrm" method="post" >
 							<table
-								summary="이름, 아이디, 비밀번호, 비밀번호 확인, 이메일, 이메일수신여부, 주소, 휴대폰, 생년월일 순으로 회원가입 정보를 등록할수 있습니다."
+								summary="이름, 아이디, 비밀번호, 비밀번호 확인, 이메일, 이메일수신여부, 주소, 휴대폰, 생년월일 순으로 회원수정 정보를 등록할수 있습니다."
 								class="memberWrite" border="1" cellspacing="0">
-								<caption>회원가입 입력</caption>
+								<caption>회원수정 입력</caption>
 								<colgroup>
 									<col width="22%" class="tw30" />
 									<col width="*" />
 								</colgroup>
 								<tbody>		
 									<tr>
-										<c:if test="${sessionId!=null}">
-										<th scope="row"><label for="name"><span>  이름  </span></th>
-										<td>${sessionName}님</td>
-									</tr>
-								</c:if>		
-								
-										
-																		
+									<th scope="row"><span>이름 </span></th>
+									<td>
+										<ul class="pta">
+										 <c:if test="${sessionId!=null}">
+											 <li class="r10"><input type="text" name="MNAME" id="joinName"class="w134" /></li>
+											<li><span class="mvalign"> ※ 영문/한글 사용 가능</span></li> 
+											
+											<!-- <li class="r10"><input type="text"  onKeyUp="nameKey()"name="MNAME" id="joinName" class="w134" /></li>
+												<li><span class="mvalign1" >※ 첫 글자는 영문으로 2~16자 까지 가능, 영문, 숫자와 특수기호(_)만 사용 가능</span></li> -->
+										</ul>
+									</td>
+									<!-- <td>김슬기</td> -->
+								</tr>
+								</c:if>													
 									<tr>
 										<th scope="row"><span>성별 </span></th>
 										<td>
 											<ul class="baseQues">
-											 <li>
-											  <c:if test="${member.MGENDER == '1'}">
-												<li><input type="radio" name="MGENDER"  id="receive_yes" value="남성" class="radio_t" checked="checked" /><label for="male">남성</label>
+												<li><input type="radio" name="MGENDER"  id="receive_yes" value="남성" 
+													class="radio_t"  /><label for="male">남성</label>
 												</li>
-												<li><input type="radio" name="MGENDER" id="receive_no" value="여성"	class="radio_t" /><label for="female">여성</label></li>
-												</li> 
-												</c:if>	
-												<c:if test="${member.MGENDER == '0'}">
-												<li><input type="radio" name="MGENDER"  id="receive_yes" value="남성" class="radio_t"  /><label for="male">남성</label>
-												</li>
-												<li><input type="radio" name="MGENDER" id="receive_no" value="여성" class="radio_t" /><label for="female">여성</label></li>
-											   </li>
-											   </c:if>
+												<li><input type="radio" name="MGENDER" id="receive_no" value="여성"
+													class="radio_t" /><label for="female">여성</label></li>
 											</ul>
 										</td>
 									</tr> 
-										
+									<!--=============START 아이디 중복 체크 Area ==============-->
+									<script type="text/javascript">
+									function checkIdBtn(){
+								 	// alert("중복확인");
+									 	console.log($('#idck').val());
+								
+									    $.ajax({
+									      url:"/member/idCheck",
+									      type:"post",
+									      data:{"MID":$('#joinId').val() },
+									      success:function(data){
+									          if(data == "fail"){
+									 			alert("이미 존재하는 아이디 입니다.");
+												$('#joinId').val("");
+												return false;
+												}//if
+											  alert("아이디 중복 확인 : 사용이 가능합니다. ");
+									 			$('#idck').val("true")
+										   },//success
+										   error:function(){
+										      alert("아이디 중복 확인 : 사용이 불가합니다.");	      
+										   }//error
+										});//ajax 
+									
+									}//checkIdBtn
+									</script>
+								<!--=============END 아이디 중복 체크 Area ==============-->		
 									<tr>
-									<th scope="row"><label for="id">아이디 </label></th>
-									<td>${member.userid }</td>
+									<th scope="row"><span>아이디 </span></th>
 									<td>
 										<ul class="pta">
 											<li class="r10"><input type="text" class="w134" name="MID" id="joinId" /></li>
-										
-											</li>												
-											<span class="mvalign1"></span>
+											<li><a onclick="checkIdBtn()" class="nbtnMini" style="cursor: pointer;" >중복확인</a>
+											<input type="hidden" id="idck" ></li>												
+											<span class="mvalign1"> ※ 영문/숫자 사용가능합니다.</span>
 										</ul>
 									</td>
 								</tr>								
@@ -406,12 +403,13 @@ function joinBtn(){
 						<div class="bCenter">
 							<ul>
 								<li><a href="/member/login" class="nbtnbig">취소하기</a></li>
-								<li><a style="cursor: pointer;"  onclick="updateBtn()" class="sbtnMini">가입하기</a></li>
+								<li><a style="cursor: pointer;" onclick="joinBtn()" class="sbtnMini">가입하기</a></li>
 							</ul>
 						</div>	
 					</div>				
 					<!-- //Btn Area -->
 					</form>		
+			
 				<!-- START  -->
 			</div>
 		</div>
