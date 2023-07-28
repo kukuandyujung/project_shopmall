@@ -256,6 +256,13 @@ public class ProductServiceImpl implements ProductService{
 		
 		ArrayList<OrderDto> list = productMapper.selectUPAjaxAll(odto);
 		return list;
+	}
+
+	//메인 페이지에서 조회수순을 위한 서비스임플리
+	@Override
+	public ArrayList<ProductDto> selectphitAll() {
+		ArrayList<ProductDto> list =productMapper.selectphitAll();
+		return list;
 	}   
    
  

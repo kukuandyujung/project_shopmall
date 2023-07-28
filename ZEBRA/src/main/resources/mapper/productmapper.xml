@@ -313,7 +313,9 @@
     <!-- ===============================주문 관리 페이지============================================  -->
     
     
-    
+    <select id="selectphitAll" resultType="com.java.dto.ProductDto" >
+    	select * from product order by phit desc
+    </select>
     
     
     

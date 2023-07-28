@@ -88,11 +88,6 @@ public class FController {
 		return "mypage/orderhistory";
 	}
 	
-	@RequestMapping("/layout/index")
-	public String index(@RequestParam(defaultValue = "none") String resultCode,
-			Model model) {
-		model.addAttribute("resultCode",resultCode);
-		return "layout/index";	
-	}
+
 	
 }

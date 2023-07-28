@@ -93,7 +93,16 @@ public class ShoppageController {
       return "product/product_pagehome";
    }//product_page
 
-
+   //메인 페이지에서 조회수 순
+	@RequestMapping("/layout/index")
+	public String index(@RequestParam(defaultValue = "none") String resultCode,
+			Model model) {
+		ArrayList<ProductDto> list = productService.selectphitAll();
+		
+		model.addAttribute("list",list);
+		model.addAttribute("resultCode",resultCode);
+		return "layout/index";	
+	}
 
    
 }

@@ -67,6 +67,9 @@ public interface ProductMapper {
 
    //주문 관리에서 배송 상태 ajax 
    ArrayList<OrderDto> selectUPAjaxAll(OrderDto odto);
+
+   //메인 페이지에서 조회수를 위한 리스트 
+   ArrayList<ProductDto> selectphitAll();
    
 
 
