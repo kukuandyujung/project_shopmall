@@ -225,7 +225,7 @@ $(".btn_buy").on("click", function(){
 							<!-- 수량 버튼 -->
 							<input type="number" name="quantity_input" id="sst" size="2" min="1"  maxlength="12" value="1" title="Quantity:"
 								class="input-text qty">&nbsp;&nbsp;
-								<a class="button primary-btn" href="#">Buy Now</a>								
+								<a class="button primary-btn" href="/payment/payment/aaa">Buy Now</a>								
 						</div>
 												
 						<div class="card_area d-flex align-items-center">

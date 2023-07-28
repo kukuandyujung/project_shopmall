@@ -34,14 +34,15 @@ public class OrderController {
 	@GetMapping("/payment/payment/{MID}")
 	public String payment(@PathVariable("MID") String MID, Model model) {
 		ArrayList<CartDTO> cartInfo = cartService.getCartList(MID);
+		model.addAttribute("MID",MID);
 		model.addAttribute("cartInfo",cartInfo);
 		System.out.println("cartInfo : "+cartService.getCartList(MID));
 		return "payment/payment";
 	}
 	
 	//수령자 정보 저장하기
-	@PostMapping("/payment/payment")
-	public String payment1(OrderDto odto, Model model) {
+	@PostMapping("/payment/payment/{MID}")
+	public String payment(OrderDto odto, Model model) {
 		
 		 //핸드폰 번호 가져오기
 		 String OHP1 = odto.getOHP1();
@@ -72,12 +73,21 @@ public class OrderController {
 	
 
 	@RequestMapping("/payment/confirmation")
-	public String confirmation(OrderDto odto, Model model) {
+	public String confirmation(OrderDto odto, Model model, String MID) {
 		orderService.insertOne(odto);
-		System.out.println("ono : "+ odto.getONO());
+		System.out.println("ono getONO : "+ odto.getONO());
 		OrderDto odto1 = orderService.selectOne(odto.getONO());
 		model.addAttribute("odto1", odto1);
-	
+		model.addAttribute("MID",MID);
+		odto.setMID(MID);
+		System.out.println("odto에 저장된 MID 값: " + odto.getMID());
+		
+		ArrayList<CartDTO> cartInfo = cartService.getCartList(MID);
+		model.addAttribute("MID",MID);
+		model.addAttribute("cartInfo",cartInfo);
+		System.out.println("cartInfo : "+cartService.getCartList(MID));
+		
+		 
 	return "payment/confirmation"; 
 	}
 	 	 

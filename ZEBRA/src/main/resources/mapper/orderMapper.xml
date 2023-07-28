@@ -19,9 +19,9 @@
           select ORDER_SEQ_NUM.nextval from dual
      </selectKey>
    insert into ZEBRAORDER (ONO, ONAME, OZIP, OADDR1, OADDR2, 
-      OHP1, OHP2, OHP3, ORHP1, ORHP2, ORHP3, OWANT, OPAYMENT)
+      OHP1, OHP2, OHP3, ORHP1, ORHP2, ORHP3, OWANT, OPAYMENT, MID, ODATE)
    values (#{ONO}, #{ONAME}, #{OZIP}, #{OADDR1}, #{OADDR2},
-      #{OHP1},#{OHP2},#{OHP3},#{ORHP1},#{ORHP2},#{ORHP3}, #{OWANT}, #{OPAYMENT})
+      #{OHP1},#{OHP2},#{OHP3},#{ORHP1},#{ORHP2},#{ORHP3}, #{OWANT}, #{OPAYMENT}, #{MID},SYSDATE)
 </insert>
 
 

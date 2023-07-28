@@ -138,6 +138,7 @@
 								<tr>
 									<th scope="row"><span>이름</span></th>
 									<td><input type="text" class="w134" name="ONAME" /></td>
+			                        <input type="hidden" class="w134" name="MID" value="${MID}" />
 								</tr>
 								<tr>
 									<th scope="row"><span>주소</span></th>
