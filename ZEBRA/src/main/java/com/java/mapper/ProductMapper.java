@@ -24,8 +24,6 @@ public interface ProductMapper {
    //상품 관리 상품 전체 개수 
    int selectListCount(String category, String s_word);
 
-   //상품 관리 상품 조회수 1 증가 
-   void updatePhitUp(int pno);
 
    //상품 관리 상품 1개 등록하기 
    void insertOne(ProductDto pdto);
@@ -42,6 +40,9 @@ public interface ProductMapper {
 
    //상세 페이지에서 상품 1개 가져오기 
    ProductDto selectPageOne(int pno);
+
+   //상품 관리 상품 조회수 1 증가 
+   void updatePhitUp(int pno);
 
    //상품 페이지에 ajax 검색 (색상, 가격, 검색 ajax)
    ArrayList<ProductDto> selectSortAll(String s_word, Integer pprice, String sorting,String pcolor);

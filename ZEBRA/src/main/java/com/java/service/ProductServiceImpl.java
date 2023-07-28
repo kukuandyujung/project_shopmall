@@ -48,12 +48,12 @@ public class ProductServiceImpl implements ProductService{
    }
    
 
-   @Override//상붐 관리 상품 뷰에서 상품 1개 가져오기
+   @Override//상품 관리 상품 뷰에서 상품 1개 가져오기
    public HashMap<String, Object> selectOne(int pno) {
       
       HashMap<String, Object> map = new HashMap<>();
-      //조회수 1 증가 
-      productMapper.updatePhitUp(pno);
+      
+      
       // 게시물 1개 가져오기 + 이전 게시물, 다음 게시물 가져오기 
       ProductDto preDto = productMapper.selectPreOne(pno);
       ProductDto pdto = productMapper.selectOne(pno);

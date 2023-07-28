@@ -69,11 +69,7 @@
      from product order by  pno asc) where pno=#{pno})
    </select>
    
-   <!-- 상품 조회수 1 증가 생각해보니 이거는 지금 할 수 없 ... ㅋ-->
-   <update id="updatePhitUp">
-      update product set phit= phit+1 where pno=#{pno}
-   </update>
-   
+
    <!-- 상품 1개 저장 -->
    <!-- 상품 테이블에 새로운 레코드를 삽입하기. 상품 등록 시 사용되는 변수를 적으면 된다. product_seq.nextval는 시퀀스로 부터 새로운 게시글의 고유 번호를 생성한다.   -->
    <insert id="insertOne">
@@ -111,6 +107,16 @@
    -->
 
    <!-- ============================여기부터는 상품 페이지 ====================================== -->
+
+   <!-- 상품 조회수 1 증가 생각해보니 이거는 지금 할 수 없 ... ㅋ-->
+   <update id="updatePhitUp">
+      update product set phit= phit+1 where pno=#{pno}
+   </update>
+   
+
+
+
+
 
 	<!-- 여자 상품 개수 -->
 	 <select id="selectproduct_page_listCount" resultType="int">
