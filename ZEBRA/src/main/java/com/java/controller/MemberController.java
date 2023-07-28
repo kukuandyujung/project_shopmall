@@ -50,7 +50,8 @@ public class MemberController {
 	// START SUN //	
 	
 	//회원정보수정
-	@GetMapping("/mypage/updatemyaccount")
+	@GetMapping("/mypage/updateMyForm")
+	@ResponseBody
 	public String updatemyaccount(MemberDto mdto,Model model) {
 		model.addAttribute("mdto",mdto);
 		return "mypage/updatemyaccount";
