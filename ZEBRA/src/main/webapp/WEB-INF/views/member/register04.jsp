@@ -158,15 +158,7 @@ function joinBtn(){
 												</li>
 												<li><input type="radio" name="MGENDER" id="receive_no" value="여성"
 													class="radio_t" /><label for="female">여성</label></li>
-											
-											<!-- 
-											<ul class="baseQues">
-												<li><input type="radio" name="MGENDER"  id="receive_yes" value="남성" 
-													class="radio_t"  /><label for="male">남성</label>
-												</li>
-												<li><input type="radio" name="MGENDER" id="receive_no" value="여성"
-													class="radio_t" /><label for="female">여성</label></li> -->
-											
+																						
 											</ul>
 										</td>
 									</tr> 

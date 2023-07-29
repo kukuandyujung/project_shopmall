@@ -6,7 +6,6 @@
 	href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 <link rel="stylesheet" type="text/css"
 	href="https://www.66girls.co.kr/ind-script/optimizer.php?filename=tZVBUgQhDEX30249R1ZOeQQX7jxBOsQmNUCoJljj7UVn9AB2WFGQ5IX8CgGiZgampTfeG2RM6XyG2tcktETLCVrgJXCTrUC7SHl6BmrDUUNPDHUfKxlkLr0iXXDjh2F-BB9skmZF9xH-b2rCT-0GKzahnxSkOWvx490O_HhMp7HhUxd_pqkmk-oPjpwmUO9tMAGMmxQ0nqAwrv7QtZt5tuwfV69TFEgThB1u5E8dBt49JtY9Q-7jfbWo9S1KrVI2RzZp-RjhoqXSIWxkDHOqfh3z2pHbGHeKL8evu5X1UPy7qvko9vuz3UoLaPhN_QI&amp;type=css&amp;k=d49e6946efb0d8c3b008425c76a9e43709437f6e&amp;t=1684737283&amp;user=T" />
-
 <script type="text/javascript">
 $(document).ready(function(){    
  
@@ -18,7 +17,8 @@ $(document).ready(function(){
 		$("html, body").animate({scrollTop: 0 }, 600);
 	});    
 	 
-});</script>
+});
+</script>
 
 <div class="bottom_fixed_menu">
 	<h1>
