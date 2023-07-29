@@ -4,7 +4,7 @@
     "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.java.mapper.ProductMapper">
-<!-- 상품 전체 개수 검색하기 -->
+<!-- 상품 관리에서 상품 전체 개수 검색하기 -->
    <select id="selectListCount" resultType="int">
       select count(*) from product
       <if test="category == 'all'">      
@@ -19,7 +19,7 @@
    </select>
    
    
-<!-- 상품 전체 가져오기 -->
+<!-- 상푸 관리 상품 전체 가져오기 -->
 <select id="selectAll" resultType="com.java.dto.ProductDto">
    <!-- 공통 영역 -->
             select * from (select rownum rnum, a.* from
@@ -47,21 +47,21 @@
 
 
 
-   <!-- 상품 1개 가져오기 -->
+   <!-- 상품 관리 상품 1개 가져오기 -->
    <select id="selectOne" resultType="com.java.dto.ProductDto">
       select * from product where pno=#{pno}
    </select>
    
 
 
-   <!-- 상품 이전글  -->
+   <!-- 상품 관리 상품 이전글  -->
    <select id="selectPreOne" resultType="com.java.dto.ProductDto">
       select * from product where pno=
      (select prevDto from
      (select pno,lead(pno,1,-1) over(order by pno asc) as prevDto
      from product order by pno asc) where pno=#{pno})
    </select>
-   <!-- 상품 다음글  -->
+   <!-- 상품 관리 상품 다음글  -->
    <select id="selectNextOne" resultType="com.java.dto.ProductDto"> 
       select * from product where pno=
      (select nextDto from
@@ -70,8 +70,8 @@
    </select>
    
 
-   <!-- 상품 1개 저장 -->
-   <!-- 상품 테이블에 새로운 레코드를 삽입하기. 상품 등록 시 사용되는 변수를 적으면 된다. product_seq.nextval는 시퀀스로 부터 새로운 게시글의 고유 번호를 생성한다.   -->
+   <!-- 상품 관리 상품 1개 저장 -->
+   <!-- 상품 관리 상품 테이블에 새로운 레코드를 삽입하기. 상품 등록 시 사용되는 변수를 적으면 된다. product_seq.nextval는 시퀀스로 부터 새로운 게시글의 고유 번호를 생성한다.   -->
    <insert id="insertOne">
    	<selectKey resultType="int" keyProperty="pno" order="BEFORE">
 		select seq_product.nextval from dual
@@ -85,12 +85,12 @@
 </insert>
    
    
-   <!-- 상품 삭제 -->
+   <!-- 상품 관리 상품 삭제 -->
    <delete id="deleteOne">
       delete product where pno=#{pno}
    </delete>
    
-   <!-- 상품 1개 수정  -->
+   <!-- 상품 관리 상품 1개 수정  -->
    <!-- 주어집 값에 대해 업데이트하기 그냥 상품 리스트에 적힌 변수를 적고 업데이트 대상을 pno가 주어진 값과 일치하는 레코드이다. -->
    <update id="updateOne">
       update product set pcode =#{pcode}, pname=#{pname}, pprice=#{pprice},
@@ -115,7 +115,7 @@
 
 
 
-	<!-- 여자 상품 개수 -->
+	<!-- 유저 상품 페이지 여자 상품 개수 -->
 	 <select id="selectproduct_page_listCount" resultType="int">
       select count(*) from product where pcode=10
      	
@@ -152,7 +152,7 @@
 
 
    </select>
-    <!-- 홈 제품 개수 -->
+    <!-- 유저 상품 페이지  홈 제품 개수 -->
    	 <select id="selectproduct_page_listCounthome" resultType="int">
       select count(*) from product where pcode=11
 
@@ -160,7 +160,7 @@
 
 
 
-    <!-- women 상품 페이지에서 상품 전체 가져오기 아무 옵션을 누르지 않을 경우--> 
+    <!-- 유저 상품 페이지 women 상품 페이지에서 상품 전체 가져오기 아무 옵션을 누르지 않을 경우--> 
    <select id="selectPageAll" resultType="com.java.dto.ProductDto">
       <!-- 공통 영역 -->
         select * from (select rownum rnum, a.* from
@@ -174,7 +174,7 @@
 
     </select>
     
-    <!-- home 상품 페이지에서 상품 전체 가져오기 아무 옵션을 누르지 않을 경우--> 
+    <!-- 유저 상품 페이지 home에서 상품 전체 가져오기 아무 옵션을 누르지 않을 경우--> 
 	<select id="selectHomeAll" resultType="com.java.dto.ProductDto">
    	<!-- 공통 영역 -->
         select * from (select rownum rnum, a.* from
@@ -189,7 +189,7 @@
     </select>
   
     
-    <!-- 상세 페이지에서 상품 1개 가져오기 -->
+    <!-- 유저 상품 페이지 상세 페이지에서 상품 1개 가져오기 -->
     <!-- 상품 1개 가져오기 -->
    <select id="selectPageOne" resultType="com.java.dto.ProductDto">
       select * from product where pno=#{pno}
@@ -197,7 +197,7 @@
    
    
     
-    <!-- 상품 페이지에서 ajax 검색하기 -->
+    <!-- 유저 상품 페이지 상품 페이지에서 ajax 검색하기 -->
     <select id="selectSortAll" resultType="com.java.dto.ProductDto" >
        
 		select * from product where pcode=10
@@ -236,7 +236,10 @@
    
     </select>
     
-    
+    <!-- 상품 베스트 1 증가 -->
+   	<update id="updatePsoldCountUp">
+      update product set psoldcount= psoldcount+1 where pno=#{pno}
+   	</update>
     
     
     <!-- ===============================주문 관리 페이지============================================  -->
@@ -326,10 +329,7 @@
    <update id="updatePhitUp">
       update product set phit= phit+1 where pno=#{pno}
    </update>
-    <!-- 상품 베스트 1 증가 -->
-   <update id="updatePsoldCountUp">
-      update product set psoldcount= psoldcount+1 where pno=#{pno}
-   </update>
+
     
     
     

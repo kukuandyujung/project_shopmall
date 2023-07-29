@@ -35,6 +35,8 @@ public class BoardController {
 		
 		//상품 1개 가져오기 
 		HashMap<String, Object> map = productService.selectPageOne(pno);
+		ArrayList<ProductDto> list1 = productService.selectBestAll();//베스트 
+	    model.addAttribute("list1", map.get("list1")); //베스트
 		model.addAttribute("pdto", map.get("pdto"));
 		
 		//상품 뷰 페이지에서 하단에 목록을 만들기 위한 넘버링과 이 상품이 상품 목록에서 어디 페이지에 있는 지에 대해

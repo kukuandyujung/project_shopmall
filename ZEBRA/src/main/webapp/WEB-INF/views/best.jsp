@@ -41,7 +41,8 @@
 						<h4 class="card-product__title">
 							<a href="/product/product_detail?pno=${product.pno}">${product.pname}</a>
 						</h4>
-						<p class="card-product__price">${product.pprice}원</p>
+						
+						<p class="card-product__price"><fmt:formatNumber value="${product.pprice}" pattern="###,###원" /></p>
 					</div>
 					<!-- best 제품 중 상품 1개의 정보 끝-->
 					
