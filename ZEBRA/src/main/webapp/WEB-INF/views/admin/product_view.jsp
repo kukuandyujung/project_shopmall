@@ -159,10 +159,10 @@
     <table class="table table-bordered">
     	
       <tr>
-        <td><strong>다음 상품</strong> <span class="separator">|</span> </span> <a href="/admin/product_view?pno=${nextDto.pno }&page=${page}&category=${category}&s_word=${s_word}">  ${nextDto.pname } </a></td>
+        <td><strong>이전 상품</strong> <span class="separator">|</span> </span> <a href="/admin/product_view?pno=${nextDto.pno }&page=${page}&category=${category}&s_word=${s_word}">  ${nextDto.pname } </a></td>
       </tr>
       <tr>
-        <td><strong>이전글</strong> <span class="separator">|</span> <a href="/admin/product_view?pno=${prevDto.pno }&page=${page}&category=${category}&s_word=${s_word}"> ${prevDto.pname}</a></td>
+        <td><strong>다음 상품</strong> <span class="separator">|</span> <a href="/admin/product_view?pno=${prevDto.pno }&page=${page}&category=${category}&s_word=${s_word}"> ${prevDto.pname}</a></td>
       </tr>
  
     </table>

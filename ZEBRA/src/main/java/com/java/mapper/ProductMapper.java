@@ -44,9 +44,10 @@ public interface ProductMapper {
    //상품 관리 상품 조회수 1 증가 
    void updatePhitUp(int pno);
 
+
    //상품 페이지에 ajax 검색 (색상, 가격, 검색 ajax)
    ArrayList<ProductDto> selectSortAll(String s_word, Integer pprice, String sorting,String pcolor);
-
+   
    //상품 페이지에서 home 상품 전체 가져오기 
    ArrayList<ProductDto> selectHomeAll(int startRow, int endRow);
 
@@ -54,6 +55,8 @@ public interface ProductMapper {
    int selectproduct_page_listCount(String s_word, String pcolor, String sorting);
    //상품 페이지에서 상품  총 개수를 반환하기 위한 함수(home)
    int selectproduct_page_listCounthome();
+   
+
 
    //===================================주문 관리===============================================
    //주문 관리에서 주문 총 개수를 반환하기 위한 함수
@@ -76,6 +79,8 @@ public interface ProductMapper {
    
    //메인 페이지에서 베스트순을 위한 리스트 
    ArrayList<ProductDto> selectBestAll();
+
+
 
 
 

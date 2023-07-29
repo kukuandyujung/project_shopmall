@@ -8,6 +8,9 @@ import com.java.dto.ProductDto;
 
 public interface ProductService {
 
+   //=================상품 관리 페이지=========================================
+	
+	
    //상품 관리 상품 리스트에 상품 전체 가져오기
    HashMap<String, Object> selectAll(int page, String category, String s_word);
 
@@ -23,7 +26,7 @@ public interface ProductService {
    //상품 관리 1개 삭제하기 
    void deleteOne(int pno);
 
-   //====================여기부터는 상품 페이지=============================== 
+   //========================상품 페이지=============================== 
    
    //상품 페이지에 women 상품 전체 가져오기
    HashMap<String, Object> selectPageAll(int page, String s_word, String sorting, String pcolor);
@@ -46,7 +49,8 @@ public interface ProductService {
 
    //주문 관리에서 배송 상태 ajax 
    ArrayList<OrderDto> selectUPAjaxAll(OrderDto odto);
-   //=================주문 관리 페이지===========================================
+
+   
 
    //=================메인 페이지===============================================
    

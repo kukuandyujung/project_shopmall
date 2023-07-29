@@ -23,7 +23,7 @@ public class ShoppageController {
    @Autowired
    ProductService productService;
    
-   //상품을 검색하는 검색 ajax 
+ //상품을 검색하는 검색 ajax 
    @PostMapping("/product/sortingAjax")
    @ResponseBody //ajax를 사용하기 위한 것. 데이터를 넘겨주는 어노테이션이다. 
    public ArrayList<ProductDto> sortingAjax(
@@ -54,7 +54,7 @@ public class ShoppageController {
       //상품 페이지의 디폴트 값을 1로 해서
       //상품 페이지에 상품 전체 가져오기
       HashMap<String, Object> map = productService.selectPageAll(page,s_word,sorting,pcolor); 
-      ArrayList<ProductDto> list1 = productService.selectBestAll();
+      ArrayList<ProductDto> list1 = productService.selectBestAll(); //베스트
       //selectPageAll 상품 페이지에 상품 데이터를 전체 가져와주기
       model.addAttribute("list", map.get("list")); //상품 목록을 담고 있는 모델의 속성 
       model.addAttribute("list1", map.get("list1")); //베스트 순

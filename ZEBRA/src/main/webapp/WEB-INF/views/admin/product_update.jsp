@@ -139,14 +139,28 @@
                         <tr>
                           <th scope="row">색상</th>
                           <td>
-                          	<input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "text" name="pcolor" placeholder="ex) black " value="${pdto.pcolor}" />
+                          	<select name="pcolor" >
+		                        <option>${pdto.pcolor}</option>
+		                        <option>black</option>
+		                        <option>orange</option>
+		                        <option>pink</option>
+		                        <option>white</option>    
+		                        <option>yellow</option>    
+                     		</select>
+<%--                           	<input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "text" name="pcolor" placeholder="ex) black " value="${pdto.pcolor}" /> --%>
                           </td> 
                         </tr>
 
                         <tr>
                           <th scope="row">상품 사이즈</th>
                           <td>
-                          	<input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "text" name="psize" placeholder="ex) s " value="${pdto.psize}" />
+                          	<select name="psize" >
+		                        <option>${pdto.psize}</option>
+		                        <option>S</option>
+		                        <option>M</option>
+		                        <option>L</option>    
+                     		</select>
+<%--                           	<input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "text" name="psize" placeholder="ex) s " value="${pdto.psize}" /> --%>
                           </td> 
                         </tr>
                         <tr>

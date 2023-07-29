@@ -173,6 +173,7 @@ public class ProductServiceImpl implements ProductService{
    }
 
 
+
    
    //홈 제품 
 
@@ -192,9 +193,10 @@ public class ProductServiceImpl implements ProductService{
 	      int endRow = startRow+9-1;
 	      if(endPage>maxPage) endPage=maxPage;
       
-      
+	  ArrayList<ProductDto> list1 = productMapper.selectBestAll();
       ArrayList<ProductDto> list = productMapper.selectHomeAll(startRow, endRow);
       map.put("list", list);
+      map.put("list1", list1);
       map.put("product_page_listCounthome", product_page_listCounthome);
       map.put("maxPage", maxPage);
       map.put("startPage", startPage);

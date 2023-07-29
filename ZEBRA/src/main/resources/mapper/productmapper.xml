@@ -19,7 +19,7 @@
    </select>
    
    
-<!-- 상푸 관리 상품 전체 가져오기 -->
+<!-- 상품 관리 상품 전체 가져오기 -->
 <select id="selectAll" resultType="com.java.dto.ProductDto">
    <!-- 공통 영역 -->
             select * from (select rownum rnum, a.* from
@@ -108,56 +108,22 @@
 
    <!-- ============================여기부터는 상품 페이지 ====================================== -->
 
- 
-   
-
-
-
 
 
 	<!-- 유저 상품 페이지 여자 상품 개수 -->
 	 <select id="selectproduct_page_listCount" resultType="int">
       select count(*) from product where pcode=10
      	
-     	<if test="s_word">     
-            and upper(pname) like upper('%'||#{s_word}||'%')
-         
-        </if>
-		
-		<if test="pcolor == 'black'">     
-            and pcolor='black' 
-        </if>	
-		<if test="pcolor == 'pink'">      
-            and pcolor='pink' 
-         </if>
-         <if test="pcolor == 'orange'">      
-            and pcolor='orange'
-         
-         </if>
-		 <if test="pcolor == 'yellow'">     
-            and pcolor='yellow'
-         
-         </if>
-         <if test="pcolor == 'white'">     
-            and pcolor='white'
-         
-         </if>
-         
-		<if test="sorting == 'rowprice'">
-		 	order by pprice asc 
-		</if>
-		<if test="sorting == 'highprice'">
-			order by pprice desc 
-		</if>
 
 
    </select>
+   
     <!-- 유저 상품 페이지  홈 제품 개수 -->
    	 <select id="selectproduct_page_listCounthome" resultType="int">
       select count(*) from product where pcode=11
 
    </select>
-
+   
 
 
     <!-- 유저 상품 페이지 women 상품 페이지에서 상품 전체 가져오기 아무 옵션을 누르지 않을 경우--> 
@@ -165,6 +131,7 @@
       <!-- 공통 영역 -->
         select * from (select rownum rnum, a.* from
        (select * from product  
+            
          
          <!-- 공통 영역  -->
          <![CDATA[

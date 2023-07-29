@@ -143,10 +143,8 @@
 				                     <c:forEach var ="zebraorder" items="${list}"> 
 										<tr>
 											<td>${zebraorder.ONO}</td>
-											<td >
-												<a href="order_view?ONO=${zebraorder.ONO}&page=${page}&ordercate=${ordercate}">${zebraorder.ONAME}</a>
-											</td>
-											<td>${zebraorder.ODATE}</td>
+											<td ><a href="order_view?ONO=${zebraorder.ONO}&page=${page}&ordercate=${ordercate}">${zebraorder.ONAME}</a></td>
+											<td><fmt:formatDate value="${zebraorder.ODATE}" pattern="yyyy-MM-dd"  /></td>			
 											<td>${zebraorder.OSTATUS}</td>
 											<td >${zebraorder.OPAYMENT}</td>
 										</tr>
