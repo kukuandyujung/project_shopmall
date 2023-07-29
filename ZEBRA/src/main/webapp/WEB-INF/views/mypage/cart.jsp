@@ -47,38 +47,68 @@
 (function($) {	
 	$(document).ready(function() {			
 		/* 종합 정보 섹션 정보 삽입 */
-		/* setTotalInfo();	 */
+		setTotalInfo();			
+	});
 		
+	
+	/* 체크여부에 따른 종합 정보 변화 */
+	$(".individual_cart_checkbox").on("change", function(){
 		/* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
-			/* function setTotalInfo(){ */		
-			let totalPrice = 0;				// 총 가격
-			let totalCount = 0;				// 총 갯수
-			let finalTotalPrice = 0; 		// 최종 가격		
-			
-			$(".cart_info_td").each(function(index, element){
-				/* if($(element).find(".individual_cart_checkbox").is(":checked") === true){ */			
-				// 총 가격
-				totalPrice += parseInt($(element).find(".individual_pprice_input").val().replace(/,/g, '')); // 수정한 부분				
-				// 총 갯수
-				totalCount += parseInt($(element).find(".quantity_input_cart_info_td").val());					
-				console.log({"totalPrice" : totalPrice});
-				console.log({"totalCount" : totalCount});
-				/* } */					
-			});
-			
-			 // cartInfo 배열의 각 요소들을 순회하며 totalPrice 값을 합산합니다.
-			  <c:forEach items="${cartInfo}" var="ci">
-			    finalTotalPrice += ${ci.totalPrice};
-			  </c:forEach>			  
-			  
-			// finalTotalPrice 값을 콤마(,)를 포함하여 표시하기 위해 toLocaleString() 메서드를 사용합니다.
-			  const formattedFinalTotalPrice = finalTotalPrice.toLocaleString();			  
-			  $("#finalTotalPrice").val(formattedFinalTotalPrice);
-			  console.log("Formatted Final Total Price: " + formattedFinalTotalPrice);
-			
-		});
-	}) (jQuery);
+		setTotalInfo($());
+	});
+		
+/* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
+function setTotalInfo(){ 	
+	let totalPrice = 0;				// 총 가격
+	let totalCount = 0;				// 총 갯수
+	let finalTotalPrice = 0; 		// 최종 가격		
+	
+	$(".cart_info_td").each(function(index, element){
+		if($(element).find(".individual_cart_checkbox").is(":checked") === true){ // LINE 163 */
+		// 총 가격
+		totalPrice += parseInt($(element).find(".individual_totalPrice_input").text().replace(/,/g, '').replace(' 원', ''));			
+		// 총 갯수
+		totalCount += parseInt($(element).find(".quantity_input_cart_info_td").val());					
+		
+	  } 		
+	});
+	
+	console.log({"totalPrice" : totalPrice});
+	console.log({"totalCount" : totalCount});	
+	
+	/* 최종 가격 */
+	finalTotalPrice = totalPrice;
+	console.log({"finalTotalPrice" : finalTotalPrice});	
+	
+	/* 값 삽입 */
+	// 총 가격
+	$(".totalPrice_span").text(totalPrice.toLocaleString());
+	// 총 갯수
+	$(".totalCount_span").text(totalCount);
+	// 최종 가격
+	$("#finalTotalPrice_span").val(finalTotalPrice.toLocaleString());	
+	};	
+	
+}) (jQuery);
 </script>
+
+<script>
+
+/* 수량 수정 버튼 */
+function updateCtn(){
+	if(confirm("장바구니를 수정하시겠습니까?")){
+		let cartId = $(this).data("cartid");
+		let cartCount = $(this).parent("td").find("input").val();
+		$(".update_cartId").val(cartId);
+		$(".update_cartCount").val(bookCount);
+		$(".selectbtn").submit();
+	}		
+};
+
+</script>
+
+
+
 
 <body>
 
@@ -136,9 +166,9 @@
 							<thead>
 								<th scope="col">
 								<!-- 체크박스 전체 여부 -->
-								<div class="all_check_input_div">
-								<input type="checkbox" class="individual_cart_checkbox" />
-								</div>
+									<div class="all_check_input_div">
+										<input type="checkbox" class="individual_cart_checkbox" checked="checked"/>
+									</div>
 								</th> 
 								
 								<th scope="col">상품명</th>
@@ -150,8 +180,12 @@
 							
 							<tbody>
 								<c:forEach items="${cartInfo}" var="ci"> <!-- 장바구니 정보 -->								
-								<tr>
-								<td><input type="checkbox" class="individual_cart_checkbox" /></td> <!-- 체크박스 -->
+								<tr class="cart_info_td">
+								
+								<!-- 체크박스 -->
+								<td>
+									<input type="checkbox" class="individual_cart_checkbox" checked="checked"/>
+								</td>
 								
 								<td class="left_cart_info_td">
 									<p class="img"><img src="/upload/${ci.pmainimg}" alt="상품" width="66" height="66" /></p>
@@ -162,7 +196,7 @@
 									</ul>
 								</td>
 								
-								<td class="cart_info_td"> <!-- 상품1 가격  -->
+								<td> <!-- 상품1 가격  -->
 									<input type="text" class="individual_pprice_input" 
 									value=<fmt:formatNumber value="${ci.pprice}" pattern="#,##0" /> 
 									style="outline: none; border: none; width: 70px; text-align: right; vertical-align: middle; " readonly>원								
@@ -173,26 +207,31 @@
 									value="${ci.cartCount}" style="text-align: right;" />
 								</td> 
 								
-								<td><fmt:formatNumber value="${ci.totalPrice}" pattern="#,##0" /> 원</td>
+								<td class="individual_totalPrice_input">
+									<fmt:formatNumber value="${ci.pprice * ci.cartCount}" pattern="#,##0" /> 원
+								</td>
+								
 								<td class="tnone">
 									<ul class="order">	
 										<li><a href="/payment/payment" class="obtnMini iw70">바로구매</a></li>
 										<li><a href="#" class="nbtnMini iw70">상품삭제</a></li>
 									</ul>
 								</td>
+								
 								</tr>		
 								</c:forEach>
 							</tbody>
 						</table>
 					</div>
 
+					
 					<div class="btnArea">
 						<div class="bRight">
-							<ul>
-								<li><a href="#" class="selectbtn">전체선택</a></li>
-								<li><a href="#" class="selectbtn" data-cartId="${ci.cartId}">선택수정</a></li>
-								<li><a href="#" class="selectbtn2" data-cartId="${ci.cartId}">선택삭제</a></li>
-							</ul>
+								<ul>
+									<li><a href="#" class="selectbtn2">전체선택</a></li>
+									<li><a href="#" class="selectbtn" onclick="updateCtn()" data-cartId="${ci.cartId}">선택수정</a></li>
+									<li><a href="#" class="selectbtn2" data-cartId="${sessionId}">선택삭제</a></li>
+								</ul>
 						</div>
 					</div>
 					
@@ -205,7 +244,7 @@
 						<ul class="info">	
 						</ul>	
 						<ul class="total">	
-							<li class="money"><span><input type="text" id="finalTotalPrice" 
+							<li class="money"><span><input type="text" id="finalTotalPrice_span"
 							style="border: none; text-align: right; margin-right:right; vertical-align: middle; " readonly > 원</span></li>
 						</ul>
 					</div>
@@ -220,8 +259,7 @@
 							<li class="last"><a href="/layout/index" class="ty3">쇼핑 <span>계속하기</span></a></li>
 						</ul>
 					</div>
-					
-				
+									
 					<!-- 수량 조정 form -->
 					<form action="mypage/cart/update" method="post" class="quantity_update_form">
 						<input type="hidden" name="cartId" class="update_cartId">
@@ -240,7 +278,6 @@
 					</form>
 
 				<!-- //장바구니에 상품이 있을경우 -->
-
 
 				<!-- 장바구니에 상품이 없을경우
 					<div class="noting">
@@ -282,4 +319,3 @@ $(function() {
 
  <%@ include file="../footer.jsp"%>
  </body>
- 

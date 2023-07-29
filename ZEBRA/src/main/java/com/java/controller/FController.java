@@ -55,6 +55,7 @@ public class FController {
 	@PostMapping("mypage/cart/update")
 	public String updateCartPOST(CartDTO cart) {		
 		cartService.modifyCount(cart);		
+		System.out.println("MID : "+cart.getMID());
 		return "redirect:mypage/cart/" + cart.getMID();
 	}
 	

@@ -127,7 +127,7 @@
 					
 				<h1 >회원 정보 수정</h1>
 				<hr></hr>
-				<form action="member_tableView" name="update" method="post">
+				<form action="member_tableView" name="" method="post">
 					<table class="memberTable">
 					<tr>
 		                <td class="text">아이디</td>

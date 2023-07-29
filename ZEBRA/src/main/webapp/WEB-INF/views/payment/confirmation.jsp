@@ -47,7 +47,7 @@
 			$(".cart_info_td").each(function(index, element){
 				/* if($(element).find(".individual_cart_checkbox").is(":checked") === true){ */			
 				// 총 가격
-				totalPrice += parseInt($(element).find(".individual_pprice_input").val().replace(/,/g, '')); // 수정한 부분				
+				totalPrice += parseInt($(element).find(".individual_totalPrice_input").text().replace(/,/g, '').replace(' 원', ''));							
 				// 총 갯수
 				totalCount += parseInt($(element).find(".quantity_input_cart_info_td").val());					
 				console.log({"totalPrice" : totalPrice});
@@ -55,15 +55,17 @@
 				/* } */					
 			});
 			
-			 // cartInfo 배열의 각 요소들을 순회하며 totalPrice 값을 합산합니다.
-			  <c:forEach items="${cartInfo}" var="ci"> 
-			    finalTotalPrice += ${ci.totalPrice};
-			  </c:forEach>			  
-			  
-			// finalTotalPrice 값을 콤마(,)를 포함하여 표시하기 위해 toLocaleString() 메서드를 사용합니다.
-			  const formattedFinalTotalPrice = finalTotalPrice.toLocaleString();			  
-			  $("#finalTotalPrice").val(formattedFinalTotalPrice);
-			  console.log("Formatted Final Total Price: " + formattedFinalTotalPrice);
+			/* 최종 가격 */
+			finalTotalPrice = totalPrice;
+			console.log({"finalTotalPrice" : finalTotalPrice});	
+			
+			/* 값 삽입 */
+			// 총 가격
+			$(".totalPrice_span").text(totalPrice.toLocaleString());
+			// 총 갯수
+			$(".totalCount_span").text(totalCount);
+			// 최종 가격
+			$("#finalTotalPrice_span").val(finalTotalPrice.toLocaleString());
 			
 		});
 	}) (jQuery);
@@ -118,7 +120,7 @@
 							
 							<tbody>
 								<c:forEach items="${cartInfo}" var="ci"> <!-- 장바구니 정보 -->	
-								<tr>
+								<tr class="cart_info_td">
 									<td class="left">
 										<p class="img"><img src="/upload/${ci.pmainimg}" alt="상품" width="66" height="66" /></p>
 										
@@ -139,7 +141,10 @@
 										value="${ci.cartCount}" style="outline: none; border: none; text-align: right;" readonly />개								
 									</td>
 									
-									<td><fmt:formatNumber value="${ci.totalPrice}" pattern="#,##0" /> 원</td>
+									<td class="individual_totalPrice_input">
+										<fmt:formatNumber value="${ci.pprice * ci.cartCount}" pattern="#,##0" /> 원
+									</td>
+									
 								</tr>
 								</c:forEach>
 								
@@ -149,7 +154,7 @@
 					<div class="poroductTotal">
 						<ul>	
 							<li>총 합계 
-								<input type="text" id="finalTotalPrice" 
+								<input type="text" id="finalTotalPrice_span" 
 								style="border: none; text-align: right; margin-right:10px; background: transparent;
 								font-size: 20px; font-weight: bold; vertical-align: middle;" readonly> 원
 							</li>

@@ -23,6 +23,7 @@ public interface CartMapper {
 	
 	/* 카트 확인 */
 	public CartDTO checkCart(CartDTO cart);
+	
 	//ono 업데이트
 	public void updateONO(CartDTO cdto);
 	
