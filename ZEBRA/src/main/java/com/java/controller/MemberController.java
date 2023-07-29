@@ -1,5 +1,7 @@
 package com.java.controller;
 
+import java.util.HashMap;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.java.dto.FaqDto;
 import com.java.dto.MemberDto;
 import com.java.service.MemberService;
 @Controller
@@ -37,25 +40,66 @@ public class MemberController {
 	public String register03() {
 		return "member/register03";
 	}	
-	//test
+	//test	
+	
+	
+	
+	//회원정보수정
 	@GetMapping("/member/register04")
-	public String register04() {
+	public String register04( Model model) {		
+		String MID = (String)session.getAttribute("sessionId");
+		System.out.println(MID);
+		HashMap<String, Object> map = memberService.selectOne(MID);
+
+		MemberDto member = (MemberDto)map.get("mdto");
+		
+		/*
+		 * System.out.println("이름 : " + member.getMNAME()); System.out.println("성별 : " +
+		 * member.getMGENDER()); System.out.println("아이디 : " + member.getMID());
+		 * System.out.println("패스워드 : " + member.getMPASSWORD());
+		 * System.out.println("생일 : " + member.getMBIRTH());
+		 */
+		//  member.setMBIRTH1("1"); member.setMBIRTH2("1"); member.setMBIRTH3("1");
+		  
+		  
+		  
+		  
+		 // member.setMEMAIL1("1"); member.setMEMAIL2("1"); member.setMEMAIL3("1");
+		 
+		
+		//  String cel = member.getMPHONE(); 
+		 // String[] cp = cel.split("-");
+		//  System.out.println("cel : "+cel);
+		  
+		 
+		
+		//  member.setPHONE1(cp[0]); member.setPHONE2(cp[1]); member.setPHONE3(cp[2]);
+		 
+		
+		
+
+		model.addAttribute("member",member);
 		return "member/register04";
 	}	
 	
+	
+	@PostMapping("/member/register04")
+	public String memberupdate(MemberDto member, Model model) {
+		
+		// MemberDto mdto = memberService.memberupdate(member);
+		
+		return "member/register04";
+	}	
+
+	//ID search
 	@GetMapping("/member/idsearch")
 	public String idsearch() {
 		return "member/idsearch";
 	}
 	// START SUN //	
 	
-	//회원정보수정
-	@GetMapping("/mypage/updateMyForm")
-	@ResponseBody
-	public String updatemyaccount(MemberDto mdto,Model model) {
-		model.addAttribute("mdto",mdto);
-		return "mypage/updatemyaccount";
-	}
+
+
 		
 	 // id search - 이름 & 이메일 검사  
 	  @PostMapping("/member/idEmailCheck")  

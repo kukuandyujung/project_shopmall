@@ -86,7 +86,7 @@ function joinBtn(){
 <body>
 	<%@ include file="../top.jsp"%>
 
-	<<!-- ================ start banner area ================= -->	
+	<!-- ================ start banner area ================= -->	
 	<section class="blog-banner-area" id="category">
 		<div class="container h-100">
 			<div class="blog-banner">
@@ -106,12 +106,11 @@ function joinBtn(){
 		<div id="outbox">		
 			<div id="left">
 				<div id="title">MY PAGE<span>마이페이지</span></div>
-				<ul><c:if test="${sessionId!=null}">
+				<ul>
 					<li><a href="/mypage/orderhistory" id="leftNavi2">주문 내역</a></li>	
 					<li><a href="/mypage/wishlist" id="leftNavi1">위시리스트</a></li>
 					<li><a href="/mypage/cart" id="leftNavi1">장바구니</a></li>
-					<li><a href="/mypage/myaccount${sessionId}" id="leftNavi3">내정보수정</a></li>
-					</c:if>	
+					<li><a href="/mypage/myaccount" id="leftNavi3">내정보수정</a></li>
 				</ul>			
 			</div><script type="text/javascript">initSubmenu(4,0);</script>
 			<!-- contents -->
@@ -121,17 +120,17 @@ function joinBtn(){
 					<!-- START  -->
 					<div class="attention">
 						<!-- <ul>
-							<li>※ 모든 항목은 필수 항목이므로 반드시 입력하셔야 회원수정이 진행됩니다.</li>
+							<li>※ 모든 항목은 필수 항목이므로 반드시 입력하셔야 회원정보 수정이 진행됩니다.</li>
 						</ul> -->
 					</div>
 
 
 					<div class="memberbd">
-						<form action="/member/register02"  name="joinFrm" method="post" >
+						<form action="/mypage/updateMyForm"  name="updateFrm" method="get" >
 							<table
-								summary="이름, 아이디, 비밀번호, 비밀번호 확인, 이메일, 이메일수신여부, 주소, 휴대폰, 생년월일 순으로 회원수정 정보를 등록할수 있습니다."
+								summary="이름, 아이디, 비밀번호, 비밀번호 확인, 이메일, 이메일수신여부, 주소, 휴대폰, 생년월일 순으로 회원정보 수정 정보를 등록할수 있습니다."
 								class="memberWrite" border="1" cellspacing="0">
-								<caption>회원수정 입력</caption>
+								<caption>회원정보 수정 입력</caption>
 								<colgroup>
 									<col width="22%" class="tw30" />
 									<col width="*" />
@@ -141,26 +140,33 @@ function joinBtn(){
 									<th scope="row"><span>이름 </span></th>
 									<td>
 										<ul class="pta">
-										 <c:if test="${sessionId!=null}">
-											 <li class="r10"><input type="text" name="MNAME" id="joinName"class="w134" /></li>
-											<li><span class="mvalign"> ※ 영문/한글 사용 가능</span></li> 
+											 <li class="r10"><class="w134" /> ${member.MNAME}</li>
+											<li><span class="mvalign"> </span></li> 
 											
-											<!-- <li class="r10"><input type="text"  onKeyUp="nameKey()"name="MNAME" id="joinName" class="w134" /></li>
-												<li><span class="mvalign1" >※ 첫 글자는 영문으로 2~16자 까지 가능, 영문, 숫자와 특수기호(_)만 사용 가능</span></li> -->
+											
 										</ul>
 									</td>
-									<!-- <td>김슬기</td> -->
-								</tr>
-								</c:if>													
+									
+								</tr>											
 									<tr>
 										<th scope="row"><span>성별 </span></th>
 										<td>
+											
 											<ul class="baseQues">
 												<li><input type="radio" name="MGENDER"  id="receive_yes" value="남성" 
 													class="radio_t"  /><label for="male">남성</label>
 												</li>
 												<li><input type="radio" name="MGENDER" id="receive_no" value="여성"
 													class="radio_t" /><label for="female">여성</label></li>
+											
+											<!-- 
+											<ul class="baseQues">
+												<li><input type="radio" name="MGENDER"  id="receive_yes" value="남성" 
+													class="radio_t"  /><label for="male">남성</label>
+												</li>
+												<li><input type="radio" name="MGENDER" id="receive_no" value="여성"
+													class="radio_t" /><label for="female">여성</label></li> -->
+											
 											</ul>
 										</td>
 									</tr> 
@@ -192,13 +198,12 @@ function joinBtn(){
 									</script>
 								<!--=============END 아이디 중복 체크 Area ==============-->		
 									<tr>
-									<th scope="row"><span>아이디 </span></th>
+									<th scope="row"><span> 아이디 </span></th>
 									<td>
 										<ul class="pta">
-											<li class="r10"><input type="text" class="w134" name="MID" id="joinId" /></li>
-											<li><a onclick="checkIdBtn()" class="nbtnMini" style="cursor: pointer;" >중복확인</a>
-											<input type="hidden" id="idck" ></li>												
-											<span class="mvalign1"> ※ 영문/숫자 사용가능합니다.</span>
+											<li class="r10"><class="w134" />${member.MID}</li>
+											<li></li>												
+											<span class="mvalign1"> </span>
 										</ul>
 									</td>
 								</tr>								
@@ -302,8 +307,8 @@ function joinBtn(){
 										<th scope="row"><span>휴대폰 </span></th>
 										<td>
 											<ul class="pta">
-												<li><select name="MPHONE1" >
-														<option value="010" selected="selected" >010</option>
+												<li><select name="MPHONE1"  >
+														<option value="010" value="${member.MPHONE1}" selected="selected" >010</option>
 														<option value="011">011</option>
 														<option value="016">016</option>
 														<option value="017">017</option>
@@ -312,9 +317,9 @@ function joinBtn(){
 												</select></li>
 												<li>&nbsp;<span class="valign">-</span>&nbsp;
 												</li>
-												<li><input type="text" name="MPHONE2" id="joinPhone"
+												<li><input type="text" name="MPHONE2" value="${member.MPHONE2}" id="joinPhone"
 													class="w74" maxlength="4" /> <span class="valign">-</span>&nbsp;</li>
-												<li class="r10"><input type="text" name="MPHONE3" id="joinPhone2" class="w74"
+												<li class="r10"><input type="text" name="MPHONE3" value="${member.MPHONE3}" id="joinPhone2" class="w74"
 													maxlength="4" /></li>
 											</ul>
 										</td>
@@ -403,7 +408,7 @@ function joinBtn(){
 						<div class="bCenter">
 							<ul>
 								<li><a href="/member/login" class="nbtnbig">취소하기</a></li>
-								<li><a style="cursor: pointer;" onclick="joinBtn()" class="sbtnMini">가입하기</a></li>
+								<li><a style="cursor: pointer;" onclick="joinBtn()" class="sbtnMini">수정하기</a></li>
 							</ul>
 						</div>	
 					</div>				
