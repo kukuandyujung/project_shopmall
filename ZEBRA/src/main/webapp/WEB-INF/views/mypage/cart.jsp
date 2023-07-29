@@ -40,6 +40,11 @@
 .orderTable .td_width_1_cart_info_td {
     padding: 0;
 }
+
+.quantity_modify_btn {
+    border: none;
+    margin-top: 4px;
+}
 </style>
 
 <script>
@@ -47,15 +52,24 @@
 (function($) {	
 	$(document).ready(function() {			
 		/* 종합 정보 섹션 정보 삽입 */
-		setTotalInfo();			
+		setTotalInfo();		
 	});
 		
-	
 	/* 체크여부에 따른 종합 정보 변화 */
 	$(".individual_cart_checkbox").on("change", function(){
-		/* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
+	/* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
 		setTotalInfo($());
 	});
+		
+	/* 수량 수정 버튼 LINE 211 */
+	$(document).on("click", ".quantity_modify_btn", function() {
+		alert("수량이 변경되었습니다.");
+		let cartId = $(this).data("cartid");
+		let cartCount = $(this).parent("td").find("input").val();		
+		$(".update_cartId").val(cartId);
+		$(".update_cartCount").val(cartCount);
+		$(".quantity_update_form").submit();	
+	});			
 		
 /* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
 function setTotalInfo(){ 	
@@ -88,27 +102,9 @@ function setTotalInfo(){
 	// 최종 가격
 	$("#finalTotalPrice_span").val(finalTotalPrice.toLocaleString());	
 	};	
-	
+		
 }) (jQuery);
 </script>
-
-<script>
-
-/* 수량 수정 버튼 */
-function updateCtn(){
-	if(confirm("장바구니를 수정하시겠습니까?")){
-		let cartId = $(this).data("cartid");
-		let cartCount = $(this).parent("td").find("input").val();
-		$(".update_cartId").val(cartId);
-		$(".update_cartCount").val(bookCount);
-		$(".selectbtn").submit();
-	}		
-};
-
-</script>
-
-
-
 
 <body>
 
@@ -205,6 +201,7 @@ function updateCtn(){
 								<td> <!-- <input type="number"> 수량 버튼  -->
 									<input type="number" class="quantity_input_cart_info_td" min="1" max="999" 
 									value="${ci.cartCount}" style="text-align: right;" />
+									<button type="button" class="quantity_modify_btn" data-cartId="${ci.cartId}">변경</button>									
 								</td> 
 								
 								<td class="individual_totalPrice_input">
@@ -229,7 +226,7 @@ function updateCtn(){
 						<div class="bRight">
 								<ul>
 									<li><a href="#" class="selectbtn2">전체선택</a></li>
-									<li><a href="#" class="selectbtn" onclick="updateCtn()" data-cartId="${ci.cartId}">선택수정</a></li>
+									<li><a href="#" class="selectbtn">선택수정</a></li>
 									<li><a href="#" class="selectbtn2" data-cartId="${sessionId}">선택삭제</a></li>
 								</ul>
 						</div>
@@ -250,7 +247,6 @@ function updateCtn(){
 					</div>
 					</form>
 					
-					<!-- //총 주문금액 -->
 
 					<div class="cartarea">
 						<ul>
@@ -261,10 +257,10 @@ function updateCtn(){
 					</div>
 									
 					<!-- 수량 조정 form -->
-					<form action="mypage/cart/update" method="post" class="quantity_update_form">
-						<input type="hidden" name="cartId" class="update_cartId">
-						<input type="hidden" name="cartCount" class="update_cartCount">
-						<input type="hidden" name="sessionId" value="${sessionId}">
+					<form action="" class="quantity_update_form" method="post"> <!-- post로 바꾸면 오류가 뜸  -->
+						<input type="text" name="cartId" class="update_cartId">
+						<input type="text" name="cartCount" class="update_cartCount">
+						<input type="text" name="memberId" value="${sessionId}">
 					</form>
 					
 					<!-- 삭제 form -->

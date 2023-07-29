@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -51,12 +53,17 @@ public class FController {
 		return "mypage/cart";
 	}
 	
+	@GetMapping("/mypage/cart")
+	public String cart() {
+		return "mypage/cart";
+	}
+	
 	/* 장바구니 수량 수정 */
-	@PostMapping("mypage/cart/update")
-	public String updateCartPOST(CartDTO cart) {		
+	@PostMapping("mypage/cart/")
+	public String updateCartPOST(CartDTO cart){	
 		cartService.modifyCount(cart);		
 		System.out.println("MID : "+cart.getMID());
-		return "redirect:mypage/cart/" + cart.getMID();
+		return "redirect:mypage/cart/"+cart.getMID();
 	}
 	
 	/* 장바구니 수량 삭제 */
@@ -64,12 +71,7 @@ public class FController {
 	public String deleteCartPOST(CartDTO cart) {		
 		cartService.deleteCart(cart.getCartId());		
 		return "redirect:/cart/" + cart.getMID();		
-	}
-	
-	@RequestMapping("/mypage/cart")
-	public String cart() {
-		return "mypage/cart";
-	}
+	}	
 	
 	@RequestMapping("/mypage/wishlist")
 	public String wishlist() {
