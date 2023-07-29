@@ -100,7 +100,7 @@ public class ProductServiceImpl implements ProductService{
 	  //selectListCount는 해당 카테고리와 검색어를 기준으로 상품의 총 개수를 반환하는 함수
       int product_page_listCount = productMapper.selectproduct_page_listCount(s_word, pcolor, sorting);
       System.out.println("ProductServiceImpl product_page_listCount : " + product_page_listCount);
-      
+           
       //전체 상품 개수를 페이지 당 9개씩 보여줄 때 필요한 전체 페이지 수를 계산하기 
       int maxPage = (int)Math.ceil((double)product_page_listCount/9); // 67/9 8개 page
       int startPage = (int)((page-1)/9)*9 + 1; //현재 페이지에 해당하는 시작 페이지를 계산하기. 

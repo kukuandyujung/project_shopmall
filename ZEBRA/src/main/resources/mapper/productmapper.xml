@@ -202,6 +202,9 @@
 
    
     </select>
+   
+   
+   
     
     <!-- 상품 베스트 1 증가 -->
    	<update id="updatePsoldCountUp">

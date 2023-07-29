@@ -163,6 +163,10 @@
        ajaxsort();
    }//colorselelct  
    
+
+
+   
+   
    function PriceBtn(){
        alert("가격 선택을 하겠습니다.");
        ajaxsort();  
@@ -199,6 +203,7 @@
                <div class="sidebar-categories">
                   
                 
+
                   
                   <!-- 색상 필터 시작  -->
                   <div class="common-filter">
@@ -215,30 +220,31 @@
 						<!-- value : 선택 항목을이 가지는 고유 값. 여기에 지정한 값들을 onchange를 누르면 적용이 되도록 -->
                         <ul id="colorfilter">
                            <li class="filter-list" >
-                           <input class="pixel-radio" type="radio" id="black"  name="radiocolor" value="black" onchange="colorselelct()"><label for="black">Black⬛<span>(29)</span></label>
+                           <input class="pixel-radio" type="radio" id="black"  name="radiocolor" value="black" onchange="colorselelct()"><label for="black">Black⬛<span id="black_count"></span></label>
                            </li>
                               
                            <li class="filter-list" >
-                           <input class="pixel-radio" type="radio" id="orange"  name="radiocolor" value="orange" onchange="colorselelct()"><label for="orange">orange🟧<span>(29)</span></label>
+                           <input class="pixel-radio" type="radio" id="orange"  name="radiocolor" value="orange" onchange="colorselelct()"><label for="orange">orange🟧<span id="orange_count"></span></label>
                            </li>
                               
                            <li class="filter-list">
-                           <input class="pixel-radio" type="radio" id="yellow"  name="radiocolor" value="yellow" onchange="colorselelct()"><label for="yellow">yellow🟨<span>(29)</span></label>
+                           <input class="pixel-radio" type="radio" id="pink"  name="radiocolor" value="pink" onchange="colorselelct()"><label for="pink">pink🩰<span id="pink_count"></span></label>
+                           </li>
+
+                           <li class="filter-list">
+                           <input class="pixel-radio" type="radio" id="yellow"  name="radiocolor" value="yellow" onchange="colorselelct()"><label for="yellow">yellow🟨<span id="yellow_count"></span></label>
                            </li>
                               
-                           <li class="filter-list">
-                           <input class="pixel-radio" type="radio" id="pink"  name="radiocolor" value="pink" onchange="colorselelct()"><label for="pink">pink🩰<span>(29)</span></label>
-                           </li>
                               
                            <li class="filter-list" >
-                           <input class="pixel-radio" type="radio" id="white"  name="radiocolor" value="white" onchange="colorselelct()"><label for="white">white⬜<span>(29)</span></label>
+                           <input class="pixel-radio" type="radio" id="white"  name="radiocolor" value="white" onchange="colorselelct()"><label for="white">white⬜<span id="white_count"></span></label>
                            </li>
                                   
 
                          	
                         </ul>
                      </form>
-                     
+
         
                      
                   </div>

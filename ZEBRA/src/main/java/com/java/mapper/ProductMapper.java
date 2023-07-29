@@ -57,7 +57,8 @@ public interface ProductMapper {
    int selectproduct_page_listCounthome();
    
 
-
+   
+   
    //===================================주문 관리===============================================
    //주문 관리에서 주문 총 개수를 반환하기 위한 함수
    int selectorder_page_listCount(String ordercate, String OSTATUS);
@@ -70,7 +71,8 @@ public interface ProductMapper {
 
    //주문 관리에서 배송 상태 ajax 
    ArrayList<OrderDto> selectUPAjaxAll(OrderDto odto);
-
+   
+   
 
 
    //===================================주문 관리===============================================
