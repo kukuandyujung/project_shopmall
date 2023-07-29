@@ -92,12 +92,12 @@
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                   <!-- 검색 시작 -->
                   <form action="/admin/product_list" name="search" method="post">
+                  <div class="input-group">
 	                  <select name="category" id="category">
 				        <option value="all">전체</option>
 				        <option value="pname">상품명</option>
 				        <option value="pdescript">상품 설명</option>
 				      </select>
-                  <div class="input-group">
                     <input type="text" class="form-control" name="s_word" id="s_word"  value="${s_word }" placeholder="Search for...">
                     <span class="input-group-btn">
                       <button class="btn btn-secondary" type="button" onclick="searchBtn()" data-toggle="tooltip" title="검색을 해보세요~!">검색</button>

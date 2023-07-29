@@ -291,7 +291,7 @@ public class ProductServiceImpl implements ProductService{
 	//=====================================메인 페이지======================================
 
    
-	 //조회수 1 증가 
+	 //판매 개수 1 증가
    // orderMapper.updatePsoldcount(ONO);
 
 

@@ -16,5 +16,8 @@ public interface OrderMapper {
 	
 	//수령자 정보 1개 가져오기
 	OrderDto selectOne(int ONO);
+
+	//주문 관리에 주문 판매 개수 증가하기
+	public void updatePsoldcount(int oNO);
 	
 }

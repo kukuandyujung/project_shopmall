@@ -33,19 +33,19 @@
     <!-- Custom Theme Style -->
     <link href="/build/css/custom.min.css" rel="stylesheet">
   </head>
-
   <body class="nav-md">
-  <script type="text/javascript">
-	function searchBtn(){
-		if($("#s_word").val().length<2){
-			alert("2글자 이상 입력하셔야 합니다.");
-			$("#s_word").focus();
-			return false;
-		}
-		
+  <script type="text/javascript">	
+	function searchBtn() {
+	  // 1. 선택된 배송 상태를 가져옵니다.
+	  var selectedStatus = document.getElementById("ordercate").value;
+
+	 
+	  console.log("선택된 배송 상태: " + selectedStatus);
+	  
 		search.submit();
-	
 	}
+	
+	
 	</script> 
     <div class="container body">
       <div class="main_container">
@@ -88,22 +88,21 @@
               </div>
 
 <!-- 			 셀렉해서 검색하기 시작 -->
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+              <div class="title_right" >
+                <div id="selectbutton" class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search" style="right: -160px;">
                   <form action="/admin/order_list" name="search" method="post">
 	                  <select name="ordercate" id="ordercate">
-				        <option value="">배송 상태</option>
+				        <option value="">-- 배송 상태 --</option>
 				        <option value="prepare">상품 준비중</option>
 				        <option value="shipping">배송 중</option>
 				        <option value="completed">배송 완료</option>
 				      </select>
 <!--                   검색 시작 -->
-                  <div class="input-group">
-                    <input type="text" class="form-control" name="s_word" id="s_word"  value="${s_word }" placeholder="Search for...">
+                  
                     <span class="input-group-btn">
-                      <button class="btn btn-secondary" type="button" onclick="searchBtn()" data-toggle="tooltip" title="검색을 해보세요~!">검색</button>
+                      <button  type="button" onclick="searchBtn()" data-toggle="tooltip" title="배송 상태 검색을 해보세요!">검색</button>
                     </span>
-                  </div>
+                 
 <!--                   검색 끝 -->
                     </form>
                 </div>
