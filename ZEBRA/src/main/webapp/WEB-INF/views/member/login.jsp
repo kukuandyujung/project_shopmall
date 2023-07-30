@@ -44,7 +44,7 @@ function loginBtn(){
 
 //로그인 알림창
 </script>
-<!-- START 로그인 중복 검사  --> 
+<!-- <!-- START 로그인 중복 검사  --> 
 <script type="text/javascript">
 function joinBtn(){
 // alert("가입버튼을 클릭");
@@ -56,8 +56,8 @@ console.log( $(":input:radio[name=gender]:checked").val());
 console.log($("input[type=checkbox][name=hobby]:checked").val());
 }
 </script>
-<!-- END 로그인 중복 검사  -->
-
+END 로그인 중복 검사 
+ -->
 </head>
 <body>
 <%@ include file="../top.jsp"%>	
@@ -91,9 +91,7 @@ console.log($("input[type=checkbox][name=hobby]:checked").val());
 								찾기</span></a></li>
 				</ul>
 			</div>
-			<script type="text/javascript">
-				initSubmenu(1, 0);
-			</script>
+			<script type="text/javascript">	initSubmenu(1, 0);</script>
 
 
 			<!-- contents -->
@@ -119,12 +117,6 @@ console.log($("input[type=checkbox][name=hobby]:checked").val());
 								<div class="btn">
 									<a onclick="loginBtn()" style="cursor: pointer;" class="sbtn">로그인</a>
 								</div>
-
-
-								<!-- <div class="chk">
-									<input type="" id="idsave" /> <label for="idsave"></label>
-								</div> -->
-
 								<div class="point">
 									<p>아이디와 비밀번호를 잊으셨나요?</p>
 									<a href="/member/idsearch" class="nbtn">아이디/비밀번호 찾기</a>
