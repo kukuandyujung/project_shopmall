@@ -25,7 +25,7 @@ public class CartServiceImpl implements CartService {
 		
 		// 장바구니 등록 & 에러 시 0반환
 		try {
-			System.out.println("cart : "+cartMapper.addCart(cart));
+			// System.out.println("cart : "+cartMapper.addCart(cart));
 			return cartMapper.addCart(cart);
 		} catch (Exception e) {
 			return 0;	

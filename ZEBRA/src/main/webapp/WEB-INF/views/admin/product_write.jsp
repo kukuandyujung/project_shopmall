@@ -100,7 +100,7 @@
 <!--                         </tr> -->
                        
                         <tr>
-                          <th scope="row">상품 코드</th>
+                          <th scope="row">카테고리<br>(women:10, home:11)</th>
                           <td>
                             <select name="pcode" >
 		                        <option>-</option>
@@ -213,7 +213,8 @@
                                             <div class="form-group">
                                                 <div class="col-md-6 offset-md-3">
                                                      <button type="button" class="write" onclick="writeBtn()">작성완료</button>
-                                                    <button type='button' class="btn btn-primary" onclick="javascript:location.href='product_list.do'">취소</button>
+<!--                                                     <button type='button' class="btn btn-primary" onclick="javascript:location.href='product_list.do'">취소</button> -->
+                                                    <button type='button' class="btn btn-primary" onclick="javascript:location.href='product_list'">취소</button>
 <!--                                                     <button type='reset' class="btn btn-success">Reset</button> -->
                                                 </div>
                                             </div>

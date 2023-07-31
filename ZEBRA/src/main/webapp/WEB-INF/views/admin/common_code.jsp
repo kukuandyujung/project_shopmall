@@ -24,11 +24,11 @@
                   </li>
                   <li><a><i class="fa fa-user"></i> Member Control <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/admin/general_elements">General Elements</a></li>
-                      <li><a href="/admin/media_gallery">Media Gallery</a></li>
-                      <li><a href="/admin/icons">Icons</a></li>
-                      <li><a href="/admin/glyphicons">Glyphicons</a></li>
-                      <li><a href="/admin/widgets">Widgets</a></li>  
+<!--                       <li><a href="/admin/general_elements">General Elements</a></li> -->
+<!--                       <li><a href="/admin/media_gallery">Media Gallery</a></li> -->
+<!--                       <li><a href="/admin/icons">Icons</a></li> -->
+<!--                       <li><a href="/admin/glyphicons">Glyphicons</a></li> -->
+<!--                       <li><a href="/admin/widgets">Widgets</a></li>   -->
                       <li><a href="/admin/member_table">회원 관리</a></li>  
                     </ul>
                   </li>

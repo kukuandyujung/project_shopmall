@@ -206,11 +206,7 @@
    
    
     
-    <!-- 상품 베스트 1 증가 -->
-   	<update id="updatePsoldCountUp">
-      update product set psoldcount= psoldcount+1 where pno=#{pno}
-   	</update>
-    
+   
     
     <!-- ===============================주문 관리 페이지============================================  -->
       
@@ -300,6 +296,11 @@
       update product set phit= phit+1 where pno=#{pno}
    </update>
 
+    <!-- 상품 베스트 1 증가 -->
+   	<update id="updatePsoldCountUp">
+      update product set psoldcount= psoldcount+1 where ONO=#{ONO}
+     
+   	</update>
     
     
     

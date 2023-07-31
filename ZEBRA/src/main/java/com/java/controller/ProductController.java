@@ -184,10 +184,10 @@ public class ProductController {
    //상품 관리 상품 수정하기 post
    @PostMapping("/admin/product_update") //boardUpdate에 저장하기 
    public String product_update(ProductDto pdto, 
-         @RequestPart("pm1") MultipartFile pmainimg,
-         @RequestPart("pd1") MultipartFile pdetailimg1,
-         @RequestPart("pd2") MultipartFile pdetailimg2,
-         @RequestPart("pd3") MultipartFile pdetailimg3,
+         @RequestPart(name="pm1",required = false) MultipartFile pmainimg,
+         @RequestPart(name="pd1",required = false) MultipartFile pdetailimg1,
+         @RequestPart(name="pd2", required = false) MultipartFile pdetailimg2,
+         @RequestPart(name="pd3",required = false) MultipartFile pdetailimg3,
       
          int page,
          String category, 
@@ -245,7 +245,7 @@ public class ProductController {
          }
          
          
-      
+         
        
          
          

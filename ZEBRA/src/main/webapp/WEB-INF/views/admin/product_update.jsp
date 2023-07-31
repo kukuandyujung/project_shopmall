@@ -24,7 +24,7 @@
 
     <!-- Custom Theme Style -->
     <link href="/build/css/custom.min.css" rel="stylesheet">
-	  <script type="text/javascript">
+  <script type="text/javascript">
   	function updateBtn(){
   		if(confirm("게시글 수정하시겠습니까?")){
   			update.submit();
@@ -94,14 +94,15 @@
                    	<table class="table table-bordered">
                       <tbody>
                         <tr>
-                          <th scope="row">상품 번호${pdto.pno}</th>
+                          <th scope="row">상품 번호</th>
                           <td>
+<%--                           ${pdto.pno} --%>
                           	 <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="pno" placeholder="ex) 12"  value="${pdto.pno}" />
                           </td> 
                         </tr>
                        
                         <tr>
-                          <th scope="row">상품 코드</th>
+                          <th scope="row">카테고리<br>(women:10, home:11)</th>
                           <td>
                           	 <input class="form-control" data-validate-length-range="6" data-validate-words="2"  type= "number" name="pcode" placeholder="ex) 0"  value="${pdto.pcode}"/>
                           </td> 

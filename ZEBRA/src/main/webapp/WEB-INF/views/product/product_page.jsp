@@ -122,6 +122,7 @@
           for(var i = 0; i <result.length; i++){
              
              var href="/product/product_detail?pno="+result[i].pno;
+             var formattedPrice = result[i].pprice.toLocaleString(); // Format the price with commas
        
              htmlData += '<div class="col-md-6 col-lg-4">';
              htmlData += '<div class="card text-center card-product">';
@@ -141,7 +142,8 @@
              htmlData += '<h4 class="card-product__title">';
              htmlData += '<a href="/product/product_detail?pno=${product.pno}">'+result[i].pname+'</a>';
              htmlData += '</h4>';
-             htmlData += '<p class="card-product__price">'+result[i].pprice+'원</p>';
+//              htmlData += '<p class="card-product__price">'+result[i].pprice+'원</p>';
+             htmlData += '<p class="card-product__price">' + formattedPrice + '원</p>';
              htmlData += '</div></div></div>';
 
           }
