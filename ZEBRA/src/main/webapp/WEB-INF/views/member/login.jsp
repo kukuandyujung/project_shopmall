@@ -102,16 +102,14 @@ console.log($("input[type=checkbox][name=hobby]:checked").val());
 						<div class="inform">
 							<form action="/member/login" method="post" name="loginFrm">
 								<ul>
-									<li><input type="text" class="loginType" name="MID"
-										id="MID" onfocus="this.className='mfocus'"
+									<li><input type="text" class="loginType" name="MID"	id="MID" onfocus="this.className='mfocus'"
 										onblur="if (this.value.length==0) {this.className='loginType'}else {this.className='mfocusnot'}"
 										style="ime-mode: inactive;" /></li>
-									<li><input type="password" class="passType"
-										name="MPASSWORD" id="MPASSWORD"
+									<li><input type="password" class="passType"	name="MPASSWORD" id="MPASSWORD"
 										onfocus="this.className='mfocus'"
 										onblur="if (this.value.length==0) {this.className='passType'}else {this.className='mfocusnot'}"
 										style="ime-mode: inactive;" /></li>
-								</ul>
+							    </ul>
 
 								<div class="btn">
 									<a onclick="loginBtn()" style="cursor: pointer;" class="sbtn">로그인</a>
