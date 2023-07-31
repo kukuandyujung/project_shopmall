@@ -58,22 +58,55 @@ public class MemberController {
 		 * member.getMGENDER()); System.out.println("아이디 : " + member.getMID());
 		 * System.out.println("패스워드 : " + member.getMPASSWORD());
 		 * System.out.println("생일 : " + member.getMBIRTH());
+		 * System.out.println("생일 : " + member.getMZIP());
+		 * System.out.println("생일 : " + member.getMADDR1());
+		 * System.out.println("생일 : " + member.getMADDR2());
 		 */
-		//  member.setMBIRTH1("1"); member.setMBIRTH2("1"); member.setMBIRTH3("1");
+		
+		//폰
+				//  String MPHONE = member.getMPHONE(); 
+				 // String[] phone = MPHONE.split("-");
+				//  System.out.println("phone1 : "+phone1);
+				/*
+				 * System.out.println("phone2 : "+phone2);
+				 * System.out.println("phone3 : "+phone3); 
+				 * member.setMPHONE(phone[0]);
+				 * member.setMPHONE(phone[1]); 
+				 * member.setMPHONE(phone[2]);
+				 */
+				 
+		
+		//생일
+			//  String MBIRTH = member.getMPBIRTH(); 
+			 // String[] birth = MBIRTH.split("-");
+			//  System.out.println("birth1 : "+phone1);
+			/*
+			 * System.out.println("birth2 : "+phone2);
+			 * System.out.println("birth3 : "+phone3); 
+			 * member.setMBIRTH(birth[0]); //SET을 수정해야할 것 같아...
+			 * member.setMBIRTH(birth[1]); 
+			 * member.setMBIRTH(birth[2]);
+			 */
 		  
 		  
-		  
-		  
-		 // member.setMEMAIL1("1"); member.setMEMAIL2("1"); member.setMEMAIL3("1");
+		  //메일
+		 // member.setMEMAIL1("1"); member.setMEMAIL2("1"); member.setMEMAIL3("1"); // 가입 NAME 비교 하기
 		 
 		
-		//  String cel = member.getMPHONE(); 
-		 // String[] cp = cel.split("-");
-		//  System.out.println("cel : "+cel);
-		  
-		 
+
+		//주소 수정하기
 		
-		//  member.setPHONE1(cp[0]); member.setPHONE2(cp[1]); member.setPHONE3(cp[2]);
+		//  String MPHONE = member.getMPHONE(); 
+		 // String[] phone = MPHONE.split("-");
+		//  System.out.println("phone1 : "+phone1);
+		/*
+		 * System.out.println("phone2 : "+phone2);
+		 * System.out.println("phone3 : "+phone3); 
+		 * member.setMPHONE(phone[0]);
+		 * member.setMPHONE(phone[1]); 
+		 * member.setMPHONE(phone[2]);
+		 */
+		
 		 
 		
 		
@@ -161,6 +194,15 @@ public class MemberController {
 		member.setMBIRTH(birth);
 		System.out.println("생년월일 : " + member.getMBIRTH());		
 		
+		//주소 가져오기
+		 String MZIP = member.getMZIP();
+		 String MADDR1 = member.getMADDR1();
+		 String MADDR2 = member.getMADDR2();
+		 String MADDR = MZIP+MADDR1+MADDR2;
+		 member.setMADDR(MADDR);
+		 System.out.println("우편번호: "+member.getMZIP());
+		 System.out.println("전체주소: "+member.getMADDR());
+		 
 		
 		String result = memberService.insertMember(member);
 		

@@ -602,8 +602,8 @@
 .faqList ul li{position:relative; width:100%; border-top:1px #eaeaea solid; overflow:hidden;}
 .faqList ul li .question{width:100%; margin:4px 0; padding:10px 0; line-height:1.2; overflow:hidden;}
 .faqList ul li .question .blet1{position:absolute; left:20px; top:14px; font-size:14px; font-weight:600; color:#666;}
-.faqList ul li .question .blet{position:absolute; left:80px; top:14px; font-size:14px; font-weight:600; color:#666;}
-.faqList ul li .question .category{position:absolute; left:130px; top:14px; font-size:14px; font-weight:600; color:#666;}
+.faqList ul li .question .blet{position:absolute; left:60px; top:14px; font-size:14px; font-weight:600; color:#666;}
+.faqList ul li .question .category{position:absolute; left:120px; top:14px; font-size:14px; font-weight:600; color:#666;}
 .faqList ul li .question .title{font-size:14px; left:180px;font-weight:600; color:#666; margin:0 0 0 220px;}
 .faqList ul li .question .category1{position:absolute; left:470px; top:14px; font-size:14px; font-weight:600; color:#666;}
 .faqList ul li .question .category2{position:absolute; left:570px; top:14px; font-size:14px; font-weight:600; color:#666;}

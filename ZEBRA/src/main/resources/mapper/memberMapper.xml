@@ -150,8 +150,8 @@ WHERE ROWNUM BETWEEN 1 AND 5
 
 <!--신규 회원 가입 및 등록  -->
 <insert id="insertMember" >
-	insert into zebra (MCODE,MID,MPASSWORD,MNAME,MGENDER,MBIRTH,MPHONE,MEMAIL,MAGREE,MJOINDAY) values
-	(zebra_seq.nextval, #{MID}, #{MPASSWORD}, #{MNAME}, #{MGENDER}, #{MBIRTH}, #{MPHONE}, #{MEMAIL}, #{MAGREE},SYSDATE)
+	insert into zebra (MCODE,MID,MPASSWORD,MNAME,MGENDER,MBIRTH,MPHONE,MEMAIL,MAGREE,MJOINDAY,MZIP,MADDR1,MADDR2) values
+	(zebra_seq.nextval, #{MID}, #{MPASSWORD}, #{MNAME}, #{MGENDER}, #{MBIRTH}, #{MPHONE}, #{MEMAIL}, #{MAGREE},SYSDATE,#{MZIP},#{MADDR1},#{MADDR2})
 </insert>
 <!--회원 로그인 확인-->
 <select id="selectLoginMember" resultType="com.java.dto.MemberDto" >

@@ -32,6 +32,7 @@
 <link rel="stylesheet" href="../css/style.css">
 <script type="text/javascript"	src="../js/jquery.fancybox-1.3.4.pack.js"></script>
 <link rel="stylesheet" type="text/css"href="../css/jquery.fancybox-1.3.4.css" />
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 <!-- ================ START 정규식 조건  Area  ================= -->
 <script type="text/javascript">
@@ -46,11 +47,10 @@ function joinBtn(){
    let phoneCheck = /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/ ; //010-1111-1111 , 02-355-1111
    
     console.log($('#joinName').val()); 
- //   console.log($(":input:radio[name=GENDER]:checked").val());		
 	console.log($('#joinId').val());
 	console.log($('#joinPw').val());//비번
-	console.log("id 체크여부 : "+$('#idck').val());
-	
+	console.log("id 체크여부 : "+$('#idck').val());	
+ 	console.log($(":input:radio[name=GENDER]:checked").val());		
 	console.log($('#joinEmail').val());//  이메일도 한 번에 보내나?? 
 	console.log($('#joinEmail2').val());//@주소 직접입력- 	
 	console.log($('#receive').val());//이메일 수신여부 yes +에러
@@ -76,18 +76,18 @@ function joinBtn(){
 	   alert("이름 사용 가능!!!!");
    } 
  
-   /* // 아이디 - 영문,숫자만 가능
+    // 아이디 - 영문,숫자만 가능
     if(!idCheck.test($("#joinId").val())){ //정규표현식 패턴과 입력한 글자 비교
-	   alert("아이디는 영문,숫자,특수문자(_) 4~20자 까지 입력 가능합니다..");
+	 //  alert("아이디는 영문,숫자,특수문자(_)  입력 가능합니다..");
 	   $("#joinId").focus();
 	   return false;
    }else{
 	   alert("아이디 사용 가능!!!!");
-   } 	 */
+   } 	 
 
    // 패스워드 - 영문,숫자,특수문자가 개이상 인지 검색
    if(!pwCheck.test($("#joinPw").val())){ //정규표현식 패턴과 입력한 글자 비교
-	   alert("패스워드는 영문,숫자,특수문자 혼용 4개 이상 입력 가능합니다.");
+	   alert("패스워드는 영문,숫자,특수문자 입력 가능합니다.");
 	   $("#joinPw").focus();
 	   return false;
    }else{
@@ -97,7 +97,8 @@ function joinBtn(){
 
 <!-- ================ START 가입 버튼  ================= -->
 	alert("가입버튼을 클릭");
-	if($('#joinName').val() == '' || $('#joinId').val() == '' || $('#joinPw').val() == '' || $('#joinPhone').val() == '' ){
+	if($('#joinName').val() == '' || $('#joinId').val() == '' ||
+	   $('#joinPw').val() == '' || $('#joinPhone').val() == '' ){
 		alert("아이디, 비밀번호, 이름, 전화번호는 필수 입력 항목입니다.");
 		return false;
 	} 
@@ -109,7 +110,7 @@ function joinBtn(){
 	
 	joinFrm.submit();
 	alert("가입이 완료되었습니다.");
-}//
+	}
 </script>
 <!-- ================ END 가입 버튼  ================= -->
 
@@ -241,8 +242,8 @@ function joinBtn(){
 										   }//error
 										});//ajax 
 									
-									}//checkIdBtn
-									</script>
+									 }//checkIdBtn
+									 </script>
 								<!--=============END 아이디 중복 체크 Area ==============-->		
 									<tr>
 									<th scope="row"><span>아이디 </span></th>
@@ -274,7 +275,7 @@ function joinBtn(){
 									<td>
 										<ul class="pta">
 											<li class="r10"><input type="password" name="MPASSWORD" id="joinPw" class="w134" /></li>
-											<li style="padding:10px 0 0 0;"><span class="mvalign2">※ 영문/숫자/특수문자 혼용 4~20자까지 사용가능합니다.</span></li>											
+											<li style="padding:10px 0 0 0;"><span class="mvalign2">※ 영문/숫자/특수문자사용가능합니다.</span></li>											
 										</ul>
 									</td>
 								</tr>
@@ -373,7 +374,7 @@ function joinBtn(){
 										</td>
 									</tr>
 									<!--================ START 주소 API ================-->									
-												<script>
+										<script>
 										    function sample6_execDaumPostcode() {
 										        new daum.Postcode({
 										            oncomplete: function(data) {
@@ -397,16 +398,16 @@ function joinBtn(){
 										        }).open();
 										    }
 										</script>
-									<!--================ END 주소 API =================-->								
+									<!--================ END 주소 API =================-->	
 									<tr>
 									<th scope="row"><span>주소 </span></th>
 									<td>
 										<ul class="pta">
 											 <li>
-											<input type="text" name="OZIP" id="sample6_postcode" placeholder="우편번호">
-											<input type="button"   onclick="sample6_execDaumPostcode()"value="우편번호 찾기"><br>
-											<input type="text" name="OADDR1" id="sample6_address" placeholder="주소">
-											<input type="text" name="OADDR2" id="sample6_detailAddress" placeholder="상세주소"><br>
+											<input type="text" name="MZIP" id="sample6_postcode" placeholder="우편번호">
+											<input type="button" onclick="sample6_execDaumPostcode()"value="우편번호 찾기"><br>
+											<input type="text" name="MADDR1" id="sample6_address" placeholder="주소">
+											<input type="text" name="MADDR2" id="sample6_detailAddress" placeholder="상세주소"><br>
 											<span class="mvalign">※ 상품 배송 시 받으실 주소입니다. 주소를 정확히 적어 주세요.</span>
 										  </li>
 										</ul>

@@ -26,6 +26,7 @@ public class MemberDto {
 	private int MTOTAL_PAY ;
 	private int MTOTAL_ORDER ;
 	private int MAGREE;
+	private String MADDR; //주소
 	
 	private String MPHONE1 ;
 	private String MPHONE2 ;
@@ -36,6 +37,8 @@ public class MemberDto {
 	private String MEMAIL1 ;
 	private String MEMAIL2 ;
 	private String MEMAIL3 ;
+	private String MADDR1; //기본주소
+	private String MADDR2; //상세주소
 	
 	public String getFormattedJoinDay() {
 	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");

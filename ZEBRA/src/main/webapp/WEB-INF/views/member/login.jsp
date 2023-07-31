@@ -44,7 +44,7 @@ function loginBtn(){
 
 //로그인 알림창
 </script>
-<!-- <!-- START 로그인 중복 검사  --> 
+ <!-- START 로그인 중복 검사  --> 
 <script type="text/javascript">
 function joinBtn(){
 // alert("가입버튼을 클릭");
@@ -56,8 +56,7 @@ console.log( $(":input:radio[name=gender]:checked").val());
 console.log($("input[type=checkbox][name=hobby]:checked").val());
 }
 </script>
-END 로그인 중복 검사 
- -->
+
 </head>
 <body>
 <%@ include file="../top.jsp"%>	

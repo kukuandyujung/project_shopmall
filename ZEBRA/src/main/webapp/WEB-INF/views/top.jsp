@@ -95,7 +95,7 @@
 									href="/product/product_pagehome">Bedding</a></li>
 							</ul></li>
 					</ul>
-
+							<!-- 로그인 완료시 고객센터  보임 -->
 							<c:if test="${sessionId!=null}">
 							<li class="nav-item"><a ref="/customer/faqList" style="margin-right: 10px; font-size: 15px; style="font-weight:bold;class=""
 							 href="/customer/faqList"
@@ -106,27 +106,27 @@
 						<c:if test="${sessionId==null}">
 							<li class="nav-item" style="margin-left: 10px;"><a class=""
 								href="/member/login" style="font-weight: bold; font-size: 15px;">
-								<button><i class="ti-shopping-cart"></i></button> <!-- 장바구니 아이콘 -->
+								<button><i class="ti-shopping-cart"></i></button>
 								</a></li>
-						</c:if>								
+						</c:if>	
+						<!-- 장바구니 아이콘 -->							
 						<c:if test="${sessionId!=null}">
 							<li>
 							<a href="/mypage/cart/${sessionId}">
 							<button style="margin-right: 10px;">
 							<i class="ti-shopping-cart" style="font-size: 15px;"></i>
 							</button>
-							</a>
-							
-							</li> <!-- 장바구니 아이콘 -->
-						</c:if>			
+							</a>							
+							</li> 
+						</c:if>	 <!-- 마이 페이지 -->		
 							<li class="nav-item"><a class="" href="/mypage/orderhistory"
 							style="font-weight: bold; font-size: 15px;">My Page</a></li>
 							
 						<c:if test="${sessionId==null}">
 							<li class="nav-item" style="margin-left: 10px;"><a class=""
-								href="/member/login" style="font-weight: bold; font-size: 15px;">Sign
-									in</a></li>
+								href="/member/login" style="font-weight: bold; font-size: 15px;">Sign in</a></li>
 						</c:if>
+						<!-- 로그아웃 -->
 						<c:if test="${sessionId!=null}">
 							<li><a href="#">${sessionName}님</a></li>
 							<li><a onclick="logoutBtn()" style="cursor: pointer;style="font-weight:bold;  font-size: 15px;">LOGOUT</a></li>
