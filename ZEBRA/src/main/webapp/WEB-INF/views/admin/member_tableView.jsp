@@ -125,7 +125,7 @@
 
                 <div class="x_panel">                               
 					
-				<h1 >회원 정보 수정</h1>
+				<h1>회원 정보 수정</h1>
 				<hr></hr>
 				<form action="member_tableView" name="" method="post">
 					<table class="memberTable">

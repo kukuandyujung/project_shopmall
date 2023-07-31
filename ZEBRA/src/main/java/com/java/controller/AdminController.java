@@ -157,8 +157,8 @@ public class AdminController {
    @PostMapping("/admin/member_tableView") 
    public String memberUpdate(MemberDto mdto, String MID, Model model) throws Exception { 
       memberService.updateOne(mdto);      
-      System.out.println("MID :"+mdto.getMTOTAL_PAY());
-      System.out.println("MNAME :"+mdto.getMTOTAL_ORDER());      
+      System.out.println("MID :"+mdto.getMID());
+      System.out.println("MNAME :"+mdto.getMNAME());      
       return "redirect:/admin/member_tableView?MID="+MID;
    }   
    

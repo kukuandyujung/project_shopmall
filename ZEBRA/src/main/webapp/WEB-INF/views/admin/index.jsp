@@ -86,8 +86,7 @@
 				success:function(data){
 					console.log("data : "+data);
 					console.log("data[0][2] : "+data[0][2]);
-					console.log("data[1] : "+data[1]);
-					alert("controller에서 데이터 받기 성공!");					
+					console.log("data[1] : "+data[1]);				
 										 
 					// 받아온 데이터를 count 클래스를 갖는 div 요소 내에 넣음
 	                $("#count1").text(data[0][0]); // 총 회원수

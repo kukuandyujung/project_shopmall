@@ -58,7 +58,7 @@ public class FController {
 	 */
 	
 	/* 장바구니 수량 수정 */
-	@PostMapping("mypage/cart/")
+	@PostMapping("mypage/cart/update")
 	public String updateCartPOST(CartDTO cart){	
 		cartService.modifyCount(cart);		
 		System.out.println("MID : "+cart.getMID());

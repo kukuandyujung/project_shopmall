@@ -70,6 +70,7 @@ FROM (
     SELECT *
     FROM SCOTT.ZEBRA
     WHERE MCODE != 0
+    AND MTOTAL_PAY !=0
     ORDER BY MTOTAL_PAY DESC
 ) 
 WHERE ROWNUM BETWEEN 1 AND 5
@@ -111,7 +112,8 @@ WHERE ROWNUM BETWEEN 1 AND 5
 
 <!-- 회원 정보 1개 저장하기 -->
 <insert id="insertOne">
-   insert into zebra values (zebra_seq.nextval, #{MID}, #{MPASSWORD}, #{MNAME}, #{MGENDER}, #{MBIRTH}, #{MPHONE}, #{MEMAIL}, #{MZIP}, SYSDATE, 0, 0, 0)
+   insert into zebra (MCODE, MID, MPASSWORD, MNAME, MGENDER, MBIRTH, MPHONE, MEMAIL, MZIP, MJOINDAY, MTOTAL_PAY, MTOTAL_ORDER, MAGREE)
+   values (zebra_seq.nextval, #{MID}, #{MPASSWORD}, #{MNAME}, #{MGENDER}, #{MBIRTH}, #{MPHONE}, #{MEMAIL}, #{MZIP}, SYSDATE, 0, 0, 0)
 </insert>
 
 <!-- 회원 정보 1개 수정 -->

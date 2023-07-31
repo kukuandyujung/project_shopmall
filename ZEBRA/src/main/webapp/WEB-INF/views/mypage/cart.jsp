@@ -257,10 +257,10 @@ function setTotalInfo(){
 					</div>
 									
 					<!-- 수량 조정 form -->
-					<form action="" class="quantity_update_form" method="post"> <!-- post로 바꾸면 오류가 뜸  -->
-						<input type="hidden" name="cartId" class="update_cartId">
-						<input type="hidden" name="cartCount" class="update_cartCount">
-						<input type="hidden" name="memberId" value="${sessionId}">
+					<form action="/update" class="quantity_update_form" method="post"> <!-- post로 바꾸면 오류가 뜸  -->
+						<input type="text" name="cartId" class="update_cartId">
+						<input type="text" name="cartCount" class="update_cartCount">
+						<input type="text" name="memberId" value="${sessionId}">
 					</form>
 					
 					<!-- 삭제 form -->
