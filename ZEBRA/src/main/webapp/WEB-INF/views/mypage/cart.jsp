@@ -108,12 +108,20 @@ function setTotalInfo(){
 
 <script>
 
-/* 삭제 기능  */
-function delCtn(){
-	  if(confirm("장바구니를 삭제하시겠습니까?")){
-		  location.href="mypage/cart/";
+function delCtn(cartId){
+	 if (confirm("장바구니를 삭제하시겠습니까?")) {
+	  $.ajax({
+		url:"/mypage/cart/${cartId}",
+		type:"delete",
+		success: function (data) {
+	        location.reload(true);
+	      },
+	      error: function () {
+	        alert("실패");
+	      }
+	    });
 	  }
-}   
+	}
 
 </script>
 
@@ -222,7 +230,7 @@ function delCtn(){
 								<td class="tnone">
 									<ul class="order">	
 										<li><a href="/payment/payment" class="obtnMini iw70">바로구매</a></li>
-										<li><a href="delete" class="nbtnMini iw70" onclick="delCtn()">상품삭제</a></li> 
+										<li><a href="javascript:void(0);" class="nbtnMini iw70" onclick="delCtn(${ci.cartId})">상품삭제</a></li> 
 									</ul>
 								</td>
 								</tr>		

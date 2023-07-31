@@ -54,6 +54,15 @@ public class FController {
 		return "mypage/cart";
 	}
 	
+	/* 장바구니 삭제 */
+	@PostMapping("mypage/cartDelete")
+	@ResponseBody
+	public String cartDelete(CartDTO cdto) {		
+		System.out.println("카트 삭제 게시물 번호: "+ cdto.getCartId());
+		cartService.deleteCart(cdto.getCartId());
+		return "success";	
+	}	
+	
 	/* 장바구니 수량 수정 */
 	@PostMapping("mypage/cart/update")
 	public String updateCartPOST(CartDTO cart){	
@@ -62,13 +71,6 @@ public class FController {
 		return "redirect:mypage/cart/"+cart.getMID();
 	}
 	
-	/* 장바구니 삭제 */
-	@RequestMapping("mypage/cart/")
-	public String deleteCartPOST(int cartId) {		
-		cartService.deleteCart(cartId);
-		System.out.println("카트 삭제 게시물 번호: "+cartId);
-	    return "redirect:/mypage/cart/";	
-	}	
 	
 	@RequestMapping("/mypage/wishlist")
 	public String wishlist() {
