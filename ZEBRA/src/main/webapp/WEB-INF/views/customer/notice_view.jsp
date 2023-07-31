@@ -156,6 +156,8 @@ function admindelBtn(){
 
 						<div class="viewContents">
 							${faqDto.fcontent }
+							<br>
+							<img src = "/upload/${faqDto.ffile }">
 						</div>
 					</div>
 					
