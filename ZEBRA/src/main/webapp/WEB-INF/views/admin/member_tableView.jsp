@@ -73,7 +73,6 @@
     function updateMtn(){
     	if(confirm("게시글을 수정하시겠습니까?")){
     		update.submit();
-    		location.href="../admin/member_table";
     	}
     }
     
