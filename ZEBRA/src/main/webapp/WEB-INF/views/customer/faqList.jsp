@@ -57,7 +57,7 @@
 				<div id="title2">CUSTOMER<span>고객센터</span></div>
 				
 				<ul>				
-					<li><a href="/customer/faqList" id="leftNavi3">FAQ</span></a></li>		
+					<li><a href="/customer/faqList" id="leftNavi3">Q&A</span></a></li>		
 					<li><a href="/customer/notice_view" id="leftNavi2">1:1문의</a></li>				
 				</ul>			
 			</div><script type="text/javascript">initSubmenu(3,0);</script>
@@ -81,8 +81,8 @@
 							</colgroup>
 							<thead>
 								<th scope="col"> NO.</th>
-								<th scope="col"> FAQ</th>
-								<th scope="col"> category</th>
+								<th scope="col"> Q&A</th>
+								<th scope="col"> 분류</th>
 								<th scope="col"> 제목</th>
 								<th scope="col"> 이름 </th>
 								<th scope="col"> 날짜 </th>
@@ -128,7 +128,7 @@
 									<div class="faqbox">
 										<div class="blet">A</div>
 										<div class="text">
-											<strong><u>소비자상담실(02-546-3881)</u></strong>로 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 
+											<strong><u>소비자상담실(010-1234-5678)</u></strong>로 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 연락 주시면 가능 여부에 관하여 답변드리고 있습니다. 
 										</div>
 									</div>
 								</div>

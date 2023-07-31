@@ -22,10 +22,14 @@
      
      <!-- 게시글 리스트 전체 게시물 수 -->
      <select id = "selectpageAll" resultType="com.java.dto.FaqDto" >        
-     select * from faq where  
-      <![CDATA[
-     fno >= #{startRow} and fno <= #{endRow} order by fno asc 
-     ]]>
+    <!--  select * from faq where  
+      
+     fno >= #{startRow} and fno <= #{endRow} order by fno asc  -->
+     
+     
+     
+    select * from (select rownum rnum, a.* from (select * from faq order by fno asc) a )
+	<![CDATA[where rnum>=#{startRow} and rnum<=#{endRow}  ]]>
     </select>
     
     <!-- 현재 게시글 -->

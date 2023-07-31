@@ -32,10 +32,11 @@
 <link rel="stylesheet" href="../css/style.css">
 <script type="text/javascript"	src="../js/jquery.fancybox-1.3.4.pack.js"></script>
 <link rel="stylesheet" type="text/css"href="../css/jquery.fancybox-1.3.4.css" />
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 <!-- ================ START 정규식 조건  Area  ================= -->
 <script type="text/javascript">
-function joinBtn(){	
+function UPDATEBtn(){	
 	
    let nameCheck = /^[a-zA-Z-ㄱ-ㅎ가-힣]+$/ ;   //영문/한글 
    let numCheck = /^[0-9]+$/;     // 숫자인지
@@ -61,7 +62,7 @@ function joinBtn(){
   
    // 패스워드 - 영문,숫자,특수문자가 개이상 인지 검색
    if(!pwCheck.test($("#joinPw").val())){ //정규표현식 패턴과 입력한 글자 비교
-	   alert("패스워드는 영문,숫자,특수문자 혼용 4개 이상 입력 가능합니다.");
+	   alert("패스워드는 영문,숫자,특수문자 입력 가능합니다.");
 	   $("#joinPw").focus();
 	   return false;
    }else{
@@ -70,13 +71,13 @@ function joinBtn(){
 <!-- ================ END 정규식 조건  Area ================= -->
 
 <!-- ================ START UPDATE 버튼  ================= -->
-	alert("가입버튼을 클릭");
+	alert("수정하기 버튼을 클릭");
 	if($( $('#joinPw').val() == '' || $('#joinPhone').val() == '' ){
 		alert(비밀번호,전화번호는 필수 입력 항목입니다.");
 		return false;
 	} 
 	
-	 updateFrm.submit();
+	updatemyregisterFrm.submit();
 	alert("회원 정보 수정이 완료되었습니다.");
 }//
 </script>
@@ -126,7 +127,8 @@ function joinBtn(){
 
 
 					<div class="memberbd">
-						<form action="/mypage/updateMyForm"  name="updateFrm" method="get" >
+						<form action="/mypage/register04"  name="updatemyregisterFrm" method ="post" enctype="multipart/form-data" >
+						<input type="hidden" name ="" value="">
 							<table
 								summary="이름, 아이디, 비밀번호, 비밀번호 확인, 이메일, 이메일수신여부, 주소, 휴대폰, 생년월일 순으로 회원정보 수정 정보를 등록할수 있습니다."
 								class="memberWrite" border="1" cellspacing="0">
@@ -218,7 +220,7 @@ function joinBtn(){
 									<td>
 										<ul class="pta">
 											<li class="r10"><input type="password" name="MPASSWORD" id="joinPw" class="w134" /></li>
-											<li style="padding:10px 0 0 0;"><span class="mvalign2">※ 영문/숫자/특수문자 혼용 4~20자까지 사용가능합니다.</span></li>											
+											<li style="padding:10px 0 0 0;"><span class="mvalign2">※ 영문/숫자/특수문자  4~20자까지 사용가능합니다.</span></li>											
 										</ul>
 									</td>
 								</tr>
@@ -283,7 +285,7 @@ function joinBtn(){
 									<tr>
 										<th scope="row"><span>이메일 수신여부 </span></th>
 										<td>
-											<p>지브라에서 진행되는 이벤트와 쇼핑에 대한 정보를 이메일로 받아보시겠습니까?</p>
+											<!-- <p>지브라에서 진행되는 이벤트와 쇼핑에 대한 정보를 이메일로 받아보시겠습니까?</p> -->
 											<ul class="question">
 												<li><input type="radio" name="MAGREE" id="receive_yes" value="1"
 													class="radio_t" checked="checked" /><label
@@ -317,21 +319,47 @@ function joinBtn(){
 										</td>
 									</tr>
 									
+									<!--================ START 주소 API ================-->									
+										<script>
+										    function sample6_execDaumPostcode() {
+										        new daum.Postcode({
+										            oncomplete: function(data) {
+										                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+										
+										                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+										                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+										                var addr = ''; // 주소 변수
+										                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+										                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+										                    addr = data.roadAddress;
+										                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+										                    addr = data.jibunAddress;
+										                }
+										                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+										                document.getElementById('sample6_postcode').value = data.zonecode;
+										                document.getElementById("sample6_address").value = addr;
+										                // 커서를 상세주소 필드로 이동한다.
+										                document.getElementById("sample6_detailAddress").focus();
+										            }
+										        }).open();
+										    }
+										</script>
+									<!--================ END 주소 API =================-->	
 									<tr>
 									<th scope="row"><span>주소 </span></th>
 									<td>
 										<ul class="pta">
-											<li>
-												<input type="text" class="w134" />&nbsp;
-											</li>
-											<li><a href="zip.html" class="addressBtn"><span>우편번호 찾기</span></a></li>
-											<li class="pt5"><input type="text" class="addressType" /></li>
-											<li class="cb">
-												<span class="mvalign">※ 상품 배송 시 받으실 주소입니다. 주소를 정확히 적어 주세요.</span>
-											</li>
+											 <li>
+											<input type="text" name="MZIP" id="sample6_postcode" placeholder="우편번호">
+											<input type="button" onclick="sample6_execDaumPostcode()"value="우편번호 찾기"><br>
+											<input type="text" name="MADDR1" id="sample6_address" placeholder="주소">
+											<input type="text" name="MADDR2" id="sample6_detailAddress" placeholder="상세주소"><br>
+											<span class="mvalign">※ 상품 배송 시 받으실 주소입니다. 주소를 정확히 적어 주세요.</span>
+										  </li>
 										</ul>
 									</td>
-								</tr>
+									</tr>
+									
 								<tr>
 
 									<tr>
@@ -399,8 +427,8 @@ function joinBtn(){
 					<div class="btnArea">
 						<div class="bCenter">
 							<ul>
-								<li><a href="/member/login" class="nbtnbig">취소하기</a></li>
-								<li><a style="cursor: pointer;" onclick="joinBtn()" class="sbtnMini">수정하기</a></li>
+								<li><a href="/member/register04" class="nbtnbig">취소하기</a></li>
+								<li><a style="cursor: pointer;" onclick="UPDATEBtn()" class="sbtnMini">수정하기</a></li>
 							</ul>
 						</div>	
 					</div>				

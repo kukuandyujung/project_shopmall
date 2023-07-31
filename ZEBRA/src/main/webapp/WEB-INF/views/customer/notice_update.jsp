@@ -67,7 +67,7 @@ function submitBtn(){
 			<div id="left">
 				<div id="title2">CUSTOMER<span>고객센터</span></div>
 				<ul>				
-					<li><a href="/customer/faqList" id="leftNavi3">FAQ</span></a></li>		
+					<li><a href="/customer/faqList" id="leftNavi3">Q&A</span></a></li>		
 					<li><a href="/customer/notice_view" id="leftNavi2">1:1문의</a></li>	
 						
 				</ul>			
@@ -152,7 +152,7 @@ function submitBtn(){
 					<div class="btnArea">
 						<div class="bCenter">
 							<ul>																
-								<li><a   class="nbtnbig">취소</a></li>
+								<li><a href="/customer/faqList" class="nbtnbig">취소</a></li>
 								<li><a onclick="submitBtn()" class="sbtnMini">확인</a></li>
 								
 							</ul>

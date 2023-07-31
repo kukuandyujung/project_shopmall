@@ -41,12 +41,12 @@ function delBtn(){
 }
 
 function updateBtn(){
-	alert("수정하기")
+	alert("수정하기 버튼")
 	location.href="notice_update?fno=${faqDto.fno}";
 }
 
 function admininsertBtn(){
-	alert("admin 등록하기-")
+	alert("admin 등록하기")
 	//alert( $("#ccontent").val())//내용 
 	
 	$.ajax({
@@ -68,7 +68,7 @@ function admininsertBtn(){
 }
 
 function adminupdateBtn(){
-	alert("admin 수정하기-update")
+	alert("admin 수정하기(update)")
 	
 	  $.ajax({
 	url:"/customer/admincommentupdate",
@@ -87,8 +87,8 @@ function adminupdateBtn(){
 }
 
 function admindelBtn(){
-	alert("admin 삭제하기-delete")
-	alert(${faqDto.fno })
+	alert("admin 삭제하기 delete")
+	//alert(${faqDto.fno })
 	  $.ajax({
 		url:"/customer/admincommentdelete",
 		type:"post",
@@ -104,7 +104,6 @@ function admindelBtn(){
 		}
 	});  
 }
-
 
 </script>
 
@@ -132,8 +131,8 @@ function admindelBtn(){
 			<div id="left">
 				<div id="title2">CUSTOMER<span>고객센터</span></div>
 				<ul>				
-					<li><a href="/customer/faqList" id="leftNavi3">FAQ</a></li>		
-					<li><a href="/customer/notice_view" id="leftNavi2">1:1문의</a></li>			
+					<li><a href="/customer/faqList" id="leftNavi3"> Q&A </a></li>		
+					<li><a href="/customer/notice_view" id="leftNavi2"> 1:1문의 </a></li>			
 				</ul>			
 			</div><script type="text/javascript">initSubmenu(1,0);</script>
 
@@ -199,7 +198,7 @@ function admindelBtn(){
 				       <c:if test="${cdto.cno==null }">
                          답변: <br>
 				     <img src="../img/btn/btn_next2.gif" >
-				     아직 답변이 없습니다. 급한 문의 사항은 00-000-000으로 전화주세요.
+				     아직 답변이 없습니다. 급한 문의 사항은 010-1234-5678으로 전화주세요.
 				       </c:if>
                     </ul>
                      </div>
@@ -237,7 +236,7 @@ function admindelBtn(){
 							<ul>
 								<c:if test = "${sessionId == faqDto.mid}">
 								<li><a onclick="updateBtn()" class="nbtnbig mw">수정</a></li>								
-								<li><a onclick="delBtn()" class="nbtnbig mw">삭제</a></li>
+								<li><a style="cursor:point" onclick="delBtn()" class="nbtnbig mw">삭제</a></li>
 								</c:if>
 								
 								<li><a href="/customer/faqList" class="sbtnMini mw">목록</a></li>

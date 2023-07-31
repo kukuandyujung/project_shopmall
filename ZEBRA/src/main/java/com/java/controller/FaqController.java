@@ -1,3 +1,4 @@
+
 package com.java.controller;
 
 import java.io.File;
@@ -56,7 +57,7 @@ public class FaqController {
 	@ResponseBody
 	public String admincommentdelete(FaqDto faqdto) {
 		
-		System.out.println(faqdto.getFno());
+		System.out.println("댓글 삭제 게시물 번호: "+faqdto.getFno());
 		faqdto.setFqa(1); // 삭제했을 경우 문의로 수정
 		 faqService.updatefqa(faqdto);// 문의 답변 수정
 		 
@@ -69,7 +70,7 @@ public class FaqController {
 	@ResponseBody
 	public String admincommentupdate(FaqDto faqdto, String ccontent) {
 		
-		System.out.println("ccontent:"+ccontent);
+		System.out.println("댓글수정내용: ccontent:"+ccontent);
 		System.out.println("댓글수정버튼 :"+faqdto.getFno());
 		
 		CommentDto cdto =faqService.selectComment(faqdto.getFno());
@@ -118,9 +119,9 @@ public class FaqController {
 		}
 		id = (String)session.getAttribute("sessionId");
 		
-		System.out.println("faq.fcategory:"+faqdto.getFcategory());
-		System.out.println("faq.ftitle: "+faqdto.getFtitle());
-		System.out.println("faq.fcontent: "+faqdto.getFcontent());
+		System.out.println("컨faqwrite faq.fcategory:"+faqdto.getFcategory());
+		System.out.println("컨faqwrite .ftitle: "+faqdto.getFtitle());
+		System.out.println("컨faqwrite .fcontent: "+faqdto.getFcontent());
 		/*
 		 * fdto.setBfile(fileName); faqService.insertOne(fdto);
 		 */
@@ -147,7 +148,7 @@ public class FaqController {
 		
 		faqService.insertfaq(faqdto);
 		
-		return "customer/notice_Write";
+		return "redirect:faqList";
 	}//notice_Write
 	
 		
@@ -178,7 +179,7 @@ public class FaqController {
 	@RequestMapping("/customer/faqDelete")
 	public String faqDelete(int fno) {
 		
-		System.out.println("삭제할 게시글 번호: "+fno);
+		//System.out.println("삭제할 게시글 번호: "+fno);
 		faqService.deleteOne(fno);
 		return "redirect:faqList";
 	}
@@ -194,9 +195,9 @@ public class FaqController {
 				}
 				id = (String)session.getAttribute("sessionId");
 				
-				System.out.println("faq.fcategory:"+faqdto.getFcategory());
-				System.out.println("faq.ftitle: "+faqdto.getFtitle());
-				System.out.println("faq.fcontent: "+faqdto.getFcontent());
+				System.out.println("수정하기faq.fcategory:"+faqdto.getFcategory());
+				System.out.println("수정하기faq.ftitle: "+faqdto.getFtitle());
+				System.out.println("수정하기faq.fcontent: "+faqdto.getFcontent());
 				/*
 				 * fdto.setBfile(fileName); faqService.insertOne(fdto);
 				 */
