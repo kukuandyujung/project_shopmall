@@ -73,6 +73,7 @@
     function updateMtn(){
     	if(confirm("게시글을 수정하시겠습니까?")){
     		update.submit();
+    		location.href="../admin/member_table";
     	}
     }
     
@@ -127,7 +128,7 @@
 					
 				<h1>회원 정보 수정</h1>
 				<hr></hr>
-				<form action="member_tableView" name="" method="post">
+				<form action="member_tableView" name="update" method="post">
 					<table class="memberTable">
 					<tr>
 		                <td class="text">아이디</td>

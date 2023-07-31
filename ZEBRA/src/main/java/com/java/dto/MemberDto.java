@@ -42,14 +42,12 @@ public class MemberDto {
 	
 	public String getFormattedJoinDay() {
 	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-	    return sdf.format(MJOINDAY);
-	    
+	    return sdf.format(MJOINDAY);	    
 	}
 	
 	public void setMJOINDAY(String MJOINDAY) throws ParseException {
 	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	    this.MJOINDAY = sdf.parse(MJOINDAY);
+	    
 	}
-
-	
 }

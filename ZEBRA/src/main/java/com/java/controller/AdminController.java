@@ -136,7 +136,8 @@ public class AdminController {
    @RequestMapping("/admin/member_tableView")
    public String member_tableView(@RequestParam(defaultValue = "aannesdg")String MID, Model model) {
       HashMap<String, Object> map = memberService.selectOne(MID);
-      model.addAttribute("mdto", map.get("mdto"));      
+      model.addAttribute("mdto", map.get("mdto"));   
+      System.out.println("mdto : "+map.get("mdto"));
       return "admin/member_tableView";
    }
    
