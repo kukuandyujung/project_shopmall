@@ -4,10 +4,8 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 
 import com.java.dto.CartDTO;
-import com.java.dto.MemberDto;
 import com.java.mapper.CartMapper;
 
 @Service
@@ -35,8 +33,8 @@ public class CartServiceImpl implements CartService {
 	
 	/* 카트 삭제 */
 	@Override
-	public int deleteCart(int cartId) {
-		return cartMapper.deleteCart(cartId);
+	public void deleteCart(int cartId) {
+		cartMapper.deleteCart(cartId);
 	}
 	
 	/* 카트 수량 수정 */

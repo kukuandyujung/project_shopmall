@@ -160,7 +160,7 @@ public class AdminController {
       memberService.updateOne(mdto);      
       System.out.println("MID :"+mdto.getMID());
       System.out.println("MNAME :"+mdto.getMNAME());      
-      return "redirect:/admin/member_tableView?MID="+MID;
+      return "redirect:/admin/member_table";
    }   
    
    // 회원 정보 1개 삭제하기     

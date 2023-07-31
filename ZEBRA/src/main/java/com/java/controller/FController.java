@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.java.dto.CartDTO;
+import com.java.dto.FaqDto;
 import com.java.dto.MemberDto;
 import com.java.mapper.CartMapper;
 import com.java.service.CartService;
@@ -52,10 +53,6 @@ public class FController {
 		System.out.println("cartInfo : "+cartService.getCartList(MID));
 		return "mypage/cart";
 	}
-
-	/*
-	 * @GetMapping("/mypage/cart") public String cart() { return "mypage/cart"; }
-	 */
 	
 	/* 장바구니 수량 수정 */
 	@PostMapping("mypage/cart/update")
@@ -65,11 +62,12 @@ public class FController {
 		return "redirect:mypage/cart/"+cart.getMID();
 	}
 	
-	/* 장바구니 수량 삭제 */
-	@PostMapping("mypage/cart/delete")
-	public String deleteCartPOST(CartDTO cart) {		
-		cartService.deleteCart(cart.getCartId());		
-		return "redirect:/cart/" + cart.getMID();		
+	/* 장바구니 삭제 */
+	@RequestMapping("mypage/cart/")
+	public String deleteCartPOST(int cartId) {		
+		cartService.deleteCart(cartId);
+		System.out.println("카트 삭제 게시물 번호: "+cartId);
+	    return "redirect:/mypage/cart/";	
 	}	
 	
 	@RequestMapping("/mypage/wishlist")

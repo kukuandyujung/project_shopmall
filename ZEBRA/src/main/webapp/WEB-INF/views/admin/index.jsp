@@ -107,8 +107,7 @@
 					alert("데이터 받기 실패!");
 				}
 			});	
-      };
-			
+      };			
 	</script>
 
   <body class="nav-md">
@@ -200,7 +199,7 @@
                   <div class="col-md-6">
                     <h3 style="display: inline-block;">수익 현황 <small><small>월별 총 매출</small></small></h3> 
                        
-                    <button onclick="boardBtn()" style="font-size:15px; width: 60px; height: 30px; margin-left:6px;">AJAX</button> 
+                    <button onclick="boardBtn()" style="font-size:15px; width: 60px; height: 30px; margin-left:6px;" class="ti-shopping-cart">AJAX</button> 
                     
                   </div>
                 </div>

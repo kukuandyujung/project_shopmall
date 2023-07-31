@@ -106,6 +106,17 @@ function setTotalInfo(){
 }) (jQuery);
 </script>
 
+<script>
+
+/* 삭제 기능  */
+function delCtn(){
+	  if(confirm("장바구니를 삭제하시겠습니까?")){
+		  location.href="mypage/cart/";
+	  }
+}   
+
+</script>
+
 <body>
 
 <%@ include file="../top.jsp"%>
@@ -200,7 +211,7 @@ function setTotalInfo(){
 								
 								<td> <!-- <input type="number"> 수량 버튼  -->
 									<input type="number" class="quantity_input_cart_info_td" min="1" max="999" 
-									value="${ci.cartCount}" style="text-align: right;" />
+									value="${ci.cartCount}" style="text-align: right;" name="ccontent" />
 									<button type="button" class="quantity_modify_btn" data-cartId="${ci.cartId}">변경</button>									
 								</td> 
 								
@@ -211,10 +222,9 @@ function setTotalInfo(){
 								<td class="tnone">
 									<ul class="order">	
 										<li><a href="/payment/payment" class="obtnMini iw70">바로구매</a></li>
-										<li><a href="#" class="nbtnMini iw70">상품삭제</a></li>
+										<li><a href="delete" class="nbtnMini iw70" onclick="delCtn()">상품삭제</a></li> 
 									</ul>
 								</td>
-								
 								</tr>		
 								</c:forEach>
 							</tbody>
@@ -257,17 +267,11 @@ function setTotalInfo(){
 					</div>
 									
 					<!-- 수량 조정 form -->
-					<form action="/update" class="quantity_update_form" method="post"> <!-- post로 바꾸면 오류가 뜸  -->
+					<form action="mypage/cart/update" class="quantity_update_form" method="post"> <!-- post로 바꾸면 오류가 뜸  -->
 						<input type="hidden" name="cartId" class="update_cartId">
 						<input type="hidden" name="cartCount" class="update_cartCount">
 						<input type="hidden" name="memberId" value="${sessionId}">
-					</form>
-					
-					<!-- 삭제 form -->
-					<form action="mypage/cart/delete" method="post" class="quantity_delete_form">
-						<input type="hidden" name="cartId" class="delete_cartId">
-						<input type="hidden" name="sessionId" value="${sessionId}">
-					</form>
+					</form>					
 					
 					<!-- 주문 form -->
 					<form action="payment/payment/${sessionId}" method="get" class="order_form">		
