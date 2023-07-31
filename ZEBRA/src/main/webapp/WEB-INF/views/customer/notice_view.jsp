@@ -157,7 +157,9 @@ function admindelBtn(){
 						<div class="viewContents">
 							${faqDto.fcontent }
 							<br>
+        					<c:if test="${faqDto.ffile != null }">
 							<img src = "/upload/${faqDto.ffile }">
+							</c:if>
 						</div>
 					</div>
 					
