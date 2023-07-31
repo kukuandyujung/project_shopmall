@@ -73,7 +73,7 @@
 		<!--=============START 이름,EMAIL 중복 체크 Area ==============-->
 					<script type="text/javascript">
 					function checkIdEmailBtn(){
-				 	alert("아이디중복확인");
+				 	//alert("idsearch 클릭");
 					 	console.log($('#idEmck').val());
 				
 					    $.ajax({
@@ -118,9 +118,9 @@
 					   }
 			 
 					   function emailBtn(){
-						   alert("임시번호를 발송합니다.");
-						   alert($("#mem_name").val());
-						   alert($("#mem_email").val());
+						//   alert("임시번호를 발송합니다.");
+						 //  alert($("#mem_name").val());
+						 //  alert($("#mem_email").val());
 						   
 						   $.ajax({
 							   url:"/email/emailSend",

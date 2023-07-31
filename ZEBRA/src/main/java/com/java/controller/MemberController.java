@@ -205,10 +205,10 @@ public class MemberController {
 		String result = memberService.insertMember(member);
 		
 		if (result == "success") {
-			System.out.println("가입에 성공 ");
+			System.out.println("가입 성공 ");
 			return "member/register03";
 		} else {
-			System.out.println("가입에 실패 ");
+			System.out.println("가입 실패 ");
 			return "member/register02";
 		}
 	}

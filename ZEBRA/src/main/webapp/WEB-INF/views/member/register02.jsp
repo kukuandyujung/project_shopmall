@@ -73,16 +73,16 @@ function joinBtn(){
 	   $("#joinName").focus();
 	   return false;
    }else{
-	   alert("이름 사용 가능!!!!");
+	//   alert("이름 사용 가능!!!!");
    } 
  
     // 아이디 - 영문,숫자만 가능
     if(!idCheck.test($("#joinId").val())){ //정규표현식 패턴과 입력한 글자 비교
-	 //  alert("아이디는 영문,숫자,특수문자(_)  입력 가능합니다..");
+	   alert("아이디는 영문,숫자,특수문자(_)  입력 가능합니다..");
 	   $("#joinId").focus();
 	   return false;
    }else{
-	   alert("아이디 사용 가능!!!!");
+	 //  alert("아이디 사용 가능!!!!");
    } 	 
 
    // 패스워드 - 영문,숫자,특수문자가 개이상 인지 검색
@@ -91,7 +91,7 @@ function joinBtn(){
 	   $("#joinPw").focus();
 	   return false;
    }else{
-	   alert("패스워드 사용 가능!!!!");
+	  // alert("패스워드 사용 가능!!!!");
    } 
    
 
@@ -99,7 +99,7 @@ function joinBtn(){
 
 <!-- ================ START 가입 버튼  ================= -->
 	
-alert("가입버튼을 클릭");
+//alert("가입버튼을 클릭");
 	if($('#joinName').val() == '' || $('#joinId').val() == '' ||
 	   $('#joinPw').val() == '' || $('#joinPhone').val() == '' ){
 		alert("아이디, 비밀번호, 이름, 전화번호는 필수 입력 항목입니다.");
@@ -116,13 +116,13 @@ alert("가입버튼을 클릭");
 	}
 	
 	
-//email select box
-function emailSelect(){
+ //email select box
+ function emailSelect(){
 	  var sel = $("#emailList").val();
 	  if(sel != ''){
 		  $('#joinEmail2').val(sel);
 	  }
-}
+} 
 </script>
 <!-- ================ END 가입 버튼  ================= -->
 
@@ -309,7 +309,7 @@ function emailSelect(){
 										<li><span class="valign">&nbsp;@&nbsp;</span></li>
 										<li class="r10"><input type="text" name="MEMAIL2" id="joinEmail2" class="w134" /></li>
 									<!--================ START 이메일 전송 버튼 ================-->						
-								<!-- <script type="text/javascript">
+								 <!-- <script type="text/javascript">
 										<script>
 										   function email_chn(){
 											   console.log($("#emailList").val());

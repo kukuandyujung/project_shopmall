@@ -41,12 +41,12 @@ function delBtn(){
 }
 
 function updateBtn(){
-	alert("수정하기 버튼")
+//	alert("수정하기 버튼")
 	location.href="notice_update?fno=${faqDto.fno}";
 }
 
 function admininsertBtn(){
-	alert("admin 등록하기")
+	//alert("admin 등록하기")
 	//alert( $("#ccontent").val())//내용 
 	
 	$.ajax({
@@ -87,7 +87,7 @@ function adminupdateBtn(){
 }
 
 function admindelBtn(){
-	alert("admin 삭제하기 delete")
+//	alert("admin 삭제하기 delete")
 	//alert(${faqDto.fno })
 	  $.ajax({
 		url:"/customer/admincommentdelete",
@@ -144,7 +144,7 @@ function replyBtn(){
 			<input type="hidden" id="insertck" >
 			<div id="contents">
 				<div id="customer">
-					<h2><strong>문의글을 작성해주세요.</strong><span></span></h2>
+					<h2><strong></strong><span></span></h2>
 					
 					<div class="viewDivMt">
 						<div class="viewHead">
@@ -182,21 +182,21 @@ function replyBtn(){
 					      	  <span id="test"  style="display: none;">
 						      	<textarea class="replyType" style="width:100%; " name="ccontent" id="ccontent" >${cdto.ccontent}</textarea>
 								<br>
-						      	<a onclick="ansUpBtn()" style="cusor:pointer;" class="rebtn">수정</a>&nbsp;&nbsp;&nbsp;
+						      	<a onclick="ansUpBtn()"  class="rebtn">수정</a>&nbsp;&nbsp;&nbsp;
 					      	  </span>
 						      <a onclick="ansDelBtn()"class="rebtn">삭제</a>
 					           </c:if>                          
                             
                             
                             <!-- start 댓글 등록 쓰기 다른 방법-화면 고정 -->
-                            <%-- <c:if test="${cdto.cno!=null }">
+                         <%--   <c:if test="${cdto.cno!=null }">
                              ${cdto.ccontent }
                             <textarea class="replyType" name = "ccontent" id="ccontent">  ${cdto.ccontent }</textarea>	
                             <li class="btn">
                                 <a onclick="adminupdateBtn()"  class="rebtn">수정</a>
                                 <a onclick="admindelBtn()" class="rebtn">삭제</a>
                             </li>					     
-						     </c:if> --%>
+						     </c:if>  --%>
 						      <!-- end 댓글 등록 쓰기 다른 방법-화면 고정 -->
 						     
 						     <c:if test="${cdto.cno==null }">
