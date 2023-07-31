@@ -114,7 +114,8 @@
 										<div class="category">${FAQ.fcategory  }</div>
 										
 										
-										<div class="title"><a href="notice_view?fno=${FAQ.fno }&page=${page}"> ${FAQ.ftitle }</a></div>
+										<div class="title">
+										<a href="notice_view?fno=${FAQ.fno }&page=${page}"> ${FAQ.ftitle }</a></div>
 										<div class="category1">${FAQ.mid }</div>
 										<div class="category2">
 										<fmt:formatDate pattern = "yyyy-MM-dd" value="${FAQ.fdate }"/>
@@ -151,7 +152,8 @@
 
 					      <!-- 첫페이지 이동 -->
 						 <c:if test="${page != 1 }">
-							<a href="/customer/faqList?page=1" class="n"><img src="../img/btn/btn_pre2.gif" alt="처음으로"/></a>
+							<a href="/customer/faqList?page=1" class="n">
+							<img src="../img/btn/btn_pre2.gif" alt="처음으로"/></a>
 						</c:if>
       					<c:if test="${page == 1 }">
       						<img src="../img/btn/btn_pre2.gif" alt="처음으로"/>
@@ -159,7 +161,8 @@
 					     
 					      <!-- 이전페이지 이동 -->
 					      <c:if test="${page>1}">
-							<a href="/customer/faqList?page=${page-1}" class="pre"><img src="../img/btn/btn_pre1.gif" alt="앞페이지로"/></a>					      
+							<a href="/customer/faqList?page=${page-1}" class="pre">
+							<img src="../img/btn/btn_pre1.gif" alt="앞페이지로"/></a>					      
 					      </c:if>
 					      <c:if test="${page==1}">
 					        <img src="../img/btn/btn_pre1.gif" alt="앞페이지로"/></a>
