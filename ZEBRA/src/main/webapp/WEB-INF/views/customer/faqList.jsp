@@ -40,7 +40,7 @@
 		<div class="container h-100">
 			<div class="blog-banner">
 				<div class="text-center">
-					<h1> FAQ </h1>
+					<h1> Q&A </h1>
 				</div>
 			</div>
     </div>
@@ -65,7 +65,7 @@
 			<!-- contents -->
 			<div id="contents">
 				<div id="customer">
-					<h2><strong></strong><span>회원님들께서 자주 묻는 질문들을 모아 놓았습니다.</span></h2>
+					<h2><strong></strong><span></span></h2>
 					
 					<div class="faqTab">
 						<ul>
@@ -80,7 +80,7 @@
 							<col width="19%" />
 							</colgroup>
 							<thead>
-								<th scope="col"> NO.</th>
+								<th scope="col"> NO</th>
 								<th scope="col"> Q&A</th>
 								<th scope="col"> 분류</th>
 								<th scope="col"> 제목</th>
