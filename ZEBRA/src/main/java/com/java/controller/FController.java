@@ -52,11 +52,10 @@ public class FController {
 		System.out.println("cartInfo : "+cartService.getCartList(MID));
 		return "mypage/cart";
 	}
-	
-	@GetMapping("/mypage/cart")
-	public String cart() {
-		return "mypage/cart";
-	}
+
+	/*
+	 * @GetMapping("/mypage/cart") public String cart() { return "mypage/cart"; }
+	 */
 	
 	/* 장바구니 수량 수정 */
 	@PostMapping("mypage/cart/")

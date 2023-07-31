@@ -129,14 +129,15 @@ function cartCtn() {
 			alert("로그인이 필요합니다.");	
 		}
 	}
-
-/* 바로구매 버튼 */
+/* 
+바로구매 버튼 
 $(".btn_buy").on("click", function(){
 	let cartCount = $(".input-text").val();
 	$(".order_form").find("input[name='orders[0].cartCount']").val(cartCount);
 	$(".order_form").submit();
 });
-
+ */
+ 
 </script>
 
 
