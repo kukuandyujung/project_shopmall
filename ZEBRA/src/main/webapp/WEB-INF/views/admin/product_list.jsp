@@ -205,7 +205,7 @@
 						    </ul>
 						    </div>
 						<!-- 	<button type='button' class="btn btn-primary" onclick="javascript:location.href='product_write'">상품 등록하기</button> -->
-							<button type="button" class="btn btn-secondary" onclick="javascript:location.href='product_write'"  data-toggle="tooltip" data-placement="bottom" title="상품을 등록하시겠습니까?">상품 등록</button>
+							<button type="button" class="btn btn-secondary" onclick="javascript:location.href='product_write'"  data-toggle="tooltip" data-placement="bottom" >상품 등록</button>
 							<!-- 하단 페이징  끝-->
             	</div>
                </div>

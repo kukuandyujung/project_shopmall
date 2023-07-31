@@ -208,7 +208,8 @@
 
  <!-- 상품 등록하기 끝 -->
                                              <div class="button-wrapper">
-        <button type="button" onclick="updateBtn()" class="update">수정완료</button>
+<!--         <button type="button" onclick="updateBtn()" class="update">수정완료</button> -->
+        <button type="button" class="update" onclick="updateBtn()"  data-toggle="tooltip" data-placement="bottom" title="수정을 완료합니다.">수정 완료</button>
         <button type="button" class="cancel" onclick="javascript:location.href='product_list'">취소</button>
       </div>                      
                                 </div>

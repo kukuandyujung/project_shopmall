@@ -96,6 +96,9 @@
 				        <option value="prepare">상품 준비중</option>
 				        <option value="shipping">배송 중</option>
 				        <option value="completed">배송 완료</option>
+				        <option value="ordercancel">주문 취소</option>
+				        <option value="confirmaion">구매 확정</option>
+				        
 				      </select>
 <!--                   검색 시작 -->
                   
@@ -158,14 +161,15 @@
 						     		<ul class="pagination">
 						    	<!-- 첫 페이지 이동 -->
 						    	<c:if test="${page!=1 }">
-						      <a href= "/admin/order_list?page=1&ordercate=${ordercate}"><li class="paginate_button previous disabled"></li></a>
+<%-- 						      <a href= "/admin/order_list?page=1&ordercate=${ordercate}"><li class="paginate_button previous disabled"></li></a> --%>
+						      <a href= "/admin/order_list?page=1&ordercate=${ordercate}"><img src="../img/btn/btn_pre2.gif" alt="처음으로" /></a>
 						    	</c:if>
 						    	<c:if test="${page==1 }">
 						  			<li class="paginate_button active"></li>
 						    	</c:if>
 						      <!-- 이전 페이지 이동 -->
 						      <c:if test="${page>1 }">
-						      <a href="/admin/order_list?page=${page-1}&ordercate=${ordercate}"><li class="paginate_button "></li></a>
+						      <a href="/admin/order_list?page=${page-1}&ordercate=${ordercate}"><li class="paginate_button previous disabled"></li></a>
 						      </c:if>
 						      <c:if test="${page==1 }">
 						      	<li class="prev"></li>

@@ -115,7 +115,7 @@
            dataType:"json",
            success: function(result){
               console.log(result);
-              alert("controller에서 데이터 받기 성공");
+//               alert("controller에서 데이터 받기 성공");
               console.log(result.length);
             var htmlData='';
              

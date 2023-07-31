@@ -40,7 +40,8 @@
 			 success:function(data){
 				  
 				 console.log("data:"+data);
-                  alert("controller에서 데이터 받기 성공");
+//                   alert("controller에서 데이터 받기 성공");
+                  alert("배송 상태 수정 완료");
 				
 				 
 				 

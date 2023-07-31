@@ -38,6 +38,7 @@
 		}
 	}
   </script>
+
   </head>
 
   <body class="nav-md">
@@ -168,11 +169,35 @@
     </table>
 	<hr>
 
+
 	
-    <a href="product_list?page=${page}&category=${category}&s_word=${s_word}"><div class="list">목록</div></a>
-    <a onclick="deleteBtn(${pdto.pno})" style="cursor: pointer;" ><div class="rebtn">삭제</div></a>
-    <a href="product_update?pno=${pdto.pno}&page=${page}&category=${category}&s_word=${s_word}"><div class="list">수정</div></a>
+<%--     <a href="product_list?page=${page}"><div class="list" >목록</div></a> --%>
+<%--     <a onclick="deleteBtn(${pdto.pno})" style="cursor: pointer;" ><div class="rebtn">삭제</div></a> --%>
+<%--     <a href="product_update?pno=${pdto.pno}&page=${page}"><div class="list">수정</div></a> --%>
 <%--     <a onclick="updateBtn(${pdto.pno})"><div class="rebtn">수정</div>></a> --%>
+
+
+
+<a href="product_list?page=${page}">
+  <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" >목록</button>
+</a>
+
+
+<a href="product_update?pno=${pdto.pno}&page=${page}">
+  <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" >수정</button>	
+</a>
+
+
+<a onclick="deleteBtn(${pdto.pno})" style="cursor: pointer;">
+  <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" >삭제</button>
+</a>
+
+
+
+
+
+
+
 </section>
 </body>
 </html>
