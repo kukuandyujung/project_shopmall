@@ -193,11 +193,16 @@ public class ProductController {
          String category, 
          String s_word,
          Model model)throws Exception {
+	   
+	   
+	   
    
          
 //         System.out.println("product_update getpno pdto" + pdto.getPno());
 //         System.out.println("product_update getpcode pdto" + pdto.getPcode());
-//         System.out.println("product_update getpname pdto" + pdto.getPname());
+
+	   System.out.println("product_update Pimg1  :   " +pmainimg);
+         System.out.println("product_update Pdetailimg1  :   " + pdetailimg1);
       
       
          //파일이 있을 경우에 파일 저장 
@@ -209,6 +214,7 @@ public class ProductController {
             File f = new File(uploadUrl+new_pmainimg); 
             pmainimg.transferTo(f); //파일 저장    
             pdto.setPmainimg(new_pmainimg);
+           
             
          }
          
@@ -221,7 +227,7 @@ public class ProductController {
             File f = new File(uploadUrl+new_pdetailimg1); 
             pdetailimg1.transferTo(f); //파일 저장    
             pdto.setPdetailimg1(new_pdetailimg1);
-            
+           
          }
          if(!pdetailimg2.isEmpty()) {    
             String ori_fileName = pdetailimg2.getOriginalFilename();//실제 파일 이름

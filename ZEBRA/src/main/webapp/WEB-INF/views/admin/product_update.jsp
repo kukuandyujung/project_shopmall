@@ -171,29 +171,33 @@
                           </td> 
                         </tr>
                         
-                        <tr>
+                      <tr>
                           <th scope="row">메인 이미지</th>
                           <td>
-                          	<input class="form-control" type="file"  name="pm1"   data-validate-minmax="10,100" >${pdto.pmainimg}
-                          </td> 
+                          	<input class="form-control" type="file"  name="pm1"  data-validate-minmax="10,100" >${pdto.pmainimg}
+                          	<input type="hidden" name="pmainimg" value="${pdto.pmainimg}">
+                          </td>
                         </tr>
                         <tr>
                           <th scope="row">상세 이미지1</th>
                           <td>
                           	<input class="form-control" type="file"  name="pd1"  data-validate-minmax="10,100" >${pdto.pdetailimg1}
-                          </td> 
+                          	<input type="hidden" name="pdetailimg1" value="${pdto.pdetailimg1}">
+                          </td>
                         </tr>
                         <tr>
                           <th scope="row">상세 이미지2</th>
                           <td>
-                          	<input class="form-control" type="file"  name="pd2"  data-validate-minmax="10,100" >${pdto.pdetailimg2}
-                          </td> 
+                          		<input class="form-control" type="file"  name="pd2"  data-validate-minmax="10,100" >${pdto.pdetailimg2}
+                          	<input type="hidden" name="pdetailimg2" value="${pdto.pdetailimg2}">
+                          </td>
                         </tr>
                         <tr>
                           <th scope="row">상세 이미지3</th>
                           <td>
-                          	<input class="form-control" type="file"  name="pd3"   data-validate-minmax="10,100" >${pdto.pdetailimg3}
-                          </td> 
+                          	<input class="form-control" type="file"  name="pd3"  data-validate-minmax="10,100" >${pdto.pdetailimg3}
+                          	<input type="hidden" name="pdetailimg3" value="${pdto.pdetailimg3}">
+                          </td>
                         </tr>
                         
                         
