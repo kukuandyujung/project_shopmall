@@ -105,6 +105,10 @@ function admindelBtn(){
 	});  
 }
 
+function replyBtn(){
+	   $("#test").toggle();	
+}
+
 </script>
 
 </head>
@@ -171,13 +175,30 @@ function admindelBtn(){
                        
                             <li class="name">admin <span></span></li>
                             <li class="txt">
-                            <c:if test="${cdto.cno!=null }">
+                            
+                            
+                            <c:if test="${cdto.cno != null }">      	 
+					      	  <p onclick = "replyBtn()"> ${cdto.ccontent}</p>
+					      	  <span id="test"  style="display: none;">
+						      	<textarea class="replyType" style="width:100%; " name="ccontent" id="ccontent" >${cdto.ccontent}</textarea>
+								<br>
+						      	<a onclick="ansUpBtn()" style="cusor:pointer;" class="rebtn">수정</a>&nbsp;&nbsp;&nbsp;
+					      	  </span>
+						      <a onclick="ansDelBtn()"class="rebtn">삭제</a>
+					           </c:if>                          
+                            
+                            
+                            <!-- start 댓글 등록 쓰기 다른 방법-화면 고정 -->
+                            <%-- <c:if test="${cdto.cno!=null }">
+                             ${cdto.ccontent }
                             <textarea class="replyType" name = "ccontent" id="ccontent">  ${cdto.ccontent }</textarea>	
                             <li class="btn">
                                 <a onclick="adminupdateBtn()"  class="rebtn">수정</a>
                                 <a onclick="admindelBtn()" class="rebtn">삭제</a>
                             </li>					     
-						     </c:if>
+						     </c:if> --%>
+						      <!-- end 댓글 등록 쓰기 다른 방법-화면 고정 -->
+						     
 						     <c:if test="${cdto.cno==null }">
                             <textarea class="replyType" name = "ccontent" id="ccontent">  </textarea>						     
                             <li class="btn">

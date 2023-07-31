@@ -93,10 +93,13 @@ function joinBtn(){
    }else{
 	   alert("패스워드 사용 가능!!!!");
    } 
+   
+
 <!-- ================ END 정규식 조건  Area ================= -->
 
 <!-- ================ START 가입 버튼  ================= -->
-	alert("가입버튼을 클릭");
+	
+alert("가입버튼을 클릭");
 	if($('#joinName').val() == '' || $('#joinId').val() == '' ||
 	   $('#joinPw').val() == '' || $('#joinPhone').val() == '' ){
 		alert("아이디, 비밀번호, 이름, 전화번호는 필수 입력 항목입니다.");
@@ -111,6 +114,15 @@ function joinBtn(){
 	joinFrm.submit();
 	alert("가입이 완료되었습니다.");
 	}
+	
+	
+//email select box
+function emailSelect(){
+	  var sel = $("#emailList").val();
+	  if(sel != ''){
+		  $('#joinEmail2').val(sel);
+	  }
+}
 </script>
 <!-- ================ END 가입 버튼  ================= -->
 
@@ -314,7 +326,7 @@ function joinBtn(){
 											</script> -->
 									<!--================ END 이메일 전송 버튼 =================-->						
 												<li>
-												<select id="emailList" name="MEMAIL3"  onchange="email_chn()">
+												<select id="emailList" name="MEMAIL3"  onchange="emailSelect()">
 													<option value="txt" selected="selected">직접입력</option>
 													<option value="naver.com">naver.com</option>
 													<option value="daum.net">daum.net</option>

@@ -160,13 +160,11 @@ public class MemberController {
 		//Email 가져오기
 		String mail1 = member.getMEMAIL1();
 		String mail2 = member.getMEMAIL2();
-		String mail3 = member.getMEMAIL3();
+		//String mail3 = member.getMEMAIL3();
 		String email ="";		
 		if(mail2!="") {
 			email = mail1+"@"+mail2;			
-		}else {
-			email = mail1+"@"+mail3;			
-		}		
+		}	
 		member.setMEMAIL(email);		
 		System.out.println("이메일 : " + member.getMEMAIL());
 		System.out.println("이메일수신여부 : " + member.getMAGREE());
