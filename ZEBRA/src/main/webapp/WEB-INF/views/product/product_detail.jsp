@@ -187,7 +187,7 @@ $(".btn_buy").on("click", function(){
 				<div class="col-lg-5 offset-lg-1">
 					<div class="s_product_text">
 						<h3>${pdto.pname}</h3>
-						<h2>${pdto.pprice}원</h2>
+						<h2><fmt:formatNumber value="${pdto.pprice}" pattern="###,###원" /></h2>
 						<p>${pdto.pdescript}</p>
 						<div class="size">
 							<h4>Size</h4>
@@ -267,7 +267,7 @@ $(".btn_buy").on("click", function(){
                          }
                          
                          if($(".replyType").val().length<3){
-                            alert("2글자 이상 입력하셔야 등록가능합니다.");
+                            alert("3글자 이상 입력하셔야 등록가능합니다.");
                             return false;
                          }
                          alert("댓글 저장합니다.");
