@@ -114,8 +114,7 @@ function submitBtn(){
 											<option value="회원가입">회원가입</option>
 											<option value="주문" >주문</option>
 										</select>
-									</c:if>
-									<c:if test = "${fdto.fcategory =='회원가입' }">
+									</c:if><c:if test = "${fdto.fcategory =='회원가입' }">
 										<select name="fcategory" >
 											<option value="전체" >전체</option>
 											<option value="상품">상품</option>
