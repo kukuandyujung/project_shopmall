@@ -103,7 +103,7 @@ console.log(form.cartCount); // 출력 테스트
 
 // 장바구니 추가 버튼 LINE 236
 function cartCtn() {
-		alert("Test") // 테스트		
+		//alert("Test") // 테스트		
 		form.cartCount = $("#sst").val(); 
 		$.ajax({
 			url: '/mypage/cart/add',

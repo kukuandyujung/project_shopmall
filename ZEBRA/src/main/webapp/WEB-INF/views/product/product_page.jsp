@@ -161,7 +161,7 @@
    }//ajaxsort
    
    function colorselelct() {
-       alert("색상 필터를 선택하겠습니다.");
+       //alert("색상 필터를 선택하겠습니다.");
        ajaxsort();
    }//colorselelct  
    
@@ -170,11 +170,11 @@
    
    
    function PriceBtn(){
-       alert("가격 선택을 하겠습니다.");
+       //alert("가격 선택을 하겠습니다.");
        ajaxsort();  
    }//PriceBtn
    function searchBtn() {
-       alert("검색을 하겠습니다.");
+       //alert("검색을 하겠습니다.");
        ajaxsort();     
    }//searchBtn
 

@@ -112,7 +112,7 @@ function joinBtn(){
 	} 
 	
 	joinFrm.submit();
-	alert("가입이 완료되었습니다.");
+	//alert("가입이 완료되었습니다.");
 	}
 	
 	

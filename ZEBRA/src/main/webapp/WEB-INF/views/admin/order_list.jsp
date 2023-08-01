@@ -161,8 +161,8 @@
 						     		<ul class="pagination">
 						    	<!-- 첫 페이지 이동 -->
 						    	<c:if test="${page!=1 }">
-<%-- 						      <a href= "/admin/order_list?page=1&ordercate=${ordercate}"><li class="paginate_button previous disabled"></li></a> --%>
-						      <a href= "/admin/order_list?page=1&ordercate=${ordercate}"><img src="../img/btn/btn_pre2.gif" alt="처음으로" /></a>
+ 						      <a href= "/admin/order_list?page=1&ordercate=${ordercate}"><li class="paginate_button previous disabled"></li></a> 
+<%--						      <a href= "/admin/order_list?page=1&ordercate=${ordercate}"><img src="../img/btn/btn_pre2.gif" alt="처음으로" /></a>--%>
 						    	</c:if>
 						    	<c:if test="${page==1 }">
 						  			<li class="paginate_button active"></li>
