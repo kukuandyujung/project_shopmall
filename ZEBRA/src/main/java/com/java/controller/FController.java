@@ -64,13 +64,12 @@ public class FController {
 	}	
 	
 	/* 장바구니 수량 수정 */
-	@PostMapping("mypage/cart/update")
+	@PostMapping("/update")
 	public String updateCartPOST(CartDTO cart){	
 		cartService.modifyCount(cart);		
 		System.out.println("MID : "+cart.getMID());
 		return "redirect:mypage/cart/"+cart.getMID();
-	}
-	
+	}	
 	
 	@RequestMapping("/mypage/wishlist")
 	public String wishlist() {

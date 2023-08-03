@@ -65,7 +65,11 @@
 	$(document).on("click", ".quantity_modify_btn", function() {
 		alert("수량이 변경되었습니다.");
 		let cartId = $(this).data("cartid");
-		let cartCount = $(this).parent("td").find("input").val();		
+		let cartCount = $(this).parent("td").find("input").val();	
+		/* 
+		console.log({"cartId : "+cartId});
+		console.log({"cartCount : "+cartCount});
+		 */
 		$(".update_cartId").val(cartId);
 		$(".update_cartCount").val(cartCount);
 		$(".quantity_update_form").submit();	
@@ -275,7 +279,7 @@ function delCtn(cartId){
 					</div>
 									
 					<!-- 수량 조정 form -->
-					<form action="mypage/cart/update" class="quantity_update_form" method="post"> <!-- post로 바꾸면 오류가 뜸  -->
+					<form action="/update" class="quantity_update_form" method="post"> <!-- post로 바꾸면 오류가 뜸  -->
 						<input type="hidden" name="cartId" class="update_cartId">
 						<input type="hidden" name="cartCount" class="update_cartCount">
 						<input type="hidden" name="memberId" value="${sessionId}">
