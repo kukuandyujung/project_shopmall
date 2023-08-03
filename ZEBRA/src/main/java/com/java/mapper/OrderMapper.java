@@ -18,6 +18,6 @@ public interface OrderMapper {
 	OrderDto selectOne(int ONO);
 
 	//주문 관리에 주문 판매 개수 증가하기
-	public void updatePsoldcount(int oNO);
+	public void updatePsoldcount(int ONO);
 	
 }
