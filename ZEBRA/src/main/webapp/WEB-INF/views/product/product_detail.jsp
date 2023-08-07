@@ -36,6 +36,7 @@
 <link rel="stylesheet"
 	href="../vendors/owl-carousel/owl.carousel.min.css">
 <link rel="stylesheet" href="../css/style.css">
+
 <style>
 .image-button {
 	display: inline-block;
@@ -129,6 +130,7 @@ function cartCtn() {
 			alert("로그인이 필요합니다.");	
 		}
 	}
+	
 /* 
 바로구매 버튼 
 $(".btn_buy").on("click", function(){
@@ -223,6 +225,7 @@ $(".btn_buy").on("click", function(){
 
 						<div class="product_count">
 							<label for="qty">Quantity:</label> 	
+							
 							<!-- 수량 버튼 -->
 							<input type="number" name="quantity_input" id="sst" size="2" min="1"  maxlength="12" value="1" title="Quantity:"
 								class="input-text qty">&nbsp;&nbsp;
@@ -239,7 +242,7 @@ $(".btn_buy").on("click", function(){
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>	
 	<!--================End Single Product Area =================-->
 
 	<!--================Product Description Area =================-->
