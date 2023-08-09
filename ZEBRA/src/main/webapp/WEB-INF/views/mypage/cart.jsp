@@ -277,7 +277,7 @@ function delCtn(cartId){
 							<li class="last"><a href="/layout/index" class="ty3">쇼핑 <span>계속하기</span></a></li>
 						</ul>
 					</div>
-									
+									 
 					<!-- 수량 조정 form -->
 					<form action="/update" class="quantity_update_form" method="post"> <!-- post로 바꾸면 오류가 뜸  -->
 						<input type="hidden" name="cartId" class="update_cartId">
