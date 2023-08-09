@@ -108,7 +108,7 @@ style="height:500px;"  -->
 		<section class="section-margin calc-60px">
 			<div class="container">
 				<div class="section-intro pb-60px">
-					<p>Popular Item in the market</p>
+					<p>Trending Product는 상품 조회 수를 반영한 순위입니다</p>
 					<h2>
 						Trending<span class="section-intro__style"> Product </span>
 					</h2>
