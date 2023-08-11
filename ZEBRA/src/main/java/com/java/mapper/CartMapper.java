@@ -14,7 +14,7 @@ public interface CartMapper {
 	public int addCart(CartDTO cart) throws Exception;
 		
 	/* 카트 삭제 */
-	void deleteCart(int cartId);
+	int deleteCart(int cartId);
 	
 	/* 카트 수량 수정 */
 	public int modifyCount(CartDTO cart);

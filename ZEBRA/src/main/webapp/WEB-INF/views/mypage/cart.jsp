@@ -73,7 +73,16 @@
 		$(".update_cartId").val(cartId);
 		$(".update_cartCount").val(cartCount);
 		$(".quantity_update_form").submit();	
-	});			
+	});		
+	
+	/* 장바구니 삭제 버튼 */
+	$(document).on("click", ".nbtnMini", function(e){
+		alert("해당 상품을 삭제하였습니다.");
+		e.preventDefault();
+		const cartId = $(this).data("cartid");
+		$(".delete_cartId").val(cartId);
+		$(".quantity_delete_form").submit();
+	});
 		
 /* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
 function setTotalInfo(){ 	
@@ -108,25 +117,6 @@ function setTotalInfo(){
 	};	
 		
 }) (jQuery);
-</script>
-
-<script>
-
-function delCtn(cartId){
-	 if (confirm("장바구니를 삭제하시겠습니까?")) {
-	  $.ajax({
-		url:"/mypage/cart/${cartId}",
-		type:"delete",
-		success: function (data) {
-	        location.reload(true);
-	      },
-	      error: function () {
-	        alert("실패");
-	      }
-	    });
-	  }
-	}
-
 </script>
 
 <body>
@@ -234,7 +224,7 @@ function delCtn(cartId){
 								<td class="tnone">
 									<ul class="order">	
 										<li><a href="/payment/payment" class="obtnMini iw70">바로구매</a></li>
-										<li><a href="javascript:void(0);" class="nbtnMini iw70" onclick="delCtn(${ci.cartId})">상품삭제</a></li> 
+										<li><a href="" class="nbtnMini iw70" data-cartId="${ci.cartId}">상품삭제</a></li> 
 									</ul>
 								</td>
 								</tr>		
@@ -276,14 +266,20 @@ function delCtn(cartId){
 							<li><a href="/payment/payment/${sessionId}" class="ty2">전체상품 <span>주문하기</span></a></li>
 							<li class="last"><a href="/layout/index" class="ty3">쇼핑 <span>계속하기</span></a></li>
 						</ul>
-					</div>
+					</div>	
 									 
 					<!-- 수량 조정 form -->
-					<form action="/update" class="quantity_update_form" method="post"> <!-- post로 바꾸면 오류가 뜸  -->
+					<form action="/update" class="quantity_update_form" method="post"> 
 						<input type="hidden" name="cartId" class="update_cartId">
 						<input type="hidden" name="cartCount" class="update_cartCount">
-						<input type="hidden" name="memberId" value="${sessionId}">
+						<input type="hidden" name="memberId" value="${sessionId}">						
 					</form>					
+					
+					<!-- 삭제 form -->
+					<form action="/delete" method="post" class="quantity_delete_form">
+						<input type="hidden" name="cartId" class="delete_cartId">
+						<input type="hidden" name="memberId" value="${sessionId}">
+					</form>
 					
 					<!-- 주문 form -->
 					<form action="payment/payment/${sessionId}" method="get" class="order_form">		

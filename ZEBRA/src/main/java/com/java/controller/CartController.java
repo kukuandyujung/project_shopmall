@@ -2,6 +2,8 @@ package com.java.controller;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,21 +37,23 @@ public class CartController {
 		return "mypage/cart";
 	}
 	
-	/* 장바구니 삭제 */
-	@PostMapping("mypage/cartDelete")
-	@ResponseBody
-	public String cartDelete(CartDTO cdto) {		
-		System.out.println("카트 삭제 게시물 번호: "+ cdto.getCartId());
-		cartService.deleteCart(cdto.getCartId());
-		return "success";	
-	}	
-	
 	/* 장바구니 수량 수정 */
 	@PostMapping("/update")
-	public String updateCartPOST(CartDTO cart){	
-		cartService.modifyCount(cart);		
-		System.out.println("MID : "+cart.getMID());
-		return "redirect:mypage/cart/"+cart.getMID();
+	public String updateCartPOST(CartDTO cart, HttpSession session){	
+		cartService.modifyCount(cart);			
+		String sessionId = (String) session.getAttribute("sessionId");		
+		System.out.println("sessionId : "+sessionId);	
+		return "redirect:mypage/cart/"+sessionId;
 	}	
-
+	
+	/* 장바구니 삭제 */
+	@PostMapping("/delete")
+	public String cartDelete(CartDTO cart, HttpSession session) {	
+		cartService.deleteCart(cart.getCartId());		
+		System.out.println("카트 삭제 게시물 번호: "+ cart.getCartId());
+		String sessionId = (String) session.getAttribute("sessionId");	
+		System.out.println("sessionId : "+sessionId);
+		return "redirect:mypage/cart/"+sessionId;
+	}	
+	
 }

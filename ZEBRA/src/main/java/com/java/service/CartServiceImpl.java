@@ -33,8 +33,8 @@ public class CartServiceImpl implements CartService {
 	
 	/* 카트 삭제 */
 	@Override
-	public void deleteCart(int cartId) {
-		cartMapper.deleteCart(cartId);
+	public int deleteCart(int cartId) {
+		return cartMapper.deleteCart(cartId);
 	}
 	
 	/* 카트 수량 수정 */
@@ -47,8 +47,7 @@ public class CartServiceImpl implements CartService {
 		cart.setCartId(cartId);
 		cart.setCartCount(cartCount);
 		
-		cartMapper.modifyCount(cart);
-		
+		cartMapper.modifyCount(cart);		
 	}
 	
 	/* 카트 목록 */ 
