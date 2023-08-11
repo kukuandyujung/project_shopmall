@@ -56,9 +56,21 @@
 	});
 		
 	/* 체크여부에 따른 종합 정보 변화 */
-	$(".individual_cart_checkbox").on("change", function(){
-	/* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
-		setTotalInfo($());
+	$(document).on("change", ".individual_cart_checkbox", function(){		
+		/* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
+		setTotalInfo($(".cart_info_td"));
+	});
+	
+	/* 체크박스 전체 선택 */
+	$(document).on("click", ".all_check_input", function(){		
+		/* 체크박스 체크/해제 */
+		if($(".all_check_input").prop("checked")){
+			$(".individual_cart_checkbox").prop("checked", true);
+		} else{
+			$(".individual_cart_checkbox").prop("checked", false);
+		}				
+		/* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
+		setTotalInfo($(".cart_info_td"));
 	});
 		
 	/* 수량 수정 버튼 LINE 211 */
@@ -176,7 +188,7 @@ function setTotalInfo(){
 								<th scope="col">
 								<!-- 체크박스 전체 여부 -->
 									<div class="all_check_input_div">
-										<input type="checkbox" class="individual_cart_checkbox" checked="checked"/>
+										<input type="checkbox" class="all_check_input" checked="checked"/>
 									</div>
 								</th> 
 								
