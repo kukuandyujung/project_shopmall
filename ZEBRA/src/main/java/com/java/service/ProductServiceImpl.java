@@ -33,7 +33,6 @@ public class ProductServiceImpl implements ProductService{
       //endPage가 최대페이지보다 더 크면 최대페이지까지만 노출
       if(endPage>maxPage) endPage=maxPage;
       
-   
       ArrayList<ProductDto> list = productMapper.selectAll(startRow, endRow, category,s_word);
       map.put("list", list);
       map.put("listCount", listCount);

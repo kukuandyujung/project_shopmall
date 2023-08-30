@@ -173,6 +173,8 @@
        //alert("가격 선택을 하겠습니다.");
        ajaxsort();  
    }//PriceBtn
+   
+   
    function searchBtn() {
        //alert("검색을 하겠습니다.");
        ajaxsort();     

@@ -29,6 +29,8 @@ public class ProductController {
    @Autowired
    ProductService productService; 
    
+   
+   
    // 상품 관리 상품 목록
    @RequestMapping("/admin/product_list")
    public String product_list(@RequestParam(defaultValue = "1") int page, 
